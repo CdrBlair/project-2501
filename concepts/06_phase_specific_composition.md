@@ -38,14 +38,14 @@ The systematic shift from tacit-heavy to formal-heavy reflects the fundamental n
 
 ## Integration with Other Concepts
 
-- **Information Composition Taxonomy**: Concept 6 applies Concept 1's three knowledge types to the seven phases, providing specific percentage estimates rather than general definitions.
-- **Theory-Building Principle**: Phase composition reflects theory-building progression—early phases build problem theory (tacit-heavy), middle phases transform theory to specifications (balanced), later phases instantiate specifications (formal-heavy).
-- **Eight-Capability Taxonomy**: Different phases emphasise different capabilities based on their composition. Tacit-heavy phases emphasise Elicit, Synthesise, Decide. Formal-heavy phases emphasise Transform, Generate, Preserve.
-- **Seven-Phase SDLC Model**: Concept 6 characterises each phase from Concept 4 by its information composition, enabling all phase-specific reasoning in the framework.
-- **Actor Model**: Phase composition determines appropriate actor participation. Human actors required for tacit-heavy phases; AI actors enable formal-heavy phases.
-- **Five Collaboration Patterns**: Patterns shift systematically across phases—Human-Only/Human-Led for tacit-heavy early phases, Partnership for balanced middle phases, AI-Led for formal-heavy later phases.
-- **Information Loss at Transitions**: Loss patterns differ by phase composition. Tacit knowledge loss is severe at early transitions (Initiation→Planning: 35-45% loss); formal knowledge loss is lower at later transitions.
-- **Phase-Aware Measurement**: Phase composition determines appropriate measurement approaches—qualitative for tacit-heavy, quantitative for formal-heavy, hybrid for balanced.
+- [**Information Composition Taxonomy**](./01_information_taxonomy.md): Concept 6 applies Concept 1's three knowledge types to the seven phases, providing specific percentage estimates rather than general definitions.
+- [**Theory-Building Principle**](./02_theory_building.md): Phase composition reflects theory-building progression—early phases build problem theory (tacit-heavy), middle phases transform theory to specifications (balanced), later phases instantiate specifications (formal-heavy).
+- [**Eight-Capability Taxonomy**](./03_capability_model.md): Different phases emphasise different capabilities based on their composition. Tacit-heavy phases emphasise Elicit, Synthesise, Decide. Formal-heavy phases emphasise Transform, Generate, Preserve.
+- [**Seven-Phase SDLC Model**](./04_7phase_SDLC.md): Concept 6 characterises each phase from Concept 4 by its information composition, enabling all phase-specific reasoning in the framework.
+- [**Actor Model**](./05_actor_model.md): Phase composition determines appropriate actor participation. Human actors required for tacit-heavy phases; AI actors enable formal-heavy phases.
+- [**Five Collaboration Patterns**](./07_collaboration_patterns.md): Patterns shift systematically across phases—Human-Only/Human-Led for tacit-heavy early phases, Partnership for balanced middle phases, AI-Led for formal-heavy later phases.
+- [**Information Loss at Transitions**](./08_transitions_info_loss.md): Loss patterns differ by phase composition. Tacit knowledge loss is severe at early transitions (Initiation→Planning: 35-45% loss); formal knowledge loss is lower at later transitions.
+- [**Phase-Aware Measurement**](./09_phase_aware_measurement.md): Phase composition determines appropriate measurement approaches—qualitative for tacit-heavy, quantitative for formal-heavy, hybrid for balanced.
 
 ## Evidence Base and Methodological Notes
 

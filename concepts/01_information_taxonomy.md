@@ -53,14 +53,14 @@ Activities and artifacts can be characterised by their approximate information c
 
 ## Integration with Other Concepts
 
-- **Theory-Building Principle**: Theory is tacit by nature—what makes certain knowledge tacit is that it represents theory in developers' minds
-- **Eight-Capability Taxonomy**: Different capabilities require different knowledge types (Elicit/Synthesise require tacit; Transform/Preserve enable formal)
-- **Seven-Phase SDLC**: Each phase has characteristic information composition that shifts from tacit-heavy early to formal-heavy late
-- **Actor Model**: Human and AI actors differ in their ability to process different knowledge types—humans can handle all three, AI only formal
-- **Five Collaboration Patterns**: Pattern selection depends on activity information composition
-- **Phase-Specific Composition**: Provides specific percentage estimates for each phase
-- **Information Loss at Transitions**: Tacit and emergent information are disproportionately lost at phase boundaries
-- **Phase-Aware Measurement**: Different phases need different measurement approaches based on their information composition
+- [**Theory-Building Principle**](./02_theory_building.md): Theory is tacit by nature—what makes certain knowledge tacit is that it represents theory in developers' minds
+- [**Eight-Capability Model**](./03_capability_model.md): Different capabilities require different knowledge types (Elicit/Synthesise require tacit; Transform/Preserve enable formal)
+- [**Seven-Phase SDLC**](04_7phase_SDLC.md): Each phase has characteristic information composition that shifts from tacit-heavy early to formal-heavy late
+- [**Actor Model**](./05_actor_model.md): Human and AI actors differ in their ability to process different knowledge types—humans can handle all three, AI only formal
+- [**Five Collaboration Patterns**](07_collaboration_patterns.md): Pattern selection depends on activity information composition
+- [**Phase-Specific Composition**](06_phase_specific_composition.md): Provides specific percentage estimates for each phase
+- [**Information Loss at Transitions**](./08_transitions_info_loss.md): Tacit and emergent information are disproportionately lost at phase boundaries
+- [**Phase-Aware Measurement**](09_phase_aware_measurement.md): Different phases need different measurement approaches based on their information composition
 
 ## Evidence Base
 

@@ -56,14 +56,14 @@ Regardless of pattern, all seven work types occur. The most rapid Agile team sti
 
 ## Integration with Other Concepts
 
-- **Information Composition Taxonomy**: Each phase has characteristic formal/tacit/emergent composition (specified in Concept 6), explaining why approaches must vary
-- **Theory-Building Principle**: Theory building occurs throughout lifecycle—early phases build theory about problem space, middle phases about solution structure, later phases about implementation details
-- **Eight-Capability Taxonomy**: Different phases emphasise different capabilities—early phases emphasise Elicit/Synthesise/Decide, later phases emphasise Transform/Generate/Validate
-- **Actor Model**: Phase characteristics determine appropriate actor participation—tacit-heavy phases need human actors, formal-heavy phases enable AI actors
-- **Five Collaboration Patterns**: Patterns shift systematically across phases from Human-Only/Human-Led early to Partnership/AI-Led later
-- **Phase-Specific Information Composition**: Concept 6 provides specific percentage estimates for each phase's formal/tacit/emergent composition
-- **Information Loss at Transitions**: Each phase boundary (Concept 8) represents potential information loss, with different transitions having different loss patterns
-- **Phase-Aware Measurement**: Concept 10 uses phase structure to argue for phase-specific measurement rather than universal metrics
+- [**Information Composition Taxonomy**](./01_information_taxonomy.md): Each phase has characteristic formal/tacit/emergent composition (specified in Concept 6), explaining why approaches must vary
+- [**Theory-Building Principle**](./02_theory_building.md): Theory building occurs throughout lifecycle—early phases build theory about problem space, middle phases about solution structure, later phases about implementation details
+- [**Eight-Capability Taxonomy**](./03_capability_model.md): Different phases emphasise different capabilities—early phases emphasise Elicit/Synthesise/Decide, later phases emphasise Transform/Generate/Validate
+- [**Actor Model**](./05_actor_model.md): Phase characteristics determine appropriate actor participation—tacit-heavy phases need human actors, formal-heavy phases enable AI actors
+- [**Five Collaboration Patterns**](./07_collaboration_patterns.md): Patterns shift systematically across phases from Human-Only/Human-Led early to Partnership/AI-Led later
+- [**Phase-Specific Information Composition**](./06_phase_specific_composition.md): Concept 6 provides specific percentage estimates for each phase's formal/tacit/emergent composition
+- [**Information Loss at Transitions**](./08_transitions_info_loss.md): Each phase boundary (Concept 8) represents potential information loss, with different transitions having different loss patterns
+- [**Phase-Aware Measurement**](./09_phase_aware_measurement.md): Concept 9 uses phase structure to argue for phase-specific measurement rather than universal metrics
 
 ## Evidence Base
 

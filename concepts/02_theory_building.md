@@ -44,12 +44,12 @@ Naur identified three aspects that theory encompasses, all of which transcend wh
 
 ## Integration with Other Concepts
 
-- **Information Composition Taxonomy**: Theory is what makes tacit knowledge tacit—it's the understanding in developers' minds that resists complete articulation. Theory-building activities necessarily involve high tacit knowledge content.
-- **Eight-Capability Taxonomy**: Some capabilities (Synthesise, Decide) contribute more to theory building than others (Transform, Preserve). Understanding which capabilities build theory helps identify where human engagement is essential.
-- **Seven-Phase SDLC Model**: Theory building occurs throughout the lifecycle, not just during coding. Early phases build theory about the problem space; middle phases about solution structure; later phases about implementation and operation.
-- **Actor Model**: Humans build theory through engagement with problems; AI cannot. This fundamental asymmetry determines which activities must remain human regardless of AI technical capabilities.
-- **Five Collaboration Patterns**: Activities that build theory should favour Human-Only or Human-Led patterns even when AI could technically perform them, to preserve developers' understanding.
-- **Information Loss at Transitions**: Theory loss at phase boundaries is severe because theory resists documentation. Explicit mitigation strategies are required to transfer theory across transitions.
+- [**Information Composition Taxonomy**](./01_information_taxonomy.md): Theory is what makes tacit knowledge tacit—it's the understanding in developers' minds that resists complete articulation. Theory-building activities necessarily involve high tacit knowledge content.
+- [**Eight-Capability Taxonomy**](./03_capability_model.md): Some capabilities (Synthesise, Decide) contribute more to theory building than others (Transform, Preserve). Understanding which capabilities build theory helps identify where human engagement is essential.
+- [**Seven-Phase SDLC Model**](./04_7phase_SDLC.md): Theory building occurs throughout the lifecycle, not just during coding. Early phases build theory about the problem space; middle phases about solution structure; later phases about implementation and operation.
+- [**Actor Model**](./05_actor_model.md): Humans build theory through engagement with problems; AI cannot. This fundamental asymmetry determines which activities must remain human regardless of AI technical capabilities.
+- [**Five Collaboration Patterns**](./07_collaboration_patterns.md): Activities that build theory should favour Human-Only or Human-Led patterns even when AI could technically perform them, to preserve developers' understanding.
+- [**Information Loss at Transitions**](./08_transitions_info_loss.md): Theory loss at phase boundaries is severe because theory resists documentation. Explicit mitigation strategies are required to transfer theory across transitions.
 
 ## Evidence Base
 

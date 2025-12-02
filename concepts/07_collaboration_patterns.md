@@ -55,14 +55,14 @@ Different capability instances have typical patterns based on the knowledge type
 
 ## Integration with Other Concepts
 
-- **Information Composition Taxonomy**: Pattern selection depends fundamentally on knowledge types. Tacit-heavy activities require Human-Only/Human-Led patterns. Formal-heavy activities enable AI-Led/AI-Only patterns. This is the core driver of pattern appropriateness.
-- **Theory-Building Principle**: Activities that build theory must use Human-Only or Human-Led patterns even if AI could technically perform them, because theory building requires human engagement that AI pattern matching cannot replicate.
-- **Eight-Capability Taxonomy**: Pattern selection applies to capability instances, not capability categories. The mapping combines Concept 3's capability definitions with the knowledge-type and source-type factors that determine which pattern suits each specific instance.
-- **Seven-Phase SDLC Model**: Patterns shift systematically across phases. Early tacit-heavy phases (Initiation, Planning) favour Human-Only/Human-Led. Later formal-heavy phases (Implementation, Testing) enable Partnership/AI-Led.
-- **Actor Model**: The patterns operationalise Concept 5's actor characteristics. Human and AI strengths and limitations determine which patterns are appropriate for which capabilities.
-- **Phase-Specific Information Composition**: Concept 6's phase compositions predict pattern distributions—Initiation (75% tacit) will predominantly use Human-Only/Human-Led patterns; Implementation (55% formal) enables more Partnership/AI-Led patterns.
-- **Information Loss at Transitions**: Pattern selection affects information loss. Human-Only patterns preserve tacit knowledge through direct engagement; AI-Only patterns risk losing rationale and context.
-- **Phase-Aware Measurement**: Different patterns require different measurement approaches. Human-Only: expert performance metrics. Partnership: integration quality. AI-Led: exception and accuracy rates.
+- [**Information Composition Taxonomy**](./01_information_taxonomy.md): Pattern selection depends fundamentally on knowledge types. Tacit-heavy activities require Human-Only/Human-Led patterns. Formal-heavy activities enable AI-Led/AI-Only patterns. This is the core driver of pattern appropriateness.
+- [**Theory-Building Principle**](./02_theory_building.md): Activities that build theory must use Human-Only or Human-Led patterns even if AI could technically perform them, because theory building requires human engagement that AI pattern matching cannot replicate.
+- [**Eight-Capability Taxonomy**](./03_capability_model.md): Pattern selection applies to capability instances, not capability categories. The mapping combines Concept 3's capability definitions with the knowledge-type and source-type factors that determine which pattern suits each specific instance.
+- [**Seven-Phase SDLC Model**](./04_7phase_SDLC.md): Patterns shift systematically across phases. Early tacit-heavy phases (Initiation, Planning) favour Human-Only/Human-Led. Later formal-heavy phases (Implementation, Testing) enable Partnership/AI-Led.
+- [**Actor Model**](./05_actor_model.md): The patterns operationalise Concept 5's actor characteristics. Human and AI strengths and limitations determine which patterns are appropriate for which capabilities.
+- [**Phase-Specific Information Composition**](./06_phase_specific_composition.md): Concept 6's phase compositions predict pattern distributions—Initiation (75% tacit) will predominantly use Human-Only/Human-Led patterns; Implementation (55% formal) enables more Partnership/AI-Led patterns.
+- [**Information Loss at Transitions**](./08_transitions_info_loss.md): Pattern selection affects information loss. Human-Only patterns preserve tacit knowledge through direct engagement; AI-Only patterns risk losing rationale and context.
+- [**Phase-Aware Measurement**](./09_phase_aware_measurement.md): Different patterns require different measurement approaches. Human-Only: expert performance metrics. Partnership: integration quality. AI-Led: exception and accuracy rates.
 
 ## Evidence Base
 

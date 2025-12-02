@@ -54,14 +54,14 @@ Software development measurement must adapt to phase-specific characteristics ra
 
 ## Integration with Other Concepts
 
-- **Information Composition Taxonomy**: Phase composition determines appropriate measurement approaches. Tacit-heavy phases require qualitative methods; formal-heavy phases support quantitative metrics. This is the foundational driver of phase-aware measurement.
-- **Theory-Building Principle**: Theory building (tacit, occurring in early phases) resists measurement but determines success. Measuring only artifacts while ignoring theory building creates systematic blind spots where failures originate.
-- **Eight-Capability Taxonomy**: Different capabilities require different measurement approaches. Elicit and Synthesise capabilities (tacit-heavy) resist quantification. Transform and Preserve capabilities (formal-heavy) support quantification.
-- **Seven-Phase SDLC Model**: Provides the phase structure enabling systematic variation in measurement approaches. Each phase's characteristic work determines appropriate metrics.
-- **Actor Model**: Different actors are accountable for different phases, requiring phase-specific metrics they can act upon. Universal metrics fail because they don't align with actor accountability.
-- **Phase-Specific Information Composition**: Concept 6's specific percentages enable principled decisions about measurement approach mix. 75% tacit Initiation needs predominantly qualitative assessment; 55% formal Implementation supports predominantly quantitative metrics.
-- **Five Collaboration Patterns**: Pattern distribution within phases affects measurement. Human-Only activities resist AI-assisted measurement; AI-Led activities generate abundant quantifiable data.
-- **Information Loss at Transitions**: Measuring transition effectiveness requires different approaches than measuring within-phase work. Transition metrics focus on knowledge transfer quality and information preservation.
+- [**Information Composition Taxonomy**](./01_information_taxonomy.md): Phase composition determines appropriate measurement approaches. Tacit-heavy phases require qualitative methods; formal-heavy phases support quantitative metrics. This is the foundational driver of phase-aware measurement.
+- [**Theory-Building Principle**](./02_theory_building.md): Theory building (tacit, occurring in early phases) resists measurement but determines success. Measuring only artifacts while ignoring theory building creates systematic blind spots where failures originate.
+- [**Eight-Capability Taxonomy**](./03_capability_model.md): Different capabilities require different measurement approaches. Elicit and Synthesise capabilities (tacit-heavy) resist quantification. Transform and Preserve capabilities (formal-heavy) support quantification.
+- [**Seven-Phase SDLC Model**](./04_7phase_SDLC.md): Provides the phase structure enabling systematic variation in measurement approaches. Each phase's characteristic work determines appropriate metrics.
+- [**Actor Model**](./05_actor_model.md): Different actors are accountable for different phases, requiring phase-specific metrics they can act upon. Universal metrics fail because they don't align with actor accountability.
+- [**Phase-Specific Information Composition**](./06_phase_specific_composition.md): Concept 6's specific percentages enable principled decisions about measurement approach mix. 75% tacit Initiation needs predominantly qualitative assessment; 55% formal Implementation supports predominantly quantitative metrics.
+- [**Five Collaboration Patterns**](./07_collaboration_patterns.md): Pattern distribution within phases affects measurement. Human-Only activities resist AI-assisted measurement; AI-Led activities generate abundant quantifiable data.
+- [**Information Loss at Transitions**](./08_transitions_info_loss.md): Measuring transition effectiveness requires different approaches than measuring within-phase work. Transition metrics focus on knowledge transfer quality and information preservation.
 
 ## Evidence Base
 
