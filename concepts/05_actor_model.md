@@ -15,9 +15,6 @@ The Actor Model reconceptualises who performs work in software development by tr
 | **Theory relationship** | Can build theory through engagement with problems—developing understanding that enables intelligent system evolution | Cannot build theory—produces outputs based on statistical patterns without the understanding necessary for intelligent adaptation |
 | **Tacit knowledge** | Can develop, hold, and apply tacit knowledge through experience—"we know more than we can tell" | Cannot access tacit knowledge—requires all knowledge to be formalised in training data or prompts |
 
-
-## Actor Suitability Factors
-
 ## Actor Suitability Factors
 
 Actor suitability for a capability instance is determined by multiple factors:
