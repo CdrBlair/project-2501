@@ -36,6 +36,8 @@ The systematic shift from tacit-heavy to formal-heavy reflects the fundamental n
 
 **For understanding failure patterns**: Phase composition predicts failure modes. Tacit-heavy Initiation failures stem from stakeholder misalignment and inadequate problem framing (39-47% of total failures). Balanced Requirements failures stem from incomplete tacit-to-formal translation. Formal-heavy Implementation failures stem from lost design understanding. Each requires composition-appropriate mitigation.
 
+**For document lifecycle management**: Phase composition correlates with document temporality. Tacit-heavy phases (Initiation, Planning) produce primarily standing documents that attempt to crystallise strategic understanding for long-term reference. Balanced phases (Requirements, Design) produce both standing documents (specifications, architecture) and dynamic documents (tracking evolution). Formal-heavy phases (Implementation, Testing, Operations) produce more dynamic and ephemeral documents (status, tickets, logs) alongside standing technical documentation.
+
 ## Integration with Other Concepts
 
 - [**Information Composition Taxonomy**](./01_information_taxonomy.md): Concept 6 applies Concept 1's three knowledge types to the seven phases, providing specific percentage estimates rather than general definitions.

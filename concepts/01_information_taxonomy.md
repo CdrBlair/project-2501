@@ -51,6 +51,54 @@ Activities and artifacts can be characterised by their approximate information c
 
 **For theory building:** Tacit knowledge is what makes theory "theory"—the understanding that resides in developers' minds and enables intelligent system evolution. Over-automating tacit-heavy activities risks theory atrophy.
 
+## Document Lifecycle Classification
+
+Documents can be further classified by their temporal characteristics and organisational scope, based on ISO/IEC/IEEE 15289:2019. This classification intersects with information composition to guide retention policies, automation levels, and knowledge management strategies.
+
+### Temporal Classification
+
+| Class | Update Frequency | Lifespan | Information Composition | Typical Automation | Examples |
+|-------|------------------|----------|-------------------------|-------------------|----------|
+| **Standing** | Quarterly or less | Years | ~80% tacit capture attempt; 30-40% retention | L2-L3 (humans provide theory, AI assists structure) | Architecture Descriptions, Policies, ADRs, System Specifications |
+| **Dynamic** | Weekly or more | Project duration | ~60% formal, 40% tacit interpretation | L3-L4 (AI generates, humans interpret) | Project Plans, Risk Registers, Status Reports, Dashboards |
+| **Ephemeral** | Single use | Days to weeks | Point-in-time capture; window at creation or lost | L3-L4 (AI captures, humans add meaning) | Pull Requests, Support Tickets, Meeting Notes, Chat threads |
+
+### Scope Classification
+
+| Scope | Applicability | Examples |
+|-------|---------------|----------|
+| **Organisational** | Enterprise-wide; conditions decisions across projects | Reference architectures, coding standards, security policies |
+| **Project** | Single initiative; tracks project-specific understanding | Solution designs, project plans, requirements specifications |
+| **Task** | Single work item; enables immediate coordination | User stories, bug reports, change requests, working notes |
+
+### The Temporal-Scope Matrix
+
+Temporal and scope classifications are orthogonal. A document type occupies a cell in this matrix:
+
+|  | Standing | Dynamic | Ephemeral |
+|--|----------|---------|-----------|
+| **Organisational** | Enterprise architecture, Policies | Org-wide dashboards, Portfolio status | Leadership announcements |
+| **Project** | Solution architecture, ADRs | Sprint plans, Risk registers | Daily standups, PR reviews |
+| **Task** | (rare) | Task tracking, Kanban cards | Slack threads, Working notes |
+
+### Knowledge Retention Implications
+
+**Standing documents** attempt to crystallise tacit knowledge into formal artefacts. Research indicates that without supplementary strategies, only 30-40% of original understanding survives formalisation—a significant loss that explains why comprehensive documentation alone fails to preserve organisational knowledge. Standing documents remain essential for preserving retrievable rationale, but must be combined with tacit knowledge transfer mechanisms (mentoring, communities of practice, team continuity) to reduce losses.
+
+**Dynamic documents** track evolving state; their formal content is current but interpretation requires understanding the trajectory. AI can generate and update these effectively; humans provide contextual interpretation.
+
+**Ephemeral documents** capture knowledge at a single moment. If tacit understanding isn't added at creation (e.g., context in a commit message, rationale in a ticket), it's permanently lost. The capture window is narrow and non-recoverable.
+
+### Automation Level Guidance
+
+The temporal classification provides default automation levels that align with collaboration patterns:
+
+- **Standing (L2-L3)**: Human-Led to Partnership. Humans provide the theory and rationale; AI assists with structure, consistency, and completeness checks.
+- **Dynamic (L3-L4)**: Partnership to AI-Led. AI generates updates from formal data sources; humans interpret trends and make judgements.
+- **Ephemeral (L3-L4)**: Partnership to AI-Led. AI captures and structures point-in-time information; humans add meaning and context.
+
+These levels are defaults; specific documents may require adjustment based on their information composition and organisational context.
+
 ## Integration with Other Concepts
 
 - [**Theory-Building Principle**](./02_theory_building.md): Theory is tacit by nature—what makes certain knowledge tacit is that it represents theory in developers' minds
@@ -60,6 +108,7 @@ Activities and artifacts can be characterised by their approximate information c
 - [**Five Collaboration Patterns**](07_collaboration_patterns.md): Pattern selection depends on activity information composition
 - [**Phase-Specific Composition**](06_phase_specific_composition.md): Provides specific percentage estimates for each phase
 - [**Information Loss at Transitions**](./08_transitions_info_loss.md): Tacit and emergent information are disproportionately lost at phase boundaries
+- [**Information Loss at Transitions**](./08_transitions_info_loss.md): Tacit and emergent information are disproportionately lost at phase boundaries. Document lifecycle class affects retention—standing documents preserve rationale but with 30-40% loss; ephemeral documents lose unrecorded tacit knowledge entirely.
 - [**Phase-Aware Measurement**](09_phase_aware_measurement.md): Different phases need different measurement approaches based on their information composition
 
 ## Evidence Base

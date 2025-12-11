@@ -96,6 +96,8 @@ Escalation design should be treated as a first-class concern when establishing A
 
 **For progressive automation**: Teams can increase AI participation over time by shifting patterns as trust builds. Start with Human-Led code generation (human writes logic, AI suggests completions), evolve to Partnership (iterative refinement), and eventually AI-Led (AI generates with human review) for well-understood domains. This respects that pattern appropriateness includes trust as a factor.
 
+**For document automation**: Document lifecycle class provides default pattern guidance. Standing documents (L2-L3) warrant Human-Led patterns—AI assists structure while humans provide rationale. Dynamic documents (L3-L4) enable AI-Led generation with human interpretation. Ephemeral documents (L3-L4) benefit from AI capture with human meaning-addition at creation. See [Document Lifecycle Classification](./01_information_taxonomy.md#document-lifecycle-classification).
+
 **For understanding automation boundaries**: Human-Only and Human-Led patterns identify activities that currently require human-centric approaches due to tacit knowledge requirements or insufficient formalisation. These boundaries shift as organisations formalise criteria and develop mature escalation mechanisms. However, activities central to theory building warrant deliberate preservation of human engagement even when automation becomes technically feasible, to prevent skill atrophy and maintain human understanding.
 
 **For team skill development**: As AI handles more AI-Led capabilities, humans must develop skills in AI-dependent capabilities (Elicit, Synthesise, Decide) and in partnership capabilities where humans provide tacit understanding while AI handles formal manipulation. Training programmes should target capability-specific skills rather than generic roles.
@@ -108,7 +110,8 @@ Escalation design should be treated as a first-class concern when establishing A
 
 ## Integration with Other Concepts
 
-- [**Information Composition Taxonomy**](./01_information_taxonomy.md): Pattern selection depends fundamentally on knowledge types. Tacit-heavy activities require Human-Only/Human-Led patterns. Formal-heavy activities enable AI-Led/AI-Only patterns. This is the core driver of pattern appropriateness.
+- [**Information Composition Taxonomy**](./01_information_taxonomy.md): Tacit and emergent knowledge (Concept 1) are disproportionately lost at transitions; formal knowledge survives better. Document lifecycle classification (standing/dynamic/ephemeral) determines preservation opportunity—standing documents retain 30-40% of original understanding; ephemeral documents lose unrecorded knowledge entirely.
+
 - [**Theory-Building Principle**](./02_theory_building.md): Activities that build theory must use Human-Only or Human-Led patterns even if AI could technically perform them, because theory building requires human engagement that AI pattern matching cannot replicate.
 - [**Eight-Capability Taxonomy**](./03_capability_model.md): Pattern selection applies to capability instances, not capability categories. The mapping combines Concept 3's capability definitions with the knowledge-type and source-type factors that determine which pattern suits each specific instance.
 - [**Seven-Phase SDLC Model**](./04_7phase_SDLC.md): Patterns shift systematically across phases. Early tacit-heavy phases (Initiation, Planning) favour Human-Only/Human-Led. Later formal-heavy phases (Implementation, Testing) enable Partnership/AI-Led.
