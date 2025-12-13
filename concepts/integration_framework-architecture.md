@@ -2,7 +2,9 @@
 
 ## Executive Summary
 
-This document explains how ten carefully selected academic sources, spanning 1985 to 2025, form a coherent foundation for understanding AI-augmented software development. These sources were chosen not for their popularity or influence in industry discourse, but for their empirical rigour, theoretical coherence, and ability to bridge individual cognition, team dynamics, and organisational contexts. 
+This document explains how thirteen carefully selected academic sources, spanning 1951 to 2025, form a coherent foundation for understanding AI-augmented software development. These sources were chosen not for their popularity or influence in industry discourse, but for their empirical rigour, theoretical coherence, and ability to bridge individual cognition, team dynamics, organisational contexts, and—critically—the integration of social and technical systems.
+
+The addition of socio-technical systems (STS) theory (Trist & Bamforth 1951, Cherns 1976, Baxter & Sommerville 2011) provides the explicit system-level design lens that connects individual cognition and team coordination to technical system architecture. STS's core principle—**joint optimisation** of social and technical subsystems—directly addresses how to design human-AI work systems rather than merely describing their components. 
 
 The selection deliberately prioritises peer-reviewed research and theoretically grounded frameworks over industry folklore—even when that folklore has been highly influential. This choice reflects a fundamental principle: **influence and validity are orthogonal concerns**. A concept can be widely adopted yet empirically unsupported (e.g., "10x programmer"), or rigorously validated yet underutilised in practice (e.g., transactive memory theory in software teams).
 
@@ -30,7 +32,7 @@ Software development has been shaped by numerous influential concepts that lack 
 
 ### The Selection Criteria
 
-Each of the ten included sources meets multiple criteria:
+Each of the thirteen included sources meets multiple criteria:
 
 **Essential Criteria:**
 1. **Theoretical coherence**: Clear conceptual framework or well-defined constructs
@@ -40,7 +42,7 @@ Each of the ten included sources meets multiple criteria:
 5. **Conceptual contribution**: Adds distinct insight not available elsewhere
 
 **Quality Indicators:**
-- Peer review or equivalent validation process (7/10 peer-reviewed)
+- Peer review or equivalent validation process (10/13 peer-reviewed)
 - Large sample sizes where applicable (N>2,000 in multiple studies)
 - Triangulation across methods (mixed-methods studies valued)
 - Longitudinal or cross-sectional depth
@@ -53,22 +55,26 @@ We prioritise sources that can be wrong in ways we can detect and correct, over 
 
 ## Conceptual Architecture: Three Integrated Perspectives
 
-The ten sources form a coherent whole when viewed through three overlapping lenses:
+The thirteen sources form a coherent whole when viewed through three overlapping lenses:
 
-### 1. Temporal Progression: Knowledge Accumulation (1985→2025)
+### 1. Temporal Progression: Knowledge Accumulation (1951→2025)
 
 ```mermaid
 timeline
-    title Evolution of Understanding: 1985-2025
+    title Evolution of Understanding: 1951-2025
+    1951-1976 : Trist & Bamforth (1951) - Joint Optimisation
+              : Cherns (1976) - STS Design Principles
+              : SOCIO-TECHNICAL SYSTEMS FOUNDATION
     1985-1990 : Naur (1985) - Theory Building
               : Wegner (1986) - Transactive Memory
-              : FOUNDATION: Individual + Team Cognition
+              : INDIVIDUAL + TEAM COGNITION
     1991-2010 : [Gap in selected literature]
               : Industry practices evolve
               : Agile, DevOps emerge
-    2011-2018 : Meyer et al. (2019) data collection period
+    2011-2018 : Baxter & Sommerville (2011) - STS for Software
+              : Meyer et al. (2019) data collection period
               : Ryan & O'Connor research period
-              : EMPIRICAL MEASUREMENT ERA
+              : STS BRIDGE + EMPIRICAL MEASUREMENT
     2019-2023 : Meyer (2019) - Good Days published
               : Storey et al. (2022) - SPACE/TRUCE
               : Hicks et al. (2024) - Developer Thriving
@@ -82,34 +88,45 @@ timeline
 
 **Why This Timeline Matters:**
 
-**1985-1990: Foundational Theory**
+**1951-1976: Socio-Technical Systems Foundation**
+- Trist & Bamforth (1951): Founded STS theory through coal mining research; established **joint optimisation** principle—that social and technical systems must be designed together
+- Cherns (1976): Codified STS into nine actionable **design principles** (minimal critical specification, variance control at source, boundary location, etc.)
+- **Key insight**: Technical systems do not determine social arrangements; alternative organisations exist for the same technology
+
+**1985-1990: Individual and Team Cognition**
 - Naur (1985): Established that programming is fundamentally cognitive work involving theory-building
 - Wegner (1986): Showed teams distribute knowledge through transactive memory
-- These remained largely disconnected from mainstream SE for decades
+- These built on STS foundations but focused on cognitive rather than system-design dimensions
 
-**The Missing Middle (1991-2018):**
+**The Middle Period (1991-2018):**
 - Industry developed practices (Agile, Scrum, DevOps) based largely on experience
 - Academic SE research focused heavily on tools, processes, defects
-- Human factors research existed but remained siloed
-- **Consequence**: Practice evolved separately from cognitive science foundations
+- Baxter & Sommerville (2011) explicitly bridged STS to software engineering, proposing STSE framework
+- **Note**: STS design methods remained "rarely used in industrial practice" despite theoretical appeal (Baxter & Sommerville 2011)
 
 **2019-2023: Empirical Renaissance**
 - Large-scale quantitative studies become feasible (N>2,000)
 - Developer experience emerges as legitimate research area
 - Frameworks (DORA, SPACE) gain traction
-- **Connection**: Finally linking Naur's insights to measurable outcomes
+- **Connection**: Finally linking cognitive insights to measurable outcomes
 
 **2024-2025: AI Integration Challenge**
 - Rapid AI adoption creates urgency
 - Need to understand human-AI collaboration
 - Cumulative culture lens becomes relevant
 - AI limitations require documentation
-- **Current moment**: Must integrate 40 years of knowledge quickly
+- **Current moment**: Must integrate 70+ years of knowledge quickly, with STS providing the system-design framework for human-AI work systems
 
 ### 2. Analytical Levels: Nested Contexts
 
 ```mermaid
 graph TB
+    subgraph "SYSTEM DESIGN (STS)"
+        S1[Trist & Bamforth 1951<br/>Joint Optimisation<br/>Socio-Technical Systems]
+        S2[Cherns 1976<br/>9 Design Principles<br/>Actionable Methodology]
+        S3[Baxter & Sommerville 2011<br/>STSE Framework<br/>Software Engineering Bridge]
+    end
+    
     subgraph "ORGANISATIONAL CONTEXT"
         O1[Storey et al. 2022<br/>SPACE/TRUCE<br/>N=2,600+]
         O2[Context Engineering 2.0<br/>System Design<br/>Community Practices]
@@ -144,12 +161,17 @@ graph TB
     
     C1 --> O1
     C2 --> O2
-    O1 --> O2
+    O1 --> S1
+    O2 --> S3
+    
+    S1 --> S2
+    S2 --> S3
     
     style I1 fill:#e1f5ff
     style T1 fill:#ffe1f5
     style C1 fill:#f5ffe1
     style O1 fill:#fff5e1
+    style S1 fill:#ffe1e1
 ```
 
 **Why Nested Levels Matter:**
@@ -180,7 +202,14 @@ graph TB
 - System design choices shape all lower levels
 - **Implication**: Cannot optimise locally without organisational context
 
-**Critical Insight**: Each level is necessary but insufficient. Optimising individual productivity whilst ignoring team transactive memory will fail. Supporting teams whilst organisational structures misalign will fail. This is why simplistic "10x programmer" thinking is inadequate—it ignores three of four levels.
+**System Design Level (Trist & Bamforth, Cherns, Baxter & Sommerville):**
+- Socio-technical systems theory provides the integrating framework
+- **Joint optimisation**: Social and technical subsystems must be co-designed, not optimised independently
+- Cherns' principles offer actionable design methodology (minimal critical specification, variance control at source, boundary location)
+- Baxter & Sommerville bridge STS explicitly to software engineering
+- **Implication**: Understanding individuals, teams, communities, and organisations is necessary but insufficient—deliberate *system design* integrates all levels
+
+**Critical Insight**: Each level is necessary but insufficient. Optimising individual productivity whilst ignoring team transactive memory will fail. Supporting teams whilst organisational structures misalign will fail. Designing organisations without considering socio-technical system dynamics will fail. STS provides the integrating lens: the question is not "how do we improve productivity?" but "how do we *design* the work system for joint optimisation?"
 
 ### 3. Knowledge Types: Theory, Measurement, Evidence
 
@@ -190,12 +219,15 @@ graph LR
         TH1[Naur 1985<br/>Programming as<br/>Theory Building]
         TH2[Wegner 1986<br/>Transactive<br/>Memory]
         TH3[Hicks & Hevesi 2024<br/>Cumulative<br/>Culture]
+        TH4[Trist & Bamforth 1951<br/>Joint Optimisation<br/>STS Foundation]
+        TH5[Cherns 1976<br/>Design Principles<br/>STS Methodology]
     end
     
     subgraph "MEASUREMENT DEVELOPMENT"
         M1[Ryan & O'Connor<br/>Team Tacit Knowledge<br/>Measure α=0.91]
         M2[Storey et al. 2022<br/>SPACE/TRUCE<br/>Framework Validation]
         M3[Obi et al. 2024<br/>Telemetry<br/>Validation Method]
+        M4[STS Meta-Analysis<br/>Mirroring 69%<br/>Congruence 32%]
     end
     
     subgraph "EMPIRICAL EVIDENCE"
@@ -208,19 +240,25 @@ graph LR
     subgraph "CONTEMPORARY PRACTICE"
         P1[Context Engineering 2.0<br/>AI Context Management<br/>Design Principles]
         P2[Illusion of Thinking<br/>AI Reasoning Limits<br/>3 Complexity Regimes]
+        P3[Baxter & Sommerville 2011<br/>STSE Framework<br/>Software Engineering Bridge]
     end
     
     TH1 --> M1
     TH2 --> M1
     TH3 --> M1
+    TH4 --> M4
+    TH5 --> M4
     
     M1 --> E2
     M2 --> E3
     M3 --> E4
+    M4 --> P3
     
     TH1 --> E1
     TH2 --> E2
     TH3 --> E2
+    TH4 --> P3
+    TH5 --> P3
     
     E1 --> P1
     E2 --> P1
@@ -232,6 +270,7 @@ graph LR
     E2 --> P2
     
     style TH1 fill:#ffcccc
+    style TH4 fill:#ffcccc
     style M1 fill:#ccffcc
     style E1 fill:#ccccff
     style P1 fill:#ffffcc
@@ -240,15 +279,18 @@ graph LR
 **Why This Progression Matters:**
 
 **Theory Provides Conceptual Framework:**
-- Naur (1985): "Programming is theory building" - establishes WHAT we're dealing with
-- Wegner (1986): "Teams use transactive memory" - establishes HOW knowledge distributes
-- Hicks & Hevesi (2024): "Problem-solving is cumulative culture" - establishes collective mechanisms
+- Naur (1985): "Programming is theory building" — establishes WHAT we're dealing with (individual cognition)
+- Wegner (1986): "Teams use transactive memory" — establishes HOW knowledge distributes (team coordination)
+- Hicks & Hevesi (2024): "Problem-solving is cumulative culture" — establishes collective mechanisms (social learning)
+- Trist & Bamforth (1951): "Social and technical systems must be jointly optimised" — establishes DESIGN imperative (system integration)
+- Cherns (1976): "Nine principles for socio-technical design" — establishes HOW to design (actionable methodology)
 
 **Without theory, we cannot:**
 - Know what to measure
 - Interpret anomalous results
 - Generalise across contexts
 - Predict interventions
+- **Design** work systems (STS contribution)
 
 **Measurement Operationalises Theory:**
 - Ryan & O'Connor: Make tacit knowledge measurable (22 items, α=0.91)
@@ -468,7 +510,7 @@ Goes beyond good/bad dichotomy to sustained resilient productivity:
 - **Bad days**: AI must not add friction (slow tools, unreliable, blocking)
 - **Thriving**: AI should support agency (not replace), enable learning (not obscure), provide support (not replace humans), preserve purpose (not alienate)
 
-### Pattern 3: Human Capabilities ↔ AI Limitations
+### Pattern 3: Joint Optimisation of Human-AI Work Systems
 
 ```mermaid
 graph TB
@@ -611,6 +653,44 @@ graph TB
 
 **Critical Insight**: The frontier between "AI can" and "AI cannot" is not where industry intuition suggests. Illusion of Thinking shows AI fails at algorithmic execution even with explicit instructions—this is surprising and important. It means we cannot simply hand off "well-defined" tasks to AI without oversight.
 
+**STS Framing: Joint Optimisation, Not Mere Complementarity**
+
+The complementarity table above describes *what* humans and AI each contribute. But STS theory (Trist & Bamforth 1951, Cherns 1976) provides the *design imperative*: social and technical subsystems must be **jointly optimised**, not independently configured and then combined.
+
+**The Default Failure Mode:**
+
+Pasmore et al.'s (1982) systematic review of 134 STS experiments found that:
+> "In most cases, implementation focused on rearranging the social system around an existing technology in order to approximate joint optimisation"
+
+This finding is directly relevant to AI adoption. The default path is:
+1. AI tools arrive with preset capabilities and interfaces
+2. Organisations adapt human workflows around AI's fixed constraints
+3. This is **social adaptation to fixed technology**—not joint optimisation
+
+**Why This Matters:**
+
+- Social adaptation to fixed technology achieves *partial* benefits
+- True joint optimisation requires questioning: Can the AI tool be configured differently? Is this the right AI tool? Should AI be involved in this task at all?
+- Even when AI capabilities are vendor-determined, the **socio-technical interface** (how AI is invoked, what context is provided, how outputs are reviewed) can be jointly designed
+
+**Cherns' Principles Applied to Human-AI Work Systems:**
+
+| STS Principle | Human-AI Application |
+|---------------|---------------------|
+| **Minimal critical specification** | Specify AI task intent, not procedure; allow emergence |
+| **Variance control at source** | Developers closest to work should configure AI tools |
+| **Boundary location** | Design human-AI handoffs to enable knowledge flow |
+| **Support congruence** | Organisational incentives must align with AI collaboration |
+| **Incompletion** | Human-AI work design is ongoing, not one-time |
+
+**The Joint Optimisation Question:**
+
+Instead of asking "How do we use AI to improve productivity?", ask:
+
+> "How do we *design the work system* so that human cognitive strengths (theory-building, social learning, judgement) and AI capabilities (retrieval, pattern generation) are jointly optimised—neither constraining the other unnecessarily?"
+
+This reframing shifts from AI-as-tool to AI-as-subsystem-in-socio-technical-system.
+
 ### Pattern 4: Measurement Enables Progress
 
 ```mermaid
@@ -702,6 +782,22 @@ flowchart TD
    - Limitation: Only PR/build metrics, Microsoft-specific thresholds
    - **Why this matters**: Bridges subjective experience and objective data
 
+4. **STS Meta-Analysis: Socio-Technical Congruence**
+   - Cataldo et al. (2008): Coordination-requirement alignment reduces resolution time by **32%**
+   - Replicated across multiple studies (Cataldo & Herbsleb 2013, Kwan et al. 2011)
+   - Measurable through repository mining (version control, issue trackers)
+   - Enables: Quantifying coordination effectiveness in human-AI systems
+   - Limitation: Focuses on maintenance work; applicability to greenfield development less established
+   - **Why this matters**: Validated metric for socio-technical alignment—directly relevant to human-AI coordination
+
+5. **STS Meta-Analysis: Mirroring Hypothesis**
+   - Colfer & Baldwin (2016): 69% of 142 studies support organisation-architecture correspondence
+   - Stronger within-firm (83%) than open collaborative contexts (52%)
+   - Provides empirical grounding for Conway's Law in software systems
+   - Enables: Predicting where organisation-architecture misalignment will cause friction
+   - Limitation: Boundary conditions matter; weaker support in distributed/open contexts
+   - **Why this matters**: Connects organisational structure to technical architecture empirically
+
 **What We Can Now Do:**
 
 **Before These Measures:**
@@ -719,8 +815,10 @@ flowchart TD
 - **Can track**: Team tacit knowledge before/after AI introduction
 - **Can monitor**: Whether AI tools increase PR dwell time (bad day predictor)
 - **Can evaluate**: Does AI improve Agency score (thriving factor)?
+- **Can assess** (STS): Does AI integration maintain socio-technical congruence, or create coordination gaps?
+- **Can predict** (STS): Where will organisation-architecture misalignment cause friction with AI adoption?
 
-**Critical Insight**: Without measurement, AI adoption is flying blind. These validated measures enable evidence-based evaluation of AI integration rather than relying on intuition or hype.
+**Critical Insight**: Without measurement, AI adoption is flying blind. These validated measures—including STS metrics for coordination congruence and organisational alignment—enable evidence-based evaluation of AI integration rather than relying on intuition or hype.
 
 ---
 
@@ -867,10 +965,10 @@ gantt
 
 **Major Gaps in Our Collection:**
 
-**1991-2018: The Missing Middle**
+**1991-2010: The Partial Gap**
 - **What happened**: Agile Manifesto (2001), Scrum adoption, DevOps movement, continuous integration/deployment
-- **Why missing**: Practices evolved ahead of theory; research lagged behind practice
-- **Consequence**: Large gap between foundational theory (1985-1986) and modern evidence (2019+)
+- **Why partially addressed**: STS literature (especially Baxter & Sommerville 2011) provides theoretical bridge
+- **Remaining gap**: Practice-focused research from this era (Agile effectiveness, DevOps impact) not yet included
 - **Potential additions**: 
   - Agile effectiveness studies (mixed evidence)
   - DevOps research (DORA metrics - very strong evidence, could add)
@@ -908,6 +1006,16 @@ gantt
 
 ### What Would Strengthen the Foundation
 
+**Recently Added: Socio-Technical Systems Theory**
+
+With the integration of STS (Trist & Bamforth 1951, Cherns 1976, Baxter & Sommerville 2011), the framework now includes:
+- **System-level design theory**: Joint optimisation principle
+- **Actionable design principles**: Cherns' nine principles
+- **Conway's Law validation**: Via mirroring hypothesis (69% support, N=142 studies)
+- **Coordination metrics**: Socio-technical congruence (32% improvement)
+
+This addresses a previously identified gap: the organisation-system connection.
+
 **High Priority Additions (If Expanding):**
 
 1. **DORA Metrics Research (Forsgren et al.)**
@@ -916,19 +1024,13 @@ gantt
    - **Issue**: Deployment frequency, lead time, MTTR, change failure rate
    - **Tier**: Would be Tier 2 (high priority empirical)
 
-2. **Conway's Law Validation Studies**
-   - **Why**: Mechanism for organisational effects
-   - **Adds**: Organisation-system connection
-   - **Issue**: Some correlation evidence (r≈0.73)
-   - **Tier**: Would be Tier 2-3 depending on study quality
-
-3. **Cognitive Load Theory Applied to Software**
+2. **Cognitive Load Theory Applied to Software**
    - **Why**: Explains difficulty in comprehension
    - **Adds**: Individual cognitive constraints
    - **Issue**: Would complement Naur's theory-building
    - **Tier**: Would be Tier 1-2 (theoretical foundation)
 
-4. **Team Effectiveness General Literature (Hackman, etc.)**
+3. **Team Effectiveness General Literature (Hackman, etc.)**
    - **Why**: Broader team science applies to software teams
    - **Adds**: General principles, not just SE-specific
    - **Issue**: Wegner is from this literature but more needed
@@ -964,11 +1066,19 @@ gantt
 
 ### The Logical Architecture
 
-**Level 1: Foundational Insight (1985-1986)**
+**Level 0: System Design Foundation (1951-1976)**
+> Work systems comprise interdependent social and technical subsystems that must be jointly optimised.
+
+- **Trist & Bamforth (1951)**: Founded socio-technical systems theory; established joint optimisation principle
+- **Cherns (1976)**: Codified STS into nine actionable design principles
+- **Implication**: Technical systems do not determine social arrangements; deliberate design is possible and necessary
+
+**Level 1: Cognitive Insight (1985-1986)**
 > Software development is fundamentally about building and coordinating knowledge that cannot be fully documented.
 
 - **Naur**: Individual developers build theories (mental models)
 - **Wegner**: Teams coordinate through transactive memory ("who knows what")
+- **Connection to STS**: Theory-building and transactive memory are the *cognitive dimensions* of the social subsystem
 - **Implication**: Cannot reduce to code artefacts alone
 
 **Level 2: Measurement Challenge (2019-2024)**
@@ -995,14 +1105,16 @@ gantt
 - **Connection to Naur**: Theory transmitted socially, not just individually developed
 - **Implication**: Must design for collective intelligence, not just individual productivity
 
-**Level 5: AI Integration Reality (2024-2025)**
-> AI changes the landscape but does not eliminate human cognitive/social needs.
+**Level 5: AI Integration Reality (2011-2025)**
+> AI changes the landscape but does not eliminate human cognitive/social needs—and requires deliberate socio-technical design.
 
+- **Baxter & Sommerville (2011)**: Bridge STS to software engineering; acknowledge design methods "rarely used" despite theoretical appeal
 - **Illusion of Thinking**: AI has fundamental reasoning limits (complete collapse at high complexity)
 - **Context Engineering**: AI context management requires design principles
 - **Connection to Naur**: AI cannot build theory (in Naur's sense)
 - **Connection to Hicks & Hevesi**: AI changes social learning dynamics but doesn't replace them
-- **Implication**: Must design for complementarity (human+AI), not replacement
+- **Connection to STS**: Human-AI integration is a socio-technical design challenge requiring joint optimisation
+- **Implication**: Must design for joint optimisation (human+AI work system), not mere complementarity or replacement
 
 ### Why These Fit Together
 
@@ -1028,7 +1140,7 @@ graph TB
     
     subgraph "TEMPORAL COHERENCE"
         TMP1[Foundation → Evidence →<br/>Contemporary application]
-        TMP2[40-year progression<br/>1985→2025]
+        TMP2[70+ year progression<br/>1951→2025]
         TMP3[Each builds on<br/>or validates prior]
     end
     
@@ -1051,51 +1163,56 @@ graph TB
 ```
 
 **1. Theoretical Coherence:**
-- All ten sources address the same fundamental problem: how do humans create, coordinate, and transmit knowledge in software development?
-- They address nested levels: individual (Naur) → team (Wegner) → community (Hicks & Hevesi) → organisation (Storey)
-- They progress logically: theory → measurement → evidence → practice
+- All thirteen sources address the same fundamental problem: how do humans create, coordinate, and transmit knowledge in software development—and how should work systems be designed?
+- They address nested levels: individual (Naur) → team (Wegner) → community (Hicks & Hevesi) → organisation (Storey) → system design (STS)
+- They progress logically: theory → measurement → evidence → practice → design
 
 **2. Empirical Grounding:**
-- Six of ten have large samples (N>2,000)
+- Seven of thirteen have large samples (N>2,000) or meta-analytic synthesis (N=142+ studies)
 - Multiple studies use mixed methods (qualitative + quantitative)
-- Findings replicate across studies (e.g., social factors matter in Wegner, Ryan & O'Connor, Hicks, Hicks & Hevesi)
+- Findings replicate across studies (e.g., social factors matter in Wegner, Ryan & O'Connor, Hicks, Hicks & Hevesi; mirroring replicated across 142 studies)
 
 **3. Practical Relevance:**
 - Address real problems developers face daily (bad days, being blocked, knowledge gaps)
 - Provide measurable constructs (can track, evaluate, improve)
-- Offer intervention guidance (learning cultures, team coordination, AI complementarity)
+- Offer intervention guidance (learning cultures, team coordination, joint optimisation)
+- Provide design principles (Cherns' nine STS principles mapped to human-AI systems)
 
 **4. Temporal Coherence:**
-- Build on foundations established 40 years ago
-- Fill measurement gap (1990s-2010s)
+- Build on foundations established 70+ years ago (STS 1951, cognitive theory 1985)
+- STS provides bridge to software engineering (Baxter & Sommerville 2011)
 - Address contemporary challenges (AI integration)
 - Each source builds on or validates prior work
 
 **5. Mutual Reinforcement:**
+- STS joint optimisation → Frames Naur/Wegner as cognitive dimensions of social subsystem
 - Naur's tacit knowledge claim → Ryan & O'Connor measure it → Hicks validates its importance
 - Wegner's transactive memory → Validated in Hicks et al. (social factors predict thriving)
 - Meyer/Obi show daily experience → Hicks shows sustained thriving factors → Connects to Naur/Wegner/Hicks & Hevesi theory
-- Illusion of Thinking's AI limits → Reinforces why Naur's human theory-building still essential
+- Illusion of Thinking's AI limits → Reinforces why human theory-building still essential → STS provides design framework for human-AI systems
 
 ### What This Collection Enables
 
 **For Research:**
-- Test interventions using validated measures (Ryan & O'Connor, Storey)
-- Track AI impact on validated dimensions (SPACE, thriving factors)
-- Ground new work in 40 years of theoretical development
+- Test interventions using validated measures (Ryan & O'Connor, Storey, STS congruence)
+- Track AI impact on validated dimensions (SPACE, thriving factors, coordination congruence)
+- Ground new work in 70+ years of theoretical development (STS + cognitive science)
+- Apply STS design methodology to human-AI systems research
 
 **For Practice:**
 - Move beyond velocity metrics to multidimensional productivity (SPACE)
 - Design for team coordination, not just individual skill (Wegner, Ryan & O'Connor)
 - Support learning cultures for AI adoption (Hicks, Hicks & Hevesi)
 - Monitor developer experience with validated indicators (Meyer, Obi)
-- Design AI tools for complementarity not replacement (Illusion, Naur)
+- **Design human-AI work systems for joint optimisation**, not mere complementarity (STS, Illusion, Naur)
+- Apply Cherns' principles: minimal critical specification, variance control at source, boundary location
 
 **For Policy:**
 - Evidence-based hiring (not "10x programmer" myths)
 - Evidence-based team formation (transactive memory matters)
 - Evidence-based AI adoption (understand limits and risks)
 - Evidence-based DX investment (quantified impact on bad days)
+- Evidence-based work system design (STS principles with 70+ years of validation)
 
 ---
 
@@ -1103,15 +1220,15 @@ graph TB
 
 This collection represents a deliberate choice: **rigour over influence, evidence over intuition, theory over folklore**.
 
-The ten sources were not selected because they are the most cited in industry blogs, or because they validate what we already believe, or because they make startling claims. They were selected because they:
+The thirteen sources were not selected because they are the most cited in industry blogs, or because they validate what we already believe, or because they make startling claims. They were selected because they:
 
 1. **Make falsifiable claims** that can be tested and potentially proven wrong
 2. **Provide empirical evidence** or synthesise validated findings
-3. **Address fundamental questions** about human cognition and social coordination
-4. **Span analytical levels** from individual to organisation
-5. **Progress logically** from theory through measurement to evidence to practice
-6. **Remain relevant** despite technological change (Naur's 1985 insights still apply)
-7. **Enable action** through measurable constructs and validated frameworks
+3. **Address fundamental questions** about human cognition, social coordination, and work system design
+4. **Span analytical levels** from individual to organisation to system design
+5. **Progress logically** from theory through measurement to evidence to practice to design
+6. **Remain relevant** despite technological change (Trist's 1951 joint optimisation and Naur's 1985 theory-building still apply)
+7. **Enable action** through measurable constructs, validated frameworks, and actionable design principles
 
 **The Alternative Approach:**
 We could have included "move fast and break things", "10x programmer" research, Brooks' Law, the Agile Manifesto, and various tool-specific studies. This would create a collection that **feels familiar** to practitioners but provides **little basis for confident claims or evidence-based improvement**.
@@ -1126,7 +1243,7 @@ By prioritising empirical rigour and theoretical coherence over familiarity and 
 **The Meta-Lesson:**
 The very existence of this collection demonstrates the challenge it addresses: software development has been profoundly influenced by ideas (folklore, heuristics, metaphors) that feel intuitively right but lack empirical validation. By curating sources that prioritise evidence over intuition, we model the intellectual discipline needed to integrate AI effectively—not based on hype or fear, but on rigorous understanding of human capabilities, social dynamics, and empirical reality.
 
-Forty years after Naur identified that programming is theory-building, we finally have the empirical tools and evidence to measure, validate, and improve upon that insight. The question is whether the field will embrace this rigorous foundation or continue to chase the next appealing narrative.
+Seventy years after Trist and Bamforth established that work systems require joint optimisation of social and technical subsystems, and forty years after Naur identified that programming is theory-building, we finally have the empirical tools and evidence to measure, validate, and improve upon these insights. The question is whether the field will embrace this rigorous foundation or continue to chase the next appealing narrative.
 
 This collection bets on rigour winning eventually—because whilst narratives are persuasive, only evidence enables reliable progress.
 
@@ -1138,6 +1255,10 @@ This collection bets on rigour winning eventually—because whilst narratives ar
 
 | Concept | Primary Sources | Support Sources |
 |---------|----------------|-----------------|
+| **Joint Optimisation** | Trist & Bamforth 1951 | Cherns 1976, Baxter & Sommerville 2011 |
+| **STS Design Principles** | Cherns 1976 | Trist & Bamforth 1951, Baxter & Sommerville 2011 |
+| **Mirroring Hypothesis** | STS Meta-Analysis (Colfer & Baldwin) | Baxter & Sommerville 2011 |
+| **Socio-Technical Congruence** | STS Meta-Analysis (Cataldo et al.) | Baxter & Sommerville 2011 |
 | **Tacit Knowledge** | Naur 1985 | Ryan & O'Connor, Hicks & Hevesi |
 | **Transactive Memory** | Wegner 1986 | Hicks et al. 2024 |
 | **Good Days** | Meyer et al. 2019 | Hicks et al. 2024 |
@@ -1146,13 +1267,18 @@ This collection bets on rigour winning eventually—because whilst narratives ar
 | **Team Measurement** | Ryan & O'Connor | Wegner 1986 |
 | **Productivity Dimensions** | Storey et al. 2022 | Meyer, Obi, Hicks |
 | **Cumulative Culture** | Hicks & Hevesi 2024 | Wegner, Ryan & O'Connor |
-| **AI Context Management** | Context Engineering 2.0 | Naur, Hicks & Hevesi |
+| **AI Context Management** | Context Engineering 2.0 | Naur, Hicks & Hevesi, STS |
 | **AI Reasoning Limits** | Illusion of Thinking | Naur 1985 |
+| **Human-AI Work Systems** | STS + Illusion of Thinking | Naur, Cherns, Context Engineering |
 
 ### Evidence Strength Summary
 
 | Claim | Strength | Source(s) | Sample Size |
 |-------|----------|-----------|-------------|
+| Joint optimisation essential | Strong (theoretical + empirical) | Trist & Bamforth 1951, Pasmore et al. 1982 | N=134 studies |
+| Mirroring hypothesis valid | Strong (meta-analysis) | Colfer & Baldwin 2016 | N=142 studies (69% support) |
+| Coordination congruence improves outcomes | Strong (replicated) | Cataldo et al. 2008, 2013 | Multiple studies (32% effect) |
+| STS design principles actionable | Strong (theoretical) | Cherns 1976 | Conceptual (widely applied) |
 | Theory-building essential | Strong (theoretical) | Naur 1985 | Conceptual |
 | Teams use transactive memory | Strong (empirical) | Wegner 1986 + Hicks 2024 | Multiple studies |
 | Tacit knowledge measurable | Moderate (small N) | Ryan & O'Connor | N=87 |
@@ -1168,8 +1294,11 @@ This collection bets on rigour winning eventually—because whilst narratives ar
 
 | Source | Status | Venue | Year |
 |--------|--------|-------|------|
+| Trist & Bamforth 1951 | ✓ Peer-reviewed | *Human Relations* | 1951 |
+| Cherns 1976 | ✓ Peer-reviewed | *Human Relations* | 1976 |
 | Naur 1985 | ✓ Peer-reviewed | *Microprocessing and Microprogramming* | 1985 |
 | Wegner 1986 | ✓ Peer-reviewed | Springer book chapter | 1986 |
+| Baxter & Sommerville 2011 | ✓ Peer-reviewed | *Interacting with Computers* | 2011 |
 | Ryan & O'Connor | ✓ Peer-reviewed | *Journal of Systems and Software* | [Year TBC] |
 | Meyer et al. 2019 | ✓ Peer-reviewed | *IEEE TSE* | 2019 |
 | Storey et al. 2022 | ✓ Peer-reviewed | *IEEE TSE* | 2022 |
@@ -1183,6 +1312,7 @@ This collection bets on rigour winning eventually—because whilst narratives ar
 
 ---
 
-*Document Version: 1.0*  
-*Generated: 5 December 2025*  
+*Document Version: 2.0*  
+*Updated: 13 December 2024*  
+*Change: Integration of Socio-Technical Systems theory (Trist & Bamforth 1951, Cherns 1976, Baxter & Sommerville 2011)*  
 *Purpose: Integration architecture for AI-augmented SDLC framework literature foundation*
