@@ -306,10 +306,10 @@ The framework's claims are grounded in:
 
 The framework provides two meta-processes for AI-augmented development, reflecting different change strategies:
 
-- **Evolution**: Incremental adoption from current practice—adding AI capabilities to existing workflows while preserving team knowledge and organisational structures
-- **Revolution**: Transformational redesign—fundamentally reconceiving work systems for joint human-AI optimisation
+- **Evolution**: Incremental adoption from current practice—adding AI capabilities to existing workflows while preserving team knowledge and organisational structures [→ `dialogue-framework-evolution.md`]
+- **Revolution**: Transformational redesign—fundamentally reconceiving work systems for joint human-AI optimisation [→ `dialogue-framework-revolution.md`]
 
-The Seven-Phase SDLC provides the structural foundation; these meta-processes guide *how* organisations traverse phases with AI integration. Detailed process specifications are provided in the guidance documents.
+The Seven-Phase SDLC provides the structural foundation; these meta-processes guide *how* organisations traverse phases with AI integration.
 
 ### Known Gaps
 
@@ -325,6 +325,8 @@ The Seven-Phase SDLC provides the structural foundation; these meta-processes gu
 | Document | Type | Purpose |
 |----------|------|---------|
 | `dialogue-framework.md` | Overview | This document—framework introduction and structure |
+| `dialogue-framework-evolution.md` | Process | Incremental AI adoption meta-process |
+| `dialogue-framework-revolution.md` | Process | Transformational redesign meta-process |
 | `integration_framework-architecture.md` | Integration | Detailed analysis of source integration |
 | `concept_*.md` | Concept | Individual concept specifications |
 | `foundation_*.md` | Foundation | Theoretical foundations |
