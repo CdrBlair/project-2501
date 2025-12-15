@@ -18,7 +18,7 @@ Academic papers providing foundational research and evidence.
 | [team-tacit-knowledge-measure.pdf](./team-tacit-knowledge-measure.pdf) | Ryan & O'Connor (2013). Team tacit knowledge measurement instrument with validated scales |
 | [acquiring-sharing-tacit-knowledge-software.pdf](./acquiring-sharing-tacit-knowledge-software.pdf) | Ryan, S. & O'Connor, R.V. (2013). "Acquiring and sharing tacit knowledge in software development teams" — Empirical study of tacit knowledge mechanisms |
 | [devtime-preprint-tse19.pdf](./devtime-preprint-tse19.pdf) | Meyer et al. (2019). "What Constitutes a Good Day?" — Large-scale study of developer productivity factors |
-| [productivity-quality.pdf](./productivity-quality.pdf) | Storey et al. (2022). "How Developers and Managers Define and Trade Productivity for Quality" — SPACE/TRUCE framework validation (N=2,600+) |
+| [productivity-quality.pdf](./productivity-quality.pdf) | Storey et al. (2022). "How Developers and Managers Define and Trade Productivity for Quality" — SPACE/TRUCE framework validation (CHASE/ICSE) |
 | [factors-contributing-to-bad-days.pdf](./factors-contributing-to-bad-days.pdf) | Obi et al. (2024). "Identifying Factors Contributing to Bad Days for Software Developers" — Mixed-methods study of bad day factors (ICSE 2025 SEIP) |
 | [developer-thriving.pdf](./developer-thriving.pdf) | Hicks et al. (2024). "Developer Thriving" — Four sociocognitive factors for resilient productivity (N=1,282) |
 | [hicks-hevesi-cumulative-culture-theory.pdf](./hicks-hevesi-cumulative-culture-theory.pdf) | Hicks & Hevesi (2024). Cumulative culture theory applied to software development |

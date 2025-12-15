@@ -176,7 +176,7 @@ The framework occupies Layer 2 in a three-layer model:
 - **STS Mirroring Hypothesis**: 69% support across 142 studies (Colfer & Baldwin 2016)
 - **Socio-Technical Congruence**: 32% reduction in resolution time (Cataldo et al. 2008)
 - **DORA metrics**: N=39,000+ professionals, validated for Phases 5-7
-- **Developer Thriving**: r=0.43 with productivity (Hicks et al., N=2,600+)
+- **Developer Thriving**: r=0.43 with productivity (Hicks et al., N=1,282)
 - **Good Day factors**: 60.6% good days validated (Meyer et al., N=5,971)
 - **TTKM**: r=0.35 with team effectiveness (Ryan & O'Connor, N=48 teams)
 
@@ -293,7 +293,7 @@ Concepts are interconnected. Authoritative sources for key constructs:
 |--------|-------|--------|---------------|
 | STS mirroring support | 69% of 142 studies | Colfer & Baldwin 2016 | Meta-analysis |
 | Coordination congruence effect | 32% improvement | Cataldo et al. 2008 | T3 |
-| Developer thriving → productivity | r=0.43 | Hicks et al. 2024, N=2,600+ | T3 |
+| Developer thriving → productivity | r=0.43 | Hicks et al. 2024, N=1,282 | T3 |
 | TTKM → team effectiveness | r=0.35 | Ryan & O'Connor 2013, N=48 | T3 |
 | Good day prevalence | 60.6% | Meyer et al. 2019, N=5,971 | T3 |
 | PR dwell time (bad days) | +48.84% | Obi et al. 2024 | T3 |

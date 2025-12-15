@@ -128,7 +128,7 @@ graph TB
     end
     
     subgraph "ORGANISATIONAL CONTEXT"
-        O1[Storey et al. 2022<br/>SPACE/TRUCE<br/>N=2,600+]
+        O1[Storey et al. 2022<br/>SPACE/TRUCE<br/>Framework Validation]
         O2[Context Engineering 2.0<br/>System Design<br/>Community Practices]
     end
     
@@ -139,8 +139,8 @@ graph TB
     
     subgraph "TEAM LEVEL"
         T1[Wegner 1986<br/>Transactive Memory<br/>Who Knows What]
-        T2[Ryan & O'Connor<br/>Team Tacit Knowledge<br/>Measurement N=87]
-        T3[Hicks et al. 2024<br/>Developer Thriving<br/>N=2,600+]
+        T2[Ryan & O'Connor<br/>Team Tacit Knowledge<br/>Measurement N=48]
+        T3[Hicks et al. 2024<br/>Developer Thriving<br/>N=1,282]
     end
     
     subgraph "INDIVIDUAL LEVEL"
@@ -232,8 +232,8 @@ graph LR
     
     subgraph "EMPIRICAL EVIDENCE"
         E1[Meyer et al. 2019<br/>Good Days<br/>N=5,971]
-        E2[Hicks et al. 2024<br/>Thriving Factors<br/>N=2,600+]
-        E3[Storey et al. 2022<br/>Productivity-Quality<br/>N=2,600+]
+        E2[Hicks et al. 2024<br/>Thriving Factors<br/>N=1,282]
+        E3[Storey et al. 2022<br/>Productivity-Quality<br/>Microsoft Survey]
         E4[Obi et al. 2024<br/>Bad Days<br/>Triangulated]
     end
     
@@ -305,8 +305,8 @@ graph LR
 
 **Evidence Tests Predictions:**
 - Meyer: 60.6% good days, quantified factors (N=5,971)
-- Hicks: Four thriving factors validated (N=2,600+)
-- Storey: Productivity-quality tradeoffs documented (N=2,600+)
+- Hicks: Four thriving factors validated (N=1,282)
+- Storey: Productivity-quality tradeoffs documented
 - Obi: Bad days validated with telemetry (PR dwell +48.84%, p<0.01)
 
 **Without evidence, we cannot:**
@@ -340,9 +340,9 @@ This is why we need ALL four types. Industry often jumps straight to practice ("
 flowchart TD
     A[Naur 1985:<br/>Theory in Developer's Mind<br/>Cannot Be Fully Documented] --> B[Wegner 1986:<br/>Teams Distribute Knowledge<br/>Transactive Memory Systems]
     
-    B --> C[Ryan & O'Connor:<br/>Team Tacit Knowledge Measurable<br/>22-item scale, α=0.91<br/>N=87 teams]
+    B --> C[Ryan & O'Connor:<br/>Team Tacit Knowledge Measurable<br/>22-item scale, α=0.91<br/>N=48 teams]
     
-    C --> D[Hicks et al. 2024:<br/>Learning Culture Factor<br/>Social Support for Knowledge<br/>N=2,600+]
+    C --> D[Hicks et al. 2024:<br/>Learning Culture Factor<br/>Social Support for Knowledge<br/>N=1,282]
     
     D --> E[Hicks & Hevesi 2024:<br/>Cumulative Culture<br/>Social Learning > Individual<br/>Community Transmission]
     
@@ -387,11 +387,11 @@ flowchart TD
 
 3. **Ryan & O'Connor**: Created validated measure of team tacit knowledge
    - Achievement: Made the unmeasurable measurable (α=0.91 reliability)
-   - Limitation: Small sample (N=87), needs broader validation
+   - Limitation: Small sample (N=48 teams), needs broader validation
    - Implication: Can now test interventions
 
 4. **Hicks et al. (2024)**: Found "Learning Culture" factor predicts thriving
-   - Evidence: Social support for learning matters (N=2,600+)
+   - Evidence: Social support for learning matters (N=1,282)
    - Connection: Learning culture enables tacit knowledge transfer
    - Implication: Not just knowledge but meta-learning environment
 
@@ -434,7 +434,7 @@ flowchart LR
     end
     
     subgraph "THRIVING SYNTHESIS"
-        T1[Hicks et al. 2024<br/>DEVELOPER THRIVING<br/>N=2,600+]
+        T1[Hicks et al. 2024<br/>DEVELOPER THRIVING<br/>N=1,282]
         T2[Agency<br/>Learning Culture<br/>Support Systems<br/>Purpose]
         T3[Resilient Productivity<br/>Not Just Absence<br/>of Bad Days]
     end
@@ -709,7 +709,7 @@ flowchart TD
     
     subgraph "MEASUREMENT DEVELOPMENT"
         M1[Ryan & O'Connor:<br/>Team Tacit Knowledge<br/>22 items, α=0.91]
-        M2[Storey et al. 2022:<br/>SPACE dimensions<br/>Validated N=2,600+]
+        M2[Storey et al. 2022:<br/>SPACE dimensions<br/>Framework Validation]
         M3[Obi et al. 2024:<br/>Telemetry validation<br/>PR dwell, build times]
     end
     
@@ -764,13 +764,13 @@ flowchart TD
    - 22-item validated scale (α=0.91)
    - Measures team's shared tacit knowledge
    - Enables: Testing interventions to improve team knowledge
-   - Limitation: Small validation sample (N=87), Australian context
+   - Limitation: Small validation sample (N=48 teams), Irish/UK SME context
    - **Why this matters**: First validated measure of construct central to Naur/Wegner theories
 
 2. **Storey et al. (2022): SPACE/TRUCE Framework**
    - Satisfaction, Performance, Activity, Communication, Efficiency (SPACE)
    - Time, Robustness, Usability, Changeability, Expressiveness (TRUCE - quality)
-   - Validated across N=2,600+ developers (Microsoft + Stack Overflow)
+   - Validated through Microsoft survey (sample size not specified in paper)
    - Enables: Multidimensional tracking, tradeoff analysis
    - Limitation: Developer-centric (not business outcomes), cross-sectional
    - **Why this matters**: Validated alternative to velocity-only metrics
@@ -1281,11 +1281,11 @@ This collection bets on rigour winning eventually—because whilst narratives ar
 | STS design principles actionable | Strong (theoretical) | Cherns 1976 | Conceptual (widely applied) |
 | Theory-building essential | Strong (theoretical) | Naur 1985 | Conceptual |
 | Teams use transactive memory | Strong (empirical) | Wegner 1986 + Hicks 2024 | Multiple studies |
-| Tacit knowledge measurable | Moderate (small N) | Ryan & O'Connor | N=87 |
+| Tacit knowledge measurable | Moderate (small N) | Ryan & O'Connor | N=48 teams |
 | Good days have 5 factors | Strong | Meyer et al. 2019 | N=5,971 |
 | Bad days cause vicious cycles | Moderate (single org) | Obi et al. 2024 | N=214+79+131 |
-| Thriving has 4 factors | Strong | Hicks et al. 2024 | N=2,600+ |
-| SPACE dimensions valid | Strong | Storey et al. 2022 | N=2,600+ |
+| Thriving has 4 factors | Strong | Hicks et al. 2024 | N=1,282 |
+| SPACE dimensions valid | Strong | Storey et al. 2022 | Microsoft (sample unspecified) |
 | Cumulative culture lens | Strong (theoretical) | Hicks & Hevesi 2024 | Conceptual |
 | AI context design principles | Moderate (survey) | Context Engineering | 151 refs |
 | AI high-complexity collapse | Strong (empirical) | Illusion of Thinking | Systematic tests |
@@ -1301,7 +1301,7 @@ This collection bets on rigour winning eventually—because whilst narratives ar
 | Baxter & Sommerville 2011 | ✓ Peer-reviewed | *Interacting with Computers* | 2011 |
 | Ryan & O'Connor 2013 | ✓ Peer-reviewed | *Information and Software Technology* | 2013 |
 | Meyer et al. 2019 | ✓ Peer-reviewed | *IEEE TSE* | 2019 |
-| Storey et al. 2022 | ✓ Peer-reviewed | *IEEE TSE* | 2022 |
+| Storey et al. 2022 | ✓ Peer-reviewed | *CHASE (ICSE workshop)* | 2022 |
 | Hicks et al. 2024 | ✓ Peer-reviewed | *IEEE Software* | 2024 |
 | Obi et al. 2024 | ✓ Peer-reviewed | *ICSE 2025 SEIP* | 2024 |
 | Hicks & Hevesi 2024 | ⧗ Working paper | Unpublished | 2024 |
@@ -1313,6 +1313,6 @@ This collection bets on rigour winning eventually—because whilst narratives ar
 ---
 
 *Document Version: 2.0*  
-*Updated: 13 December 2024*  
+*Updated: 15 December 2025*  
 *Change: Integration of Socio-Technical Systems theory (Trist & Bamforth 1951, Cherns 1976, Baxter & Sommerville 2011)*  
 *Purpose: Integration architecture for AI-augmented SDLC framework literature foundation*
