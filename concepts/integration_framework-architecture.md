@@ -1299,7 +1299,7 @@ This collection bets on rigour winning eventually—because whilst narratives ar
 | Naur 1985 | ✓ Peer-reviewed | *Microprocessing and Microprogramming* | 1985 |
 | Wegner 1986 | ✓ Peer-reviewed | Springer book chapter | 1986 |
 | Baxter & Sommerville 2011 | ✓ Peer-reviewed | *Interacting with Computers* | 2011 |
-| Ryan & O'Connor | ✓ Peer-reviewed | *Journal of Systems and Software* | [Year TBC] |
+| Ryan & O'Connor 2013 | ✓ Peer-reviewed | *Information and Software Technology* | 2013 |
 | Meyer et al. 2019 | ✓ Peer-reviewed | *IEEE TSE* | 2019 |
 | Storey et al. 2022 | ✓ Peer-reviewed | *IEEE TSE* | 2022 |
 | Hicks et al. 2024 | ✓ Peer-reviewed | *IEEE Software* | 2024 |
