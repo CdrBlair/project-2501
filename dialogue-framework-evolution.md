@@ -161,6 +161,16 @@
 - Strategic judgement (which opportunities to pursue)
 - Organisational/political context understanding
 
+#### Transition Readiness: Initiation → Planning
+
+Sufficiency for `OPPORTUNITY_VALIDATED` is context-dependent. AI can help surface readiness through:
+
+- "What would make you confident enough to commit resources to planning?"
+- "Are stakeholders sufficiently aligned, or are there unresolved conflicts?"
+- "Is the business case strong enough to justify the investment?"
+- "What's the cost of starting planning now vs. waiting for more clarity?"
+- "If you proceed and the opportunity framing is wrong, what's the rework cost?"
+
 #### Evolution Risk
 
 - AI surfaces pattern → team treats as "the problem" → actual problem is something data doesn't capture
@@ -171,7 +181,129 @@
 
 ### Phase 2: Planning
 
-*To be developed*
+**ISO 12207 Processes**: 6.3.1 Project Planning, 6.3.3 Decision Management, 6.3.4 Risk Management
+
+**Information Composition**: 35% Formal / 55% Tacit / 10% Emergent
+
+**Primary Question**: HOW (to organise)—project organisation, resource allocation, governance
+
+**Key Insight**: Planning spans most of the project. Initial Planning operates with high uncertainty; it refines iteratively as Requirements and Design provide detail. The composition shifts from more tacit (early) to more formal (later) within the phase.
+
+#### Information Flow
+
+**Inputs from Phase 1 (Initiation):**
+
+| From Phase 1 | Type | How It Informs Planning |
+|--------------|------|-------------------------|
+| Business case | Formal | Scope boundaries, investment justification |
+| Vision/Mission/Objectives | Formal (captured) | Success criteria, alignment checks |
+| Constraints | Formal + Tacit | Fixed boundaries (budget, deadline, regulatory) |
+| Stakeholder map | Formal | Governance structure, communication needs |
+| Success criteria | Formal | Definition of done, acceptance thresholds |
+
+**New Data Sources for Phase 2:**
+
+| Category | Sources | Type |
+|----------|---------|------|
+| **Historical project data** | Past estimates vs actuals, velocity trends, similar project outcomes | Formal |
+| **Resource data** | Team capacity, skills inventory, availability, cost rates | Formal |
+| **Organisational data** | Budget cycles, competing priorities, approval processes | Formal + Tacit |
+| **Dependency data** | Other projects, systems, vendors, external timelines | Formal |
+| **Risk repositories** | Lessons learned, risk registers, incident histories | Formal (if captured) |
+| **Team knowledge** | Who works well together, realistic capacity, hidden constraints | Tacit |
+
+#### Qualitative Information Types
+
+| Type | Definition | Why It Matters |
+|------|------------|----------------|
+| **Governance model** | How decisions are made, escalated, approved | Defines authority and accountability |
+| **Risk appetite** | How much uncertainty is acceptable | Shapes contingency, buffer sizing, go/no-go thresholds |
+| **Team norms** | How the team works together, communication patterns | Affects realistic scheduling, collaboration assumptions |
+| **Dependency map** | What this project depends on; what depends on it | Critical path identification, external risk exposure |
+| **Resource flexibility** | What's fixed vs. negotiable | Constraint vs. variable in optimisation |
+| **Estimation confidence** | How certain are we about these numbers? | Informs contingency, communication of uncertainty |
+
+#### AI Elicitation Questions
+
+**For Governance:**
+- "Who has authority to approve scope changes?"
+- "What decisions require escalation, and to whom?"
+- "How are disagreements between stakeholders resolved?"
+- "What reporting cadence and format do stakeholders expect?"
+
+**For Risk Appetite:**
+- "What level of schedule risk is acceptable to stakeholders?"
+- "Are there immovable deadlines, or is the date negotiable if scope changes?"
+- "How much contingency buffer is typical for projects like this?"
+- "What would cause stakeholders to cancel the project?"
+
+**For Estimation:**
+- "What similar projects have we done, and how accurate were our estimates?"
+- "Where are we most uncertain in these estimates?"
+- "What assumptions are we making that could invalidate the plan?"
+- "If this estimate is wrong, which direction is it likely wrong?"
+
+**For Dependencies:**
+- "What external teams/systems must deliver for us to proceed?"
+- "What happens to our plan if [dependency X] is late?"
+- "Who else is depending on our deliverables?"
+- "What's our fallback if a key dependency fails?"
+
+**For Team Capacity:**
+- "What's the realistic availability of key people (not just allocated time)?"
+- "What other commitments compete for this team's attention?"
+- "Who are the bottleneck resources, and what's our plan if they're unavailable?"
+- "What skills gaps exist, and how will we address them?"
+
+#### Evolution Interventions
+
+| Activity | AI Augmentation | Human Retains |
+|----------|-----------------|---------------|
+| **Effort estimation** | Analyse historical data; generate estimate ranges with confidence intervals | Calibrate to team context; judge applicability of historical analogues |
+| **Risk identification** | Pattern match to similar project risks; enumerate from risk taxonomies | Assess organisational/political risks; judge likelihood and impact |
+| **Schedule generation** | Generate candidate schedules; identify critical path; flag conflicts | Validate against team knowledge; adjust for unstated constraints |
+| **Resource allocation** | Match skills to tasks; identify gaps; optimise utilisation | Assess team dynamics; navigate allocation politics |
+| **Dependency mapping** | Extract dependencies from documentation; visualise network | Identify tacit dependencies; assess reliability of external commitments |
+| **Contingency planning** | Generate scenarios; calculate impact of risks materialising | Judge which risks warrant contingency; decide acceptable exposure |
+
+#### Information Debt Risk
+
+Planning is particularly vulnerable to **proceeding at risk** because:
+- Pressure to start "real work" (Implementation) creates urgency to complete planning
+- Uncertainty is inherent—waiting for "sufficient information" can feel like paralysis
+- Estimates are always uncertain; there's no clear "sufficient" threshold
+
+**Common information debt patterns:**
+
+| Debt Pattern | What's Missing | How It Manifests Later |
+|--------------|----------------|------------------------|
+| Optimistic estimates | Tacit knowledge of actual complexity | Schedule slips, overtime, scope cuts |
+| Undocumented assumptions | Explicit statement of what must be true | Surprises when assumptions fail |
+| Ignored dependencies | Assessment of external reliability | Blocked work, critical path changes |
+| Paper governance | Real decision authority understanding | Delays awaiting approvals nobody knew were needed |
+
+#### What Must Be Preserved
+
+- Human judgement on estimation (AI can inform, not decide)
+- Organisational/political context understanding
+- Stakeholder relationship management
+- Risk appetite calibration to organisational culture
+
+#### Transition Readiness: Planning → Requirements
+
+Sufficiency for `SCOPE_BOUNDED` is context-dependent. AI can help surface readiness through:
+
+- "What would you need to know before committing resources to detailed requirements work?"
+- "What level of estimate confidence is acceptable to proceed?"
+- "What risks are you comfortable carrying forward vs. resolving now?"
+- "If you proceed now and the plan is wrong, what's the cost of rework?"
+- "Who needs to approve before requirements work begins, and are they ready?"
+
+#### Evolution Risk
+
+- AI-generated schedules that look precise but encode unrealistic assumptions
+- Over-reliance on historical data that doesn't match current context
+- Plans that satisfy formal criteria but miss tacit organisational constraints
 
 ---
 
@@ -246,6 +378,7 @@ Evolution and Revolution are not mutually exclusive. Organisations may:
 
 | Version | Date | Changes |
 |---------|------|---------|
+| 0.3 | December 2025 | Added detailed Phase 2 (Planning); added transition readiness questions |
 | 0.2 | December 2025 | Added detailed Phase 1 (Initiation/Conception); corrected phase names |
 | 0.1 | December 2025 | Initial placeholder |
 

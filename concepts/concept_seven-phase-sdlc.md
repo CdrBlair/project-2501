@@ -69,6 +69,24 @@ Information debt manifests as:
 
 Proceeding at risk is sometimes necessary (time pressure, learning through doing, acceptable uncertainty), but should be a conscious decision with understood consequences, not an accidental default.
 
+### Transition Sufficiency
+
+**"Sufficient information" for a transition is not prescribed but discovered.** Each organisation, team, and project has different risk tolerances and rework costs. What constitutes "enough" to proceed depends on:
+
+- **Organisational risk appetite**: Some organisations accept higher uncertainty; others require more certainty
+- **Rework costs**: If downstream rework is cheap, proceeding earlier is reasonable; if expensive, waiting for more information is prudent
+- **Learning strategy**: Sometimes proceeding at risk is deliberate—learning through doing when analysis would take longer than experimentation
+- **Deadline pressure**: Fixed deadlines may force proceeding at risk regardless of information state
+- **Stakeholder alignment**: Formal sufficiency may be less important than stakeholder consensus
+
+**AI's role is to help humans articulate their sufficiency criteria** through targeted questions:
+- "What would make you confident enough to proceed?"
+- "What's the cost of waiting for more information vs. proceeding now?"
+- "What risks are you comfortable carrying forward vs. resolving now?"
+- "If you proceed at risk, how will you detect accumulating debt?"
+
+This makes transition decisions **conscious and contextual** rather than defaulting to either premature progression or analysis paralysis.
+
 ### Complementary Views of Phase Execution
 
 | View | What It Shows | When It's Useful |
