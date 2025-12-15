@@ -1,6 +1,14 @@
 # Concepts
 
-This directory contains the conceptual framework documentation for the AI-Augmented SDLC Framework. The documents are organised into five categories based on their prefix, reflecting their role in the overall framework architecture.
+This directory contains the conceptual framework documentation for the **Dialogue Framework**—an evidence-based approach to AI-augmented software development.
+
+---
+
+## Framework Overview
+
+| Document | Description |
+|----------|-------------|
+| **[dialogue-framework.md](./dialogue-framework.md)** | **Start here** — The Dialogue Framework overview, core concepts, and theoretical foundations |
 
 ---
 
@@ -67,7 +75,9 @@ Practical guidance for applying the framework in real-world contexts.
 
 ## Summary
 
-This concepts directory forms the core intellectual foundation of the AI-Augmented SDLC Framework. The framework addresses a fundamental challenge: how to systematically integrate AI capabilities into software development while preserving the human cognitive engagement essential for building and maintaining **theory** about software systems.
+This concepts directory forms the core intellectual foundation of the **Dialogue Framework**. The framework addresses a fundamental challenge: how to systematically integrate AI capabilities into software development while preserving the human cognitive engagement essential for building and maintaining **theory** about software systems.
+
+The name "Dialogue" reflects the framework's core insight: software development succeeds or fails based on the quality of *conversation* that transfers understanding between participants—humans and humans, humans and AI, and across time through artifacts.
 
 ### Key Principles
 
