@@ -26,7 +26,7 @@ AI changes the participants in these dialogues but not the fundamental need for 
 
 ## Theoretical Foundations
 
-The Dialogue Framework rests on thirteen peer-reviewed sources spanning 1951–2025, organised into four foundational pillars:
+The Dialogue Framework rests on thirteen academic sources spanning 1951–2025 (nine peer-reviewed, four preprints or working papers), organised into four foundational pillars:
 
 ### Pillar 1: Socio-Technical Systems (System Design)
 
@@ -67,7 +67,9 @@ The Dialogue Framework rests on thirteen peer-reviewed sources spanning 1951–2
 | Hua et al. (2025) | Context Engineering 2.0; AI context management principles |
 | Shojaee et al. (2025) | Illusion of Thinking; AI reasoning limits and collapse |
 
-**Key insight**: AI has fundamental reasoning limits. It cannot build theory (Naur sense), execute algorithms reliably at high complexity, or participate fully in human transactive memory systems.
+**Note**: These sources are preprints/corporate research, not yet peer-reviewed.
+
+**Key insight**: AI has specific, measurable limitations (e.g., reasoning collapse at high complexity). Whether AI "builds theory" or "participates in TMS" is contested; what matters practically is designing effective human-AI dialogue.
 
 ---
 
@@ -119,8 +121,8 @@ The Dialogue Framework comprises interconnected concepts that together provide a
 | **Transform** | Convert between representations |
 | **Validate** | Confirm correctness or appropriateness |
 | **Decide** | Select among alternatives |
-| **Preserve** | Maintain for future use |
-| **Communicate** | Transfer between actors |
+| **Generate** | Produce new artifacts |
+| **Preserve** | Store for future retrieval |
 
 [→ Full concept: `concept_capability-model.md`]
 
@@ -170,7 +172,7 @@ The Dialogue Framework comprises interconnected concepts that together provide a
 
 *Where understanding degrades*
 
-- Phase transitions create information loss (30-40% typical)
+- Phase transitions create information loss (35-55% typical)
 - Tacit and emergent knowledge disproportionately lost
 - Compounding effect across multiple transitions
 - Mitigation requires deliberate dialogue and capture mechanisms
@@ -231,17 +233,17 @@ At its core, The Dialogue Framework models software development as a series of c
 
 ### AI's Role in Dialogue
 
-AI participates in dialogue but with fundamental asymmetries:
+AI participates in dialogue with asymmetric but complementary characteristics:
 
-| Dialogue Aspect | Human Capability | AI Capability |
-|-----------------|------------------|---------------|
-| **Building theory** | Full | None |
-| **Transactive memory** | Full participation | Retrieval support only |
-| **Processing tacit knowledge** | Direct access | Cannot access |
-| **Processing emergent knowledge** | Creates through interaction | Cannot participate |
-| **Processing formal knowledge** | Full | Full |
+| Dialogue Aspect | Human | AI |
+|-----------------|-------|-----|
+| **Knowledge relationship** | Direct access to formal, tacit, emergent | Direct access to formal; mediated access to tacit/emergent through dialogue |
+| **Theory-building** | Builds coherent explanatory models | Whether AI builds analogous understanding is contested |
+| **Transactive memory** | Full social participation | Asymmetric—queryable but not socially embedded |
+| **Persistence** | Accumulated understanding across time | Fresh context each session (as of 2024-2025) |
 | **Retrieval at scale** | Limited | Excellent |
-| **Pattern recognition** | Contextual | Statistical |
+
+**Epistemic note**: Naur (1985) and Wegner (1986) defined theory-building and transactive memory for human cognition before modern AI. Claims about AI's relationship to these constructs are this framework's interpretations, not established findings.
 
 ---
 
@@ -299,7 +301,15 @@ The framework's claims are grounded in:
 1. **Prescriptive certainty**: Guidance is probabilistic, context-dependent
 2. **Universal applicability**: Western, large-tech-company bias in evidence base
 3. **AI capability prediction**: Current limitations may change; framework temporally qualified
-4. **Process prescription**: Framework describes *what* and *why*, not detailed *how*
+
+### Process Guidance
+
+The framework provides two meta-processes for AI-augmented development, reflecting different change strategies:
+
+- **Evolution**: Incremental adoption from current practice—adding AI capabilities to existing workflows while preserving team knowledge and organisational structures
+- **Revolution**: Transformational redesign—fundamentally reconceiving work systems for joint human-AI optimisation
+
+The Seven-Phase SDLC provides the structural foundation; these meta-processes guide *how* organisations traverse phases with AI integration. Detailed process specifications are provided in the guidance documents.
 
 ### Known Gaps
 
@@ -327,6 +337,7 @@ The framework's claims are grounded in:
 
 | Version | Date | Changes |
 |---------|------|---------|
+| 0.2 | December 2025 | Refined AI capability framing; corrected evidence base claims; added Evolution/Revolution meta-processes |
 | 0.1 | December 2025 | Initial skeleton |
 
 ---
