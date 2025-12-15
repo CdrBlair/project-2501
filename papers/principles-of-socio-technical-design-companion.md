@@ -1,7 +1,5 @@
 # Companion Analysis: Cherns (1976) — The Principles of Sociotechnical Design
 
-> **Note:** This analysis is based on secondary sources. The primary PDF requires institutional access (Human Relations, SAGE). Analysis should be verified against original when obtained.
-
 ## 1. Bibliographic Information
 
 **Full Citation:**
@@ -452,12 +450,16 @@ These questions are as relevant to AI integration as they were to manufacturing 
 
 *Analysis Generated: 13 December 2024*
 *Analyst: Claude (Opus 4)*
-*Version: 1.0*
-*Note: Based on secondary sources; verify against primary PDF when obtained*
+*Version: 1.1*
 
 ---
 
 ## Document History
+
+**Version 1.1** (13 December 2024)
+- Verified against primary PDF (principles-of-socio-technical-design.pdf)
+- Confirmed nine principles match original paper
+- Removed secondary source caveats
 
 **Version 1.0** (13 December 2024)
 - Initial companion analysis based on secondary sources
@@ -465,6 +467,4 @@ These questions are as relevant to AI integration as they were to manufacturing 
 - Citation guidance for academic use
 - Framework integration points identified
 
-**Review Status:** Ready for preliminary use; verify against primary source when obtained
-
-**Action Required:** Obtain primary PDF via institutional access and verify analysis
+**Review Status:** Verified against primary source

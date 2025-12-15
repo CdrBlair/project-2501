@@ -13,16 +13,20 @@ Academic papers providing foundational research and evidence.
 | Document | Description |
 |----------|-------------|
 | [naur-1985-programming.pdf](./naur-1985-programming.pdf) | Naur, P. (1985). "Programming as Theory Building" — Foundational paper arguing programming is cognitive theory construction |
-| [dynamic-theory-organizational-knowledge-creation.pdf](./dynamic-theory-organizational-knowledge-creation.pdf) | Nonaka, I. (1994). "A Dynamic Theory of Organizational Knowledge Creation" — SECI model for knowledge conversion |
+| [wegner-1986-transactive-memory.pdf](./wegner-1986-transactive-memory.pdf) | Wegner, D.M. (1986). "Transactive Memory: A Contemporary Analysis of the Group Mind" — Teams distribute knowledge through "who knows what" systems |
+| [dynamic-theory-organizational-knowledge-creation.pdf](./dynamic-theory-organizational-knowledge-creation.pdf) | Nonaka, I. (1994). "A Dynamic Theory of Organizational Knowledge Creation" — SECI model for knowledge conversion (supplementary, not core thirteen) |
 | [team-tacit-knowledge-measure.pdf](./team-tacit-knowledge-measure.pdf) | Ryan & O'Connor (2013). Team tacit knowledge measurement instrument with validated scales |
-| [acquiring-sharing-tacit-knowledge-software.pdf](./acquiring-sharing-tacit-knowledge-software.pdf) | Research on mechanisms for acquiring and sharing tacit knowledge in software teams |
+| [acquiring-sharing-tacit-knowledge-software.pdf](./acquiring-sharing-tacit-knowledge-software.pdf) | Ryan, S. & O'Connor, R.V. (2013). "Acquiring and sharing tacit knowledge in software development teams" — Empirical study of tacit knowledge mechanisms |
 | [devtime-preprint-tse19.pdf](./devtime-preprint-tse19.pdf) | Meyer et al. (2019). "What Constitutes a Good Day?" — Large-scale study of developer productivity factors |
+| [productivity-quality.pdf](./productivity-quality.pdf) | Storey et al. (2022). "How Developers and Managers Define and Trade Productivity for Quality" — SPACE/TRUCE framework validation (N=2,600+) |
+| [factors-contributing-to-bad-days.pdf](./factors-contributing-to-bad-days.pdf) | Obi et al. (2024). "Identifying Factors Contributing to Bad Days for Software Developers" — Mixed-methods study of bad day factors (ICSE 2025 SEIP) |
 | [developer-thriving.pdf](./developer-thriving.pdf) | Hicks et al. (2024). "Developer Thriving" — Four sociocognitive factors for resilient productivity (N=1,282) |
 | [hicks-hevesi-cumulative-culture-theory.pdf](./hicks-hevesi-cumulative-culture-theory.pdf) | Hicks & Hevesi (2024). Cumulative culture theory applied to software development |
+| [illusion-of-thinking.pdf](./illusion-of-thinking.pdf) | Shojaee et al. (2025). "The Illusion of Thinking" — AI reasoning limitations, three complexity regimes |
 | [context-engineering-v2.pdf](./context-engineering-v2.pdf) | Hua et al. (2025). "Context Engineering 2.0" — Survey of context engineering for LLMs/agents |
 | [trist-bamforth-1951-longwall-coal.pdf](./trist-bamforth-1951-longwall-coal.pdf) | Trist, E.L. & Bamforth, K.W. (1951). "Some Social and Psychological Consequences of the Longwall Method of Coal-Getting" — Seminal paper founding socio-technical systems theory |
 | [baxter-sommerville-2011-sts-systems-engineering.pdf](./baxter-sommerville-2011-sts-systems-engineering.pdf) | Baxter, G. & Sommerville, I. (2011). "Socio-technical systems: From design methods to systems engineering" — Primary bridge paper for STS in software engineering |
-| **cherns-1976-sociotechnical-design-principles.pdf** | ⚠️ **TO OBTAIN**: Cherns, A.B. (1976). "The Principles of Sociotechnical Design" — Nine foundational design principles. *Requires institutional access (Human Relations, SAGE)* |
+| [principles-of-socio-technical-design.pdf](./principles-of-socio-technical-design.pdf) | Cherns, A.B. (1976). "The Principles of Sociotechnical Design" — Nine foundational design principles |
 
 ### Companion Analyses
 
@@ -34,15 +38,16 @@ Detailed analytical documents that extract key insights from primary sources and
 | [wegner-1986-transactive-memory-companion.md](./wegner-1986-transactive-memory-companion.md) | Analysis of Wegner's transactive memory theory and its application to software teams |
 | [dynamic-theory-organizational-knowledge-creation-companion.md](./dynamic-theory-organizational-knowledge-creation-companion.md) | Analysis of Nonaka's SECI model for knowledge conversion (influential but contested framework) |
 | [team-tacit-knowledge-measure-companion.md](./team-tacit-knowledge-measure-companion.md) | Analysis of the team tacit knowledge measurement instrument and validation approach |
-| [acquiring-sharing-tacit-knowledge-software-companion.md](./acquiring-sharing-tacit-knowledge-software-companion.md) | Analysis of tacit knowledge acquisition and sharing mechanisms (placeholder—requires completion) |
+| [acquiring-sharing-tacit-knowledge-software-companion.md](./acquiring-sharing-tacit-knowledge-software-companion.md) | Analysis of Ryan & O'Connor's empirical study of tacit knowledge acquisition and sharing in software teams |
 | [devtime-preprint-tse19-companion.md](./devtime-preprint-tse19-companion.md) | Analysis of Meyer et al.'s research on developer good days and productivity factors |
+| [factors-contributing-to-bad-days-companion.md](./factors-contributing-to-bad-days-companion.md) | Analysis of Obi et al.'s research on bad day factors and telemetry validation |
 | [developer-thriving-companion.md](./developer-thriving-companion.md) | Analysis of the Developer Thriving framework and its four sociocognitive factors |
 | [hicks-hevesi-cumulative-culture-theory-companion.md](./hicks-hevesi-cumulative-culture-theory-companion.md) | Analysis of cumulative culture theory applied to software development (working paper) |
 | [context-engineering-v2-companion.md](./context-engineering-v2-companion.md) | Analysis of Context Engineering 2.0 survey, tracing evolution from early NLP to LLM agents |
 | [illusion-of-thinking-companion.md](./illusion-of-thinking-companion.md) | Analysis of AI reasoning limitations and implications for human-AI collaboration |
 | [productivity-quality-companion.md](./productivity-quality-companion.md) | Analysis of productivity and quality research with measurement framework implications |
 | [trist-bamforth-1951-longwall-coal-companion.md](./trist-bamforth-1951-longwall-coal-companion.md) | Analysis of the founding STS paper, joint optimisation principle, and framework integration |
-| [cherns-1976-companion.md](./cherns-1976-companion.md) | Analysis of nine STS design principles and their application to AI-augmented development (based on secondary sources; PDF pending) |
+| [principles-of-socio-technical-design-companion.md](./principles-of-socio-technical-design-companion.md) | Analysis of Cherns' nine STS design principles and their application to AI-augmented development |
 | [baxter-sommerville-2011-sts-systems-engineering-companion.md](./baxter-sommerville-2011-sts-systems-engineering-companion.md) | Analysis of STS bridge to software engineering and STSE framework |
 
 **See also:** [`research/`](../research/) directory for reference materials, integration analyses, and exploratory research documents.
@@ -72,18 +77,19 @@ Each source meets multiple criteria:
 
 ### Temporal Coverage
 
-The collection deliberately spans seven decades:
+The collection deliberately spans seven decades (thirteen core sources per `integration_framework-architecture.md`):
 
 | Era | Sources | Contribution |
 |-----|---------|--------------|
 | **1951** | Trist & Bamforth (1951) | Founding of socio-technical systems theory; joint optimisation principle |
 | **1976** | Cherns (1976) | Nine actionable STS design principles |
 | **1985-1990** | Naur (1985), Wegner (1986) | Foundational theory on individual cognition and team memory |
-| **1994** | Nonaka (1994) | Knowledge creation and conversion models |
 | **2011** | Baxter & Sommerville (2011) | STS bridge to software systems engineering |
 | **2013-2019** | Ryan & O'Connor (2013), Meyer et al. (2019) | Empirical measurement instruments and validation |
-| **2022-2024** | Storey et al. (2022), Hicks et al. (2024) | Developer experience frameworks and thriving factors |
+| **2022-2024** | Storey et al. (2022), Obi et al. (2024), Hicks et al. (2024), Hicks & Hevesi (2024) | Developer experience frameworks, good/bad days, thriving factors |
 | **2025** | Context Engineering 2.0, Illusion of Thinking | AI era considerations and limitations |
+
+**Note:** Nonaka (1994) is included as supplementary reference but is not one of the thirteen core sources—the companion notes it as "influential but contested."
 
 ### Companion Document Structure
 

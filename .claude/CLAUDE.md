@@ -81,19 +81,23 @@ Documents are organised by prefix reflecting their role:
 
 Primary sources (PDFs) with companion analyses following the naming convention `$<pdf-name>-companion.md`:
 
-**Key Sources:**
+**Key Sources (thirteen core sources per integration_framework-architecture.md):**
 - Trist & Bamforth (1951) — Socio-Technical Systems founding paper
 - Cherns (1976) — Nine STS design principles
 - Naur (1985) — Programming as Theory Building
 - Wegner (1986) — Transactive Memory
-- Nonaka (1994) — SECI model for knowledge creation
 - Baxter & Sommerville (2011) — STS bridge to software engineering
 - Ryan & O'Connor (2013) — Team Tacit Knowledge Measure
 - Meyer et al. (2019) — "Today was a Good Day" developer experience
+- Storey et al. (2022) — SPACE/TRUCE productivity framework
+- Obi et al. (2024) — "Bad Days" developer experience
 - Hicks et al. (2024) — Developer Thriving
 - Hicks & Hevesi (2024) — Cumulative Culture Theory
 - Context Engineering 2.0 (2025) — AI context management
 - Illusion of Thinking (2025) — AI reasoning limitations
+
+**Additional Sources (in papers/ but not core thirteen):**
+- Nonaka (1994) — SECI model (influential but contested; companion notes limitations)
 
 ### Research Directory (`research/`)
 

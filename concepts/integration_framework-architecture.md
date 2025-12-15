@@ -1303,7 +1303,7 @@ This collection bets on rigour winning eventually—because whilst narratives ar
 | Meyer et al. 2019 | ✓ Peer-reviewed | *IEEE TSE* | 2019 |
 | Storey et al. 2022 | ✓ Peer-reviewed | *IEEE TSE* | 2022 |
 | Hicks et al. 2024 | ✓ Peer-reviewed | *IEEE Software* | 2024 |
-| Obi et al. 2024 | ⧗ Preprint | arXiv (under review) | 2024 |
+| Obi et al. 2024 | ✓ Peer-reviewed | *ICSE 2025 SEIP* | 2024 |
 | Hicks & Hevesi 2024 | ⧗ Working paper | Unpublished | 2024 |
 | Context Engineering 2025 | ⧗ Preprint | arXiv (survey) | 2025 |
 | Illusion of Thinking 2025 | ⧗ Corporate research | Apple (unpublished) | 2025 |
