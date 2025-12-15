@@ -38,6 +38,47 @@
 
 **Primary Question**: WHY—strategic rationale, opportunity framing
 
+#### Document Types
+
+*Classification per [Document Type Classification Framework](./concepts/concept_document-type-classification.md)*
+
+**Organisational Inputs** (Scope: Organisational — exist before project):
+
+| Document Type | Domain | Temporal | Purpose in Phase 1 |
+|---------------|--------|----------|-------------------|
+| Strategic Plan | STR | Standing | Alignment check—does opportunity fit strategy? |
+| Investment Criteria | STR | Standing | Thresholds for go/no-go decisions |
+| Portfolio Register | STR | Dynamic | Context—what else is in flight? |
+| Regulatory Constraints | REF | Standing | Boundaries that apply to all initiatives |
+| Organisational Glossary | REF | Standing | Consistent terminology from start |
+
+**AI should ask**: "Are there organisational strategy documents, investment criteria, or portfolio views I should reference?"
+
+**Project Inputs** (Scope: Project — from triggering event):
+
+| Document Type | Domain | Temporal | Source |
+|---------------|--------|----------|--------|
+| Opportunity Statement | STR | Ephemeral | Triggering event; may be informal |
+| Initial Data/Evidence | WRK | Ephemeral | Whatever triggered the initiative |
+
+**Project Outputs** (Scope: Project — produced by this phase):
+
+| Document Type | Domain | Temporal | Downstream Consumer |
+|---------------|--------|----------|---------------------|
+| Business Case (STR-001) | STR | Standing | Planning, Requirements, all phases |
+| Project Charter (STR-002) | STR | Standing | Planning, governance |
+| Stakeholder Map | STR | Dynamic | All phases |
+
+**Working Documents** (Scope: Task — ephemeral, contribute to outputs):
+
+| Document Type | Domain | Captures | Contributes To |
+|---------------|--------|----------|----------------|
+| Stakeholder Interview Notes | WRK | Initial conversations | Business Case, Stakeholder Map |
+| Market Analysis Notes | WRK | Research findings | Business Case |
+| Feasibility Assessment Notes | WRK | Technical/resource evaluation | Business Case |
+
+**Process Validation**: Working documents must capture rationale at creation time (capture window). AI should flag if rationale is missing before synthesis.
+
 #### Data Sources Taxonomy
 
 | Category | Sources | Information Type |
@@ -189,6 +230,51 @@ Sufficiency for `OPPORTUNITY_VALIDATED` is context-dependent. AI can help surfac
 
 **Key Insight**: Planning spans most of the project. Initial Planning operates with high uncertainty; it refines iteratively as Requirements and Design provide detail. The composition shifts from more tacit (early) to more formal (later) within the phase.
 
+#### Document Types
+
+*Classification per [Document Type Classification Framework](./concepts/concept_document-type-classification.md)*
+
+**Organisational Inputs** (Scope: Organisational — exist before project):
+
+| Document Type | Domain | Temporal | Purpose in Phase 2 |
+|---------------|--------|----------|-------------------|
+| Resource Pool / Skills Inventory | OPS | Dynamic | Who's available; what skills exist |
+| Estimation Guidelines | REF | Standing | Standard approaches, historical benchmarks |
+| Risk Taxonomy | REF | Standing | Categories of risks to consider |
+| Governance Framework | STR | Standing | Decision rights, escalation paths, approvals |
+| Project Management Standards | REF | Standing | Required deliverables, templates, processes |
+| Lessons Learned Repository | HST | Standing | What went wrong/right on past projects |
+
+**AI should ask**: "Are there organisational estimation guidelines, risk taxonomies, or lessons learned I should reference?"
+
+**Project Inputs** (Scope: Project — from Phase 1):
+
+| Document Type | Domain | Temporal | Source |
+|---------------|--------|----------|--------|
+| Business Case (STR-001) | STR | Standing | Phase 1 |
+| Project Charter (STR-002) | STR | Standing | Phase 1 |
+| Stakeholder Map | STR | Dynamic | Phase 1 |
+
+**Project Outputs** (Scope: Project — produced by this phase):
+
+| Document Type | Domain | Temporal | Downstream Consumer |
+|---------------|--------|----------|---------------------|
+| Project Plan | STR | Dynamic | All phases; updated throughout |
+| Scope Statement (STR-003) | STR | Standing | Requirements, Design, all phases |
+| Risk Register (STR-004) | STR | Dynamic | All phases; continuously updated |
+| Resource Plan | STR | Dynamic | Implementation, Operations |
+| Communication Plan | STR | Standing | All stakeholder interactions |
+
+**Working Documents** (Scope: Task — ephemeral, contribute to outputs):
+
+| Document Type | Domain | Captures | Contributes To |
+|---------------|--------|----------|----------------|
+| Estimation Workshop Notes | WRK | Team estimates, assumptions, confidence | Project Plan |
+| Risk Assessment Notes | WRK | Risk brainstorming, analysis | Risk Register |
+| Dependency Analysis Notes | WRK | External dependency assessment | Project Plan, Risk Register |
+
+**Process Validation**: Estimation assumptions and risk assessment rationale must be captured at workshop time. AI should flag missing rationale before incorporating into standing documents.
+
 #### Information Flow
 
 **Inputs from Phase 1 (Initiation):**
@@ -316,6 +402,63 @@ Sufficiency for `SCOPE_BOUNDED` is context-dependent. AI can help surface readin
 **Primary Question**: WHAT—stakeholder needs, formal specifications
 
 **The Formalisation Challenge**: Requirements sits at the critical point where tacit understanding must become formal specification. This is where "what we all know" must become "what is explicitly documented"—and where the gap between these often causes project failure.
+
+#### Document Types
+
+*Classification per [Document Type Classification Framework](./concepts/concept_document-type-classification.md)*
+*Detailed registry: [Example Document Type Registry (Phase 3)](./concepts/example_document-type-registry.md)*
+
+**Organisational Inputs** (Scope: Organisational — exist before project):
+
+| Document Type | Domain | Temporal | Purpose in Phase 3 |
+|---------------|--------|----------|-------------------|
+| Enterprise Domain Model | REF | Standing | Consistent entity definitions across projects |
+| Organisational Glossary | REF | Standing | Standard terminology |
+| Requirements Standards | REF | Standing | Templates, quality criteria, traceability requirements |
+| Regulatory Requirements | SPC | Standing | Compliance constraints that apply |
+| UI/UX Guidelines | REF | Standing | User experience standards |
+| Integration Standards | REF | Standing | How systems connect; API conventions |
+
+**AI should ask**: "Are there organisational domain models, glossaries, or requirements standards I should follow? What regulatory or compliance requirements apply?"
+
+**Project Inputs** (Scope: Project — from Phase 1 & 2):
+
+| Document Type | Domain | Temporal | Source |
+|---------------|--------|----------|--------|
+| Business Case (STR-001) | STR | Standing | Phase 1 |
+| Project Charter (STR-002) | STR | Standing | Phase 1 |
+| Scope Statement (STR-003) | STR | Standing | Phase 2 |
+| Risk Register (STR-004) | STR | Dynamic | Phase 2 |
+| Stakeholder Map | STR | Dynamic | Phase 1 |
+
+**Project Outputs** (Scope: Project — produced by this phase):
+
+| Document Type | Domain | Temporal | Downstream Consumer |
+|---------------|--------|----------|---------------------|
+| Stakeholder Requirements (SPC-001) | SPC | Standing | Design, Testing |
+| System Requirements (SPC-002) | SPC | Standing | Design, Implementation, Testing |
+| Business Rules Catalogue (SPC-003) | SPC | Standing | Design, Implementation, Testing |
+| Traceability Matrix (SPC-004) | SPC | Dynamic | All phases |
+| Prioritised Backlog (SPC-005) | SPC | Dynamic | Design, Implementation |
+| Domain Model (REF-001) | REF | Standing | Design, Implementation |
+| Glossary (REF-002) | REF | Standing | All phases |
+
+**Working Documents** (Scope: Task — ephemeral, contribute to outputs):
+
+| Document Type | Domain | Captures | Contributes To |
+|---------------|--------|----------|----------------|
+| Interview Notes (WRK-001) | WRK | Stakeholder conversations | SPC-001 |
+| Workshop Output (WRK-002) | WRK | Group elicitation sessions | SPC-001, REF-001 |
+| Analysis Notes (WRK-003) | WRK | Analytical reasoning | SPC-002, SPC-003 |
+| Legacy Code Analysis (WRK-004) | WRK | Reverse-engineered understanding | SPC-003, REF-001 |
+
+**Historical Documents** (Scope: Project — negative knowledge):
+
+| Document Type | Domain | Purpose |
+|---------------|--------|---------|
+| Discarded Alternative (HST-001) | HST | Requirements approaches rejected with rationale |
+
+**Process Validation**: Interview notes and workshop outputs must capture rationale at creation time (capture window). AI should validate rationale is present before synthesis into standing documents.
 
 #### Information Flow
 
@@ -593,7 +736,392 @@ Sufficiency for `REQUIREMENTS_BASELINED` is context-dependent. AI can help surfa
 
 ### Phase 4: Design/Architecture
 
-*To be developed*
+**ISO 12207 Processes**: 6.4.4 Architecture Definition, 6.4.5 Design Definition
+
+**Information Composition**: 65% Formal / 25% Tacit / 10% Emergent
+
+**Primary Question**: HOW (to build)—solution structure, component design, technical decisions
+
+**The Trade-off Challenge**: Design is inherently about choices. Every architectural decision involves trade-offs—performance vs. maintainability, flexibility vs. simplicity, build vs. buy. Multiple valid solutions exist; the "right" answer depends on context, constraints, and values that AI cannot fully assess.
+
+#### Document Types
+
+*Classification per [Document Type Classification Framework](./concepts/concept_document-type-classification.md)*
+
+**Organisational Inputs** (Scope: Organisational — exist before project):
+
+| Document Type | Domain | Temporal | Purpose in Phase 4 |
+|---------------|--------|----------|-------------------|
+| Reference Architecture | DES | Standing | Structural patterns to follow |
+| Technology Standards | REF | Standing | Approved technologies, platforms |
+| Architecture Principles | REF | Standing | Guiding principles for decisions |
+| Integration Standards | REF | Standing | How systems connect; API conventions |
+| Security Standards | REF | Standing | Security patterns, requirements |
+| Coding Standards | REF | Standing | Implementation conventions |
+| Build vs. Buy Policy | STR | Standing | Make/buy decision criteria |
+| Architecture Review Process | REF | Standing | Approval gates, review criteria |
+
+**AI should ask**: "Are there reference architectures, technology standards, or architecture principles I should follow? What integration and security standards apply?"
+
+**Project Inputs** (Scope: Project — from Phase 1-3):
+
+| Document Type | Domain | Temporal | Source |
+|---------------|--------|----------|--------|
+| System Requirements (SPC-002) | SPC | Standing | Phase 3 |
+| Business Rules Catalogue (SPC-003) | SPC | Standing | Phase 3 |
+| Domain Model (REF-001) | REF | Standing | Phase 3 |
+| Glossary (REF-002) | REF | Standing | Phase 3 |
+| Risk Register (STR-004) | STR | Dynamic | Phase 2 |
+| Constraints | STR | Standing | Phase 1 & 2 |
+
+**Project Outputs** (Scope: Project — produced by this phase):
+
+| Document Type | Domain | Temporal | Downstream Consumer |
+|---------------|--------|----------|---------------------|
+| Architecture Description (DES-001) | DES | Standing | Implementation, Testing, Operations |
+| Component Design (DES-002) | DES | Standing | Implementation |
+| Data Architecture (DES-003) | DES | Standing | Implementation, Operations |
+| Interface Specifications | DES | Standing | Implementation, Integration |
+| Architecture Decision Records (ADRs) | STR | Standing | All phases; future maintenance |
+| Technical Debt Register | STR | Dynamic | Implementation, Operations |
+
+**Working Documents** (Scope: Task — ephemeral, contribute to outputs):
+
+| Document Type | Domain | Captures | Contributes To |
+|---------------|--------|----------|----------------|
+| Design Spike Notes | WRK | Proof-of-concept findings | DES-001, ADRs |
+| Trade-off Analysis Notes | WRK | Options evaluated, rationale | ADRs |
+| Architecture Review Notes | WRK | Review feedback, decisions | DES-001, ADRs |
+
+**Historical Documents** (Scope: Project — negative knowledge):
+
+| Document Type | Domain | Purpose |
+|---------------|--------|---------|
+| Discarded Alternative (HST-001) | HST | Design approaches rejected with rationale |
+
+**Process Validation**: Trade-off analysis must capture rationale for decisions. AI should flag ADRs missing "Consequences" or "Alternatives Considered" sections.
+
+#### Collaboration Modes in Design
+
+Design work may operate in different actor model modes depending on context:
+
+| Mode | Description | When Appropriate |
+|------|-------------|------------------|
+| **Human-led** (Mode 2) | Human drives design; AI assists with research, options, documentation | Novel domains, high-stakes architecture, significant tacit knowledge required |
+| **Collaborative** (Mode 3) | Human and AI work together iteratively; AI proposes, human evaluates and refines | Established patterns with team expertise; exploration of solution space |
+| **AI-led** (Mode 4) | AI generates design; human validates and approves | Well-understood problems, strong existing patterns, implementation-level design |
+
+Mode selection should consider:
+- Team's domain expertise and design experience
+- Novelty of the problem (novel → human-led; familiar → AI-led possible)
+- Criticality and reversibility of decisions
+- Availability of established patterns and precedents
+
+#### Domain-Driven Design as Informing Practice
+
+Where Domain-Driven Design (DDD) practices are in use, they provide rich informational context that enhances design:
+
+- **Ubiquitous language** — shared vocabulary reduces ambiguity; AI should use and validate domain terms
+- **Bounded contexts** — clear boundaries inform component decomposition
+- **Domain events** — explicit events inform integration and data flow design
+- **Aggregates and entities** — domain models inform data architecture
+
+AI should ask: "Is there an established domain model or ubiquitous language I should use?"
+
+*Note: DDD is a recommended practice where appropriate, not a mandatory framework element.*
+
+#### Information Flow
+
+**Inputs from Prior Phases:**
+
+| From Prior Phases | Type | How It Informs Design |
+|-------------------|------|----------------------|
+| Requirements specification | Formal | What must be built; functional boundaries |
+| Non-functional requirements | Formal + Tacit | Quality attributes that constrain solution space |
+| Constraints | Formal | Technical, regulatory, resource boundaries |
+| Risk assessment | Formal | What could go wrong; what needs mitigation |
+| Rationale documentation | Formal | Why requirements exist; enables intelligent trade-offs |
+| Stakeholder priorities | Formal + Tacit | What matters most when trade-offs required |
+| Domain model (if DDD) | Formal | Bounded contexts, aggregates, ubiquitous language |
+
+**New Data Sources for Phase 4:**
+
+| Category | Sources | Type |
+|----------|---------|------|
+| **Organisational context** | Architecture standards, technology policies, design guidelines | Formal |
+| **Technical landscape** | Existing architecture, technology stack, integration points | Formal |
+| **Pattern libraries** | Architectural patterns, design patterns, anti-patterns | Formal |
+| **Technology evaluation** | Vendor documentation, benchmarks, proof-of-concepts | Formal |
+| **Team expertise** | What technologies the team knows; learning capacity | Tacit |
+| **Operational context** | Deployment environment, operational constraints, SLAs | Formal + Tacit |
+| **Prior designs** | Similar systems, lessons learned, post-mortems | Formal (if documented) / Tacit |
+| **Industry standards** | Security standards, compliance frameworks, best practices | Formal |
+
+#### Qualitative Information Types
+
+| Type | Definition | Why It Matters |
+|------|------------|----------------|
+| **Architectural drivers** | The requirements that most influence structure | Focus attention on what shapes the solution |
+| **Quality attribute trade-offs** | How competing qualities balance | Explicit trade-offs prevent implicit compromises |
+| **Design rationale** | Why this approach, not alternatives | Enables future change; prevents re-litigation |
+| **Technical debt acceptance** | What shortcuts are acceptable and why | Conscious debt vs. accidental debt |
+| **Integration assumptions** | How components will interact | Interfaces fail when assumptions differ |
+| **Operational model** | How this will run in production | Design for operations, not just development |
+
+#### AI Active Validation Process for Design
+
+Design validation requires AI to challenge architectural decisions, surface trade-offs, and ensure rationale is captured:
+
+```
+┌─────────────────────────────────────────────────────────────────────┐
+│              AI ACTIVE VALIDATION IN DESIGN                         │
+├─────────────────────────────────────────────────────────────────────┤
+│                                                                     │
+│  1. ELICIT ────────────────────────────────────────────────────     │
+│     Surface design thinking and rationale:                          │
+│     "Why did you choose [approach X] over [approach Y]?"            │
+│     "What happens to this design if [constraint] changes?"          │
+│     "What trade-offs are you making with this approach?"            │
+│                                                                     │
+│  2. ANALYSE ───────────────────────────────────────────────────     │
+│     Examine design for:                                             │
+│     • Requirement coverage (does design address all requirements?)  │
+│     • Constraint compliance (does design respect boundaries?)       │
+│     • Consistency (do components make compatible assumptions?)      │
+│     • Completeness (are failure modes, edge cases addressed?)       │
+│     • Quality attributes (how does design affect -ilities?)         │
+│     • Pattern compliance (does it follow organisational standards?) │
+│                                                                     │
+│  3. SYNTHESISE ────────────────────────────────────────────────     │
+│     Integrate design elements:                                      │
+│     • Aggregate component designs into system view                  │
+│     • Identify emergent properties from component interactions      │
+│     • Map design decisions to requirements traceability             │
+│                                                                     │
+│  4. VALIDATE ──────────────────────────────────────────────────     │
+│     Present design understanding for confirmation:                  │
+│     "This design assumes [X]—is that correct?"                      │
+│     "Component A expects [interface], Component B provides [Y]—     │
+│      are these compatible?"                                         │
+│     "This approach prioritises [quality A] over [quality B]—        │
+│      is that the intended trade-off?"                               │
+│                                                                     │
+│  5. TRANSFORM ─────────────────────────────────────────────────     │
+│     Convert between design representations:                         │
+│     • Conceptual → Logical → Physical architecture                  │
+│     • Diagrams ↔ Specifications ↔ Code structures                   │
+│     • Human validates semantic preservation                         │
+│                                                                     │
+│  6. DECIDE (surface for human) ────────────────────────────────     │
+│     AI presents options, humans choose:                             │
+│     "Here are three approaches to [problem], with trade-offs..."    │
+│     "This decision will constrain future options—are you sure?"     │
+│     "This conflicts with [earlier decision]—which takes priority?"  │
+│                                                                     │
+│  7. GENERATE ──────────────────────────────────────────────────     │
+│     Produce design artifacts:                                       │
+│     • Architecture diagrams, component specifications               │
+│     • Interface definitions, data models                            │
+│     • Draft implementation scaffolding                              │
+│                                                                     │
+│  8. PRESERVE ──────────────────────────────────────────────────     │
+│     Store design with full context:                                 │
+│     • Decision + Rationale + Alternatives considered                │
+│     • Trade-offs made + Constraints respected                       │
+│     • Assumptions + Dependencies + Risks                            │
+│                                                                     │
+└─────────────────────────────────────────────────────────────────────┘
+```
+
+#### AI Challenge Questions for Design
+
+**For Organisational Context:**
+- "Are there architecture standards I should be following?"
+- "What technology choices have already been made?"
+- "Are there patterns from similar projects I should consider?"
+- "What existing systems does this need to integrate with?"
+
+**For Architectural Decisions:**
+- "Why this architecture pattern and not [alternative]?"
+- "What would cause you to reconsider this approach?"
+- "How does this scale if [load/data/users] grows 10x?"
+- "What happens when [component X] fails?"
+
+**For Trade-offs:**
+- "You're choosing [performance] over [maintainability]—is that intentional?"
+- "This approach makes [future change] harder—is that acceptable?"
+- "What are you giving up by choosing this approach?"
+- "How will you know if this trade-off was the right one?"
+
+**For Integration:**
+- "Component A assumes [X], Component B assumes [Y]—are these compatible?"
+- "What's the contract between these components? Is it documented?"
+- "How will these components handle version differences?"
+- "What happens if [dependency] behaves differently than expected?"
+
+**For Operational Reality:**
+- "How will you deploy changes to this component?"
+- "How will you know if this is working correctly in production?"
+- "What's the recovery path if this fails?"
+- "Who will be woken up at 3am when this breaks, and what will they need?"
+
+**For Technical Debt:**
+- "Is this a shortcut you're taking consciously? What's the payback plan?"
+- "What would the 'right' solution look like, and why aren't you doing it?"
+- "What's the cost if this technical debt is never paid?"
+
+#### Escalation Framework for Design
+
+| Escalation Type | Trigger | AI Action | Human Action Required |
+|-----------------|---------|-----------|----------------------|
+| **Trade-off conflict** | Quality attributes in tension | Present trade-off analysis with implications | Decide which quality takes priority |
+| **Constraint violation** | Design exceeds boundaries | Flag violation; present alternatives | Adjust design or negotiate constraint |
+| **Standards deviation** | Design diverges from org patterns | Flag deviation; request justification | Approve exception or align to standard |
+| **Assumption mismatch** | Components have incompatible assumptions | Surface conflict; propose resolution options | Decide authoritative assumption |
+| **Missing rationale** | Decision without documented "why" | Ask directly; flag if still missing | Provide rationale or accept as risk |
+| **Irreversible decision** | Choice that constrains future significantly | Highlight implications; request confirmation | Confirm with full understanding |
+| **Experience gap** | Design uses unfamiliar technology | Flag risk; suggest mitigation options | Accept risk or adjust approach |
+| **Operational concern** | Design creates operational burden | Surface concern; propose alternatives | Accept burden or redesign |
+
+#### The Design Dialogue Loop
+
+```
+┌─────────────────────────────────────────────────────────────────────┐
+│                    PHASE 4: DESIGN/ARCHITECTURE                     │
+│                     The Design Validation Loop                      │
+├─────────────────────────────────────────────────────────────────────┤
+│                                                                     │
+│  CONTEXT DISCOVERY                                                  │
+│  ─────────────────                                                  │
+│  ┌──────────────────────────────────────────────────────────────┐   │
+│  │  AI ASKS: "What patterns, standards, policies apply?"        │   │
+│  │           "What existing systems must this integrate with?"  │   │
+│  │           "What domain model or language should I use?"      │   │
+│  └──────────────────────────────────────────────────────────────┘   │
+│                              │                                      │
+│                              ▼                                      │
+│  REQUIREMENTS              EXPLORE SOLUTION SPACE                   │
+│  & CONSTRAINTS             ──────────────────────                   │
+│  ─────────────                                                      │
+│  Functional ─────┐         ┌──────────────────────┐                 │
+│  Non-functional ─┤         │   AI EXPLORES        │                 │
+│  Constraints ────┼────────►│   within org context,│                 │
+│  Priorities ─────┤         │   generates options, │                 │
+│  Org standards ──┘         │   analyses trade-offs│                 │
+│                            └──────────┬───────────┘                 │
+│                                       │                             │
+│                    ┌──────────────────┼──────────────────┐          │
+│                    │                  ▼                  │          │
+│                    │         ┌──────────────────┐        │          │
+│                    │         │  AI PRESENTS     │        │          │
+│                    │         │  options with    │        │          │
+│                    │         │  trade-offs      │        │          │
+│                    │         └────────┬─────────┘        │          │
+│                    │                  │                  │          │
+│                    │                  ▼                  │          │
+│                    │         ┌──────────────────┐        │          │
+│                    │         │  HUMAN EVALUATES │        │          │
+│                    │         │  adds context,   │        │          │
+│          ITERATE   │         │  applies judgement│       │          │
+│          UNTIL     │         └────────┬─────────┘        │          │
+│          STABLE    │                  │                  │          │
+│                    │                  ▼                  │          │
+│                    │         ┌──────────────────┐        │          │
+│                    │         │  AI CHALLENGES   │        │          │
+│                    │         │  "Why this? What │        │          │
+│                    │         │   if? Trade-off?"│        │          │
+│                    │         └────────┬─────────┘        │          │
+│                    │                  │                  │          │
+│                    │                  ▼                  │          │
+│                    │         ┌──────────────────┐        │          │
+│                    │         │  HUMAN RESPONDS  │        │          │
+│                    │         │  justifies,      │◄──┐    │          │
+│                    │         │  reconsiders,    │   │    │          │
+│                    │         │  decides         ├───┘    │          │
+│                    │         └────────┬─────────┘        │          │
+│                    │                  │                  │          │
+│                    └──────────────────┼──────────────────┘          │
+│                                       │                             │
+│                         ┌─────────────┴─────────────┐               │
+│                         │                           │               │
+│                         ▼                           ▼               │
+│                ┌──────────────────┐        ┌──────────────────┐     │
+│                │  AI GENERATES    │        │  AI PRESERVES    │     │
+│                │  design specs,   │        │  decisions with  │     │
+│                │  diagrams,       │        │  rationale,      │     │
+│                │  interfaces      │        │  trade-offs,     │     │
+│                └──────────────────┘        │  alternatives    │     │
+│                                            └──────────────────┘     │
+│                                                                     │
+│  OUTPUTS: Architecture documentation, component specifications,     │
+│           interface definitions, design rationale records           │
+│                                                                     │
+└─────────────────────────────────────────────────────────────────────┘
+```
+
+#### Evolution Interventions
+
+| Activity | AI Augmentation | Human Retains |
+|----------|-----------------|---------------|
+| **Context discovery** | Ask about standards, patterns, policies; incorporate into proposals | Provide organisational context; judge applicability |
+| **Pattern identification** | Match requirements to known patterns; surface relevant examples | Judge applicability; adapt to context |
+| **Trade-off analysis** | Enumerate quality attributes; model trade-off implications | Make trade-off decisions; judge what matters |
+| **Option generation** | Generate alternative approaches within org constraints; compare systematically | Select approach; add tacit context |
+| **Consistency checking** | Verify component compatibility; check assumption alignment | Resolve conflicts; make integration decisions |
+| **Documentation** | Generate diagrams, specifications; maintain consistency | Validate accuracy; ensure rationale captured |
+| **Risk identification** | Flag technical risks; surface experience gaps | Assess risk significance; decide mitigation |
+
+#### Information Debt Risk
+
+Design is where conscious trade-offs can become unconscious technical debt:
+- Time pressure leads to "we'll fix it later" decisions that are never revisited
+- Design rationale isn't captured, so future maintainers don't understand constraints
+- Trade-offs are made implicitly without stakeholder awareness
+- Organisational patterns are ignored, creating integration friction later
+
+**Common information debt patterns:**
+
+| Debt Pattern | What's Missing | How It Manifests Later |
+|--------------|----------------|------------------------|
+| Undocumented trade-offs | Why this approach over alternatives | Future changes break unstated assumptions |
+| Missing failure modes | How components fail and recover | Production incidents with no playbook |
+| Implicit interfaces | Clear contracts between components | Integration failures, version conflicts |
+| Assumed operational model | How this runs in production | Deployment surprises, operational burden |
+| Hidden dependencies | What this really depends on | Upgrade/migration failures |
+| Deferred decisions | Choices labelled "TBD" | Implementation blocks waiting for design |
+| Standards deviation | Why org patterns weren't followed | Integration friction, maintenance burden |
+
+#### What Must Be Preserved
+
+- Human judgement on architectural trade-offs
+- Deep understanding of operational reality
+- Experience-based intuition about "what works"
+- Stakeholder relationships for trade-off negotiations
+- Team knowledge of technology capabilities and limitations
+- Organisational context and political realities
+
+#### Transition Readiness: Design → Implementation
+
+Sufficiency for `ARCHITECTURE_APPROVED` is context-dependent. AI can help surface readiness through:
+
+- "Are there significant design decisions still marked 'TBD'?"
+- "What components have uncertain interfaces? What's the risk of starting implementation?"
+- "Are there trade-offs that stakeholders haven't explicitly approved?"
+- "What assumptions is this design making that haven't been validated?"
+- "Does this design comply with organisational standards? Are deviations approved?"
+- "If implementation reveals this design is flawed, what's the rework cost?"
+- "What's the risk of starting implementation now vs. waiting for [uncertain area] to be resolved?"
+- "Is the team confident they understand the design well enough to implement it?"
+
+#### Evolution Risk
+
+- AI-generated designs that look elegant but miss operational reality
+- Trade-offs made by AI optimisation that don't reflect stakeholder values
+- Over-engineering driven by AI pattern matching to "best practices"
+- Under-documented designs because the diagrams "speak for themselves"
+- Team disengagement because "the AI designed it"
+- Ignoring organisational context because AI proposed "the right way"
+- DDD cargo-culting without genuine domain understanding
 
 ---
 
@@ -656,6 +1184,8 @@ Evolution and Revolution are not mutually exclusive. Organisations may:
 
 | Version | Date | Changes |
 |---------|------|---------|
+| 0.6 | December 2025 | Added Document Types sections to all phases (Org/Project/Working); linked to classification framework |
+| 0.5 | December 2025 | Added detailed Phase 4 (Design/Architecture) with collaboration modes, DDD as informing practice |
 | 0.4 | December 2025 | Added detailed Phase 3 (Analysis/Requirements) with AI Active Validation Process |
 | 0.3 | December 2025 | Added detailed Phase 2 (Planning); added transition readiness questions |
 | 0.2 | December 2025 | Added detailed Phase 1 (Initiation/Conception); corrected phase names |
