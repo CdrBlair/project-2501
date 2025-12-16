@@ -57,7 +57,7 @@ Effective escalation requires:
 | **AI-Led** | Defined escalation triggers with structured handoff; human handles exceptions and edge cases |
 | **AI-Only** | Implicit escalation via monitoring, alerting, and exception handling systems |
 
-### The Automation Frontier
+### Automation Boundary Dynamics
 
 The boundary between patterns is dynamic, not fixed. As organisations invest in formalising tacit knowledge:
 
