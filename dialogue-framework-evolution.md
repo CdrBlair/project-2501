@@ -2830,22 +2830,4 @@ Evolution and Revolution are not mutually exclusive. Organisations may:
 
 ---
 
-## Version History
-
-| Version | Date | Changes |
-|---------|------|---------|
-| 1.1 | December 2025 | Added detailed Phase 7 (Deployment/Operations) with knowledge transfer, incident learning, operational feedback loops |
-| 1.0 | December 2025 | Added Defensive Processes for Phases 5 & 6; Cross-Phase Backward Event Detection; comprehensive detection mechanisms and mitigations |
-| 0.9 | December 2025 | Enhanced Phase 6 with all actor modes (1-5), backward events, detection mechanisms, skill preservation |
-| 0.8 | December 2025 | Added detailed Phase 6 (Testing/Validation) with verification vs validation, coverage illusion |
-| 0.7 | December 2025 | Added detailed Phase 5 (Implementation/Construction) with collaboration modes, technical debt patterns |
-| 0.6 | December 2025 | Added Document Types sections to all phases (Org/Project/Working); linked to classification framework |
-| 0.5 | December 2025 | Added detailed Phase 4 (Design/Architecture) with collaboration modes, DDD as informing practice |
-| 0.4 | December 2025 | Added detailed Phase 3 (Analysis/Requirements) with AI Active Validation Process |
-| 0.3 | December 2025 | Added detailed Phase 2 (Planning); added transition readiness questions |
-| 0.2 | December 2025 | Added detailed Phase 1 (Initiation/Conception); corrected phase names |
-| 0.1 | December 2025 | Initial placeholder |
-
----
-
 *Evolution: Enhancing what works through dialogue.*
