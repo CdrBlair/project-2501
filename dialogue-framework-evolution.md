@@ -1127,19 +1127,1669 @@ Sufficiency for `ARCHITECTURE_APPROVED` is context-dependent. AI can help surfac
 
 ### Phase 5: Implementation/Construction
 
-*To be developed*
+**ISO 12207 Processes**: 6.4.6 Implementation, 6.4.7 Integration
+
+**Information Composition**: 75% Formal / 20% Tacit / 5% Emergent
+
+**Primary Question**: BUILD—code creation, integration, working software
+
+**The Formalisation Paradox**: Code is highly formal—it executes precisely as written. Yet the understanding behind code (why this approach, what alternatives were considered, how it connects to requirements) remains largely tacit. AI can generate syntactically correct code without understanding; humans can understand without being able to articulate.
+
+#### Document Types
+
+*Classification per [Document Type Classification Framework](./concepts/concept_document-type-classification.md)*
+
+**Organisational Inputs** (Scope: Organisational — exist before project):
+
+| Document Type | Domain | Temporal | Purpose in Phase 5 |
+|---------------|--------|----------|-------------------|
+| Coding Standards | REF | Standing | Style, conventions, patterns to follow |
+| Security Guidelines | REF | Standing | Secure coding practices |
+| Code Review Checklist | REF | Standing | What reviewers should check |
+| CI/CD Pipeline Standards | OPS | Standing | Build, test, deploy requirements |
+| Testing Standards | VAL | Standing | Coverage requirements, test types |
+| Documentation Standards | REF | Standing | What code documentation is required |
+| Approved Libraries/Frameworks | REF | Dynamic | What dependencies are permitted |
+| Logging/Observability Standards | OPS | Standing | What to log, how to instrument |
+
+**AI should ask**: "Are there coding standards, security guidelines, or approved libraries I should follow? What CI/CD and testing requirements apply?"
+
+**Project Inputs** (Scope: Project — from Phase 3 & 4):
+
+| Document Type | Domain | Temporal | Source |
+|---------------|--------|----------|--------|
+| System Requirements (SPC-002) | SPC | Standing | Phase 3 |
+| Architecture Description (DES-001) | DES | Standing | Phase 4 |
+| Component Design (DES-002) | DES | Standing | Phase 4 |
+| Interface Specifications | DES | Standing | Phase 4 |
+| Data Architecture (DES-003) | DES | Standing | Phase 4 |
+| ADRs | STR | Standing | Phase 4 |
+| Technical Debt Register | STR | Dynamic | Phase 4 |
+| Prioritised Backlog (SPC-005) | SPC | Dynamic | Phase 3 |
+
+**Project Outputs** (Scope: Project — produced by this phase):
+
+| Document Type | Domain | Temporal | Downstream Consumer |
+|---------------|--------|----------|---------------------|
+| Source Code (IMP-001) | IMP | Dynamic | Testing, Operations |
+| API Documentation | IMP | Dynamic | Testing, Integration, Operations |
+| Build Configuration | IMP | Standing | CI/CD, Operations |
+| Database Scripts/Migrations | IMP | Dynamic | Operations |
+| Unit Tests | VAL | Dynamic | CI/CD, Testing |
+| Integration Points | IMP | Dynamic | Testing, Operations |
+| Technical Debt Items | STR | Dynamic | Future Implementation |
+
+**Working Documents** (Scope: Task — ephemeral, contribute to outputs):
+
+| Document Type | Domain | Captures | Contributes To |
+|---------------|--------|----------|----------------|
+| Code Review Comments | WRK | Review feedback, decisions | Code improvements, knowledge transfer |
+| Spike/Prototype Notes | WRK | Exploratory findings | Implementation approach |
+| Debug Session Notes | WRK | Problem investigation | Bug fixes, knowledge |
+| Pairing Session Notes | WRK | Shared problem-solving | Code, team knowledge |
+
+**Process Validation**: Code reviews must capture *why* changes were requested, not just *what*. AI should flag reviews with only "fix this" comments lacking rationale.
+
+#### Collaboration Modes in Implementation
+
+Implementation is where AI-led work becomes most viable—but with important caveats:
+
+| Mode | Description | When Appropriate |
+|------|-------------|------------------|
+| **Human-only** (Mode 1) | Human writes code; no AI involvement | Cryptographic implementations, regulated code (medical/aviation), IP-sensitive code |
+| **Human-led** (Mode 2) | Human writes code; AI assists with research, completion, review | Novel algorithms, critical security code, complex business logic |
+| **Collaborative** (Mode 3) | Human and AI pair; AI generates, human reviews and refines | Most implementation work; established patterns with variation |
+| **AI-led** (Mode 4) | AI generates complete implementations; human validates | Boilerplate, CRUD operations, well-defined transformations, tests from specs |
+| **Fully autonomous** (Mode 5) | AI executes without human in loop | CI/CD builds, automated formatting, dependency updates, code generation pipelines |
+
+**Mode transitions during implementation:**
+- AI-led coding → comprehension check fails → Human-led rewrite (Mode 4 → Mode 2)
+- Collaborative coding → security concern detected → Human-only review (Mode 3 → Mode 1)
+- Autonomous pipeline → build failure → Collaborative investigation (Mode 5 → Mode 3)
+
+**Governance for Mode 5 (Autonomous):**
+- Defined scope: only pre-approved automation (builds, formatting, dependency updates)
+- Automatic escalation: build failures, security scan alerts, test failures
+- Human approval required before merge regardless of autonomous checks
+
+**Critical consideration**: AI-led implementation risks creating code that works but that no human understands. This creates maintenance debt even when there's no technical debt.
+
+#### AI Active Validation Process for Implementation
+
+```
+┌─────────────────────────────────────────────────────────────────────┐
+│           AI ACTIVE VALIDATION IN IMPLEMENTATION                    │
+├─────────────────────────────────────────────────────────────────────┤
+│                                                                     │
+│  1. ELICIT ────────────────────────────────────────────────────     │
+│     Clarify implementation intent:                                  │
+│     "What should happen when [edge case]?"                          │
+│     "How should this handle [error condition]?"                     │
+│     "What's the expected performance for this operation?"           │
+│                                                                     │
+│  2. ANALYSE ───────────────────────────────────────────────────     │
+│     Review code and context for:                                    │
+│     • Requirement coverage (does code implement the requirement?)   │
+│     • Design compliance (does it follow architecture?)              │
+│     • Standards compliance (coding standards, security)             │
+│     • Test coverage (are edge cases tested?)                        │
+│     • Integration compatibility (will it work with other parts?)    │
+│                                                                     │
+│  3. SYNTHESISE ────────────────────────────────────────────────     │
+│     Integrate implementation elements:                              │
+│     • Combine components into working system                        │
+│     • Ensure consistent patterns across codebase                    │
+│     • Maintain traceability to requirements                         │
+│                                                                     │
+│  4. VALIDATE ──────────────────────────────────────────────────     │
+│     Verify implementation understanding:                            │
+│     "This code assumes [X]—is that correct?"                        │
+│     "This will fail if [condition]—is that acceptable?"             │
+│     "This trades off [A] for [B]—is that the right choice?"         │
+│                                                                     │
+│  5. TRANSFORM ─────────────────────────────────────────────────     │
+│     Convert between representations:                                │
+│     • Requirements → Code                                           │
+│     • Design → Implementation                                       │
+│     • Code → Tests                                                  │
+│     • Code → Documentation                                          │
+│                                                                     │
+│  6. DECIDE (surface for human) ────────────────────────────────     │
+│     AI presents implementation choices:                             │
+│     "There are two ways to implement this—[A] or [B]..."            │
+│     "This requires a dependency—[X] or [Y]—which is preferred?"     │
+│     "This could be optimised for [speed] or [memory]—which?"        │
+│                                                                     │
+│  7. GENERATE ──────────────────────────────────────────────────     │
+│     Produce implementation artifacts:                               │
+│     • Source code                                                   │
+│     • Unit tests                                                    │
+│     • API documentation                                             │
+│     • Database migrations                                           │
+│                                                                     │
+│  8. PRESERVE ──────────────────────────────────────────────────     │
+│     Capture implementation knowledge:                               │
+│     • Code comments explaining *why* (not just *what*)              │
+│     • Commit messages with context                                  │
+│     • Technical debt items with rationale                           │
+│     • ADR updates for significant decisions                         │
+│                                                                     │
+└─────────────────────────────────────────────────────────────────────┘
+```
+
+#### AI Challenge Questions for Implementation
+
+**For Requirement Traceability:**
+- "Which requirement does this code implement?"
+- "How would you verify this satisfies the acceptance criteria?"
+- "Are there requirements this doesn't fully address?"
+
+**For Design Compliance:**
+- "Does this follow the architecture in DES-001?"
+- "Is this consistent with similar components in the codebase?"
+- "Are you deviating from the design? If so, why?"
+
+**For Edge Cases:**
+- "What happens if [input] is null/empty/invalid?"
+- "How does this behave under [high load/low memory/network failure]?"
+- "What's the worst case scenario for this code?"
+
+**For Maintainability:**
+- "Could another developer understand this in six months?"
+- "What would make this easier to change later?"
+- "Is this the simplest solution that works?"
+
+**For Technical Debt:**
+- "Is this a shortcut? What's the proper solution?"
+- "What would you do differently with more time?"
+- "What assumptions might not hold in the future?"
+
+**For Integration:**
+- "How does this interact with [other component]?"
+- "What happens if [dependency] changes its interface?"
+- "Are you making assumptions about [external system] behaviour?"
+
+#### Escalation Framework for Implementation
+
+| Escalation Type | Trigger | AI Action | Who Decides | Action Required |
+|-----------------|---------|-----------|-------------|-----------------|
+| **Requirement ambiguity** | Implementation choice depends on unclear requirement | Surface ambiguity; request clarification | **PO + Developer** | Clarify intent or update requirement |
+| **Design deviation** | Implementation doesn't match design | Flag deviation; request justification | **Architect** | Approve deviation or adjust implementation |
+| **Standards violation** | Code violates org standards | Flag specific violation | **Tech Lead** | Fix or request exception |
+| **Security concern** | Potential vulnerability | Flag with severity; suggest fix | **Security + Tech Lead** | Review and remediate |
+| **Performance concern** | Implementation may not meet NFRs | Flag with analysis | **Architect + PO** | Accept, optimise, or adjust requirements |
+| **Test gap** | Functionality not adequately tested | Identify gap; suggest tests | **Developer + Tester** | Add tests or accept risk |
+| **Technical debt creation** | Shortcut being taken | Document debt item with rationale | **Tech Lead** | Approve or invest time to do properly |
+| **Integration risk** | Implementation makes integration assumptions | Surface assumptions | **Architect** | Validate with other teams |
+| **Dependency addition** | New library/framework needed | Check approved list; flag licensing/security | **Tech Lead + Security** | Approve or reject dependency |
+| **Comprehension failure** | Human cannot explain AI-generated code | Flag for rewrite or pairing | **Tech Lead** | Rewrite with understanding or accept risk |
+| **Backward event needed** | Implementation reveals upstream issue | Identify likely source (req/design) | **Tech Lead + PO** | Escalate to appropriate phase |
+
+#### Backward Events from Implementation
+
+Implementation often reveals issues requiring return to earlier phases:
+
+| Backward Event | Trigger | Information Debt Created | AI Detection |
+|----------------|---------|-------------------------|--------------|
+| **Implementation → Design** | Implementation reveals design is infeasible | Design rework + re-implementation | Pattern: "can't work as designed"; repeated workarounds |
+| **Implementation → Requirements** | Requirement is ambiguous, contradictory, or impossible | Requirements clarification + cascade | Pattern: frequent "what should happen?" questions |
+| **Implementation → Planning** | Implementation taking much longer than estimated | Schedule revision | Pattern: velocity << estimate; scope larger than planned |
+| **Implementation → Architecture** | Integration reveals architectural assumptions wrong | Architecture revision | Pattern: integration failures; interface mismatches |
+
+**AI should ask when patterns emerge:**
+- "These workarounds suggest a design issue—should we revisit Design?"
+- "This requirement appears contradictory—should we escalate to Requirements?"
+- "Implementation is taking 3x longer than planned—should we revisit the schedule?"
+
+#### The Implementation Dialogue Loop
+
+```
+┌─────────────────────────────────────────────────────────────────────┐
+│                 PHASE 5: IMPLEMENTATION/CONSTRUCTION                │
+│                    The Implementation Loop                          │
+├─────────────────────────────────────────────────────────────────────┤
+│                                                                     │
+│  REQUIREMENTS                  IMPLEMENTATION CYCLE                 │
+│  & DESIGN                      ────────────────────                 │
+│  ───────────                                                        │
+│  Requirements ───┐             ┌──────────────────┐                 │
+│  Architecture ───┤             │  HUMAN/AI        │                 │
+│  Component ──────┼────────────►│  SELECTS task    │                 │
+│  design          │             │  from backlog    │                 │
+│  Standards ──────┘             └────────┬─────────┘                 │
+│                                         │                           │
+│                    ┌────────────────────┼────────────────────┐      │
+│                    │                    ▼                    │      │
+│                    │           ┌──────────────────┐          │      │
+│                    │           │  AI GENERATES    │          │      │
+│                    │           │  initial code,   │          │      │
+│                    │           │  or assists      │          │      │
+│                    │           │  human coding    │          │      │
+│                    │           └────────┬─────────┘          │      │
+│                    │                    │                    │      │
+│                    │                    ▼                    │      │
+│                    │           ┌──────────────────┐          │      │
+│          ITERATE   │           │  AI VALIDATES    │          │      │
+│          UNTIL     │           │  against reqs,   │          │      │
+│          COMPLETE  │           │  design,         │          │      │
+│                    │           │  standards       │          │      │
+│                    │           └────────┬─────────┘          │      │
+│                    │                    │                    │      │
+│                    │                    ▼                    │      │
+│                    │           ┌──────────────────┐          │      │
+│                    │           │  AI CHALLENGES   │          │      │
+│                    │           │  edge cases,     │          │      │
+│                    │           │  assumptions,    │          │      │
+│                    │           │  maintainability │          │      │
+│                    │           └────────┬─────────┘          │      │
+│                    │                    │                    │      │
+│                    │                    ▼                    │      │
+│                    │           ┌──────────────────┐          │      │
+│                    │           │  HUMAN REVIEWS   │          │      │
+│                    │           │  understands,    │◄──┐      │      │
+│                    │           │  approves,       │   │      │      │
+│                    │           │  or refines      ├───┘      │      │
+│                    │           └────────┬─────────┘          │      │
+│                    │                    │                    │      │
+│                    └────────────────────┼────────────────────┘      │
+│                                         │                           │
+│                         ┌───────────────┴───────────────┐           │
+│                         │                               │           │
+│                         ▼                               ▼           │
+│                ┌──────────────────┐            ┌──────────────────┐ │
+│                │  AI GENERATES    │            │  AI PRESERVES    │ │
+│                │  tests, docs,    │            │  commit message, │ │
+│                │  migrations      │            │  code comments,  │ │
+│                │                  │            │  tech debt items │ │
+│                └──────────────────┘            └──────────────────┘ │
+│                                                                     │
+│  OUTPUTS: Working code, tests, documentation, technical debt log    │
+│                                                                     │
+└─────────────────────────────────────────────────────────────────────┘
+```
+
+#### Evolution Interventions
+
+| Activity | AI Augmentation | Human Retains |
+|----------|-----------------|---------------|
+| **Code generation** | Generate code from specs; complete partial implementations | Validate correctness; ensure understanding; review edge cases |
+| **Code review** | Check standards, patterns, common errors | Judge design quality; assess maintainability; knowledge transfer |
+| **Test generation** | Generate unit tests from code/specs; identify edge cases | Validate test quality; ensure meaningful coverage |
+| **Documentation** | Generate API docs, code comments from implementation | Ensure accuracy; add context that code doesn't capture |
+| **Refactoring** | Identify refactoring opportunities; execute safe refactors | Decide what to refactor; validate behaviour preserved |
+| **Debug assistance** | Analyse errors; suggest causes; propose fixes | Judge root cause; validate fixes don't introduce new issues |
+| **Integration** | Generate integration code; identify incompatibilities | Resolve complex integration issues; validate end-to-end behaviour |
+
+#### Information Debt Risk
+
+Implementation is where information debt becomes **technical debt**:
+- Code that works but isn't understood creates maintenance burden
+- "AI wrote it" code that no team member can explain
+- Missing tests for edge cases that "seemed obvious"
+- Implicit assumptions not documented in code or comments
+
+**Common information debt patterns:**
+
+| Debt Pattern | What's Missing | How It Manifests Later | Detection Mechanism |
+|--------------|----------------|------------------------|---------------------|
+| Undocumented code | Why this approach; what alternatives | Maintenance difficulty; repeated mistakes | Comment-to-code ratio; "why" comment audit |
+| Missing tests | Edge case coverage | Production bugs; regression fear | Mutation testing; coverage gap analysis |
+| Implicit assumptions | What must be true for code to work | Failures when assumptions violated | Static analysis; assumption documentation audit |
+| Copy-paste code | Understanding of copied code | Bugs from inappropriate reuse | Clone detection; similarity analysis |
+| AI-generated black box | Human understanding of generated code | Unable to debug or modify | Comprehension checks (Process 5.1) |
+| Integration assumptions | How components actually interact | Integration failures; cascading bugs | Contract testing; interface documentation |
+| Dependency sprawl | Why dependencies added; alternatives | Upgrade nightmares; security vulnerabilities | Dependency audit; license/security scanning |
+| Architectural erosion | Why deviations from design | Architecture becomes meaningless | Architecture compliance monitoring (Process 5.2) |
+| Concurrency bugs | Thread safety reasoning | Intermittent production failures | Static analysis for race conditions |
+| Security vulnerabilities | Security reasoning | Breaches; compliance failures | Security scanning; code review checklist |
+
+#### Detection and Monitoring
+
+AI should continuously track and report:
+
+| Metric | What It Indicates | Action Threshold |
+|--------|-------------------|------------------|
+| **AI-assistance ratio** | Reliance on AI for code generation | >80% may indicate skill atrophy risk |
+| **Comprehension check pass rate** | Team understanding of codebase | <90% indicates knowledge gaps |
+| **Technical debt count/trend** | Debt accumulation rate | Exceeding ceiling triggers remediation |
+| **Architecture deviation count** | Design compliance | Rising trend indicates erosion |
+| **Dependency growth rate** | Dependency sprawl | Review if >N new dependencies per sprint |
+| **Code review depth** | Quality of human review | Declining comment quality indicates rubber-stamping |
+| **Clone detection hits** | Copy-paste coding | New clones should trigger review |
+
+**AI should surface these patterns proactively**, not just when asked.
+
+#### What Must Be Preserved
+
+- Human understanding of code (not just working code)
+- Knowledge of why this approach, not alternatives
+- Team capability to maintain and extend
+- Understanding of edge cases and failure modes
+- Context that code comments don't capture
+- **Developer skills**: Ability to code without AI assistance
+- **Debugging intuition**: Human ability to diagnose issues
+- **Architectural reasoning**: Understanding of design decisions
+
+**Skill preservation mechanisms:**
+- Require periodic human-only coding (Mode 1) for each developer
+- Track AI-assistance ratios; flag when >80%
+- Rotate developers through different code areas
+- Comprehension checks for AI-generated code (Process 5.1)
+- Substantive code review requirements (not just approval)
+
+#### Defensive Processes for Implementation
+
+These processes run during implementation to detect and remediate problems:
+
+**Process 5.1: Comprehension Assurance**
+
+*Problem defended against*: AI-generated code nobody understands; knowledge silos
+
+*Trigger*: AI-led (Mode 4) code generation completed; before merge
+
+*Actor Model*: Collaborative (Mode 3) — AI facilitates, human demonstrates understanding
+
+| Step | AI Action | Human Action |
+|------|-----------|--------------|
+| **Elicit** | Ask human to explain code: "Walk me through what this does", "Why does this approach work?", "What would break if X changed?" | Explain code in own words |
+| **Analyse** | Evaluate response for completeness, accuracy, depth | — |
+| **Validate** | Challenge gaps: "You didn't mention how [edge case] is handled" | Clarify or acknowledge gap |
+| **Decide** | Assess comprehension: Sufficient / Partial / Insufficient | Accept assessment or dispute |
+| **Preserve** | Record: who understands this code, documented explanation, gaps accepted | Approve transactive memory update |
+
+*Outcomes*:
+- SUFFICIENT: Proceed with merge
+- PARTIAL: Document gaps; proceed with risk acceptance
+- INSUFFICIENT: Block merge; rewrite with pairing or human-led approach
+
+---
+
+**Process 5.2: Architectural Integrity Monitor**
+
+*Problem defended against*: Architectural erosion; design drift
+
+*Trigger*: Continuous (each commit); periodic (weekly architecture review)
+
+*Actor Model*: AI-led (Mode 4) monitoring → Human-led (Mode 2) when deviation detected
+
+**Continuous Monitoring (Mode 5 - Autonomous):**
+
+AI analyses each change for:
+- Dependency direction violations
+- Layer boundary crossings
+- Component coupling increases
+- Pattern deviations from DES-001
+- New dependencies not in approved list
+
+**When Deviation Detected:**
+
+| Severity | Criteria | Response |
+|----------|----------|----------|
+| MINOR | Style deviation, easily reversed | Document; allow with note |
+| MODERATE | Pattern deviation | Architect approval required |
+| MAJOR | Architectural principle violation | Block merge; requires ADR + architect approval |
+
+**Periodic Review (Weekly - Mode 2):**
+
+AI synthesises architecture health report:
+- Deviation count and trend
+- Coupling metrics vs baseline
+- Dependency graph changes
+- ADRs created this period
+
+Architect decides if deviations are acceptable evolution, architecture needs updating, code needs refactoring, or backward event to Design needed.
+
+---
+
+**Process 5.3: Technical Debt Governance**
+
+*Problem defended against*: Invisible debt accumulation; unbounded shortcuts
+
+*Trigger*: Each shortcut decision; periodic review
+
+*Actor Model*: Collaborative (Mode 3) at creation; Human-led (Mode 2) at review
+
+**At Debt Creation:**
+
+AI detects (or human declares) potential debt: TODO/FIXME/HACK comments, known shortcuts, deferred decisions.
+
+| Step | AI Elicits | Captures |
+|------|------------|----------|
+| Proper solution | "What's the right way to do this?" | Alternative approach |
+| Rationale | "Why not do it properly now?" | Time/resource constraint |
+| Risk | "What's the risk if never fixed?" | Potential consequences |
+| Trigger | "What would make this urgent?" | Conditions requiring action |
+
+**Debt Register Entry:**
+- Description + proper solution
+- Interest rate (ongoing cost)
+- Principal (cost to fix)
+- Risk level
+- Approver
+- Repayment plan
+
+**Debt Ceiling:**
+- Define maximum acceptable debt load
+- If ceiling breached: block new feature work until debt reduced
+- Escalate to PO for scope/schedule decision
+
+---
+
+**Process 5.4: Developer Skill Preservation**
+
+*Problem defended against*: Skill atrophy; over-reliance on AI
+
+*Trigger*: Periodic (per sprint); continuous tracking
+
+*Actor Model*: Human-led (Mode 2) execution; AI supports tracking
+
+**AI Tracks Per Developer:**
+- Ratio of AI-assisted vs independent code
+- Types of work done with/without AI
+- Comprehension check pass rate
+- Code review depth (substantive vs rubber-stamp)
+
+**Skill Rotation Requirements:**
+- Each developer must periodically: complete tasks without AI (Mode 1), explain AI-generated code, review others' code substantively, debug without AI assistance
+
+**Atrophy Warning Triggers:**
+- Developer >90% AI-assisted for 4+ weeks
+- Code review comments declining in substance
+- Only one person understands a module
+- Comprehension check failures increasing
+
+**Response:** Assign independent work; pair programming for knowledge transfer; training time allocation
+
+#### Transition Readiness: Implementation → Testing
+
+Sufficiency for `CODE_COMPLETE` is context-dependent. AI can help surface readiness through:
+
+- "What functionality is not yet implemented?"
+- "What tests are missing? What's the coverage?"
+- "Are there known issues or TODOs that should be resolved?"
+- "Is the code documented sufficiently for testing?"
+- "Are there integration points not yet validated?"
+- "What technical debt was created? Is it documented?"
+- "Can the team explain how this code works?"
+
+#### Evolution Risk
+
+| Risk | Mitigation | Detection |
+|------|------------|-----------|
+| AI generates working code that no human understands | Comprehension checks (Process 5.1); block merge if insufficient | Comprehension check failure rate |
+| High velocity implementation masks lack of comprehension | Track velocity vs comprehension; don't celebrate velocity alone | Comprehension failures despite high velocity |
+| Test coverage looks good but misses critical scenarios | Mutation testing; human review of test intent | Mutation score; test-to-defect correlation |
+| "Ship it" pressure overrides quality validation | Quality gates that cannot be bypassed; visible debt tracking | Debt ceiling breaches; skipped checks |
+| Team skills atrophy as AI does more implementation | Skill preservation process (5.4); rotation requirements | AI-assistance ratio >80%; declining independent work |
+| Technical debt accumulates invisibly | Debt governance (Process 5.3); debt ceiling | Debt count/trend; ceiling breaches |
+| Code review becomes rubber-stamping | Review depth tracking; substantive comment requirements | Declining comment quality; approval without comments |
+| Architectural erosion | Architecture monitoring (Process 5.2); periodic review | Deviation count trend; coupling metrics |
+| Dependency sprawl | Dependency governance; approved list enforcement | New dependency rate; license/security issues |
 
 ---
 
 ### Phase 6: Testing/Validation
 
-*To be developed*
+**ISO 12207 Processes**: 6.4.8 Verification, 6.4.9 Validation
+
+**Information Composition**: 70% Formal / 20% Tacit / 10% Emergent
+
+**Primary Question**: CONFIRM—verification (built it right) and validation (built the right thing)
+
+**The Coverage Illusion**: Test results are highly formal—pass/fail is unambiguous. But what to test, how to test it meaningfully, and whether tests actually prove fitness-for-purpose requires deep tacit knowledge. 100% code coverage does not mean 100% confidence.
+
+#### Document Types
+
+*Classification per [Document Type Classification Framework](./concepts/concept_document-type-classification.md)*
+
+**Organisational Inputs** (Scope: Organisational — exist before project):
+
+| Document Type | Domain | Temporal | Purpose in Phase 6 |
+|---------------|--------|----------|-------------------|
+| Testing Standards | VAL | Standing | Test types required, coverage thresholds |
+| Test Environment Standards | OPS | Standing | Environment requirements, data handling |
+| Security Testing Requirements | VAL | Standing | Penetration testing, vulnerability scanning |
+| Performance Testing Standards | VAL | Standing | Load testing approaches, benchmarks |
+| Accessibility Standards | VAL | Standing | WCAG compliance, assistive technology testing |
+| Regulatory Testing Requirements | VAL | Standing | Compliance verification requirements |
+| Defect Management Process | REF | Standing | How defects are logged, triaged, resolved |
+| Release Criteria | STR | Standing | What must pass before release |
+
+**AI should ask**: "Are there testing standards, coverage requirements, or release criteria I should follow? What security and performance testing is required?"
+
+**Project Inputs** (Scope: Project — from Phase 3-5):
+
+| Document Type | Domain | Temporal | Source |
+|---------------|--------|----------|--------|
+| System Requirements (SPC-002) | SPC | Standing | Phase 3 |
+| Acceptance Criteria | SPC | Standing | Phase 3 |
+| Architecture Description (DES-001) | DES | Standing | Phase 4 |
+| Source Code (IMP-001) | IMP | Dynamic | Phase 5 |
+| Unit Tests | VAL | Dynamic | Phase 5 |
+| Risk Register (STR-004) | STR | Dynamic | Phase 2 |
+| Traceability Matrix (SPC-004) | SPC | Dynamic | Phase 3 |
+
+**Project Outputs** (Scope: Project — produced by this phase):
+
+| Document Type | Domain | Temporal | Downstream Consumer |
+|---------------|--------|----------|---------------------|
+| Test Plan (VAL-001) | VAL | Standing | Test execution, governance |
+| Test Cases (VAL-002) | VAL | Dynamic | Test execution |
+| Test Results (VAL-003) | VAL | Dynamic | Release decisions |
+| Defect Log | VAL | Dynamic | Implementation (fixes), governance |
+| Test Coverage Report | VAL | Dynamic | Release decisions |
+| Performance Test Results | VAL | Dynamic | Release decisions, Operations |
+| Security Test Results | VAL | Dynamic | Release decisions, Operations |
+| User Acceptance Test Results | VAL | Standing | Release decisions |
+
+**Working Documents** (Scope: Task — ephemeral, contribute to outputs):
+
+| Document Type | Domain | Captures | Contributes To |
+|---------------|--------|----------|----------------|
+| Exploratory Test Notes | WRK | Ad-hoc testing observations | Defect Log, Test Cases |
+| Test Session Notes | WRK | Testing context, observations | Test Results |
+| Defect Investigation Notes | WRK | Root cause analysis | Defect Log, knowledge |
+
+**Process Validation**: Exploratory test notes must capture reasoning about what was tested and why. AI should flag test reports that only show pass/fail without context.
+
+#### Verification vs. Validation
+
+| Aspect | Verification | Validation |
+|--------|--------------|------------|
+| **Question** | Did we build it right? | Did we build the right thing? |
+| **Focus** | Conformance to specification | Fitness for purpose |
+| **Methods** | Unit tests, integration tests, code review | UAT, beta testing, stakeholder review |
+| **AI Role** | Strong—can verify against formal specs | Limited—requires human judgement of value |
+| **Automation** | Highly automatable | Partially automatable; human judgement required |
+
+**Key insight**: AI excels at verification (checking against formal criteria) but validation requires human judgement about whether the system actually solves the problem.
+
+#### Collaboration Modes in Testing
+
+| Mode | Description | When Appropriate |
+|------|-------------|------------------|
+| **Human-only** (Mode 1) | Human designs and executes tests; no AI involvement | External security audits, regulatory compliance testing, certain accessibility testing |
+| **Human-led** (Mode 2) | Human designs tests; AI assists with execution, data generation | Exploratory testing, UAT, novel scenarios |
+| **Collaborative** (Mode 3) | Human and AI together design and execute tests | Most functional testing; AI generates, human validates coverage |
+| **AI-led** (Mode 4) | AI generates and executes tests; human reviews results | Functional regression testing, generated unit tests |
+| **Fully autonomous** (Mode 5) | AI executes tests with no human in loop | CI/CD pipeline tests, continuous regression, smoke tests |
+
+**Mode transitions during testing:**
+- AI-led test execution → failure → Human-led investigation (Mode 4 → Mode 2)
+- Autonomous CI/CD test → unexpected failure pattern → Collaborative analysis (Mode 5 → Mode 3)
+- Human exploratory testing → discovers pattern → AI generates systematic tests (Mode 2 → Mode 4)
+
+**Governance for Mode 5 (Autonomous):**
+- Defined scope: only pre-approved test suites
+- Automatic escalation triggers: new failure patterns, coverage drops, flaky test thresholds
+- Human review required before release decisions regardless of autonomous test results
+
+**Critical consideration**: AI can achieve high coverage metrics while missing critical scenarios that require domain understanding to identify.
+
+#### AI Active Validation Process for Testing
+
+```
+┌─────────────────────────────────────────────────────────────────────┐
+│              AI ACTIVE VALIDATION IN TESTING                        │
+├─────────────────────────────────────────────────────────────────────┤
+│                                                                     │
+│  1. ELICIT ────────────────────────────────────────────────────     │
+│     Surface testing intent and coverage:                            │
+│     "What scenarios are most important to test?"                    │
+│     "What could go wrong that would be catastrophic?"               │
+│     "What edge cases are users likely to encounter?"                │
+│                                                                     │
+│  2. ANALYSE ───────────────────────────────────────────────────     │
+│     Examine test coverage and results:                              │
+│     • Requirement coverage (is every requirement tested?)           │
+│     • Code coverage (what code paths are untested?)                 │
+│     • Risk coverage (are high-risk areas thoroughly tested?)        │
+│     • Edge case coverage (are boundaries tested?)                   │
+│     • Result patterns (are failures clustered? trends?)             │
+│                                                                     │
+│  3. SYNTHESISE ────────────────────────────────────────────────     │
+│     Integrate testing insights:                                     │
+│     • Aggregate results across test types                           │
+│     • Identify patterns in failures                                 │
+│     • Build confidence assessment                                   │
+│                                                                     │
+│  4. VALIDATE ──────────────────────────────────────────────────     │
+│     Confirm test adequacy:                                          │
+│     "These tests assume [X]—is that valid?"                         │
+│     "This scenario isn't tested—is that acceptable?"                │
+│     "The tests pass, but do they test the right thing?"             │
+│                                                                     │
+│  5. TRANSFORM ─────────────────────────────────────────────────     │
+│     Convert between representations:                                │
+│     • Requirements → Test cases                                     │
+│     • Acceptance criteria → Automated tests                         │
+│     • Defects → Regression tests                                    │
+│     • Test results → Release readiness report                       │
+│                                                                     │
+│  6. DECIDE (surface for human) ────────────────────────────────     │
+│     AI presents testing decisions:                                  │
+│     "Coverage is 80%—is that sufficient for release?"               │
+│     "These 3 defects are open—release or fix first?"                │
+│     "Performance is 10% below target—acceptable?"                   │
+│                                                                     │
+│  7. GENERATE ──────────────────────────────────────────────────     │
+│     Produce testing artifacts:                                      │
+│     • Test cases from requirements                                  │
+│     • Test data sets                                                │
+│     • Automated test scripts                                        │
+│     • Test reports                                                  │
+│                                                                     │
+│  8. PRESERVE ──────────────────────────────────────────────────     │
+│     Capture testing knowledge:                                      │
+│     • Why tests were designed this way                              │
+│     • What scenarios were considered but not tested                 │
+│     • Defect patterns and root causes                               │
+│     • Test environment configurations                               │
+│                                                                     │
+└─────────────────────────────────────────────────────────────────────┘
+```
+
+#### AI Challenge Questions for Testing
+
+**For Test Coverage:**
+- "What requirements have no tests? Is that intentional?"
+- "What code paths are never executed by tests?"
+- "What happens if [critical component] fails—is that tested?"
+- "Are the riskiest parts of the system tested most thoroughly?"
+
+**For Test Quality:**
+- "Do these tests actually verify the requirement, or just exercise code?"
+- "Could this test pass even if the feature is broken?"
+- "What would a failing test tell you? Is that useful information?"
+- "Are you testing implementation details that might change?"
+
+**For Edge Cases:**
+- "What happens at the boundaries of valid input?"
+- "What if the user does something unexpected?"
+- "What if external systems behave unexpectedly?"
+- "What's the worst thing that could happen? Is it tested?"
+
+**For Confidence:**
+- "If all tests pass, how confident are you it works correctly?"
+- "What could still be wrong even if tests pass?"
+- "What would make you more confident?"
+- "What are you worried about that isn't tested?"
+
+**For Validation:**
+- "Have actual users tried this? What did they think?"
+- "Does this solve the original problem?"
+- "Would stakeholders consider this acceptable?"
+
+#### Escalation Framework for Testing
+
+| Escalation Type | Trigger | AI Action | Who Decides | Action Required |
+|-----------------|---------|-----------|-------------|-----------------|
+| **Coverage gap** | Requirement without test | Flag gap; suggest test approach | **Tester + PO** | Accept gap or add tests |
+| **Test failure** | Test doesn't pass | Report failure with context | **Developer** | Investigate: defect or test issue? |
+| **Flaky test** | Test passes/fails inconsistently | Flag pattern; suggest investigation | **Developer** | Determine root cause |
+| **Performance concern** | Results below threshold | Report with analysis | **Architect + PO** | Accept, optimise, or adjust target |
+| **Security finding** | Vulnerability detected | Report with severity | **Security + Release Mgr** | Remediate or accept risk |
+| **Defect triage** | New defect found | Categorise; suggest priority | **PO + Dev Lead** | Decide fix priority |
+| **Release decision** | Testing complete | Present summary with recommendation | **Release Manager** | Decide go/no-go |
+| **Confidence concern** | Tests pass but coverage seems inadequate | Surface concern; suggest additional tests | **Tester + PO** | Add tests or accept risk |
+| **Backward event needed** | Defect reveals upstream issue | Identify likely source (req/design/plan) | **Tech Lead + PO** | Escalate to appropriate phase |
+
+**Stopping Criteria**: AI should help elicit sufficiency through dialogue:
+- "What would make you confident enough to release?"
+- "What's the worst case if we release now? Is that acceptable?"
+- "What additional testing would meaningfully increase confidence vs. delay?"
+
+#### Backward Events from Testing
+
+Testing often reveals issues that require returning to earlier phases:
+
+| Backward Event | Trigger | Information Debt Created | AI Detection |
+|----------------|---------|-------------------------|--------------|
+| **Testing → Implementation** | Defect found in code | Defect + investigation + fix cost | Direct: test failure |
+| **Testing → Design** | Test reveals design flaw or integration issue | Design rework + downstream changes | Pattern: multiple related failures; "this can't work as designed" |
+| **Testing → Requirements** | Test reveals requirement ambiguity, gap, or conflict | Requirements rework + cascade to design/impl | Pattern: "spec says X but users expect Y"; untestable requirements |
+| **Testing → Planning** | Testing reveals estimate was wildly wrong | Schedule/resource replanning | Pattern: test execution time >> estimated; scope larger than planned |
+
+**AI should ask when patterns emerge:**
+- "These failures suggest a design issue rather than implementation bugs—should we escalate to Design?"
+- "This requirement appears untestable as written—should we clarify with Requirements?"
+- "Testing is taking 3x longer than planned—should we revisit the schedule?"
+
+#### The Testing Dialogue Loop
+
+```
+┌─────────────────────────────────────────────────────────────────────┐
+│                    PHASE 6: TESTING/VALIDATION                      │
+│                       The Testing Loop                              │
+├─────────────────────────────────────────────────────────────────────┤
+│                                                                     │
+│  REQUIREMENTS                    TEST PLANNING                      │
+│  & CODE                          ────────────                       │
+│  ────────────                                                       │
+│  Requirements ───┐               ┌──────────────────┐               │
+│  Acceptance ─────┤               │  AI GENERATES    │               │
+│  criteria        ├──────────────►│  test cases from │               │
+│  Source code ────┤               │  requirements    │               │
+│  Risk register ──┘               └────────┬─────────┘               │
+│                                           │                         │
+│                                           ▼                         │
+│                                  ┌──────────────────┐               │
+│                                  │  HUMAN REVIEWS   │               │
+│                                  │  adds scenarios, │               │
+│                                  │  edge cases,     │               │
+│                                  │  domain insight  │               │
+│                                  └────────┬─────────┘               │
+│                                           │                         │
+│                    ┌──────────────────────┼──────────────────────┐  │
+│                    │                      ▼                      │  │
+│                    │             ┌──────────────────┐            │  │
+│                    │             │  AI EXECUTES     │            │  │
+│                    │             │  tests; reports  │            │  │
+│                    │             │  results         │            │  │
+│                    │             └────────┬─────────┘            │  │
+│                    │                      │                      │  │
+│                    │                      ▼                      │  │
+│                    │             ┌──────────────────┐            │  │
+│          ITERATE   │             │  AI ANALYSES     │            │  │
+│          UNTIL     │             │  coverage, gaps, │            │  │
+│          SUFFICIENT│             │  failure patterns│            │  │
+│                    │             └────────┬─────────┘            │  │
+│                    │                      │                      │  │
+│                    │                      ▼                      │  │
+│                    │             ┌──────────────────┐            │  │
+│                    │             │  AI CHALLENGES   │            │  │
+│                    │             │  "Is this enough?│            │  │
+│                    │             │   What's missing?"│           │  │
+│                    │             └────────┬─────────┘            │  │
+│                    │                      │                      │  │
+│                    │                      ▼                      │  │
+│                    │             ┌──────────────────┐            │  │
+│                    │             │  HUMAN VALIDATES │            │  │
+│                    │             │  adds tests,     │◄──┐        │  │
+│                    │             │  accepts gaps,   │   │        │  │
+│                    │             │  investigates    ├───┘        │  │
+│                    │             └────────┬─────────┘            │  │
+│                    │                      │                      │  │
+│                    └──────────────────────┼──────────────────────┘  │
+│                                           │                         │
+│                         ┌─────────────────┴─────────────────┐       │
+│                         │                                   │       │
+│                         ▼                                   ▼       │
+│                ┌──────────────────┐              ┌──────────────────┐
+│                │  VALIDATION      │              │  AI PRESERVES    │
+│                │  (Human-led)     │              │  test knowledge, │
+│                │  UAT, stakeholder│              │  defect patterns,│
+│                │  acceptance      │              │  coverage rationale
+│                └──────────────────┘              └──────────────────┘
+│                                                                     │
+│  OUTPUTS: Test results, coverage reports, defect log,               │
+│           release recommendation                                    │
+│                                                                     │
+└─────────────────────────────────────────────────────────────────────┘
+```
+
+#### Evolution Interventions
+
+| Activity | AI Augmentation | Human Retains |
+|----------|-----------------|---------------|
+| **Test case generation** | Generate tests from requirements/code; identify edge cases | Validate test quality; add domain-specific scenarios |
+| **Test execution** | Execute automated tests; report results | Interpret results; decide if failures matter |
+| **Coverage analysis** | Calculate coverage metrics; identify gaps | Judge if coverage is meaningful |
+| **Defect analysis** | Categorise defects; identify patterns; suggest root causes | Investigate complex issues; determine fix approach |
+| **Regression testing** | Execute regression suite; flag new failures | Decide if new failures are real issues |
+| **Performance testing** | Execute load tests; analyse results | Judge if performance is acceptable |
+| **Test data generation** | Generate test data sets; anonymise production data | Validate data is realistic and complete |
+| **UAT facilitation** | Track UAT progress; capture feedback | Conduct actual user testing; interpret feedback |
+
+#### Information Debt Risk
+
+Testing is where **false confidence** is most dangerous:
+- Tests pass but don't test the right things
+- Coverage metrics look good but miss critical paths
+- Automated tests verify implementation, not requirements
+- "All tests pass" becomes a ritual rather than evidence
+
+**Common information debt patterns:**
+
+| Debt Pattern | What's Missing | How It Manifests Later | Detection Mechanism |
+|--------------|----------------|------------------------|---------------------|
+| Coverage theatre | Tests that exercise code but don't verify behaviour | Production bugs in "tested" code | Mutation testing; defect escape rate |
+| Missing edge cases | Tests for happy path only | Production failures on edge conditions | Boundary analysis review; chaos testing |
+| Brittle tests | Tests tied to implementation details | Tests break on valid changes; get disabled | Track test failure-to-fix ratio; test churn rate |
+| Untested integration | Unit tests only; no integration testing | Integration failures in production | Integration test coverage metrics; contract testing |
+| Assumption blindness | Tests share code's assumptions | Bugs where assumptions don't hold | Independent test design; external review |
+| UAT lip service | Stakeholder sign-off without genuine validation | User complaints post-release | Track stakeholder engagement time; post-release feedback correlation |
+| Requirements drift | Tests validate outdated requirements | System works as tested but not as needed | Requirements-to-test traceability review; requirement change audit |
+| Regression rot | Old tests become meaningless as system evolves | False security from passing tests | Periodic regression test review; test-to-defect correlation |
+| AI confirmation bias | AI generates tests that confirm, not challenge | Systematic blind spots | Adversarial test review; diverse test generation |
+| Test data staleness | Test data doesn't reflect production patterns | Edge cases in production not tested | Production data sampling comparison |
+
+#### Detection and Monitoring
+
+AI should track and report:
+
+| Metric | What It Indicates | Action Threshold |
+|--------|-------------------|------------------|
+| **Defect escape rate** | Defects found in production vs testing | Rising trend indicates test strategy gap |
+| **Test-to-defect correlation** | Which tests actually find defects? | Tests that never fail may be coverage theatre |
+| **Coverage vs defect location** | Are we testing where bugs are? | Defects in "covered" code indicates test quality issue |
+| **Time-to-detect trends** | Are we finding issues earlier or later? | Later detection indicates process degradation |
+| **Flaky test percentage** | Test suite reliability | >5% flaky tests indicates maintenance debt |
+| **Test execution time trends** | Test suite health | Growing execution time may indicate bloat |
+
+**AI should surface these patterns proactively**, not just when asked.
+
+#### What Must Be Preserved
+
+- Human judgement about test adequacy
+- Domain knowledge of what scenarios matter
+- Understanding of user behaviour and expectations
+- Ability to recognise when tests aren't testing the right things
+- Stakeholder relationships for genuine validation
+- **Tester skills**: Ability to design tests without AI assistance
+- **Exploratory intuition**: Human ability to "sense" where bugs hide
+- **Adversarial thinking**: Ability to challenge, not just confirm
+
+**Skill preservation mechanisms:**
+- Require humans to design *some* tests without AI assistance (rotate responsibility)
+- Track who can explain test strategy without AI prompting
+- Periodically conduct human-only exploratory testing sessions
+- Review AI-generated tests for quality, not just coverage
+
+#### Defensive Processes for Testing
+
+These processes run during testing to detect and remediate problems:
+
+**Process 6.1: Test Quality Assurance**
+
+*Problem defended against*: Coverage theatre; tests that don't verify behaviour
+
+*Trigger*: Continuous (with test creation); periodic review
+
+*Actor Model*: AI-led (Mode 4) analysis; Human-led (Mode 2) remediation
+
+**Continuous Analysis (Mode 4):**
+
+For each new/modified test, AI analyses:
+
+| Analysis | Questions | Indicators |
+|----------|-----------|------------|
+| **Assertion quality** | Does test have meaningful assertions? Testing behaviour or implementation? Could it pass with broken code? | No assertions; mocking everything; testing private methods |
+| **Mutation testing** | What % of mutations caught? Which survive? | Low mutation score indicates weak tests |
+| **Assumption analysis** | What assumptions shared with code? Boundaries tested? Error paths tested? | Same boundary checks as code; no negative tests |
+| **Requirement traceability** | Which requirement verified? Does test verify requirement intent? | No requirement link; tests implementation detail |
+
+**Quality Issues Detected:**
+
+AI flags: "This test has no assertions", "This test would pass even if [behavior] was broken", "Mutation at line X survives", "Test traces to requirement but doesn't verify key aspect"
+
+Human reviews; decides: Improve test / Accept gap with rationale / Flag for exploratory testing
+
+**Periodic Review (Weekly):**
+
+AI synthesises test health report:
+- Mutation score trend
+- Tests with no assertions count
+- Tests never failed count (may indicate coverage theatre)
+- Test-to-defect correlation (which tests find defects?)
+
+---
+
+**Process 6.2: Defect Feedback Loop**
+
+*Problem defended against*: Same defect types recurring; no learning from production
+
+*Trigger*: Each defect found (testing or production); periodic analysis
+
+*Actor Model*: AI-led (Mode 4) analysis; Collaborative (Mode 3) remediation
+
+**For Each Defect, AI Analyses:**
+
+| Analysis | Output |
+|----------|--------|
+| **Root cause classification** | Requirements gap / Design flaw / Implementation error / Test gap / Environment issue |
+| **Escape analysis** (production defects) | Why didn't testing catch this? Was scenario tested? Did tests pass despite bug? |
+| **Pattern matching** | Similar to previous defects? Common root cause? Same code area? |
+
+**Learning Actions (Mode 3 - Collaborative):**
+
+AI proposes; Human approves:
+- **Regression test**: Generate test for this specific defect
+- **Test strategy update**: Adjust what we test based on pattern
+- **Backward event**: Escalate to Requirements/Design if root cause upstream
+- **Process improvement**: Update standards if process gap
+- **Knowledge capture**: Document for future (HST document)
+
+**Periodic Defect Review (Sprint/Release):**
+
+AI synthesises defect patterns:
+- Defect clustering by area/type
+- Escape rate trend
+- Test strategy gaps indicated by escapes
+- Recurring patterns not being addressed
+
+Team reviews; decides test strategy adjustments, areas for focused attention, process changes.
+
+---
+
+**Process 6.3: Validation Integrity**
+
+*Problem defended against*: UAT lip service; validation without genuine stakeholder engagement
+
+*Trigger*: UAT phase; release decision point
+
+*Actor Model*: Human-led (Mode 2) — AI supports but cannot replace human validation
+
+**Key principle**: AI CANNOT validate fitness-for-purpose. AI CAN support validation process integrity.
+
+**UAT Engagement Tracking:**
+
+AI monitors:
+- Time stakeholders spend with system (not just sign-off time)
+- Breadth of features actually exercised
+- Depth of exploration (happy path only vs edge cases)
+- Feedback quality (substantive vs "looks fine")
+
+**Low Engagement Warning:**
+
+AI flags:
+- "Stakeholder X spent 10 minutes on UAT for 50 features"
+- "Only 3 of 12 user journeys were exercised"
+- "No negative feedback recorded—is engagement genuine?"
+- "Sign-off requested without completion of test scenarios"
+
+**Validation Dialogue (AI supports human-led):**
+
+AI elicits from stakeholders:
+- "Does this solve the problem you described in Phase 1?"
+- "What would prevent you from using this in production?"
+- "What's missing that you expected?"
+- "On a scale of 1-10, how confident are you this meets needs?"
+- "What's the worst thing that could happen if we release this?"
+
+**AI Preserves validation evidence:**
+- Stakeholder feedback (verbatim)
+- Engagement metrics
+- Confidence levels with rationale
+- Outstanding concerns and how addressed
+
+**Release Decision Gate:**
+
+AI presents validation summary:
+- Engagement level: Sufficient / Concerning / Insufficient
+- Stakeholder confidence: High / Medium / Low
+- Outstanding concerns: List with severity
+- Recommendation: Release / Release with caveats / Do not release
+
+Human (Release Manager + PO) decides. Decision preserved with rationale.
+
+---
+
+**Process 6.4: Tester Skill Preservation**
+
+*Problem defended against*: Testers become script executors; lose exploratory skills
+
+*Trigger*: Periodic (per sprint); continuous tracking
+
+*Actor Model*: Human-led (Mode 2) execution; AI supports tracking
+
+**AI Tracks Per Tester:**
+- Ratio of AI-generated vs human-designed tests
+- Exploratory testing sessions conducted
+- Defects found through exploration vs scripted tests
+- Test strategy contributions
+
+**Skill Rotation Requirements:**
+- Each tester must periodically: design tests without AI (Mode 1), conduct exploratory sessions, review AI-generated test quality, explain test strategy to others
+
+**Atrophy Warning Triggers:**
+- Tester >90% executing AI-generated tests for 4+ weeks
+- No exploratory testing sessions conducted
+- Defects only found through automated tests
+- Cannot explain test strategy without AI
+
+**Response:** Assign independent test design; exploratory testing time allocation; pair testing for knowledge transfer
+
+#### Transition Readiness: Testing → Deployment
+
+Sufficiency for `RELEASE_APPROVED` is context-dependent. AI can help surface readiness through:
+
+- "What defects are open? Are any blockers?"
+- "What requirements have no test coverage? Is that acceptable?"
+- "What test types haven't been executed? (performance, security, accessibility)"
+- "Have stakeholders validated this meets their needs?"
+- "What scenarios haven't been tested? What's the risk?"
+- "If we release and something is wrong, what's the worst case?"
+- "What would increase your confidence before release?"
+
+#### Evolution Risk
+
+| Risk | Mitigation |
+|------|------------|
+| AI-generated tests achieve coverage without verifying behaviour | Mutation testing; require human review of test *intent* |
+| False confidence from high coverage metrics | Track defect escape rate; don't rely on coverage alone |
+| Test suite maintenance becomes burden; tests get disabled | Track disabled test count; require justification for disabling |
+| Validation reduced to checkbox exercise | Require substantive stakeholder engagement; track engagement time |
+| "Tests pass" becomes proxy for "it works" | Emphasise defect escape rate over pass rate |
+| Testers become test script executors, losing exploratory skills | Rotate human-only testing; track who can design tests independently |
+| Stakeholder validation bypassed because "testing is done" | Validation gate requires human-led UAT with documented feedback |
+| Production feedback not incorporated | Track production defects → test strategy improvements |
+| AI confirms rather than challenges | Adversarial test generation; independent test review |
 
 ---
 
 ### Phase 7: Deployment/Operations
 
-*To be developed*
+**ISO 12207 Processes**: 6.4.10 Transition, 6.4.11 Validation (operational), 6.4.12 Operation, 6.4.13 Maintenance
+
+**Information Composition**: 60% Formal / 30% Tacit / 10% Emergent
+
+**Primary Question**: DELIVER—release, operate, maintain, evolve
+
+**The Knowledge Transfer Challenge**: This phase requires transferring understanding from those who built the system to those who operate it. Operational knowledge ("how to keep it running at 3am") is often deeply tacit—learned through experience, never fully documented. AI can monitor and alert, but incident response requires human judgement about complex, novel situations.
+
+#### Document Types
+
+*Classification per [Document Type Classification Framework](./concepts/concept_document-type-classification.md)*
+
+**Organisational Inputs** (Scope: Organisational — exist before project):
+
+| Document Type | Domain | Temporal | Purpose in Phase 7 |
+|---------------|--------|----------|-------------------|
+| Deployment Standards | OPS | Standing | Release processes, approval gates |
+| Infrastructure Standards | OPS | Standing | Platform requirements, security baselines |
+| Monitoring Standards | OPS | Standing | What to monitor, alerting thresholds |
+| Incident Management Process | OPS | Standing | How incidents are handled, escalation paths |
+| Change Management Process | OPS | Standing | How changes are approved and tracked |
+| SLA/SLO Definitions | OPS | Standing | Service level requirements |
+| On-Call Procedures | OPS | Standing | Rotation, escalation, communication |
+| Disaster Recovery Standards | OPS | Standing | Backup, recovery, continuity requirements |
+
+**AI should ask**: "Are there deployment standards, SLA requirements, or incident management processes I should follow? What monitoring and alerting standards apply?"
+
+**Project Inputs** (Scope: Project — from Phase 3-6):
+
+| Document Type | Domain | Temporal | Source |
+|---------------|--------|----------|--------|
+| Source Code (IMP-001) | IMP | Dynamic | Phase 5 |
+| Architecture Description (DES-001) | DES | Standing | Phase 4 |
+| Test Results (VAL-003) | VAL | Dynamic | Phase 6 |
+| API Documentation | IMP | Dynamic | Phase 5 |
+| Database Scripts/Migrations | IMP | Dynamic | Phase 5 |
+| Non-Functional Requirements | SPC | Standing | Phase 3 |
+| Risk Register (STR-004) | STR | Dynamic | Phase 2 |
+| Technical Debt Register | STR | Dynamic | Phase 5 |
+
+**Project Outputs** (Scope: Project — produced by this phase):
+
+| Document Type | Domain | Temporal | Downstream Consumer |
+|---------------|--------|----------|---------------------|
+| Deployment Runbook (OPS-001) | OPS | Standing | Operations, on-call |
+| Operational Runbook (OPS-002) | OPS | Standing | Operations, on-call |
+| Monitoring Configuration | OPS | Dynamic | Operations |
+| Incident Playbooks | OPS | Standing | On-call, incident response |
+| Post-Incident Reports | OPS | Standing | Learning, future incidents |
+| Operational Metrics Baseline | OPS | Dynamic | SLA tracking |
+| Release Notes | OPS | Dynamic | Users, support |
+| Known Issues Log | OPS | Dynamic | Support, maintenance |
+
+**Working Documents** (Scope: Task — ephemeral, contribute to outputs):
+
+| Document Type | Domain | Captures | Contributes To |
+|---------------|--------|----------|----------------|
+| Incident Timeline | WRK | Real-time incident details | Post-Incident Report |
+| Investigation Notes | WRK | Diagnostic reasoning | Post-Incident Report, Playbooks |
+| Change Request Notes | WRK | Change rationale, risk assessment | Change log |
+| Deployment Notes | WRK | Deployment observations | Runbook improvements |
+
+**Process Validation**: Post-incident reports must capture *why* the incident occurred and *why* it wasn't prevented, not just *what* happened. AI should flag reports missing root cause analysis.
+
+#### Collaboration Modes in Deployment/Operations
+
+| Mode | Description | When Appropriate |
+|------|-------------|------------------|
+| **Human-only** (Mode 1) | Human executes; no AI involvement | Emergency response requiring judgement; security-sensitive operations |
+| **Human-led** (Mode 2) | Human leads; AI assists with information gathering | Complex incidents; novel situations; critical deployments |
+| **Collaborative** (Mode 3) | Human and AI work together | Routine operations; monitoring review; capacity planning |
+| **AI-led** (Mode 4) | AI executes; human validates/approves | Routine deployments; automated scaling; standard alerts |
+| **Fully autonomous** (Mode 5) | AI executes without human in loop | Continuous deployment pipelines; auto-scaling; auto-remediation |
+
+**Mode transitions during operations:**
+- Autonomous monitoring → anomaly detected → AI-led triage (Mode 5 → Mode 4)
+- AI-led triage → complex issue → Human-led investigation (Mode 4 → Mode 2)
+- Human-led investigation → production emergency → Human-only crisis response (Mode 2 → Mode 1)
+- Routine deployment → unexpected failure → Collaborative rollback (Mode 4 → Mode 3)
+
+**Governance for Mode 5 (Autonomous):**
+- Defined scope: only pre-approved automations (scaling, standard alerts, health checks)
+- Automatic escalation: novel patterns, threshold breaches, cascading failures
+- Human approval required for: production changes, data modifications, security actions
+- "Break glass" procedures for emergency human override
+
+#### AI Active Validation Process for Deployment/Operations
+
+```
+┌─────────────────────────────────────────────────────────────────────┐
+│        AI ACTIVE VALIDATION IN DEPLOYMENT/OPERATIONS                │
+├─────────────────────────────────────────────────────────────────────┤
+│                                                                     │
+│  1. ELICIT ────────────────────────────────────────────────────     │
+│     Surface operational knowledge:                                  │
+│     "What should I monitor to know this is healthy?"                │
+│     "What does 'normal' look like for this system?"                 │
+│     "What are the early warning signs of problems?"                 │
+│     "What would you do if [scenario] happened?"                     │
+│                                                                     │
+│  2. ANALYSE ───────────────────────────────────────────────────     │
+│     Examine operational state:                                      │
+│     • Health metrics vs baselines                                   │
+│     • Anomaly detection (deviation from normal)                     │
+│     • Trend analysis (approaching limits?)                          │
+│     • Correlation (related issues across components?)               │
+│     • SLA/SLO compliance                                            │
+│                                                                     │
+│  3. SYNTHESISE ────────────────────────────────────────────────     │
+│     Build operational picture:                                      │
+│     • System health dashboard                                       │
+│     • Incident timeline reconstruction                              │
+│     • Impact assessment                                             │
+│     • Root cause hypothesis                                         │
+│                                                                     │
+│  4. VALIDATE ──────────────────────────────────────────────────     │
+│     Confirm operational understanding:                              │
+│     "Is this behavior expected given [context]?"                    │
+│     "Does this metric indicate a problem or normal variation?"      │
+│     "Is this incident related to [recent change]?"                  │
+│                                                                     │
+│  5. TRANSFORM ─────────────────────────────────────────────────     │
+│     Convert between representations:                                │
+│     • Logs → Incident summary                                       │
+│     • Metrics → Health report                                       │
+│     • Incident → Post-mortem                                        │
+│     • Experience → Runbook/Playbook                                 │
+│                                                                     │
+│  6. DECIDE (surface for human) ────────────────────────────────     │
+│     AI presents operational decisions:                              │
+│     "Alert threshold breached—investigate or acknowledge?"          │
+│     "Deployment ready—proceed or hold?"                             │
+│     "Incident appears resolved—close or continue monitoring?"       │
+│                                                                     │
+│  7. GENERATE ──────────────────────────────────────────────────     │
+│     Produce operational artifacts:                                  │
+│     • Runbook drafts from tribal knowledge                          │
+│     • Playbook updates from incidents                               │
+│     • Release notes from changes                                    │
+│     • Post-incident reports                                         │
+│                                                                     │
+│  8. PRESERVE ──────────────────────────────────────────────────     │
+│     Capture operational knowledge:                                  │
+│     • Incident learnings                                            │
+│     • Operational patterns ("this always happens when...")          │
+│     • Tribal knowledge surfaced through incidents                   │
+│     • Feedback to earlier phases                                    │
+│                                                                     │
+└─────────────────────────────────────────────────────────────────────┘
+```
+
+#### AI Challenge Questions for Deployment/Operations
+
+**For Deployment Readiness:**
+- "Are all prerequisites for deployment met?"
+- "What's the rollback plan if this fails?"
+- "Who needs to be notified? Who's on-call?"
+- "What could go wrong? How would we detect it?"
+- "Is this the right time to deploy? What's the risk?"
+
+**For Operational Health:**
+- "Is this metric within normal range?"
+- "Is this trend concerning or expected?"
+- "Are these issues related or coincidental?"
+- "What changed recently that could explain this?"
+
+**For Incident Response:**
+- "What's the impact? Who/what is affected?"
+- "What's the most likely cause? What evidence supports that?"
+- "What's the fastest path to mitigation vs. root cause fix?"
+- "Who else needs to know? What's the communication plan?"
+- "Is this a symptom of a larger problem?"
+
+**For Knowledge Capture:**
+- "What did we learn from this incident?"
+- "Why didn't we detect this sooner?"
+- "Why didn't we prevent this?"
+- "What should we change to prevent recurrence?"
+- "Who else needs to know this?"
+
+#### Escalation Framework for Deployment/Operations
+
+| Escalation Type | Trigger | AI Action | Who Decides | Action Required |
+|-----------------|---------|-----------|-------------|-----------------|
+| **Deployment decision** | Release ready | Present readiness summary | **Release Manager** | Approve/defer deployment |
+| **Deployment failure** | Deployment doesn't succeed | Report status; suggest rollback | **On-call + Release Mgr** | Rollback or fix-forward |
+| **Alert triggered** | Monitoring threshold breached | Present context; suggest triage | **On-call** | Investigate or acknowledge |
+| **Incident declared** | Service degradation confirmed | Initiate incident process | **Incident Commander** | Coordinate response |
+| **Escalation needed** | On-call cannot resolve | Identify next escalation tier | **On-call** | Engage additional help |
+| **Customer impact** | Users affected | Assess impact; draft communication | **Incident Commander + Comms** | External communication |
+| **Change request** | Modification needed | Risk assessment; approval routing | **Change Manager** | Approve/reject change |
+| **Capacity concern** | Approaching resource limits | Forecast and options | **Ops Lead + Architect** | Scale or optimize |
+| **Security incident** | Security event detected | Isolate and assess | **Security + Incident Cmd** | Security response protocol |
+| **Backward event needed** | Incident reveals upstream issue | Identify source phase | **Tech Lead + PO** | Escalate to appropriate phase |
+
+#### Backward Events from Operations
+
+Production often reveals issues that require returning to earlier phases:
+
+| Backward Event | Trigger | Information Debt Created | AI Detection |
+|----------------|---------|-------------------------|--------------|
+| **Operations → Testing** | Production issue not caught by testing | Test strategy gap | Pattern: production bugs in "tested" functionality |
+| **Operations → Implementation** | Bug in production code | Fix required | Direct: production errors in code |
+| **Operations → Design** | Architectural limitation in production | Design revision needed | Pattern: scaling limits, integration issues, performance walls |
+| **Operations → Requirements** | Users using system differently than specified | Requirements gap | Pattern: feature requests, unexpected usage patterns |
+| **Operations → Planning** | Operational cost much higher than planned | Capacity/cost replanning | Pattern: resource consumption >> estimates |
+
+**AI should ask when patterns emerge:**
+- "This production issue suggests a test gap—should we improve test coverage?"
+- "This keeps happening—is there a design issue we should address?"
+- "Users are consistently requesting [X]—should we revisit requirements?"
+- "Operational costs are 3x estimates—should we revisit planning assumptions?"
+
+#### The Operations Dialogue Loop
+
+```
+┌─────────────────────────────────────────────────────────────────────┐
+│                 PHASE 7: DEPLOYMENT/OPERATIONS                      │
+│                   The Operations Loop                               │
+├─────────────────────────────────────────────────────────────────────┤
+│                                                                     │
+│  DEPLOYMENT                          OPERATIONS                     │
+│  ──────────                          ──────────                     │
+│                                                                     │
+│  ┌──────────────────┐               ┌──────────────────┐            │
+│  │  AI VALIDATES    │               │  AI MONITORS     │            │
+│  │  deployment      │               │  continuously    │            │
+│  │  readiness       │               │  (Mode 5)        │            │
+│  └────────┬─────────┘               └────────┬─────────┘            │
+│           │                                  │                      │
+│           ▼                                  ▼                      │
+│  ┌──────────────────┐               ┌──────────────────┐            │
+│  │  HUMAN APPROVES  │               │  AI DETECTS      │            │
+│  │  deployment      │               │  anomaly or      │            │
+│  │  (Release Mgr)   │               │  threshold       │            │
+│  └────────┬─────────┘               └────────┬─────────┘            │
+│           │                                  │                      │
+│           ▼                                  ▼                      │
+│  ┌──────────────────┐               ┌──────────────────┐            │
+│  │  AI EXECUTES     │               │  AI TRIAGES      │            │
+│  │  deployment      │               │  presents        │            │
+│  │  (Mode 4/5)      │               │  context         │            │
+│  └────────┬─────────┘               └────────┬─────────┘            │
+│           │                                  │                      │
+│           ▼                                  ▼                      │
+│  ┌──────────────────┐               ┌──────────────────┐            │
+│  │  AI MONITORS     │               │  HUMAN           │            │
+│  │  deployment      │               │  INVESTIGATES    │            │
+│  │  health          │               │  (Mode 2/3)      │            │
+│  └────────┬─────────┘               └────────┬─────────┘            │
+│           │                                  │                      │
+│           ▼                                  ▼                      │
+│  ┌──────────────────┐               ┌──────────────────┐            │
+│  │  SUCCESS:        │               │  AI ASSISTS      │            │
+│  │  → Operations    │               │  diagnosis,      │            │
+│  │  FAILURE:        │               │  suggests        │            │
+│  │  → Rollback      │               │  remediation     │            │
+│  └──────────────────┘               └────────┬─────────┘            │
+│                                              │                      │
+│                                              ▼                      │
+│                                     ┌──────────────────┐            │
+│                                     │  HUMAN DECIDES   │            │
+│                                     │  remediation     │            │
+│                                     │  approach        │            │
+│                                     └────────┬─────────┘            │
+│                                              │                      │
+│                    ┌─────────────────────────┼─────────────────┐    │
+│                    │                         │                 │    │
+│                    ▼                         ▼                 ▼    │
+│           ┌──────────────┐          ┌──────────────┐  ┌───────────┐ │
+│           │ AI PRESERVES │          │ BACKWARD     │  │ CONTINUE  │ │
+│           │ learnings,   │          │ EVENT to     │  │ MONITORING│ │
+│           │ updates      │          │ earlier      │  │           │ │
+│           │ playbooks    │          │ phase        │  │           │ │
+│           └──────────────┘          └──────────────┘  └───────────┘ │
+│                                                                     │
+│  OUTPUTS: Deployed system, operational metrics, incident reports,   │
+│           updated runbooks/playbooks, feedback to earlier phases    │
+│                                                                     │
+└─────────────────────────────────────────────────────────────────────┘
+```
+
+#### Evolution Interventions
+
+| Activity | AI Augmentation | Human Retains |
+|----------|-----------------|---------------|
+| **Deployment execution** | Automate deployment steps; validate prerequisites; monitor rollout | Approve deployment; decide rollback; handle exceptions |
+| **Monitoring** | Continuous metric analysis; anomaly detection; trend alerting | Interpret alerts; judge severity; decide response |
+| **Incident triage** | Gather context; correlate events; suggest likely causes | Diagnose complex issues; decide remediation approach |
+| **Incident response** | Execute runbook steps; gather diagnostics; draft communications | Make judgement calls; coordinate teams; communicate externally |
+| **Post-incident review** | Generate timeline; identify contributing factors; draft report | Determine root cause; decide preventive actions; approve findings |
+| **Runbook maintenance** | Capture operational knowledge; suggest updates; identify gaps | Validate accuracy; add tacit knowledge; approve changes |
+| **Capacity planning** | Forecast based on trends; model scenarios | Decide capacity investments; balance cost vs risk |
+| **Change management** | Risk assessment; impact analysis; approval routing | Approve changes; judge risk acceptability |
+
+#### Information Debt Risk
+
+Operations is where **all upstream information debt manifests**:
+- Poor requirements → users unhappy with working system
+- Poor design → operational nightmares, scaling limits
+- Poor implementation → bugs, performance issues, security vulnerabilities
+- Poor testing → production incidents for "tested" features
+- Poor documentation → on-call cannot resolve issues
+
+**Common information debt patterns:**
+
+| Debt Pattern | What's Missing | How It Manifests | Detection Mechanism |
+|--------------|----------------|------------------|---------------------|
+| Undocumented operations | How to run/troubleshoot system | On-call incidents take longer; knowledge silos | Time-to-resolve trends; escalation rate |
+| Missing playbooks | Incident response procedures | Ad-hoc response; inconsistent outcomes | Incident recurrence; response time variance |
+| Tribal knowledge | Operational understanding not captured | Bus factor issues; slow onboarding | Single-point-of-failure in on-call |
+| Monitoring gaps | What to watch and why | Incidents not detected until user reports | Detection source analysis (monitoring vs user report) |
+| Alert fatigue | Too many/noisy alerts | Real issues missed; on-call burnout | Alert-to-incident ratio; alert acknowledgment time |
+| Runbook rot | Outdated procedures | Wrong actions taken; delays | Runbook accuracy audit; procedure failure rate |
+| Missing feedback loops | Learnings not reaching earlier phases | Same issues recur | Incident recurrence rate; defect patterns |
+
+#### Detection and Monitoring
+
+AI should track and report:
+
+| Metric | What It Indicates | Action Threshold |
+|--------|-------------------|------------------|
+| **Mean time to detect (MTTD)** | Monitoring effectiveness | Rising trend indicates gaps |
+| **Mean time to resolve (MTTR)** | Operational capability | Rising trend indicates knowledge gaps |
+| **Incident recurrence rate** | Learning effectiveness | >20% recurrence indicates systemic issues |
+| **Alert-to-incident ratio** | Alert quality | High ratio indicates alert fatigue risk |
+| **Escalation rate** | First-responder capability | Rising rate indicates training/documentation needs |
+| **Change failure rate** | Deployment quality | >15% indicates process issues |
+| **On-call burden** | Operational sustainability | Excessive pages indicate systemic issues |
+| **Customer-reported incidents** | Detection gaps | Should be near zero |
+
+**AI should surface these patterns proactively**, not just when asked.
+
+#### What Must Be Preserved
+
+- Human judgement in crisis situations
+- Ability to respond to novel incidents (not just follow playbooks)
+- Understanding of system behavior (not just monitoring outputs)
+- Relationships with stakeholders for incident communication
+- Operational intuition ("something feels wrong")
+- **On-call skills**: Ability to diagnose without AI assistance
+- **Crisis management**: Human leadership in emergencies
+- **Customer empathy**: Understanding user impact
+
+**Skill preservation mechanisms:**
+- Require periodic human-led incident response (even for routine issues)
+- Track AI-assistance ratio in incident resolution
+- Conduct incident response exercises without AI
+- Rotate on-call to maintain broad operational knowledge
+- Review AI-suggested remediations rather than auto-applying
+
+#### Defensive Processes for Deployment/Operations
+
+**Process 7.1: Deployment Readiness Validation**
+
+*Problem defended against*: Deployments that fail or cause incidents
+
+*Trigger*: Before each deployment
+
+*Actor Model*: AI-led (Mode 4) validation; Human-led (Mode 2) approval
+
+**AI Validates:**
+- All tests passed (including integration, performance, security)
+- No blocking defects open
+- Runbooks/playbooks updated for new functionality
+- Monitoring configured for new features
+- Rollback plan documented and tested
+- On-call briefed on changes
+- Change approval obtained
+
+**AI Presents:**
+- Readiness checklist status
+- Risk assessment
+- Deployment window suitability
+- Recommendation: Ready / Ready with caveats / Not ready
+
+**Human (Release Manager) Decides:**
+- Proceed / Defer / Require additional work
+
+---
+
+**Process 7.2: Operational Knowledge Capture**
+
+*Problem defended against*: Tribal knowledge loss; single points of failure
+
+*Trigger*: After each incident; periodic review
+
+*Actor Model*: Collaborative (Mode 3) — AI elicits, human contributes knowledge
+
+**After Each Incident:**
+
+AI elicits operational knowledge:
+- "What did you check first? Why?"
+- "How did you know [X] was the cause?"
+- "What would have helped you resolve this faster?"
+- "What should the next person know about this?"
+
+AI generates:
+- Playbook entry (or update)
+- Runbook improvement suggestions
+- Monitoring recommendations
+
+Human reviews and approves.
+
+**Periodic Knowledge Audit:**
+
+AI analyses:
+- Modules with no runbook coverage
+- Incident types without playbooks
+- Single-person knowledge areas (bus factor = 1)
+- Outdated documentation (runbook vs actual)
+
+AI recommends knowledge capture sessions.
+
+---
+
+**Process 7.3: Incident Learning Loop**
+
+*Problem defended against*: Same incidents recurring; no improvement
+
+*Trigger*: After each significant incident; periodic review
+
+*Actor Model*: AI-led (Mode 4) analysis; Human-led (Mode 2) action decisions
+
+**For Each Incident:**
+
+AI generates post-incident analysis:
+- Timeline reconstruction
+- Contributing factors identified
+- Detection effectiveness (how discovered?)
+- Response effectiveness (time to mitigate)
+- Root cause hypothesis
+
+AI identifies:
+- Similar past incidents
+- Patterns across incidents
+- Upstream source (testing gap? design issue? requirements gap?)
+- Recommended preventive actions
+
+**Human Reviews:**
+- Validates root cause
+- Decides preventive actions
+- Approves feedback to earlier phases (backward events)
+
+**Periodic Incident Review:**
+
+AI synthesises:
+- Incident trends by type/cause/area
+- MTTD/MTTR trends
+- Recurrence analysis
+- Upstream phase feedback needed
+
+Team decides systemic improvements.
+
+---
+
+**Process 7.4: Operations Skill Preservation**
+
+*Problem defended against*: On-call becomes AI-dependent; loses diagnostic skills
+
+*Trigger*: Periodic (monthly); continuous tracking
+
+*Actor Model*: Human-led (Mode 2) execution; AI supports tracking
+
+**AI Tracks Per On-call:**
+- AI-assisted vs independent incident resolution
+- Time to diagnosis with/without AI
+- Escalation rate
+- Playbook reliance (following steps vs understanding system)
+
+**Skill Rotation Requirements:**
+- Each on-call must periodically: resolve incidents without AI assistance, update runbooks from experience, conduct incident response exercises, explain system behavior to others
+
+**Atrophy Warning Triggers:**
+- On-call >90% AI-assisted resolutions
+- Escalation rate increasing
+- Cannot explain system behavior without AI
+- Runbooks not being updated from experience
+
+**Response:** Supervised incident response; system deep-dives; documentation sessions; mentoring
+
+#### Transition Readiness: Operations → Evolution
+
+Unlike other phases, Operations doesn't transition—it continues. However, learnings should transition back to earlier phases:
+
+| Learning Type | Target Phase | Mechanism |
+|---------------|--------------|-----------|
+| Feature requests / usage patterns | Requirements | Product backlog; requirements update |
+| Performance / scaling limits | Design | Architecture review; design update |
+| Bug patterns | Implementation | Defect backlog; code improvement |
+| Test gaps (production incidents) | Testing | Test strategy update |
+| Estimate accuracy | Planning | Estimation calibration |
+
+**AI should continuously surface feedback:**
+- "Users are consistently requesting [X]—should this go to Requirements?"
+- "This architectural limit has caused 3 incidents—should we revisit Design?"
+- "These defects follow a pattern—should Implementation review?"
+- "These production issues weren't caught by testing—Test strategy gap?"
+
+#### Evolution Risk
+
+| Risk | Mitigation | Detection |
+|------|------------|-----------|
+| On-call becomes AI-dependent | Skill preservation (Process 7.4); periodic unassisted response | AI-assistance ratio; escalation trends |
+| Tribal knowledge not captured | Knowledge capture (Process 7.2); incident learning (Process 7.3) | Bus factor analysis; runbook coverage |
+| Alert fatigue masks real issues | Alert quality management; regular alert review | Alert-to-incident ratio; acknowledgment time |
+| Incidents recur without learning | Incident learning loop (Process 7.3); recurrence tracking | Recurrence rate; pattern detection |
+| Feedback doesn't reach earlier phases | Backward event detection; explicit feedback loops | Upstream phase action rate |
+| Runbooks become stale | Periodic runbook audit; incident-driven updates | Procedure failure rate; last-update tracking |
+| AI auto-remediation causes issues | Governance for Mode 5; human approval gates | Auto-remediation success rate; unintended consequences |
+
+---
+
+## Cross-Phase: Backward Event Detection
+
+This process runs continuously across phases to detect when issues should trigger return to earlier phases, rather than being worked around in the current phase.
+
+**Problem defended against**: Issues detected late that should have triggered earlier phase revisit; workarounds that create information debt
+
+**Trigger**: Continuous pattern analysis across Implementation and Testing
+
+**Actor Model**: AI-led (Mode 4) monitoring; Human-led (Mode 2) decision
+
+### Signal Detection
+
+AI continuously monitors for patterns indicating upstream issues:
+
+**Operations → Earlier Phases Signals:**
+| Signal | Pattern | AI Question | Target Phase |
+|--------|---------|-------------|--------------|
+| Production bugs in tested code | Test coverage gap | "This was tested but failed in production. Test strategy issue?" | Testing |
+| Repeated similar defects | Implementation pattern issue | "This defect pattern keeps recurring. Code quality issue?" | Implementation |
+| Scaling/performance limits | Architectural constraint | "We keep hitting this limit. Design issue?" | Design |
+| Users doing unexpected things | Requirements gap | "Users consistently expect [X]. Requirements gap?" | Requirements |
+| Operational cost >> estimates | Planning assumptions wrong | "Costs are 3x estimate. Planning assumptions valid?" | Planning |
+
+**Implementation → Design Signals:**
+| Signal | Pattern | AI Question |
+|--------|---------|-------------|
+| Design infeasibility | Multiple workarounds for same design constraint | "These workarounds suggest the design may be infeasible. Should we revisit Design?" |
+| Integration mismatch | Components don't fit together as designed | "Integration is failing because [reason]. Is this a design issue?" |
+| Performance limits | Design choices causing performance issues | "Performance issues stem from [design choice]. Should we reconsider?" |
+
+**Implementation → Requirements Signals:**
+| Signal | Pattern | AI Question |
+|--------|---------|-------------|
+| Requirement ambiguity | Frequent "what should happen when...?" | "This requirement has been interpreted multiple ways. Should we clarify?" |
+| Requirement conflict | Implementing one requirement breaks another | "Requirements [X] and [Y] appear to conflict. Should we escalate?" |
+| Untestable requirement | Cannot verify requirement is satisfied | "This requirement cannot be tested as written. Should we revise?" |
+
+**Testing → Requirements Signals:**
+| Signal | Pattern | AI Question |
+|--------|---------|-------------|
+| Requirement gaps | Tests reveal unspecified scenarios | "Testing revealed [scenario] is unspecified. Should we add requirements?" |
+| User expectation mismatch | UAT feedback contradicts requirements | "Users expected [X] but requirements say [Y]. Which is correct?" |
+| Acceptance criteria issues | Criteria unverifiable or ambiguous | "Cannot verify acceptance criterion [X]. Should we clarify?" |
+
+**Testing → Design Signals:**
+| Signal | Pattern | AI Question |
+|--------|---------|-------------|
+| Systematic integration failures | Multiple integration tests failing | "Integration failures suggest architectural issue, not bugs. Should we escalate?" |
+| Performance test failures | System can't meet NFRs | "Performance limits appear architectural. Should we revisit Design?" |
+| Security vulnerabilities | Design-level security issues | "Security issues stem from design choices. Should we escalate?" |
+
+### Decision Framework
+
+When backward event signals detected:
+
+```
+┌─────────────────────────────────────────────────────────────────────┐
+│              BACKWARD EVENT DECISION FRAMEWORK                      │
+├─────────────────────────────────────────────────────────────────────┤
+│                                                                     │
+│  1. AI PRESENTS EVIDENCE                                            │
+│     • Pattern detected                                              │
+│     • Signals that triggered detection                              │
+│     • Likely source phase                                           │
+│     • Recommended action                                            │
+│                                                                     │
+│  2. HUMAN ASSESSES (Tech Lead + PO)                                 │
+│     • Is this really an upstream issue?                             │
+│     • What's the cost of continuing vs. revisiting?                 │
+│     • What information debt is created by workaround?               │
+│     • What's the risk if we defer?                                  │
+│                                                                     │
+│  3. DECIDE                                                          │
+│     • BACKWARD EVENT: Return to source phase                        │
+│     • PROCEED AT RISK: Document as information debt                 │
+│     • WORKAROUND: Accept with documented rationale                  │
+│                                                                     │
+│  4. PRESERVE                                                        │
+│     • Decision with rationale                                       │
+│     • If proceeding at risk: debt register entry                    │
+│     • If backward event: trigger conditions for source phase        │
+│                                                                     │
+└─────────────────────────────────────────────────────────────────────┘
+```
+
+### Information Debt from Avoided Backward Events
+
+When teams proceed at risk rather than triggering backward events:
+
+| Avoided Event | Debt Created | Interest (ongoing cost) | Principal (cost to fix properly) |
+|---------------|--------------|-------------------------|----------------------------------|
+| Impl → Design | Workarounds accumulate; architecture erodes | Maintenance burden; fragility | Design rework + re-implementation |
+| Impl → Requirements | Ambiguity resolved ad-hoc; inconsistent interpretation | User confusion; bug reports | Requirements clarification + cascade |
+| Testing → Requirements | Gaps filled with assumptions | Production surprises | Requirements + impl + test rework |
+| Testing → Design | Performance/security workarounds | Operational burden | Architecture revision + rebuild |
+
+**AI tracks avoided backward events and surfaces accumulated debt.**
 
 ---
 
@@ -1184,6 +2834,11 @@ Evolution and Revolution are not mutually exclusive. Organisations may:
 
 | Version | Date | Changes |
 |---------|------|---------|
+| 1.1 | December 2025 | Added detailed Phase 7 (Deployment/Operations) with knowledge transfer, incident learning, operational feedback loops |
+| 1.0 | December 2025 | Added Defensive Processes for Phases 5 & 6; Cross-Phase Backward Event Detection; comprehensive detection mechanisms and mitigations |
+| 0.9 | December 2025 | Enhanced Phase 6 with all actor modes (1-5), backward events, detection mechanisms, skill preservation |
+| 0.8 | December 2025 | Added detailed Phase 6 (Testing/Validation) with verification vs validation, coverage illusion |
+| 0.7 | December 2025 | Added detailed Phase 5 (Implementation/Construction) with collaboration modes, technical debt patterns |
 | 0.6 | December 2025 | Added Document Types sections to all phases (Org/Project/Working); linked to classification framework |
 | 0.5 | December 2025 | Added detailed Phase 4 (Design/Architecture) with collaboration modes, DDD as informing practice |
 | 0.4 | December 2025 | Added detailed Phase 3 (Analysis/Requirements) with AI Active Validation Process |
