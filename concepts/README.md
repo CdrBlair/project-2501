@@ -8,7 +8,7 @@ This directory contains the conceptual framework documentation for the **Dialogu
 
 | Document | Description |
 |----------|-------------|
-| **[dialogue-framework.md](./dialogue-framework.md)** | **Start here** — The Dialogue Framework overview, core concepts, and theoretical foundations |
+| **[dialogue-framework.md](../dialogue-framework.md)** | **Start here** — The Dialogue Framework overview, core concepts, and theoretical foundations |
 
 ---
 
