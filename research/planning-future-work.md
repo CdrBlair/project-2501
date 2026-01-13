@@ -61,25 +61,49 @@ This document tracks potential future development directions for the AI-Augmente
 
 ## Active Considerations
 
-### 1. Executable Framework Manifestation
+### ~~1. Executable Framework Manifestation~~ → COMPLETED
 
-**Description**: Develop the framework beyond documentation into an executable form—potentially as tooling, templates, or structured guidance that can be applied directly to software projects.
+**Resolution** (13 January 2026): Initial executable manifestation achieved through Item 7 implementation and supporting infrastructure.
 
-**Prior exploration**: We have previously discussed creating more detail on software engineering processes and manifesting the framework in executable form.
+**Form chosen**: Claude Code native integration (skills, agents, commands) with bash script infrastructure.
 
-**Potential approaches**:
-- Process templates aligned with the seven-phase model
-- Capability flow specifications as executable workflows
-- Collaboration pattern checklists or decision trees
-- Integration with existing tooling (IDE plugins, CI/CD hooks, project management)
-- Structured prompts or context documents for AI assistants
+**Executable artifacts created**:
 
-**Open questions**:
-- What form would be most useful? (Documentation? Tooling? Both?)
-- Which parts of the framework are mature enough to operationalise?
-- How to maintain alignment between executable artifacts and evolving framework concepts?
+| Layer | Artifacts | Purpose |
+|-------|-----------|---------|
+| **Infrastructure** | `.dialogue/log-decision.sh`, `.dialogue/log-observation.sh` | Logging scripts for decisions and observations |
+| **Skills** | `.claude/skills/log-decision/`, `.claude/skills/log-observation/` | AI-accessible wrappers for logging |
+| **Agents** | `.claude/agents/process-architect.md` | Process design following capability flow schema |
+| **Generation** | `implementation/schema-environment-capability-registry.md`, `implementation/registries/registry-claude-code.yaml` | Registry schema and Claude Code instance |
+| **Context** | `.claude/CLAUDE.md` | Project instructions applying framework to its own development |
 
-**Status**: Under consideration
+**Answers to original questions**:
+
+1. **What form is most useful?**
+   - Tooling for Claude Code (skills, agents) combined with documentation
+   - Bash scripts for non-AI access to logging functions
+   - YAML schemas for structured data
+   - This represents a "Claude Code-first" approach; other tools would use their native mechanisms
+
+2. **Which parts are mature enough?**
+   - Process capability flow schema (operationalised via Process Architect agent)
+   - Decision/observation tracking (operationalised via skills and logs)
+   - 3S2P context provision (operationalised via CLAUDE.md structure)
+   - Collaboration patterns (used in agent design and logging)
+
+3. **How to maintain alignment?**
+   - `implementation/` directory separates generation inputs from generated outputs
+   - Environment Capability Registry schema documents what each tool can do
+   - CLAUDE.md captures meta-application principle—framework applies to its own development
+   - Skills/agents reference canonical concept documents, maintaining traceability
+
+**Future extension points**:
+- Additional skills for other framework concepts (e.g., phase transition validation)
+- Process templates for specific workflows
+- CI/CD hooks for validation at phase boundaries
+- Registries for other AI tools (Cursor, Copilot, etc.)
+
+**Moved to**: Completed Items
 
 ---
 
@@ -100,12 +124,32 @@ This document tracks potential future development directions for the AI-Augmente
 - Provides structured critique grounded in empirical research
 - May reveal where the framework itself needs refinement
 
-**Open questions**:
-- Which frameworks/tools would be most valuable to analyse first?
-- What format should analyses take? (Companion-style documents? Comparative tables?)
-- How to handle frameworks that use different terminology for similar concepts?
+**Progress** (13 January 2026):
+- Created Environment Capability Registry schema (`research/schema-environment-capability-registry.md`)
+- Schema enables systematic documentation of AI tool environments against framework concepts
+- Created Claude Code registry as worked example (`research/registry-claude-code.yaml`)
+- Registry demonstrates framework mapping for capability coverage, collaboration patterns, and 3S2P
 
-**Status**: Under consideration
+**Open questions** (refined):
+- ~~Which frameworks/tools would be most valuable to analyse first?~~ → Start with AI coding assistants using the registry schema
+- ~~What format should analyses take?~~ → YAML registries for tools; companion-style documents for methodologies
+- How to handle frameworks that use different terminology for similar concepts?
+- **Schema extension needed**: Should registries include "artifact creation tooling"? Tools like Claude Code have plugins (plugin-dev) that assist in creating/validating configuration artifacts. This meta-capability affects generation quality but isn't currently captured.
+
+**Lessons learned**:
+- Skills created without using plugin-dev validation were incorrectly structured
+- The registry should capture not just *what artifacts exist* but *how to correctly create them*
+- Consider adding a `generation_support` section to the schema covering:
+  - Validation tooling (e.g., `plugin-dev:plugin-validator`)
+  - Creation assistance (e.g., `plugin-dev:skill-reviewer`)
+  - Canonical formats and conventions
+  - Common errors and how to avoid them
+
+**Files created**:
+- `implementation/schema-environment-capability-registry.md` — Schema definition
+- `implementation/registries/registry-claude-code.yaml` — Claude Code capability registry (worked example)
+
+**Status**: Complete — schema with generation_support section and Claude Code registry created
 
 ---
 
@@ -167,188 +211,87 @@ This document tracks potential future development directions for the AI-Augmente
 
 ---
 
-### 5. Decision and Observation Tracking System
+### ~~5. Decision and Observation Tracking System~~ → COMPLETED
 
-**Description**: Design and implement mechanisms for recording observations (factual states) and decisions (judgements) throughout the SDLC, supporting traceability, accountability, and reversion analysis.
+**Resolution** (12 January 2026): Formalised the investigation into a concept document at `concepts/concept_decision-observation-tracking.md`.
 
-**Investigation completed**: See `research/investigation-decision-observation-tracking.md` for detailed schemas, query patterns, and design rationale.
+**Key elements documented**:
+- **Observation Log Schema**: Append-only, chronological recording of measurements, states, events, and durations
+- **Decision Tree Schema**: Hierarchical structure with dependencies, supersession, and actor pattern classification
+- **Query patterns**: Causal traceability, impact analysis, policy compliance checking
+- **Capability integration**: Only Decide produces decisions; Preserve operates on both record types
+- **Policy framework**: Schema for governance policies binding to decisions
 
-**Key design elements**:
-- **Observations** — Linear log (append-only, chronological) recording measurements, states, events, and durations
-- **Decisions** — Tree structure with hierarchical relationships, dependencies, and supersession tracking
-- **Actor pattern classification** — Each decision classified against collaboration patterns (Human-Only through AI-Only)
-- **Policy binding** — Decisions linked to governance policies for compliance validation
-- **Capability integration** — Only Decide capability produces Decision records; Preserve operates on both
+**Framework connections established**:
+- Integration with Eight-Capability Taxonomy (capability-to-record mapping)
+- Connection to Provenance Tracking (capability invocation level alignment)
+- Links to Actor Model and Collaboration Patterns
 
-**Next steps to complete**:
-1. Prototype schema implementation (PostgreSQL recommended)
-2. Design integration hooks for development tools (git, CI/CD, IDE)
-3. Create UI mockups for decision tree visualisation and impact analysis
-4. Consider domain-specific language for policy specification
-5. Define incremental adoption path for existing projects
-
-**Open questions**:
-- Granularity thresholds for observation recording
-- Decision compaction/archival strategy
-- Cross-project decision handling
-- Retroactive decision recording
-
-**Status**: Investigation complete; implementation pending
+**Moved to**: Completed Items
 
 ---
 
-### 6. Work Coordination and Actor Assignment
+### ~~6. Work Coordination and Actor Assignment~~ → COMPLETED
 
-**Description**: Design mechanisms for coordinating work between actors (human and AI), including work item definition, assignment, interactive messaging, and queue-based distribution.
+**Resolution** (12 January 2026): Formalised the investigation into a concept document at `concepts/concept_work-coordination.md`.
 
-**Investigation completed**: See `research/investigation-work-coordination.md` for detailed schemas, coordination patterns, and design rationale.
+**Key elements documented**:
+- **Work Item Schema**: Units of work with context packaging, assignment tracking, and state machine
+- **Coordination paradigms**: Interactive (synchronous) and queue-based (asynchronous) with hybrid patterns
+- **Message and Conversation schemas**: For synchronous human-AI dialogue
+- **Queue patterns**: FIFO, priority, capability-matched routing
+- **Actor profiles and capability matching**: Algorithm for routing work to appropriate actors
+- **Pattern-specific coordination**: Different coordination modes for each collaboration pattern
 
-**Key design elements**:
-- **Work items** — Units of work with context packaging, assignment tracking, and state management
-- **Two coordination paradigms**:
-  - Interactive (synchronous) — real-time dialogue for Human-Led and Partnership patterns
-  - Queue-based (asynchronous) — work distribution for AI-Led and parallelisable work
-- **Actor profiles** — Capabilities, availability, and performance metrics for routing decisions
-- **Capability matching** — Algorithm for routing work to appropriate actors
-- **Conversation preservation** — Capturing tacit knowledge from interactive sessions
-- **Pattern-specific coordination** — Different coordination modes for each collaboration pattern
+**Framework connections established**:
+- Integration with Decision/Observation Tracking (work events generate records)
+- Connection to Process and Capability Flow (capability instances become work items)
+- Links to Actor Model and AI Actor Differentiation Model
 
-**Connection to Item 5 (Decision/Observation Tracking)**:
-- Work events generate observation records (created, assigned, completed)
-- Work completion can generate decision records
-- Escalations create both work items and decision contexts
-
-**Next steps to complete**:
-1. Prototype work item service (CRUD, state machine)
-2. Build configurable work queues with routing
-3. Implement messaging with conversation grouping
-4. Build actor profile management and capability matching
-5. Connect to existing tools (git, CI/CD, chat)
-6. Visualise work flow and coordination health
-
-**Open questions**:
-- Conversation state limits and context degradation
-- Context packaging quality measurement
-- Multi-AI coordination patterns
-- Human attention management (avoiding notification overload)
-
-**Status**: Investigation complete; implementation pending
+**Moved to**: Completed Items
 
 ---
 
-### 7. Process Architect Agent Skill
+### ~~7. Process Architect Custom Agent~~ → COMPLETED
 
-**Description**: A practical implementation example of the executable framework — an AI agent skill that understands the eight capabilities, framework components, and can devise processes to solve software development problems within any of the seven phases. The skill acts as a "process architect" that generates capability flow specifications for execution by other agents.
+**Resolution** (13 January 2026): Implemented the full sub-item chain from log format through custom agent.
 
-**Concept**:
-- **Input**: A software development problem statement and phase context
-- **Output**: A structured process specification (per `concept_process-capability-flow.md`) that can be executed by a work coordination system or execution agent
+**Implementation summary**:
+- **7a**: YAML stream format with `---` separators for append-only logging
+- **7b/7c**: Bash scripts `log-decision.sh` and `log-observation.sh` in `.dialogue/`
+- **7d/7e**: Agent skills wrapping the bash scripts in `.claude/skills/`
+- **7f**: Process Architect custom agent in `.claude/agents/`
 
-**How it works**:
-1. **Problem analysis** — Understand the problem, identify the SDLC phase, assess information composition (formal/tacit/emergent)
-2. **Capability decomposition** — Break the problem into required capabilities (Elicit, Analyse, Synthesise, Transform, Validate, Decide, Generate, Preserve)
-3. **Actor pattern assignment** — Determine appropriate collaboration pattern for each capability instance based on knowledge requirements
-4. **Flow design** — Sequence capabilities with dependencies, escalation triggers, and quality gates
-5. **Process generation** — Output structured process specification for execution
+**Design decisions**:
+- Location: `.dialogue/logs/` for decision and observation logs
+- ID format: Timestamp-based (DEC-YYYYMMDD-HHMMSS) avoiding sequence tracking
+- Scope: Operational/tactical decisions only (architecture decisions use ADRs)
+- Format: Lightweight v0.1 schema with single-line rationale
 
-**Architecture**:
-```
-┌─────────────────────────────────────────────────────────────┐
-│                    User / Orchestrator                       │
-│  "Help me design the authentication system" (Phase 4)       │
-└──────────────────────────┬──────────────────────────────────┘
-                           │
-                           ▼
-┌─────────────────────────────────────────────────────────────┐
-│              Process Architect Agent Skill                   │
-│  - Understands 8 capabilities                               │
-│  - Knows phase information compositions                      │
-│  - Can design capability flows                               │
-│  - Assigns actor patterns                                    │
-└──────────────────────────┬──────────────────────────────────┘
-                           │ (generates process spec)
-                           ▼
-┌─────────────────────────────────────────────────────────────┐
-│               Process Execution Agent                        │
-│  - Receives structured process specification                 │
-│  - Coordinates work items per Item 6                        │
-│  - Tracks decisions/observations per Item 5                  │
-│  - Manages human-AI handoffs                                 │
-└─────────────────────────────────────────────────────────────┘
-```
+**Files created**:
+- `.dialogue/README.md` — Format specification and documentation
+- `.dialogue/log-decision.sh` — Decision logging bash script
+- `.dialogue/log-observation.sh` — Observation logging bash script
+- `.dialogue/logs/decisions.yaml` — Decision log (YAML stream)
+- `.dialogue/logs/observations.yaml` — Observation log (YAML stream)
+- `.claude/skills/log-decision.md` — Decision Logger skill
+- `.claude/skills/log-observation.md` — Observation Logger skill
+- `.claude/agents/process-architect.md` — Process Architect custom agent
 
-**Example output** (for "design authentication system"):
-```yaml
-process:
-  id: PROC-4.AUTH
-  phase: 4 (Design)
-  objective: "Design authentication system architecture"
+**Moved to**: Completed Items
 
-capability_flow:
-  - step: 4.AUTH.1
-    capability: Elicit
-    description: "Gather security requirements and constraints"
-    actor_pattern: Human-Led
-    inputs: [stakeholder interviews, security policy docs]
-    outputs: [security requirements list]
+---
 
-  - step: 4.AUTH.2
-    capability: Analyse
-    description: "Analyse authentication patterns and trade-offs"
-    actor_pattern: Partnership
-    inputs: [security requirements, industry patterns]
-    outputs: [pattern comparison matrix]
+#### Sub-Items (Reference)
 
-  - step: 4.AUTH.3
-    capability: Decide
-    description: "Select authentication approach"
-    actor_pattern: Human-Led
-    escalation: "If multiple patterns score equally"
-    inputs: [pattern comparison]
-    outputs: [architecture decision record]
-
-  - step: 4.AUTH.4
-    capability: Generate
-    description: "Generate architecture documentation"
-    actor_pattern: AI-Led
-    inputs: [decision record, templates]
-    outputs: [auth architecture doc]
-
-  - step: 4.AUTH.5
-    capability: Validate
-    description: "Validate with security team"
-    actor_pattern: Human-Only
-    inputs: [architecture doc]
-    outputs: [validation sign-off]
-```
-
-**Implementation approach**:
-- Build as Claude Code agent skill or plugin
-- Skill has access to framework concepts via embedded knowledge or MCP resources
-- Uses structured output to generate process specifications
-- Process specs conform to `concept_process-capability-flow.md` schema
-
-**Value proposition**:
-- Demonstrates framework is executable, not just theoretical
-- Provides consistent process design across teams
-- Encodes framework knowledge in reusable form
-- Enables human oversight of AI-generated processes before execution
-- Supports Item 3 (self-reference) — framework generates processes for framework development
-
-**Connection to other items**:
-- Uses concepts from Item 1 (Executable Framework)
-- Generated processes execute via Item 6 (Work Coordination)
-- Execution generates records per Item 5 (Decision/Observation Tracking)
-- Could analyse other frameworks per Item 2 (Analytical Lens)
-- Tests framework completeness per Item 3 (Self-Reference)
-
-**Open questions**:
-- How much framework knowledge should be embedded vs. retrieved dynamically?
-- How to validate generated processes before execution?
-- How to handle processes that span multiple phases?
-- How to learn from execution feedback to improve future process generation?
-
-**Status**: Concept defined; implementation not started
+| Sub-Item | Type | Description | Status |
+|----------|------|-------------|--------|
+| **7a** | File Format | Decision/Observation log file format (YAML) | ✓ Complete |
+| **7b** | Bash Script | `log-decision.sh` | ✓ Complete |
+| **7c** | Bash Script | `log-observation.sh` | ✓ Complete |
+| **7d** | Agent Skill | Decision Logger | ✓ Complete |
+| **7e** | Agent Skill | Observation Logger | ✓ Complete |
+| **7f** | Custom Agent | Process Architect agent | ✓ Complete |
 
 ---
 
@@ -577,6 +520,139 @@ capability_flow:
 **Framework mappings**: Connected each mechanism type to relevant framework concepts (3S2P, collaboration patterns, accountability elements).
 
 **Created**: `research/reference-ai-configuration-registry.md`
+
+---
+
+### 5. Decision and Observation Tracking System (Completed 12 January 2026)
+
+**Original question**: How should observations and decisions be recorded throughout the SDLC?
+
+**Resolution**: Created comprehensive concept document `concepts/concept_decision-observation-tracking.md` formalising the investigation findings.
+
+**Key design elements**:
+- **Observation Log**: Append-only, chronological log for measurements, states, events, durations
+- **Decision Tree**: Hierarchical structure with parent-child relationships and dependency tracking
+- **Core distinction**: Observations are independent events; decisions create dependency structures
+- **Actor pattern classification**: Each decision classified by collaboration pattern
+- **Policy framework**: Governance policies with constraints and validation methods
+
+**Query patterns documented**:
+- Causal traceability: "Why is the system in this state?"
+- Impact analysis: "What would change if we reversed this decision?"
+- Policy compliance: "What decisions were made under security policy v2?"
+
+**Framework integrations**:
+- Only Decide capability produces decisions; other capabilities produce observations
+- Capability invocation level provenance aligns with observation/decision granularity
+- Accountability separation: accountable_party distinct from participants
+
+---
+
+### 6. Work Coordination and Actor Assignment (Completed 12 January 2026)
+
+**Original question**: How is work coordinated between human and AI actors?
+
+**Resolution**: Created comprehensive concept document `concepts/concept_work-coordination.md` formalising the investigation findings.
+
+**Key design elements**:
+- **Work Item Schema**: Full schema with context packaging, assignment tracking, state machine
+- **Two coordination paradigms**: Interactive (synchronous) and queue-based (asynchronous)
+- **Hybrid coordination**: Most real work transitions between paradigms
+- **Conversation preservation**: Capturing tacit knowledge from interactive sessions
+- **Capability matching algorithm**: Routing work to appropriate actors
+
+**Pattern-specific coordination**:
+- Human-Only: Standard human coordination (no AI)
+- Human-Led: Interactive primary; queue for AI preparation
+- Partnership: Interactive essential; continuous back-and-forth
+- AI-Led: Queue-based primary; interactive for escalation
+- AI-Only: Queue-based; monitoring-based intervention
+
+**Framework integrations**:
+- Work events generate observation records
+- Work completion can generate decision records
+- Capability instances from process specs become work items
+- Actor profiles connect to AI Actor Differentiation Model
+
+---
+
+### 7. Process Architect Custom Agent (Completed 13 January 2026)
+
+**Original question**: How can the framework be demonstrated as executable through tooling?
+
+**Resolution**: Implemented the full sub-item chain from log format through custom agent.
+
+**Implementation summary**:
+- **7a**: YAML stream format with `---` separators for append-only logging (`.dialogue/logs/`)
+- **7b/7c**: Bash scripts `log-decision.sh` and `log-observation.sh` for non-AI logging
+- **7d/7e**: Agent skills wrapping the bash scripts in `.claude/skills/`
+- **7f**: Process Architect custom agent in `.claude/agents/`
+
+**Key design decisions**:
+- Location: `.dialogue/logs/` for decision and observation logs
+- ID format: Timestamp-based (DEC-YYYYMMDD-HHMMSS) avoiding sequence tracking
+- Scope: Operational/tactical decisions only (architecture decisions use ADRs)
+- Format: Lightweight v0.1 schema with single-line rationale
+
+**Files created**:
+- `.dialogue/README.md` — Format specification and documentation
+- `.dialogue/log-decision.sh` — Decision logging bash script
+- `.dialogue/log-observation.sh` — Observation logging bash script
+- `.claude/skills/log-decision.md` — Decision Logger skill
+- `.claude/skills/log-observation.md` — Observation Logger skill
+- `.claude/agents/process-architect.md` — Process Architect custom agent
+
+**Framework connections**:
+- Implements decision/observation tracking from Item 5
+- Process Architect uses capability flow schema from `concept_process-capability-flow.md`
+- Skills demonstrate Skill vs Agent distinction (tool wrapper vs orchestrator)
+- Logs demonstrate YAML stream for append-only operation
+
+---
+
+### 1. Executable Framework Manifestation (Completed 13 January 2026)
+
+**Original question**: How can the framework be manifested in executable form?
+
+**Resolution**: Initial executable manifestation achieved through layered implementation:
+
+| Layer | Artifacts | Purpose |
+|-------|-----------|---------|
+| **Infrastructure** | `.dialogue/` scripts and logs | Shared logging infrastructure |
+| **Skills** | `.claude/skills/log-*` | AI-accessible tool wrappers |
+| **Agents** | `.claude/agents/process-architect.md` | Process design orchestration |
+| **Generation** | `implementation/` schemas and registries | Framework generation inputs |
+
+**Answers to original questions**:
+1. **Form**: Claude Code native (skills/agents) + bash scripts + YAML schemas
+2. **Mature parts**: Process capability flow, decision tracking, 3S2P context, collaboration patterns
+3. **Alignment**: Separation of generation inputs (implementation/) from outputs (.claude/), registry schema
+
+**Future extension**: Additional skills, process templates, CI/CD hooks, multi-tool registries.
+
+---
+
+### 2. Environment Capability Registry (Completed 13 January 2026)
+
+**Original question**: How to systematically document AI tool capabilities against framework concepts?
+
+**Resolution**: Created Environment Capability Registry schema and first instance.
+
+**Artifacts created**:
+- `implementation/schema-environment-capability-registry.md` — Schema definition
+- `implementation/registries/registry-claude-code.yaml` — Claude Code capability registry
+
+**Schema sections**:
+- Tool identity and versioning
+- Tool access (file ops, execution, integrations, communication)
+- Context provision (standing, dynamic, limitations)
+- Collaboration support (modes, approval, escalation)
+- Configuration hierarchy
+- Extensions (plugins, commands, agents, skills, hooks, MCP)
+- Generation support (validation tooling, creation assistance, canonical formats, common pitfalls)
+- Framework mapping (capability coverage, collaboration patterns, 3S2P)
+
+**Lessons applied**: Added `generation_support` section after discovering skills created without validation were incorrectly structured. Registry now captures not just what tools exist but how to correctly create artifacts.
 
 ---
 

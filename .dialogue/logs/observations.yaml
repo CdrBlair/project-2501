@@ -1,0 +1,270 @@
+---
+id: OBS-20260113-092859
+timestamp: "2026-01-13T09:28:59Z"
+type: EVENT
+observer: "ai:claude"
+subject: "Scripts created"
+value: "log-decision.sh and log-observation.sh implemented"
+context: "Item 7b-7c complete"
+tags: ["framework", "implementation"]
+---
+id: OBS-20260113-093347
+timestamp: "2026-01-13T09:33:47Z"
+type: EVENT
+observer: "ai:claude"
+subject: "Item 7 complete"
+value: "All 6 sub-items (7a-7f) implemented and tested"
+context: "Phase D progress"
+tags: ["framework", "milestone"]
+---
+id: OBS-20260113-093806
+timestamp: "2026-01-13T09:38:06Z"
+type: EVENT
+observer: "ai:claude"
+subject: "Item 2 progress"
+value: "Schema and Claude Code registry created"
+context: "Environment Capability Registry work"
+tags: ["framework", "schema", "registry"]
+---
+id: OBS-20260113-100348
+timestamp: "2026-01-13T10:03:48Z"
+type: EVENT
+observer: "ai:claude"
+subject: "Skill review completed"
+value: "Skills pass validation; reviewer suggested more trigger phrases"
+context: "Using plugin-dev:skill-reviewer"
+tags: ["validation", "skills"]
+---
+id: OBS-20260113-100642
+timestamp: "2026-01-13T10:06:42Z"
+type: EVENT
+observer: "human:pidster"
+subject: "Plugin-dev usage gap"
+value: "Skills created without using plugin-dev validation were incorrectly structured"
+context: "During Item 7 implementation review"
+tags: ["process", "validation", "lesson-learned"]
+---
+id: OBS-20260113-100643
+timestamp: "2026-01-13T10:06:43Z"
+type: EVENT
+observer: "human:pidster"
+subject: "Script location issue"
+value: "Skills use scripts from .dialogue/ but should have scripts in skill directory tree"
+context: "Skill structure review"
+tags: ["skills", "structure", "fix-needed"]
+---
+id: OBS-20260113-100947
+timestamp: "2026-01-13T10:09:47Z"
+type: STATE
+observer: "ai:claude"
+subject: "Item 2 status"
+value: "Environment Capability Registry complete - schema with generation_support section and Claude Code registry instance created"
+context: "Schema extended per user feedback to include validation tooling guidance"
+tags: ["item-2", "registry", "schema"]
+---
+id: OBS-20260113-101143
+timestamp: "2026-01-13T10:11:43Z"
+type: EVENT
+observer: "ai:claude"
+subject: "Phase D completion"
+value: "All Phase D items complete: Item 7 (Process Architect), Item 1 (Executable Framework), Item 2 (Environment Registry)"
+context: "Planning document updated with all completion records"
+tags: ["phase-d", "milestone"]
+---
+id: OBS-20260113-101507
+timestamp: "2026-01-13T10:15:07Z"
+type: EVENT
+observer: "ai:claude"
+subject: "Script relocation"
+value: "Moved scripts to canonical skill directory structure"
+context: "Scripts now in .claude/skills/*/scripts/ per Claude Code conventions"
+tags: ["refactor", "canonical"]
+---
+id: OBS-20260113-101657
+timestamp: "2026-01-13T10:16:57Z"
+type: EVENT
+observer: "human:pidster"
+subject: "Meta configuration challenge"
+value: "AI not consistently using framework components correctly - skills created wrong, scripts in wrong location, deep-linking instead of abstraction"
+context: "During Phase D implementation of executable framework"
+tags: ["meta", "configuration", "process"]
+---
+id: OBS-20260113-102214
+timestamp: "2026-01-13T10:22:14Z"
+type: EVENT
+observer: "ai:claude"
+subject: "Script path fix"
+value: "Updated scripts to use git root for log file location"
+context: "Ensures logs always go to .dialogue/logs/ regardless of script location"
+tags: ["fix", "infrastructure"]
+---
+id: OBS-20260113-102601
+timestamp: "2026-01-13T10:26:01Z"
+type: EVENT
+observer: "ai:claude"
+subject: "Recursive process design"
+value: "We are designing the Process Architect to handle process design problems - but designing the Process Architect IS a process design problem that the Process Architect should handle"
+context: "Meta-observation during Phase D refinement"
+tags: ["meta", "recursion", "bootstrapping"]
+---
+id: OBS-20260113-104355
+timestamp: "2026-01-13T10:43:55Z"
+type: EVENT
+observer: "ai:claude"
+subject: "Skill reorganisation complete"
+value: "Renamed skills with dialogue- and build-only- prefixes; updated Process Architect with pattern self-description and required skills"
+context: "Framework executable refinement"
+tags: ["skills", "refactor", "process-architect"]
+---
+id: OBS-20260113-104711
+timestamp: "2026-01-13T10:47:11Z"
+type: EVENT
+observer: "ai:claude"
+subject: "Process context elicited"
+value: "Phase: 2 (Planning); Composition: Balanced (40-60% tacit)"
+context: "Process Architect v2 simulation"
+tags: ["elicitation", "context", "thought-experiment"]
+---
+id: OBS-20260113-104931
+timestamp: "2026-01-13T10:49:31Z"
+type: STATE
+observer: "ai:claude"
+subject: "Schema validation result"
+value: "All constraints C1-C4 pass; specification is conformant"
+context: "Process Architect v2 simulation"
+tags: ["validation", "pass"]
+---
+id: OBS-20260113-105404
+timestamp: "2026-01-13T10:54:04Z"
+type: EVENT
+observer: "ai:claude"
+subject: "Gap prioritisation decision"
+value: "User prioritised Gap 2 (Skill enforcement); interested in combined loop approach"
+context: "Gap analysis session"
+tags: ["gaps", "prioritisation"]
+---
+id: OBS-20260113-105526
+timestamp: "2026-01-13T10:55:26Z"
+type: STATE
+observer: "ai:claude"
+subject: "Hook enforcement feasibility"
+value: "Hooks are event-driven, not state-aware; no built-in way to check 'was skill X called'; would require transcript parsing (fragile)"
+context: "Gap 2 analysis"
+tags: ["hooks", "enforcement", "limitation"]
+---
+id: OBS-20260113-145905
+timestamp: "2026-01-13T14:59:05Z"
+type: EVENT
+observer: "ai:claude"
+subject: "Gap prioritisation"
+value: "User selected Gap 1 (Feedback loops) as next priority"
+context: "Gap analysis continuation"
+tags: ["gaps", "prioritisation"]
+---
+id: OBS-20260113-150130
+timestamp: "2026-01-13T15:01:30Z"
+type: STATE
+observer: "ai:claude"
+subject: "Gap 1 resolution complete"
+value: "Added: retry policy to process schema, RETURN/BLOCK action types to escalation, fix step pattern documentation, Process Architect workflow step 6"
+context: "Gap analysis"
+tags: ["gaps", "loops", "complete"]
+---
+id: OBS-20260113-150336
+timestamp: "2026-01-13T15:03:36Z"
+type: STATE
+observer: "ai:claude"
+subject: "Gap 3 resolution complete"
+value: "Added Artifact Persistence section to Process Architect with output path elicitation at PA-9 and file naming conventions"
+context: "Gap analysis"
+tags: ["gaps", "persistence", "complete"]
+---
+id: OBS-20260113-150722
+timestamp: "2026-01-13T15:07:22Z"
+type: STATE
+observer: "ai:claude"
+subject: "Gap 4 resolution complete"
+value: "Added mandatory/contextual question distinction, minimum coverage requirement, and coverage checklist to dialogue-structured-elicit skill"
+context: "Gap analysis"
+tags: ["gaps", "elicitation", "complete"]
+---
+id: OBS-20260113-152051
+timestamp: "2026-01-13T15:20:51Z"
+type: STATE
+observer: "ai:claude"
+subject: "Gap 5 resolution complete"
+value: "Added Granularity Guidelines section to dialogue-log-decision skill with correct/incorrect examples and acceptable batching criteria"
+context: "Gap analysis"
+tags: ["gaps", "granularity", "complete"]
+---
+id: OBS-20260113-152448
+timestamp: "2026-01-13T15:24:48Z"
+type: EVENT
+observer: "ai:claude"
+subject: "Process context elicited"
+value: "Phase: 2 (Planning); Purpose: Design and validate capability flows; Inputs: Process requirements, framework concepts, existing docs, stakeholder interviews; Outputs: Specifications and recommendations"
+context: "Process Architect v3 simulation"
+tags: ["elicitation", "context", "v3"]
+---
+id: OBS-20260113-152556
+timestamp: "2026-01-13T15:25:56Z"
+type: STATE
+observer: "ai:claude"
+subject: "Schema validation result"
+value: "All 12 steps pass constraints C1-C4; no violations detected"
+context: "Process Architect v3 simulation"
+tags: ["validation", "pass", "v3"]
+---
+id: OBS-20260113-152808
+timestamp: "2026-01-13T15:28:08Z"
+type: EVENT
+observer: "ai:claude"
+subject: "Human review deferred"
+value: "User needs more time to review; noted that some decisions are non-timeout-able; output not saved"
+context: "Process Architect v3 simulation"
+tags: ["approval", "deferred", "v3"]
+---
+id: OBS-20260113-163552
+timestamp: "2026-01-13T16:35:52Z"
+type: EVENT
+observer: "human:pidster"
+subject: "Async approval pattern needed"
+value: "Some decisions are non-timeout-able; proposed DEFER action for async/offline activities"
+context: "Process Architect v3 review"
+tags: ["async", "defer", "gap"]
+---
+id: OBS-20260113-164135
+timestamp: "2026-01-13T16:41:35Z"
+type: STATE
+observer: "ai:claude"
+subject: "DEFER action implementation complete"
+value: "Added: DEFER action to process-capability-flow, SUSPENDED state to work-coordination, DEFERRED_CONTINUATION work type with DeferredContext schema, updated Process Architect"
+context: "Async approval gap resolution"
+tags: ["defer", "async", "complete"]
+---
+id: OBS-20260113-164500
+timestamp: "2026-01-13T16:45:00Z"
+type: EVENT
+observer: "ai:claude"
+subject: "Process context elicited"
+value: "Phase: 2 (Planning); Purpose: Design and validate capability flows; Inputs: Process requirements, framework concepts; Outputs: Specifications and recommendations"
+context: "Process Architect v4 simulation"
+tags: ["elicitation", "context", "v4"]
+---
+id: OBS-20260113-164551
+timestamp: "2026-01-13T16:45:51Z"
+type: STATE
+observer: "ai:claude"
+subject: "Schema validation result"
+value: "All 12 steps pass constraints C1-C4; DEFER action properly configured for PA-11"
+context: "Process Architect v4 simulation"
+tags: ["validation", "pass", "v4"]
+---
+id: OBS-20260113-164621
+timestamp: "2026-01-13T16:46:21Z"
+type: EVENT
+observer: "ai:claude"
+subject: "DEFER action triggered"
+value: "User requested extended review; process suspending with DEFERRED_CONTINUATION work item; resume trigger: HUMAN_APPROVAL"
+context: "Process Architect v4 simulation"
+tags: ["defer", "suspended", "v4"]

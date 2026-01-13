@@ -1,0 +1,480 @@
+---
+id: DEC-20260113-092852
+timestamp: "2026-01-13T09:28:52Z"
+type: OPERATIONAL
+actor: "ai:claude"
+subject: "Log format implementation"
+outcome: "Created YAML stream format with bash scripts"
+rationale: "Append-only format enables simple tooling"
+context: "Item 7a-7c implementation"
+tags: ["framework", "logging"]
+---
+id: DEC-20260113-093640
+timestamp: "2026-01-13T09:36:40Z"
+type: OPERATIONAL
+actor: "ai:claude"
+subject: "Environment Capability Registry schema design"
+outcome: "Created YAML-based schema with 6 sections mapping to framework concepts"
+rationale: "Enables framework instantiation across different AI tools"
+context: "Item 2 progress"
+tags: ["framework", "schema"]
+---
+id: DEC-20260113-094359
+timestamp: "2026-01-13T09:43:59Z"
+type: OPERATIONAL
+actor: "human:pidster"
+subject: "Implementation directory structure"
+outcome: "Created implementation/ for executable artifacts separate from research/"
+rationale: "Clean separation of theory (concepts) from operationalisation (implementation)"
+context: "Directory organisation"
+tags: ["structure", "organisation"]
+---
+id: DEC-20260113-095042
+timestamp: "2026-01-13T09:50:42Z"
+type: OPERATIONAL
+actor: "human:pidster"
+subject: "Framework generation model"
+outcome: "Established implementation/ for generation inputs, tool directories for outputs"
+rationale: "Clear separation enables multi-tool framework generation"
+context: "Directory architecture"
+tags: ["architecture", "organisation"]
+---
+id: DEC-20260113-095746
+timestamp: "2026-01-13T09:57:46Z"
+type: OPERATIONAL
+actor: "ai:claude"
+subject: "Skills format correction"
+outcome: "Restructured skills to canonical format with SKILL.md in directories"
+rationale: "Original format would not be discovered by Claude Code"
+context: "Item 7 fix"
+tags: ["skills", "fix"]
+---
+id: DEC-20260113-100708
+timestamp: "2026-01-13T10:07:08Z"
+type: TACTICAL
+actor: "ai:claude"
+subject: "Script location architecture"
+outcome: "Keep shared logging scripts in .dialogue/, skills reference them"
+rationale: "Scripts are shared infrastructure not skill-specific utilities"
+context: "Skills architecture"
+tags: ["architecture", "skills"]
+---
+id: DEC-20260113-101138
+timestamp: "2026-01-13T10:11:38Z"
+type: OPERATIONAL
+actor: "ai:claude"
+subject: "Item 1 completion"
+outcome: "Marked Executable Framework Manifestation complete - initial manifestation achieved"
+rationale: "Framework has working executable form via skills, agents, scripts, and generation infrastructure"
+context: "Phase D completion"
+tags: ["item-1", "executable", "consolidation"]
+---
+id: DEC-20260113-104847
+timestamp: "2026-01-13T10:48:47Z"
+type: OPERATIONAL
+actor: "ai:claude"
+subject: "PA-1 pattern selection"
+outcome: "Partnership"
+rationale: "Both actors essential: human holds tacit process knowledge, AI provides structured elicitation"
+context: "Process Architect v2 simulation"
+tags: ["pattern-selection", "PA-1"]
+---
+id: DEC-20260113-104853
+timestamp: "2026-01-13T10:48:53Z"
+type: OPERATIONAL
+actor: "ai:claude"
+subject: "PA-2 pattern selection"
+outcome: "AI-Only"
+rationale: "Document review is mechanical; AI reads concept files without human involvement"
+context: "Process Architect v2 simulation"
+tags: ["pattern-selection", "PA-2"]
+---
+id: DEC-20260113-104857
+timestamp: "2026-01-13T10:48:57Z"
+type: OPERATIONAL
+actor: "ai:claude"
+subject: "PA-3 pattern selection"
+outcome: "AI-Led"
+rationale: "AI applies framework knowledge to propose decomposition; human reviews and adjusts"
+context: "Process Architect v2 simulation"
+tags: ["pattern-selection", "PA-3"]
+---
+id: DEC-20260113-104902
+timestamp: "2026-01-13T10:49:02Z"
+type: OPERATIONAL
+actor: "ai:claude"
+subject: "PA-4 pattern selection"
+outcome: "Partnership"
+rationale: "Both essential: AI applies decision tree systematically, human brings judgement about organisational context and approves"
+context: "Process Architect v2 simulation"
+tags: ["pattern-selection", "PA-4"]
+---
+id: DEC-20260113-104909
+timestamp: "2026-01-13T10:49:09Z"
+type: OPERATIONAL
+actor: "ai:claude"
+subject: "PA-5 through PA-10 pattern selections"
+outcome: "PA-5:AI-Led, PA-6:AI-Led, PA-7:AI-Only, PA-8:AI-Only, PA-9:Human-Led, PA-10:AI-Only"
+rationale: "PA-5,6: AI drafts, human validates; PA-7,8,10: mechanical AI tasks; PA-9: human holds approval authority"
+context: "Process Architect v2 simulation"
+tags: ["pattern-selection", "batch"]
+---
+id: DEC-20260113-104918
+timestamp: "2026-01-13T10:49:18Z"
+type: OPERATIONAL
+actor: "ai:claude"
+subject: "Escalation trigger definitions"
+outcome: "Defined escalation triggers for all 10 steps"
+rationale: "Triggers focus on: ambiguity detection, constraint violations, human approval gates, and operational failures"
+context: "Process Architect v2 simulation"
+tags: ["escalation", "triggers"]
+---
+id: DEC-20260113-105539
+timestamp: "2026-01-13T10:55:39Z"
+type: TACTICAL
+actor: "ai:claude"
+subject: "Enforcement approach selection"
+outcome: "Combine B (checklist step) + E (log-based verification)"
+rationale: "Hook enforcement is fragile; log-based verification uses existing infrastructure and is auditable"
+context: "Gap 2 resolution"
+tags: ["enforcement", "decision"]
+---
+id: DEC-20260113-105649
+timestamp: "2026-01-13T10:56:49Z"
+type: OPERATIONAL
+actor: "ai:claude"
+subject: "Skill naming correction"
+outcome: "dialogue-verify-logging-compliance (not build-only-)"
+rationale: "Verification is a framework capability, not build-specific tooling; any process using dialogue loop needs this"
+context: "Gap 2 resolution"
+tags: ["naming", "correction"]
+---
+id: DEC-20260113-145933
+timestamp: "2026-01-13T14:59:33Z"
+type: TACTICAL
+actor: "ai:claude"
+subject: "Loop semantics design"
+outcome: "Three-level approach: process retry policy, step return action, fix step pattern"
+rationale: "Provides declarative loop-back at process level, implements routing at step level, and explicit work at fix step level"
+context: "Gap 1 resolution"
+tags: ["schema", "loops", "design"]
+---
+id: DEC-20260113-150302
+timestamp: "2026-01-13T15:03:02Z"
+type: OPERATIONAL
+actor: "ai:claude"
+subject: "Artifact persistence approach"
+outcome: "Ask human at PA-9 approval step"
+rationale: "Flexible across projects; ensures intentionality; no hardcoded paths"
+context: "Gap 3 resolution"
+tags: ["persistence", "output"]
+---
+id: DEC-20260113-150450
+timestamp: "2026-01-13T15:04:50Z"
+type: OPERATIONAL
+actor: "ai:claude"
+subject: "Elicitation coverage approach"
+outcome: "Minimum question set with 4 mandatory areas"
+rationale: "User expressed no preference; Option A recommended as balance between coverage and flexibility"
+context: "Gap 4 resolution"
+tags: ["elicitation", "coverage"]
+---
+id: DEC-20260113-150759
+timestamp: "2026-01-13T15:07:59Z"
+type: OPERATIONAL
+actor: "ai:claude"
+subject: "Decision granularity convention"
+outcome: "One decision entry per pattern assignment"
+rationale: "Maximises traceability; enables per-step audit; overhead is minimal"
+context: "Gap 5 resolution"
+tags: ["granularity", "convention"]
+---
+id: DEC-20260113-152509
+timestamp: "2026-01-13T15:25:09Z"
+type: OPERATIONAL
+actor: "ai:claude"
+subject: "PA-1 pattern"
+outcome: "Partnership"
+rationale: "Both actors essential: human holds tacit process knowledge, AI provides structured elicitation via dialogue-structured-elicit"
+context: "Process Architect v3 simulation"
+tags: ["pattern", "PA-1"]
+---
+id: DEC-20260113-152509
+timestamp: "2026-01-13T15:25:09Z"
+type: OPERATIONAL
+actor: "ai:claude"
+subject: "PA-2 pattern"
+outcome: "AI-Only"
+rationale: "Document review is mechanical; AI reads concept files without human involvement"
+context: "Process Architect v3 simulation"
+tags: ["pattern", "PA-2"]
+---
+id: DEC-20260113-152509
+timestamp: "2026-01-13T15:25:09Z"
+type: OPERATIONAL
+actor: "ai:claude"
+subject: "PA-3 pattern"
+outcome: "AI-Led"
+rationale: "AI applies framework knowledge to propose decomposition; human reviews and adjusts"
+context: "Process Architect v3 simulation"
+tags: ["pattern", "PA-3"]
+---
+id: DEC-20260113-152509
+timestamp: "2026-01-13T15:25:09Z"
+type: OPERATIONAL
+actor: "ai:claude"
+subject: "PA-4 pattern"
+outcome: "Partnership"
+rationale: "Both essential: AI applies decision tree, human brings organisational context and approves"
+context: "Process Architect v3 simulation"
+tags: ["pattern", "PA-4"]
+---
+id: DEC-20260113-152517
+timestamp: "2026-01-13T15:25:17Z"
+type: OPERATIONAL
+actor: "ai:claude"
+subject: "PA-5 pattern"
+outcome: "AI-Led"
+rationale: "AI drafts escalation triggers based on framework guidance; human validates appropriateness"
+context: "Process Architect v3 simulation"
+tags: ["pattern", "PA-5"]
+---
+id: DEC-20260113-152517
+timestamp: "2026-01-13T15:25:17Z"
+type: OPERATIONAL
+actor: "ai:claude"
+subject: "PA-6 pattern"
+outcome: "AI-Led"
+rationale: "AI proposes validation criteria; human confirms testability"
+context: "Process Architect v3 simulation"
+tags: ["pattern", "PA-6"]
+---
+id: DEC-20260113-152517
+timestamp: "2026-01-13T15:25:17Z"
+type: OPERATIONAL
+actor: "ai:claude"
+subject: "PA-7 pattern"
+outcome: "AI-Led"
+rationale: "AI proposes retry policy and fix steps; human approves control flow"
+context: "Process Architect v3 simulation"
+tags: ["pattern", "PA-7"]
+---
+id: DEC-20260113-152517
+timestamp: "2026-01-13T15:25:17Z"
+type: OPERATIONAL
+actor: "ai:claude"
+subject: "PA-8 pattern"
+outcome: "AI-Only"
+rationale: "Specification generation is mechanical transformation of decisions into schema format"
+context: "Process Architect v3 simulation"
+tags: ["pattern", "PA-8"]
+---
+id: DEC-20260113-152524
+timestamp: "2026-01-13T15:25:24Z"
+type: OPERATIONAL
+actor: "ai:claude"
+subject: "PA-9 pattern"
+outcome: "AI-Only"
+rationale: "Constraint checking is mechanical; AI validates C1-C4 without human involvement"
+context: "Process Architect v3 simulation"
+tags: ["pattern", "PA-9"]
+---
+id: DEC-20260113-152524
+timestamp: "2026-01-13T15:25:24Z"
+type: OPERATIONAL
+actor: "ai:claude"
+subject: "PA-10 pattern"
+outcome: "AI-Only"
+rationale: "Log verification is mechanical count check; AI runs script without human involvement"
+context: "Process Architect v3 simulation"
+tags: ["pattern", "PA-10"]
+---
+id: DEC-20260113-152524
+timestamp: "2026-01-13T15:25:24Z"
+type: OPERATIONAL
+actor: "ai:claude"
+subject: "PA-11 pattern"
+outcome: "Human-Led"
+rationale: "Human reviews specification and decides approval; AI presents and explains"
+context: "Process Architect v3 simulation"
+tags: ["pattern", "PA-11"]
+---
+id: DEC-20260113-152524
+timestamp: "2026-01-13T15:25:24Z"
+type: OPERATIONAL
+actor: "ai:claude"
+subject: "PA-12 pattern"
+outcome: "AI-Only"
+rationale: "File writing is mechanical; AI writes to specified location"
+context: "Process Architect v3 simulation"
+tags: ["pattern", "PA-12"]
+---
+id: DEC-20260113-152538
+timestamp: "2026-01-13T15:25:38Z"
+type: OPERATIONAL
+actor: "ai:claude"
+subject: "Escalation trigger definitions"
+outcome: "Defined triggers for all 12 steps with RETURN actions for PA-9 and PA-10 validation failures"
+rationale: "Triggers focus on: ambiguity, constraint violations, compliance failures, human rejection"
+context: "Process Architect v3 simulation"
+tags: ["escalation", "triggers"]
+---
+id: DEC-20260113-152547
+timestamp: "2026-01-13T15:25:47Z"
+type: OPERATIONAL
+actor: "ai:claude"
+subject: "Control flow definition"
+outcome: "Retry policy returns to PA-4 on validation failure; max 3 iterations; fix step PA-9a for constraint violations"
+rationale: "PA-4 is the pattern assignment step where most corrections would apply"
+context: "Process Architect v3 simulation"
+tags: ["control-flow", "retry"]
+---
+id: DEC-20260113-163612
+timestamp: "2026-01-13T16:36:12Z"
+type: TACTICAL
+actor: "ai:claude"
+subject: "DEFER action design approach"
+outcome: "Extend existing work coordination with DEFER action and SUSPENDED state"
+rationale: "Work coordination already has PAUSED state; DEFER is similar but with explicit resume trigger and work item creation"
+context: "Process async approval gap"
+tags: ["defer", "async", "design"]
+---
+id: DEC-20260113-164513
+timestamp: "2026-01-13T16:45:13Z"
+type: OPERATIONAL
+actor: "ai:claude"
+subject: "PA-1 pattern"
+outcome: "Partnership"
+rationale: "Both essential: human holds tacit process knowledge, AI provides structured elicitation"
+context: "Process Architect v4 simulation"
+tags: ["pattern", "PA-1"]
+---
+id: DEC-20260113-164513
+timestamp: "2026-01-13T16:45:13Z"
+type: OPERATIONAL
+actor: "ai:claude"
+subject: "PA-2 pattern"
+outcome: "AI-Only"
+rationale: "Document review is mechanical; no human involvement needed"
+context: "Process Architect v4 simulation"
+tags: ["pattern", "PA-2"]
+---
+id: DEC-20260113-164513
+timestamp: "2026-01-13T16:45:13Z"
+type: OPERATIONAL
+actor: "ai:claude"
+subject: "PA-3 pattern"
+outcome: "AI-Led"
+rationale: "AI proposes decomposition; human reviews and adjusts"
+context: "Process Architect v4 simulation"
+tags: ["pattern", "PA-3"]
+---
+id: DEC-20260113-164513
+timestamp: "2026-01-13T16:45:13Z"
+type: OPERATIONAL
+actor: "ai:claude"
+subject: "PA-4 pattern"
+outcome: "Partnership"
+rationale: "Both essential: AI applies decision tree, human brings organisational context"
+context: "Process Architect v4 simulation"
+tags: ["pattern", "PA-4"]
+---
+id: DEC-20260113-164520
+timestamp: "2026-01-13T16:45:20Z"
+type: OPERATIONAL
+actor: "ai:claude"
+subject: "PA-5 pattern"
+outcome: "AI-Led"
+rationale: "AI drafts triggers; human validates appropriateness"
+context: "Process Architect v4 simulation"
+tags: ["pattern", "PA-5"]
+---
+id: DEC-20260113-164520
+timestamp: "2026-01-13T16:45:20Z"
+type: OPERATIONAL
+actor: "ai:claude"
+subject: "PA-6 pattern"
+outcome: "AI-Led"
+rationale: "AI proposes criteria; human confirms testability"
+context: "Process Architect v4 simulation"
+tags: ["pattern", "PA-6"]
+---
+id: DEC-20260113-164520
+timestamp: "2026-01-13T16:45:20Z"
+type: OPERATIONAL
+actor: "ai:claude"
+subject: "PA-7 pattern"
+outcome: "AI-Led"
+rationale: "AI proposes retry policy; human approves control flow"
+context: "Process Architect v4 simulation"
+tags: ["pattern", "PA-7"]
+---
+id: DEC-20260113-164521
+timestamp: "2026-01-13T16:45:21Z"
+type: OPERATIONAL
+actor: "ai:claude"
+subject: "PA-8 pattern"
+outcome: "AI-Only"
+rationale: "Specification generation is mechanical transformation"
+context: "Process Architect v4 simulation"
+tags: ["pattern", "PA-8"]
+---
+id: DEC-20260113-164527
+timestamp: "2026-01-13T16:45:27Z"
+type: OPERATIONAL
+actor: "ai:claude"
+subject: "PA-9 pattern"
+outcome: "AI-Only"
+rationale: "Constraint checking is mechanical validation"
+context: "Process Architect v4 simulation"
+tags: ["pattern", "PA-9"]
+---
+id: DEC-20260113-164528
+timestamp: "2026-01-13T16:45:28Z"
+type: OPERATIONAL
+actor: "ai:claude"
+subject: "PA-10 pattern"
+outcome: "AI-Only"
+rationale: "Log verification is mechanical count check"
+context: "Process Architect v4 simulation"
+tags: ["pattern", "PA-10"]
+---
+id: DEC-20260113-164528
+timestamp: "2026-01-13T16:45:28Z"
+type: OPERATIONAL
+actor: "ai:claude"
+subject: "PA-11 pattern"
+outcome: "Human-Led"
+rationale: "Human reviews and decides; AI presents and can DEFER if extended review needed"
+context: "Process Architect v4 simulation"
+tags: ["pattern", "PA-11"]
+---
+id: DEC-20260113-164528
+timestamp: "2026-01-13T16:45:28Z"
+type: OPERATIONAL
+actor: "ai:claude"
+subject: "PA-12 pattern"
+outcome: "AI-Only"
+rationale: "File writing is mechanical"
+context: "Process Architect v4 simulation"
+tags: ["pattern", "PA-12"]
+---
+id: DEC-20260113-164538
+timestamp: "2026-01-13T16:45:38Z"
+type: OPERATIONAL
+actor: "ai:claude"
+subject: "Escalation triggers with DEFER"
+outcome: "PA-11 includes DEFER action for extended review; creates DEFERRED_CONTINUATION work item with HUMAN_APPROVAL resume trigger"
+rationale: "New in v4: async approval pattern using DEFER instead of blocking on sync timeout"
+context: "Process Architect v4 simulation"
+tags: ["escalation", "defer", "v4"]
+---
+id: DEC-20260113-164545
+timestamp: "2026-01-13T16:45:45Z"
+type: OPERATIONAL
+actor: "ai:claude"
+subject: "Control flow with async approval"
+outcome: "Retry returns to PA-4; PA-11 can DEFER to approval-queue with HUMAN_APPROVAL resume trigger"
+rationale: "Enables non-timeout-able decisions via SUSPENDED state"
+context: "Process Architect v4 simulation"
+tags: ["control-flow", "defer"]

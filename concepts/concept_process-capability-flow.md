@@ -56,6 +56,14 @@ Process Definition:
 │   ├── Exit criteria: [What must be true to complete]
 │   └── Quality gates: [Intermediate checkpoints]
 │
+├── Control Flow
+│   └── Retry policy:
+│       ├── On validation failure:
+│       │   ├── Return to: [Step ID to retry from]
+│       │   └── Max iterations: [Maximum retry count, default 3]
+│       └── On escalation timeout:
+│           └── Action: [BLOCK | ESCALATE_HIGHER | PROCEED_WITH_RISK]
+│
 └── Standards Alignment
     └── ISO 12207 reference: [Related process from standard]
 ```
@@ -101,7 +109,10 @@ Capability Instance Specification:
 │
 ├── Control Flow
 │   ├── Escalation triggers:
-│   │   └── [Conditions requiring escalation to human or governance]
+│   │   └── [Condition]:
+│   │       ├── Action: [ESCALATE | RETURN | BLOCK]
+│   │       ├── Target: [Role if ESCALATE; Step ID if RETURN]
+│   │       └── Context: [Information to carry forward]
 │   │
 │   ├── Completion criteria:
 │   │   └── [How to determine this step is complete]
@@ -221,6 +232,119 @@ When escalation occurs, the specification should define what context to provide:
 - What information is available?
 - What options were considered (if any)?
 - What recommendation does the AI have (if applicable)?
+
+### Escalation Action Types
+
+Escalation triggers now support four action types:
+
+| Action | Description | Target | Use When |
+|--------|-------------|--------|----------|
+| **ESCALATE** | Hand off to human or governance | Role (e.g., "human", "governance") | Decision exceeds AI competence |
+| **RETURN** | Loop back to earlier step | Step ID (e.g., "PA-4") | Validation failed; correction needed |
+| **BLOCK** | Halt process; cannot proceed | None | Critical failure; manual intervention required |
+| **DEFER** | Suspend process; await async completion | Work queue or item type | Decision requires extended offline review |
+
+#### DEFER Action Semantics
+
+DEFER is used when a step requires asynchronous completion—the human (or external system) needs time to review, deliberate, or gather input before the process can continue.
+
+When a DEFER action triggers:
+1. Process state is serialised (current step, all context, partial outputs)
+2. A work item of type `DEFERRED_CONTINUATION` is created
+3. Process enters `SUSPENDED` state (distinct from BLOCKED or PAUSED)
+4. The work item specifies a **resume trigger** that signals when work can continue
+5. When resume trigger fires, process continues from the suspended step
+
+**Key difference from ESCALATE**: ESCALATE expects immediate human attention within the current interaction; DEFER expects the human to return later (minutes, hours, or days).
+
+Example specification:
+```
+Escalation triggers:
+  - Extended review requested:
+      Action: DEFER
+      Target: "approval-queue"
+      Resume trigger: { type: HUMAN_APPROVAL, condition: "User approves or rejects specification" }
+      Context: "Specification snapshot, design rationale, open questions"
+```
+
+**Resume trigger types**:
+| Type | Description | Example |
+|------|-------------|---------|
+| `HUMAN_APPROVAL` | Human explicitly signals completion | User clicks approve/reject |
+| `EXTERNAL_EVENT` | External system signals completion | CI pipeline completes |
+| `TIMEOUT` | Auto-resume after duration | Continue after 24 hours |
+| `MANUAL` | Explicit manual resumption | User runs resume command |
+
+#### RETURN Action Semantics
+
+When a RETURN action triggers:
+1. The process flow returns to the specified step
+2. Context from the triggering step is passed to the target step
+3. A fix step (if defined) executes before re-entering the target step
+4. An iteration counter increments
+5. If max iterations exceeded, escalate to BLOCK
+
+Example specification:
+```
+Escalation triggers:
+  - Constraint violation detected:
+      Action: RETURN
+      Target: PA-4
+      Context: "Violation details: {C1|C2|C3|C4}, affected step: {step_id}"
+```
+
+---
+
+## Fix Step Pattern
+
+When validation failures trigger RETURN actions, a **fix step** provides explicit work to address the failure before re-entering the flow.
+
+### Fix Step Template
+
+```
+Step [Process].[Sequence]a: Fix [Issue Type]
+├── Identity
+│   ├── Step ID: [Parent step ID]a (e.g., PA-8a)
+│   ├── Name: Fix [description of what's being fixed]
+│   └── Capability: Transform (typically)
+│
+├── Trigger
+│   └── Activated by: RETURN from Step [X]
+│
+├── Actor Specification
+│   ├── Pattern: AI-Led or Partnership
+│   ├── Human role: Review proposed corrections; approve changes
+│   └── AI role: Analyse failure; propose corrections; apply fixes
+│
+├── Control Flow
+│   ├── Escalation triggers:
+│   │   └── Cannot determine fix:
+│   │       ├── Action: ESCALATE
+│   │       ├── Target: human
+│   │       └── Context: "Failure details and attempted fixes"
+│   ├── Completion criteria: Issue resolved; specification updated
+│   └── Validation: Fix addresses the specific failure that triggered return
+│
+└── Notes
+    └── Fix steps are conditional—they only execute when triggered by RETURN
+```
+
+### Fix Step Naming Convention
+
+Fix steps use the suffix `a` appended to the validation step that triggered them:
+- PA-8 (Validate) fails → PA-8a (Fix) executes → Flow returns to PA-4
+
+### When to Define Fix Steps
+
+Define explicit fix steps when:
+- The failure mode is predictable (e.g., constraint violations)
+- The fix can be partially automated
+- Audit trail of fixes is important
+
+Omit fix steps when:
+- Failures are rare or unpredictable
+- Human must determine the fix approach
+- The return target step inherently handles correction
 
 ---
 
@@ -427,6 +551,8 @@ Before finalising any capability flow specification, validate internal consisten
 - [**Five Collaboration Patterns**](./concept_collaboration-patterns.md): Actor patterns and escalation follow collaboration pattern guidance
 - [**Information Loss at Transitions**](./concept_transitions-info-loss.md): Validation criteria address transition losses
 - [**Document Type Classification Framework**](./concept_document-type-classification.md): Document references use registered type IDs
+- [**Decision and Observation Tracking**](./concept_decision-observation-tracking.md): Capability instances that involve Decide produce Decision records with full traceability. Observations captured during process execution inform decisions and provide audit trails.
+- [**Work Coordination**](./concept_work-coordination.md): Process execution requires coordinating capability instances across actors. Work items flow through queues and assignments according to the coordination mechanisms defined in work coordination.
 
 ---
 

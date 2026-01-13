@@ -1,0 +1,474 @@
+# Environment Capability Registry: Claude Code
+# Schema version: 0.1
+# Last verified: 2026-01-13
+
+identity:
+  name: "Claude Code"
+  vendor: "Anthropic"
+  version: "as of 2026-01-13"
+  registry_version: "0.1"
+  last_updated: 2026-01-13
+  documentation_url: "https://docs.anthropic.com/en/docs/claude-code"
+
+tool_access:
+  file_operations:
+    read:
+      supported: true
+      scope: all
+      notes: "Read tool accesses any file; respects filesystem permissions"
+    write:
+      supported: true
+      scope: all
+      requires_approval: false
+      notes: "Write tool creates/overwrites files; Edit tool for targeted changes"
+    search:
+      supported: true
+      mechanisms:
+        - "Glob (file pattern matching)"
+        - "Grep (content search with regex)"
+        - "LS (directory listing)"
+      notes: "Fast ripgrep-based search; supports glob patterns and regex"
+
+  execution:
+    shell_commands:
+      supported: true
+      sandboxed: true
+      requires_approval: true
+      timeout_configurable: true
+      background_execution: true
+      notes: "Bash tool with configurable sandbox; default 2min timeout, max 10min"
+    code_execution:
+      supported: false
+      languages: []
+      sandboxed: false
+      notes: "No direct code execution; uses Bash for interpreted languages"
+
+  external_integrations:
+    web_access:
+      supported: true
+      mechanisms:
+        - "WebFetch (URL content retrieval)"
+        - "WebSearch (search engine queries)"
+      restrictions: "URL must be valid; HTTP upgraded to HTTPS"
+    api_calls:
+      supported: true
+      protocols:
+        - "MCP (Model Context Protocol)"
+        - "HTTP via WebFetch"
+        - "Shell commands via Bash"
+      notes: "MCP provides structured tool integration"
+    database_access:
+      supported: true
+      mechanisms:
+        - "MCP database servers"
+        - "CLI tools via Bash"
+      notes: "No built-in database tools; relies on MCP or CLI"
+
+  communication:
+    user_questions:
+      supported: true
+      structured_options: true
+      notes: "AskUserQuestion tool with multiple choice support"
+    notifications:
+      supported: true
+      mechanisms:
+        - "Notification hooks"
+        - "Session output"
+      notes: "Hook-based notification system"
+
+context_provision:
+  standing_context:
+    project_instructions:
+      supported: true
+      file_locations:
+        - "CLAUDE.md"
+        - ".claude/CLAUDE.md"
+      inheritance: true
+      notes: "Subdirectory CLAUDE.md files inherit from parent"
+    user_instructions:
+      supported: true
+      file_locations:
+        - "~/.claude/CLAUDE.md"
+      notes: "User-level instructions apply across all projects"
+    organisation_policies:
+      supported: false
+      mechanism: null
+      notes: "No built-in org-level config; can use shared CLAUDE.md templates"
+
+  dynamic_context:
+    file_inclusion:
+      supported: true
+      mechanisms:
+        - "Read tool (explicit)"
+        - "@file syntax (in some contexts)"
+        - "Automatic codebase awareness"
+      size_limits: "Individual files truncated at large sizes"
+      notes: "Context-aware file reading with truncation for large files"
+    conversation_history:
+      preserved: true
+      summarisation: true
+      limit: "Unlimited via automatic compaction"
+      notes: "Auto-compaction preserves key context when approaching limits"
+    external_resources:
+      supported: true
+      mechanisms:
+        - "MCP resources"
+        - "WebFetch"
+        - "File system access"
+      notes: "MCP provides structured resource access"
+
+  context_limitations:
+    max_context_size: "200k tokens (model-dependent)"
+    truncation_behaviour: "Automatic compaction with summarisation"
+    priority_mechanisms: "Recent context prioritised; compaction summarises older content"
+    notes: "Effective unlimited context through summarisation"
+
+collaboration_support:
+  interaction_modes:
+    synchronous_chat:
+      supported: true
+      notes: "Primary interaction mode; REPL-style conversation"
+    asynchronous_tasks:
+      supported: true
+      mechanisms:
+        - "Background shell commands"
+        - "Background agents (Task tool)"
+      notes: "Agents can run in background; results retrieved later"
+    multi_agent:
+      supported: true
+      coordination: "Task tool spawns subagents; parent waits or continues"
+      notes: "Hierarchical agent spawning with result aggregation"
+
+  approval_mechanisms:
+    tool_use_approval:
+      supported: true
+      granularity: configured
+      notes: "Configurable per-tool approval; some tools auto-approved"
+    output_review:
+      supported: true
+      mechanisms:
+        - "Inline output display"
+        - "Diff view for file changes"
+      notes: "All outputs visible to user in terminal"
+    batch_approval:
+      supported: true
+      notes: "Can approve multiple pending operations"
+
+  escalation_support:
+    explicit_escalation:
+      supported: true
+      mechanism: "AskUserQuestion tool; natural language escalation"
+      notes: "AI can explicitly ask for human input"
+    confidence_thresholds:
+      supported: false
+      notes: "No built-in confidence threshold configuration"
+    audit_trail:
+      supported: true
+      notes: "Conversation history serves as audit trail"
+
+configuration:
+  project_level:
+    files:
+      - "CLAUDE.md"
+      - ".claude/CLAUDE.md"
+      - ".claude/settings.json"
+      - ".claude/settings.local.json"
+    format: "markdown (CLAUDE.md), JSON (settings)"
+    hot_reload: true
+    notes: "Changes take effect on next tool use"
+
+  user_level:
+    files:
+      - "~/.claude/CLAUDE.md"
+      - "~/.claude/settings.json"
+    format: "markdown, JSON"
+    notes: "User settings override defaults"
+
+  organisation_level:
+    supported: false
+    mechanism: null
+    notes: "No native org-level config"
+
+  hierarchy:
+    override_model: "Project > User > Default; settings.local.json for uncommitted overrides"
+    notes: "Clear precedence; .local files for machine-specific config"
+
+extensions:
+  plugins:
+    supported: true
+    mechanism: "plugin.json manifest with components"
+    capabilities:
+      - "Custom commands"
+      - "Custom agents"
+      - "Custom skills"
+      - "Hooks"
+      - "MCP servers"
+    notes: "Full plugin system with auto-discovery"
+
+  custom_commands:
+    supported: true
+    format: "Markdown with optional YAML frontmatter"
+    location: ".claude/commands/"
+    notes: "Slash commands expand to full prompts"
+
+  custom_agents:
+    supported: true
+    format: "Markdown with YAML frontmatter"
+    isolation: "Subagent runs with specified tool subset"
+    notes: "Task tool spawns agents with defined capabilities"
+
+  skills:
+    supported: true
+    format: "Markdown"
+    trigger_mechanism: "Skill tool invocation or description matching"
+    notes: "Skills provide contextual guidance"
+
+  hooks:
+    supported: true
+    events:
+      - "PreToolUse"
+      - "PostToolUse"
+      - "Stop"
+      - "SubagentStop"
+      - "SessionStart"
+      - "SessionEnd"
+      - "UserPromptSubmit"
+      - "PreCompact"
+      - "Notification"
+    implementation: "Shell script or prompt-based"
+    notes: "Rich hook system for automation and validation"
+
+  integration_protocols:
+    mcp:
+      supported: true
+      server_types:
+        - "stdio"
+        - "sse"
+        - "http"
+      notes: "Full MCP support for tools and resources"
+    other_protocols: []
+
+generation_support:
+  validation_tooling:
+    available: true
+    tools:
+      - name: "plugin-dev:plugin-validator"
+        type: validator
+        targets: ["plugins", "plugin.json"]
+        invocation: "Task tool with subagent_type='plugin-dev:plugin-validator'"
+        notes: "Validates plugin structure and configuration"
+      - name: "plugin-dev:skill-reviewer"
+        type: reviewer
+        targets: ["skills"]
+        invocation: "Task tool with subagent_type='plugin-dev:skill-reviewer'"
+        notes: "Reviews skill quality, description, and structure"
+    notes: "Plugin-dev plugin provides validation agents"
+
+  creation_assistance:
+    available: true
+    tools:
+      - name: "plugin-dev:agent-creator"
+        type: generator
+        targets: ["agents"]
+        invocation: "Task tool with subagent_type='plugin-dev:agent-creator'"
+        notes: "Creates new agent definitions"
+      - name: "Skill tool with plugin-dev:skill-development"
+        type: wizard
+        targets: ["skills"]
+        invocation: "Skill tool to invoke skill-development guidance"
+        notes: "Provides guidance on skill structure and best practices"
+    notes: "Plugin-dev plugin provides creation assistance"
+
+  canonical_formats:
+    documentation_url: "https://docs.anthropic.com/en/docs/claude-code"
+    examples_available: true
+    example_locations:
+      - "Official docs"
+      - "Plugin-dev plugin examples"
+    notes: "Skills must be SKILL.md in named directory; agents use YAML frontmatter"
+
+  common_pitfalls:
+    - issue: "Wrong skill file naming"
+      correct: ".claude/skills/skill-name/SKILL.md"
+      incorrect: ".claude/skills/skill-name.md"
+      detection: "Skill not discovered; check directory structure"
+    - issue: "Missing required frontmatter"
+      correct: "name and description fields required"
+      incorrect: "No frontmatter or missing fields"
+      detection: "Skill not triggered; check frontmatter"
+    - issue: "Poor description for discovery"
+      correct: "Include trigger phrases users would say"
+      incorrect: "Vague description without keywords"
+      detection: "Skill not auto-discovered; manual invocation works"
+
+framework_mapping:
+  capability_coverage:
+    elicit:
+      support_level: full
+      mechanisms:
+        - "Read tool (files, documents)"
+        - "Grep tool (code search)"
+        - "WebFetch (web content)"
+        - "AskUserQuestion (human input)"
+        - "MCP resources (external data)"
+      gaps:
+        - "No direct stakeholder interview tooling"
+        - "No structured requirements gathering templates"
+      notes: "Strong technical elicitation; human interaction via questions"
+
+    analyse:
+      support_level: full
+      mechanisms:
+        - "Pattern recognition in code/text"
+        - "Cross-file analysis via search tools"
+        - "WebSearch for research"
+        - "Multi-agent analysis (Task tool)"
+      gaps:
+        - "No built-in metrics calculation"
+        - "No visual analysis (diagrams)"
+      notes: "Core AI capability; excellent for code analysis"
+
+    synthesise:
+      support_level: full
+      mechanisms:
+        - "Natural language synthesis"
+        - "Code synthesis"
+        - "Multi-source integration"
+      gaps:
+        - "Limited visual synthesis (no diagram generation)"
+      notes: "Core AI capability"
+
+    transform:
+      support_level: full
+      mechanisms:
+        - "Code refactoring"
+        - "Format conversion"
+        - "Language translation"
+        - "Edit tool for targeted changes"
+      gaps: []
+      notes: "Strong transformation capabilities"
+
+    validate:
+      support_level: partial
+      mechanisms:
+        - "Bash tool (run tests, linters)"
+        - "Code review patterns"
+        - "AskUserQuestion (human validation)"
+      gaps:
+        - "No built-in test framework"
+        - "No formal verification"
+        - "Limited automated quality gates"
+      notes: "Relies on external tools via Bash"
+
+    decide:
+      support_level: partial
+      mechanisms:
+        - "AskUserQuestion (human decision)"
+        - "Recommendation with options"
+      gaps:
+        - "No decision tracking built-in"
+        - "No structured decision frameworks"
+      notes: "Can recommend; relies on human for significant decisions"
+
+    generate:
+      support_level: full
+      mechanisms:
+        - "Write tool (file creation)"
+        - "Edit tool (modification)"
+        - "Code generation"
+        - "Documentation generation"
+      gaps: []
+      notes: "Core strength; primary use case"
+
+    preserve:
+      support_level: partial
+      mechanisms:
+        - "Write tool (documentation)"
+        - "Git integration via Bash"
+        - "Custom logging (hooks/scripts)"
+      gaps:
+        - "No built-in decision logging"
+        - "No automatic rationale capture"
+        - "No structured knowledge base"
+      notes: "Can be extended with custom tooling (as done in this project)"
+
+  collaboration_pattern_support:
+    human_only:
+      implementable: true
+      mechanism: "Exclude AI from specific operations via CLAUDE.md constraints"
+      notes: "Not enforced technically; relies on instruction following"
+
+    human_led:
+      implementable: true
+      mechanism: "AI provides suggestions; human approves via tool approval system"
+      notes: "Natural fit for the tool's design"
+
+    partnership:
+      implementable: true
+      mechanism: "Interactive dialogue with AskUserQuestion; iterative refinement"
+      notes: "Primary intended usage pattern"
+
+    ai_led:
+      implementable: true
+      mechanism: "Configure auto-approval for tool categories; AI proceeds with oversight"
+      notes: "Achievable via settings configuration"
+
+    ai_only:
+      implementable: true
+      mechanism: "Full auto-approval; background agents; hook-based monitoring"
+      notes: "Possible but uncommon; human typically reviews output"
+
+  context_model_3s2p:
+    scope:
+      provision_mechanism: "CLAUDE.md project description; file structure awareness"
+      notes: "Project-level context well-supported"
+    situation:
+      provision_mechanism: "Conversation history; recent file reads; git status"
+      notes: "Dynamic situation captured through interaction"
+    system:
+      provision_mechanism: "MCP servers define available tools; settings define agents"
+      notes: "System awareness via configuration"
+    phase:
+      provision_mechanism: "Must be explicitly stated in CLAUDE.md or conversation"
+      notes: "No automatic phase detection"
+    process:
+      provision_mechanism: "Todo list tool; conversation context; custom tracking"
+      notes: "Process position requires explicit management"
+
+  decision_observation_support:
+    decision_logging:
+      supported: false
+      mechanism: "Not built-in; can be added via hooks and scripts"
+      notes: "This project implements via .dialogue/log-decision.sh"
+    observation_logging:
+      supported: false
+      mechanism: "Not built-in; can be added via hooks and scripts"
+      notes: "This project implements via .dialogue/log-observation.sh"
+    provenance_tracking:
+      supported: false
+      granularity: null
+      notes: "Conversation history provides implicit provenance; no structured tracking"
+
+# Summary assessment
+summary:
+  strengths:
+    - "Excellent file operation and code generation capabilities"
+    - "Strong extension system (plugins, commands, agents, skills, hooks)"
+    - "Flexible MCP integration for external tools"
+    - "Rich collaboration support (questions, approval, multi-agent)"
+    - "Effective context management with auto-compaction"
+
+  gaps:
+    - "No built-in decision/observation tracking"
+    - "No automatic phase detection"
+    - "Limited validation tooling (relies on external tools)"
+    - "No organisation-level configuration"
+    - "No visual/diagram capabilities"
+
+  framework_fit: "High — extensible architecture allows framework implementation"
+
+  notes: |
+    Claude Code provides a strong foundation for framework implementation.
+    Most gaps can be addressed through the extension system (as demonstrated
+    by this project's implementation of decision/observation logging).
+    The tool's design aligns well with Partnership and Human-Led patterns.

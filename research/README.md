@@ -19,6 +19,16 @@ This directory contains integration analyses, exploratory research documents, an
 |----------|-------------|--------|
 | [naur-wegner-integration-research.md](./naur-wegner-integration-research.md) | Original integration analysis connecting Naur's theory-building with Wegner's transactive memory | **(Superseded)** — Migrated to [`concepts/integration_naur-wegner.md`](../concepts/integration_naur-wegner.md) |
 | [tacit-knowledge-software-failure.md](./tacit-knowledge-software-failure.md) | Analysis of how tacit knowledge loss contributes to software project failures | Active |
+| [planning-future-work.md](./planning-future-work.md) | Tracking document for future development directions | Active |
+
+### Archived Investigations
+
+| Document | Description | Formalised To |
+|----------|-------------|---------------|
+| [archive/investigation-decision-observation-tracking.md](./archive/investigation-decision-observation-tracking.md) | Design for recording observations and decisions throughout the SDLC | [`concepts/concept_decision-observation-tracking.md`](../concepts/concept_decision-observation-tracking.md) |
+| [archive/investigation-work-coordination.md](./archive/investigation-work-coordination.md) | Design for coordinating work between human and AI actors | [`concepts/concept_work-coordination.md`](../concepts/concept_work-coordination.md) |
+
+*Archived investigations retain implementation-level detail (tooling options, storage technologies, architecture diagrams) useful for Phase D executable framework work.*
 
 ---
 

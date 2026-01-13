@@ -1,0 +1,77 @@
+#!/bin/bash
+# verify-logging.sh — Verify logging compliance for a process execution
+# Part of the AI-Augmented SDLC Framework dialogue system
+# Usage: verify-logging.sh <process-identifier> <min-decisions> <min-observations>
+
+set -euo pipefail
+
+# Find project root (git root)
+PROJECT_ROOT="$(git rev-parse --show-toplevel 2>/dev/null)" || {
+    echo "Error: Must be run from within a git repository" >&2
+    exit 1
+}
+
+DECISIONS_LOG="${PROJECT_ROOT}/.dialogue/logs/decisions.yaml"
+OBSERVATIONS_LOG="${PROJECT_ROOT}/.dialogue/logs/observations.yaml"
+
+if [[ $# -lt 3 ]]; then
+    echo "Usage: verify-logging.sh <process-identifier> <min-decisions> <min-observations>" >&2
+    echo "  process-identifier: String to search for in context field" >&2
+    echo "  min-decisions: Minimum number of decision entries expected" >&2
+    echo "  min-observations: Minimum number of observation entries expected" >&2
+    exit 1
+fi
+
+PROCESS_ID="$1"
+MIN_DECISIONS="$2"
+MIN_OBSERVATIONS="$3"
+
+echo "Verifying logging compliance for: $PROCESS_ID"
+echo "---"
+
+# Count decisions matching the process identifier
+DECISION_COUNT=0
+if [[ -f "$DECISIONS_LOG" ]]; then
+    DECISION_COUNT=$(grep -c "$PROCESS_ID" "$DECISIONS_LOG" 2>/dev/null || echo "0")
+fi
+
+# Count observations matching the process identifier
+OBSERVATION_COUNT=0
+if [[ -f "$OBSERVATIONS_LOG" ]]; then
+    OBSERVATION_COUNT=$(grep -c "$PROCESS_ID" "$OBSERVATIONS_LOG" 2>/dev/null || echo "0")
+fi
+
+# Check decisions
+if [[ "$DECISION_COUNT" -ge "$MIN_DECISIONS" ]]; then
+    echo "Decisions found: $DECISION_COUNT (minimum: $MIN_DECISIONS) ✓"
+    DECISIONS_PASS=true
+else
+    echo "Decisions found: $DECISION_COUNT (minimum: $MIN_DECISIONS) ✗"
+    DECISIONS_PASS=false
+fi
+
+# Check observations
+if [[ "$OBSERVATION_COUNT" -ge "$MIN_OBSERVATIONS" ]]; then
+    echo "Observations found: $OBSERVATION_COUNT (minimum: $MIN_OBSERVATIONS) ✓"
+    OBSERVATIONS_PASS=true
+else
+    echo "Observations found: $OBSERVATION_COUNT (minimum: $MIN_OBSERVATIONS) ✗"
+    OBSERVATIONS_PASS=false
+fi
+
+echo "---"
+
+# Overall result
+if [[ "$DECISIONS_PASS" == "true" && "$OBSERVATIONS_PASS" == "true" ]]; then
+    echo "PASS: Logging compliance verified"
+    exit 0
+else
+    echo "FAIL: Logging compliance not met"
+    if [[ "$DECISIONS_PASS" != "true" ]]; then
+        echo "  - Need $((MIN_DECISIONS - DECISION_COUNT)) more decision entries"
+    fi
+    if [[ "$OBSERVATIONS_PASS" != "true" ]]; then
+        echo "  - Need $((MIN_OBSERVATIONS - OBSERVATION_COUNT)) more observation entries"
+    fi
+    exit 1
+fi

@@ -19,110 +19,12 @@
 
 ## Principles
 
-The Evolution meta-process is governed by four principles that protect existing value while enabling systematic AI integration.
+*To be developed*
 
-### 1. Start With What Works
-
-**Principle**: Begin from existing effective practices, not from an idealised target state. What teams currently do successfully is the foundation for evolution, not an obstacle to it.
-
-**Rationale**: When a team has developed practices that work—however informal or undocumented—those practices encode solutions to problems the team has encountered. Much of this knowledge is tacit: team members know *how* to do things without being able to explain *why* those approaches work. Starting from "best practice" or "AI-native" approaches discards this embedded understanding. Starting from what works preserves it as the baseline.
-
-**Implications**:
-- Before introducing AI assistance, document current practices including informal ones
-- Identify which aspects of current practice depend on tacit knowledge (judgement, intuition, contextual awareness)
-- Recognise that "inefficient" practices may serve purposes not visible in formal process descriptions
-- Assume existing practices are rational responses to real constraints until evidence suggests otherwise
-- Use current effectiveness as the benchmark against which to measure evolution success
-
-**Warning signs of violation**:
-- Designing AI integration from a blank slate rather than current state
-- Treating existing practices as legacy to be replaced rather than foundation to build on
-- Optimising for an ideal end state without mapping the path from current state
-- Dismissing informal practices as "not best practice"
-
----
-
-### 2. Discover and Preserve Knowledge
-
-**Principle**: Actively surface tacit knowledge and protect it throughout the evolution process. Knowledge that isn't discovered can't be preserved; knowledge that isn't preserved will be lost.
-
-**Rationale**: Software teams hold knowledge in two forms: individual understanding (deep knowledge of why the system is the way it is) and collective coordination (knowing who to ask about what). Most of this knowledge is tacit—held in minds rather than documents. AI integration creates two risks: it may disrupt the conversations and activities through which knowledge is maintained, and it may create false confidence that AI "knows" things that actually require human understanding. Proactive discovery and deliberate preservation counter both risks.
-
-**Implications**:
-- Map knowledge holders and their domains before changing roles or activities
-- Conduct explicit knowledge elicitation sessions, not just process documentation
-- Distinguish between knowledge that can be formalised and knowledge that must remain in human minds
-- Ensure AI assistance doesn't bypass the conversations that maintain team coordination
-- When AI takes over information-gathering, ensure insights still flow to team members who need them
-- Monitor for knowledge concentration (only AI "knows" things) or atrophy (humans forgetting)
-
-**Warning signs of violation**:
-- Team members saying "I don't know, ask the AI"
-- Decisions based on AI analysis that no human fully understands
-- Reduced informal communication as AI mediates information flow
-- New team members struggling because tacit knowledge wasn't preserved
-- Critical knowledge discovered only when a crisis reveals its absence
-
----
-
-### 3. Progress Deliberately
-
-**Principle**: Each evolution step must be intentional, validated, and reversible. Speed of adoption is less important than sustainability of change.
-
-**Rationale**: Complex systems respond unpredictably to change. An AI integration that appears successful in isolation may have downstream effects that only become visible over time—degraded quality, lost knowledge, broken coordination. Deliberate progress means defining success criteria before acting, allowing time for effects to manifest, and maintaining the ability to reverse course. This is especially important because knowledge loss is often invisible until a crisis reveals it.
-
-**Implications**:
-- Define success criteria for each evolution step *before* implementing it
-- Allow sufficient time for effects to manifest—some degradation is slow
-- Create explicit rollback plans for each change
-- Validate each step preserves effectiveness before proceeding to the next
-- Treat unexpected negative signals as escalation triggers, not noise to be optimised away
-- Accept that sustainable progress may appear slower than aggressive adoption
-
-**Warning signs of violation**:
-- Racing through evolution steps to "complete" AI integration
-- Dismissing concerns as resistance to change
-- No mechanism to detect or reverse problematic changes
-- Pressure to match adoption pace of other teams or organisations
-- Rollback seen as failure rather than prudent course correction
-
----
-
-### 4. Measure Appropriately
-
-**Principle**: Use measurements that match the nature of the work being measured. Different phases and activities require different indicators; universal metrics distort more than they reveal.
-
-**Rationale**: Software development phases have fundamentally different information compositions. Early phases (initiation, requirements) are dominated by tacit knowledge and emergent understanding—measuring them by throughput or velocity misses what matters. Later phases (implementation, testing) have higher formal content where quantitative metrics apply better. Applying late-phase metrics to early-phase work, or measuring knowledge work by output volume, creates incentives that damage the activities being measured.
-
-**Implications**:
-- Select metrics appropriate to the phase's information composition
-- For tacit-heavy activities, use qualitative indicators: confidence levels, alignment assessments, knowledge distribution
-- For formal-heavy activities, quantitative metrics (DORA, defect rates) become more applicable
-- Measure evolution success by preservation of effectiveness, not just efficiency gains
-- Include leading indicators (team confidence, capability maintenance) not just lagging indicators (output quality)
-- Be willing to use different metrics for different phases rather than forcing consistency
-
-**Warning signs of violation**:
-- Applying velocity metrics to understanding-heavy phases
-- Measuring AI integration success only by time saved
-- Universal dashboards that flatten phase differences
-- Metrics that incentivise output volume over knowledge quality
-- No measurement of human capability preservation
-
----
-
-### Principle Interactions
-
-The four principles are mutually reinforcing:
-
-| Tension | Resolution |
-|---------|------------|
-| Starting from current state vs. enabling improvement | Deliberate progress allows change while building on what works |
-| Knowledge preservation vs. efficiency pressure | Appropriate measurement ensures preservation is valued, not just speed |
-| Speed of adoption vs. safety | Deliberate progress gates advancement on demonstrated preservation of effectiveness |
-| Measurement vs. phase differences | Appropriate measurement adapts to context rather than forcing uniformity |
-
-**Meta-principle**: When principles appear to conflict, favour the more conservative interpretation. The cost of moving too slowly is time; the cost of moving too fast can be irrecoverable knowledge loss.
+1. **Preserve what works**: Existing practices embody accumulated learning
+2. **Augment, don't replace**: AI assists human capabilities
+3. **Maintain knowledge continuity**: Protect tacit knowledge and transactive memory systems
+4. **Incremental validation**: Each step validated before proceeding
 
 ---
 
@@ -495,7 +397,7 @@ Sufficiency for `SCOPE_BOUNDED` is context-dependent. AI can help surface readin
 
 **ISO 12207 Processes**: 6.4.2 Stakeholder Needs and Requirements Definition, 6.4.3 System/Software Requirements Definition
 
-**Information Composition**: 40% Formal / 50% Tacit / 10% Emergent
+**Information Composition**: 55% Formal / 30% Tacit / 15% Emergent
 
 **Primary Question**: WHAT—stakeholder needs, formal specifications
 
@@ -836,7 +738,7 @@ Sufficiency for `REQUIREMENTS_BASELINED` is context-dependent. AI can help surfa
 
 **ISO 12207 Processes**: 6.4.4 Architecture Definition, 6.4.5 Design Definition
 
-**Information Composition**: 50% Formal / 40% Tacit / 10% Emergent
+**Information Composition**: 65% Formal / 25% Tacit / 10% Emergent
 
 **Primary Question**: HOW (to build)—solution structure, component design, technical decisions
 
@@ -899,17 +801,17 @@ Sufficiency for `REQUIREMENTS_BASELINED` is context-dependent. AI can help surfa
 
 **Process Validation**: Trade-off analysis must capture rationale for decisions. AI should flag ADRs missing "Consequences" or "Alternatives Considered" sections.
 
-#### Collaboration Patterns in Design
+#### Collaboration Modes in Design
 
-Design work may operate in different collaboration patterns depending on context:
+Design work may operate in different actor model modes depending on context:
 
-| Pattern | Description | When Appropriate |
-|---------|-------------|------------------|
-| **Human-Led** | Human drives design; AI assists with research, options, documentation | Novel domains, high-stakes architecture, significant tacit knowledge required |
-| **Partnership** | Human and AI work together iteratively; AI proposes, human evaluates and refines | Established patterns with team expertise; exploration of solution space |
-| **AI-Led** | AI generates design; human validates and approves | Well-understood problems, strong existing patterns, implementation-level design |
+| Mode | Description | When Appropriate |
+|------|-------------|------------------|
+| **Human-led** (Mode 2) | Human drives design; AI assists with research, options, documentation | Novel domains, high-stakes architecture, significant tacit knowledge required |
+| **Collaborative** (Mode 3) | Human and AI work together iteratively; AI proposes, human evaluates and refines | Established patterns with team expertise; exploration of solution space |
+| **AI-led** (Mode 4) | AI generates design; human validates and approves | Well-understood problems, strong existing patterns, implementation-level design |
 
-Pattern selection should consider:
+Mode selection should consider:
 - Team's domain expertise and design experience
 - Novelty of the problem (novel → human-led; familiar → AI-led possible)
 - Criticality and reversibility of decisions
@@ -1227,7 +1129,7 @@ Sufficiency for `ARCHITECTURE_APPROVED` is context-dependent. AI can help surfac
 
 **ISO 12207 Processes**: 6.4.6 Implementation, 6.4.7 Integration
 
-**Information Composition**: 55% Formal / 35% Tacit / 10% Emergent
+**Information Composition**: 75% Formal / 20% Tacit / 5% Emergent
 
 **Primary Question**: BUILD—code creation, integration, working software
 
@@ -1288,24 +1190,24 @@ Sufficiency for `ARCHITECTURE_APPROVED` is context-dependent. AI can help surfac
 
 **Process Validation**: Code reviews must capture *why* changes were requested, not just *what*. AI should flag reviews with only "fix this" comments lacking rationale.
 
-#### Collaboration Patterns in Implementation
+#### Collaboration Modes in Implementation
 
-Implementation is where AI-Led work becomes most viable—but with important caveats:
+Implementation is where AI-led work becomes most viable—but with important caveats:
 
-| Pattern | Description | When Appropriate |
-|---------|-------------|------------------|
-| **Human-Only** | Human writes code; no AI involvement | Cryptographic implementations, regulated code (medical/aviation), IP-sensitive code |
-| **Human-Led** | Human writes code; AI assists with research, completion, review | Novel algorithms, critical security code, complex business logic |
-| **Partnership** | Human and AI pair; AI generates, human reviews and refines | Most implementation work; established patterns with variation |
-| **AI-Led** | AI generates complete implementations; human validates | Boilerplate, CRUD operations, well-defined transformations, tests from specs |
-| **AI-Only** | AI executes without human in loop | CI/CD builds, automated formatting, dependency updates, code generation pipelines |
+| Mode | Description | When Appropriate |
+|------|-------------|------------------|
+| **Human-only** (Mode 1) | Human writes code; no AI involvement | Cryptographic implementations, regulated code (medical/aviation), IP-sensitive code |
+| **Human-led** (Mode 2) | Human writes code; AI assists with research, completion, review | Novel algorithms, critical security code, complex business logic |
+| **Collaborative** (Mode 3) | Human and AI pair; AI generates, human reviews and refines | Most implementation work; established patterns with variation |
+| **AI-led** (Mode 4) | AI generates complete implementations; human validates | Boilerplate, CRUD operations, well-defined transformations, tests from specs |
+| **Fully autonomous** (Mode 5) | AI executes without human in loop | CI/CD builds, automated formatting, dependency updates, code generation pipelines |
 
-**Pattern transitions during implementation:**
-- AI-Led coding → comprehension check fails → Human-Led rewrite
-- Partnership coding → security concern detected → Human-Only review
-- AI-Only pipeline → build failure → Partnership investigation
+**Mode transitions during implementation:**
+- AI-led coding → comprehension check fails → Human-led rewrite (Mode 4 → Mode 2)
+- Collaborative coding → security concern detected → Human-only review (Mode 3 → Mode 1)
+- Autonomous pipeline → build failure → Collaborative investigation (Mode 5 → Mode 3)
 
-**Governance for AI-Only:**
+**Governance for Mode 5 (Autonomous):**
 - Defined scope: only pre-approved automation (builds, formatting, dependency updates)
 - Automatic escalation: build failures, security scan alerts, test failures
 - Human approval required before merge regardless of autonomous checks
@@ -1569,7 +1471,7 @@ AI should continuously track and report:
 - **Architectural reasoning**: Understanding of design decisions
 
 **Skill preservation mechanisms:**
-- Require periodic Human-Only coding for each developer
+- Require periodic human-only coding (Mode 1) for each developer
 - Track AI-assistance ratios; flag when >80%
 - Rotate developers through different code areas
 - Comprehension checks for AI-generated code (Process 5.1)
@@ -1583,9 +1485,9 @@ These processes run during implementation to detect and remediate problems:
 
 *Problem defended against*: AI-generated code nobody understands; knowledge silos
 
-*Trigger*: AI-Led code generation completed; before merge
+*Trigger*: AI-led (Mode 4) code generation completed; before merge
 
-*Actor Pattern*: Partnership — AI facilitates, human demonstrates understanding
+*Actor Model*: Collaborative (Mode 3) — AI facilitates, human demonstrates understanding
 
 | Step | AI Action | Human Action |
 |------|-----------|--------------|
@@ -1608,9 +1510,9 @@ These processes run during implementation to detect and remediate problems:
 
 *Trigger*: Continuous (each commit); periodic (weekly architecture review)
 
-*Actor Pattern*: AI-Led monitoring → Human-Led when deviation detected
+*Actor Model*: AI-led (Mode 4) monitoring → Human-led (Mode 2) when deviation detected
 
-**Continuous Monitoring (AI-Only):**
+**Continuous Monitoring (Mode 5 - Autonomous):**
 
 AI analyses each change for:
 - Dependency direction violations
@@ -1627,7 +1529,7 @@ AI analyses each change for:
 | MODERATE | Pattern deviation | Architect approval required |
 | MAJOR | Architectural principle violation | Block merge; requires ADR + architect approval |
 
-**Periodic Review (Weekly - Human-Led):**
+**Periodic Review (Weekly - Mode 2):**
 
 AI synthesises architecture health report:
 - Deviation count and trend
@@ -1645,7 +1547,7 @@ Architect decides if deviations are acceptable evolution, architecture needs upd
 
 *Trigger*: Each shortcut decision; periodic review
 
-*Actor Pattern*: Partnership at creation; Human-Led at review
+*Actor Model*: Collaborative (Mode 3) at creation; Human-led (Mode 2) at review
 
 **At Debt Creation:**
 
@@ -1679,7 +1581,7 @@ AI detects (or human declares) potential debt: TODO/FIXME/HACK comments, known s
 
 *Trigger*: Periodic (per sprint); continuous tracking
 
-*Actor Pattern*: Human-Led execution; AI supports tracking
+*Actor Model*: Human-led (Mode 2) execution; AI supports tracking
 
 **AI Tracks Per Developer:**
 - Ratio of AI-assisted vs independent code
@@ -1688,7 +1590,7 @@ AI detects (or human declares) potential debt: TODO/FIXME/HACK comments, known s
 - Code review depth (substantive vs rubber-stamp)
 
 **Skill Rotation Requirements:**
-- Each developer must periodically: complete tasks without AI (Human-Only), explain AI-generated code, review others' code substantively, debug without AI assistance
+- Each developer must periodically: complete tasks without AI (Mode 1), explain AI-generated code, review others' code substantively, debug without AI assistance
 
 **Atrophy Warning Triggers:**
 - Developer >90% AI-assisted for 4+ weeks
@@ -1730,7 +1632,7 @@ Sufficiency for `CODE_COMPLETE` is context-dependent. AI can help surface readin
 
 **ISO 12207 Processes**: 6.4.8 Verification, 6.4.9 Validation
 
-**Information Composition**: 60% Formal / 30% Tacit / 10% Emergent
+**Information Composition**: 70% Formal / 20% Tacit / 10% Emergent
 
 **Primary Question**: CONFIRM—verification (built it right) and validation (built the right thing)
 
@@ -1802,22 +1704,22 @@ Sufficiency for `CODE_COMPLETE` is context-dependent. AI can help surface readin
 
 **Key insight**: AI excels at verification (checking against formal criteria) but validation requires human judgement about whether the system actually solves the problem.
 
-#### Collaboration Patterns in Testing
+#### Collaboration Modes in Testing
 
-| Pattern | Description | When Appropriate |
-|---------|-------------|------------------|
-| **Human-Only** | Human designs and executes tests; no AI involvement | External security audits, regulatory compliance testing, certain accessibility testing |
-| **Human-Led** | Human designs tests; AI assists with execution, data generation | Exploratory testing, UAT, novel scenarios |
-| **Partnership** | Human and AI together design and execute tests | Most functional testing; AI generates, human validates coverage |
-| **AI-Led** | AI generates and executes tests; human reviews results | Functional regression testing, generated unit tests |
-| **AI-Only** | AI executes tests with no human in loop | CI/CD pipeline tests, continuous regression, smoke tests |
+| Mode | Description | When Appropriate |
+|------|-------------|------------------|
+| **Human-only** (Mode 1) | Human designs and executes tests; no AI involvement | External security audits, regulatory compliance testing, certain accessibility testing |
+| **Human-led** (Mode 2) | Human designs tests; AI assists with execution, data generation | Exploratory testing, UAT, novel scenarios |
+| **Collaborative** (Mode 3) | Human and AI together design and execute tests | Most functional testing; AI generates, human validates coverage |
+| **AI-led** (Mode 4) | AI generates and executes tests; human reviews results | Functional regression testing, generated unit tests |
+| **Fully autonomous** (Mode 5) | AI executes tests with no human in loop | CI/CD pipeline tests, continuous regression, smoke tests |
 
-**Pattern transitions during testing:**
-- AI-Led test execution → failure → Human-Led investigation
-- AI-Only CI/CD test → unexpected failure pattern → Partnership analysis
-- Human-Led exploratory testing → discovers pattern → AI-Led generates systematic tests
+**Mode transitions during testing:**
+- AI-led test execution → failure → Human-led investigation (Mode 4 → Mode 2)
+- Autonomous CI/CD test → unexpected failure pattern → Collaborative analysis (Mode 5 → Mode 3)
+- Human exploratory testing → discovers pattern → AI generates systematic tests (Mode 2 → Mode 4)
 
-**Governance for AI-Only:**
+**Governance for Mode 5 (Autonomous):**
 - Defined scope: only pre-approved test suites
 - Automatic escalation triggers: new failure patterns, coverage drops, flaky test thresholds
 - Human review required before release decisions regardless of autonomous test results
@@ -2104,9 +2006,9 @@ These processes run during testing to detect and remediate problems:
 
 *Trigger*: Continuous (with test creation); periodic review
 
-*Actor Pattern*: AI-Led analysis; Human-Led remediation
+*Actor Model*: AI-led (Mode 4) analysis; Human-led (Mode 2) remediation
 
-**Continuous Analysis (AI-Led):**
+**Continuous Analysis (Mode 4):**
 
 For each new/modified test, AI analyses:
 
@@ -2139,7 +2041,7 @@ AI synthesises test health report:
 
 *Trigger*: Each defect found (testing or production); periodic analysis
 
-*Actor Pattern*: AI-Led analysis; Partnership remediation
+*Actor Model*: AI-led (Mode 4) analysis; Collaborative (Mode 3) remediation
 
 **For Each Defect, AI Analyses:**
 
@@ -2149,7 +2051,7 @@ AI synthesises test health report:
 | **Escape analysis** (production defects) | Why didn't testing catch this? Was scenario tested? Did tests pass despite bug? |
 | **Pattern matching** | Similar to previous defects? Common root cause? Same code area? |
 
-**Learning Actions (Partnership):**
+**Learning Actions (Mode 3 - Collaborative):**
 
 AI proposes; Human approves:
 - **Regression test**: Generate test for this specific defect
@@ -2176,7 +2078,7 @@ Team reviews; decides test strategy adjustments, areas for focused attention, pr
 
 *Trigger*: UAT phase; release decision point
 
-*Actor Pattern*: Human-Led — AI supports but cannot replace human validation
+*Actor Model*: Human-led (Mode 2) — AI supports but cannot replace human validation
 
 **Key principle**: AI CANNOT validate fitness-for-purpose. AI CAN support validation process integrity.
 
@@ -2229,7 +2131,7 @@ Human (Release Manager + PO) decides. Decision preserved with rationale.
 
 *Trigger*: Periodic (per sprint); continuous tracking
 
-*Actor Pattern*: Human-Led execution; AI supports tracking
+*Actor Model*: Human-led (Mode 2) execution; AI supports tracking
 
 **AI Tracks Per Tester:**
 - Ratio of AI-generated vs human-designed tests
@@ -2238,7 +2140,7 @@ Human (Release Manager + PO) decides. Decision preserved with rationale.
 - Test strategy contributions
 
 **Skill Rotation Requirements:**
-- Each tester must periodically: design tests without AI (Human-Only), conduct exploratory sessions, review AI-generated test quality, explain test strategy to others
+- Each tester must periodically: design tests without AI (Mode 1), conduct exploratory sessions, review AI-generated test quality, explain test strategy to others
 
 **Atrophy Warning Triggers:**
 - Tester >90% executing AI-generated tests for 4+ weeks
@@ -2278,516 +2180,7 @@ Sufficiency for `RELEASE_APPROVED` is context-dependent. AI can help surface rea
 
 ### Phase 7: Deployment/Operations
 
-**ISO 12207 Processes**: 6.4.10 Transition, 6.4.11 Validation (operational), 6.4.12 Operation, 6.4.13 Maintenance
-
-**Information Composition**: 60% Formal / 30% Tacit / 10% Emergent
-
-**Primary Question**: DELIVER—release, operate, maintain, evolve
-
-**The Knowledge Transfer Challenge**: This phase requires transferring understanding from those who built the system to those who operate it. Operational knowledge ("how to keep it running at 3am") is often deeply tacit—learned through experience, never fully documented. AI can monitor and alert, but incident response requires human judgement about complex, novel situations.
-
-#### Document Types
-
-*Classification per [Document Type Classification Framework](./concepts/concept_document-type-classification.md)*
-
-**Organisational Inputs** (Scope: Organisational — exist before project):
-
-| Document Type | Domain | Temporal | Purpose in Phase 7 |
-|---------------|--------|----------|-------------------|
-| Deployment Standards | OPS | Standing | Release processes, approval gates |
-| Infrastructure Standards | OPS | Standing | Platform requirements, security baselines |
-| Monitoring Standards | OPS | Standing | What to monitor, alerting thresholds |
-| Incident Management Process | OPS | Standing | How incidents are handled, escalation paths |
-| Change Management Process | OPS | Standing | How changes are approved and tracked |
-| SLA/SLO Definitions | OPS | Standing | Service level requirements |
-| On-Call Procedures | OPS | Standing | Rotation, escalation, communication |
-| Disaster Recovery Standards | OPS | Standing | Backup, recovery, continuity requirements |
-
-**AI should ask**: "Are there deployment standards, SLA requirements, or incident management processes I should follow? What monitoring and alerting standards apply?"
-
-**Project Inputs** (Scope: Project — from Phase 3-6):
-
-| Document Type | Domain | Temporal | Source |
-|---------------|--------|----------|--------|
-| Source Code (IMP-001) | IMP | Dynamic | Phase 5 |
-| Architecture Description (DES-001) | DES | Standing | Phase 4 |
-| Test Results (VAL-003) | VAL | Dynamic | Phase 6 |
-| API Documentation | IMP | Dynamic | Phase 5 |
-| Database Scripts/Migrations | IMP | Dynamic | Phase 5 |
-| Non-Functional Requirements | SPC | Standing | Phase 3 |
-| Risk Register (STR-004) | STR | Dynamic | Phase 2 |
-| Technical Debt Register | STR | Dynamic | Phase 5 |
-
-**Project Outputs** (Scope: Project — produced by this phase):
-
-| Document Type | Domain | Temporal | Downstream Consumer |
-|---------------|--------|----------|---------------------|
-| Deployment Runbook (OPS-001) | OPS | Standing | Operations, on-call |
-| Operational Runbook (OPS-002) | OPS | Standing | Operations, on-call |
-| Monitoring Configuration | OPS | Dynamic | Operations |
-| Incident Playbooks | OPS | Standing | On-call, incident response |
-| Post-Incident Reports | OPS | Standing | Learning, future incidents |
-| Operational Metrics Baseline | OPS | Dynamic | SLA tracking |
-| Release Notes | OPS | Dynamic | Users, support |
-| Known Issues Log | OPS | Dynamic | Support, maintenance |
-
-**Working Documents** (Scope: Task — ephemeral, contribute to outputs):
-
-| Document Type | Domain | Captures | Contributes To |
-|---------------|--------|----------|----------------|
-| Incident Timeline | WRK | Real-time incident details | Post-Incident Report |
-| Investigation Notes | WRK | Diagnostic reasoning | Post-Incident Report, Playbooks |
-| Change Request Notes | WRK | Change rationale, risk assessment | Change log |
-| Deployment Notes | WRK | Deployment observations | Runbook improvements |
-
-**Process Validation**: Post-incident reports must capture *why* the incident occurred and *why* it wasn't prevented, not just *what* happened. AI should flag reports missing root cause analysis.
-
-#### Collaboration Patterns in Deployment/Operations
-
-| Pattern | Description | When Appropriate |
-|---------|-------------|------------------|
-| **Human-Only** | Human executes; no AI involvement | Emergency response requiring judgement; security-sensitive operations |
-| **Human-Led** | Human leads; AI assists with information gathering | Complex incidents; novel situations; critical deployments |
-| **Partnership** | Human and AI work together | Routine operations; monitoring review; capacity planning |
-| **AI-Led** | AI executes; human validates/approves | Routine deployments; automated scaling; standard alerts |
-| **AI-Only** | AI executes without human in loop | Continuous deployment pipelines; auto-scaling; auto-remediation |
-
-**Pattern transitions during operations:**
-- AI-Only monitoring → anomaly detected → AI-Led triage
-- AI-Led triage → complex issue → Human-Led investigation
-- Human-Led investigation → production emergency → Human-Only crisis response
-- AI-Led deployment → unexpected failure → Partnership rollback
-
-**Governance for AI-Only:**
-- Defined scope: only pre-approved automations (scaling, standard alerts, health checks)
-- Automatic escalation: novel patterns, threshold breaches, cascading failures
-- Human approval required for: production changes, data modifications, security actions
-- "Break glass" procedures for emergency human override
-
-#### AI Active Validation Process for Deployment/Operations
-
-```
-┌─────────────────────────────────────────────────────────────────────┐
-│        AI ACTIVE VALIDATION IN DEPLOYMENT/OPERATIONS                │
-├─────────────────────────────────────────────────────────────────────┤
-│                                                                     │
-│  1. ELICIT ────────────────────────────────────────────────────     │
-│     Surface operational knowledge:                                  │
-│     "What should I monitor to know this is healthy?"                │
-│     "What does 'normal' look like for this system?"                 │
-│     "What are the early warning signs of problems?"                 │
-│     "What would you do if [scenario] happened?"                     │
-│                                                                     │
-│  2. ANALYSE ───────────────────────────────────────────────────     │
-│     Examine operational state:                                      │
-│     • Health metrics vs baselines                                   │
-│     • Anomaly detection (deviation from normal)                     │
-│     • Trend analysis (approaching limits?)                          │
-│     • Correlation (related issues across components?)               │
-│     • SLA/SLO compliance                                            │
-│                                                                     │
-│  3. SYNTHESISE ────────────────────────────────────────────────     │
-│     Build operational picture:                                      │
-│     • System health dashboard                                       │
-│     • Incident timeline reconstruction                              │
-│     • Impact assessment                                             │
-│     • Root cause hypothesis                                         │
-│                                                                     │
-│  4. VALIDATE ──────────────────────────────────────────────────     │
-│     Confirm operational understanding:                              │
-│     "Is this behavior expected given [context]?"                    │
-│     "Does this metric indicate a problem or normal variation?"      │
-│     "Is this incident related to [recent change]?"                  │
-│                                                                     │
-│  5. TRANSFORM ─────────────────────────────────────────────────     │
-│     Convert between representations:                                │
-│     • Logs → Incident summary                                       │
-│     • Metrics → Health report                                       │
-│     • Incident → Post-mortem                                        │
-│     • Experience → Runbook/Playbook                                 │
-│                                                                     │
-│  6. DECIDE (surface for human) ────────────────────────────────     │
-│     AI presents operational decisions:                              │
-│     "Alert threshold breached—investigate or acknowledge?"          │
-│     "Deployment ready—proceed or hold?"                             │
-│     "Incident appears resolved—close or continue monitoring?"       │
-│                                                                     │
-│  7. GENERATE ──────────────────────────────────────────────────     │
-│     Produce operational artifacts:                                  │
-│     • Runbook drafts from tribal knowledge                          │
-│     • Playbook updates from incidents                               │
-│     • Release notes from changes                                    │
-│     • Post-incident reports                                         │
-│                                                                     │
-│  8. PRESERVE ──────────────────────────────────────────────────     │
-│     Capture operational knowledge:                                  │
-│     • Incident learnings                                            │
-│     • Operational patterns ("this always happens when...")          │
-│     • Tribal knowledge surfaced through incidents                   │
-│     • Feedback to earlier phases                                    │
-│                                                                     │
-└─────────────────────────────────────────────────────────────────────┘
-```
-
-#### AI Challenge Questions for Deployment/Operations
-
-**For Deployment Readiness:**
-- "Are all prerequisites for deployment met?"
-- "What's the rollback plan if this fails?"
-- "Who needs to be notified? Who's on-call?"
-- "What could go wrong? How would we detect it?"
-- "Is this the right time to deploy? What's the risk?"
-
-**For Operational Health:**
-- "Is this metric within normal range?"
-- "Is this trend concerning or expected?"
-- "Are these issues related or coincidental?"
-- "What changed recently that could explain this?"
-
-**For Incident Response:**
-- "What's the impact? Who/what is affected?"
-- "What's the most likely cause? What evidence supports that?"
-- "What's the fastest path to mitigation vs. root cause fix?"
-- "Who else needs to know? What's the communication plan?"
-- "Is this a symptom of a larger problem?"
-
-**For Knowledge Capture:**
-- "What did we learn from this incident?"
-- "Why didn't we detect this sooner?"
-- "Why didn't we prevent this?"
-- "What should we change to prevent recurrence?"
-- "Who else needs to know this?"
-
-#### Escalation Framework for Deployment/Operations
-
-| Escalation Type | Trigger | AI Action | Who Decides | Action Required |
-|-----------------|---------|-----------|-------------|-----------------|
-| **Deployment decision** | Release ready | Present readiness summary | **Release Manager** | Approve/defer deployment |
-| **Deployment failure** | Deployment doesn't succeed | Report status; suggest rollback | **On-call + Release Mgr** | Rollback or fix-forward |
-| **Alert triggered** | Monitoring threshold breached | Present context; suggest triage | **On-call** | Investigate or acknowledge |
-| **Incident declared** | Service degradation confirmed | Initiate incident process | **Incident Commander** | Coordinate response |
-| **Escalation needed** | On-call cannot resolve | Identify next escalation tier | **On-call** | Engage additional help |
-| **Customer impact** | Users affected | Assess impact; draft communication | **Incident Commander + Comms** | External communication |
-| **Change request** | Modification needed | Risk assessment; approval routing | **Change Manager** | Approve/reject change |
-| **Capacity concern** | Approaching resource limits | Forecast and options | **Ops Lead + Architect** | Scale or optimize |
-| **Security incident** | Security event detected | Isolate and assess | **Security + Incident Cmd** | Security response protocol |
-| **Backward event needed** | Incident reveals upstream issue | Identify source phase | **Tech Lead + PO** | Escalate to appropriate phase |
-
-#### Backward Events from Operations
-
-Production often reveals issues that require returning to earlier phases:
-
-| Backward Event | Trigger | Information Debt Created | AI Detection |
-|----------------|---------|-------------------------|--------------|
-| **Operations → Testing** | Production issue not caught by testing | Test strategy gap | Pattern: production bugs in "tested" functionality |
-| **Operations → Implementation** | Bug in production code | Fix required | Direct: production errors in code |
-| **Operations → Design** | Architectural limitation in production | Design revision needed | Pattern: scaling limits, integration issues, performance walls |
-| **Operations → Requirements** | Users using system differently than specified | Requirements gap | Pattern: feature requests, unexpected usage patterns |
-| **Operations → Planning** | Operational cost much higher than planned | Capacity/cost replanning | Pattern: resource consumption >> estimates |
-
-**AI should ask when patterns emerge:**
-- "This production issue suggests a test gap—should we improve test coverage?"
-- "This keeps happening—is there a design issue we should address?"
-- "Users are consistently requesting [X]—should we revisit requirements?"
-- "Operational costs are 3x estimates—should we revisit planning assumptions?"
-
-#### The Operations Dialogue Loop
-
-```
-┌─────────────────────────────────────────────────────────────────────┐
-│                 PHASE 7: DEPLOYMENT/OPERATIONS                      │
-│                   The Operations Loop                               │
-├─────────────────────────────────────────────────────────────────────┤
-│                                                                     │
-│  DEPLOYMENT                          OPERATIONS                     │
-│  ──────────                          ──────────                     │
-│                                                                     │
-│  ┌──────────────────┐               ┌──────────────────┐            │
-│  │  AI VALIDATES    │               │  AI MONITORS     │            │
-│  │  deployment      │               │  continuously    │            │
-│  │  readiness       │               │  (AI-Only)       │            │
-│  └────────┬─────────┘               └────────┬─────────┘            │
-│           │                                  │                      │
-│           ▼                                  ▼                      │
-│  ┌──────────────────┐               ┌──────────────────┐            │
-│  │  HUMAN APPROVES  │               │  AI DETECTS      │            │
-│  │  deployment      │               │  anomaly or      │            │
-│  │  (Release Mgr)   │               │  threshold       │            │
-│  └────────┬─────────┘               └────────┬─────────┘            │
-│           │                                  │                      │
-│           ▼                                  ▼                      │
-│  ┌──────────────────┐               ┌──────────────────┐            │
-│  │  AI EXECUTES     │               │  AI TRIAGES      │            │
-│  │  deployment      │               │  presents        │            │
-│  │  (AI-Led)        │               │  context         │            │
-│  └────────┬─────────┘               └────────┬─────────┘            │
-│           │                                  │                      │
-│           ▼                                  ▼                      │
-│  ┌──────────────────┐               ┌──────────────────┐            │
-│  │  AI MONITORS     │               │  HUMAN           │            │
-│  │  deployment      │               │  INVESTIGATES    │            │
-│  │  health          │               │  (Human-Led)     │            │
-│  └────────┬─────────┘               └────────┬─────────┘            │
-│           │                                  │                      │
-│           ▼                                  ▼                      │
-│  ┌──────────────────┐               ┌──────────────────┐            │
-│  │  SUCCESS:        │               │  AI ASSISTS      │            │
-│  │  → Operations    │               │  diagnosis,      │            │
-│  │  FAILURE:        │               │  suggests        │            │
-│  │  → Rollback      │               │  remediation     │            │
-│  └──────────────────┘               └────────┬─────────┘            │
-│                                              │                      │
-│                                              ▼                      │
-│                                     ┌──────────────────┐            │
-│                                     │  HUMAN DECIDES   │            │
-│                                     │  remediation     │            │
-│                                     │  approach        │            │
-│                                     └────────┬─────────┘            │
-│                                              │                      │
-│                    ┌─────────────────────────┼─────────────────┐    │
-│                    │                         │                 │    │
-│                    ▼                         ▼                 ▼    │
-│           ┌──────────────┐          ┌──────────────┐  ┌───────────┐ │
-│           │ AI PRESERVES │          │ BACKWARD     │  │ CONTINUE  │ │
-│           │ learnings,   │          │ EVENT to     │  │ MONITORING│ │
-│           │ updates      │          │ earlier      │  │           │ │
-│           │ playbooks    │          │ phase        │  │           │ │
-│           └──────────────┘          └──────────────┘  └───────────┘ │
-│                                                                     │
-│  OUTPUTS: Deployed system, operational metrics, incident reports,   │
-│           updated runbooks/playbooks, feedback to earlier phases    │
-│                                                                     │
-└─────────────────────────────────────────────────────────────────────┘
-```
-
-#### Evolution Interventions
-
-| Activity | AI Augmentation | Human Retains |
-|----------|-----------------|---------------|
-| **Deployment execution** | Automate deployment steps; validate prerequisites; monitor rollout | Approve deployment; decide rollback; handle exceptions |
-| **Monitoring** | Continuous metric analysis; anomaly detection; trend alerting | Interpret alerts; judge severity; decide response |
-| **Incident triage** | Gather context; correlate events; suggest likely causes | Diagnose complex issues; decide remediation approach |
-| **Incident response** | Execute runbook steps; gather diagnostics; draft communications | Make judgement calls; coordinate teams; communicate externally |
-| **Post-incident review** | Generate timeline; identify contributing factors; draft report | Determine root cause; decide preventive actions; approve findings |
-| **Runbook maintenance** | Capture operational knowledge; suggest updates; identify gaps | Validate accuracy; add tacit knowledge; approve changes |
-| **Capacity planning** | Forecast based on trends; model scenarios | Decide capacity investments; balance cost vs risk |
-| **Change management** | Risk assessment; impact analysis; approval routing | Approve changes; judge risk acceptability |
-
-#### Information Debt Risk
-
-Operations is where **all upstream information debt manifests**:
-- Poor requirements → users unhappy with working system
-- Poor design → operational nightmares, scaling limits
-- Poor implementation → bugs, performance issues, security vulnerabilities
-- Poor testing → production incidents for "tested" features
-- Poor documentation → on-call cannot resolve issues
-
-**Common information debt patterns:**
-
-| Debt Pattern | What's Missing | How It Manifests | Detection Mechanism |
-|--------------|----------------|------------------|---------------------|
-| Undocumented operations | How to run/troubleshoot system | On-call incidents take longer; knowledge silos | Time-to-resolve trends; escalation rate |
-| Missing playbooks | Incident response procedures | Ad-hoc response; inconsistent outcomes | Incident recurrence; response time variance |
-| Tribal knowledge | Operational understanding not captured | Bus factor issues; slow onboarding | Single-point-of-failure in on-call |
-| Monitoring gaps | What to watch and why | Incidents not detected until user reports | Detection source analysis (monitoring vs user report) |
-| Alert fatigue | Too many/noisy alerts | Real issues missed; on-call burnout | Alert-to-incident ratio; alert acknowledgment time |
-| Runbook rot | Outdated procedures | Wrong actions taken; delays | Runbook accuracy audit; procedure failure rate |
-| Missing feedback loops | Learnings not reaching earlier phases | Same issues recur | Incident recurrence rate; defect patterns |
-
-#### Detection and Monitoring
-
-AI should track and report:
-
-| Metric | What It Indicates | Action Threshold |
-|--------|-------------------|------------------|
-| **Mean time to detect (MTTD)** | Monitoring effectiveness | Rising trend indicates gaps |
-| **Mean time to resolve (MTTR)** | Operational capability | Rising trend indicates knowledge gaps |
-| **Incident recurrence rate** | Learning effectiveness | >20% recurrence indicates systemic issues |
-| **Alert-to-incident ratio** | Alert quality | High ratio indicates alert fatigue risk |
-| **Escalation rate** | First-responder capability | Rising rate indicates training/documentation needs |
-| **Change failure rate** | Deployment quality | >15% indicates process issues |
-| **On-call burden** | Operational sustainability | Excessive pages indicate systemic issues |
-| **Customer-reported incidents** | Detection gaps | Should be near zero |
-
-**AI should surface these patterns proactively**, not just when asked.
-
-#### What Must Be Preserved
-
-- Human judgement in crisis situations
-- Ability to respond to novel incidents (not just follow playbooks)
-- Understanding of system behavior (not just monitoring outputs)
-- Relationships with stakeholders for incident communication
-- Operational intuition ("something feels wrong")
-- **On-call skills**: Ability to diagnose without AI assistance
-- **Crisis management**: Human leadership in emergencies
-- **Customer empathy**: Understanding user impact
-
-**Skill preservation mechanisms:**
-- Require periodic human-led incident response (even for routine issues)
-- Track AI-assistance ratio in incident resolution
-- Conduct incident response exercises without AI
-- Rotate on-call to maintain broad operational knowledge
-- Review AI-suggested remediations rather than auto-applying
-
-#### Defensive Processes for Deployment/Operations
-
-**Process 7.1: Deployment Readiness Validation**
-
-*Problem defended against*: Deployments that fail or cause incidents
-
-*Trigger*: Before each deployment
-
-*Actor Pattern*: AI-Led validation; Human-Led approval
-
-**AI Validates:**
-- All tests passed (including integration, performance, security)
-- No blocking defects open
-- Runbooks/playbooks updated for new functionality
-- Monitoring configured for new features
-- Rollback plan documented and tested
-- On-call briefed on changes
-- Change approval obtained
-
-**AI Presents:**
-- Readiness checklist status
-- Risk assessment
-- Deployment window suitability
-- Recommendation: Ready / Ready with caveats / Not ready
-
-**Human (Release Manager) Decides:**
-- Proceed / Defer / Require additional work
-
----
-
-**Process 7.2: Operational Knowledge Capture**
-
-*Problem defended against*: Tribal knowledge loss; single points of failure
-
-*Trigger*: After each incident; periodic review
-
-*Actor Pattern*: Partnership — AI elicits, human contributes knowledge
-
-**After Each Incident:**
-
-AI elicits operational knowledge:
-- "What did you check first? Why?"
-- "How did you know [X] was the cause?"
-- "What would have helped you resolve this faster?"
-- "What should the next person know about this?"
-
-AI generates:
-- Playbook entry (or update)
-- Runbook improvement suggestions
-- Monitoring recommendations
-
-Human reviews and approves.
-
-**Periodic Knowledge Audit:**
-
-AI analyses:
-- Modules with no runbook coverage
-- Incident types without playbooks
-- Single-person knowledge areas (bus factor = 1)
-- Outdated documentation (runbook vs actual)
-
-AI recommends knowledge capture sessions.
-
----
-
-**Process 7.3: Incident Learning Loop**
-
-*Problem defended against*: Same incidents recurring; no improvement
-
-*Trigger*: After each significant incident; periodic review
-
-*Actor Pattern*: AI-Led analysis; Human-Led action decisions
-
-**For Each Incident:**
-
-AI generates post-incident analysis:
-- Timeline reconstruction
-- Contributing factors identified
-- Detection effectiveness (how discovered?)
-- Response effectiveness (time to mitigate)
-- Root cause hypothesis
-
-AI identifies:
-- Similar past incidents
-- Patterns across incidents
-- Upstream source (testing gap? design issue? requirements gap?)
-- Recommended preventive actions
-
-**Human Reviews:**
-- Validates root cause
-- Decides preventive actions
-- Approves feedback to earlier phases (backward events)
-
-**Periodic Incident Review:**
-
-AI synthesises:
-- Incident trends by type/cause/area
-- MTTD/MTTR trends
-- Recurrence analysis
-- Upstream phase feedback needed
-
-Team decides systemic improvements.
-
----
-
-**Process 7.4: Operations Skill Preservation**
-
-*Problem defended against*: On-call becomes AI-dependent; loses diagnostic skills
-
-*Trigger*: Periodic (monthly); continuous tracking
-
-*Actor Pattern*: Human-Led execution; AI supports tracking
-
-**AI Tracks Per On-call:**
-- AI-assisted vs independent incident resolution
-- Time to diagnosis with/without AI
-- Escalation rate
-- Playbook reliance (following steps vs understanding system)
-
-**Skill Rotation Requirements:**
-- Each on-call must periodically: resolve incidents without AI assistance, update runbooks from experience, conduct incident response exercises, explain system behavior to others
-
-**Atrophy Warning Triggers:**
-- On-call >90% AI-assisted resolutions
-- Escalation rate increasing
-- Cannot explain system behavior without AI
-- Runbooks not being updated from experience
-
-**Response:** Supervised incident response; system deep-dives; documentation sessions; mentoring
-
-#### Transition Readiness: Operations → Evolution
-
-Unlike other phases, Operations doesn't transition—it continues. However, learnings should transition back to earlier phases:
-
-| Learning Type | Target Phase | Mechanism |
-|---------------|--------------|-----------|
-| Feature requests / usage patterns | Requirements | Product backlog; requirements update |
-| Performance / scaling limits | Design | Architecture review; design update |
-| Bug patterns | Implementation | Defect backlog; code improvement |
-| Test gaps (production incidents) | Testing | Test strategy update |
-| Estimate accuracy | Planning | Estimation calibration |
-
-**AI should continuously surface feedback:**
-- "Users are consistently requesting [X]—should this go to Requirements?"
-- "This architectural limit has caused 3 incidents—should we revisit Design?"
-- "These defects follow a pattern—should Implementation review?"
-- "These production issues weren't caught by testing—Test strategy gap?"
-
-#### Evolution Risk
-
-| Risk | Mitigation | Detection |
-|------|------------|-----------|
-| On-call becomes AI-dependent | Skill preservation (Process 7.4); periodic unassisted response | AI-assistance ratio; escalation trends |
-| Tribal knowledge not captured | Knowledge capture (Process 7.2); incident learning (Process 7.3) | Bus factor analysis; runbook coverage |
-| Alert fatigue masks real issues | Alert quality management; regular alert review | Alert-to-incident ratio; acknowledgment time |
-| Incidents recur without learning | Incident learning loop (Process 7.3); recurrence tracking | Recurrence rate; pattern detection |
-| Feedback doesn't reach earlier phases | Backward event detection; explicit feedback loops | Upstream phase action rate |
-| Runbooks become stale | Periodic runbook audit; incident-driven updates | Procedure failure rate; last-update tracking |
-| AI auto-remediation causes issues | Governance for AI-Only; human approval gates | Auto-remediation success rate; unintended consequences |
+*To be developed*
 
 ---
 
@@ -2799,20 +2192,11 @@ This process runs continuously across phases to detect when issues should trigge
 
 **Trigger**: Continuous pattern analysis across Implementation and Testing
 
-**Actor Pattern**: AI-Led monitoring; Human-Led decision
+**Actor Model**: AI-led (Mode 4) monitoring; Human-led (Mode 2) decision
 
 ### Signal Detection
 
 AI continuously monitors for patterns indicating upstream issues:
-
-**Operations → Earlier Phases Signals:**
-| Signal | Pattern | AI Question | Target Phase |
-|--------|---------|-------------|--------------|
-| Production bugs in tested code | Test coverage gap | "This was tested but failed in production. Test strategy issue?" | Testing |
-| Repeated similar defects | Implementation pattern issue | "This defect pattern keeps recurring. Code quality issue?" | Implementation |
-| Scaling/performance limits | Architectural constraint | "We keep hitting this limit. Design issue?" | Design |
-| Users doing unexpected things | Requirements gap | "Users consistently expect [X]. Requirements gap?" | Requirements |
-| Operational cost >> estimates | Planning assumptions wrong | "Costs are 3x estimate. Planning assumptions valid?" | Planning |
 
 **Implementation → Design Signals:**
 | Signal | Pattern | AI Question |
@@ -2893,531 +2277,27 @@ When teams proceed at risk rather than triggering backward events:
 
 ## Collaboration Pattern Progression
 
-Evolution involves shifting collaboration patterns over time—typically from Human-Only or Human-Led toward Partnership or AI-Led. This progression must be deliberate, validated at each step, and reversible if problems emerge.
+*To be developed*
 
-### The Five Patterns
-
-From `concept_collaboration-patterns.md`:
-
-| Pattern | Human Role | AI Role | Typical Use |
-|---------|------------|---------|-------------|
-| **Human-Only** | All activities | None | Confidential; legally privileged; no AI access |
-| **Human-Led** | Drives decisions, performs core work | Supports: prepares, drafts, tracks | Human could complete alone; AI accelerates |
-| **Partnership** | Contributes unique judgement | Contributes unique capability | Neither sufficient alone; both essential |
-| **AI-Led** | Reviews, validates, handles exceptions | Drives execution, performs core work | AI could complete alone; human ensures quality |
-| **AI-Only** | None | All activities | Human review adds no value; deterministic tasks |
-
-### Progression Principles
-
-**1. Start conservative**: Begin with Human-Led even when Partnership seems feasible. Observe before advancing.
-
-**2. One step at a time**: Progress through adjacent patterns, not leaps:
-```
-Human-Only → Human-Led → Partnership → AI-Led → AI-Only
-                ↑                          ↓
-                └──────── rollback ────────┘
-```
-
-**3. Validate before advancing**: Each pattern must demonstrate effectiveness before progressing. Validation criteria from the Measurement section apply.
-
-**4. Maintain rollback capability**: Teams must be able to operate at the previous pattern if needed. This means preserving human capability even as AI takes on more.
-
-### Progression by Capability Type
-
-Different capabilities have different natural progression limits based on their information composition:
-
-| Capability | Typical Starting Pattern | Practical Ceiling | Limiting Factor |
-|------------|-------------------------|-------------------|-----------------|
-| **Elicit** (from systems) | AI-Led | AI-Only | Well-structured sources enable full automation |
-| **Elicit** (from people) | Human-Led | Human-Led | Relationship and trust require human presence |
-| **Analyse** | Human-Led | Partnership | Pattern detection suits AI; interpretation requires human |
-| **Synthesise** | Human-Led | Partnership | Integration requires human theory-building |
-| **Transform** | Partnership | AI-Led | Mechanical transformation suits AI; semantic preservation needs human oversight |
-| **Validate** (technical) | Partnership | AI-Only | Deterministic checks fully automatable |
-| **Validate** (stakeholder) | Human-Led | Human-Led | Human judgement and relationships essential |
-| **Decide** | Human-Led | Human-Led | Value trade-offs require human accountability |
-| **Generate** | Partnership | AI-Led | AI generates; human ensures quality and fit |
-| **Preserve** | Partnership | AI-Led | Formatting and archival suit AI; rationale capture needs human |
-
-**Key insight**: The ceiling is not fixed—it depends on context. A capability instance in a tacit-heavy phase has a lower practical ceiling than the same capability in a formal-heavy phase.
-
-### Phase-Specific Progression Guidance
-
-Progression ceilings vary by phase information composition:
-
-| Phase | Tacit % | Typical Ceiling | Rationale |
-|-------|---------|-----------------|-----------|
-| **1. Initiation** | 75% | Human-Led | Understanding-heavy; AI supports but cannot lead |
-| **2. Planning** | 55% | Partnership | AI can contribute analysis; humans hold judgement |
-| **3. Requirements** | 50% | Partnership | Balance of AI pattern detection and human interpretation |
-| **4. Design** | 40% | Partnership | AI can generate options; humans hold architectural judgement |
-| **5. Implementation** | 35% | AI-Led | Higher formal content enables AI-led generation with human review |
-| **6. Testing** | 30% | AI-Led | Deterministic validation suits AI; humans handle exceptions |
-| **7. Operations** | 30% | AI-Led | Routine operations suit AI; humans handle incidents and decisions |
-
-**Warning**: These are general guidance, not prescriptions. Specific capability instances may have higher or lower ceilings based on context.
-
-### Progression Process
-
-For each capability instance being evolved:
-
-#### Step 1: Assess Current State
-
-- What pattern is currently in use?
-- How effective is current practice? (baseline for comparison)
-- What tacit knowledge does the human bring?
-- What would be lost if the human role decreased?
-
-#### Step 2: Define Target State
-
-- What pattern are we progressing toward?
-- Why is this progression desirable? (efficiency? quality? consistency?)
-- What is the practical ceiling for this capability instance?
-- Is the target within that ceiling?
-
-#### Step 3: Design the Transition
-
-- What specific activities shift from human to AI (or gain AI involvement)?
-- What human activities must be preserved for capability maintenance?
-- What escalation triggers will ensure humans engage when needed?
-- What rollback mechanism exists if problems emerge?
-
-#### Step 4: Execute with Monitoring
-
-- Implement the pattern shift for a defined trial period
-- Monitor leading indicators (engagement, confidence, explanation depth)
-- Collect feedback from team members
-- Watch for unintended consequences
-
-#### Step 5: Validate and Decide
-
-- Has effectiveness been maintained or improved?
-- Has human capability been preserved?
-- Are there warning signs from measurement?
-- Decision: advance, hold, or rollback
-
-### Preserving Human Capability During Progression
-
-The greatest risk in pattern progression is human capability atrophy—humans losing the ability to perform tasks they've delegated to AI. Mitigation strategies:
-
-**1. Periodic unassisted exercises**: Schedule regular activities where humans perform without AI assistance. This maintains skills and reveals capability gaps.
-
-**2. Rotation through patterns**: Don't fix individuals at AI-Led permanently. Rotate team members through Human-Led activities to maintain breadth.
-
-**3. Teaching and mentoring**: Ensure humans can teach tasks to others. Teaching requires deeper understanding than performing.
-
-**4. Incident response protocols**: Define that certain situations (AI unavailability, novel scenarios) require human capability. Test these scenarios.
-
-**5. Explanation requirements**: Require humans to explain AI outputs, not just accept them. Explanation maintains understanding.
-
-### Progression Anti-Patterns
-
-| Anti-Pattern | Risk | Mitigation |
-|--------------|------|------------|
-| **Leapfrogging patterns** | Missing skill-building intermediate steps | Progress through adjacent patterns only |
-| **Irreversible progression** | No fallback when problems emerge | Maintain rollback capability; test it |
-| **Universal progression** | Applying same ceiling to all contexts | Assess each capability instance individually |
-| **Speed-driven progression** | Advancing before validation confirms readiness | Gate progression on demonstrated effectiveness |
-| **Capability atrophy ignorance** | Not noticing human skills degrading | Include capability preservation in measurement |
-| **Efficiency-only justification** | Progressing because AI is faster, ignoring quality | Require quality maintenance as progression criterion |
-
-### Rollback Triggers
-
-Indicators that should trigger rollback to a previous pattern:
-
-| Trigger | Signal | Response |
-|---------|--------|----------|
-| **Quality degradation** | Work output quality declining | Rollback; diagnose cause |
-| **Capability atrophy** | Humans struggling with unassisted tasks | Rollback; rebuild skills |
-| **Escalation overload** | Escalations exceeding human capacity | Rollback; AI taking on too much |
-| **Explanation failure** | Humans can't explain AI-generated outputs | Rollback; understanding gap |
-| **Team confidence collapse** | Team members expressing loss of control | Rollback; address concerns |
-| **Novel scenario failure** | New situations causing breakdowns | Rollback; pattern inadequate for variability |
-
-**Rollback is not failure**: It's prudent course correction. A team that rolls back when needed is following the principles correctly.
-
-### Documentation of Progression
-
-For each capability instance, maintain a progression record:
-
-```
-Capability Instance: [ID and name]
-Phase: [SDLC phase]
-Current Pattern: [Human-Only | Human-Led | Partnership | AI-Led | AI-Only]
-
-Progression History:
-| Date | From | To | Rationale | Outcome |
-|------|------|----|-----------|---------|
-| ... | ... | ... | ... | ... |
-
-Current Assessment:
-- Effectiveness: [maintained | improved | degraded]
-- Human capability: [preserved | at risk | degraded]
-- Ceiling assessment: [at ceiling | room to progress]
-- Next review: [date]
-
-Rollback Plan:
-- Trigger thresholds: [specific indicators]
-- Rollback procedure: [steps to reverse]
-- Last rollback test: [date]
-```
+Guidance for progressively shifting collaboration patterns while maintaining team capability.
 
 ---
 
 ## Risk Mitigation
 
-Evolution introduces risks that must be actively managed. This section addresses the primary risk categories and mitigation strategies.
+*To be developed*
 
-### Risk Categories
-
-| Category | Description | Severity | Detectability |
-|----------|-------------|----------|---------------|
-| **Knowledge loss** | Tacit knowledge not captured before evolution changes who holds it | High | Low (often invisible until crisis) |
-| **Capability atrophy** | Humans lose ability to perform tasks delegated to AI | High | Medium (detectable through exercises) |
-| **Quality degradation** | Work output quality declines as patterns shift | Medium | Medium (lagging indicators) |
-| **Coordination breakdown** | Team "who knows what" systems disrupted | High | Low (gradual, invisible) |
-| **Dependency creation** | Team cannot function without AI | High | Medium (revealed by outages) |
-| **Misaligned progression** | Evolution proceeds faster than team readiness | Medium | Medium (stress signals) |
-
-### Knowledge Preservation Strategies
-
-Knowledge loss is the highest-severity, lowest-detectability risk. Mitigation requires proactive effort.
-
-#### Before Evolution Steps
-
-**1. Knowledge mapping**: Before changing any capability instance, map:
-- Who holds relevant knowledge?
-- What do they know that isn't documented?
-- How would we recover if they left tomorrow?
-
-**2. Elicitation sessions**: Conduct structured sessions to surface tacit knowledge:
-- "Walk me through how you actually do this"
-- "What do you check that isn't in the procedure?"
-- "What mistakes have you learned to avoid?"
-- "What would you tell someone taking over this task?"
-
-**3. Rationale capture**: Document *why*, not just *what*:
-- Why is the process structured this way?
-- What alternatives were rejected and why?
-- What context makes this approach appropriate?
-
-#### During Evolution Steps
-
-**4. Shadow documentation**: As AI takes on activities, document what the AI is doing and why it works. This preserves understanding even as humans do less.
-
-**5. Exception logging**: Track cases where AI escalates or humans intervene. These reveal where tacit knowledge is still required.
-
-**6. Interpretation requirements**: Require humans to interpret AI outputs, not just accept them. Interpretation maintains engagement with the substance.
-
-#### After Evolution Steps
-
-**7. Knowledge audits**: Periodically assess:
-- Can team members still explain the domain?
-- Is knowledge spreading or concentrating?
-- Are new team members developing understanding?
-
-**8. Recovery testing**: Simulate scenarios requiring knowledge that might have been lost:
-- "AI is unavailable—complete this task manually"
-- "Explain to a stakeholder why we did it this way"
-- "A novel situation arose—how do we handle it?"
-
-### Rollback Mechanisms
-
-Every evolution step must be reversible. Rollback capability requires preparation.
-
-#### Rollback Preparation
-
-**1. Baseline preservation**: Before evolving a capability instance:
-- Document current process in sufficient detail to recreate it
-- Preserve any tools, templates, or resources the current process uses
-- Ensure humans who currently perform the work remain available during trial period
-
-**2. Skill maintenance**: During evolution:
-- Schedule periodic unassisted exercises (see Collaboration Pattern Progression)
-- Rotate team members through pre-evolution patterns
-- Maintain training materials for the previous approach
-
-**3. Rollback procedures**: Document explicit steps:
-- What triggers a rollback decision?
-- Who authorises rollback?
-- What are the steps to reverse the evolution?
-- How do we communicate the rollback to stakeholders?
-
-#### Rollback Execution
-
-When rollback is triggered:
-
-```
-1. DECIDE
-   - Confirm rollback is appropriate (not just a temporary difficulty)
-   - Authorise at appropriate level (per escalation framework)
-   - Communicate decision to team
-
-2. EXECUTE
-   - Revert to previous collaboration pattern
-   - Restore previous tools/processes if changed
-   - Brief team on temporary or permanent nature
-
-3. STABILISE
-   - Confirm previous pattern is functioning
-   - Address any capability gaps revealed
-   - Monitor for residual issues
-
-4. ANALYSE
-   - Why did the evolution fail?
-   - What warning signs were missed?
-   - What would need to change before re-attempting?
-
-5. DOCUMENT
-   - Record the rollback in progression history
-   - Capture lessons learned
-   - Update risk assessment for future attempts
-```
-
-#### Rollback Normalisation
-
-**Rollback must not be stigmatised.** Teams that roll back when appropriate are following the principles correctly. To normalise rollback:
-
-- Celebrate rollbacks as responsible risk management
-- Include "successful rollbacks" as a positive metric
-- Share rollback stories as learning opportunities
-- Never penalise teams for reversing failed evolutions
-
-### Competency Maintenance
-
-Even successful evolution can degrade human competency over time. Active maintenance is required.
-
-#### Maintenance Mechanisms
-
-**1. Scheduled unassisted work**
-
-| Frequency | Scope | Purpose |
-|-----------|-------|---------|
-| Weekly | Individual tasks | Maintain task-level skills |
-| Monthly | End-to-end processes | Maintain process understanding |
-| Quarterly | Complex scenarios | Maintain judgement and integration |
-
-**2. Teaching and knowledge transfer**
-
-- Require experienced team members to mentor others without AI assistance
-- Teaching forces deeper engagement than doing
-- Creates redundancy in knowledge holding
-
-**3. Incident response drills**
-
-- Simulate AI unavailability
-- Practice manual completion of AI-assisted tasks
-- Test recovery procedures
-
-**4. Novel scenario handling**
-
-- Route genuinely novel situations to humans first
-- Resist temptation to have AI attempt novel cases
-- Novel scenarios build understanding; automating them prevents learning
-
-#### Competency Indicators
-
-Monitor for signs of competency degradation:
-
-| Indicator | Warning Sign | Response |
-|-----------|--------------|----------|
-| **Explanation ability** | "I don't know why, AI handles that" | Increase unassisted work; require explanations |
-| **Unassisted performance** | Declining success in exercises | Increase frequency; provide refresher support |
-| **Onboarding time** | New members slower to independence | Review what AI dependency is hiding |
-| **Incident response** | Struggles when AI unavailable | Drill more frequently; simplify fallback processes |
-| **Knowledge distribution** | Fewer people can explain domain | Rotate responsibilities; mandate knowledge sharing |
-
-### Risk Monitoring Dashboard
-
-For ongoing risk management, track:
-
-```
-KNOWLEDGE PRESERVATION
-□ Knowledge map current? (updated within [period])
-□ Recent elicitation sessions conducted?
-□ Rationale documentation coverage: [%]
-□ Knowledge audit findings: [summary]
-
-ROLLBACK READINESS
-□ Rollback procedures documented for all evolved capabilities?
-□ Baseline processes preserved?
-□ Skills maintained through exercises?
-□ Last rollback drill: [date]
-
-COMPETENCY MAINTENANCE
-□ Unassisted exercises on schedule?
-□ Explanation depth assessments: [trend]
-□ Incident response drill results: [summary]
-□ Onboarding effectiveness: [trend]
-
-OVERALL RISK POSTURE
-□ Any high-severity risks unmitigated?
-□ Any low-detectability risks without monitoring?
-□ Risk trend: [improving | stable | degrading]
-```
-
-### Integration with Principles
-
-Risk mitigation operationalises the four principles:
-
-| Principle | Risk Mitigation Role |
-|-----------|---------------------|
-| **Start With What Works** | Baseline preservation ensures we can return to what worked |
-| **Discover and Preserve Knowledge** | Knowledge preservation strategies directly implement this principle |
-| **Progress Deliberately** | Rollback mechanisms enable deliberate, reversible progress |
-| **Measure Appropriately** | Competency indicators provide phase-appropriate risk measurement |
+- Knowledge preservation strategies
+- Rollback mechanisms
+- Competency maintenance
 
 ---
 
 ## Measurement
 
-Measuring evolution success requires indicators that match the nature of what's being measured. Universal metrics applied uniformly across phases and activities distort more than they reveal.
+*To be developed*
 
-### Measurement Philosophy
-
-**Core tension**: Measurement creates incentives. Measuring the wrong things—or measuring the right things wrongly—can damage the activities being measured. Evolution measurement must balance:
-- Visibility into progress (is the evolution working?)
-- Early warning of problems (is something going wrong?)
-- Avoidance of perverse incentives (are we optimising for the metric rather than the goal?)
-
-**Guiding principle**: Measure preservation of effectiveness first, efficiency gains second. An evolution that improves speed while degrading quality or knowledge is not successful.
-
-### Three Measurement Domains
-
-Evolution measurement spans three domains, each requiring different approaches:
-
-#### Domain 1: Capability Preservation
-
-**Question**: Are humans maintaining their ability to perform work effectively?
-
-| Indicator | What It Measures | Collection Method | Warning Threshold |
-|-----------|------------------|-------------------|-------------------|
-| **Unassisted task completion** | Can team members complete tasks without AI when needed? | Periodic exercises; incident response observation | Declining success rate over time |
-| **Explanation depth** | Can team members explain *why* things work, not just *that* they work? | Design reviews; code reviews; incident post-mortems | Increasing "AI suggested it" explanations |
-| **Knowledge distribution** | Is understanding spread across the team or concentrated? | Knowledge mapping; "who would you ask?" surveys | Increased concentration; single points of failure |
-| **Onboarding effectiveness** | Can new members develop understanding, or just tool proficiency? | Time to independent contribution; mentor assessments | Longer ramp-up; shallower understanding |
-
-**Collection cadence**: Quarterly assessment with continuous informal observation.
-
-#### Domain 2: Work Quality
-
-**Question**: Is the work output maintaining or improving quality?
-
-Different phases require different quality indicators:
-
-| Phase | Quality Indicators | Notes |
-|-------|-------------------|-------|
-| **Initiation** | Stakeholder alignment; strategic clarity; sponsor confidence | Qualitative; assess through structured feedback |
-| **Planning** | Risk identification completeness; estimation accuracy (retrospective) | Compare estimates to actuals over time |
-| **Requirements** | Stability rate; downstream defects traced to requirements; stakeholder satisfaction | Stability = changes after baseline / total requirements |
-| **Design** | Architecture decision quality; design review findings; integration success | Track ADR revisits; breaking changes |
-| **Implementation** | Defect density; code review findings; technical debt trends | Standard engineering metrics apply |
-| **Testing** | Defect escape rate; test effectiveness; coverage trends | Escaped defects = production bugs / total defects |
-| **Operations** | DORA metrics; incident rates; MTTR | Well-validated quantitative measures |
-
-**Collection cadence**: Phase-appropriate; late phases support continuous measurement, early phases require milestone-based assessment.
-
-#### Domain 3: Evolution Health
-
-**Question**: Is the evolution process itself proceeding well?
-
-| Indicator | What It Measures | Warning Signs |
-|-----------|------------------|---------------|
-| **Rollback frequency** | How often do we reverse evolution steps? | High frequency suggests moving too fast; zero suggests not experimenting |
-| **Principle adherence** | Are the four principles being followed? | Escalations ignored; concerns dismissed; speed prioritised over preservation |
-| **Team confidence** | Do team members trust the evolution direction? | Declining survey scores; increased concerns raised; attrition |
-| **Collaboration pattern drift** | Are patterns shifting as intended, or unintentionally? | Unplanned shifts toward AI-Led; human disengagement |
-| **Knowledge elicitation coverage** | Is tacit knowledge being discovered and documented? | Critical knowledge gaps discovered in crisis |
-
-**Collection cadence**: Monthly check-in; continuous escalation monitoring.
-
-### Phase-Appropriate Measurement
-
-Applying the framework's phase information composition to measurement selection:
-
-| Phase | Tacit % | Measurement Approach | Primary Indicators |
-|-------|---------|---------------------|-------------------|
-| **1. Initiation** | 75% | Qualitative; confidence-based | Alignment scores; sponsor engagement |
-| **2. Planning** | 55% | Hybrid; estimation calibration | Risk coverage; confidence intervals |
-| **3. Requirements** | 50% | Hybrid; stability and satisfaction | Stability rate; stakeholder feedback |
-| **4. Design** | 40% | Hybrid; decision quality | ADR quality; integration success |
-| **5. Implementation** | 35% | Quantitative; engineering metrics | Defect density; velocity (if appropriate) |
-| **6. Testing** | 30% | Quantitative; defect analysis | Escape rate; coverage; effectiveness |
-| **7. Operations** | 30% | Quantitative; DORA metrics | Deployment frequency; MTTR; CFR |
-
-**Key insight**: Resist pressure to apply late-phase metrics to early phases. Measuring requirements work by "stories completed" or initiation by "documents produced" creates perverse incentives that damage understanding-heavy work.
-
-### Leading vs Lagging Indicators
-
-Evolution measurement should emphasise leading indicators that provide early warning:
-
-| Type | Characteristics | Examples | Use |
-|------|-----------------|----------|-----|
-| **Leading** | Predict future problems; actionable now | Team confidence; knowledge distribution; explanation depth | Course correction before damage |
-| **Lagging** | Confirm past performance; harder to act on | Defect rates; escaped bugs; production incidents | Validate that leading indicators were accurate |
-
-**Balance**: Track both, but act on leading indicators. By the time lagging indicators show problems, damage may already be done.
-
-### Anti-Patterns to Avoid
-
-| Anti-Pattern | Why It's Harmful | Alternative |
-|--------------|------------------|-------------|
-| **Single metric focus** | Optimises one dimension while others degrade | Balanced scorecard across domains |
-| **Universal dashboards** | Flattens phase differences; wrong metrics for context | Phase-specific indicator sets |
-| **Efficiency-only measurement** | Ignores quality and knowledge preservation | Include capability preservation metrics |
-| **Measurement without action** | Creates cynicism; wastes effort | Define response protocols for each indicator |
-| **High-frequency measurement of slow phenomena** | Creates noise; false signals | Match cadence to phenomenon speed |
-| **Comparing across contexts** | Different teams/phases aren't comparable | Track trends within context, not cross-context comparisons |
-
-### Measurement Integration with Evolution Steps
-
-For each evolution step, define:
-
-1. **Success criteria** — What must be true for this step to be considered successful?
-2. **Leading indicators** — What early signals would suggest problems?
-3. **Lagging confirmation** — What downstream evidence would confirm success or failure?
-4. **Measurement cadence** — How often to assess, and for how long before concluding?
-5. **Decision thresholds** — What indicator values trigger escalation or rollback?
-
-**Example for shifting a capability instance from Human-Led to Partnership:**
-
-```
-Evolution Step: Requirements synthesis (PROC-3.1.5) from Human-Led to Partnership
-
-Success Criteria:
-- Requirements quality maintained or improved (stability rate, stakeholder satisfaction)
-- Human understanding preserved (can explain synthesis rationale)
-- Time to synthesis reduced or maintained
-
-Leading Indicators:
-- Human engagement during synthesis (observation)
-- Explanation depth in review sessions
-- Team confidence in AI contributions
-
-Lagging Confirmation:
-- Downstream defects traced to requirements (3-6 month lag)
-- Design phase friction related to requirements clarity
-
-Measurement Cadence:
-- Leading: Weekly observation for first month, then monthly
-- Lagging: Quarterly review for two quarters
-
-Decision Thresholds:
-- Engagement < 70% of pre-evolution baseline → escalate
-- Explanation depth declining → pause and assess
-- Downstream defects increase > 20% → consider rollback
-```
-
-### Relationship to Principles
-
-Measurement operationalises Principle 4 (Measure Appropriately):
-
-| Principle | Measurement Role |
-|-----------|------------------|
-| Start With What Works | Baseline measurement establishes "what works" quantitatively |
-| Discover and Preserve Knowledge | Capability preservation metrics track knowledge health |
-| Progress Deliberately | Evolution health indicators gate progression |
-| Measure Appropriately | Phase-appropriate selection avoids metric damage |
+How to measure successful evolution without disrupting productivity.
 
 ---
 
@@ -3429,6 +2309,23 @@ Evolution and Revolution are not mutually exclusive. Organisations may:
 - Use Evolution as fallback when Revolution encounters resistance
 
 [→ See: `dialogue-framework-revolution.md`]
+
+---
+
+## Version History
+
+| Version | Date | Changes |
+|---------|------|---------|
+| 1.0 | December 2025 | Added Defensive Processes for Phases 5 & 6; Cross-Phase Backward Event Detection; comprehensive detection mechanisms and mitigations |
+| 0.9 | December 2025 | Enhanced Phase 6 with all actor modes (1-5), backward events, detection mechanisms, skill preservation |
+| 0.8 | December 2025 | Added detailed Phase 6 (Testing/Validation) with verification vs validation, coverage illusion |
+| 0.7 | December 2025 | Added detailed Phase 5 (Implementation/Construction) with collaboration modes, technical debt patterns |
+| 0.6 | December 2025 | Added Document Types sections to all phases (Org/Project/Working); linked to classification framework |
+| 0.5 | December 2025 | Added detailed Phase 4 (Design/Architecture) with collaboration modes, DDD as informing practice |
+| 0.4 | December 2025 | Added detailed Phase 3 (Analysis/Requirements) with AI Active Validation Process |
+| 0.3 | December 2025 | Added detailed Phase 2 (Planning); added transition readiness questions |
+| 0.2 | December 2025 | Added detailed Phase 1 (Initiation/Conception); corrected phase names |
+| 0.1 | December 2025 | Initial placeholder |
 
 ---
 

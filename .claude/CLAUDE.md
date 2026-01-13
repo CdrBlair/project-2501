@@ -41,7 +41,28 @@ Apply the framework's dialogue loop to all substantive work:
 5. PRESERVE  — Capture rationale, not just decisions
                Document why, not just what
                Flag tacit knowledge that should be made explicit
+               **Log observations and decisions using the skills in .claude/skills/**
 ```
+
+### Decision and Observation Logging
+
+**Actively log decisions and observations during work:**
+
+When the human makes an observation (e.g., "I noticed...", "I observed...", "Here's an observation..."):
+- Use the `log-observation` skill to record it immediately
+- Observer should be `human:<username>`
+
+When a decision is made (by human or AI):
+- Use the `log-decision` skill to record it
+- Include rationale, not just outcome
+
+When AI makes operational choices during task execution:
+- Log significant decisions (not trivial ones)
+- Actor should be `ai:claude`
+
+**Trigger phrases to watch for:**
+- Observations: "I noticed", "I observed", "here's an observation", "worth noting", "I see that"
+- Decisions: "let's go with", "I decided", "the decision is", "we'll use", "I chose"
 
 ### Escalation Triggers
 
@@ -129,8 +150,15 @@ Framework development is understanding-heavy work where:
 
 ```
 project-2501/
-├── .claude/
-│   └── CLAUDE.md          # This file - project guidelines
+├── .claude/               # Claude Code framework (generated output)
+│   ├── CLAUDE.md          # This file - project guidelines
+│   ├── agents/            # Custom agents
+│   ├── skills/            # Agent skills
+│   └── commands/          # Slash commands
+├── .dialogue/             # Runtime artifacts
+│   ├── logs/              # Decision and observation logs
+│   ├── log-decision.sh    # Decision logging script
+│   └── log-observation.sh # Observation logging script
 ├── concepts/              # Core framework documents
 │   ├── concept_*.md       # Core concept definitions
 │   ├── foundation_*.md    # Theoretical foundations
@@ -138,6 +166,9 @@ project-2501/
 │   ├── guidance_*.md      # Practical guidance
 │   ├── example_*.md       # Worked examples
 │   └── README.md
+├── implementation/        # Framework generation artifacts
+│   ├── schema-*.md        # Schemas (how to document)
+│   └── registries/        # Tool capability registries
 ├── papers/                # Academic sources
 │   ├── *.pdf              # Primary source PDFs
 │   ├── *-companion.md     # Companion analyses
@@ -147,6 +178,32 @@ project-2501/
 │   └── README.md
 └── README.md
 ```
+
+## Framework Generation Model
+
+The framework is *generated* for each tool environment from generation artifacts:
+
+```
+implementation/                    Tool-specific directories
+┌────────────────────┐            ┌────────────────────┐
+│ Schemas            │            │ .claude/           │
+│ (how to document)  │            │   skills/          │
+│                    │            │   agents/          │
+│ Registries         │──Generate──│   commands/        │
+│ (tool capabilities)│            │                    │
+└────────────────────┘            │ .cursor/ (future)  │
+                                  │ .copilot/ (future) │
+                                  └────────────────────┘
+```
+
+**Key distinction**:
+- `implementation/` contains *inputs* to generation (schemas, registries)
+- Tool directories (`.claude/`, etc.) contain *outputs* — the generated framework
+
+When creating new framework artifacts:
+1. Consult `implementation/registries/registry-<tool>.yaml` for tool capabilities
+2. Generate artifacts appropriate to the tool
+3. Place generated artifacts in the tool's directory
 
 ## Document Architecture
 

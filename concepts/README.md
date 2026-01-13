@@ -33,12 +33,14 @@ Core framework concepts that define the key abstractions, models, and taxonomies
 | [concept_actor-model.md](./concept_actor-model.md) | Actor taxonomy distinguishing human and AI actors, their capabilities, and appropriate participation patterns |
 | [concept_capability-model.md](./concept_capability-model.md) | Eight-capability taxonomy defining fundamental operations in software development work |
 | [concept_collaboration-patterns.md](./concept_collaboration-patterns.md) | Five collaboration patterns for human-AI interaction, from Human-Only to AI-Only |
+| [concept_decision-observation-tracking.md](./concept_decision-observation-tracking.md) | System for recording observations (factual states) and decisions (judgements) throughout the SDLC |
 | [concept_document-type-classification.md](./concept_document-type-classification.md) | Classification framework for document types across the SDLC lifecycle |
 | [concept_information-taxonomy.md](./concept_information-taxonomy.md) | Information composition taxonomy distinguishing formal, tacit, and emergent knowledge |
 | [concept_phase-aware-measurement.md](./concept_phase-aware-measurement.md) | Measurement framework accounting for phase-specific characteristics and information composition |
 | [concept_process-capability-flow.md](./concept_process-capability-flow.md) | Framework for specifying capability flows within SDLC processes |
 | [concept_seven-phase-sdlc.md](./concept_seven-phase-sdlc.md) | Seven-phase SDLC model consolidating ISO/IEC/IEEE 12207 processes into practical phases |
 | [concept_transitions-info-loss.md](./concept_transitions-info-loss.md) | Analysis of information loss at phase transitions and mitigation strategies |
+| [concept_work-coordination.md](./concept_work-coordination.md) | Mechanisms for coordinating work between actors, including assignment, messaging, and queuing |
 
 ### Foundation Documents
 
