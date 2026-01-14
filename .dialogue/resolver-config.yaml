@@ -1,43 +1,57 @@
 # Resolver Configuration
-# Defines where different artifact types are located in this project
+# Schema: implementation/schema_deployment-model.md
+# Defines where project artifacts are located
 #
-# NOTE: This config file exists for future use. Currently the resolver
-# uses hardcoded defaults. Proper YAML parsing requires yq or similar.
-#
-# Default locations (used by resolver):
-#   THY/REF/STR documents: docs/
-#   ADR documents: decisions/
-#   Logs: .dialogue/logs/
-#   Work items: .dialogue/work-items.yaml
+# NOTE: Config parsing not yet implemented in resolver script.
+# Currently uses hardcoded values matching this config.
+# TODO: Implement YAML parsing when yq or similar available.
 
 version: "1.0"
 
-# Artifact location mappings
+# This is the FRAMEWORK DEVELOPMENT configuration.
+# Deployed projects would typically use docs/ instead of implementation/.
+# See schema_deployment-model.md for deployment scenarios.
+
+# Project document locations
 artifacts:
-  # Project documents
   theory:
-    directory: "docs"
+    directory: "implementation"    # Framework dev uses implementation/
     pattern: "theory_*.md"
 
   reference:
-    directory: "docs"
+    directory: "implementation"
     pattern: "ref_*.md"
 
   strategy:
-    directory: "docs"
+    directory: "implementation"
     pattern: "str_*.md"
 
   adr:
     directory: "decisions"
     pattern: "ADR-*.md"
 
-  # Logs
-  decisions:
-    file: ".dialogue/logs/decisions.yaml"
+# Log locations
+logs:
+  decisions: ".dialogue/logs/decisions.yaml"
+  observations: ".dialogue/logs/observations.yaml"
 
-  observations:
-    file: ".dialogue/logs/observations.yaml"
+# Work items
+work_items: ".dialogue/work-items.yaml"
 
-  # Work items
-  work_items:
-    file: ".dialogue/work-items.yaml"
+# ---
+# DEFAULT CONFIGURATION (for typical deployments)
+# Uncomment and modify for your project:
+#
+# artifacts:
+#   theory:
+#     directory: "docs"
+#     pattern: "theory_*.md"
+#   reference:
+#     directory: "docs"
+#     pattern: "ref_*.md"
+#   strategy:
+#     directory: "docs"
+#     pattern: "str_*.md"
+#   adr:
+#     directory: "decisions"
+#     pattern: "ADR-*.md"

@@ -306,52 +306,45 @@ items:
 
   - id: "FW-005"
     title: "Deployment Artifact Definition"
-    status: BACKLOG
+    status: COMPLETED
     created: "2026-01-14T11:30:00Z"
-    updated: "2026-01-14T11:30:00Z"
+    updated: "2026-01-14T12:30:00Z"
+    completed: "2026-01-14T12:30:00Z"
     type: DESIGN
     priority: HIGH
     description: |
-      Define what constitutes a framework deployment vs framework source:
-
-      Problem identified: The resolver script hardcodes 'concepts/' paths, but a
-      framework deployment won't include the concepts/ directory—that's framework
-      source documentation, not runtime artifacts.
-
-      Need to distinguish:
-      1. Framework source artifacts (concepts/, papers/, research/)
-         - Framework reference documentation
-         - Academic foundations
-         - Not deployed with projects using the framework
-
-      2. Framework deployment artifacts (.claude/, .dialogue/)
-         - Skills, agents, commands
-         - Log schemas and scripts
-         - Deployed/copied to projects using the framework
-
-      3. Project runtime artifacts (decisions/, .dialogue/logs/)
-         - Project-specific decisions, observations
-         - Work items
-         - Created by projects using the framework
-
-      Questions to resolve:
-      - How do deployed projects access framework documentation?
-      - What's the package/distribution model?
-      - Should framework docs be web-accessible? Bundled? Linked?
-      - How does the resolver know which mode it's operating in?
-
-      Additional issue identified:
-      - Resolver hardcodes 'implementation/' paths for THY/REF/STR documents
-      - Deployed projects may store these anywhere
-      - Need configuration mechanism for artifact locations
-      - Possible solution: .dialogue/config.yaml with path mappings
+      Define what constitutes a framework deployment vs framework source.
     objective: "Clear deployment model with configurable artifact locations"
     rationale: "Resolver currently hardcodes paths that won't exist in deployments"
     blocked_by: []
     blocks: []
     notes: |
-      Added 14 January 2026.
-      Identified during SH-002 implementation when resolver hardcoded concepts/ paths.
+      Completed 14 January 2026.
+      Created implementation/schema_deployment-model.md defining:
+
+      Three-Tier Artifact Model:
+      1. Framework Source (NOT deployed): concepts/, papers/, research/
+         - Reference patterns F-N, C-N, I-N, G-N, E-N return NOT_SUPPORTED
+         - Access via web docs or framework repository clone
+
+      2. Deployment Artifacts (distributed): .claude/, .dialogue/, decisions/
+         - Skills, agents, commands, logging infrastructure
+         - Copied/installed to projects using framework
+
+      3. Project Artifacts (created at runtime): decisions/ADR-*, .dialogue/logs/
+         - THY, REF, STR documents in configured location
+         - Decisions, observations, work items
+
+      Configuration mechanism:
+      - .dialogue/resolver-config.yaml defines artifact locations
+      - Defaults: docs/ for THY/REF/STR, decisions/ for ADR
+      - Framework dev override: implementation/ (this project)
+      - Config parsing TODO: needs yq or similar
+
+      Key decisions:
+      - Framework source not bundled (too large, changes independently)
+      - Web documentation recommended for framework source access
+      - Configuration allows projects to use any directory structure
 
   - id: "FW-002"
     title: "Revisit Work Item Schema and Persistence"
