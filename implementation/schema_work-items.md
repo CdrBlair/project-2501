@@ -12,10 +12,13 @@
 
 This schema defines the YAML structure for persistent work item tracking. Work items tracked in `.dialogue/work-items.yaml` conform to this schema.
 
+**Deployment note**: This file is framework source (Tier 1) and is NOT deployed to projects using the framework. The deployed schema reference is embedded in `.claude/skills/dialogue-manage-work-items/SKILL.md`, which is self-contained and authoritative for deployments.
+
 **Related documents**:
 - [Work Coordination](../concepts/concept_work-coordination.md) — Full conceptual schema (O-3)
 - [Framework Generation](./framework-generation.md) — Dialogue infrastructure context
 - [Claude Code Registry](./registries/registry_claude-code.yaml) — TodoWrite tool documentation
+- [Manage Work Items Skill](../.claude/skills/dialogue-manage-work-items/SKILL.md) — Deployed schema reference
 
 ---
 

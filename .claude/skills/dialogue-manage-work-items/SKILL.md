@@ -2,6 +2,8 @@
 
 Manage persistent work items in `.dialogue/work-items.yaml`. This skill provides the schema and guidance for direct YAML editing—no scripts required.
 
+**Note**: This skill IS the authoritative schema for deployed frameworks. The `implementation/schema_work-items.md` file exists only in framework source and is not deployed. All schema information needed for work item management is contained below.
+
 ## When to Use
 
 - Creating new work items
