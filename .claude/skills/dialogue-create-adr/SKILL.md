@@ -1,25 +1,31 @@
 ---
 name: dialogue-create-adr
-description: Create an Architecture Decision Record (ADR) for significant architectural decisions. Use when formally evaluating alternatives with trade-offs. Triggers on "create ADR", "architecture decision", "document architecture choice".
+description: Creates Architecture Decision Records for significant architectural decisions. Use when the user wants to create an ADR, make an ADR, record an architecture decision, document architecture choice, perform formal alternatives analysis, or when formally evaluating multiple alternatives with trade-offs. Appropriate for decisions with system-wide or long-term impact requiring structured alternatives documentation.
 allowed-tools: Bash
 ---
 
 # Dialogue: ADR Creator
 
-Create an Architecture Decision Record for significant architectural decisions that require formal alternatives analysis.
+Creates Architecture Decision Records for significant architectural decisions that require formal alternatives analysis.
 
 ## When to Use
 
 Use this skill when:
-- You formally evaluated 2+ alternatives with pros/cons
+- Formally evaluating 2+ alternatives with pros/cons
 - The decision has system-wide or long-term architectural impact
-- You need to document consequences and trade-offs
+- Consequences and trade-offs need documentation
 - Future developers will need to understand why this choice was made
 
 **Do NOT use for:**
 - Routine operational choices → use `dialogue-log-decision` with OPERATIONAL type
 - Tactical approach changes → use `dialogue-log-decision` with TACTICAL type
 - Component decisions without formal alternatives → use `dialogue-log-decision` with DESIGN type
+
+## Dependencies
+
+This skill requires:
+- **dialogue-log-decision skill** — Used to automatically cross-reference ADRs in the decision log
+- **Git repository** — Script finds project root using git
 
 ## How to Create an ADR
 
@@ -34,10 +40,10 @@ Execute the following bash command:
 | Parameter | Description |
 |-----------|-------------|
 | `title` | Short descriptive title (will be slugified for filename) |
-| `actor` | Who made the decision (`human:<id>` or `ai:claude`) |
-| `context` | What issue motivated this decision? (multi-line OK, use quotes) |
+| `actor` | Who made the decision — must be `human:<id>` or `ai:<id>` format |
+| `context` | What issue motivated this decision? |
 | `decision` | What change are we making? |
-| `alternatives` | Alternatives considered with pros/cons (YAML format or brief text) |
+| `alternatives` | Alternatives considered with pros/cons |
 | `consequences` | What becomes easier or harder? (use ✅/⚠️ for clarity) |
 | `rationale` | Why is this the right choice? What evidence supports it? |
 
@@ -45,7 +51,7 @@ Execute the following bash command:
 
 | Parameter | Description |
 |-----------|-------------|
-| `tags` | Comma-separated categorisation tags |
+| `tags` | Comma-separated categorisation tags (defaults to "architecture" if omitted) |
 
 ## Example
 
@@ -70,7 +76,7 @@ The script:
 
 Example output:
 ```
-ADR-001: decisions/ADR-001-use-filesystem-for-initial-context-graph-storage.md
+ADR-001: /path/to/project/decisions/ADR-001-use-filesystem-for-initial-context-graph-storage.md
 DEC-20260114-153000: Cross-reference logged
 ```
 
@@ -101,6 +107,8 @@ Actor: human:pidster
 [Why is this the right choice?]
 ```
 
+A template file is available at `templates/adr-template.md` in this skill directory.
+
 ## ADR Lifecycle
 
 | Status | Meaning |
@@ -111,6 +119,15 @@ Actor: human:pidster
 | **Superseded** | Replaced by another ADR (note which one) |
 
 To change status, edit the ADR file directly. The decision log entry is immutable (captures the moment of decision).
+
+## Error Handling
+
+The script validates:
+- Actor format (must be `human:<id>` or `ai:<id>`)
+- Required parameters (all 7 must be provided)
+- Git repository context (must be run within a git repo)
+
+If the decision log cross-reference fails, a warning is shown but the ADR file is still created.
 
 ## Framework Grounding
 
