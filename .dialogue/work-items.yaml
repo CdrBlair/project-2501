@@ -57,9 +57,10 @@ items:
 
   - id: "SH-002"
     title: "Resolution Interface"
-    status: READY
+    status: COMPLETED
     created: "2026-01-13T10:00:00Z"
-    updated: "2026-01-14T14:00:00Z"
+    updated: "2026-01-14T11:00:00Z"
+    completed: "2026-01-14T11:00:00Z"
     type: SCHEMA
     phase: 3
     priority: MEDIUM
@@ -71,18 +72,25 @@ items:
     blocked_by: []
     blocks: ["SH-003"]
     notes: |
-      Unblocked by SH-001 completion.
-      Should define:
-      - Resolver interface contract
-      - Resolution result types
-      - Error handling
-      - Filesystem resolver implementation
+      Completed 14 January 2026.
+      Created:
+      - implementation/schema_resolver-interface.md — Abstract interface contract
+      - .claude/skills/dialogue-resolve-reference/SKILL.md — Skill definition
+      - .claude/skills/dialogue-resolve-reference/scripts/resolve-reference.sh — Filesystem implementation
+      Supports resolution of:
+      - Documents: THY-NNN, REF-NNN, STR-NNN, ADR-NNN, F-N, C-N, I-N, G-N, E-N
+      - Log entries: DEC-YYYYMMDD-HHMMSS, OBS-YYYYMMDD-HHMMSS
+      - Work items: SH-NNN, CD-NNN, FW-NNN
+      - Actors: human:<id>, ai:<id>
+      - External URLs: Returns EXTERNAL status (use WebFetch)
+      Output formats: full (content), metadata (location only), path (just file path)
+      TMS alignment: Implements retrieval operation for Context Graph
 
   - id: "SH-003"
     title: "Context Graph Schema"
-    status: BACKLOG
+    status: READY
     created: "2026-01-13T10:00:00Z"
-    updated: "2026-01-14T12:00:00Z"
+    updated: "2026-01-14T11:00:00Z"
     type: SCHEMA
     phase: 3
     priority: MEDIUM
