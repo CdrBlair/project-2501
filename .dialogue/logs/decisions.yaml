@@ -538,3 +538,23 @@ outcome: "Hybrid approach: retrofit documents referenced by THY-001/REF-001; for
 rationale: "Key conceptual documents need frontmatter for Context Graph integration; avoid unnecessary work on peripheral documents"
 context: "Proceed to Phase 3 with hybrid retrofit scope"
 tags: ["sh-7", "retrofit", "planning"]
+---
+id: DEC-20260114-100809
+timestamp: "2026-01-14T10:08:09Z"
+type: TACTICAL
+actor: "human:pidster"
+subject: "Information reference schema approach"
+outcome: "Simplified from URI format to self-describing IDs - patterns determine type without scheme prefixes"
+rationale: "Simpler format reduces cognitive load, maintains backward compatibility, defers resolver complexity to SH-002"
+context: "Initial v1 had complex URI format; user directed simplification following principle of minimal necessary complexity"
+tags: ["SH-001", "schema", "simplification"]
+---
+id: DEC-20260114-101710
+timestamp: "2026-01-14T10:17:10Z"
+type: TACTICAL
+actor: "human:pidster"
+subject: "ADR cross-referencing in decision log"
+outcome: "ADR creation must also create a decision log entry with type=ADR and ref pointing to the ADR file"
+rationale: "Decision log becomes single source of truth for all decisions; enables chronological discovery while ADRs remain authoritative Standing documents"
+context: "Discussed three options: automatic entry, separate namespaces, or optional. Selected automatic for completeness."
+tags: ["ADR", "decision-log", "traceability"]

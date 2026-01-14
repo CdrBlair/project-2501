@@ -3,7 +3,7 @@
 # Purpose: Persistent cross-session work item tracking
 
 version: "1.0"
-last_updated: "2026-01-14T12:00:00Z"
+last_updated: "2026-01-14T14:30:00Z"
 
 # Work item ID prefix definitions
 prefixes:
@@ -195,6 +195,57 @@ items:
     notes: "See implementation/theory_thy-003-conceptual-debt.md for full inventory"
 
   # Framework Work Items
+  - id: "FW-003"
+    title: "Enhance Decision Logging with DESIGN Type"
+    status: BACKLOG
+    created: "2026-01-14T14:30:00Z"
+    updated: "2026-01-14T14:30:00Z"
+    type: CAPABILITY
+    priority: MEDIUM
+    description: |
+      Extend dialogue-log-decision skill to support DESIGN type decisions:
+      - Add DESIGN as valid type (between TACTICAL and ADR)
+      - DESIGN requires rationale and context fields (not optional)
+      - Update skill documentation with type selection guidance
+      - Update underlying script to validate DESIGN requirements
+      Framework grounding: DESIGN maps to STR domain, Dynamic-Standing temporal class,
+      elicitable knowledge with rationale capture.
+    objective: "Decision logging skill supports OPERATIONAL, TACTICAL, and DESIGN types"
+    rationale: "Gap identified: schema simplification decision was more than tactical but less than ADR"
+    blocked_by: []
+    blocks: ["FW-004"]
+    notes: |
+      Added 14 January 2026.
+      Decision types mapped to framework concepts:
+      - OPERATIONAL: WRK domain, Ephemeral, documentable knowledge
+      - TACTICAL: WRK domain, Ephemeral-Dynamic, elicitable knowledge
+      - DESIGN: STR domain, Dynamic-Standing, elicitable with rationale
+      - ADR: STR domain, Standing, formal alternatives analysis (separate skill)
+
+  - id: "FW-004"
+    title: "Create ADR Skill"
+    status: BACKLOG
+    created: "2026-01-14T14:30:00Z"
+    updated: "2026-01-14T14:30:00Z"
+    type: CAPABILITY
+    priority: MEDIUM
+    description: |
+      Create dialogue-create-adr skill for Architecture Decision Records:
+      - Use template from guidance_implementation.md (Context, Decision, Alternatives, Consequences, Rationale)
+      - Store ADRs as Standing documents in decisions/ directory (ADR-NNN-<title>.md)
+      - Automatically create decision log entry with type=ADR and ref to ADR file
+      - Support status lifecycle (Proposed → Accepted → Deprecated → Superseded)
+      Framework grounding: ADRs are STR domain, Standing temporal class,
+      attempting to capture embedded knowledge through formal alternatives analysis.
+    objective: "ADR skill creates Standing decision documents with decision log cross-reference"
+    rationale: "ADRs require more structure than log entries; cross-reference ensures decision log is complete audit trail"
+    blocked_by: ["FW-003"]
+    blocks: []
+    notes: |
+      Added 14 January 2026.
+      Key design decision (DEC-20260114-101710): ADR creation must also create
+      decision log entry to maintain decision log as source of truth.
+
   - id: "FW-002"
     title: "Revisit Work Item Schema and Persistence"
     status: BACKLOG
