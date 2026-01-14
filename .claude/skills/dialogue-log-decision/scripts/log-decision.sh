@@ -1,7 +1,7 @@
 #!/bin/bash
 # log-decision.sh — Append a decision entry to the decision log
 # Part of the AI-Augmented SDLC Framework
-# Usage: log-decision.sh <type> <actor> <subject> <outcome> <rationale> [context] [tags]
+# Usage: log-decision.sh <type> <actor> <subject> <outcome> <rationale> [context] [tags] [ref]
 
 set -euo pipefail
 
@@ -14,14 +14,15 @@ LOG_FILE="${PROJECT_ROOT}/.dialogue/logs/decisions.yaml"
 
 # Validate required arguments
 if [[ $# -lt 5 ]]; then
-    echo "Usage: log-decision.sh <type> <actor> <subject> <outcome> <rationale> [context] [tags]" >&2
-    echo "  type:      OPERATIONAL | TACTICAL" >&2
+    echo "Usage: log-decision.sh <type> <actor> <subject> <outcome> <rationale> [context] [tags] [ref]" >&2
+    echo "  type:      OPERATIONAL | TACTICAL | DESIGN | ADR" >&2
     echo "  actor:     ai:claude | human:<id>" >&2
     echo "  subject:   Brief description of what the decision concerns" >&2
     echo "  outcome:   What was decided/done" >&2
-    echo "  rationale: Single-line reasoning" >&2
-    echo "  context:   (optional) Additional context" >&2
+    echo "  rationale: Single-line reasoning (REQUIRED for DESIGN/ADR)" >&2
+    echo "  context:   Additional context (REQUIRED for DESIGN/ADR, optional otherwise)" >&2
     echo "  tags:      (optional) Comma-separated tags" >&2
+    echo "  ref:       (optional) Reference to related document (e.g., ADR-001)" >&2
     exit 1
 fi
 
@@ -32,11 +33,24 @@ OUTCOME="$4"
 RATIONALE="$5"
 CONTEXT="${6:-}"
 TAGS="${7:-}"
+REF="${8:-}"
 
 # Validate type
-if [[ "$TYPE" != "OPERATIONAL" && "$TYPE" != "TACTICAL" ]]; then
-    echo "Error: type must be OPERATIONAL or TACTICAL" >&2
+if [[ "$TYPE" != "OPERATIONAL" && "$TYPE" != "TACTICAL" && "$TYPE" != "DESIGN" && "$TYPE" != "ADR" ]]; then
+    echo "Error: type must be OPERATIONAL, TACTICAL, DESIGN, or ADR" >&2
     exit 1
+fi
+
+# DESIGN and ADR types require rationale and context
+if [[ "$TYPE" == "DESIGN" || "$TYPE" == "ADR" ]]; then
+    if [[ -z "$RATIONALE" ]]; then
+        echo "Error: DESIGN and ADR decisions require rationale" >&2
+        exit 1
+    fi
+    if [[ -z "$CONTEXT" ]]; then
+        echo "Error: DESIGN and ADR decisions require context" >&2
+        exit 1
+    fi
 fi
 
 # Generate timestamp and ID
@@ -58,6 +72,9 @@ mkdir -p "$(dirname "$LOG_FILE")"
     echo "rationale: \"$RATIONALE\""
     if [[ -n "$CONTEXT" ]]; then
         echo "context: \"$CONTEXT\""
+    fi
+    if [[ -n "$REF" ]]; then
+        echo "ref: \"$REF\""
     fi
     if [[ -n "$TAGS" ]]; then
         # Convert comma-separated tags to YAML array

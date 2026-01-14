@@ -3,7 +3,7 @@
 # Purpose: Persistent cross-session work item tracking
 
 version: "1.0"
-last_updated: "2026-01-14T14:30:00Z"
+last_updated: "2026-01-14T15:30:00Z"
 
 # Work item ID prefix definitions
 prefixes:
@@ -197,9 +197,10 @@ items:
   # Framework Work Items
   - id: "FW-003"
     title: "Enhance Decision Logging with DESIGN Type"
-    status: BACKLOG
+    status: COMPLETED
     created: "2026-01-14T14:30:00Z"
-    updated: "2026-01-14T14:30:00Z"
+    updated: "2026-01-14T15:30:00Z"
+    completed: "2026-01-14T15:30:00Z"
     type: CAPABILITY
     priority: MEDIUM
     description: |
@@ -215,18 +216,24 @@ items:
     blocked_by: []
     blocks: ["FW-004"]
     notes: |
-      Added 14 January 2026.
+      Completed 14 January 2026.
+      - Added DESIGN and ADR types to log-decision.sh script
+      - DESIGN/ADR require rationale AND context (validated by script)
+      - Added ref parameter for ADR cross-referencing
+      - Updated SKILL.md with type selection flowchart and examples
+      - Tested: DEC-20260114-102417 logged as DESIGN type
       Decision types mapped to framework concepts:
       - OPERATIONAL: WRK domain, Ephemeral, documentable knowledge
       - TACTICAL: WRK domain, Ephemeral-Dynamic, elicitable knowledge
       - DESIGN: STR domain, Dynamic-Standing, elicitable with rationale
-      - ADR: STR domain, Standing, formal alternatives analysis (separate skill)
+      - ADR: STR domain, Standing, formal alternatives analysis
 
   - id: "FW-004"
     title: "Create ADR Skill"
-    status: BACKLOG
+    status: COMPLETED
     created: "2026-01-14T14:30:00Z"
-    updated: "2026-01-14T14:30:00Z"
+    updated: "2026-01-14T15:30:00Z"
+    completed: "2026-01-14T15:30:00Z"
     type: CAPABILITY
     priority: MEDIUM
     description: |
@@ -242,7 +249,11 @@ items:
     blocked_by: ["FW-003"]
     blocks: []
     notes: |
-      Added 14 January 2026.
+      Completed 14 January 2026.
+      - Created dialogue-create-adr skill with SKILL.md and create-adr.sh script
+      - ADRs stored in decisions/ directory with ADR-NNN-<slug>.md naming
+      - Automatic cross-reference to decision log with type=ADR and ref field
+      - Tested: ADR-001 created for decision type hierarchy (DEC-20260114-102443)
       Key design decision (DEC-20260114-101710): ADR creation must also create
       decision log entry to maintain decision log as source of truth.
 

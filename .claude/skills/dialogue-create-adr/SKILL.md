@@ -1,0 +1,122 @@
+---
+name: dialogue-create-adr
+description: Create an Architecture Decision Record (ADR) for significant architectural decisions. Use when formally evaluating alternatives with trade-offs. Triggers on "create ADR", "architecture decision", "document architecture choice".
+allowed-tools: Bash
+---
+
+# Dialogue: ADR Creator
+
+Create an Architecture Decision Record for significant architectural decisions that require formal alternatives analysis.
+
+## When to Use
+
+Use this skill when:
+- You formally evaluated 2+ alternatives with pros/cons
+- The decision has system-wide or long-term architectural impact
+- You need to document consequences and trade-offs
+- Future developers will need to understand why this choice was made
+
+**Do NOT use for:**
+- Routine operational choices → use `dialogue-log-decision` with OPERATIONAL type
+- Tactical approach changes → use `dialogue-log-decision` with TACTICAL type
+- Component decisions without formal alternatives → use `dialogue-log-decision` with DESIGN type
+
+## How to Create an ADR
+
+Execute the following bash command:
+
+```bash
+.claude/skills/dialogue-create-adr/scripts/create-adr.sh <title> <actor> <context> <decision> <alternatives> <consequences> <rationale> [tags]
+```
+
+### Required Parameters
+
+| Parameter | Description |
+|-----------|-------------|
+| `title` | Short descriptive title (will be slugified for filename) |
+| `actor` | Who made the decision (`human:<id>` or `ai:claude`) |
+| `context` | What issue motivated this decision? (multi-line OK, use quotes) |
+| `decision` | What change are we making? |
+| `alternatives` | Alternatives considered with pros/cons (YAML format or brief text) |
+| `consequences` | What becomes easier or harder? (use ✅/⚠️ for clarity) |
+| `rationale` | Why is this the right choice? What evidence supports it? |
+
+### Optional Parameters
+
+| Parameter | Description |
+|-----------|-------------|
+| `tags` | Comma-separated categorisation tags |
+
+## Example
+
+```bash
+.claude/skills/dialogue-create-adr/scripts/create-adr.sh \
+  "Use filesystem for initial Context Graph storage" \
+  "human:pidster" \
+  "Need to store Context Graph data for TMS operations. Must support location-agnostic access and future migration to graph database." \
+  "Start with filesystem + YAML storage; design abstractions for future Kuzu migration" \
+  "1. Kuzu (embedded graph): Pros - native graph queries, good performance. Cons - additional dependency, learning curve. 2. Neo4j: Pros - mature, well-documented. Cons - server dependency, overkill for current scale. 3. Filesystem + YAML: Pros - simple, no dependencies, human-readable. Cons - no native graph queries, manual relationship traversal." \
+  "✅ Simple implementation, no new dependencies. ✅ Human-readable storage. ⚠️ Manual graph traversal required. ⚠️ Will need migration when scale requires it." \
+  "Start simple, evolve when needed. Filesystem provides immediate value without premature optimisation. Resolver abstraction enables future migration." \
+  "architecture,storage,context-graph"
+```
+
+## Output
+
+The script:
+1. Creates ADR file at `decisions/ADR-NNN-<slugified-title>.md`
+2. Automatically logs to decision log with type=ADR and ref to the ADR file
+3. Returns both the ADR ID and decision log ID
+
+Example output:
+```
+ADR-001: decisions/ADR-001-use-filesystem-for-initial-context-graph-storage.md
+DEC-20260114-153000: Cross-reference logged
+```
+
+## ADR File Structure
+
+The created ADR follows the template from `guidance_implementation.md`:
+
+```markdown
+# ADR-NNN: [Title]
+
+Date: YYYY-MM-DD
+Status: Proposed
+Actor: human:pidster
+
+## Context
+[What issue motivated this decision?]
+
+## Decision
+[What change are we making?]
+
+## Alternatives Considered
+[Each alternative with pros/cons]
+
+## Consequences
+[What becomes easier or harder?]
+
+## Rationale
+[Why is this the right choice?]
+```
+
+## ADR Lifecycle
+
+| Status | Meaning |
+|--------|---------|
+| **Proposed** | Initial state; under consideration |
+| **Accepted** | Approved and in effect |
+| **Deprecated** | No longer recommended; kept for history |
+| **Superseded** | Replaced by another ADR (note which one) |
+
+To change status, edit the ADR file directly. The decision log entry is immutable (captures the moment of decision).
+
+## Framework Grounding
+
+ADRs are:
+- **Content Domain**: STR (Strategy) — rationale, decisions, business justification
+- **Temporal Class**: Standing — quarterly or less updates, years lifespan
+- **Knowledge Type**: Attempting to capture embedded knowledge through formal alternatives analysis
+
+The decision log cross-reference ensures the decision log remains a complete audit trail while ADRs provide the detailed Standing document.

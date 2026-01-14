@@ -558,3 +558,24 @@ outcome: "ADR creation must also create a decision log entry with type=ADR and r
 rationale: "Decision log becomes single source of truth for all decisions; enables chronological discovery while ADRs remain authoritative Standing documents"
 context: "Discussed three options: automatic entry, separate namespaces, or optional. Selected automatic for completeness."
 tags: ["ADR", "decision-log", "traceability"]
+---
+id: DEC-20260114-102417
+timestamp: "2026-01-14T10:24:17Z"
+type: DESIGN
+actor: "ai:claude"
+subject: "Decision type hierarchy design"
+outcome: "Four-tier hierarchy: OPERATIONAL, TACTICAL, DESIGN, ADR"
+rationale: "Maps to framework concepts: WRK/STR domains, Ephemeral to Standing temporal classes, documentable to embedded knowledge types"
+context: "Identified gap when schema simplification was more than tactical but less than ADR; grounded in concept_document-type-classification.md and concept_information-taxonomy.md"
+tags: ["framework", "decision-types", "FW-003"]
+---
+id: DEC-20260114-102443
+timestamp: "2026-01-14T10:24:43Z"
+type: ADR
+actor: "human:pidster"
+subject: "Decision type hierarchy for framework logging"
+outcome: "Created ADR-001"
+rationale: "The four-tier model provides complete coverage while maintaining clear boundaries. Each type maps to framework concepts (document domains, temporal classes, knowledge types), providing theoretical grounding for the distinctions."
+context: "The framework needed a way to classify and log decisions at different levels of significance. The existing OPERATIONAL/TACTICAL types were insufficient for design decisions that don't warrant full ADRs."
+ref: "ADR-001"
+tags: ["framework", "decision-logging", "FW-003", "FW-004"]
