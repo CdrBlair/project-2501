@@ -307,8 +307,14 @@ items:
       - What's the package/distribution model?
       - Should framework docs be web-accessible? Bundled? Linked?
       - How does the resolver know which mode it's operating in?
-    objective: "Clear deployment model separating framework source from runtime"
-    rationale: "Resolver currently conflates framework docs with project data"
+
+      Additional issue identified:
+      - Resolver hardcodes 'implementation/' paths for THY/REF/STR documents
+      - Deployed projects may store these anywhere
+      - Need configuration mechanism for artifact locations
+      - Possible solution: .dialogue/config.yaml with path mappings
+    objective: "Clear deployment model with configurable artifact locations"
+    rationale: "Resolver currently hardcodes paths that won't exist in deployments"
     blocked_by: []
     blocks: []
     notes: |

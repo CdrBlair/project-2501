@@ -12,6 +12,24 @@ PROJECT_ROOT="$(git rev-parse --show-toplevel 2>/dev/null)" || {
     exit 1
 }
 
+# Artifact locations
+# These can be customised per project via .dialogue/resolver-config.yaml
+# TODO: Implement config file parsing when yq/similar available
+#
+# Current settings are for this project (framework development).
+# Typical deployments would use docs/ for THY/REF/STR documents.
+THEORY_DIR="implementation"
+THEORY_PATTERN="theory_*.md"
+REF_DIR="implementation"
+REF_PATTERN="ref_*.md"
+STR_DIR="implementation"
+STR_PATTERN="str_*.md"
+ADR_DIR="decisions"
+ADR_PATTERN="ADR-*.md"
+DECISIONS_FILE=".dialogue/logs/decisions.yaml"
+OBSERVATIONS_FILE=".dialogue/logs/observations.yaml"
+WORK_ITEMS_FILE=".dialogue/work-items.yaml"
+
 # Validate required arguments
 if [[ $# -lt 1 ]]; then
     echo "Usage: resolve-reference.sh <id> [output_format]" >&2
@@ -104,8 +122,8 @@ output_not_supported() {
   "status": "NOT_SUPPORTED",
   "id": "$id",
   "type": "$type",
-  "error": "Framework source reference - not available in deployed framework",
-  "note": "F-N, C-N, I-N, G-N, E-N reference framework source documentation. See FW-005 for deployment model."
+  "error": "Framework source reference - not resolvable at runtime",
+  "note": "F-N, C-N, I-N, G-N, E-N reference framework documentation, not project artifacts."
 }
 EOF
 }
@@ -243,8 +261,7 @@ EOF
     # Theory documents: THY-NNN
     if [[ "$id" =~ ^THY-([0-9]+)$ ]]; then
         local num="${BASH_REMATCH[1]}"
-        local pattern="implementation/theory_*.md"
-        local search_glob="$PROJECT_ROOT/$pattern"
+        local pattern="$THEORY_DIR/$THEORY_PATTERN"
 
         # Look for file containing THY-NNN in content or matching pattern
         local found_file=""
@@ -254,7 +271,7 @@ EOF
                 found_file="$file"
                 break
             fi
-        done < <(find "$PROJECT_ROOT/implementation" -name "theory_*.md" -print0 2>/dev/null)
+        done < <(find "$PROJECT_ROOT/$THEORY_DIR" -name "$THEORY_PATTERN" -print0 2>/dev/null)
 
         if [[ -n "$found_file" ]]; then
             local rel_path="${found_file#$PROJECT_ROOT/}"
@@ -270,7 +287,7 @@ EOF
     # Reference documents: REF-NNN
     if [[ "$id" =~ ^REF-([0-9]+)$ ]]; then
         local num="${BASH_REMATCH[1]}"
-        local pattern="implementation/ref_*.md"
+        local pattern="$REF_DIR/$REF_PATTERN"
 
         local found_file=""
         while IFS= read -r -d '' file; do
@@ -279,7 +296,7 @@ EOF
                 found_file="$file"
                 break
             fi
-        done < <(find "$PROJECT_ROOT/implementation" -name "ref_*.md" -print0 2>/dev/null)
+        done < <(find "$PROJECT_ROOT/$REF_DIR" -name "$REF_PATTERN" -print0 2>/dev/null)
 
         if [[ -n "$found_file" ]]; then
             local rel_path="${found_file#$PROJECT_ROOT/}"
@@ -295,7 +312,7 @@ EOF
     # Strategy documents: STR-NNN
     if [[ "$id" =~ ^STR-([0-9]+)$ ]]; then
         local num="${BASH_REMATCH[1]}"
-        local pattern="implementation/str_*.md"
+        local pattern="$STR_DIR/$STR_PATTERN"
 
         local found_file=""
         while IFS= read -r -d '' file; do
@@ -304,7 +321,7 @@ EOF
                 found_file="$file"
                 break
             fi
-        done < <(find "$PROJECT_ROOT/implementation" -name "str_*.md" -print0 2>/dev/null)
+        done < <(find "$PROJECT_ROOT/$STR_DIR" -name "$STR_PATTERN" -print0 2>/dev/null)
 
         if [[ -n "$found_file" ]]; then
             local rel_path="${found_file#$PROJECT_ROOT/}"
@@ -322,11 +339,11 @@ EOF
         local num="${BASH_REMATCH[1]}"
         local padded_num
         padded_num=$(printf "%03d" "$num")
-        local pattern="decisions/ADR-$padded_num-*.md"
+        local pattern="$ADR_DIR/ADR-$padded_num-*.md"
 
         local found_file=""
-        if compgen -G "$PROJECT_ROOT/decisions/ADR-$padded_num-*.md" > /dev/null 2>&1; then
-            found_file=$(ls -1 "$PROJECT_ROOT/decisions/ADR-$padded_num-"*.md 2>/dev/null | head -1)
+        if compgen -G "$PROJECT_ROOT/$ADR_DIR/ADR-$padded_num-*.md" > /dev/null 2>&1; then
+            found_file=$(ls -1 "$PROJECT_ROOT/$ADR_DIR/ADR-$padded_num-"*.md 2>/dev/null | head -1)
         fi
 
         if [[ -n "$found_file" && -f "$found_file" ]]; then
@@ -370,10 +387,10 @@ EOF
 
     # Decision log entries: DEC-YYYYMMDD-HHMMSS
     if [[ "$id" =~ ^DEC-[0-9]{8}-[0-9]{6}$ ]]; then
-        local log_file="$PROJECT_ROOT/.dialogue/logs/decisions.yaml"
+        local log_file="$PROJECT_ROOT/$DECISIONS_FILE"
 
         if [[ ! -f "$log_file" ]]; then
-            output_not_found "$id" "DECISION" "[\".dialogue/logs/decisions.yaml\"]"
+            output_not_found "$id" "DECISION" "[\"$DECISIONS_FILE\"]"
             return
         fi
 
@@ -389,14 +406,14 @@ EOF
             local escaped_entry
             escaped_entry=$(json_escape "$entry")
             if [[ "$OUTPUT_FORMAT" == "path" ]]; then
-                echo ".dialogue/logs/decisions.yaml#$id"
+                echo "$DECISIONS_FILE#$id"
             elif [[ "$OUTPUT_FORMAT" == "metadata" ]]; then
                 cat <<EOF
 {
   "status": "RESOLVED",
   "id": "$id",
   "type": "DECISION",
-  "location": ".dialogue/logs/decisions.yaml#$id"
+  "location": "$DECISIONS_FILE#$id"
 }
 EOF
             else
@@ -405,23 +422,23 @@ EOF
   "status": "RESOLVED",
   "id": "$id",
   "type": "DECISION",
-  "location": ".dialogue/logs/decisions.yaml#$id",
+  "location": "$DECISIONS_FILE#$id",
   "content": "$escaped_entry"
 }
 EOF
             fi
         else
-            output_not_found "$id" "DECISION" "[\".dialogue/logs/decisions.yaml\"]"
+            output_not_found "$id" "DECISION" "[\"$DECISIONS_FILE\"]"
         fi
         return
     fi
 
     # Observation log entries: OBS-YYYYMMDD-HHMMSS
     if [[ "$id" =~ ^OBS-[0-9]{8}-[0-9]{6}$ ]]; then
-        local log_file="$PROJECT_ROOT/.dialogue/logs/observations.yaml"
+        local log_file="$PROJECT_ROOT/$OBSERVATIONS_FILE"
 
         if [[ ! -f "$log_file" ]]; then
-            output_not_found "$id" "OBSERVATION" "[\".dialogue/logs/observations.yaml\"]"
+            output_not_found "$id" "OBSERVATION" "[\"$OBSERVATIONS_FILE\"]"
             return
         fi
 
@@ -437,14 +454,14 @@ EOF
             local escaped_entry
             escaped_entry=$(json_escape "$entry")
             if [[ "$OUTPUT_FORMAT" == "path" ]]; then
-                echo ".dialogue/logs/observations.yaml#$id"
+                echo "$OBSERVATIONS_FILE#$id"
             elif [[ "$OUTPUT_FORMAT" == "metadata" ]]; then
                 cat <<EOF
 {
   "status": "RESOLVED",
   "id": "$id",
   "type": "OBSERVATION",
-  "location": ".dialogue/logs/observations.yaml#$id"
+  "location": "$OBSERVATIONS_FILE#$id"
 }
 EOF
             else
@@ -453,13 +470,13 @@ EOF
   "status": "RESOLVED",
   "id": "$id",
   "type": "OBSERVATION",
-  "location": ".dialogue/logs/observations.yaml#$id",
+  "location": "$OBSERVATIONS_FILE#$id",
   "content": "$escaped_entry"
 }
 EOF
             fi
         else
-            output_not_found "$id" "OBSERVATION" "[\".dialogue/logs/observations.yaml\"]"
+            output_not_found "$id" "OBSERVATION" "[\"$OBSERVATIONS_FILE\"]"
         fi
         return
     fi
@@ -468,10 +485,10 @@ EOF
     if [[ "$id" =~ ^(SH|CD|FW)-([0-9]+)$ ]]; then
         local prefix="${BASH_REMATCH[1]}"
         local num="${BASH_REMATCH[2]}"
-        local work_file="$PROJECT_ROOT/.dialogue/work-items.yaml"
+        local work_file="$PROJECT_ROOT/$WORK_ITEMS_FILE"
 
         if [[ ! -f "$work_file" ]]; then
-            output_not_found "$id" "WORK_ITEM" "[\".dialogue/work-items.yaml\"]"
+            output_not_found "$id" "WORK_ITEM" "[\"$WORK_ITEMS_FILE\"]"
             return
         fi
 
@@ -482,14 +499,14 @@ EOF
             local escaped_entry
             escaped_entry=$(json_escape "$entry")
             if [[ "$OUTPUT_FORMAT" == "path" ]]; then
-                echo ".dialogue/work-items.yaml#$id"
+                echo "$WORK_ITEMS_FILE#$id"
             elif [[ "$OUTPUT_FORMAT" == "metadata" ]]; then
                 cat <<EOF
 {
   "status": "RESOLVED",
   "id": "$id",
   "type": "WORK_ITEM",
-  "location": ".dialogue/work-items.yaml#$id"
+  "location": "$WORK_ITEMS_FILE#$id"
 }
 EOF
             else
@@ -498,13 +515,13 @@ EOF
   "status": "RESOLVED",
   "id": "$id",
   "type": "WORK_ITEM",
-  "location": ".dialogue/work-items.yaml#$id",
+  "location": "$WORK_ITEMS_FILE#$id",
   "content": "$escaped_entry"
 }
 EOF
             fi
         else
-            output_not_found "$id" "WORK_ITEM" "[\".dialogue/work-items.yaml\"]"
+            output_not_found "$id" "WORK_ITEM" "[\"$WORK_ITEMS_FILE\"]"
         fi
         return
     fi

@@ -25,7 +25,17 @@ Use this skill when you need to:
 
 This skill requires:
 - **Git repository** — Script finds project root using git
-- **Framework directory structure** — `.dialogue/`, `implementation/`, `decisions/`
+- **Framework directory structure** — `.dialogue/`, `decisions/`, and document directories
+
+## Configuration
+
+Artifact locations are configured in the script. Projects can customise via `.dialogue/resolver-config.yaml` (config parsing TODO).
+
+Default locations:
+- THY/REF/STR documents: `implementation/` (framework dev) or `docs/` (typical deployments)
+- ADR documents: `decisions/`
+- Logs: `.dialogue/logs/`
+- Work items: `.dialogue/work-items.yaml`
 
 ## How to Resolve a Reference
 

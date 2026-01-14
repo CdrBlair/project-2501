@@ -1,0 +1,43 @@
+# Resolver Configuration
+# Defines where different artifact types are located in this project
+#
+# NOTE: This config file exists for future use. Currently the resolver
+# uses hardcoded defaults. Proper YAML parsing requires yq or similar.
+#
+# Default locations (used by resolver):
+#   THY/REF/STR documents: docs/
+#   ADR documents: decisions/
+#   Logs: .dialogue/logs/
+#   Work items: .dialogue/work-items.yaml
+
+version: "1.0"
+
+# Artifact location mappings
+artifacts:
+  # Project documents
+  theory:
+    directory: "docs"
+    pattern: "theory_*.md"
+
+  reference:
+    directory: "docs"
+    pattern: "ref_*.md"
+
+  strategy:
+    directory: "docs"
+    pattern: "str_*.md"
+
+  adr:
+    directory: "decisions"
+    pattern: "ADR-*.md"
+
+  # Logs
+  decisions:
+    file: ".dialogue/logs/decisions.yaml"
+
+  observations:
+    file: ".dialogue/logs/observations.yaml"
+
+  # Work items
+  work_items:
+    file: ".dialogue/work-items.yaml"
