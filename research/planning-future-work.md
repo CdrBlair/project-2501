@@ -59,6 +59,110 @@ This document tracks potential future development directions for the AI-Augmente
 
 ---
 
+## Current Phase: Framework Self-Hosting
+
+*Started: 13 January 2026*
+
+### Objective
+
+Restart framework development from Phase 1 (Initiation) using the framework itself, validating consistency and completeness.
+
+### Motivation
+
+We've built framework components opportunistically (Process Architect, decision logging, etc.) but haven't systematically worked through what self-hosting the entire SDLC requires. Starting fresh from "why are we building this?" should:
+
+1. Validate that the framework guides coherent development
+2. Reveal gaps or inconsistencies not visible when building bottom-up
+3. Produce explicit Phase 1-2 artifacts that are currently missing
+4. Test whether we arrive at the same (or compatible) design decisions
+
+### Key Design Decisions
+
+#### Information Architecture Principles
+
+The framework must be **location-agnostic** while remaining **context-aware**:
+
+1. **Logical information model** — What information exists, how it relates
+2. **Physical storage** — Where information actually lives (multiple stores possible)
+3. **Access patterns** — How actors retrieve and update information
+4. **Context assembly** — How information from multiple sources is composed for a task
+
+**Critical constraint**: We use local filesystem now, but must not assume it's the only store. Organisations have:
+- Enterprise systems (Confluence, Jira, GitHub)
+- Project-specific stores
+- External sources (standards, vendor docs)
+- Ephemeral/session context
+
+#### Context Graph as Operational TMS
+
+The Context Graph externalises transactive memory:
+
+| TMS Component | Context Graph Equivalent |
+|---------------|-------------------------|
+| Directory | Node registry + metadata |
+| Allocation | Store routing |
+| Retrieval | Resolution + fetch |
+
+**Actor dimension**: Nodes can be artifacts, humans, AI agents, or systems. The graph must model *actors as information sources*, not just artifacts.
+
+```yaml
+ContextNode:
+  node_type: ARTIFACT | ACTOR_HUMAN | ACTOR_AI | SYSTEM
+  # Metadata varies by type
+```
+
+**Graph operations** (TMS-aligned):
+- `locate(query)` — Directory lookup
+- `route(new_info)` — Allocation
+- `retrieve(node)` — Retrieval (dispatch by type)
+- `refresh(node)` — Maintenance
+- `discover(actor, domain)` — Learning
+- `invalidate(node)` — Staleness
+
+### Work Items
+
+| ID | Item | Status | Notes |
+|----|------|--------|-------|
+| **SH-1** | Information Reference Schema | Pending | Location-agnostic references |
+| **SH-2** | Resolution Interface | Pending | Abstract resolver, filesystem implementation |
+| **SH-3** | Context Graph Schema | Pending | Nodes, edges, TMS operations |
+| **SH-4** | Graph Storage Investigation | **Complete** | Decision: Start with filesystem + YAML; Kuzu identified for future evolution |
+| **SH-5** | Phase 1 Initiation | Pending | Elicit strategic context, stakeholders, rationale |
+| **SH-6** | Phase 2 Planning | Pending | Resource, risk, governance artifacts |
+| **SH-7** | Retrofit vs Forward | Pending | Decision on existing artifacts |
+
+### Open Questions
+
+1. **Graph persistence**: Is the Context Graph itself a standing artifact? Where does it live?
+2. **Graph discovery**: How do we bootstrap the graph for a new project/organisation?
+3. **Actor self-registration**: Should AI agents register their capabilities in the graph?
+4. **Confidence decay**: How do we model knowledge becoming stale over time?
+5. **Graph vs. conversation**: Some TMS knowledge is implicit in conversation history. How do we bridge?
+
+### Decisions Made
+
+#### SH-4: Graph Storage (13 January 2026)
+
+**Decision**: Start with filesystem + YAML; design abstractions for future evolution.
+
+**Rationale**:
+- Don't over-engineer—build what we need now
+- Information Reference Schema provides location-agnosticism
+- Resolver interface allows swapping storage backends later
+- Kuzu identified as preferred evolution path (embedded, Cypher, Python/Node bindings, MIT license)
+- Memgraph suitable for enterprise/multi-user scenarios if needed
+
+**Implication**: SH-1, SH-2, SH-3 should design abstractions that don't assume filesystem, even though initial implementation uses it.
+
+### Related Documents
+
+- `implementation/framework-manual.md` — Compact AI reference (created 13 January 2026)
+- `concepts/concept_work-coordination.md` — Work item and coordination schemas
+- `concepts/concept_decision-observation-tracking.md` — Decision/observation schemas
+- `foundation_transactive-memory.md` — TMS theoretical foundation
+
+---
+
 ## Active Considerations
 
 ### ~~1. Executable Framework Manifestation~~ → COMPLETED

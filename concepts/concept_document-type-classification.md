@@ -23,8 +23,39 @@ Content domain identifies *what* the document is about.
 | VAL | Validation | Test plans, results, verification evidence | Test Plan, Test Results |
 | OPS | Operational | Runbooks, incident records, maintenance logs | Operational Runbook, Post-Mortem |
 | REF | Reference | Conceptual models, explainers, glossaries | Domain Model, Glossary |
+| THY | Theory | Integrated understanding, the "why" that connects | System Theory, Framework Theory |
 | WRK | Working | Transient process artefacts, analysis notes | Interview Notes, Workshop Output, Analysis Notes |
 | HST | Historical | Preserved negative knowledge, rejected alternatives | Discarded Alternative, Superseded Design |
+
+#### THY (Theory) Domain
+
+The THY domain warrants special explanation as it addresses a distinctive need: capturing the integrated understanding that enables coherent system modification.
+
+**Relationship to Naur's Theory-Building**: Naur (1985) argued that software development creates a "theory" in developers' minds—an understanding that cannot be fully documented. THY documents acknowledge this limitation while deliberately attempting to capture what can be captured. Reading a THY document does not transfer theory; it provides a scaffold for rebuilding it.
+
+**What THY documents contain**:
+- The problem understanding that shaped the solution
+- Why the system is structured the way it is (integrated picture, not individual decisions)
+- The mental model that enables modification
+- Key tensions and how they were resolved
+- What would invalidate the current approach
+
+**Distinction from other domains**:
+
+| Domain | Captures | THY Captures |
+|--------|----------|--------------|
+| STR | What was decided | Why the whole hangs together |
+| REF | Structure and terminology | Understanding and rationale |
+| DES | How it works | Why that "how" was chosen |
+| HST | Rejected paths | The coherent picture that emerged |
+
+**Typical characteristics**:
+- Temporal Class: Standing (meant to persist and evolve with the system)
+- Typical Scope: Project or System
+- Update pattern: Evolves as understanding deepens; major revisions at architectural shifts
+- Explicitly imperfect: Acknowledges that full theory cannot be formalised
+
+**Creation guidance**: THY documents are best created by theory-holders reflecting on their understanding. AI can assist with structure and prompting questions, but the integrated understanding comes from human cognition. Partnership pattern is typical.
 
 ### Dimension 2: Temporal Class
 

@@ -478,3 +478,53 @@ outcome: "Retry returns to PA-4; PA-11 can DEFER to approval-queue with HUMAN_AP
 rationale: "Enables non-timeout-able decisions via SUSPENDED state"
 context: "Process Architect v4 simulation"
 tags: ["control-flow", "defer"]
+---
+id: DEC-20260113-180707
+timestamp: "2026-01-13T18:07:07Z"
+type: TACTICAL
+actor: "ai:claude"
+subject: "Graph storage approach"
+outcome: "Start with filesystem + YAML; Kuzu identified for future evolution"
+rationale: "Don't over-engineer; build abstractions that allow evolution without mandating infrastructure now"
+context: "SH-4 investigation"
+tags: ["storage", "architecture", "context-graph"]
+---
+id: DEC-20260113-184313
+timestamp: "2026-01-13T18:43:13Z"
+type: TACTICAL
+actor: "human:pidster"
+subject: "THY content domain"
+outcome: "Add THY (Theory) as first-class artifact type in document classification"
+rationale: "Makes explicit reference to integrated understanding; acknowledges Naur's insight that theory resists formalisation while attempting to capture what can be captured"
+context: "Document type classification extension"
+tags: ["documentation", "theory", "taxonomy"]
+---
+id: DEC-20260114-074545
+timestamp: "2026-01-14T07:45:45Z"
+type: TACTICAL
+actor: "human:pidster"
+subject: "Document structure format"
+outcome: "YAML frontmatter + Markdown body for REF, THY and similar documents"
+rationale: "Machine-parseable metadata for Context Graph operations; flexible prose for content; standard format tools support"
+context: "Document type implementation"
+tags: ["documentation", "structure", "format"]
+---
+id: DEC-20260114-084607
+timestamp: "2026-01-14T08:46:07Z"
+type: OPERATIONAL
+actor: "human:pidster"
+subject: "Phase 1 document form"
+outcome: "Option B: Consolidated Phase 1 artifact with structured frontmatter"
+rationale: "Single document appropriate for research/framework project; provides template for decomposition; balances formality with tacit capture"
+context: "str_phase1-initiation.md created"
+tags: ["phase-1", "document-form", "strategy"]
+---
+id: DEC-20260114-085333
+timestamp: "2026-01-14T08:53:33Z"
+type: TACTICAL
+actor: "human:pidster"
+subject: "Phase 1 completion"
+outcome: "Phase 1 Initiation is sufficiently complete to proceed to Phase 2 Planning"
+rationale: "All four Phase 1 outputs captured in STR-001; OPPORTUNITY_VALIDATED criteria met for self-hosting context; no significant information debt"
+context: "Proceed to Phase 2"
+tags: ["phase-1", "transition", "sdlc"]
