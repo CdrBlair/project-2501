@@ -28,9 +28,10 @@ items:
   # Self-Hosting Items (Phase 3)
   - id: "SH-001"
     title: "Information Reference Schema"
-    status: READY
+    status: COMPLETED
     created: "2026-01-13T10:00:00Z"
-    updated: "2026-01-14T12:00:00Z"
+    updated: "2026-01-14T14:00:00Z"
+    completed: "2026-01-14T14:00:00Z"
     type: SCHEMA
     phase: 3
     priority: HIGH
@@ -43,14 +44,22 @@ items:
     blocked_by: []
     blocks: ["SH-002"]
     notes: |
-      Part of Phase 3 (Requirements Definition Phase) self-hosting work.
-      Per SH-4 decision: design abstractions that don't assume filesystem storage.
+      Completed 14 January 2026.
+      Created schema_information-reference.md (Version 2 - simplified):
+      - Self-describing IDs: pattern determines type (no scheme prefixes needed)
+      - Document patterns: THY-NNN, REF-NNN, STR-NNN, F-N, C-N, O-N, I-N, G-N, E-N
+      - Timestamp patterns: DEC-YYYYMMDD-HHMMSS, OBS-YYYYMMDD-HHMMSS
+      - Work item patterns: SH-NNN, CD-NNN, FW-NNN
+      - Actor patterns: human:<id>, ai:<id>
+      - Version suffix: @vN, Fragment suffix: #section
+      - Relationship types aligned with document frontmatter schema
+      - Resolution deferred to SH-002 (location-agnostic design)
 
   - id: "SH-002"
     title: "Resolution Interface"
-    status: BACKLOG
+    status: READY
     created: "2026-01-13T10:00:00Z"
-    updated: "2026-01-14T12:00:00Z"
+    updated: "2026-01-14T14:00:00Z"
     type: SCHEMA
     phase: 3
     priority: MEDIUM
@@ -59,9 +68,15 @@ items:
       Create filesystem implementation as first concrete implementation.
     objective: "Resolver interface defined; filesystem implementation working"
     rationale: "Enables location-agnostic information access"
-    blocked_by: ["SH-001"]
+    blocked_by: []
     blocks: ["SH-003"]
-    notes: "Blocked by SH-001 (Information Reference Schema)"
+    notes: |
+      Unblocked by SH-001 completion.
+      Should define:
+      - Resolver interface contract
+      - Resolution result types
+      - Error handling
+      - Filesystem resolver implementation
 
   - id: "SH-003"
     title: "Context Graph Schema"
@@ -180,6 +195,28 @@ items:
     notes: "See implementation/theory_thy-003-conceptual-debt.md for full inventory"
 
   # Framework Work Items
+  - id: "FW-002"
+    title: "Revisit Work Item Schema and Persistence"
+    status: BACKLOG
+    created: "2026-01-14T13:00:00Z"
+    updated: "2026-01-14T13:00:00Z"
+    type: SCHEMA
+    priority: LOW
+    description: |
+      Review and refine the work item tracking approach after gaining experience:
+      - Evaluate schema completeness against actual usage patterns
+      - Consider additional fields or simplifications
+      - Assess persistence mechanism (file-based vs alternatives)
+      - Review TodoWrite integration effectiveness
+      - Consider tooling for work item management (list, filter, update commands)
+    objective: "Work item schema and persistence validated or improved based on experience"
+    rationale: "Initial schema was designed speculatively; real usage will reveal improvements"
+    blocked_by: []
+    blocks: []
+    notes: |
+      Added 14 January 2026.
+      Revisit after several sessions of use to identify friction points.
+
   - id: "FW-001"
     title: "Persistent Work Item Tracking"
     status: COMPLETED

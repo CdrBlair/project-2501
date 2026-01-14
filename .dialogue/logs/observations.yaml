@@ -358,3 +358,12 @@ subject: "Work item tracking system"
 value: "Implemented two-tier work tracking: TodoWrite for session-level ephemeral tracking, .dialogue/work-items.yaml for cross-session persistence"
 context: "FW-001 implementation complete; schema-work-items.md created"
 tags: ["framework", "infrastructure", "tracking"]
+---
+id: OBS-20260114-100217
+timestamp: "2026-01-14T10:02:17Z"
+type: STATE
+observer: "ai:claude"
+subject: "SH-001 Information Reference Schema"
+value: "Completed with URI format design: [scheme]:[type]/[id][@version][#fragment]. Supports fw/ext/actor schemes, multiple types, relationships, and Context Graph integration."
+context: "Phase 3 self-hosting work"
+tags: ["schema", "phase-3", "reference"]
