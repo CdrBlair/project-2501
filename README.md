@@ -1,6 +1,6 @@
 # Project 2501
 
-An AI-Augmented Software Development Lifecycle (SDLC) Framework grounded in empirical research and theoretical foundations.
+The Dialogue Framework, an AI-Augmented Software Development Lifecycle (SDLC) framework, grounded in empirical research and theoretical foundations.
 
 ## Overview
 

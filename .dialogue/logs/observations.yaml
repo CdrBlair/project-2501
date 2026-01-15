@@ -367,3 +367,39 @@ subject: "SH-001 Information Reference Schema"
 value: "Completed with URI format design: [scheme]:[type]/[id][@version][#fragment]. Supports fw/ext/actor schemes, multiple types, relationships, and Context Graph integration."
 context: "Phase 3 self-hosting work"
 tags: ["schema", "phase-3", "reference"]
+---
+id: OBS-20260114-165512
+timestamp: "2026-01-14T16:55:12Z"
+type: STATE
+observer: "ai:claude"
+subject: "Actor-concept integration gap identified"
+value: "C-4 defines actor types and characteristics but not functional roles; I-3 establishes conversation-as-TMS but doesn't specify role-TMS mappings; gap exists at operationalisation level"
+context: "During investigation of framework coherence for SH-008/SH-009 planning"
+tags: ["framework", "integration", "gap-analysis"]
+---
+id: OBS-20260115-083436
+timestamp: "2026-01-15T08:34:36Z"
+type: EVENT
+observer: "human:pidster"
+subject: "Orchestrator architecture direction"
+value: "User proposes SDLC project orchestrator actor that handles all human input, delegating to specialised phase/activity agents"
+context: "Following SH-008 completion and insight that actors emerge from configuration"
+tags: ["architecture", "actors", "orchestration"]
+---
+id: OBS-20260115-085039
+timestamp: "2026-01-15T08:50:39Z"
+type: STATE
+observer: "human:pidster"
+subject: "Environment variable documentation gap"
+value: "Skill scripts not using available Claude Code environment variables; registry lacks environment variable reference"
+context: "Observed during FW-009 review"
+tags: ["registry", "documentation", "skills"]
+---
+id: OBS-20260115-091213
+timestamp: "2026-01-15T09:12:13Z"
+type: STATE
+observer: "human:pidster"
+subject: "Bidirectional phase movement"
+value: "Framework should support moving through phases bidirectionally as new information emerges; linear feature vectors cause change-handling debates that we want to avoid; SessionStart must be phase-independent"
+context: "FW-008 thought experiment on plugin delivery model"
+tags: ["architecture", "phases", "orchestration"]

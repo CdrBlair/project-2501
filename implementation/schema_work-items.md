@@ -3,8 +3,14 @@
 **Document Type**: SPC (Specification)
 **Temporal Class**: Standing
 **Scope**: Project
-**Status**: DRAFT
+**Status**: INACTIVE
 **Version**: 1
+
+---
+
+# IMPORTANT!
+
+**This document is superseded by the schema in the Work Items Skill**
 
 ---
 

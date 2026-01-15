@@ -117,6 +117,59 @@ A unified insight emerges: **conversation is the mechanism through which both Na
 
 **Implication**: Practices that encourage rich conversation (pair programming, code review, design discussions) simultaneously build individual theory *and* team TMS. This dual effect explains why such practices show benefits across multiple dimensions.
 
+### Functional Actor Roles in TMS Operations
+
+The "Conversation Builds Both Theory and TMS" insight raises an operationalisation question: *who does what* in these conversations? The [Actor Model](./concept_actor-model.md) defines actor *types* (human vs AI) and [Collaboration Patterns](./concept_collaboration-patterns.md) define *patterns* (Human-Only through AI-Only), but neither specifies the **functional roles** through which actors execute TMS operations.
+
+**Critical distinction**: Functional roles differ from organisational roles (job titles like "Developer" or "Architect"). A functional role describes a *pattern of participation* in dialogue—what operations the role performs, regardless of who fills it. The same person might fill different roles in different conversations, and the same role might be filled by human or AI actors depending on context.
+
+#### Role Definitions
+
+| Role | Description | Primary TMS Operations |
+|------|-------------|------------------------|
+| **Facilitator** | Structures dialogue, prompts articulation, creates space for tacit externalisation | Directory updates (reveals "who knows what"), Encoding (allocates responsibility) |
+| **Synthesiser** | Integrates information from multiple sources, proposes coherent understanding | Encoding (creates shared representations), Coordination (connects distributed knowledge) |
+| **Validator** | Tests understanding, confirms accuracy, identifies gaps or inconsistencies | Retrieval (accesses knowledge for verification), Credibility assessment |
+| **Scribe** | Captures and preserves outputs, externalises decisions and observations | Externalisation (creates persistent TMS artefacts), PRESERVE operations |
+| **Researcher** | Retrieves information from external sources, brings in relevant context | Retrieval from external systems, Directory extension |
+
+#### Role-Actor Suitability
+
+Both human and AI actors can fill these roles, with different strengths:
+
+| Role | Human Strengths | AI Strengths |
+|------|-----------------|--------------|
+| **Facilitator** | Reading social cues, adapting to emotional state, building trust for deep tacit disclosure | Consistent questioning patterns, tireless prompting, structured elicitation |
+| **Synthesiser** | Integrating tacit understanding, recognising novel patterns, making intuitive leaps | Processing large volumes, maintaining consistency, pattern matching across sources |
+| **Validator** | Judging reasonableness, detecting subtle inconsistencies, applying domain intuition | Exhaustive checking, cross-referencing, consistency verification |
+| **Scribe** | Selective capture of what matters, understanding importance hierarchy | Complete capture, consistent formatting, immediate availability |
+| **Researcher** | Knowing where to look, evaluating source quality, recognising relevance | Fast retrieval, broad search, systematic coverage |
+
+**Key insight**: AI can effectively fill the Facilitator role even in tacit-heavy contexts. AI doesn't need to *hold* tacit knowledge to help humans *externalise* it. By asking structured questions, prompting for rationale, and creating space for articulation, an AI Facilitator enables the TMS directory update operation ("I know this because...") without itself possessing the knowledge being externalised.
+
+#### Role-Phase Relevance
+
+Phase information composition (see [Phase-Specific Composition](./integration_phase-specific-composition.md)) predicts which roles are most valuable:
+
+| Phase | Information Composition | High-Value Roles |
+|-------|------------------------|------------------|
+| **Phase 1 (Initiation)** | 75% tacit, 20% emergent | Facilitator (eliciting tacit context), Scribe (capturing while fresh) |
+| **Phase 2 (Planning)** | 55% tacit, 35% formal | Facilitator, Synthesiser (integrating constraints), Scribe |
+| **Phase 3 (Requirements)** | 40% tacit, 50% formal | Synthesiser, Validator (checking understanding), Researcher |
+| **Phases 4-7 (Design→Operations)** | Increasingly formal | Validator, Researcher, Scribe (all roles, shifting emphasis) |
+
+#### Role Combinations in Collaboration Patterns
+
+The five collaboration patterns (Human-Only through AI-Only) can now be specified more precisely:
+
+- **Human-Only**: All roles filled by human actors (e.g., sensitive stakeholder negotiation)
+- **Human-Led**: Human fills Facilitator and Validator; AI may fill Scribe and Researcher
+- **Partnership**: Both actors fill all roles depending on task; explicit handoffs
+- **AI-Led**: AI fills Facilitator, Synthesiser, Researcher; Human fills Validator
+- **AI-Only**: AI fills all roles within defined constraints; escalation to human when uncertain
+
+This role-pattern mapping operationalises how actors participate in TMS operations at the task level, bridging the gap between abstract patterns and concrete dialogue.
+
 ### Pair Programming Effectiveness
 
 **Integration suggests pair programming operates on both dimensions**:
@@ -212,8 +265,6 @@ In human-AI collaboration:
 
 This framing explains *why* logging matters: without externalisation, each AI session starts with zero TMS context—the AI cannot know "who knows what", what was decided, or what was observed. Externalisation enables TMS continuity despite AI's ephemeral context.
 
-See [THY-003: Conversation as Transactive Memory](../implementation/theory_conversation-as-tms.md) for extended analysis of conversation as TMS mechanism and the human-AI asymmetry.
-
 ---
 
 ## Integration with Other Concepts
@@ -226,7 +277,7 @@ See [THY-003: Conversation as Transactive Memory](../implementation/theory_conve
 - [**Phase-Specific Information Composition**](./integration_phase-specific-composition.md): Phase composition predicts both theory-building requirements (tacit-heavy phases require deep engagement) and TMS investment (tacit-heavy phases need robust actor routing).
 - [**Five Collaboration Patterns**](./concept_collaboration-patterns.md): Understanding that pair programming operates on both theory-building and TMS dimensions explains its effectiveness across multiple measures.
 - [**Information Loss at Transitions**](./concept_transitions-info-loss.md): Theory loss and TMS degradation are distinct mechanisms of information loss at transitions—requiring different mitigation strategies.
-- [**Actor Model**](./concept_actor-model.md): Humans build theory and participate in TMS; AI systems may support retrieval but cannot fully substitute for either capability.
+- [**Actor Model**](./concept_actor-model.md): Humans build theory and participate in TMS; AI systems may support retrieval but cannot fully substitute for either capability. The Actor Model defines actor *types* (human vs AI) and *characteristics*; this integration adds functional *roles* (Facilitator, Synthesiser, Validator, Scribe, Researcher) that operationalise how actors execute TMS operations through dialogue.
 - [**Agent Context Model (3S2P)**](./concept_agent-context-model.md): The System dimension enables AI agents to participate in TMS through awareness of other actors and their competencies. The distinction between "meta-theory of participation" (which agents may develop) and "theory of the software" (which remains human) refines the Naur-Wegner integration for AI-augmented contexts.
 
 ---
@@ -236,6 +287,9 @@ See [THY-003: Conversation as Transactive Memory](../implementation/theory_conve
 - ✓ **Complementarity**: Well-supported—frameworks operate at different levels without contradiction
 - ✓ **Dual failure modes**: Logically derived and consistent with observed patterns
 - ✓ **Practice predictions**: Consistent with pair programming and knowledge transfer research
+- ✓ **Conversation as dual mechanism**: Logically derived from Naur and Wegner; consistent with collaboration research
+- ⚠ **Functional actor roles**: Conceptually derived from TMS operations; role definitions need validation against actual dialogue patterns
+- ⚠ **Role-actor suitability**: AI Facilitator effectiveness is hypothesised based on dialogue mechanics; empirical validation needed
 - ⚠ **Direct empirical tests**: Absent—no study operationalises both frameworks together
 - ⚠ **Integration mechanism**: The precise mechanism connecting individual theory to TMS coordination requires further specification
 - ⚠ **AI implications**: Speculative—empirical research needed on AI effects on theory-building and TMS
@@ -259,6 +313,15 @@ The integration of Naur's "Programming as Theory Building" and Wegner's "Transac
 ---
 
 ## Document History
+
+**Version 3.0** (January 2026)
+- Added "Functional Actor Roles in TMS Operations" section
+- Defined five functional roles: Facilitator, Synthesiser, Validator, Scribe, Researcher
+- Added role-TMS operation mapping, role-actor suitability, role-phase relevance
+- Connected roles to collaboration patterns for operationalisation
+- Updated Integration with Other Concepts to reference functional roles
+- Updated Validation Status with role-related items
+- Removed inappropriate reference to THY-003 (theory documents should not be referenced as sources)
 
 **Version 2.0** (December 2025)
 - Migrated from `papers/naur-wegner-integration-research.md` (now archived in `research/`) to `concepts/integration_naur-wegner.md`

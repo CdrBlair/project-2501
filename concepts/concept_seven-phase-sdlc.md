@@ -163,22 +163,122 @@ Events are triggered by **information discoveries**, and the information type in
 
 **Key insight**: Tacit and emergent discoveries often trigger **backward** events (revisiting earlier phases). Formal discoveries can trigger movement in either direction. This explains why early phases—which are tacit-heavy—are more likely to cause later rework when inadequately executed.
 
+### Retrograde Navigation: Backward Events as Valid Process Outcomes
+
+The backward event taxonomy above documents *what* triggers revisitation. This section addresses *how* the framework supports navigating retrograde steps as legitimate process outcomes, not failures to be minimised.
+
+#### Phases as Character, Not Location
+
+A common misinterpretation treats phases as locations in a linear journey—once "in Phase 4", earlier phases are "behind" and returning represents regression. This framing causes problems:
+
+- **Change control friction**: Returning to earlier work requires justification, approval, process overhead
+- **Sunk cost bias**: Investment in later-phase work creates pressure to proceed despite flawed foundations
+- **Context loss**: By the time a retrograde step is acknowledged, the original phase context has decayed
+
+The framework reframes phases as **character** rather than **location**:
+
+| Interpretation | Linear Model | Character Model |
+|----------------|--------------|-----------------|
+| `phase: 1` on a work item | "We are in Phase 1" | "This work has Phase 1 character (tacit-heavy, stakeholder-focused)" |
+| Phase transition | "Done with Phase 1, moving to Phase 2" | "Phase 1 outputs exist; may be revisited based on later learning" |
+| Backward event | Regression requiring justification | Valid process outcome—new information invalidates earlier understanding |
+| Phase completion | "Phase 1 closed" | "Phase 1 outputs are current best understanding" |
+
+**Key insight**: A work item's phase tag describes the *type of work* being done, not where the project "is" in a lifecycle. Multiple phases can have active work simultaneously.
+
+#### Emergent Information and Retrograde Triggers
+
+Emergent information—understanding that arises from doing the work—is the primary trigger for legitimate retrograde steps:
+
+| Discovery Phase | Retrograde Target | Example |
+|-----------------|-------------------|---------|
+| Design (4) | Requirements (3) | "This constraint wasn't in requirements but is essential" |
+| Implementation (5) | Design (4) | "The architecture can't support this data volume" |
+| Testing (6) | Requirements (3) | "The acceptance criteria don't match stakeholder intent" |
+| Deployment (7) | Initiation (1) | "The problem we solved isn't the problem users have" |
+
+These discoveries are **not failures**—they're the natural result of gaining understanding through work. The framework's information composition model *predicts* this: emergent knowledge (10-20% of each phase) cannot be known until work is undertaken.
+
+**The question isn't whether retrograde steps occur, but whether the framework helps navigate them effectively.**
+
+#### Navigation vs Tracing
+
+**Tracing** answers: "What happened? How did we get here?"
+- Decision logs show what was decided and why
+- Observation logs show what was discovered
+- Work item history shows progression
+
+**Navigation** answers: "What should we do now? What's affected?"
+- Which earlier decisions depend on the invalidated understanding?
+- Which later work depends on those decisions?
+- What's the cost of revision vs proceeding at risk?
+
+The framework should support both. Tracing through logging; navigation through:
+
+1. **Ripple identification**: Given new information, what earlier outputs are potentially affected?
+2. **Dependency surfacing**: What later work depends on those outputs?
+3. **Cost visibility**: What's the revision cost vs the cost of proceeding with known gaps?
+4. **Context restoration**: What was understood when the earlier decision was made?
+
+#### Preventing Retrograde Loops
+
+Legitimate concern: If retrograde steps are normalised, progress could stall in endless revisitation.
+
+**Natural constraints:**
+- Each revisitation *should* incorporate new understanding—cycling without learning indicates a deeper problem
+- Later-phase work depends on earlier outputs—revision has real costs that create natural friction
+- Stakeholders expect progress—repeated returns to Initiation will surface alignment problems
+
+**Framework mechanisms:**
+- **Confidence markers**: Decisions can be marked "provisional—revisit if X" vs "committed—revision is expensive"
+- **Ripple cost visibility**: Before revisiting, surface what depends on this output
+- **Convergence tracking**: If the same phase is revisited repeatedly without resolution, that's a signal worth investigating
+
+#### Implications for Tooling and Session Design
+
+Recognising retrograde steps as valid process outcomes has implications for how tooling presents project state:
+
+**Session continuity should be phase-independent:**
+```
+Project: [Name]
+Recent activity:
+- FW-008: Orchestrator research (Phase 1 character)
+- SH-009: Capability flows (Phase 3 character)
+- Recent decisions: [list]
+
+What would you like to work on?
+```
+
+**Not:**
+```
+You are currently in Phase 3. Continue with requirements work?
+```
+
+The session presents what work exists and its character. The human decides what to work on—which might be returning to Phase 1 work based on Phase 5 discoveries.
+
+**Decision context preservation becomes critical:**
+When navigating a retrograde step, the human needs to understand what was known when the earlier decision was made. The `context` field in decision logs serves this purpose—it captures *what we knew when we decided*, enabling intelligent revisitation.
+
 ### Implications of the Event-Driven Model
 
 **For process design:**
 - Define clear **forward event criteria** (when is a phase "done enough" to progress?)
 - Anticipate **backward event triggers** (what discoveries would require revisiting earlier work?)
 - Design **information checkpoints** that surface issues early
+- **Treat retrograde steps as valid outcomes**—design process to navigate them, not prevent them
 
 **For AI augmentation:**
 - AI can **detect potential events** (patterns in data, inconsistencies, quality metrics)
 - AI can **alert humans** to potential triggers before they become blocking
 - Humans **decide responses** to events (forward, backward, investigate further)
+- AI can **surface ripple effects** when backward events are identified
+- AI can **restore context** from decision/observation logs when revisiting earlier work
 
 **For estimation and planning:**
 - Acknowledge that **Planning spans most of the project** and refines iteratively
 - Build in **contingency for backward events**, especially from tacit/emergent discoveries
 - Avoid treating early-phase outputs as fixed inputs to later phases
+- **Budget for retrograde navigation**—it's not rework, it's incorporating learning
 
 ## Key Implications
 
@@ -229,7 +329,26 @@ Research on information types validates the shift from tacit-heavy early phases 
 - ⚠ **Phase overlap model**: Logically derived from methodology independence observation; requires empirical validation of typical span patterns
 - ⚠ **Event taxonomy**: Derived from practitioner experience and failure analysis; specific event categories need validation across organisational contexts
 - ⚠ **Information-event correlation**: Hypothesis that tacit/emergent discoveries trigger backward events more frequently requires systematic study
+- ⚠ **Retrograde navigation**: Conceptually derived from emergent information model; needs validation that navigation support improves outcomes vs tracing alone
+- ⚠ **Phase-as-character framing**: Reframe of linear model; requires practitioner feedback on whether this improves process design
 
 ---
 
 *The Seven-Phase SDLC Model provides the structural foundation enabling all phase-specific reasoning in the framework. The phases represent types of work, not discrete time periods—they overlap, iterate, and respond to information events throughout development. Understanding what work occurs in each phase, how phases interact dynamically, and how information discoveries trigger transitions enables principled decisions about documentation, automation, measurement, and collaboration throughout software development.*
+
+---
+
+## Document History
+
+**Version 2.0** (January 2026)
+- Added "Retrograde Navigation" section addressing backward events as valid process outcomes
+- Introduced "phases as character, not location" framing
+- Added navigation vs tracing distinction
+- Extended implications for tooling and session design
+- Updated Validation Status with retrograde navigation items
+
+**Version 1.0** (November 2025)
+- Initial seven-phase model with methodology independence
+- Phase dynamics: states, events, information flow
+- Information debt concept
+- Event taxonomy (forward and backward events)

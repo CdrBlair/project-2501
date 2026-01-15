@@ -590,3 +590,73 @@ rationale: "Hybrid approach balances consistency goals with practical constraint
 context: "The framework self-hosting effort (SH-005, SH-006) created new artifacts with THY/REF/STR prefixes and document frontmatter. Existing documents in concepts/ lack these conventions. A decision is needed on whether to retrofit existing documents, create only new artifacts going forward, or use a hybrid approach."
 ref: "ADR-002"
 tags: ["self-hosting", "artifacts", "migration"]
+---
+id: DEC-20260114-170215
+timestamp: "2026-01-14T17:02:15Z"
+type: DESIGN
+actor: "ai:claude"
+subject: "Actor-concept integration approach"
+outcome: "Extended I-3 (Naur-Wegner Integration) rather than creating new integration document"
+rationale: "I-3 already establishes conversation as dual mechanism for theory-building and TMS; functional roles operationalise this existing framework rather than requiring new conceptual infrastructure"
+context: "Gap identified: C-4 defines actor types, C-5 defines patterns, but neither defines functional roles. Options: create I-4, extend C-4, or extend I-3. Chose I-3 because conversation-as-TMS is the conceptual foundation for roles."
+tags: ["integration", "actor-roles", "framework"]
+---
+id: DEC-20260114-173830
+timestamp: "2026-01-14T17:38:30Z"
+type: DESIGN
+actor: "ai:claude"
+subject: "Phase 1 draft disposition"
+outcome: "Archive draft; detailed document schemas deferred to future work"
+rationale: "Draft served its purpose: insights absorbed into framework-manual.md and AI config. Detailed document type schemas are speculative and untested—defer formalisation until practical experience validates need."
+context: "Analysed example_phase1-document-type-registry.md for operationalisation per SH-008"
+tags: ["SH-008", "archival"]
+---
+id: DEC-20260115-083023
+timestamp: "2026-01-15T08:30:23Z"
+type: TACTICAL
+actor: "ai:claude"
+subject: "Phase 1 guidance placement"
+outcome: "Removed rules file; guidance stays in framework-manual.md and skills"
+rationale: "Rules path-matching is for file-scoped concerns; phase guidance is work-type-scoped. Skills and framework-manual.md are correct locations."
+context: "Phase-specific guidance needs activation by work context, not file paths"
+tags: ["SH-008", "architecture"]
+---
+id: DEC-20260115-083726
+timestamp: "2026-01-15T08:37:26Z"
+type: TACTICAL
+actor: "human:pidster"
+subject: "FW-008 scope clarification"
+outcome: "Narrow scope to human-user-interface interaction and activity orchestration only"
+rationale: "Avoid premature architectural commitments; actors may still emerge from configuration within phases; orchestration is about routing human input, not replacing emergent actor model"
+context: "User clarified FW-008 intent after initial over-broad capture"
+tags: ["FW-008", "scope"]
+---
+id: DEC-20260115-084309
+timestamp: "2026-01-15T08:43:09Z"
+type: TACTICAL
+actor: "ai:claude"
+subject: "Hooks orchestration assessment"
+outcome: "Hooks insufficient for orchestration; layered approach required"
+rationale: "Hooks run in parallel, stateless, no inter-hook communication—cannot provide routing/state machine"
+context: "FW-009 investigation complete: 10 hook events documented, prompt-based hooks promising for intelligent decisions but not orchestration itself"
+tags: ["architecture", "orchestration", "hooks"]
+---
+id: DEC-20260115-092904
+timestamp: "2026-01-15T09:29:04Z"
+type: TACTICAL
+actor: "human:pidster"
+subject: "Pause FW-008 to extend C-3 with retrograde navigation"
+outcome: "Extend C-3 (Seven-Phase SDLC) with retrograde step concept before continuing orchestrator research"
+rationale: "Emergent information triggering retrograde steps is a process outcome that the framework should enable navigation of, not just trace"
+context: "Insight from FW-008 thought experiment; phases have implied linearity but retrograde steps are valid process outcomes"
+tags: ["architecture", "phases", "process"]
+---
+id: DEC-20260115-093026
+timestamp: "2026-01-15T09:30:26Z"
+type: DESIGN
+actor: "ai:claude"
+subject: "C-3 retrograde navigation extension"
+outcome: "Extended C-3 with retrograde navigation section: phases as character not location, navigation vs tracing, tooling implications"
+rationale: "Backward events are valid process outcomes that framework should help navigate, not just trace; addresses gap where current framing treats retrograde steps negatively"
+context: "User insight OBS-20260115-091213: emergent information triggers retrograde steps as process outcome; linear feature vectors cause change-handling debates"
+tags: ["architecture", "phases", "process"]

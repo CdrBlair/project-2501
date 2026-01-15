@@ -1,6 +1,6 @@
 # AI-Augmented SDLC Framework: AI Manual
 
-**Version**: 1.1
+**Version**: 1.2
 **Purpose**: Compact reference for AI agents implementing and using the framework.
 **Audience**: AI systems (Claude Code agents, custom agents, orchestrators)
 
@@ -726,4 +726,114 @@ For full document classification schema, see [C-8: Document Type Classification]
 
 ---
 
-*AI-Augmented SDLC Framework v1.1*
+## Phase-Specific Guidance: Phase 1 (Initiation)
+
+### Information Composition
+
+| Type | Percentage | Implication |
+|------|------------|-------------|
+| **Tacit** | 75% | Most knowledge exists in stakeholder minds; AI cannot lead |
+| **Emergent** | 20% | Problem framing evolves through exploration |
+| **Formal** | 5% | Very little is formally specifiable |
+
+### Collaboration Pattern Constraints
+
+- **AI cannot lead Phase 1 work** — The tacit knowledge required (strategic context, stakeholder dynamics, organisational politics) is not accessible to AI
+- **Human-Only**: Strategic decisions, stakeholder politics, opportunity framing
+- **Human-Led**: Market research synthesis, financial modelling, document drafting
+
+### Functional Roles
+
+Phase 1 high-value roles (per I-3 Naur-Wegner Integration):
+
+| Role | Value in Phase 1 | Actor Suitability |
+|------|------------------|-------------------|
+| **Facilitator** | High | AI excels — structures dialogue without needing tacit knowledge |
+| **Scribe** | High | AI excels — captures outputs as they occur (critical for capture windows) |
+| **Synthesiser** | Medium | Human-led — integration requires tacit context |
+| **Validator** | Medium | Human-led — validating tacit understanding requires tacit context |
+| **Researcher** | Low | Limited value — most Phase 1 knowledge is internal, not external |
+
+### Scaling: Minimal vs Full Phase 1
+
+Phase 1 scales dramatically based on project context:
+
+**Full Phase 1** (enterprise projects, significant investment, multiple stakeholders):
+- All document types produced
+- Formal governance gates
+- Explicit stakeholder analysis and alignment
+
+**Minimal Phase 1** (small projects, single stakeholder, low risk):
+- Opportunity Statement may be implicit or verbal
+- Stakeholder Analysis may be "obvious" (single requester)
+- Business Case may be a paragraph, not a document
+
+**Key insight**: A one-paragraph business case is still a business case. Process references trace lineage, not mandate ceremony.
+
+### The Straw Man Pattern
+
+In early-stage or exploratory work, Phase 1 documents often begin as placeholders:
+
+| Document | Straw Man Version | Evolution |
+|----------|-------------------|-----------|
+| Stakeholder Analysis | "Stakeholders TBD—starting with requester" | Expanded as scope clarifies |
+| Opportunity Statement | Initial problem framing (likely incomplete) | Reframed as understanding deepens |
+| Business Case | Rough cost/benefit estimate | Refined with actual data |
+| Feasibility | "Assumed feasible—will validate" | Updated with technical assessment |
+
+**Straw man documents are valid** — they make assumptions explicit and trackable.
+
+### Document Types
+
+| Document | Required? | When to Create | Minimal Form |
+|----------|-----------|----------------|--------------|
+| **Opportunity Statement** | Always | Something triggered this work; capture it | Single sentence stating the problem |
+| **Stakeholder Analysis** | Always | At minimum: who requested, who approves | List of names with roles |
+| **Business Case** | Context-dependent | Formal in enterprises; may be verbal in startups | One paragraph with why and rough cost/benefit |
+| **Project Charter** | Context-dependent | When authority must be explicit | Scope + authority statement |
+| **Feasibility Assessment** | Context-dependent | When technical risk is non-trivial | Go/no-go with key risks |
+
+### Capture Window Criticality
+
+75% tacit composition means delayed documentation loses most value:
+
+| Capture Requirement | Rationale |
+|---------------------|-----------|
+| **Real-time note-taking** during interviews/sessions | Tacit context lost immediately |
+| **Same-day synthesis** of exploration activities | Reasoning chains decay rapidly |
+| **Immediate documentation** of "aha moments" | Problem framing insights are highly perishable |
+
+**Critical**: If an insight occurs and isn't captured immediately, it may be lost. Use Scribe role actively.
+
+### Rationale-First Validation
+
+Phase 1 validation emphasises *why* over *what*:
+
+- ✗ Positions without rationale are **incomplete**
+- ✗ Decisions without alternatives considered are **incomplete**
+- ✗ Conclusions without reasoning chains are **incomplete**
+
+**Validation checklist for Phase 1 outputs:**
+```
+□ Problem framing distinguishes problem from solution
+□ Alternatives considered are documented
+□ Rejection rationale is captured (negative knowledge)
+□ Stakeholder positions include their reasoning
+□ Assumptions are explicit, not embedded
+```
+
+### AI Configuration for Phase 1
+
+When operating in Phase 1:
+
+1. **Activate Facilitator role**: Structure dialogue to help humans articulate tacit knowledge
+2. **Activate Scribe role**: Capture decisions and observations in real-time using skills:
+   - `dialogue-log-decision` for choices made
+   - `dialogue-log-observation` for findings
+3. **Use `dialogue-structured-elicit`**: For systematic context gathering
+4. **Do not lead**: Present options with trade-offs; let humans decide
+5. **Probe for rationale**: When humans state conclusions, ask "why?" and "what alternatives did you consider?"
+
+---
+
+*AI-Augmented SDLC Framework v1.2*
