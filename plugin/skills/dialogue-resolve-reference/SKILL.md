@@ -21,12 +21,6 @@ Use this skill when you need to:
 - Creating new references → use appropriate logging/creation skills
 - Framework source references (F-N, C-N, etc.) → see Framework Source References below
 
-## Dependencies
-
-This skill requires:
-- **Git repository** — Script finds project root using git
-- **Framework directory structure** — `.dialogue/`, `decisions/`, and document directories
-
 ## Configuration
 
 Artifact locations are configured in the script. Projects can customise via `.dialogue/resolver-config.yaml` (config parsing TODO).
@@ -42,7 +36,7 @@ Default locations:
 Execute the following bash command:
 
 ```bash
-.claude/skills/dialogue-resolve-reference/scripts/resolve-reference.sh <id> [output_format]
+${CLAUDE_PLUGIN_ROOT}/skills/dialogue-resolve-reference/scripts/resolve-reference.sh <id> [output_format]
 ```
 
 ### Required Parameters
@@ -116,22 +110,22 @@ See FW-005 (Deployment Artifact Definition) for the deployment model that separa
 
 ### Resolve a Theory Document
 ```bash
-.claude/skills/dialogue-resolve-reference/scripts/resolve-reference.sh THY-001
+${CLAUDE_PLUGIN_ROOT}/skills/dialogue-resolve-reference/scripts/resolve-reference.sh THY-001
 ```
 
 ### Get Just the Path to an ADR
 ```bash
-.claude/skills/dialogue-resolve-reference/scripts/resolve-reference.sh ADR-001 path
+${CLAUDE_PLUGIN_ROOT}/skills/dialogue-resolve-reference/scripts/resolve-reference.sh ADR-001 path
 ```
 
 ### Look Up a Decision Log Entry
 ```bash
-.claude/skills/dialogue-resolve-reference/scripts/resolve-reference.sh DEC-20260114-091633
+${CLAUDE_PLUGIN_ROOT}/skills/dialogue-resolve-reference/scripts/resolve-reference.sh DEC-20260114-091633
 ```
 
 ### Get Work Item Metadata
 ```bash
-.claude/skills/dialogue-resolve-reference/scripts/resolve-reference.sh SH-002 metadata
+${CLAUDE_PLUGIN_ROOT}/skills/dialogue-resolve-reference/scripts/resolve-reference.sh SH-002 metadata
 ```
 
 ## Output

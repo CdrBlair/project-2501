@@ -13,6 +13,21 @@ For framework mechanics, schemas, and operational guidance, see:
 - **[THY-001: Framework Theory](../implementation/theory_framework.md)**: Integrated understanding of why concepts connect
 - **[REF-001: Framework Concepts](../implementation/ref_framework-concepts.md)**: Catalogue of all framework concepts
 
+## Session Start: Dialogue Framework Status
+
+At session start, a hook checks the Dialogue Framework initialisation status. Look for a message containing "Dialogue Framework status:" in the session context.
+
+**Required action based on status:**
+
+| Status | Action |
+|--------|--------|
+| NOT INITIALISED | Greet the user and mention that this project uses the Dialogue Framework but hasn't been initialised yet. Offer to help set it up. |
+| PARTIAL | Greet the user and mention that Dialogue Framework setup is incomplete. Offer to complete the configuration. |
+| INITIALISED (with work items) | Greet the user, briefly mention the Dialogue Framework is active, and offer to review current work items or continue with prior work. |
+| INITIALISED (no work items) | No special greeting needed. Proceed normally. |
+
+This is the first thing to address when starting a session (unless the user immediately asks something specific).
+
 ## AI Collaboration Guidelines for Framework Development
 
 This section applies the framework's own concepts to the work of developing the framework. AI assistants working on this project must embody the principles they are helping to document.

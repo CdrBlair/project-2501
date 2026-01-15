@@ -25,14 +25,13 @@ Use this skill when:
 
 This skill requires:
 - **dialogue-log-decision skill** — Used to automatically cross-reference ADRs in the decision log
-- **Git repository** — Script finds project root using git
 
 ## How to Create an ADR
 
 Execute the following bash command:
 
 ```bash
-.claude/skills/dialogue-create-adr/scripts/create-adr.sh <title> <actor> <context> <decision> <alternatives> <consequences> <rationale> [tags]
+${CLAUDE_PLUGIN_ROOT}/skills/dialogue-create-adr/scripts/create-adr.sh <title> <actor> <context> <decision> <alternatives> <consequences> <rationale> [tags]
 ```
 
 ### Required Parameters
@@ -44,7 +43,7 @@ Execute the following bash command:
 | `context` | What issue motivated this decision? |
 | `decision` | What change are we making? |
 | `alternatives` | Alternatives considered with pros/cons |
-| `consequences` | What becomes easier or harder? (use ✅/⚠️ for clarity) |
+| `consequences` | What becomes easier or harder? (use check marks/warnings for clarity) |
 | `rationale` | Why is this the right choice? What evidence supports it? |
 
 ### Optional Parameters
@@ -56,13 +55,13 @@ Execute the following bash command:
 ## Example
 
 ```bash
-.claude/skills/dialogue-create-adr/scripts/create-adr.sh \
+${CLAUDE_PLUGIN_ROOT}/skills/dialogue-create-adr/scripts/create-adr.sh \
   "Use filesystem for initial Context Graph storage" \
   "human:pidster" \
   "Need to store Context Graph data for TMS operations. Must support location-agnostic access and future migration to graph database." \
   "Start with filesystem + YAML storage; design abstractions for future Kuzu migration" \
   "1. Kuzu (embedded graph): Pros - native graph queries, good performance. Cons - additional dependency, learning curve. 2. Neo4j: Pros - mature, well-documented. Cons - server dependency, overkill for current scale. 3. Filesystem + YAML: Pros - simple, no dependencies, human-readable. Cons - no native graph queries, manual relationship traversal." \
-  "✅ Simple implementation, no new dependencies. ✅ Human-readable storage. ⚠️ Manual graph traversal required. ⚠️ Will need migration when scale requires it." \
+  "Positive: Simple implementation, no new dependencies. Positive: Human-readable storage. Trade-off: Manual graph traversal required. Trade-off: Will need migration when scale requires it." \
   "Start simple, evolve when needed. Filesystem provides immediate value without premature optimisation. Resolver abstraction enables future migration." \
   "architecture,storage,context-graph"
 ```
@@ -125,7 +124,6 @@ To change status, edit the ADR file directly. The decision log entry is immutabl
 The script validates:
 - Actor format (must be `human:<id>` or `ai:<id>`)
 - Required parameters (all 7 must be provided)
-- Git repository context (must be run within a git repo)
 
 If the decision log cross-reference fails, a warning is shown but the ADR file is still created.
 

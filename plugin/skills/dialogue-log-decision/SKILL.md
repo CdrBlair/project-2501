@@ -38,7 +38,7 @@ Does this change your approach to the current task?
 Execute the following bash command:
 
 ```bash
-.claude/skills/dialogue-log-decision/scripts/log-decision.sh <type> <actor> <subject> <outcome> <rationale> [context] [tags] [ref]
+${CLAUDE_PLUGIN_ROOT}/skills/dialogue-log-decision/scripts/log-decision.sh <type> <actor> <subject> <outcome> <rationale> [context] [tags] [ref]
 ```
 
 ### Required Parameters
@@ -69,22 +69,22 @@ Execute the following bash command:
 
 ### OPERATIONAL Decision
 ```bash
-.claude/skills/dialogue-log-decision/scripts/log-decision.sh OPERATIONAL "ai:claude" "Test failure response" "Added null check to validateInput()" "TypeError indicated undefined parameter" "" "fix,validation"
+${CLAUDE_PLUGIN_ROOT}/skills/dialogue-log-decision/scripts/log-decision.sh OPERATIONAL "ai:claude" "Test failure response" "Added null check to validateInput()" "TypeError indicated undefined parameter" "" "fix,validation"
 ```
 
 ### TACTICAL Decision
 ```bash
-.claude/skills/dialogue-log-decision/scripts/log-decision.sh TACTICAL "human:pidster" "Refactoring approach" "Refactor auth module before adding feature" "Reduce complexity before extending" "" "refactor,auth"
+${CLAUDE_PLUGIN_ROOT}/skills/dialogue-log-decision/scripts/log-decision.sh TACTICAL "human:pidster" "Refactoring approach" "Refactor auth module before adding feature" "Reduce complexity before extending" "" "refactor,auth"
 ```
 
 ### DESIGN Decision
 ```bash
-.claude/skills/dialogue-log-decision/scripts/log-decision.sh DESIGN "human:pidster" "Information reference schema approach" "Simplified from URI format to self-describing IDs" "Simpler format reduces cognitive load, maintains backward compatibility" "Initial v1 had complex URI format; user directed simplification" "schema,simplification"
+${CLAUDE_PLUGIN_ROOT}/skills/dialogue-log-decision/scripts/log-decision.sh DESIGN "human:pidster" "Information reference schema approach" "Simplified from URI format to self-describing IDs" "Simpler format reduces cognitive load, maintains backward compatibility" "Initial v1 had complex URI format; user directed simplification" "schema,simplification"
 ```
 
 ### ADR Cross-Reference
 ```bash
-.claude/skills/dialogue-log-decision/scripts/log-decision.sh ADR "human:pidster" "Graph storage approach" "Created ADR-001 for filesystem-first strategy" "Architectural decision requiring formal alternatives analysis" "Evaluated Kuzu, Neo4j, filesystem options" "architecture,storage" "ADR-001"
+${CLAUDE_PLUGIN_ROOT}/skills/dialogue-log-decision/scripts/log-decision.sh ADR "human:pidster" "Graph storage approach" "Created ADR-001 for filesystem-first strategy" "Architectural decision requiring formal alternatives analysis" "Evaluated Kuzu, Neo4j, filesystem options" "architecture,storage" "ADR-001"
 ```
 
 ## Output

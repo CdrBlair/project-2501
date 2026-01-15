@@ -146,7 +146,7 @@ Use the **build-only-validate-capability-flow** skill to check constraint compli
 Use the **dialogue-verify-logging-compliance** skill to verify that required logging occurred. Run this check before presenting the specification for human approval:
 
 ```bash
-.claude/skills/dialogue-verify-logging-compliance/scripts/verify-logging.sh "<process-context>" <expected-decisions> <expected-observations>
+${CLAUDE_PLUGIN_ROOT}/skills/dialogue-verify-logging-compliance/scripts/verify-logging.sh "<process-context>" <expected-decisions> <expected-observations>
 ```
 
 Where:

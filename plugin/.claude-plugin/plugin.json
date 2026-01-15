@@ -1,0 +1,9 @@
+{
+  "name": "dialogue-framework",
+  "version": "0.1.0",
+  "description": "Dialogue Framework - an AI-augmented software development lifecycle framework that leverages dialogue, decisions, and observations to enhance project outcomes.",
+  "author": {
+    "name": "pidster"
+  },
+  "keywords": ["sdlc", "framework", "dialogue", "decisions", "observations"]
+}

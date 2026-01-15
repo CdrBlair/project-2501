@@ -1,3 +1,8 @@
+---
+name: dialogue-manage-work-items
+description: Manage persistent work items in .dialogue/work-items.yaml. Provides guidance for direct YAML editing—no scripts required. Triggers on "create work item", "update work item", "manage work items", "track work".
+---
+
 # Skill: Manage Work Items
 
 Manage persistent work items in `.dialogue/work-items.yaml`. This skill provides guidance for direct YAML editing—no scripts required.
@@ -23,7 +28,7 @@ See [schema.md](./schema.md) for the complete work item schema definition.
 
 Work item management is an **editing problem**, not a scripting problem:
 
-1. Read `.dialogue/work-items.yaml`
+1. Read `${CLAUDE_PROJECT_DIR}/.dialogue/work-items.yaml`
 2. Consult [schema.md](./schema.md) for field definitions
 3. Edit using the Edit tool
 4. Validate changes match schema

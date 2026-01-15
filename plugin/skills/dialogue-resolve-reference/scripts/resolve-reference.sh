@@ -6,11 +6,8 @@
 
 set -euo pipefail
 
-# Find project root (git root)
-PROJECT_ROOT="$(git rev-parse --show-toplevel 2>/dev/null)" || {
-    echo '{"status": "ERROR", "error": "Must be run from within a git repository"}' >&2
-    exit 1
-}
+# Use Claude's project directory environment variable
+PROJECT_ROOT="${CLAUDE_PROJECT_DIR:?CLAUDE_PROJECT_DIR must be set}"
 
 # Artifact locations
 # These can be customised per project via .dialogue/resolver-config.yaml

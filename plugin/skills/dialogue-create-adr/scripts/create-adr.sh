@@ -6,14 +6,12 @@
 
 set -euo pipefail
 
-# Find project root (git root)
-PROJECT_ROOT="$(git rev-parse --show-toplevel 2>/dev/null)" || {
-    echo "Error: Must be run from within a git repository" >&2
-    exit 1
-}
+# Use Claude's environment variables for portability
+PROJECT_ROOT="${CLAUDE_PROJECT_DIR:?CLAUDE_PROJECT_DIR must be set}"
+PLUGIN_ROOT="${CLAUDE_PLUGIN_ROOT:?CLAUDE_PLUGIN_ROOT must be set}"
 
 ADR_DIR="${PROJECT_ROOT}/decisions"
-LOG_SCRIPT="${PROJECT_ROOT}/.claude/skills/dialogue-log-decision/scripts/log-decision.sh"
+LOG_SCRIPT="${PLUGIN_ROOT}/skills/dialogue-log-decision/scripts/log-decision.sh"
 
 # Validate required arguments
 if [[ $# -lt 7 ]]; then
