@@ -148,6 +148,18 @@ Designs capability flow specifications for SDLC processes following the AI-Augme
 
 ## Hooks
 
+### PreToolUse: auto-approve-framework
+
+Auto-approves Bash commands that run known-safe framework scripts, eliminating permission prompts for routine operations.
+
+**Approved scripts:**
+- `dialogue-log-decision/scripts/log-decision.sh`
+- `dialogue-log-observation/scripts/log-observation.sh`
+- `dialogue-resolve-reference/scripts/resolve-reference.sh`
+- `dialogue-create-adr/scripts/create-adr.sh`
+
+**Behaviour:** Returns `permissionDecision: "allow"` for approved scripts. Silent for other commands (normal permission flow).
+
 ### SessionStart: check-dialogue-init
 
 Checks if the Dialogue Framework is initialised when a session starts. Reports status to help Claude guide the user.
