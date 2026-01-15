@@ -1,10 +1,10 @@
 #!/bin/bash
-# PreToolUse hook: Auto-approve Dialogue Framework scripts
+# PreToolUse hook: Auto-approve Dialogue Framework skill scripts
 #
-# Checks if a Bash command runs an approved framework script and
-# auto-approves it to avoid permission prompts for routine logging.
+# Checks if a Bash command runs an approved skill script and
+# auto-approves it to avoid permission prompts for routine operations.
 #
-# Design: Only approve known-safe framework scripts. Silent for other commands.
+# Design: Only approve known-safe skill scripts. Silent for other commands.
 
 set -euo pipefail
 
@@ -34,7 +34,7 @@ APPROVED_PATTERNS=(
 for pattern in "${APPROVED_PATTERNS[@]}"; do
     if echo "$COMMAND" | grep -qF "$pattern"; then
         # Auto-approve this command
-        jq -n --arg reason "Auto-approved framework script: $pattern" '{
+        jq -n --arg reason "Auto-approved skill script: $pattern" '{
             "hookSpecificOutput": {
                 "hookEventName": "PreToolUse",
                 "permissionDecision": "allow",

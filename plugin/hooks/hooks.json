@@ -7,7 +7,17 @@
         "hooks": [
           {
             "type": "command",
-            "command": "bash $CLAUDE_PLUGIN_ROOT/hooks/scripts/auto-approve-framework.sh",
+            "command": "bash $CLAUDE_PLUGIN_ROOT/hooks/scripts/auto-approve-skill-scripts.sh",
+            "timeout": 5
+          }
+        ]
+      },
+      {
+        "matcher": "Skill",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "bash $CLAUDE_PLUGIN_ROOT/hooks/scripts/auto-approve-skills.sh",
             "timeout": 5
           }
         ]
