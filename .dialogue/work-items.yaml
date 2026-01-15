@@ -3,7 +3,7 @@
 # Purpose: Persistent cross-session work item tracking
 
 version: "1.0"
-last_updated: "2026-01-14T17:45:00Z"
+last_updated: "2026-01-15T08:40:00Z"
 
 # Work item ID prefix definitions
 prefixes:
@@ -22,6 +22,10 @@ prefixes:
   - prefix: "DOC"
     name: "Documentation"
     description: "Documentation tasks"
+
+  - prefix: "VAL"
+    name: "Validation"
+    description: "Framework validation and empirical grounding work"
 
 # Active work items
 items:
@@ -354,7 +358,7 @@ items:
          - Decisions, observations, work items
 
       Configuration mechanism:
-      - .dialogue/resolver-config.yaml defines artifact locations
+      - .dialogue/config.yaml defines artifact locations
       - Defaults: docs/ for THY/REF/STR, decisions/ for ADR
       - Framework dev override: implementation/ (this project)
       - Config parsing TODO: needs yq or similar
@@ -451,3 +455,647 @@ items:
       - Created .dialogue/work-items.yaml with current work items
       - Updated framework-generation.md with Dialogue Infrastructure section
       - Logged observation OBS-20260114-094825
+
+  # === Phase 1-2 Analysis Work Items (from 14 January 2026 analysis) ===
+
+  # HIGH PRIORITY: Phase 1 Operationalisation
+  - id: "SH-008"
+    title: "Phase 1 Operational Guidance"
+    status: COMPLETED
+    created: "2026-01-14T19:00:00Z"
+    updated: "2026-01-14T17:45:00Z"
+    completed: "2026-01-14T17:45:00Z"
+    type: CAPABILITY
+    phase: 1
+    priority: HIGH
+    description: |
+      Operationalise Phase 1 guidance in framework-manual.md and AI configuration.
+
+      REVISED APPROACH: Examples are not useful outputs. Either they're drafts awaiting
+      promotion, or experiments to be analysed and discarded. Real outputs should be:
+      1. Updates to framework-manual.md (operational reference practitioners use)
+      2. Updates to AI configuration (skills, agents, rules that guide behaviour)
+
+      Tasks:
+      1. Extract insights from draft example_phase1-document-type-registry.md
+      2. Update framework-manual.md with Phase 1 operational guidance:
+         - Document types (what to capture, not ceremony)
+         - Straw man pattern (placeholders are valid)
+         - Scaling guidance (minimal vs full Phase 1)
+         - Collaboration patterns (Human-Only, Human-Led)
+         - Functional roles (Facilitator, Scribe high-value per I-3)
+      3. Create/update skills or agents for Phase 1 behaviour
+      4. Archive or delete example file once insights absorbed
+
+      Key insights to preserve:
+      - 75% tacit composition means AI assists but cannot lead
+      - Straw man documents make assumptions explicit and trackable
+      - Process references trace lineage, not mandate ceremony
+      - Capture windows critical for ephemeral documents
+    objective: "Phase 1 guidance operationalised in framework-manual.md and AI config"
+    rationale: |
+      Examples without consumers are dead documents. The real outputs are:
+      - framework-manual.md updates (where practitioners look)
+      - AI configuration (what actually implements behaviour)
+      Insight from user: "either it is a draft awaiting review, or it is an experiment
+      to be analyzed and accepted/discarded."
+    blocked_by: []
+    blocks: ["SH-009"]
+    notes: |
+      Created 14 January 2026 from Phase 1-2 analysis.
+      REVISED 14 January 2026: Changed from "create exemplar" to "operationalise guidance".
+
+      Completed 14 January 2026:
+      - Analysed capability registry for actor implementation approach
+      - Extracted operational guidance from draft example_phase1-document-type-registry.md
+      - Updated framework-manual.md v1.2 with Phase 1 operational guidance:
+        * Information composition and implications
+        * Collaboration pattern constraints
+        * Functional roles (Facilitator, Scribe high-value)
+        * Scaling guidance (minimal vs full)
+        * Straw man pattern documentation
+        * Capture window criticality
+        * Rationale-first validation checklist
+        * AI configuration guidance
+      - Created .claude/rules/phase1-initiation.md for standing behaviour rules
+      - Extended dialogue-structured-elicit skill with Phase 1-specific elicitation guidance
+      - Archived draft to research/archived/ (DEC-20260114-173830)
+
+      Key insight operationalised: Actors aren't implemented as a separate system—
+      they're emergent from rules, skills, and prompts that activate roles.
+
+  - id: "SH-009"
+    title: "Phase 1 Capability Flow Operationalisation"
+    status: READY
+    created: "2026-01-14T19:00:00Z"
+    updated: "2026-01-14T17:45:00Z"
+    type: CAPABILITY
+    phase: 1
+    priority: HIGH
+    description: |
+      Operationalise Phase 1 capability flows in framework-manual.md and AI configuration.
+
+      REVISED APPROACH: Same principle as SH-008. Outputs should be operational,
+      not example documents.
+
+      Tasks:
+      1. Define Phase 1 processes in framework-manual.md:
+         - PROC-1.1: Opportunity Identification
+         - PROC-1.2: Stakeholder Alignment
+         - PROC-1.3: Problem Framing
+         - PROC-1.4: Business Case Development
+      2. For each process, specify in framework-manual.md:
+         - Capability instances (mostly Elicit, Synthesise, Decide)
+         - Functional roles (Facilitator, Scribe per I-3 FW-007)
+         - Actor patterns (Human-Only, Human-Led)
+         - Escalation triggers
+         - Completion criteria
+      3. Create/update AI configuration:
+         - Skills for Phase 1 elicitation (dialogue-structured-elicit already exists)
+         - Agent behaviour rules for tacit-heavy phases
+         - Hooks or prompts that activate Facilitator/Scribe roles
+
+      Key insight: Phase 1 is heavily Elicit/Synthesise/Decide, not Transform/Generate/Preserve.
+    objective: "Phase 1 capability flows operationalised in framework-manual.md and AI config"
+    rationale: |
+      Companion to SH-008. Capability flows operationalise how work happens;
+      the output should be guidance practitioners use and AI configuration that
+      implements the behaviour, not an example document.
+    blocked_by: ["SH-008"]
+    blocks: ["SH-010"]
+    notes: |
+      Created 14 January 2026 from Phase 1-2 analysis.
+      REVISED 14 January 2026: Changed from "create exemplar" to "operationalise flows".
+      FW-007 completed: functional roles now defined in I-3.
+
+  - id: "SH-010"
+    title: "Phase 2 Operational Guidance"
+    status: BACKLOG
+    created: "2026-01-14T19:00:00Z"
+    updated: "2026-01-14T18:00:00Z"
+    type: CAPABILITY
+    phase: 2
+    priority: HIGH
+    description: |
+      Operationalise Phase 2 guidance in framework-manual.md and AI configuration.
+
+      REVISED APPROACH: Same principle as SH-008/SH-009.
+
+      Tasks:
+      1. Update framework-manual.md with Phase 2 operational guidance:
+         - Document types (project plan, risk register, resource allocation, governance)
+         - Information composition (55% tacit, 10% emergent, 35% formal)
+         - Planning spans most of project lifecycle and refines iteratively
+         - Collaboration patterns shift as planning becomes more formal
+      2. Create/update AI configuration for Phase 2 behaviour
+
+      Note: Planning is unique—it bridges Initiation's tacit-heavy work to
+      Analysis's balanced work, and spans most of project lifecycle.
+    objective: "Phase 2 guidance operationalised in framework-manual.md and AI config"
+    rationale: |
+      Completes Phase 1-2 operational guidance.
+      Planning is interesting because patterns shift over time within the phase.
+    blocked_by: ["SH-008"]
+    blocks: ["SH-011"]
+    notes: |
+      Created 14 January 2026 from Phase 1-2 analysis.
+      REVISED 14 January 2026: Changed from "create exemplar" to "operationalise guidance".
+
+  - id: "SH-011"
+    title: "Phase 2 Capability Flow Operationalisation"
+    status: BACKLOG
+    created: "2026-01-14T19:00:00Z"
+    updated: "2026-01-14T18:00:00Z"
+    type: CAPABILITY
+    phase: 2
+    priority: HIGH
+    description: |
+      Operationalise Phase 2 capability flows in framework-manual.md and AI configuration.
+
+      REVISED APPROACH: Same principle as SH-008/SH-009.
+
+      Tasks:
+      1. Define Phase 2 processes in framework-manual.md:
+         - PROC-2.1: Resource Planning
+         - PROC-2.2: Risk Assessment
+         - PROC-2.3: Schedule Development
+         - PROC-2.4: Governance Structure
+
+      2. For each process, specify capability instances, functional roles, patterns
+      3. Create/update AI configuration for Phase 2 capability flows
+
+      Key insight from C-3: Planning spans most of project and refines iteratively.
+      Capability flows should show:
+      - Initial Planning (higher uncertainty, more Elicit/Synthesise)
+      - Refinement cycles (as Requirements/Design provide detail)
+      - Pattern shifts as planning becomes more formal over time
+    objective: "Phase 2 capability flows operationalised in framework-manual.md and AI config"
+    rationale: |
+      Companion to SH-010. Planning is unique in spanning multiple phases;
+      operationalised guidance must show how patterns shift over time.
+    blocked_by: ["SH-009", "SH-010"]
+    blocks: []
+    notes: |
+      Created 14 January 2026 from Phase 1-2 analysis.
+      REVISED 14 January 2026: Changed from "create exemplar" to "operationalise flows".
+      Most complex due to Planning's temporal span.
+
+  # HIGH PRIORITY: Measurement Gap
+  - id: "CD-002"
+    title: "Phase 1-2 Measurement Operationalisation"
+    status: READY
+    created: "2026-01-14T19:00:00Z"
+    updated: "2026-01-14T19:00:00Z"
+    type: DEBT
+    priority: HIGH
+    description: |
+      Address measurement gap for tacit-heavy phases identified in analysis.
+
+      C-7 (Phase-Aware Measurement) states early phases require qualitative assessment
+      of "stakeholder alignment", "shared understanding", "problem framing adequacy"
+      but provides no operationalisation.
+
+      Tasks:
+      1. Review Ryan & O'Connor's Team Tacit Knowledge Measure for Phase 1-2 applicability
+      2. Identify or develop indicators for stakeholder alignment
+      3. Create checklist for problem framing adequacy assessment
+      4. Link measurement approaches to existing evidence base (Meyer good days, Obi bad days)
+      5. Update C-7 with operationalised guidance or acknowledge gap explicitly
+
+      Later phases have DORA, SPACE, DevEx. Early phases need equivalent.
+    objective: "C-7 updated with operationalised Phase 1-2 measurement or explicit gap acknowledgement"
+    rationale: |
+      Framework claims Phase 1-2 are most critical but provides least measurement
+      guidance. This undermines practical application and creates internal inconsistency.
+    blocked_by: []
+    blocks: []
+    notes: |
+      Created 14 January 2026 from Phase 1-2 analysis.
+      May result in "gap remains open" if no valid instruments exist,
+      but that should be explicit rather than implicit.
+
+  # HIGH PRIORITY: Transition Mitigation Gap
+  - id: "CD-003"
+    title: "Phase 1-2 Transition Mitigation Strategies"
+    status: READY
+    created: "2026-01-14T19:00:00Z"
+    updated: "2026-01-14T19:00:00Z"
+    type: DEBT
+    priority: HIGH
+    description: |
+      Address transition mitigation gap for early phases.
+
+      C-6 (Transitions & Information Loss) quantifies 35-45% loss at Initiation→Planning,
+      40-50% at Planning→Analysis, but doesn't provide phase-specific mitigation strategies.
+
+      Later phases have ADRs (Design→Implementation) mentioned. Early phases need equivalent.
+
+      Tasks:
+      1. Identify what specific tacit knowledge is lost at Initiation→Planning
+      2. Research or develop mitigation practices for early-phase transitions
+      3. Consider: stakeholder continuity, rationale capture, decision logging, context preservation
+      4. Update C-6 with phase-specific mitigation guidance
+      5. Cross-reference with dialogue skills (log-decision, log-observation) as mitigation tools
+
+      Framework's own concepts predict early-phase mitigation has highest value
+      because tacit loss is greatest there.
+    objective: "C-6 updated with Phase 1-2 transition mitigation strategies"
+    rationale: |
+      Highest-value mitigation opportunities are in early phases where tacit loss
+      is greatest, yet guidance focuses on later phases. This is backwards per
+      framework's own information composition model.
+    blocked_by: []
+    blocks: []
+    notes: |
+      Created 14 January 2026 from Phase 1-2 analysis.
+      May connect to dialogue skills as concrete mitigation implementations.
+
+  # MEDIUM PRIORITY: Grey Areas
+  - id: "VAL-001"
+    title: "Emergent Knowledge Percentage Validation"
+    status: BACKLOG
+    created: "2026-01-14T19:00:00Z"
+    updated: "2026-01-14T19:00:00Z"
+    type: RESEARCH
+    priority: MEDIUM
+    description: |
+      Investigate the emergent knowledge percentage claims in I-2 (Phase Composition).
+
+      Current claims:
+      - Phase 1: 20% emergent (highest)
+      - All other phases: 10% emergent (constant)
+
+      Questions to explore:
+      1. Is emergent knowledge actually higher in Phase 1, or just more *recognised*?
+      2. Is the 10% constant across phases empirically grounded or placeholder?
+      3. Is "emergent" distinct enough from "tacit" to warrant separate tracking?
+      4. What are implications if emergent percentages are significantly different?
+
+      Outcome: Either validate current percentages with reasoning, revise them,
+      or explicitly mark as speculative placeholders.
+    objective: "I-2 emergent percentages validated, revised, or explicitly marked as uncertain"
+    rationale: |
+      Grey area identified in analysis. Framework presents percentages with more
+      confidence than evidence warrants. Appropriate epistemic marking needed.
+    blocked_by: []
+    blocks: []
+    notes: |
+      Created 14 January 2026 from Phase 1-2 analysis.
+      Lower priority than exemplars but matters for framework credibility.
+
+  - id: "VAL-002"
+    title: "TMS-Tacit Scaling Relationship Validation"
+    status: BACKLOG
+    created: "2026-01-14T19:00:00Z"
+    updated: "2026-01-14T19:00:00Z"
+    type: RESEARCH
+    priority: MEDIUM
+    description: |
+      Investigate the TMS requirements scaling claim in I-2.
+
+      Current claim: "Phases with higher tacit composition require more robust
+      actor-routing mechanisms (TMS infrastructure)"
+
+      This is logically derived but empirically untested. Tasks:
+      1. Review TMS literature for phase-specific evidence
+      2. Check if Ryan & O'Connor's measure shows phase correlation
+      3. Consider what validation would look like (comparative TMS effectiveness studies)
+      4. Either find supporting evidence, acknowledge as hypothesis, or revise
+
+      Marked ⚠ in I-2 validation status; need to either resolve or make uncertainty explicit.
+    objective: "I-2 TMS scaling claim validated with evidence or marked as hypothesis"
+    rationale: |
+      Framework presents logical derivation as if validated. Need to distinguish
+      "logically coherent" from "empirically supported" for practitioner trust.
+    blocked_by: []
+    blocks: []
+    notes: |
+      Created 14 January 2026 from Phase 1-2 analysis.
+
+  - id: "VAL-003"
+    title: "Collaboration Pattern Boundary Operationalisation"
+    status: BACKLOG
+    created: "2026-01-14T19:00:00Z"
+    updated: "2026-01-14T19:00:00Z"
+    type: RESEARCH
+    priority: MEDIUM
+    description: |
+      Address collaboration pattern boundary operationalisation gap.
+
+      C-5 defines five patterns but extreme boundaries are vague:
+      - Human-Only: "AI cannot contribute value" — what criteria determine this?
+      - AI-Only: "Human review adds no value" — when is this actually true?
+
+      Middle boundaries (Human-Led ↔ Partnership ↔ AI-Led) are clearer.
+
+      Tasks:
+      1. Develop operational criteria or decision trees for boundary determination
+      2. Consider: information type, risk level, accountability requirements
+      3. Cross-reference with capability model (which capabilities ever qualify for AI-Only?)
+      4. Update C-5 with sharper boundary definitions or acknowledge irreducible ambiguity
+    objective: "C-5 pattern boundaries operationalised or irreducible ambiguity acknowledged"
+    rationale: |
+      Practitioners need to know which pattern to use. Vague boundaries
+      undermine the practical value of the pattern taxonomy.
+    blocked_by: []
+    blocks: []
+    notes: |
+      Created 14 January 2026 from Phase 1-2 analysis.
+
+  - id: "FW-007"
+    title: "Actor Roles in TMS Operations"
+    status: COMPLETED
+    created: "2026-01-14T17:00:00Z"
+    updated: "2026-01-14T17:30:00Z"
+    completed: "2026-01-14T17:30:00Z"
+    type: CAPABILITY
+    priority: HIGH
+    description: |
+      Extend I-3 (Naur-Wegner Integration) with functional actor roles section.
+
+      Gap identified: C-4 defines actor *types* (Human vs AI) and C-5 defines
+      collaboration *patterns*, but neither defines functional *roles* that
+      operationalise how actors perform TMS operations through dialogue.
+
+      Functional roles to define:
+      - Facilitator: Structures dialogue, prompts articulation (directory updates, encoding)
+      - Synthesiser: Integrates information, proposes understanding (encoding, coordination)
+      - Validator: Tests understanding, confirms accuracy (retrieval, credibility)
+      - Scribe: Captures and preserves outputs (externalisation, PRESERVE)
+      - Researcher: Retrieves external information (retrieval from external sources)
+
+      Key insight: Roles are independent of actor type. Both humans and AI can fill
+      them with different strengths. AI doesn't need to hold tacit knowledge to help
+      humans externalise it (Facilitator role).
+
+      Extension should add to I-3:
+      - Functional role definitions (distinct from organisational roles per C-4)
+      - Role-TMS operation mapping
+      - Actor-role suitability guidance
+      - Phase-role relevance
+
+      NOTE: Remove existing reference to THY-003 from I-3 - relationship flows wrong way.
+    objective: "I-3 extended with functional actor roles that operationalise TMS participation"
+    rationale: |
+      SH-009 (Phase 1 Capability Flows) needs to specify *which roles* perform each step,
+      not just "Human" or "AI". This fills the operationalisation gap between actor types
+      and collaboration patterns.
+    blocked_by: []
+    blocks: ["SH-009"]
+    notes: |
+      Created 14 January 2026 from actor-concept integration investigation.
+      Logged as OBS-20260114-165512.
+
+      Completed 14 January 2026:
+      - Extended I-3 (integration_naur-wegner.md) with "Functional Actor Roles in TMS Operations" section
+      - Defined five roles: Facilitator, Synthesiser, Validator, Scribe, Researcher
+      - Added role-TMS operation mapping table
+      - Added role-actor suitability table (human vs AI strengths)
+      - Added role-phase relevance table
+      - Connected roles to collaboration patterns for operationalisation
+      - Removed inappropriate THY-003 reference (theory docs shouldn't be referenced as sources)
+      - Updated Integration with Other Concepts section
+      - Updated Validation Status with role-related items
+      - Document history updated to Version 3.0
+
+  - id: "CD-004"
+    title: "AI Context Window Evolution Modelling"
+    status: BACKLOG
+    created: "2026-01-14T19:00:00Z"
+    updated: "2026-01-14T19:00:00Z"
+    type: DEBT
+    priority: LOW
+    description: |
+      Address unmodelled AI capability evolution in THY-003 and F-2.
+
+      Current position: Human-AI TMS asymmetry exists because "AI context is ephemeral"
+      and bounded by session/context window.
+
+      Unaddressed: What happens as context windows expand (4K → 200K+ and growing)?
+      Does this change the asymmetry analysis? When does it become qualitatively different?
+
+      Tasks:
+      1. Model how asymmetry changes with context window size
+      2. Identify thresholds where qualitative shifts might occur
+      3. Maintain temporal qualification (as of 2024-2025) while acknowledging trajectory
+      4. Update F-2 or THY-003 with evolution considerations
+
+      Framework temporally qualifies AI claims but doesn't model evolution trajectory.
+    objective: "F-2/THY-003 updated with AI context evolution considerations"
+    rationale: |
+      Framework risks becoming dated if it doesn't acknowledge AI capability trajectories.
+      Not about predicting the future but acknowledging known directions of change.
+    blocked_by: []
+    blocks: []
+    notes: |
+      Created 14 January 2026 from Phase 1-2 analysis.
+      Lower priority; current framing is defensible for now.
+
+  # === Architecture Work Items ===
+
+  - id: "FW-008"
+    title: "SDLC Project Orchestrator Research"
+    status: READY
+    created: "2026-01-15T08:35:00Z"
+    updated: "2026-01-15T08:38:00Z"
+    type: RESEARCH
+    priority: HIGH
+    description: |
+      Research an SDLC project orchestrator for human-user-interface interaction
+      and activity orchestration.
+
+      **Scope (narrowed per DEC-20260115-083726)**:
+      - How should human input be routed to appropriate framework activities?
+      - How should the orchestrator delegate to specialised agents?
+      - This is about the user-interface layer, NOT about how actors work within phases
+
+      **Explicitly out of scope**:
+      - Replacing the "actors emerge from configuration" model (SH-008)
+      - Defining how actors operate within phases
+      - Making architectural commitments at this stage
+
+      **Open questions for research**:
+      1. What is the orchestrator's responsibility boundary?
+         - Route human input to appropriate phase/activity?
+         - Maintain awareness of project state and context?
+
+      2. How do specialised agents relate to the orchestrator?
+         - Task tool spawning?
+         - What context do they need?
+
+      3. How does this layer interact with the emergent actor model?
+         - Orchestrator routes; actors within phases still emerge from configuration?
+         - Two-layer model: orchestration layer + execution layer?
+
+      **Key constraint**: No final assertions. This is exploratory research.
+
+    objective: "Research orchestrator pattern for human-AI interaction layer"
+    rationale: |
+      The framework needs a way to handle human input and route it appropriately.
+      This is distinct from how actors operate within phases (which may still
+      emerge from configuration per SH-008 insight).
+    blocked_by: []
+    blocks: []
+    notes: |
+      Created 15 January 2026 from user observation OBS-20260115-083436.
+      Scope narrowed per DEC-20260115-083726: focus on UI/orchestration layer only.
+
+      Key user guidance: "actors may also emerge from configuration, orchestrating
+      framework interactions is different to operating within the framework"
+
+      This is research, not design commitment.
+
+      === Sub-task Completed: FW-009 (Hooks Investigation) ===
+      Key findings (DEC-20260115-084309):
+      - Hooks are guards/lifecycle handlers, NOT orchestration primitives
+      - All matching hooks run in PARALLEL (no sequential workflow)
+      - Recommended pattern: Hooks for validation/enforcement, Subagents for delegation,
+        Skills/commands for workflow, Claude's reasoning for routing
+
+      === Thought Experiment: Plugin Delivery Model (15 January 2026) ===
+      Explored Claude Code Plugin as framework delivery mechanism.
+
+      Hook events mapped to framework purposes:
+      - SessionStart: Restore TMS context (retrieval operation)
+      - SessionEnd: Create session memo (externalisation operation)
+      - PreToolUse: Phase constraint validation?
+      - PostToolUse: Auto-capture significant actions as observations?
+      - Stop: Intelligent continuation decisions
+      - UserPromptSubmit: Context injection based on detected intent
+
+      Session Continuity Pattern (SessionStart + SessionEnd):
+      - SessionEnd creates structured memo: active work items, recent decisions/observations,
+        phase context, open questions
+      - SessionStart reads memo, presents project state (phase-independent per C-3 v2.0)
+      - Addresses ephemeral context problem through TMS externalisation/retrieval
+
+      Key insight (OBS-20260115-091213, DEC-20260115-092904):
+      - Phases have implied linearity but retrograde steps are valid process outcomes
+      - SessionStart must be phase-independent (C-3 v2.0 retrograde navigation)
+      - Framework should help NAVIGATE retrograde steps, not just trace them
+
+      Decomposition insight:
+      - Orchestration (routing human input) → Claude's reasoning + CLAUDE.md + skills
+      - Session continuity (TMS persistence) → Hook-based automation (SessionStart/SessionEnd)
+      - Guardrails (phase constraints) → Hook-based validation (PreToolUse, Stop)
+      - Capture (preserving what happens) → Hook-based or manual (PostToolUse, skills)
+
+      The "orchestrator agent" may be less necessary if hooks handle continuity
+      and Claude's reasoning handles routing based on good context injection.
+
+      Open questions remaining:
+      1. Session memo format and location (.dialogue/session-memo.yaml?)
+      2. Prompt-based vs shell hooks for each purpose
+      3. How to present phase-independent project state effectively
+      4. Integration with work item state
+
+  - id: "FW-009"
+    title: "Claude Code Hooks Investigation"
+    status: COMPLETED
+    created: "2026-01-15T08:40:00Z"
+    updated: "2026-01-15T09:15:00Z"
+    completed: "2026-01-15T09:15:00Z"
+    type: RESEARCH
+    priority: HIGH
+    parent: "FW-008"
+    description: |
+      Investigate Claude Code hooks: how they work, what functionality is available,
+      and how they might support orchestration patterns.
+
+      Questions to answer:
+      1. What hook events are available? (PreToolUse, PostToolUse, SessionStart, etc.)
+      2. What can hooks do? (block, modify, inject context, trigger actions?)
+      3. How are hooks implemented? (shell scripts, prompt-based, other?)
+      4. What information is available to hooks? (tool name, parameters, context?)
+      5. Can hooks communicate with each other or maintain state?
+      6. What are the limitations and constraints?
+
+      Relevance to FW-008:
+      - Could hooks provide orchestration without explicit orchestrator agent?
+      - SessionStart hook for context injection?
+      - PreToolUse for routing decisions?
+      - PostToolUse for logging/capture?
+
+    objective: "Document hooks capabilities and assess orchestration applicability"
+    rationale: |
+      Hooks may provide a lighter-weight orchestration mechanism than explicit
+      multi-agent architecture. Need to understand capabilities before choosing approach.
+    blocked_by: []
+    blocks: []
+    notes: |
+      Created 15 January 2026 as sub-task of FW-008.
+
+      Registry mentions these hook events:
+      - PreToolUse, PostToolUse
+      - Stop, SubagentStop
+      - SessionStart, SessionEnd
+      - UserPromptSubmit
+      - PreCompact
+      - Notification
+
+      Implementation types: "Shell script or prompt-based"
+
+      === Investigation Complete 15 January 2026 ===
+
+      Key findings:
+      1. 10 hook events available (PreToolUse, PostToolUse, Stop, SubagentStop,
+         SessionStart, SessionEnd, UserPromptSubmit, PreCompact, Notification,
+         PermissionRequest)
+
+      2. Hooks are NOT an orchestration framework:
+         - All matching hooks run in PARALLEL, not sequentially
+         - No inter-hook communication
+         - No state machine or workflow management
+         - Stateless by default (state requires disk persistence)
+
+      3. Two implementation types:
+         - Shell scripts: Fast, simple validation
+         - Prompt-based (Haiku LLM): Smarter context-aware decisions
+
+      4. Most promising for orchestration:
+         - Stop hook (prompt-based): Can intelligently decide phase completion
+         - UserPromptSubmit: Can inject context, validate prompts
+         - SessionStart: Context injection, environment setup
+
+      5. Recommended pattern (from docs):
+         "Hooks for validation/enforcement, Subagents for task delegation,
+         Skills/commands for workflow definition"
+
+      Assessment: Hooks alone cannot provide orchestration. Layered approach needed:
+      - Hooks for guardrails and capture
+      - Prompt-based Stop hook for intelligent continuation decisions
+      - Subagents (Task tool) for phase-specific work
+      - Claude's reasoning for actual routing decisions
+
+  - id: "FW-010"
+    title: "Environment Registry Improvements"
+    status: READY
+    created: "2026-01-15T09:50:00Z"
+    updated: "2026-01-15T09:50:00Z"
+    type: DOCUMENTATION
+    priority: MEDIUM
+    description: |
+      Improve registry_claude-code.yaml with:
+
+      1. Environment variables reference:
+         - Document available environment variables (CLAUDE_PLUGIN_ROOT, etc.)
+         - Note which variables are available in which contexts (hooks, skills, scripts)
+         - Skill scripts should use these instead of hardcoded paths
+
+      2. Path-filtering configuration clarity:
+         - Improve description of how rules path-matching works
+         - Clarify relationship between globs patterns and rule activation
+         - Document when to use rules vs skills vs manual guidance
+
+      Gap identified: Skill scripts currently don't use available environment variables,
+      and registry doesn't document them clearly.
+    objective: "Registry documents environment variables and clarifies path-filtering config"
+    rationale: |
+      Environment variables enable portable, context-aware scripts.
+      Current scripts hardcode paths that may not work in all contexts.
+      OBS-20260115-085039 records the gap.
+    blocked_by: []
+    blocks: []
+    notes: |
+      Created 15 January 2026 from user observation during FW-009 review.
+      See OBS-20260115-085039.

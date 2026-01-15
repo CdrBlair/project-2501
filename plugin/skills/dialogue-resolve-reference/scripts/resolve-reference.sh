@@ -10,7 +10,7 @@ set -euo pipefail
 PROJECT_ROOT="${CLAUDE_PROJECT_DIR:?CLAUDE_PROJECT_DIR must be set}"
 
 # Artifact locations
-# These can be customised per project via .dialogue/resolver-config.yaml
+# These can be customised per project via .dialogue/config.yaml
 # TODO: Implement config file parsing when yq/similar available
 #
 # Current settings are for this project (framework development).

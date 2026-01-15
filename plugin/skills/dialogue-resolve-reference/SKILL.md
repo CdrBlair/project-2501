@@ -23,7 +23,7 @@ Use this skill when you need to:
 
 ## Configuration
 
-Artifact locations are configured in the script. Projects can customise via `.dialogue/resolver-config.yaml` (config parsing TODO).
+Artifact locations are configured in the script. Projects can customise via `.dialogue/config.yaml` (config parsing TODO).
 
 Default locations:
 - THY/REF/STR documents: `implementation/` (framework dev) or `docs/` (typical deployments)

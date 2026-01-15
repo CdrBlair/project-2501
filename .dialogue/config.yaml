@@ -1,0 +1,50 @@
+version: "0.1"
+
+# Deployed projects would typically use docs/ instead of implementation/.
+# See schema_deployment-model.md for deployment scenarios.
+
+# Default project document locations
+# artifacts:
+#   theory:
+#     directory: "file://${CLAUDE_PROJECT_DIR}/docs/theory/"
+#     pattern: "theory_*.md"
+
+#   reference:
+#     directory: "file://${CLAUDE_PROJECT_DIR}/docs/references/"
+#     pattern: "ref_*.md"
+
+#   strategy:
+#     directory: "file://${CLAUDE_PROJECT_DIR}/docs/strategy/"
+#     pattern: "str_*.md"
+
+#   adr:
+#     directory: "file://${CLAUDE_PROJECT_DIR}/docs/decisions/"
+#     pattern: "ADR-*.md"
+
+
+# Project document locations
+artifacts:
+  theory:
+    directory: "file://${CLAUDE_PROJECT_DIR}/implementation"    # Framework dev uses implementation/
+    pattern: "theory_*.md"
+
+  reference:
+    directory: "file://${CLAUDE_PROJECT_DIR}/implementation"
+    pattern: "ref_*.md"
+
+  strategy:
+    directory: "file://${CLAUDE_PROJECT_DIR}/implementation"
+    pattern: "str_*.md"
+
+  adr:
+    directory: "file://${CLAUDE_PROJECT_DIR}/decisions"
+    pattern: "ADR-*.md"
+
+
+# Log locations
+logs:
+  decisions: "file://${CLAUDE_PROJECT_DIR}/.dialogue/logs/decisions.yaml"
+  observations: "file://${CLAUDE_PROJECT_DIR}/.dialogue/logs/observations.yaml"
+
+# Work items
+work_items: "file://${CLAUDE_PROJECT_DIR}/.dialogue/work-items.yaml"

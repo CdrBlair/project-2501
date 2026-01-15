@@ -84,7 +84,7 @@ Tooling and infrastructure that projects copy/install to use the framework.
 ├── scripts/
 │   ├── log-decision.sh
 │   └── log-observation.sh
-├── resolver-config.yaml (template)
+├── config.yaml (template)
 ├── work-items.yaml (empty template)
 └── README.md
 
@@ -119,7 +119,7 @@ Content created by projects using the framework.
 
 ### Resolver Configuration File
 
-Projects configure artifact locations via `.dialogue/resolver-config.yaml`:
+Projects configure artifact locations via `.dialogue/config.yaml`:
 
 ```yaml
 # Resolver Configuration
@@ -196,7 +196,7 @@ artifacts:
 
 1. Copy deployment artifacts (Tier 2) to project
 2. Customise `.claude/CLAUDE.md` for project
-3. Create `.dialogue/resolver-config.yaml` (or use defaults)
+3. Create `.dialogue/config.yaml` (or use defaults)
 4. Begin creating project artifacts (Tier 3)
 
 **Framework source access**: Via web documentation or separate clone.
@@ -277,7 +277,7 @@ Valid resolver configuration must:
 
 Projects already using the framework can adopt configuration:
 
-1. Create `.dialogue/resolver-config.yaml`
+1. Create `.dialogue/config.yaml`
 2. Set paths to match current document locations
 3. No document moves required
 
