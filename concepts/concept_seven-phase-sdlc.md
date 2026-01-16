@@ -179,12 +179,12 @@ The framework reframes phases as **character** rather than **location**:
 
 | Interpretation | Linear Model | Character Model |
 |----------------|--------------|-----------------|
-| `phase: 1` on a work item | "We are in Phase 1" | "This work has Phase 1 character (tacit-heavy, stakeholder-focused)" |
+| `phase: 1` on a task | "We are in Phase 1" | "This work has Phase 1 character (tacit-heavy, stakeholder-focused)" |
 | Phase transition | "Done with Phase 1, moving to Phase 2" | "Phase 1 outputs exist; may be revisited based on later learning" |
 | Backward event | Regression requiring justification | Valid process outcome—new information invalidates earlier understanding |
 | Phase completion | "Phase 1 closed" | "Phase 1 outputs are current best understanding" |
 
-**Key insight**: A work item's phase tag describes the *type of work* being done, not where the project "is" in a lifecycle. Multiple phases can have active work simultaneously.
+**Key insight**: A task's phase tag describes the *type of work* being done, not where the project "is" in a lifecycle. Multiple phases can have active work simultaneously.
 
 #### Emergent Information and Retrograde Triggers
 
@@ -206,7 +206,7 @@ These discoveries are **not failures**—they're the natural result of gaining u
 **Tracing** answers: "What happened? How did we get here?"
 - Decision logs show what was decided and why
 - Observation logs show what was discovered
-- Work item history shows progression
+- task history shows progression
 
 **Navigation** answers: "What should we do now? What's affected?"
 - Which earlier decisions depend on the invalidated understanding?

@@ -143,7 +143,7 @@ Documents can be further classified by their temporal characteristics and organi
 |-------|---------------|----------|
 | **Organisational** | Enterprise-wide; conditions decisions across projects | Reference architectures, coding standards, security policies |
 | **Project** | Single initiative; tracks project-specific understanding | Solution designs, project plans, requirements specifications |
-| **Task** | Single work item; enables immediate coordination | User stories, bug reports, change requests, working notes |
+| **Task** | Single task; enables immediate coordination | User stories, bug reports, change requests, working notes |
 
 ### The Temporal-Scope Matrix
 

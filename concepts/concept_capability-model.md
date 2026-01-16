@@ -102,7 +102,7 @@ This reframes the question from "what can AI access?" to "what emerges through d
 - [**Five Collaboration Patterns**](./concept_collaboration-patterns.md): Capabilities map to patterns based on knowledge requirements. This mapping (Concept 7) enables systematic pattern selection rather than intuition-based allocation.
 - [**Phase-Specific Information Composition**](./integration_phase-specific-composition.md): Different phases not only have different information compositions but also require different capability mixes, explaining why automation levels shift across the lifecycle.
 - [**Decision and Observation Tracking**](./concept_decision-observation-tracking.md): The Decide capability uniquely produces Decision records that create dependency structures and establish accountability. The Preserve capability operates on both observations and decisions. Understanding when capabilities produce trackable records enables systematic traceability.
-- [**Work Coordination**](./concept_work-coordination.md): Capability instances are the unit of work that gets coordinated between actors. Work items specify required capabilities and get routed to actors through capability matching algorithms.
+- [**Work Coordination**](./concept_work-coordination.md): Capability instances are the unit of work that gets coordinated between actors. tasks specify required capabilities and get routed to actors through capability matching algorithms.
 
 ## Evidence Base
 

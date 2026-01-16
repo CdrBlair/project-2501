@@ -243,7 +243,7 @@ Without differentiation, all AI actors appear equivalent and routing becomes arb
 - [**Five Collaboration Patterns**](./concept_collaboration-patterns.md): Concept 7 defines how human and AI actors work together. The patterns (Human-Only, Human-Led, Partnership, AI-Led, AI-Only) operationalise the actor model's insights about when each actor type should lead, support, or refrain from participation.
 - **Escalation Mechanisms**: Concept 7 defines escalation as the mechanism enabling AI participation in activities involving tacit knowledge. When AI operates within formalised criteria and escalates uncertain cases to humans, the actor model's knowledge-access constraints are respected while enabling broader AI participation.
 - [**Phase-Specific Information Composition**](./integration_phase-specific-composition.md): Phase composition determines appropriate actor mix—tacit-heavy phases need human actors, formal-heavy phases enable AI actors.
-- [**Work Coordination**](./concept_work-coordination.md): Actors receive and execute work items through coordination mechanisms. Actor profiles specify capabilities and availability; capability matching algorithms route work to appropriate actors based on work item requirements.
+- [**Work Coordination**](./concept_work-coordination.md): Actors receive and execute tasks through coordination mechanisms. Actor profiles specify capabilities and availability; capability matching algorithms route work to appropriate actors based on task requirements.
 
 ## Evidence Base
 

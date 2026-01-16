@@ -12,7 +12,7 @@ The coordination challenge is compounded by heterogeneous actors—humans and AI
 |-----------|-------------|
 | **Heterogeneous actors** | Humans and AI have different availability patterns, response times, and interaction modes |
 | **Mixed coordination modes** | Some work requires synchronous dialogue; other work suits asynchronous queuing |
-| **Context preservation** | Work items must carry sufficient context for actors to proceed without extensive re-discovery |
+| **Context preservation** | tasks must carry sufficient context for actors to proceed without extensive re-discovery |
 | **Assignment matching** | Work must be routed to actors with appropriate capabilities and availability |
 | **State visibility** | All actors need visibility into work state to coordinate effectively |
 | **Handoff integrity** | Information must not be lost when work transfers between actors |
@@ -45,16 +45,16 @@ Real-time dialogue between actors with immediate response expectation.
 
 ### Queue-Based (Asynchronous) Coordination
 
-Work items posted to queues, claimed by available actors, completed independently.
+tasks posted to queues, claimed by available actors, completed independently.
 
 **Characteristics**:
 - Decoupled producer/consumer
-- Explicit context packaging in work items
+- Explicit context packaging in tasks
 - Actors operate on their own schedules
 - Natural for AI-Led and parallelisable work
 
 **Strengths**:
-- Scales to many actors and work items
+- Scales to many actors and tasks
 - Actors work when available
 - Explicit work state tracking
 - Auditable work history
@@ -81,16 +81,16 @@ Queue-based assignment → Interactive execution → Queue-based handoff
 
 ---
 
-## Work Item Schema
+## task Schema
 
-A work item is a unit of work that can be assigned to and completed by an actor.
+A task is a unit of work that can be assigned to and completed by an actor.
 
 ### Core Schema
 
 ```
 WorkItem {
     id: UUID                           # Unique identifier
-    created_at: ISO8601                # When work item was created
+    created_at: ISO8601                # When task was created
     updated_at: ISO8601                # Last modification time
 
     # Classification
@@ -142,8 +142,8 @@ WorkItem {
     deliverables: DeliverableSpec[]    # Expected outputs
 
     # Dependencies
-    blocked_by: UUID[]                 # Work items that must complete first
-    blocks: UUID[]                     # Work items waiting on this
+    blocked_by: UUID[]                 # tasks that must complete first
+    blocks: UUID[]                     # tasks waiting on this
 
     # Urgency and scheduling
     priority: enum { CRITICAL, HIGH, MEDIUM, LOW }
@@ -152,7 +152,7 @@ WorkItem {
 
     # Escalation source (if work_type = ESCALATION)
     escalation: EscalationContext? {
-        source_work_item: UUID         # Original work item
+        source_work_item: UUID         # Original task
         source_actor: ActorRef         # Who escalated
         trigger: string                # What triggered escalation
         ai_assessment: string?         # AI's analysis before escalation
@@ -325,7 +325,7 @@ Message {
     response_deadline: ISO8601?
 
     # Metadata
-    relates_to_work_item: UUID?        # Associated work item
+    relates_to_work_item: UUID?        # Associated task
     tags: string[]
 }
 
@@ -454,7 +454,7 @@ WorkQueue {
                               ┌──────────────────┐
                          ┌───▶│ Security Review  │───▶ [Security Expert]
 ┌─────────────┐          │    │ Queue            │
-│ Work Item   │──[Route]─┤    └──────────────────┘
+│ task   │──[Route]─┤    └──────────────────┘
 │ Generator   │          │    ┌──────────────────┐
 └─────────────┘          ├───▶│ Code Review      │───▶ [Any Reviewer]
                          │    │ Queue            │
@@ -514,7 +514,7 @@ ActorProfile {
     availability: Availability? {
         schedule: Schedule?            # Working hours
         current_status: enum { AVAILABLE, BUSY, AWAY, DO_NOT_DISTURB }
-        current_load: integer          # Active work items
+        current_load: integer          # Active tasks
         max_concurrent: integer        # Capacity limit
     }
 
@@ -692,31 +692,31 @@ Work coordination integrates with the [Decision and Observation Tracking](./conc
 
 | Work Event | Record Type | Details |
 |------------|-------------|---------|
-| Work item created | Observation | EVENT: work created |
-| Work item assigned | Observation | EVENT: assignment made |
+| task created | Observation | EVENT: work created |
+| task assigned | Observation | EVENT: assignment made |
 | Work started | Observation | DURATION: started_at recorded |
 | Work completed | Observation | DURATION: ended_at, elapsed |
 | Work produces decision | Decision | Full decision record |
 | Escalation triggered | Observation | EVENT: escalation |
 | Escalation resolved | Decision | Resolution decision |
 
-### Decision Context from Work Items
+### Decision Context from tasks
 
-Decisions reference work items as context:
+Decisions reference tasks as context:
 
 ```
 Decision {
     ...
     context: {
-        work_item_id: UUID,            # Which work item prompted decision
+        work_item_id: UUID,            # Which task prompted decision
         conversation_id: UUID?,        # If decision emerged from dialogue
     }
 }
 ```
 
-### Work Items Reference Decisions
+### tasks Reference Decisions
 
-Work items can depend on decisions:
+tasks can depend on decisions:
 
 ```
 WorkItem {
@@ -732,23 +732,23 @@ WorkItem {
 
 **For human-AI collaboration**: The hybrid coordination model supports the full spectrum of collaboration patterns—from synchronous dialogue for Partnership to asynchronous queuing for AI-Only.
 
-**For context preservation**: Work items package sufficient context for async handoff, while conversations preserve the tacit knowledge that emerges from synchronous dialogue.
+**For context preservation**: tasks package sufficient context for async handoff, while conversations preserve the tacit knowledge that emerges from synchronous dialogue.
 
-**For escalation design**: Escalation creates new work items with full context, enabling clean handoff from AI to human without information loss.
+**For escalation design**: Escalation creates new tasks with full context, enabling clean handoff from AI to human without information loss.
 
-**For accountability**: Work items and conversations create the audit trail needed to trace decisions back to their origins and understand who contributed what.
+**For accountability**: tasks and conversations create the audit trail needed to trace decisions back to their origins and understand who contributed what.
 
-**For process execution**: Work coordination operationalises the capability flows defined in process specifications—each capability instance becomes a trackable work item.
+**For process execution**: Work coordination operationalises the capability flows defined in process specifications—each capability instance becomes a trackable task.
 
 ---
 
 ## Integration with Other Concepts
 
-- [**Process and Capability Flow**](./concept_process-capability-flow.md): Capability instances in process specifications become work items in the coordination system
+- [**Process and Capability Flow**](./concept_process-capability-flow.md): Capability instances in process specifications become tasks in the coordination system
 - [**Decision and Observation Tracking**](./concept_decision-observation-tracking.md): Work events generate observations; work completion can generate decisions
-- [**Five Collaboration Patterns**](./concept_collaboration-patterns.md): Work item required_pattern drives coordination mode selection
+- [**Five Collaboration Patterns**](./concept_collaboration-patterns.md): task required_pattern drives coordination mode selection
 - [**Actor Model**](./concept_actor-model.md): Actor profiles enable capability matching; AI actor differentiation enables more precise routing
-- [**Eight-Capability Taxonomy**](./concept_capability-model.md): Work items typed by capability; actor capabilities map to the taxonomy
+- [**Eight-Capability Taxonomy**](./concept_capability-model.md): tasks typed by capability; actor capabilities map to the taxonomy
 - [**Agent Context Model (3S2P)**](./concept_agent-context-model.md): Work context package provides 3S2P dimensions for actor context
 
 ---
@@ -759,11 +759,11 @@ WorkItem {
 
 | 12207 Process | Coordination Alignment |
 |---------------|------------------------|
-| **Project Planning (6.3.1)** | Work item creation and scheduling |
+| **Project Planning (6.3.1)** | task creation and scheduling |
 | **Project Assessment and Control (6.3.2)** | Work status tracking and metrics |
 | **Decision Management (6.3.3)** | Decision requests and recording |
-| **Information Management (6.3.6)** | Context preservation in work items |
-| **Configuration Management (6.3.5)** | Work item versioning and history |
+| **Information Management (6.3.6)** | Context preservation in tasks |
+| **Configuration Management (6.3.5)** | task versioning and history |
 
 ### Extensions Beyond Standards
 
@@ -776,12 +776,12 @@ WorkItem {
 
 ## Validation Status
 
-- ✓ **Core schemas**: Work item, message, queue schemas cover identified needs
+- ✓ **Core schemas**: task, message, queue schemas cover identified needs
 - ✓ **State machine**: Work status transitions are well-defined
 - ✓ **Pattern integration**: Coordination modes align with collaboration patterns
 - ⚠ **Capability matching**: Algorithm is conceptual; effectiveness untested
 - ⚠ **Conversation state limits**: How long can interactive context be maintained?
-- ⚠ **Context packaging quality**: How to measure whether work items carry sufficient context?
+- ⚠ **Context packaging quality**: How to measure whether tasks carry sufficient context?
 - ⚠ **Multi-AI coordination**: Patterns for multiple AI actors on shared work need development
 - ⚠ **Human attention management**: Avoiding notification overload requires design
 

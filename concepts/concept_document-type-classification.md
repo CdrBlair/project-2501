@@ -81,7 +81,7 @@ Scope identifies the document's applicability breadth and determines storage loc
 |-------|---------------|------------------|-------------------|
 | **Organisational** | Enterprise-wide | Org-level repository | Always included for org decisions |
 | **Project** | Single initiative | Project repository | Included for project work |
-| **Task** | Single work item | Task-attached | Included while task active; may exclude when complete |
+| **Task** | Single task | Task-attached | Included while task active; may exclude when complete |
 
 The scope dimension is hierarchical: Organisational > Project > Task. A document type has a *typical* scope; instances may have a narrower scope but not broader.
 

@@ -125,7 +125,7 @@ Escalation design should be treated as a first-class concern when establishing A
 - [**Information Loss at Transitions**](./concept_transitions-info-loss.md): Pattern selection affects information loss. Human-Only patterns preserve tacit knowledge through direct engagement; AI-Only patterns risk losing rationale and context.
 - [**Phase-Aware Measurement**](./concept_phase-aware-measurement.md): Different patterns require different measurement approaches. Human-Only: expert performance metrics. Partnership: integration quality. AI-Led: exception rate, escalation rate, and post-escalation accuracy. AI-Only: monitoring alert rates and exception handling effectiveness.
 - [**Decision and Observation Tracking**](./concept_decision-observation-tracking.md): Collaboration patterns determine how decisions are made and who is accountable. The actor_pattern field in Decision records captures which collaboration pattern was active at decision time, enabling analysis of pattern effectiveness.
-- [**Work Coordination**](./concept_work-coordination.md): Collaboration patterns inform coordination paradigm selection. Interactive coordination suits Human-Led and Partnership patterns requiring dialogue; queue-based coordination suits AI-Led and AI-Only patterns with well-defined work items.
+- [**Work Coordination**](./concept_work-coordination.md): Collaboration patterns inform coordination paradigm selection. Interactive coordination suits Human-Led and Partnership patterns requiring dialogue; queue-based coordination suits AI-Led and AI-Only patterns with well-defined tasks.
 
 ## Evidence Base
 

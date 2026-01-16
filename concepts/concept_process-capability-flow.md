@@ -250,9 +250,9 @@ DEFER is used when a step requires asynchronous completion—the human (or exter
 
 When a DEFER action triggers:
 1. Process state is serialised (current step, all context, partial outputs)
-2. A work item of type `DEFERRED_CONTINUATION` is created
+2. A task of type `DEFERRED_CONTINUATION` is created
 3. Process enters `SUSPENDED` state (distinct from BLOCKED or PAUSED)
-4. The work item specifies a **resume trigger** that signals when work can continue
+4. The task specifies a **resume trigger** that signals when work can continue
 5. When resume trigger fires, process continues from the suspended step
 
 **Key difference from ESCALATE**: ESCALATE expects immediate human attention within the current interaction; DEFER expects the human to return later (minutes, hours, or days).
@@ -552,7 +552,7 @@ Before finalising any capability flow specification, validate internal consisten
 - [**Information Loss at Transitions**](./concept_transitions-info-loss.md): Validation criteria address transition losses
 - [**Document Type Classification Framework**](./concept_document-type-classification.md): Document references use registered type IDs
 - [**Decision and Observation Tracking**](./concept_decision-observation-tracking.md): Capability instances that involve Decide produce Decision records with full traceability. Observations captured during process execution inform decisions and provide audit trails.
-- [**Work Coordination**](./concept_work-coordination.md): Process execution requires coordinating capability instances across actors. Work items flow through queues and assignments according to the coordination mechanisms defined in work coordination.
+- [**Work Coordination**](./concept_work-coordination.md): Process execution requires coordinating capability instances across actors. tasks flow through queues and assignments according to the coordination mechanisms defined in work coordination.
 
 ---
 
