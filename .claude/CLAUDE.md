@@ -23,8 +23,8 @@ At session start, a hook checks the Dialogue Framework initialisation status. Lo
 |--------|--------|
 | NOT INITIALISED | Greet the user and mention that this project uses the Dialogue Framework but hasn't been initialised yet. Offer to help set it up. |
 | PARTIAL | Greet the user and mention that Dialogue Framework setup is incomplete. Offer to complete the configuration. |
-| INITIALISED (with work items) | Greet the user, briefly mention the Dialogue Framework is active, and offer to review current work items or continue with prior work. |
-| INITIALISED (no work items) | No special greeting needed. Proceed normally. |
+| INITIALISED (with tasks) | Greet the user, briefly mention the Dialogue Framework is active, and offer to review current tasks or continue with prior work. |
+| INITIALISED (no tasks) | No special greeting needed. Proceed normally. |
 
 This is the first thing to address when starting a session (unless the user immediately asks something specific).
 
