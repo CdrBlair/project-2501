@@ -1,0 +1,8 @@
+id: OBS-20260115-091213
+timestamp: "2026-01-15T09:12:13Z"
+type: STATE
+observer: "human:pidster"
+subject: "Bidirectional phase movement"
+value: "Framework should support moving through phases bidirectionally as new information emerges; linear feature vectors cause change-handling debates that we want to avoid; SessionStart must be phase-independent"
+context: "FW-008 thought experiment on plugin delivery model"
+tags: ["architecture", "phases", "orchestration"]

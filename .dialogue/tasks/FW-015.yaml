@@ -1,0 +1,25 @@
+id: "FW-015"
+title: "Subagent Execution Contract"
+status: BACKLOG
+created: "2026-01-15T15:05:00Z"
+updated: "2026-01-15T15:05:00Z"
+type: SCHEMA
+priority: HIGH
+parent: "FW-011"
+description: |
+  Define contract for how subagents execute process definitions.
+
+  Must specify:
+  - How subagent interprets process definition
+  - Step execution sequence
+  - Progress logging requirements
+  - Completion/failure signalling
+  - What gets returned to orchestrator
+
+objective: "Clear contract for subagent execution behaviour"
+rationale: "Enables consistent, auditable subagent execution"
+blocked_by: ["FW-013"]
+blocks: ["FW-016"]
+notes: |
+  Created 15 January 2026.
+

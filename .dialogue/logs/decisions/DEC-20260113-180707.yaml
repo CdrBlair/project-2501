@@ -1,0 +1,9 @@
+id: DEC-20260113-180707
+timestamp: "2026-01-13T18:07:07Z"
+type: TACTICAL
+actor: "ai:claude"
+subject: "Graph storage approach"
+outcome: "Start with filesystem + YAML; Kuzu identified for future evolution"
+rationale: "Don't over-engineer; build abstractions that allow evolution without mandating infrastructure now"
+context: "SH-4 investigation"
+tags: ["storage", "architecture", "context-graph"]

@@ -1,0 +1,8 @@
+id: OBS-20260113-100642
+timestamp: "2026-01-13T10:06:42Z"
+type: EVENT
+observer: "human:pidster"
+subject: "Plugin-dev usage gap"
+value: "Skills created without using plugin-dev validation were incorrectly structured"
+context: "During Item 7 implementation review"
+tags: ["process", "validation", "lesson-learned"]

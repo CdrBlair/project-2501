@@ -1,0 +1,8 @@
+id: OBS-20260116-142219
+timestamp: "2026-01-16T14:22:19Z"
+type: STATE
+observer: "human:pidster"
+subject: "Prompt vs command hook difference"
+value: "Prompt-based hooks DO have transcript access (evaluator sees conversation). The difference is response handling: prompt hook reasons are displayed only, command hook reasons are fed back to session triggering action."
+context: "Correcting earlier misunderstanding about hook mechanisms"
+tags: ["hooks", "architecture", "correction"]

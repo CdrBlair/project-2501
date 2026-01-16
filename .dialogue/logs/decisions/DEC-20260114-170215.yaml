@@ -1,0 +1,9 @@
+id: DEC-20260114-170215
+timestamp: "2026-01-14T17:02:15Z"
+type: DESIGN
+actor: "ai:claude"
+subject: "Actor-concept integration approach"
+outcome: "Extended I-3 (Naur-Wegner Integration) rather than creating new integration document"
+rationale: "I-3 already establishes conversation as dual mechanism for theory-building and TMS; functional roles operationalise this existing framework rather than requiring new conceptual infrastructure"
+context: "Gap identified: C-4 defines actor types, C-5 defines patterns, but neither defines functional roles. Options: create I-4, extend C-4, or extend I-3. Chose I-3 because conversation-as-TMS is the conceptual foundation for roles."
+tags: ["integration", "actor-roles", "framework"]

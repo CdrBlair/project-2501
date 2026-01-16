@@ -1,0 +1,30 @@
+id: DEC-20260113-164528
+timestamp: "2026-01-13T16:45:28Z"
+type: OPERATIONAL
+actor: "ai:claude"
+subject: "PA-10 pattern"
+outcome: "AI-Only"
+rationale: "Log verification is mechanical count check"
+context: "Process Architect v4 simulation"
+tags: ["pattern", "PA-10"]
+
+---
+id: DEC-20260113-164528
+timestamp: "2026-01-13T16:45:28Z"
+type: OPERATIONAL
+actor: "ai:claude"
+subject: "PA-11 pattern"
+outcome: "Human-Led"
+rationale: "Human reviews and decides; AI presents and can DEFER if extended review needed"
+context: "Process Architect v4 simulation"
+tags: ["pattern", "PA-11"]
+---
+id: DEC-20260113-164528
+timestamp: "2026-01-13T16:45:28Z"
+type: OPERATIONAL
+actor: "ai:claude"
+subject: "PA-12 pattern"
+outcome: "AI-Only"
+rationale: "File writing is mechanical"
+context: "Process Architect v4 simulation"
+tags: ["pattern", "PA-12"]

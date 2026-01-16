@@ -1,0 +1,9 @@
+id: DEC-20260116-090007
+timestamp: "2026-01-16T09:00:07Z"
+type: DESIGN
+actor: "ai:claude"
+subject: "CLAUDE_PROJECT_DIR persistence"
+outcome: "Added SessionStart hook to persist CLAUDE_PROJECT_DIR to CLAUDE_ENV_FILE"
+rationale: "Ensures variable available in all Bash tool invocations, not just hook contexts"
+context: "Investigation found variable only injected into hooks; scripts invoked via Bash tool failed"
+tags: ["hooks", "environment", "fix"]

@@ -1,0 +1,8 @@
+id: DEC-20260116-130601
+timestamp: "2026-01-16T13:06:01Z"
+type: DESIGN
+actor: "human:pidster"
+subject: "Switch Stop hook from command type to prompt type"
+outcome: "Command-based stop hook has limitations; prompt-based hook may provide better integration with Claude's context"
+rationale: "Continue with command-based approach"
+context: "hooks,stop-hook"

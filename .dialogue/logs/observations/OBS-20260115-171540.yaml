@@ -1,0 +1,8 @@
+id: OBS-20260115-171540
+timestamp: "2026-01-15T17:15:40Z"
+type: STATE
+observer: "ai:claude"
+subject: "Skill environment variables"
+value: "CLAUDE_PROJECT_DIR not available in Bash tool execution when invoked from skill instructions; CLAUDE_PLUGIN_ROOT was substituted in skill markdown content but CLAUDE_PROJECT_DIR was not passed to runtime environment"
+context: "Skill: dialogue-log-observation; Script failed with 'CLAUDE_PROJECT_DIR must be set' until manually provided; Docs indicate both should be available at bash execution time"
+tags: ["bug", "environment", "skills", "claude-code"]

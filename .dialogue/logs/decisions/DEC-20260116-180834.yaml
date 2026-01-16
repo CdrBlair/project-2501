@@ -1,0 +1,8 @@
+id: DEC-20260116-180834
+timestamp: "2026-01-16T18:08:34Z"
+type: OPERATIONAL
+actor: "ai:claude"
+subject: "Test decision"
+outcome: "Testing new per-file logging"
+rationale: "FW-017 implementation"
+tags: ["testing"]

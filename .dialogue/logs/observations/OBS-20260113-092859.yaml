@@ -1,0 +1,8 @@
+id: OBS-20260113-092859
+timestamp: "2026-01-13T09:28:59Z"
+type: EVENT
+observer: "ai:claude"
+subject: "Scripts created"
+value: "log-decision.sh and log-observation.sh implemented"
+context: "Item 7b-7c complete"
+tags: ["framework", "implementation"]

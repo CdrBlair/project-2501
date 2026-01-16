@@ -1,0 +1,8 @@
+id: OBS-20260116-090729
+timestamp: "2026-01-16T09:07:29Z"
+type: STATE
+observer: "human:pidster"
+subject: "Day of week"
+value: "It is Friday"
+context: "Session start observation"
+tags: ["temporal"]

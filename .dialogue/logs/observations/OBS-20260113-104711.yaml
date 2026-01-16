@@ -1,0 +1,8 @@
+id: OBS-20260113-104711
+timestamp: "2026-01-13T10:47:11Z"
+type: EVENT
+observer: "ai:claude"
+subject: "Process context elicited"
+value: "Phase: 2 (Planning); Composition: Balanced (40-60% tacit)"
+context: "Process Architect v2 simulation"
+tags: ["elicitation", "context", "thought-experiment"]

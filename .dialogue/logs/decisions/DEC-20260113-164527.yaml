@@ -1,0 +1,9 @@
+id: DEC-20260113-164527
+timestamp: "2026-01-13T16:45:27Z"
+type: OPERATIONAL
+actor: "ai:claude"
+subject: "PA-9 pattern"
+outcome: "AI-Only"
+rationale: "Constraint checking is mechanical validation"
+context: "Process Architect v4 simulation"
+tags: ["pattern", "PA-9"]

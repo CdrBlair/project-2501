@@ -1,0 +1,9 @@
+id: DEC-20260113-095746
+timestamp: "2026-01-13T09:57:46Z"
+type: OPERATIONAL
+actor: "ai:claude"
+subject: "Skills format correction"
+outcome: "Restructured skills to canonical format with SKILL.md in directories"
+rationale: "Original format would not be discovered by Claude Code"
+context: "Item 7 fix"
+tags: ["skills", "fix"]

@@ -1,0 +1,8 @@
+id: OBS-20260116-131152
+timestamp: "2026-01-16T13:11:52Z"
+type: STATE
+observer: "human:pidster"
+subject: "Sky condition"
+value: "The sky is blue"
+context: "Testing new stop hook configuration"
+tags: ["testing", "hooks"]

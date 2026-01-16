@@ -1,0 +1,38 @@
+id: "SH-002"
+title: "Resolution Interface"
+status: COMPLETED
+created: "2026-01-13T10:00:00Z"
+updated: "2026-01-14T11:00:00Z"
+completed: "2026-01-14T11:00:00Z"
+type: SCHEMA
+phase: 3
+priority: MEDIUM
+description: |
+  Define abstract resolver interface for information retrieval.
+  Create filesystem implementation as first concrete implementation.
+objective: "Resolver interface defined; filesystem implementation working"
+rationale: "Enables location-agnostic information access"
+blocked_by: []
+blocks: ["SH-003"]
+notes: |
+  Completed 14 January 2026.
+  Created:
+  - implementation/schema_resolver-interface.md — Abstract interface contract
+  - .claude/skills/dialogue-resolve-reference/SKILL.md — Skill definition
+  - .claude/skills/dialogue-resolve-reference/scripts/resolve-reference.sh — Filesystem implementation
+
+  Runtime artifact resolution (what deployments have access to):
+  - Project docs: THY-NNN, REF-NNN, STR-NNN, ADR-NNN (in implementation/, decisions/)
+  - Log entries: DEC-YYYYMMDD-HHMMSS, OBS-YYYYMMDD-HHMMSS
+  - tasks: SH-NNN, CD-NNN, FW-NNN
+  - Actors: human:<id>, ai:<id>
+  - External URLs: Returns EXTERNAL status (use WebFetch)
+
+  Framework source references (F-N, C-N, I-N, G-N, E-N):
+  - NOT resolvable by deployed framework — these are framework source docs
+  - Returns NOT_SUPPORTED status directing to framework documentation
+  - See FW-005 for deployment artifact definition
+
+  Output formats: full (content), metadata (location only), path (just file path)
+  TMS alignment: Implements retrieval operation for Context Graph
+

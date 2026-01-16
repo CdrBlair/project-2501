@@ -1,0 +1,8 @@
+id: OBS-20260113-101657
+timestamp: "2026-01-13T10:16:57Z"
+type: EVENT
+observer: "human:pidster"
+subject: "Meta configuration challenge"
+value: "AI not consistently using framework components correctly - skills created wrong, scripts in wrong location, deep-linking instead of abstraction"
+context: "During Phase D implementation of executable framework"
+tags: ["meta", "configuration", "process"]

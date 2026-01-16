@@ -1,0 +1,9 @@
+id: DEC-20260113-093640
+timestamp: "2026-01-13T09:36:40Z"
+type: OPERATIONAL
+actor: "ai:claude"
+subject: "Environment Capability Registry schema design"
+outcome: "Created YAML-based schema with 6 sections mapping to framework concepts"
+rationale: "Enables framework instantiation across different AI tools"
+context: "Item 2 progress"
+tags: ["framework", "schema"]

@@ -1,0 +1,8 @@
+id: OBS-20260113-184418
+timestamp: "2026-01-13T18:44:18Z"
+type: STATE
+observer: "ai:claude"
+subject: "THY-001 created"
+value: "Initial framework theory document created at concepts/theory_framework.md - DRAFT status"
+context: "Phase 1 self-hosting, document type taxonomy extension"
+tags: ["theory", "phase-1", "documentation"]

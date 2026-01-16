@@ -1,0 +1,8 @@
+id: OBS-20260113-152808
+timestamp: "2026-01-13T15:28:08Z"
+type: EVENT
+observer: "ai:claude"
+subject: "Human review deferred"
+value: "User needs more time to review; noted that some decisions are non-timeout-able; output not saved"
+context: "Process Architect v3 simulation"
+tags: ["approval", "deferred", "v3"]

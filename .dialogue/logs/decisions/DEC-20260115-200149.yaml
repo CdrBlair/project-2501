@@ -1,0 +1,9 @@
+id: DEC-20260115-200149
+timestamp: "2026-01-15T20:01:49Z"
+type: DESIGN
+actor: "human:pidster"
+subject: "Rename Working documents to Note documents"
+outcome: "Changed document type from WRK (Working) to NOT (Note); renamed /create-working to /create-note"
+rationale: "Note better describes the ephemeral capture purpose; NOT is a clearer mnemonic than WRK"
+context: "During plugin development session, reviewing document type naming"
+tags: ["plugin", "naming", "documents"]

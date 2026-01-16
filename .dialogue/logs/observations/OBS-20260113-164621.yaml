@@ -1,0 +1,8 @@
+id: OBS-20260113-164621
+timestamp: "2026-01-13T16:46:21Z"
+type: EVENT
+observer: "ai:claude"
+subject: "DEFER action triggered"
+value: "User requested extended review; process suspending with DEFERRED_CONTINUATION task; resume trigger: HUMAN_APPROVAL"
+context: "Process Architect v4 simulation"
+tags: ["defer", "suspended", "v4"]

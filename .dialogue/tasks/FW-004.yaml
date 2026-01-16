@@ -1,0 +1,29 @@
+id: "FW-004"
+title: "Create ADR Skill"
+status: COMPLETED
+created: "2026-01-14T14:30:00Z"
+updated: "2026-01-14T15:30:00Z"
+completed: "2026-01-14T15:30:00Z"
+type: CAPABILITY
+priority: MEDIUM
+description: |
+  Create dialogue-create-adr skill for Architecture Decision Records:
+  - Use template from guidance_implementation.md (Context, Decision, Alternatives, Consequences, Rationale)
+  - Store ADRs as Standing documents in decisions/ directory (ADR-NNN-<title>.md)
+  - Automatically create decision log entry with type=ADR and ref to ADR file
+  - Support status lifecycle (Proposed → Accepted → Deprecated → Superseded)
+  Framework grounding: ADRs are STR domain, Standing temporal class,
+  attempting to capture embedded knowledge through formal alternatives analysis.
+objective: "ADR skill creates Standing decision documents with decision log cross-reference"
+rationale: "ADRs require more structure than log entries; cross-reference ensures decision log is complete audit trail"
+blocked_by: ["FW-003"]
+blocks: []
+notes: |
+  Completed 14 January 2026.
+  - Created dialogue-create-adr skill with SKILL.md and create-adr.sh script
+  - ADRs stored in decisions/ directory with ADR-NNN-<slug>.md naming
+  - Automatic cross-reference to decision log with type=ADR and ref field
+  - Tested: ADR-001 created for decision type hierarchy (DEC-20260114-102443)
+  Key design decision (DEC-20260114-101710): ADR creation must also create
+  decision log entry to maintain decision log as source of truth.
+

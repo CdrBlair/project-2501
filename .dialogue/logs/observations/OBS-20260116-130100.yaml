@@ -1,0 +1,8 @@
+id: OBS-20260116-130100
+timestamp: "2026-01-16T13:01:00Z"
+type: STATE
+observer: "ai:claude"
+subject: "Stop hook systemMessage field visibility"
+value: "systemMessage on approve shown to user as 'Stop says: ...' but not injected into Claude context; reason on block shown to both; stop_hook_active scoped per-response cycle"
+context: "Testing stop-loop-guard.sh hook behaviour"
+tags: ["hooks", "claude-code"]

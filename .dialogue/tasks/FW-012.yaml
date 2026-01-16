@@ -1,0 +1,55 @@
+id: "FW-012"
+title: "Review Process-Capability-Flow Schema"
+status: COMPLETED
+created: "2026-01-15T15:05:00Z"
+updated: "2026-01-15T15:45:00Z"
+completed: "2026-01-15T15:45:00Z"
+type: RESEARCH
+priority: HIGH
+parent: "FW-011"
+description: |
+  Review existing concept_process-capability-flow.md and identify gaps
+  for subagent execution use case.
+
+  Questions to answer:
+  1. What exists in the current schema?
+  2. What's needed for machine-interpretability?
+  3. How should process instances vs definitions be distinguished?
+  4. Where does the ProcessManifest fit?
+
+objective: "Gap analysis complete; requirements for executable schema identified"
+rationale: "Foundation work before designing new schema extensions"
+blocked_by: []
+blocks: ["FW-013"]
+notes: |
+  Created 15 January 2026 as first task for FW-011.
+
+  === Completed 15 January 2026 ===
+
+  Existing schema covers (design-time documentation):
+  - Process Definition: Identity, Context, Interfaces, Capability flow, Quality gates, Control flow
+  - Capability Instance: Step ID, Capability (1-1), Actor pattern, Escalation triggers, Validation
+  - Actor patterns with constraints C1-C4
+  - Escalation actions: ESCALATE, RETURN, BLOCK, DEFER
+  - Flow patterns: Linear, Iterative, Conditional, Parallel, Escalation branch
+
+  Gaps identified for executable subagent use:
+  1. Format: Prose/pseudo-code → needs machine-readable (YAML/JSON)
+  2. Instance vs Definition: Only definitions exist; need instance creation/tracking
+  3. Execution semantics: What to capture defined; how subagent executes not defined
+  4. State model: Implicit → needs explicit (current step, iteration, suspended state)
+  5. Dynamic composition: Pre-defined processes assumed; ad-hoc composition not addressed
+  6. Audit linkage: Capture mentioned; explicit log→instance→definition links needed
+  7. Handoff mechanism: Not addressed; how definition travels to subagent
+
+  User observation (OBS-20260115-154205): Mermaid diagrams for non-linear process flows
+  - Text-based: machine-parseable
+  - Visual: human-comprehensible when rendered
+  - Inline: can travel with process definition in prompts
+
+  Proposed schema structure:
+  - Steps: YAML/JSON for capability instance details
+  - Flow: Mermaid for control structure (branches, returns, escalations)
+
+  Gap analysis logged as OBS-20260115-154312.
+

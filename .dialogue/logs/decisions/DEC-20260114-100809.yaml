@@ -1,0 +1,9 @@
+id: DEC-20260114-100809
+timestamp: "2026-01-14T10:08:09Z"
+type: TACTICAL
+actor: "human:pidster"
+subject: "Information reference schema approach"
+outcome: "Simplified from URI format to self-describing IDs - patterns determine type without scheme prefixes"
+rationale: "Simpler format reduces cognitive load, maintains backward compatibility, defers resolver complexity to SH-002"
+context: "Initial v1 had complex URI format; user directed simplification following principle of minimal necessary complexity"
+tags: ["SH-001", "schema", "simplification"]

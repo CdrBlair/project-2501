@@ -1,0 +1,8 @@
+id: OBS-20260116-135646
+timestamp: "2026-01-16T13:56:46Z"
+type: STATE
+observer: "human:pidster"
+subject: "Stop hook diagnostic output"
+value: "No visible output from diagnostic Stop hook after restart - unclear if hook fired or where output went"
+context: "Testing stop hook with diagnostic prompt"
+tags: ["hooks", "testing", "diagnostic"]

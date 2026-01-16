@@ -1,0 +1,9 @@
+id: DEC-20260113-164545
+timestamp: "2026-01-13T16:45:45Z"
+type: OPERATIONAL
+actor: "ai:claude"
+subject: "Control flow with async approval"
+outcome: "Retry returns to PA-4; PA-11 can DEFER to approval-queue with HUMAN_APPROVAL resume trigger"
+rationale: "Enables non-timeout-able decisions via SUSPENDED state"
+context: "Process Architect v4 simulation"
+tags: ["control-flow", "defer"]

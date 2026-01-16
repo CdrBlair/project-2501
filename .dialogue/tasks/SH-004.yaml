@@ -1,0 +1,17 @@
+id: "SH-004"
+title: "Graph Storage Investigation"
+status: COMPLETED
+created: "2026-01-13T10:00:00Z"
+updated: "2026-01-13T15:00:00Z"
+completed: "2026-01-13T15:00:00Z"
+type: RESEARCH
+priority: HIGH
+description: "Investigate graph storage options for Context Graph"
+objective: "Storage approach decided"
+rationale: "Needed to inform SH-001, SH-002, SH-003 design"
+blocked_by: []
+blocks: []
+notes: |
+  Decision (13 January 2026): Start with filesystem + YAML; Kuzu identified for future evolution.
+  See planning-future-work.md for full decision rationale.
+

@@ -1,0 +1,8 @@
+id: OBS-20260116-141342
+timestamp: "2026-01-16T14:13:42Z"
+type: STATE
+observer: "ai:claude"
+subject: "Stop hook loop-guard not working"
+value: "Second stop attempt still blocked - stop_hook_active flag not being set to true between attempts. Loop-guard mechanism not functioning as designed."
+context: "Testing second stop attempt after first block"
+tags: ["hooks", "testing", "bug"]

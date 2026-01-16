@@ -1,0 +1,35 @@
+id: "CD-004"
+title: "AI Context Window Evolution Modelling"
+status: BACKLOG
+created: "2026-01-14T19:00:00Z"
+updated: "2026-01-14T19:00:00Z"
+type: DEBT
+priority: LOW
+description: |
+  Address unmodelled AI capability evolution in THY-003 and F-2.
+
+  Current position: Human-AI TMS asymmetry exists because "AI context is ephemeral"
+  and bounded by session/context window.
+
+  Unaddressed: What happens as context windows expand (4K → 200K+ and growing)?
+  Does this change the asymmetry analysis? When does it become qualitatively different?
+
+  Tasks:
+  1. Model how asymmetry changes with context window size
+  2. Identify thresholds where qualitative shifts might occur
+  3. Maintain temporal qualification (as of 2024-2025) while acknowledging trajectory
+  4. Update F-2 or THY-003 with evolution considerations
+
+  Framework temporally qualifies AI claims but doesn't model evolution trajectory.
+objective: "F-2/THY-003 updated with AI context evolution considerations"
+rationale: |
+  Framework risks becoming dated if it doesn't acknowledge AI capability trajectories.
+  Not about predicting the future but acknowledging known directions of change.
+blocked_by: []
+blocks: []
+notes: |
+  Created 14 January 2026 from Phase 1-2 analysis.
+  Lower priority; current framing is defensible for now.
+
+  # === Architecture tasks ===
+

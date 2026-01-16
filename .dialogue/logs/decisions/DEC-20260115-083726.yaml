@@ -1,0 +1,9 @@
+id: DEC-20260115-083726
+timestamp: "2026-01-15T08:37:26Z"
+type: TACTICAL
+actor: "human:pidster"
+subject: "FW-008 scope clarification"
+outcome: "Narrow scope to human-user-interface interaction and activity orchestration only"
+rationale: "Avoid premature architectural commitments; actors may still emerge from configuration within phases; orchestration is about routing human input, not replacing emergent actor model"
+context: "User clarified FW-008 intent after initial over-broad capture"
+tags: ["FW-008", "scope"]

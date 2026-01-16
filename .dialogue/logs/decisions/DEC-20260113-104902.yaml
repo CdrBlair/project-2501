@@ -1,0 +1,9 @@
+id: DEC-20260113-104902
+timestamp: "2026-01-13T10:49:02Z"
+type: OPERATIONAL
+actor: "ai:claude"
+subject: "PA-4 pattern selection"
+outcome: "Partnership"
+rationale: "Both essential: AI applies decision tree systematically, human brings judgement about organisational context and approves"
+context: "Process Architect v2 simulation"
+tags: ["pattern-selection", "PA-4"]

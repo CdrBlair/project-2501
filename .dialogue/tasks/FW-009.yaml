@@ -1,0 +1,78 @@
+id: "FW-009"
+title: "Claude Code Hooks Investigation"
+status: COMPLETED
+created: "2026-01-15T08:40:00Z"
+updated: "2026-01-15T09:15:00Z"
+completed: "2026-01-15T09:15:00Z"
+type: RESEARCH
+priority: HIGH
+parent: "FW-008"
+description: |
+  Investigate Claude Code hooks: how they work, what functionality is available,
+  and how they might support orchestration patterns.
+
+  Questions to answer:
+  1. What hook events are available? (PreToolUse, PostToolUse, SessionStart, etc.)
+  2. What can hooks do? (block, modify, inject context, trigger actions?)
+  3. How are hooks implemented? (shell scripts, prompt-based, other?)
+  4. What information is available to hooks? (tool name, parameters, context?)
+  5. Can hooks communicate with each other or maintain state?
+  6. What are the limitations and constraints?
+
+  Relevance to FW-008:
+  - Could hooks provide orchestration without explicit orchestrator agent?
+  - SessionStart hook for context injection?
+  - PreToolUse for routing decisions?
+  - PostToolUse for logging/capture?
+
+objective: "Document hooks capabilities and assess orchestration applicability"
+rationale: |
+  Hooks may provide a lighter-weight orchestration mechanism than explicit
+  multi-agent architecture. Need to understand capabilities before choosing approach.
+blocked_by: []
+blocks: []
+notes: |
+  Created 15 January 2026 as sub-task of FW-008.
+
+  Registry mentions these hook events:
+  - PreToolUse, PostToolUse
+  - Stop, SubagentStop
+  - SessionStart, SessionEnd
+  - UserPromptSubmit
+  - PreCompact
+  - Notification
+
+  Implementation types: "Shell script or prompt-based"
+
+  === Investigation Complete 15 January 2026 ===
+
+  Key findings:
+  1. 10 hook events available (PreToolUse, PostToolUse, Stop, SubagentStop,
+     SessionStart, SessionEnd, UserPromptSubmit, PreCompact, Notification,
+     PermissionRequest)
+
+  2. Hooks are NOT an orchestration framework:
+     - All matching hooks run in PARALLEL, not sequentially
+     - No inter-hook communication
+     - No state machine or workflow management
+     - Stateless by default (state requires disk persistence)
+
+  3. Two implementation types:
+     - Shell scripts: Fast, simple validation
+     - Prompt-based (Haiku LLM): Smarter context-aware decisions
+
+  4. Most promising for orchestration:
+     - Stop hook (prompt-based): Can intelligently decide phase completion
+     - UserPromptSubmit: Can inject context, validate prompts
+     - SessionStart: Context injection, environment setup
+
+  5. Recommended pattern (from docs):
+     "Hooks for validation/enforcement, Subagents for task delegation,
+     Skills/commands for workflow definition"
+
+  Assessment: Hooks alone cannot provide orchestration. Layered approach needed:
+  - Hooks for guardrails and capture
+  - Prompt-based Stop hook for intelligent continuation decisions
+  - Subagents (Task tool) for phase-specific work
+  - Claude's reasoning for actual routing decisions
+

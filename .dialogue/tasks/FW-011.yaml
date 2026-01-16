@@ -1,0 +1,53 @@
+id: "FW-011"
+title: "Add Subagents to Claude Framework"
+status: IN_PROGRESS
+created: "2026-01-15T14:48:00Z"
+updated: "2026-01-15T17:35:00Z"
+type: CAPABILITY
+priority: HIGH
+description: |
+  Add subagents to the Claude version of the framework. Subagents are actors
+  that execute one or more processes composed from discrete steps, each step
+  aligned 1-1 with a capability.
+
+  Architecture:
+  - Actor (subagent) → executes → Process(es)
+  - Process → composed of → Steps
+  - Step → aligned with → Capability (1-1)
+
+  Development sequence (per tactical decisions):
+  1. Dynamic process creation first; well-known processes emerge later
+  2. Orchestrator-composed first; self-planning subagents later
+
+  Components to build:
+  1. Process definition schema (machine-interpretable, capability-aligned)
+  2. Handoff mechanism (orchestrator → subagent)
+  3. Execution contract (what subagent does, how it logs)
+  4. Audit linkage (execution logs → process definition)
+
+  UX GUIDANCE (MANDATORY):
+  - Claude must NEVER expose process IDs to users (e.g., "Run PROC-5.1?")
+  - Claude must explain intent in plain English (e.g., "I'll implement this
+    feature by analysing the design, writing the code, and running tests")
+  - Process IDs are internal implementation details
+  - User should understand WHAT will happen, not WHICH process definition
+
+objective: "Subagents can execute dynamically-composed, capability-aligned processes with full audit trail"
+rationale: |
+  Complexity management: decompose complex tasks into specialised subtasks.
+  Framework alignment: subagents better reflect the framework's conceptual model
+  of capabilities, collaboration patterns, and AI-led/AI-only activities.
+blocked_by: []
+blocks: []
+notes: |
+  Created 15 January 2026.
+  Design decisions logged:
+  - DEC-20260115-144840: Add subagents to Claude framework (DESIGN)
+  - DEC-20260115-145853: Focus on dynamic first, well-known later (TACTICAL)
+  - DEC-20260115-150108: Orchestrator-composed first, self-planning later (TACTICAL)
+  - DEC-20260115-173132: Hybrid architecture (standalone defs + executor agent + Task tool)
+  - DEC-20260115-173448: Plain English user interaction (no process IDs exposed)
+
+  Existing foundation: concept_process-capability-flow.md has capability flow schema.
+  Need to review and identify gaps for executable subagent use.
+

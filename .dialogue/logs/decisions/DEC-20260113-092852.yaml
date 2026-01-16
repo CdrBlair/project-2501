@@ -1,0 +1,9 @@
+id: DEC-20260113-092852
+timestamp: "2026-01-13T09:28:52Z"
+type: OPERATIONAL
+actor: "ai:claude"
+subject: "Log format implementation"
+outcome: "Created YAML stream format with bash scripts"
+rationale: "Append-only format enables simple tooling"
+context: "Item 7a-7c implementation"
+tags: ["framework", "logging"]

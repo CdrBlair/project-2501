@@ -1,0 +1,9 @@
+id: DEC-20260115-084309
+timestamp: "2026-01-15T08:43:09Z"
+type: TACTICAL
+actor: "ai:claude"
+subject: "Hooks orchestration assessment"
+outcome: "Hooks insufficient for orchestration; layered approach required"
+rationale: "Hooks run in parallel, stateless, no inter-hook communication—cannot provide routing/state machine"
+context: "FW-009 investigation complete: 10 hook events documented, prompt-based hooks promising for intelligent decisions but not orchestration itself"
+tags: ["architecture", "orchestration", "hooks"]

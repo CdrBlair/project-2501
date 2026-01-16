@@ -1,0 +1,9 @@
+id: DEC-20260115-173132
+timestamp: "2026-01-15T17:31:32Z"
+type: DESIGN
+actor: "human:pidster"
+subject: "Subagent process architecture"
+outcome: "Hybrid model: standalone process definitions + generic process-executor agent + Task tool invocation"
+rationale: "Best user experience - user doesn't need to know framework internals; Claude handles process selection and can check with user if uncertain"
+context: "Evaluated four storage options and three execution mechanisms"
+tags: ["subagents", "architecture", "FW-013"]

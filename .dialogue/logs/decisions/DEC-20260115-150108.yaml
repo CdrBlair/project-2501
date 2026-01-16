@@ -1,0 +1,9 @@
+id: DEC-20260115-150108
+timestamp: "2026-01-15T15:01:08Z"
+type: TACTICAL
+actor: "human:pidster"
+subject: "Subagent autonomy sequence"
+outcome: "Build orchestrator-composed processes first; extend to self-planning subagents later"
+rationale: "Former is prerequisite for latter; incremental capability building"
+context: "Discussed orchestrator vs autonomous subagent planning"
+tags: ["framework", "subagents", "development"]

@@ -1,0 +1,9 @@
+id: DEC-20260114-101710
+timestamp: "2026-01-14T10:17:10Z"
+type: TACTICAL
+actor: "human:pidster"
+subject: "ADR cross-referencing in decision log"
+outcome: "ADR creation must also create a decision log entry with type=ADR and ref pointing to the ADR file"
+rationale: "Decision log becomes single source of truth for all decisions; enables chronological discovery while ADRs remain authoritative Standing documents"
+context: "Discussed three options: automatic entry, separate namespaces, or optional. Selected automatic for completeness."
+tags: ["ADR", "decision-log", "traceability"]

@@ -1,0 +1,66 @@
+id: "FW-017"
+title: "Merge-Friendly Artifact Structure"
+status: COMPLETED
+created: "2026-01-16T18:05:00Z"
+updated: "2026-01-16T18:45:00Z"
+completed: "2026-01-16T18:45:00Z"
+type: CAPABILITY
+priority: MEDIUM
+parent: "FW-008"
+description: |
+  Restructure .dialogue/ artifacts to avoid merge conflicts in multi-user
+  distributed VCS workflows.
+
+  **Design decision (DEC-20260116-180240):**
+  - Session memos: per-user files (personal state)
+  - Tasks: split into individual files (shared, merge-friendly)
+  - Logs: split into individual files per entry (shared, merge-friendly)
+
+  **Target structure:**
+  ```
+  .dialogue/
+  ├── session-memo-{username}.yaml    # Per-user
+  ├── tasks/
+  │   ├── FW-008.yaml                 # Per-task
+  │   └── ...
+  └── logs/
+      ├── decisions/
+      │   └── DEC-*.yaml              # Per-decision
+      └── observations/
+          └── OBS-*.yaml              # Per-observation
+  ```
+
+  **Implementation:**
+  1. Update log-decision.sh → write to logs/decisions/{ID}.yaml
+  2. Update log-observation.sh → write to logs/observations/{ID}.yaml
+  3. Update session-start.sh → scan tasks/ directory
+  4. Update dialogue-manage-tasks skill → individual files
+  5. Update resolve-reference skill → new paths
+  6. Create migration script for existing data
+  7. Implement session-memo with username detection
+
+objective: "Dialogue artifacts merge cleanly in multi-user git workflows"
+rationale: "Single-file YAML creates merge conflicts; per-item files isolate changes"
+blocked_by: []
+blocks: []
+notes: |
+  Created 16 January 2026 from FW-008 multi-user discussion.
+  See DEC-20260116-180240 for design rationale.
+
+  === Completed 16 January 2026 ===
+  All implementation items done:
+  1. log-decision.sh → writes to logs/decisions/{ID}.yaml
+  2. log-observation.sh → writes to logs/observations/{ID}.yaml
+  3. session-start.sh → scans tasks/ directory, reads session memos
+  4. dialogue-manage-tasks skill → updated for per-file structure
+  5. resolve-reference skill → supports per-file with legacy fallback
+  6. Migration script → migrates existing data, handles duplicates
+  7. Session memo → per-user files with username detection
+
+  Migration results:
+  - 87 decisions → 70 files (duplicates appended with --- separator)
+  - 77 observations → 76 files
+  - 35 tasks → 35 individual files
+
+  New skill: dialogue-save-session for manual session memo creation
+  (Stop hooks disabled per DEC-20260116-142842, so manual save required)

@@ -1,0 +1,8 @@
+id: OBS-20260114-165512
+timestamp: "2026-01-14T16:55:12Z"
+type: STATE
+observer: "ai:claude"
+subject: "Actor-concept integration gap identified"
+value: "C-4 defines actor types and characteristics but not functional roles; I-3 establishes conversation-as-TMS but doesn't specify role-TMS mappings; gap exists at operationalisation level"
+context: "During investigation of framework coherence for SH-008/SH-009 planning"
+tags: ["framework", "integration", "gap-analysis"]

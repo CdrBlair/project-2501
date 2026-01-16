@@ -1,0 +1,40 @@
+id: DEC-20260113-152517
+timestamp: "2026-01-13T15:25:17Z"
+type: OPERATIONAL
+actor: "ai:claude"
+subject: "PA-5 pattern"
+outcome: "AI-Led"
+rationale: "AI drafts escalation triggers based on framework guidance; human validates appropriateness"
+context: "Process Architect v3 simulation"
+tags: ["pattern", "PA-5"]
+
+---
+id: DEC-20260113-152517
+timestamp: "2026-01-13T15:25:17Z"
+type: OPERATIONAL
+actor: "ai:claude"
+subject: "PA-6 pattern"
+outcome: "AI-Led"
+rationale: "AI proposes validation criteria; human confirms testability"
+context: "Process Architect v3 simulation"
+tags: ["pattern", "PA-6"]
+---
+id: DEC-20260113-152517
+timestamp: "2026-01-13T15:25:17Z"
+type: OPERATIONAL
+actor: "ai:claude"
+subject: "PA-7 pattern"
+outcome: "AI-Led"
+rationale: "AI proposes retry policy and fix steps; human approves control flow"
+context: "Process Architect v3 simulation"
+tags: ["pattern", "PA-7"]
+---
+id: DEC-20260113-152517
+timestamp: "2026-01-13T15:25:17Z"
+type: OPERATIONAL
+actor: "ai:claude"
+subject: "PA-8 pattern"
+outcome: "AI-Only"
+rationale: "Specification generation is mechanical transformation of decisions into schema format"
+context: "Process Architect v3 simulation"
+tags: ["pattern", "PA-8"]

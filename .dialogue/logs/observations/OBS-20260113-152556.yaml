@@ -1,0 +1,8 @@
+id: OBS-20260113-152556
+timestamp: "2026-01-13T15:25:56Z"
+type: STATE
+observer: "ai:claude"
+subject: "Schema validation result"
+value: "All 12 steps pass constraints C1-C4; no violations detected"
+context: "Process Architect v3 simulation"
+tags: ["validation", "pass", "v3"]

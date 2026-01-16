@@ -1,0 +1,9 @@
+id: DEC-20260113-152538
+timestamp: "2026-01-13T15:25:38Z"
+type: OPERATIONAL
+actor: "ai:claude"
+subject: "Escalation trigger definitions"
+outcome: "Defined triggers for all 12 steps with RETURN actions for PA-9 and PA-10 validation failures"
+rationale: "Triggers focus on: ambiguity, constraint violations, compliance failures, human rejection"
+context: "Process Architect v3 simulation"
+tags: ["escalation", "triggers"]

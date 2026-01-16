@@ -1,0 +1,44 @@
+id: "SH-009"
+title: "Phase 1 Capability Flow Operationalisation"
+status: READY
+created: "2026-01-14T19:00:00Z"
+updated: "2026-01-14T17:45:00Z"
+type: CAPABILITY
+phase: 1
+priority: HIGH
+description: |
+  Operationalise Phase 1 capability flows in framework-manual.md and AI configuration.
+
+  REVISED APPROACH: Same principle as SH-008. Outputs should be operational,
+  not example documents.
+
+  Tasks:
+  1. Define Phase 1 processes in framework-manual.md:
+     - PROC-1.1: Opportunity Identification
+     - PROC-1.2: Stakeholder Alignment
+     - PROC-1.3: Problem Framing
+     - PROC-1.4: Business Case Development
+  2. For each process, specify in framework-manual.md:
+     - Capability instances (mostly Elicit, Synthesise, Decide)
+     - Functional roles (Facilitator, Scribe per I-3 FW-007)
+     - Actor patterns (Human-Only, Human-Led)
+     - Escalation triggers
+     - Completion criteria
+  3. Create/update AI configuration:
+     - Skills for Phase 1 elicitation (dialogue-structured-elicit already exists)
+     - Agent behaviour rules for tacit-heavy phases
+     - Hooks or prompts that activate Facilitator/Scribe roles
+
+  Key insight: Phase 1 is heavily Elicit/Synthesise/Decide, not Transform/Generate/Preserve.
+objective: "Phase 1 capability flows operationalised in framework-manual.md and AI config"
+rationale: |
+  Companion to SH-008. Capability flows operationalise how work happens;
+  the output should be guidance practitioners use and AI configuration that
+  implements the behaviour, not an example document.
+blocked_by: ["SH-008"]
+blocks: ["SH-010"]
+notes: |
+  Created 14 January 2026 from Phase 1-2 analysis.
+  REVISED 14 January 2026: Changed from "create exemplar" to "operationalise flows".
+  FW-007 completed: functional roles now defined in I-3.
+

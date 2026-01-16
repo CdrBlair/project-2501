@@ -1,0 +1,8 @@
+id: OBS-20260114-074008
+timestamp: "2026-01-14T07:40:08Z"
+type: STATE
+observer: "ai:claude"
+subject: "THY/REF document structure"
+value: "Created REF-001 (concept catalogue) and restructured THY-001 per Naur's three components: Problem Mapping, Design Rationale, Modification Patterns, Invalidation Conditions"
+context: "Phase 1 self-hosting, document type implementation"
+tags: ["theory", "reference", "documentation"]

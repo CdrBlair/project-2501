@@ -1,0 +1,40 @@
+id: DEC-20260113-152509
+timestamp: "2026-01-13T15:25:09Z"
+type: OPERATIONAL
+actor: "ai:claude"
+subject: "PA-1 pattern"
+outcome: "Partnership"
+rationale: "Both actors essential: human holds tacit process knowledge, AI provides structured elicitation via dialogue-structured-elicit"
+context: "Process Architect v3 simulation"
+tags: ["pattern", "PA-1"]
+
+---
+id: DEC-20260113-152509
+timestamp: "2026-01-13T15:25:09Z"
+type: OPERATIONAL
+actor: "ai:claude"
+subject: "PA-2 pattern"
+outcome: "AI-Only"
+rationale: "Document review is mechanical; AI reads concept files without human involvement"
+context: "Process Architect v3 simulation"
+tags: ["pattern", "PA-2"]
+---
+id: DEC-20260113-152509
+timestamp: "2026-01-13T15:25:09Z"
+type: OPERATIONAL
+actor: "ai:claude"
+subject: "PA-3 pattern"
+outcome: "AI-Led"
+rationale: "AI applies framework knowledge to propose decomposition; human reviews and adjusts"
+context: "Process Architect v3 simulation"
+tags: ["pattern", "PA-3"]
+---
+id: DEC-20260113-152509
+timestamp: "2026-01-13T15:25:09Z"
+type: OPERATIONAL
+actor: "ai:claude"
+subject: "PA-4 pattern"
+outcome: "Partnership"
+rationale: "Both essential: AI applies decision tree, human brings organisational context and approves"
+context: "Process Architect v3 simulation"
+tags: ["pattern", "PA-4"]

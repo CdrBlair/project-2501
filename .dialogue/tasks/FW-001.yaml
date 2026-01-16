@@ -1,0 +1,30 @@
+id: "FW-001"
+title: "Persistent task Tracking"
+status: COMPLETED
+created: "2026-01-14T12:00:00Z"
+updated: "2026-01-14T12:30:00Z"
+completed: "2026-01-14T12:30:00Z"
+type: SCHEMA
+priority: HIGH
+description: |
+  Design and implement persistent task tracking:
+  - Schema definition (implementation/schema-work-items.md)
+  - tasks file (.dialogue/work-items.yaml)
+  - TodoWrite integration guidance
+  - Registry update for TodoWrite tool
+objective: "Persistent task tracking operational"
+rationale: "tasks were session-only; cross-session continuity needed"
+blocked_by: []
+blocks: []
+assigned_to: "ai:claude"
+notes: |
+  Completed 14 January 2026.
+  - Added task_tracking section to registry_claude-code.yaml
+  - Created schema-work-items.md with simplified O-3-aligned schema
+  - Created .dialogue/work-items.yaml with current tasks
+  - Updated framework-generation.md with Dialogue Infrastructure section
+  - Logged observation OBS-20260114-094825
+
+  # === Phase 1-2 Analysis tasks (from 14 January 2026 analysis) ===
+
+  # HIGH PRIORITY: Phase 1 Operationalisation

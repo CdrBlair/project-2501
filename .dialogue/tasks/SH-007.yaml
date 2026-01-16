@@ -1,0 +1,30 @@
+id: "SH-007"
+title: "Retrofit vs Forward Decision"
+status: COMPLETED
+created: "2026-01-13T10:00:00Z"
+updated: "2026-01-14T12:00:00Z"
+completed: "2026-01-14T12:00:00Z"
+type: DECISION
+priority: LOW
+description: |
+  Decide approach for existing artifacts:
+  - Option A: Retrofit existing documents with frontmatter
+  - Option B: Create forward-only with new artifacts
+  - Option C: Hybrid (retrofit key documents, forward for new)
+objective: "Clear decision on existing artifact treatment"
+rationale: "Existing concepts/ documents lack THY/REF/STR prefixes and frontmatter"
+blocked_by: []
+blocks: []
+notes: |
+  Completed 14 January 2026.
+  Decision: Hybrid approach (Option C).
+  ADR-002: Hybrid Approach for Existing Artifact Treatment
+  DEC-20260114-115231: Cross-reference in decision log
+
+  Key points:
+  - New documents use full conventions (THY/REF/STR prefixes, frontmatter)
+  - Existing concept documents remain as-is
+  - THY-001 and REF-001 serve as bridge documents
+  - Future retrofit can be done incrementally
+
+  # Conceptual Debt Items

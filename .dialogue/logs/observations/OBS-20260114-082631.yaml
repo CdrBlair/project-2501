@@ -1,0 +1,18 @@
+id: OBS-20260114-082631
+timestamp: "2026-01-14T08:26:31Z"
+type: EVENT
+observer: "ai:claude"
+subject: "THY-003 created as PROVISIONAL"
+value: "Created theory_conversation-as-tms.md with explicit conceptual debt acknowledgement - insight first, formalisation to follow"
+context: "Testing framework response to insight-before-concept pattern"
+tags: ["thy", "provisional", "conversation", "tms"]
+
+---
+id: OBS-20260114-082631
+timestamp: "2026-01-14T08:26:31Z"
+type: STATE
+observer: "human:pidster"
+subject: "Framework self-hosting experiment"
+value: "Provisional THY approach allows experimentation with post-capture framework elements"
+context: "Decision to use insight-first approach for THY-003"
+tags: ["meta", "framework", "experiment"]

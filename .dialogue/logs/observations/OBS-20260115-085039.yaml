@@ -1,0 +1,8 @@
+id: OBS-20260115-085039
+timestamp: "2026-01-15T08:50:39Z"
+type: STATE
+observer: "human:pidster"
+subject: "Environment variable documentation gap"
+value: "Skill scripts not using available Claude Code environment variables; registry lacks environment variable reference"
+context: "Observed during FW-009 review"
+tags: ["registry", "documentation", "skills"]

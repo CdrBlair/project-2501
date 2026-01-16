@@ -1,0 +1,8 @@
+id: OBS-20260113-104931
+timestamp: "2026-01-13T10:49:31Z"
+type: STATE
+observer: "ai:claude"
+subject: "Schema validation result"
+value: "All constraints C1-C4 pass; specification is conformant"
+context: "Process Architect v2 simulation"
+tags: ["validation", "pass"]

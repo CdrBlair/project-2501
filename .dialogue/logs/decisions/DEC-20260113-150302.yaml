@@ -1,0 +1,9 @@
+id: DEC-20260113-150302
+timestamp: "2026-01-13T15:03:02Z"
+type: OPERATIONAL
+actor: "ai:claude"
+subject: "Artifact persistence approach"
+outcome: "Ask human at PA-9 approval step"
+rationale: "Flexible across projects; ensures intentionality; no hardcoded paths"
+context: "Gap 3 resolution"
+tags: ["persistence", "output"]

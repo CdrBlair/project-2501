@@ -1,0 +1,9 @@
+id: DEC-20260113-104857
+timestamp: "2026-01-13T10:48:57Z"
+type: OPERATIONAL
+actor: "ai:claude"
+subject: "PA-3 pattern selection"
+outcome: "AI-Led"
+rationale: "AI applies framework knowledge to propose decomposition; human reviews and adjusts"
+context: "Process Architect v2 simulation"
+tags: ["pattern-selection", "PA-3"]

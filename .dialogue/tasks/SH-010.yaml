@@ -1,0 +1,33 @@
+id: "SH-010"
+title: "Phase 2 Operational Guidance"
+status: BACKLOG
+created: "2026-01-14T19:00:00Z"
+updated: "2026-01-14T18:00:00Z"
+type: CAPABILITY
+phase: 2
+priority: HIGH
+description: |
+  Operationalise Phase 2 guidance in framework-manual.md and AI configuration.
+
+  REVISED APPROACH: Same principle as SH-008/SH-009.
+
+  Tasks:
+  1. Update framework-manual.md with Phase 2 operational guidance:
+     - Document types (project plan, risk register, resource allocation, governance)
+     - Information composition (55% tacit, 10% emergent, 35% formal)
+     - Planning spans most of project lifecycle and refines iteratively
+     - Collaboration patterns shift as planning becomes more formal
+  2. Create/update AI configuration for Phase 2 behaviour
+
+  Note: Planning is unique—it bridges Initiation's tacit-heavy work to
+  Analysis's balanced work, and spans most of project lifecycle.
+objective: "Phase 2 guidance operationalised in framework-manual.md and AI config"
+rationale: |
+  Completes Phase 1-2 operational guidance.
+  Planning is interesting because patterns shift over time within the phase.
+blocked_by: ["SH-008"]
+blocks: ["SH-011"]
+notes: |
+  Created 14 January 2026 from Phase 1-2 analysis.
+  REVISED 14 January 2026: Changed from "create exemplar" to "operationalise guidance".
+

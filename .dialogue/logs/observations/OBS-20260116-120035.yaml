@@ -1,0 +1,8 @@
+id: OBS-20260116-120035
+timestamp: "2026-01-16T12:00:35Z"
+type: STATE
+observer: "ai:claude"
+subject: "Observation ID collision"
+value: "Two observations logged in same second received identical IDs (OBS-20260116-115950). Timestamp-based ID generation lacks sub-second granularity."
+context: "Discovered during parallel observation logging"
+tags: ["framework", "logging", "bug"]

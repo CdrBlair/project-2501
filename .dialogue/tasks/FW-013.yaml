@@ -1,0 +1,45 @@
+id: "FW-013"
+title: "Executable Process Definition Schema"
+status: READY
+created: "2026-01-15T15:05:00Z"
+updated: "2026-01-15T17:35:00Z"
+type: SCHEMA
+priority: HIGH
+parent: "FW-011"
+description: |
+  Design machine-interpretable process definition schema for subagent execution.
+
+  Architecture (per DEC-20260115-173132):
+  - Standalone YAML process definition files in plugin/processes/
+  - Generic process-executor agent loads and executes
+  - Task tool invocation for subagent execution
+  - User doesn't need to know framework internals
+
+  Schema components:
+  1. ProcessDefinition: Reusable template (well-known processes)
+     - Steps (YAML): Capability instance details, actor patterns, escalation triggers
+     - Flow (Mermaid): Control structure for non-linear processes
+  2. ProcessInstance: Execution plan (intent)
+     - References definition (or inline for dynamic)
+     - Bound inputs, expected steps, success criteria
+  3. ExecutionLog: Links to DEC-*/OBS-* entries (actuality)
+
+  Key separation: Intent (ProcessInstance) vs Actuality (ExecutionLog)
+  Enables: Plan review before execution, comparison after
+
+objective: "Schema enables orchestrator to compose processes that subagents can execute"
+rationale: "Core schema for dynamic process creation capability"
+blocked_by: []
+blocks: ["FW-014", "FW-015"]
+notes: |
+  Created 15 January 2026.
+  Builds on FW-012 gap analysis.
+
+  15 January 2026: Unblocked by FW-012 completion.
+  Key inputs: OBS-20260115-154205 (Mermaid), OBS-20260115-154312 (gap analysis).
+
+  15 January 2026: Architecture decided (DEC-20260115-173132):
+  - Hybrid model: standalone definitions + generic executor agent + Task tool
+  - Intent/Actuality separation: ProcessInstance (plan) vs ExecutionLog (audit)
+  - User experience priority: Claude handles process selection
+

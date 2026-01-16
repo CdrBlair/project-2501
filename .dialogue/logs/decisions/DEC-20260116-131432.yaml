@@ -1,0 +1,9 @@
+id: DEC-20260116-131432
+timestamp: "2026-01-16T13:14:32Z"
+type: OPERATIONAL
+actor: "human:pidster"
+subject: "SubagentStop hook response format"
+outcome: "Fixed manually after confirming format was correct"
+rationale: "Investigation revealed the response format was already correct"
+context: "Testing new stop hook configuration"
+tags: ["hooks", "fix"]

@@ -1,0 +1,8 @@
+id: OBS-20260114-080125
+timestamp: "2026-01-14T08:01:25Z"
+type: EVENT
+observer: "ai:claude"
+subject: "THY-002 creation"
+value: "Created theory_framework-resilience.md addressing how framework responds to change through evolution rather than invalidation"
+context: "Follows THY-001 modification to reframe Section 4 from Invalidation to Evolution Conditions"
+tags: ["theory", "resilience", "framework"]

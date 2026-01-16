@@ -1,0 +1,133 @@
+id: "FW-008"
+title: "SDLC Project Orchestrator Research"
+status: READY
+created: "2026-01-15T08:35:00Z"
+updated: "2026-01-15T08:38:00Z"
+type: RESEARCH
+priority: HIGH
+description: |
+  Research an SDLC project orchestrator for human-user-interface interaction
+  and activity orchestration.
+
+  **Scope (narrowed per DEC-20260115-083726)**:
+  - How should human input be routed to appropriate framework activities?
+  - How should the orchestrator delegate to specialised agents?
+  - This is about the user-interface layer, NOT about how actors work within phases
+
+  **Explicitly out of scope**:
+  - Replacing the "actors emerge from configuration" model (SH-008)
+  - Defining how actors operate within phases
+  - Making architectural commitments at this stage
+
+  **Open questions for research**:
+  1. What is the orchestrator's responsibility boundary?
+     - Route human input to appropriate phase/activity?
+     - Maintain awareness of project state and context?
+
+  2. How do specialised agents relate to the orchestrator?
+     - Task tool spawning?
+     - What context do they need?
+
+  3. How does this layer interact with the emergent actor model?
+     - Orchestrator routes; actors within phases still emerge from configuration?
+     - Two-layer model: orchestration layer + execution layer?
+
+  **Key constraint**: No final assertions. This is exploratory research.
+
+objective: "Research orchestrator pattern for human-AI interaction layer"
+rationale: |
+  The framework needs a way to handle human input and route it appropriately.
+  This is distinct from how actors operate within phases (which may still
+  emerge from configuration per SH-008 insight).
+blocked_by: []
+blocks: []
+notes: |
+  Created 15 January 2026 from user observation OBS-20260115-083436.
+  Scope narrowed per DEC-20260115-083726: focus on UI/orchestration layer only.
+
+  Key user guidance: "actors may also emerge from configuration, orchestrating
+  framework interactions is different to operating within the framework"
+
+  This is research, not design commitment.
+
+  === Sub-task Completed: FW-009 (Hooks Investigation) ===
+  Key findings (DEC-20260115-084309):
+  - Hooks are guards/lifecycle handlers, NOT orchestration primitives
+  - All matching hooks run in PARALLEL (no sequential workflow)
+  - Recommended pattern: Hooks for validation/enforcement, Subagents for delegation,
+    Skills/commands for workflow, Claude's reasoning for routing
+
+  === Thought Experiment: Plugin Delivery Model (15 January 2026) ===
+  Explored Claude Code Plugin as framework delivery mechanism.
+
+  Hook events mapped to framework purposes:
+  - SessionStart: Restore TMS context (retrieval operation)
+  - SessionEnd: Create session memo (externalisation operation)
+  - PreToolUse: Phase constraint validation?
+  - PostToolUse: Auto-capture significant actions as observations?
+  - Stop: Intelligent continuation decisions
+  - UserPromptSubmit: Context injection based on detected intent
+
+  Session Continuity Pattern (SessionStart + SessionEnd):
+  - SessionEnd creates structured memo: active tasks, recent decisions/observations,
+    phase context, open questions
+  - SessionStart reads memo, presents project state (phase-independent per C-3 v2.0)
+  - Addresses ephemeral context problem through TMS externalisation/retrieval
+
+  Key insight (OBS-20260115-091213, DEC-20260115-092904):
+  - Phases have implied linearity but retrograde steps are valid process outcomes
+  - SessionStart must be phase-independent (C-3 v2.0 retrograde navigation)
+  - Framework should help NAVIGATE retrograde steps, not just trace them
+
+  Decomposition insight:
+  - Orchestration (routing human input) → Claude's reasoning + CLAUDE.md + skills
+  - Session continuity (TMS persistence) → Hook-based automation (SessionStart/SessionEnd)
+  - Guardrails (phase constraints) → Hook-based validation (PreToolUse, Stop)
+  - Capture (preserving what happens) → Hook-based or manual (PostToolUse, skills)
+
+  The "orchestrator agent" may be less necessary if hooks handle continuity
+  and Claude's reasoning handles routing based on good context injection.
+
+  Open questions remaining:
+  1. Session memo format and location → addressed by FW-017 (per-user files)
+  2. How to present phase-independent project state effectively
+
+  === Task State Integration (16 January 2026) ===
+  RESOLVED: SessionStart hook now injects in-progress task titles.
+
+  Implementation (session-start.sh):
+  - Extracts in-progress task IDs and titles from tasks.yaml
+  - Injects into systemMessage: "2 in-progress [CD-001: Title;FW-011: Title], 6 ready"
+  - Max 5 in-progress tasks shown (prevents message bloat)
+  - Ready tasks remain count-only
+
+  Design rationale:
+  - In-progress tasks are immediately relevant context
+  - Titles provide enough context without full descriptions
+  - Ready tasks less urgent; count sufficient for awareness
+
+  === Stop Hook Investigation (16 January 2026) ===
+  Extensive testing of Stop hooks revealed key differences between hook types.
+
+  Clarified understanding (corrects earlier assumptions):
+  - Prompt-based hooks DO have transcript access (evaluator LLM sees conversation)
+  - Command-based hooks can read transcript file via transcript_path in context
+  - The difference is RESPONSE HANDLING, not access:
+    * Prompt hook: reason displayed to user, Claude does not act on it
+    * Command hook: reason fed back to Claude, triggers immediate action
+
+  Implications for orchestration:
+  - Prompt hooks COULD provide intelligent context-aware decisions
+  - But currently the response isn't actionable (UX/integration gap, not capability gap)
+  - If response handling improved, prompt hooks viable for:
+    * Intelligent routing suggestions
+    * Context-aware guardrails
+    * Phase-appropriate guidance injection
+  - For now, command hooks remain reliable for anything needing Claude action
+
+  Related issues: GitHub #11786, #11610, #12667
+  Decision: Stop hooks removed for now (DEC-20260116-142842)
+
+  Updated open question 2: Prompt vs command hooks is now ANSWERED for current state
+  (command hooks for actionable responses), but prompt hooks have future potential.
+

@@ -1,0 +1,9 @@
+id: DEC-20260113-164521
+timestamp: "2026-01-13T16:45:21Z"
+type: OPERATIONAL
+actor: "ai:claude"
+subject: "PA-8 pattern"
+outcome: "AI-Only"
+rationale: "Specification generation is mechanical transformation"
+context: "Process Architect v4 simulation"
+tags: ["pattern", "PA-8"]

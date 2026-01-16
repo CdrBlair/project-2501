@@ -265,7 +265,7 @@ timestamp: "2026-01-13T16:46:21Z"
 type: EVENT
 observer: "ai:claude"
 subject: "DEFER action triggered"
-value: "User requested extended review; process suspending with DEFERRED_CONTINUATION work item; resume trigger: HUMAN_APPROVAL"
+value: "User requested extended review; process suspending with DEFERRED_CONTINUATION task; resume trigger: HUMAN_APPROVAL"
 context: "Process Architect v4 simulation"
 tags: ["defer", "suspended", "v4"]
 ---
@@ -354,7 +354,7 @@ id: OBS-20260114-094825
 timestamp: "2026-01-14T09:48:25Z"
 type: STATE
 observer: "ai:claude"
-subject: "Work item tracking system"
+subject: "task tracking system"
 value: "Implemented two-tier work tracking: TodoWrite for session-level ephemeral tracking, .dialogue/work-items.yaml for cross-session persistence"
 context: "FW-001 implementation complete; schema-work-items.md created"
 tags: ["framework", "infrastructure", "tracking"]
@@ -524,7 +524,7 @@ type: STATE
 observer: "human:pidster"
 subject: "Session start hook"
 value: "Modified to be more minimal; returning correct status as intended"
-context: "check-dialogue-init.sh was intentionally simplified"
+context: "session-start.sh was intentionally simplified"
 tags: ["hooks", "configuration"]
 ---
 id: OBS-20260116-130100
@@ -535,3 +535,156 @@ subject: "Stop hook systemMessage field visibility"
 value: "systemMessage on approve shown to user as 'Stop says: ...' but not injected into Claude context; reason on block shown to both; stop_hook_active scoped per-response cycle"
 context: "Testing stop-loop-guard.sh hook behaviour"
 tags: ["hooks", "claude-code"]
+---
+id: OBS-20260116-130346
+timestamp: "2026-01-16T13:03:46Z"
+type: STATE
+observer: "human:pidster"
+subject: "Sky colour"
+value: "Blue"
+context: "Test observation for stop hook"
+tags: ["testing"]
+---
+id: OBS-20260116-131057
+timestamp: "2026-01-16T13:10:57Z"
+type: STATE
+observer: "ai:claude"
+subject: "SubagentStop vs Stop hook response format inconsistency"
+value: "SubagentStop uses {ok: true/false} format while Stop uses {decision: approve/block} format; documentation indicates both should use decision format"
+context: "Discovered during hook verification"
+tags: ["hooks", "consistency"]
+---
+id: OBS-20260116-131152
+timestamp: "2026-01-16T13:11:52Z"
+type: STATE
+observer: "human:pidster"
+subject: "Sky condition"
+value: "The sky is blue"
+context: "Testing new stop hook configuration"
+tags: ["testing", "hooks"]
+---
+id: OBS-20260116-131717
+timestamp: "2026-01-16T13:17:17Z"
+type: STATE
+observer: "human:pidster"
+subject: "Sky color"
+value: "The sky is blue"
+context: "Testing stop hook"
+tags: ["testing"]
+---
+id: OBS-20260116-132113
+timestamp: "2026-01-16T13:21:13Z"
+type: STATE
+observer: "human:pidster"
+subject: "Stop hook behaviour"
+value: "Prompt-type hooks display reason but don't trigger action; command-type hooks feed reason back as instruction that triggers immediate execution"
+context: "Testing stop hook variants"
+tags: ["hooks", "claude-code"]
+---
+id: OBS-20260116-133455
+timestamp: "2026-01-16T13:34:55Z"
+type: STATE
+observer: "ai:claude"
+subject: "Stop hook behaviour difference hypothesis"
+value: "Prompt hooks wrap reason in 'Prompt hook condition was not met: X' while command hooks pass reason directly. Both inject as meta user messages via same mechanism (iq0 function). Hypothesis: wrapper changes pragmatics - I treat wrapped version as error notification vs direct instruction. Needs behavioural validation."
+context: "Source analysis of cli.js in Claude Code"
+tags: ["hooks", "claude-code", "hypothesis"]
+---
+id: OBS-20260116-134712
+timestamp: "2026-01-16T13:47:12Z"
+type: STATE
+observer: "human:pidster"
+subject: "Stop hook UX feedback"
+value: "No visible indicator shown when stop hook blocked stopping"
+context: "Testing stop hook behavior on previous message"
+tags: ["hooks", "ux", "testing"]
+---
+id: OBS-20260116-134927
+timestamp: "2026-01-16T13:49:27Z"
+type: STATE
+observer: "human:pidster"
+subject: "Stop hook logic issue"
+value: "Hook fired but prompt returned false despite observation being logged; checking stop_hook_active instead of detecting logging activity"
+context: "Testing stop hook - hook fired but condition evaluation appears incorrect"
+tags: ["hooks", "testing", "bug"]
+---
+id: OBS-20260116-135422
+timestamp: "2026-01-16T13:54:22Z"
+type: STATE
+observer: "human:pidster"
+subject: "Stop hook test direction"
+value: "User selected option C: Create test to inspect what ARGUMENTS contains when Stop fires"
+context: "Investigating stop hook illogical behavior"
+tags: ["hooks", "testing", "diagnostic"]
+---
+id: OBS-20260116-135646
+timestamp: "2026-01-16T13:56:46Z"
+type: STATE
+observer: "human:pidster"
+subject: "Stop hook diagnostic output"
+value: "No visible output from diagnostic Stop hook after restart - unclear if hook fired or where output went"
+context: "Testing stop hook with diagnostic prompt"
+tags: ["hooks", "testing", "diagnostic"]
+---
+id: OBS-20260116-135811
+timestamp: "2026-01-16T13:58:11Z"
+type: MEASUREMENT
+observer: "ai:claude"
+subject: "Stop hook context contents"
+value: "Hook receives: session_id, transcript_path, cwd, permission_mode, hook_event_name, stop_hook_active. Does NOT receive: conversation transcript or logging history"
+context: "Diagnostic Stop hook test successful"
+tags: ["hooks", "testing", "diagnostic", "architecture"]
+---
+id: OBS-20260116-141342
+timestamp: "2026-01-16T14:13:42Z"
+type: STATE
+observer: "ai:claude"
+subject: "Stop hook loop-guard not working"
+value: "Second stop attempt still blocked - stop_hook_active flag not being set to true between attempts. Loop-guard mechanism not functioning as designed."
+context: "Testing second stop attempt after first block"
+tags: ["hooks", "testing", "bug"]
+---
+id: OBS-20260116-141508
+timestamp: "2026-01-16T14:15:08Z"
+type: STATE
+observer: "human:pidster"
+subject: "stop_hook_active interpretation"
+value: "stop_hook_active may indicate another Stop hook has fired in current evaluation cycle, not repeated attempts of same hook. Would explain why always false with single hook."
+context: "Investigating loop-guard mechanism"
+tags: ["hooks", "testing", "architecture"]
+---
+id: OBS-20260116-141900
+timestamp: "2026-01-16T14:19:00Z"
+type: MEASUREMENT
+observer: "ai:claude"
+subject: "stop_hook_active behavior"
+value: "stop_hook_active becomes true only when model responds without tool calls after a block. Tool calls keep it false, allowing continued blocking. This is intentional loop-guard design."
+context: "Testing stop hook loop-guard mechanism"
+tags: ["hooks", "testing", "architecture"]
+---
+id: OBS-20260116-142043
+timestamp: "2026-01-16T14:20:43Z"
+type: STATE
+observer: "human:pidster"
+subject: "Stop hook UX feedback"
+value: "Current two-stop mechanism feels heavy; prompt-based approach was preferred but doesn't work due to transcript access limitation"
+context: "Evaluating stop hook architecture options"
+tags: ["hooks", "ux", "architecture"]
+---
+id: OBS-20260116-142219
+timestamp: "2026-01-16T14:22:19Z"
+type: STATE
+observer: "human:pidster"
+subject: "Prompt vs command hook difference"
+value: "Prompt-based hooks DO have transcript access (evaluator sees conversation). The difference is response handling: prompt hook reasons are displayed only, command hook reasons are fed back to session triggering action."
+context: "Correcting earlier misunderstanding about hook mechanisms"
+tags: ["hooks", "architecture", "correction"]
+---
+id: OBS-20260116-142702
+timestamp: "2026-01-16T14:27:02Z"
+type: STATE
+observer: "ai:claude"
+subject: "Prompt hook regression confirmed"
+value: "Prompt-based Stop hooks not receiving transcript is a known regression (GitHub issues #11786, #11610). Intended behaviour was for evaluator to have conversation access. Also #12667 confirms 'error' display for intentional blocking is a known UX issue."
+context: "Researching Claude Code GitHub issues"
+tags: ["hooks", "regression", "upstream"]

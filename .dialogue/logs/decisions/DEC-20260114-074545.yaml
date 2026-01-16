@@ -1,0 +1,9 @@
+id: DEC-20260114-074545
+timestamp: "2026-01-14T07:45:45Z"
+type: TACTICAL
+actor: "human:pidster"
+subject: "Document structure format"
+outcome: "YAML frontmatter + Markdown body for REF, THY and similar documents"
+rationale: "Machine-parseable metadata for Context Graph operations; flexible prose for content; standard format tools support"
+context: "Document type implementation"
+tags: ["documentation", "structure", "format"]

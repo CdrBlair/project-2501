@@ -1,0 +1,7 @@
+id: OBS-20260115-172239
+timestamp: "2026-01-15T17:22:39Z"
+type: STATE
+observer: "ai:claude"
+subject: "Process landscape analysis"
+value: "Analysing notional processes across seven phases to ground subagent schema design in concrete process examples"
+context: "subagents,FW-013,processes"

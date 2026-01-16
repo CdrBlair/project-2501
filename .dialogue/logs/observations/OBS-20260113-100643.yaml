@@ -1,0 +1,8 @@
+id: OBS-20260113-100643
+timestamp: "2026-01-13T10:06:43Z"
+type: EVENT
+observer: "human:pidster"
+subject: "Script location issue"
+value: "Skills use scripts from .dialogue/ but should have scripts in skill directory tree"
+context: "Skill structure review"
+tags: ["skills", "structure", "fix-needed"]

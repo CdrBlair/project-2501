@@ -1,0 +1,9 @@
+id: DEC-20260113-100708
+timestamp: "2026-01-13T10:07:08Z"
+type: TACTICAL
+actor: "ai:claude"
+subject: "Script location architecture"
+outcome: "Keep shared logging scripts in .dialogue/, skills reference them"
+rationale: "Scripts are shared infrastructure not skill-specific utilities"
+context: "Skills architecture"
+tags: ["architecture", "skills"]

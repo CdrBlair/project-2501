@@ -1,0 +1,8 @@
+id: OBS-20260116-135811
+timestamp: "2026-01-16T13:58:11Z"
+type: MEASUREMENT
+observer: "ai:claude"
+subject: "Stop hook context contents"
+value: "Hook receives: session_id, transcript_path, cwd, permission_mode, hook_event_name, stop_hook_active. Does NOT receive: conversation transcript or logging history"
+context: "Diagnostic Stop hook test successful"
+tags: ["hooks", "testing", "diagnostic", "architecture"]

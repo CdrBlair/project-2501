@@ -1,0 +1,9 @@
+id: DEC-20260113-145933
+timestamp: "2026-01-13T14:59:33Z"
+type: TACTICAL
+actor: "ai:claude"
+subject: "Loop semantics design"
+outcome: "Three-level approach: process retry policy, step return action, fix step pattern"
+rationale: "Provides declarative loop-back at process level, implements routing at step level, and explicit work at fix step level"
+context: "Gap 1 resolution"
+tags: ["schema", "loops", "design"]

@@ -1,0 +1,8 @@
+id: DEC-20260116-121813
+timestamp: "2026-01-16T12:18:13Z"
+type: OPERATIONAL
+actor: "ai:claude"
+subject: "Add debug logging to stop hook"
+outcome: "Modified stop-loop-guard.sh to write hook input to /tmp/stop-hook-input.json"
+rationale: "Debugging transcript path access issue in prompt hook"
+tags: ["debugging", "hooks"]

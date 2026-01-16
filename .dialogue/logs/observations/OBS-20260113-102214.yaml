@@ -1,0 +1,8 @@
+id: OBS-20260113-102214
+timestamp: "2026-01-13T10:22:14Z"
+type: EVENT
+observer: "ai:claude"
+subject: "Script path fix"
+value: "Updated scripts to use git root for log file location"
+context: "Ensures logs always go to .dialogue/logs/ regardless of script location"
+tags: ["fix", "infrastructure"]

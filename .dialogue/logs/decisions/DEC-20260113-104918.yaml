@@ -1,0 +1,9 @@
+id: DEC-20260113-104918
+timestamp: "2026-01-13T10:49:18Z"
+type: OPERATIONAL
+actor: "ai:claude"
+subject: "Escalation trigger definitions"
+outcome: "Defined escalation triggers for all 10 steps"
+rationale: "Triggers focus on: ambiguity detection, constraint violations, human approval gates, and operational failures"
+context: "Process Architect v2 simulation"
+tags: ["escalation", "triggers"]

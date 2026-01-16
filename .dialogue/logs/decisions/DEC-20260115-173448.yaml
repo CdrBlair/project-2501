@@ -1,0 +1,9 @@
+id: DEC-20260115-173448
+timestamp: "2026-01-15T17:34:48Z"
+type: DESIGN
+actor: "human:pidster"
+subject: "User-facing process language"
+outcome: "Claude must never expose process IDs to users; must explain intent in plain English"
+rationale: "Framework internals are implementation details; users should understand what will happen, not which process definition is being invoked"
+context: "Follows from user experience priority in DEC-20260115-173132"
+tags: ["subagents", "UX", "FW-013"]

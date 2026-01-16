@@ -1,0 +1,9 @@
+id: DEC-20260116-114935
+timestamp: "2026-01-16T11:49:35Z"
+type: DESIGN
+actor: "human:pidster"
+subject: "Stop hook compliance checking approach"
+outcome: "Always use prompt evaluation with loop guard; defer fast-path optimisation"
+rationale: "Avoid premature optimisation; prompt evaluation provides intelligent context-aware checking that simple markers cannot replicate"
+context: "Explored hybrid approach with env var markers but deferred due to complexity around multiple decisions/observations per turn"
+tags: ["hooks", "stop", "compliance"]

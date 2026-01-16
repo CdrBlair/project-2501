@@ -1,0 +1,30 @@
+id: DEC-20260113-164520
+timestamp: "2026-01-13T16:45:20Z"
+type: OPERATIONAL
+actor: "ai:claude"
+subject: "PA-5 pattern"
+outcome: "AI-Led"
+rationale: "AI drafts triggers; human validates appropriateness"
+context: "Process Architect v4 simulation"
+tags: ["pattern", "PA-5"]
+
+---
+id: DEC-20260113-164520
+timestamp: "2026-01-13T16:45:20Z"
+type: OPERATIONAL
+actor: "ai:claude"
+subject: "PA-6 pattern"
+outcome: "AI-Led"
+rationale: "AI proposes criteria; human confirms testability"
+context: "Process Architect v4 simulation"
+tags: ["pattern", "PA-6"]
+---
+id: DEC-20260113-164520
+timestamp: "2026-01-13T16:45:20Z"
+type: OPERATIONAL
+actor: "ai:claude"
+subject: "PA-7 pattern"
+outcome: "AI-Led"
+rationale: "AI proposes retry policy; human approves control flow"
+context: "Process Architect v4 simulation"
+tags: ["pattern", "PA-7"]

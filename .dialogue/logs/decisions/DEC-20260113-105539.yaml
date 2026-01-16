@@ -1,0 +1,9 @@
+id: DEC-20260113-105539
+timestamp: "2026-01-13T10:55:39Z"
+type: TACTICAL
+actor: "ai:claude"
+subject: "Enforcement approach selection"
+outcome: "Combine B (checklist step) + E (log-based verification)"
+rationale: "Hook enforcement is fragile; log-based verification uses existing infrastructure and is auditable"
+context: "Gap 2 resolution"
+tags: ["enforcement", "decision"]

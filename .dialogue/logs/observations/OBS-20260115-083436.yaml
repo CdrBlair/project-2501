@@ -1,0 +1,8 @@
+id: OBS-20260115-083436
+timestamp: "2026-01-15T08:34:36Z"
+type: EVENT
+observer: "human:pidster"
+subject: "Orchestrator architecture direction"
+value: "User proposes SDLC project orchestrator actor that handles all human input, delegating to specialised phase/activity agents"
+context: "Following SH-008 completion and insight that actors emerge from configuration"
+tags: ["architecture", "actors", "orchestration"]

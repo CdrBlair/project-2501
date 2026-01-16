@@ -1,0 +1,9 @@
+id: DEC-20260115-083023
+timestamp: "2026-01-15T08:30:23Z"
+type: TACTICAL
+actor: "ai:claude"
+subject: "Phase 1 guidance placement"
+outcome: "Removed rules file; guidance stays in framework-manual.md and skills"
+rationale: "Rules path-matching is for file-scoped concerns; phase guidance is work-type-scoped. Skills and framework-manual.md are correct locations."
+context: "Phase-specific guidance needs activation by work context, not file paths"
+tags: ["SH-008", "architecture"]

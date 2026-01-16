@@ -1,0 +1,8 @@
+id: OBS-20260116-133455
+timestamp: "2026-01-16T13:34:55Z"
+type: STATE
+observer: "ai:claude"
+subject: "Stop hook behaviour difference hypothesis"
+value: "Prompt hooks wrap reason in 'Prompt hook condition was not met: X' while command hooks pass reason directly. Both inject as meta user messages via same mechanism (iq0 function). Hypothesis: wrapper changes pragmatics - I treat wrapped version as error notification vs direct instruction. Needs behavioural validation."
+context: "Source analysis of cli.js in Claude Code"
+tags: ["hooks", "claude-code", "hypothesis"]

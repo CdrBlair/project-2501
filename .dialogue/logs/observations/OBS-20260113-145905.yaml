@@ -1,0 +1,8 @@
+id: OBS-20260113-145905
+timestamp: "2026-01-13T14:59:05Z"
+type: EVENT
+observer: "ai:claude"
+subject: "Gap prioritisation"
+value: "User selected Gap 1 (Feedback loops) as next priority"
+context: "Gap analysis continuation"
+tags: ["gaps", "prioritisation"]

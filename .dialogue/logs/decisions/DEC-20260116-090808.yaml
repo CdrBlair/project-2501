@@ -1,0 +1,8 @@
+id: DEC-20260116-090808
+timestamp: "2026-01-16T09:08:08Z"
+type: OPERATIONAL
+actor: "human:pidster"
+subject: "Caffeine intake"
+outcome: "Make another coffee"
+rationale: "Friday energy requirements"
+tags: ["personal", "friday"]

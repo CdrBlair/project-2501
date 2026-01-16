@@ -1,0 +1,9 @@
+id: DEC-20260113-104853
+timestamp: "2026-01-13T10:48:53Z"
+type: OPERATIONAL
+actor: "ai:claude"
+subject: "PA-2 pattern selection"
+outcome: "AI-Only"
+rationale: "Document review is mechanical; AI reads concept files without human involvement"
+context: "Process Architect v2 simulation"
+tags: ["pattern-selection", "PA-2"]

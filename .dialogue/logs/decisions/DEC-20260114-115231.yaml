@@ -1,0 +1,10 @@
+id: DEC-20260114-115231
+timestamp: "2026-01-14T11:52:31Z"
+type: ADR
+actor: "human:pidster"
+subject: "Hybrid Approach for Existing Artifact Treatment"
+outcome: "Created ADR-002"
+rationale: "Hybrid approach balances consistency goals with practical constraints. The framework is under active development; forcing immediate retrofit would delay more valuable work. Bridge documents (THY-001, ..."
+context: "The framework self-hosting effort (SH-005, SH-006) created new artifacts with THY/REF/STR prefixes and document frontmatter. Existing documents in concepts/ lack these conventions. A decision is needed on whether to retrofit existing documents, create only new artifacts going forward, or use a hybrid approach."
+ref: "ADR-002"
+tags: ["self-hosting", "artifacts", "migration"]

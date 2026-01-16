@@ -1,0 +1,9 @@
+id: DEC-20260115-144840
+timestamp: "2026-01-15T14:48:40Z"
+type: DESIGN
+actor: "human:pidster"
+subject: "Claude framework subagents"
+outcome: "Add subagents to the Claude version of the framework"
+rationale: "Decompose complex tasks into specialised subtasks; better aligns with framework conceptual model"
+context: "Current Claude framework lacks subagent capability"
+tags: ["framework", "claude", "subagents"]

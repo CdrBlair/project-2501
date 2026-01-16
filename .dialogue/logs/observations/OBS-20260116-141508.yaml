@@ -1,0 +1,8 @@
+id: OBS-20260116-141508
+timestamp: "2026-01-16T14:15:08Z"
+type: STATE
+observer: "human:pidster"
+subject: "stop_hook_active interpretation"
+value: "stop_hook_active may indicate another Stop hook has fired in current evaluation cycle, not repeated attempts of same hook. Would explain why always false with single hook."
+context: "Investigating loop-guard mechanism"
+tags: ["hooks", "testing", "architecture"]

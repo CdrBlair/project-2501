@@ -1,0 +1,8 @@
+id: OBS-20260114-075044
+timestamp: "2026-01-14T07:50:44Z"
+type: STATE
+observer: "ai:claude"
+subject: "Document frontmatter schema created"
+value: "Created schema_document-frontmatter.md; updated THY-001 and REF-001 with YAML frontmatter"
+context: "Phase 1 self-hosting"
+tags: ["schema", "documentation"]

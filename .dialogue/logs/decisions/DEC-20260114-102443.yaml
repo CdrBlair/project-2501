@@ -1,0 +1,10 @@
+id: DEC-20260114-102443
+timestamp: "2026-01-14T10:24:43Z"
+type: ADR
+actor: "human:pidster"
+subject: "Decision type hierarchy for framework logging"
+outcome: "Created ADR-001"
+rationale: "The four-tier model provides complete coverage while maintaining clear boundaries. Each type maps to framework concepts (document domains, temporal classes, knowledge types), providing theoretical grounding for the distinctions."
+context: "The framework needed a way to classify and log decisions at different levels of significance. The existing OPERATIONAL/TACTICAL types were insufficient for design decisions that don't warrant full ADRs."
+ref: "ADR-001"
+tags: ["framework", "decision-logging", "FW-003", "FW-004"]

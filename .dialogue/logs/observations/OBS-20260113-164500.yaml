@@ -1,0 +1,8 @@
+id: OBS-20260113-164500
+timestamp: "2026-01-13T16:45:00Z"
+type: EVENT
+observer: "ai:claude"
+subject: "Process context elicited"
+value: "Phase: 2 (Planning); Purpose: Design and validate capability flows; Inputs: Process requirements, framework concepts; Outputs: Specifications and recommendations"
+context: "Process Architect v4 simulation"
+tags: ["elicitation", "context", "v4"]

@@ -1,0 +1,8 @@
+id: OBS-20260116-125632
+timestamp: "2026-01-16T12:56:32Z"
+type: STATE
+observer: "human:pidster"
+subject: "Session start hook"
+value: "Modified to be more minimal; returning correct status as intended"
+context: "session-start.sh was intentionally simplified"
+tags: ["hooks", "configuration"]

@@ -1,0 +1,18 @@
+id: OBS-20260116-115950
+timestamp: "2026-01-16T11:59:50Z"
+type: STATE
+observer: "ai:claude"
+subject: "Decision type distinction"
+value: "Distinction between operational choices (routine, convention-following) and deliberate decisions (conscious selection with rationale). Most simple task choices are operational, not decisional."
+context: "Emerged during arithmetic task meta-discussion"
+tags: ["framework", "decisions", "logging"]
+
+---
+id: OBS-20260116-115950
+timestamp: "2026-01-16T11:59:50Z"
+type: STATE
+observer: "ai:claude"
+subject: "Logging recursion"
+value: "Decisions about when to log are themselves decisions that may warrant logging - creates potential infinite regress without clear boundary."
+context: "Meta-discussion about logging scope"
+tags: ["framework", "decisions", "logging", "meta"]

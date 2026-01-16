@@ -1,0 +1,9 @@
+id: DEC-20260113-094359
+timestamp: "2026-01-13T09:43:59Z"
+type: OPERATIONAL
+actor: "human:pidster"
+subject: "Implementation directory structure"
+outcome: "Created implementation/ for executable artifacts separate from research/"
+rationale: "Clean separation of theory (concepts) from operationalisation (implementation)"
+context: "Directory organisation"
+tags: ["structure", "organisation"]

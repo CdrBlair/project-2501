@@ -1,0 +1,8 @@
+id: OBS-20260113-163552
+timestamp: "2026-01-13T16:35:52Z"
+type: EVENT
+observer: "human:pidster"
+subject: "Async approval pattern needed"
+value: "Some decisions are non-timeout-able; proposed DEFER action for async/offline activities"
+context: "Process Architect v3 review"
+tags: ["async", "defer", "gap"]

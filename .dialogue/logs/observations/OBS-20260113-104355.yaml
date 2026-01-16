@@ -1,0 +1,8 @@
+id: OBS-20260113-104355
+timestamp: "2026-01-13T10:43:55Z"
+type: EVENT
+observer: "ai:claude"
+subject: "Skill reorganisation complete"
+value: "Renamed skills with dialogue- and build-only- prefixes; updated Process Architect with pattern self-description and required skills"
+context: "Framework executable refinement"
+tags: ["skills", "refactor", "process-architect"]

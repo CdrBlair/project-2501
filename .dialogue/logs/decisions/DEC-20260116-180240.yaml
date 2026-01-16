@@ -1,0 +1,9 @@
+id: DEC-20260116-180240
+timestamp: "2026-01-16T18:02:40Z"
+type: DESIGN
+actor: "human:pidster"
+subject: "Multi-user artifact architecture"
+outcome: "Hybrid approach: session memos per-user (personal state), tasks split into individual files (shared but merge-friendly)"
+rationale: "Session context is inherently personal; tasks are collaborative but single-file YAML creates merge conflicts in distributed VCS workflows"
+context: "Multi-user repo discussion during FW-008 research"
+tags: ["FW-008", "architecture", "multi-user"]

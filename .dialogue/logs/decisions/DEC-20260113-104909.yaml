@@ -1,0 +1,9 @@
+id: DEC-20260113-104909
+timestamp: "2026-01-13T10:49:09Z"
+type: OPERATIONAL
+actor: "ai:claude"
+subject: "PA-5 through PA-10 pattern selections"
+outcome: "PA-5:AI-Led, PA-6:AI-Led, PA-7:AI-Only, PA-8:AI-Only, PA-9:Human-Led, PA-10:AI-Only"
+rationale: "PA-5,6: AI drafts, human validates; PA-7,8,10: mechanical AI tasks; PA-9: human holds approval authority"
+context: "Process Architect v2 simulation"
+tags: ["pattern-selection", "batch"]

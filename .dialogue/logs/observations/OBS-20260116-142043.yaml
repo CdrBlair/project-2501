@@ -1,0 +1,8 @@
+id: OBS-20260116-142043
+timestamp: "2026-01-16T14:20:43Z"
+type: STATE
+observer: "human:pidster"
+subject: "Stop hook UX feedback"
+value: "Current two-stop mechanism feels heavy; prompt-based approach was preferred but doesn't work due to transcript access limitation"
+context: "Evaluating stop hook architecture options"
+tags: ["hooks", "ux", "architecture"]

@@ -1,0 +1,8 @@
+id: OBS-20260116-132113
+timestamp: "2026-01-16T13:21:13Z"
+type: STATE
+observer: "human:pidster"
+subject: "Stop hook behaviour"
+value: "Prompt-type hooks display reason but don't trigger action; command-type hooks feed reason back as instruction that triggers immediate execution"
+context: "Testing stop hook variants"
+tags: ["hooks", "claude-code"]

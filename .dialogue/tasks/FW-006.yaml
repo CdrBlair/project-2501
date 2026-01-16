@@ -1,0 +1,39 @@
+id: "FW-006"
+title: "task Management Skill"
+status: COMPLETED
+created: "2026-01-14T17:30:00Z"
+updated: "2026-01-14T17:45:00Z"
+completed: "2026-01-14T17:45:00Z"
+type: CAPABILITY
+priority: MEDIUM
+description: |
+  Create dialogue-manage-work-items skill for task CRUD operations.
+  Approach: Treat as editing problem, not scripting problem.
+  - Move schema into skill directory (self-contained)
+  - AI reads YAML, understands schema, edits directly
+  - No shell script needed
+  Operations to support:
+  - Create new task (with next ID generation)
+  - Update task status/fields
+  - List tasks (with optional filters)
+  - Archive completed items
+objective: "Skill enables AI to manage tasks via direct YAML editing"
+rationale: "task management is fundamentally editing; scripts add unnecessary complexity"
+blocked_by: []
+blocks: []
+notes: |
+  Completed 14 January 2026.
+  Created .claude/skills/dialogue-manage-work-items/SKILL.md with:
+
+  Design decision: No script approach.
+  - YAML is human-readable and AI-editable
+  - Schema embedded in skill provides context for correct edits
+  - Simpler than maintaining shell script for YAML manipulation
+
+  Skill contents:
+  - Full schema reference (fields, types, enums)
+  - Operation guides (create, update, list, add notes)
+  - Validation checklist
+  - TodoWrite relationship explained
+  - TMS alignment noted
+

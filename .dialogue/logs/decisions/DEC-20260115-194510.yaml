@@ -1,0 +1,9 @@
+id: DEC-20260115-194510
+timestamp: "2026-01-15T19:45:10Z"
+type: DESIGN
+actor: "human:pidster"
+subject: "Plugin self-containment architecture"
+outcome: "Plugin must be independently deployable with all operational content embedded; host project produces the plugin as a build artifact"
+rationale: "Plugin portability requires no external dependencies on host project files. The framework manual and operational content are distilled/copied from source (implementation/, concepts/) into plugin/references/. External links to build artefacts are elided. This enables the plugin to be deployed to other projects without requiring the full framework development repository."
+context: "Triggered by need for plugin to operate correctly without external links"
+tags: ["architecture", "plugin", "self-containment"]

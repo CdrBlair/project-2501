@@ -1,0 +1,9 @@
+id: DEC-20260113-163612
+timestamp: "2026-01-13T16:36:12Z"
+type: TACTICAL
+actor: "ai:claude"
+subject: "DEFER action design approach"
+outcome: "Extend existing work coordination with DEFER action and SUSPENDED state"
+rationale: "Work coordination already has PAUSED state; DEFER is similar but with explicit resume trigger and task creation"
+context: "Process async approval gap"
+tags: ["defer", "async", "design"]

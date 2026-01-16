@@ -1,0 +1,8 @@
+id: OBS-20260116-134712
+timestamp: "2026-01-16T13:47:12Z"
+type: STATE
+observer: "human:pidster"
+subject: "Stop hook UX feedback"
+value: "No visible indicator shown when stop hook blocked stopping"
+context: "Testing stop hook behavior on previous message"
+tags: ["hooks", "ux", "testing"]

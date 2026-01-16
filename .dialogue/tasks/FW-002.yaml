@@ -1,0 +1,22 @@
+id: "FW-002"
+title: "Revisit task Schema and Persistence"
+status: BACKLOG
+created: "2026-01-14T13:00:00Z"
+updated: "2026-01-14T13:00:00Z"
+type: SCHEMA
+priority: LOW
+description: |
+  Review and refine the task tracking approach after gaining experience:
+  - Evaluate schema completeness against actual usage patterns
+  - Consider additional fields or simplifications
+  - Assess persistence mechanism (file-based vs alternatives)
+  - Review TodoWrite integration effectiveness
+  - Consider tooling for task management (list, filter, update commands)
+objective: "task schema and persistence validated or improved based on experience"
+rationale: "Initial schema was designed speculatively; real usage will reveal improvements"
+blocked_by: []
+blocks: []
+notes: |
+  Added 14 January 2026.
+  Revisit after several sessions of use to identify friction points.
+

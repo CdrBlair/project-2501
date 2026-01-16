@@ -1,0 +1,8 @@
+id: OBS-20260115-194516
+timestamp: "2026-01-15T19:45:16Z"
+type: STATE
+observer: "human:pidster"
+subject: "Framework meta-application"
+value: "This work (producing the plugin as self-contained artifact) is an example of using the framework to produce the framework's executable form - meta-application in action"
+context: "Plugin self-containment work"
+tags: ["meta", "framework-development"]

@@ -1,0 +1,9 @@
+id: DEC-20260113-105649
+timestamp: "2026-01-13T10:56:49Z"
+type: OPERATIONAL
+actor: "ai:claude"
+subject: "Skill naming correction"
+outcome: "dialogue-verify-logging-compliance (not build-only-)"
+rationale: "Verification is a framework capability, not build-specific tooling; any process using dialogue loop needs this"
+context: "Gap 2 resolution"
+tags: ["naming", "correction"]

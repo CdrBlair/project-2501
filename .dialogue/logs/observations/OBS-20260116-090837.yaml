@@ -1,0 +1,8 @@
+id: OBS-20260116-090837
+timestamp: "2026-01-16T09:08:37Z"
+type: STATE
+observer: "human:pidster"
+subject: "Environment configuration"
+value: "Test passed, env var now set"
+context: "Dialogue framework logging validation"
+tags: ["testing", "configuration"]

@@ -1,0 +1,8 @@
+id: OBS-20260113-101507
+timestamp: "2026-01-13T10:15:07Z"
+type: EVENT
+observer: "ai:claude"
+subject: "Script relocation"
+value: "Moved scripts to canonical skill directory structure"
+context: "Scripts now in .claude/skills/*/scripts/ per Claude Code conventions"
+tags: ["refactor", "canonical"]

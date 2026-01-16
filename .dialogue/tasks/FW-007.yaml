@@ -1,0 +1,56 @@
+id: "FW-007"
+title: "Actor Roles in TMS Operations"
+status: COMPLETED
+created: "2026-01-14T17:00:00Z"
+updated: "2026-01-14T17:30:00Z"
+completed: "2026-01-14T17:30:00Z"
+type: CAPABILITY
+priority: HIGH
+description: |
+  Extend I-3 (Naur-Wegner Integration) with functional actor roles section.
+
+  Gap identified: C-4 defines actor *types* (Human vs AI) and C-5 defines
+  collaboration *patterns*, but neither defines functional *roles* that
+  operationalise how actors perform TMS operations through dialogue.
+
+  Functional roles to define:
+  - Facilitator: Structures dialogue, prompts articulation (directory updates, encoding)
+  - Synthesiser: Integrates information, proposes understanding (encoding, coordination)
+  - Validator: Tests understanding, confirms accuracy (retrieval, credibility)
+  - Scribe: Captures and preserves outputs (externalisation, PRESERVE)
+  - Researcher: Retrieves external information (retrieval from external sources)
+
+  Key insight: Roles are independent of actor type. Both humans and AI can fill
+  them with different strengths. AI doesn't need to hold tacit knowledge to help
+  humans externalise it (Facilitator role).
+
+  Extension should add to I-3:
+  - Functional role definitions (distinct from organisational roles per C-4)
+  - Role-TMS operation mapping
+  - Actor-role suitability guidance
+  - Phase-role relevance
+
+  NOTE: Remove existing reference to THY-003 from I-3 - relationship flows wrong way.
+objective: "I-3 extended with functional actor roles that operationalise TMS participation"
+rationale: |
+  SH-009 (Phase 1 Capability Flows) needs to specify *which roles* perform each step,
+  not just "Human" or "AI". This fills the operationalisation gap between actor types
+  and collaboration patterns.
+blocked_by: []
+blocks: ["SH-009"]
+notes: |
+  Created 14 January 2026 from actor-concept integration investigation.
+  Logged as OBS-20260114-165512.
+
+  Completed 14 January 2026:
+  - Extended I-3 (integration_naur-wegner.md) with "Functional Actor Roles in TMS Operations" section
+  - Defined five roles: Facilitator, Synthesiser, Validator, Scribe, Researcher
+  - Added role-TMS operation mapping table
+  - Added role-actor suitability table (human vs AI strengths)
+  - Added role-phase relevance table
+  - Connected roles to collaboration patterns for operationalisation
+  - Removed inappropriate THY-003 reference (theory docs shouldn't be referenced as sources)
+  - Updated Integration with Other Concepts section
+  - Updated Validation Status with role-related items
+  - Document history updated to Version 3.0
+

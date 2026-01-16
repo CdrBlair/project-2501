@@ -1,0 +1,8 @@
+id: OBS-20260114-094825
+timestamp: "2026-01-14T09:48:25Z"
+type: STATE
+observer: "ai:claude"
+subject: "task tracking system"
+value: "Implemented two-tier work tracking: TodoWrite for session-level ephemeral tracking, .dialogue/work-items.yaml for cross-session persistence"
+context: "FW-001 implementation complete; schema-work-items.md created"
+tags: ["framework", "infrastructure", "tracking"]

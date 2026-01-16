@@ -1,0 +1,32 @@
+id: "VAL-001"
+title: "Emergent Knowledge Percentage Validation"
+status: BACKLOG
+created: "2026-01-14T19:00:00Z"
+updated: "2026-01-14T19:00:00Z"
+type: RESEARCH
+priority: MEDIUM
+description: |
+  Investigate the emergent knowledge percentage claims in I-2 (Phase Composition).
+
+  Current claims:
+  - Phase 1: 20% emergent (highest)
+  - All other phases: 10% emergent (constant)
+
+  Questions to explore:
+  1. Is emergent knowledge actually higher in Phase 1, or just more *recognised*?
+  2. Is the 10% constant across phases empirically grounded or placeholder?
+  3. Is "emergent" distinct enough from "tacit" to warrant separate tracking?
+  4. What are implications if emergent percentages are significantly different?
+
+  Outcome: Either validate current percentages with reasoning, revise them,
+  or explicitly mark as speculative placeholders.
+objective: "I-2 emergent percentages validated, revised, or explicitly marked as uncertain"
+rationale: |
+  Grey area identified in analysis. Framework presents percentages with more
+  confidence than evidence warrants. Appropriate epistemic marking needed.
+blocked_by: []
+blocks: []
+notes: |
+  Created 14 January 2026 from Phase 1-2 analysis.
+  Lower priority than exemplars but matters for framework credibility.
+

@@ -1,0 +1,9 @@
+id: DEC-20260115-093026
+timestamp: "2026-01-15T09:30:26Z"
+type: DESIGN
+actor: "ai:claude"
+subject: "C-3 retrograde navigation extension"
+outcome: "Extended C-3 with retrograde navigation section: phases as character not location, navigation vs tracing, tooling implications"
+rationale: "Backward events are valid process outcomes that framework should help navigate, not just trace; addresses gap where current framing treats retrograde steps negatively"
+context: "User insight OBS-20260115-091213: emergent information triggers retrograde steps as process outcome; linear feature vectors cause change-handling debates"
+tags: ["architecture", "phases", "process"]

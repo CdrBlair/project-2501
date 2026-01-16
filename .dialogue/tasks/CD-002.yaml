@@ -1,0 +1,34 @@
+id: "CD-002"
+title: "Phase 1-2 Measurement Operationalisation"
+status: READY
+created: "2026-01-14T19:00:00Z"
+updated: "2026-01-14T19:00:00Z"
+type: DEBT
+priority: HIGH
+description: |
+  Address measurement gap for tacit-heavy phases identified in analysis.
+
+  C-7 (Phase-Aware Measurement) states early phases require qualitative assessment
+  of "stakeholder alignment", "shared understanding", "problem framing adequacy"
+  but provides no operationalisation.
+
+  Tasks:
+  1. Review Ryan & O'Connor's Team Tacit Knowledge Measure for Phase 1-2 applicability
+  2. Identify or develop indicators for stakeholder alignment
+  3. Create checklist for problem framing adequacy assessment
+  4. Link measurement approaches to existing evidence base (Meyer good days, Obi bad days)
+  5. Update C-7 with operationalised guidance or acknowledge gap explicitly
+
+  Later phases have DORA, SPACE, DevEx. Early phases need equivalent.
+objective: "C-7 updated with operationalised Phase 1-2 measurement or explicit gap acknowledgement"
+rationale: |
+  Framework claims Phase 1-2 are most critical but provides least measurement
+  guidance. This undermines practical application and creates internal inconsistency.
+blocked_by: []
+blocks: []
+notes: |
+  Created 14 January 2026 from Phase 1-2 analysis.
+  May result in "gap remains open" if no valid instruments exist,
+  but that should be explicit rather than implicit.
+
+  # HIGH PRIORITY: Transition Mitigation Gap

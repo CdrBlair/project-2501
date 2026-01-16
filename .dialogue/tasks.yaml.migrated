@@ -5,11 +5,11 @@
 version: "1.0"
 last_updated: "2026-01-15T15:05:00Z"
 
-# Work item ID prefix definitions
+# task ID prefix definitions
 prefixes:
   - prefix: "SH"
     name: "Self-Hosting"
-    description: "Framework self-application work items (applying framework to its own development)"
+    description: "Framework self-application tasks (applying framework to its own development)"
 
   - prefix: "CD"
     name: "Conceptual Debt"
@@ -27,7 +27,7 @@ prefixes:
     name: "Validation"
     description: "Framework validation and empirical grounding work"
 
-# Active work items
+# Active tasks
 items:
   # Self-Hosting Items (Phase 3)
   - id: "SH-001"
@@ -53,7 +53,7 @@ items:
       - Self-describing IDs: pattern determines type (no scheme prefixes needed)
       - Document patterns: THY-NNN, REF-NNN, STR-NNN, F-N, C-N, O-N, I-N, G-N, E-N
       - Timestamp patterns: DEC-YYYYMMDD-HHMMSS, OBS-YYYYMMDD-HHMMSS
-      - Work item patterns: SH-NNN, CD-NNN, FW-NNN
+      - task patterns: SH-NNN, CD-NNN, FW-NNN
       - Actor patterns: human:<id>, ai:<id>
       - Version suffix: @vN, Fragment suffix: #section
       - Relationship types aligned with document frontmatter schema
@@ -85,7 +85,7 @@ items:
       Runtime artifact resolution (what deployments have access to):
       - Project docs: THY-NNN, REF-NNN, STR-NNN, ADR-NNN (in implementation/, decisions/)
       - Log entries: DEC-YYYYMMDD-HHMMSS, OBS-YYYYMMDD-HHMMSS
-      - Work items: SH-NNN, CD-NNN, FW-NNN
+      - tasks: SH-NNN, CD-NNN, FW-NNN
       - Actors: human:<id>, ai:<id>
       - External URLs: Returns EXTERNAL status (use WebFetch)
 
@@ -120,7 +120,7 @@ items:
       Created implementation/schema_context-graph.md with:
 
       Node Types:
-      - ARTIFACT: Documents, decisions, observations, work items, ADRs
+      - ARTIFACT: Documents, decisions, observations, tasks, ADRs
       - ACTOR_HUMAN: Human participants with expertise and roles
       - ACTOR_AI: AI actors with capability profiles and reliability metrics
       - SYSTEM: External systems and services
@@ -263,7 +263,7 @@ items:
       Note: Referenced file theory_thy-003-conceptual-debt.md does not exist.
       Need to create or locate full inventory.
 
-  # Framework Work Items
+  # Framework tasks
   - id: "FW-003"
     title: "Enhance Decision Logging with DESIGN Type"
     status: COMPLETED
@@ -355,7 +355,7 @@ items:
 
       3. Project Artifacts (created at runtime): decisions/ADR-*, .dialogue/logs/
          - THY, REF, STR documents in configured location
-         - Decisions, observations, work items
+         - Decisions, observations, tasks
 
       Configuration mechanism:
       - .dialogue/config.yaml defines artifact locations
@@ -369,7 +369,7 @@ items:
       - Configuration allows projects to use any directory structure
 
   - id: "FW-006"
-    title: "Work Item Management Skill"
+    title: "task Management Skill"
     status: COMPLETED
     created: "2026-01-14T17:30:00Z"
     updated: "2026-01-14T17:45:00Z"
@@ -377,18 +377,18 @@ items:
     type: CAPABILITY
     priority: MEDIUM
     description: |
-      Create dialogue-manage-work-items skill for work item CRUD operations.
+      Create dialogue-manage-work-items skill for task CRUD operations.
       Approach: Treat as editing problem, not scripting problem.
       - Move schema into skill directory (self-contained)
       - AI reads YAML, understands schema, edits directly
       - No shell script needed
       Operations to support:
-      - Create new work item (with next ID generation)
-      - Update work item status/fields
-      - List work items (with optional filters)
+      - Create new task (with next ID generation)
+      - Update task status/fields
+      - List tasks (with optional filters)
       - Archive completed items
-    objective: "Skill enables AI to manage work items via direct YAML editing"
-    rationale: "Work item management is fundamentally editing; scripts add unnecessary complexity"
+    objective: "Skill enables AI to manage tasks via direct YAML editing"
+    rationale: "task management is fundamentally editing; scripts add unnecessary complexity"
     blocked_by: []
     blocks: []
     notes: |
@@ -408,20 +408,20 @@ items:
       - TMS alignment noted
 
   - id: "FW-002"
-    title: "Revisit Work Item Schema and Persistence"
+    title: "Revisit task Schema and Persistence"
     status: BACKLOG
     created: "2026-01-14T13:00:00Z"
     updated: "2026-01-14T13:00:00Z"
     type: SCHEMA
     priority: LOW
     description: |
-      Review and refine the work item tracking approach after gaining experience:
+      Review and refine the task tracking approach after gaining experience:
       - Evaluate schema completeness against actual usage patterns
       - Consider additional fields or simplifications
       - Assess persistence mechanism (file-based vs alternatives)
       - Review TodoWrite integration effectiveness
-      - Consider tooling for work item management (list, filter, update commands)
-    objective: "Work item schema and persistence validated or improved based on experience"
+      - Consider tooling for task management (list, filter, update commands)
+    objective: "task schema and persistence validated or improved based on experience"
     rationale: "Initial schema was designed speculatively; real usage will reveal improvements"
     blocked_by: []
     blocks: []
@@ -430,7 +430,7 @@ items:
       Revisit after several sessions of use to identify friction points.
 
   - id: "FW-001"
-    title: "Persistent Work Item Tracking"
+    title: "Persistent task Tracking"
     status: COMPLETED
     created: "2026-01-14T12:00:00Z"
     updated: "2026-01-14T12:30:00Z"
@@ -438,13 +438,13 @@ items:
     type: SCHEMA
     priority: HIGH
     description: |
-      Design and implement persistent work item tracking:
+      Design and implement persistent task tracking:
       - Schema definition (implementation/schema-work-items.md)
-      - Work items file (.dialogue/work-items.yaml)
+      - tasks file (.dialogue/work-items.yaml)
       - TodoWrite integration guidance
       - Registry update for TodoWrite tool
-    objective: "Persistent work item tracking operational"
-    rationale: "Work items were session-only; cross-session continuity needed"
+    objective: "Persistent task tracking operational"
+    rationale: "tasks were session-only; cross-session continuity needed"
     blocked_by: []
     blocks: []
     assigned_to: "ai:claude"
@@ -452,11 +452,11 @@ items:
       Completed 14 January 2026.
       - Added task_tracking section to registry_claude-code.yaml
       - Created schema-work-items.md with simplified O-3-aligned schema
-      - Created .dialogue/work-items.yaml with current work items
+      - Created .dialogue/work-items.yaml with current tasks
       - Updated framework-generation.md with Dialogue Infrastructure section
       - Logged observation OBS-20260114-094825
 
-  # === Phase 1-2 Analysis Work Items (from 14 January 2026 analysis) ===
+  # === Phase 1-2 Analysis tasks (from 14 January 2026 analysis) ===
 
   # HIGH PRIORITY: Phase 1 Operationalisation
   - id: "SH-008"
@@ -891,7 +891,7 @@ items:
       Created 14 January 2026 from Phase 1-2 analysis.
       Lower priority; current framing is defensible for now.
 
-  # === Architecture Work Items ===
+  # === Architecture tasks ===
 
   - id: "FW-008"
     title: "SDLC Project Orchestrator Research"
@@ -964,7 +964,7 @@ items:
       - UserPromptSubmit: Context injection based on detected intent
 
       Session Continuity Pattern (SessionStart + SessionEnd):
-      - SessionEnd creates structured memo: active work items, recent decisions/observations,
+      - SessionEnd creates structured memo: active tasks, recent decisions/observations,
         phase context, open questions
       - SessionStart reads memo, presents project state (phase-independent per C-3 v2.0)
       - Addresses ephemeral context problem through TMS externalisation/retrieval
@@ -984,10 +984,47 @@ items:
       and Claude's reasoning handles routing based on good context injection.
 
       Open questions remaining:
-      1. Session memo format and location (.dialogue/session-memo.yaml?)
-      2. Prompt-based vs shell hooks for each purpose
-      3. How to present phase-independent project state effectively
-      4. Integration with work item state
+      1. Session memo format and location → addressed by FW-017 (per-user files)
+      2. How to present phase-independent project state effectively
+
+      === Task State Integration (16 January 2026) ===
+      RESOLVED: SessionStart hook now injects in-progress task titles.
+
+      Implementation (session-start.sh):
+      - Extracts in-progress task IDs and titles from tasks.yaml
+      - Injects into systemMessage: "2 in-progress [CD-001: Title;FW-011: Title], 6 ready"
+      - Max 5 in-progress tasks shown (prevents message bloat)
+      - Ready tasks remain count-only
+
+      Design rationale:
+      - In-progress tasks are immediately relevant context
+      - Titles provide enough context without full descriptions
+      - Ready tasks less urgent; count sufficient for awareness
+
+      === Stop Hook Investigation (16 January 2026) ===
+      Extensive testing of Stop hooks revealed key differences between hook types.
+
+      Clarified understanding (corrects earlier assumptions):
+      - Prompt-based hooks DO have transcript access (evaluator LLM sees conversation)
+      - Command-based hooks can read transcript file via transcript_path in context
+      - The difference is RESPONSE HANDLING, not access:
+        * Prompt hook: reason displayed to user, Claude does not act on it
+        * Command hook: reason fed back to Claude, triggers immediate action
+
+      Implications for orchestration:
+      - Prompt hooks COULD provide intelligent context-aware decisions
+      - But currently the response isn't actionable (UX/integration gap, not capability gap)
+      - If response handling improved, prompt hooks viable for:
+        * Intelligent routing suggestions
+        * Context-aware guardrails
+        * Phase-appropriate guidance injection
+      - For now, command hooks remain reliable for anything needing Claude action
+
+      Related issues: GitHub #11786, #11610, #12667
+      Decision: Stop hooks removed for now (DEC-20260116-142842)
+
+      Updated open question 2: Prompt vs command hooks is now ANSWERED for current state
+      (command hooks for actionable responses), but prompt hooks have future potential.
 
   - id: "FW-009"
     title: "Claude Code Hooks Investigation"
@@ -1100,7 +1137,7 @@ items:
       Created 15 January 2026 from user observation during FW-009 review.
       See OBS-20260115-085039.
 
-  # === Subagent Architecture Work Items ===
+  # === Subagent Architecture tasks ===
 
   - id: "FW-011"
     title: "Add Subagents to Claude Framework"
@@ -1333,3 +1370,51 @@ items:
     blocks: []
     notes: |
       Created 15 January 2026.
+
+  - id: "FW-017"
+    title: "Merge-Friendly Artifact Structure"
+    status: IN_PROGRESS
+    created: "2026-01-16T18:05:00Z"
+    updated: "2026-01-16T18:05:00Z"
+    type: CAPABILITY
+    priority: MEDIUM
+    parent: "FW-008"
+    description: |
+      Restructure .dialogue/ artifacts to avoid merge conflicts in multi-user
+      distributed VCS workflows.
+
+      **Design decision (DEC-20260116-180240):**
+      - Session memos: per-user files (personal state)
+      - Tasks: split into individual files (shared, merge-friendly)
+      - Logs: split into individual files per entry (shared, merge-friendly)
+
+      **Target structure:**
+      ```
+      .dialogue/
+      ├── session-memo-{username}.yaml    # Per-user
+      ├── tasks/
+      │   ├── FW-008.yaml                 # Per-task
+      │   └── ...
+      └── logs/
+          ├── decisions/
+          │   └── DEC-*.yaml              # Per-decision
+          └── observations/
+              └── OBS-*.yaml              # Per-observation
+      ```
+
+      **Implementation:**
+      1. Update log-decision.sh → write to logs/decisions/{ID}.yaml
+      2. Update log-observation.sh → write to logs/observations/{ID}.yaml
+      3. Update session-start.sh → scan tasks/ directory
+      4. Update dialogue-manage-tasks skill → individual files
+      5. Update resolve-reference skill → new paths
+      6. Create migration script for existing data
+      7. Implement session-memo with username detection
+
+    objective: "Dialogue artifacts merge cleanly in multi-user git workflows"
+    rationale: "Single-file YAML creates merge conflicts; per-item files isolate changes"
+    blocked_by: []
+    blocks: []
+    notes: |
+      Created 16 January 2026 from FW-008 multi-user discussion.
+      See DEC-20260116-180240 for design rationale.

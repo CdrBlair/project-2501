@@ -1,0 +1,30 @@
+id: "VAL-003"
+title: "Collaboration Pattern Boundary Operationalisation"
+status: BACKLOG
+created: "2026-01-14T19:00:00Z"
+updated: "2026-01-14T19:00:00Z"
+type: RESEARCH
+priority: MEDIUM
+description: |
+  Address collaboration pattern boundary operationalisation gap.
+
+  C-5 defines five patterns but extreme boundaries are vague:
+  - Human-Only: "AI cannot contribute value" — what criteria determine this?
+  - AI-Only: "Human review adds no value" — when is this actually true?
+
+  Middle boundaries (Human-Led ↔ Partnership ↔ AI-Led) are clearer.
+
+  Tasks:
+  1. Develop operational criteria or decision trees for boundary determination
+  2. Consider: information type, risk level, accountability requirements
+  3. Cross-reference with capability model (which capabilities ever qualify for AI-Only?)
+  4. Update C-5 with sharper boundary definitions or acknowledge irreducible ambiguity
+objective: "C-5 pattern boundaries operationalised or irreducible ambiguity acknowledged"
+rationale: |
+  Practitioners need to know which pattern to use. Vague boundaries
+  undermine the practical value of the pattern taxonomy.
+blocked_by: []
+blocks: []
+notes: |
+  Created 14 January 2026 from Phase 1-2 analysis.
+

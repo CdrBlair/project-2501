@@ -1,0 +1,9 @@
+id: DEC-20260113-095042
+timestamp: "2026-01-13T09:50:42Z"
+type: OPERATIONAL
+actor: "human:pidster"
+subject: "Framework generation model"
+outcome: "Established implementation/ for generation inputs, tool directories for outputs"
+rationale: "Clear separation enables multi-tool framework generation"
+context: "Directory architecture"
+tags: ["architecture", "organisation"]

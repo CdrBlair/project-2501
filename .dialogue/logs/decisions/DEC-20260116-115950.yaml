@@ -1,0 +1,8 @@
+id: DEC-20260116-115950
+timestamp: "2026-01-16T11:59:50Z"
+type: OPERATIONAL
+actor: "ai:claude"
+subject: "Logging boundary for simple tasks"
+outcome: "Did not log decisions for simple arithmetic task"
+rationale: "Task outside framework development scope; logging overhead disproportionate to task complexity"
+tags: ["framework", "logging", "scope"]

@@ -1,0 +1,9 @@
+id: DEC-20260114-173830
+timestamp: "2026-01-14T17:38:30Z"
+type: DESIGN
+actor: "ai:claude"
+subject: "Phase 1 draft disposition"
+outcome: "Archive draft; detailed document schemas deferred to future work"
+rationale: "Draft served its purpose: insights absorbed into framework-manual.md and AI config. Detailed document type schemas are speculative and untested—defer formalisation until practical experience validates need."
+context: "Analysed example_phase1-document-type-registry.md for operationalisation per SH-008"
+tags: ["SH-008", "archival"]

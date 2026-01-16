@@ -1,0 +1,29 @@
+id: "VAL-002"
+title: "TMS-Tacit Scaling Relationship Validation"
+status: BACKLOG
+created: "2026-01-14T19:00:00Z"
+updated: "2026-01-14T19:00:00Z"
+type: RESEARCH
+priority: MEDIUM
+description: |
+  Investigate the TMS requirements scaling claim in I-2.
+
+  Current claim: "Phases with higher tacit composition require more robust
+  actor-routing mechanisms (TMS infrastructure)"
+
+  This is logically derived but empirically untested. Tasks:
+  1. Review TMS literature for phase-specific evidence
+  2. Check if Ryan & O'Connor's measure shows phase correlation
+  3. Consider what validation would look like (comparative TMS effectiveness studies)
+  4. Either find supporting evidence, acknowledge as hypothesis, or revise
+
+  Marked ⚠ in I-2 validation status; need to either resolve or make uncertainty explicit.
+objective: "I-2 TMS scaling claim validated with evidence or marked as hypothesis"
+rationale: |
+  Framework presents logical derivation as if validated. Need to distinguish
+  "logically coherent" from "empirically supported" for practitioner trust.
+blocked_by: []
+blocks: []
+notes: |
+  Created 14 January 2026 from Phase 1-2 analysis.
+

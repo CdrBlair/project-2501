@@ -1,0 +1,8 @@
+id: OBS-20260116-131717
+timestamp: "2026-01-16T13:17:17Z"
+type: STATE
+observer: "human:pidster"
+subject: "Sky color"
+value: "The sky is blue"
+context: "Testing stop hook"
+tags: ["testing"]

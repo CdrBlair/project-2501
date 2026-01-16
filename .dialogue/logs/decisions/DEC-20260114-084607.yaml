@@ -1,0 +1,9 @@
+id: DEC-20260114-084607
+timestamp: "2026-01-14T08:46:07Z"
+type: OPERATIONAL
+actor: "human:pidster"
+subject: "Phase 1 document form"
+outcome: "Option B: Consolidated Phase 1 artifact with structured frontmatter"
+rationale: "Single document appropriate for research/framework project; provides template for decomposition; balances formality with tacit capture"
+context: "str_phase1-initiation.md created"
+tags: ["phase-1", "document-form", "strategy"]

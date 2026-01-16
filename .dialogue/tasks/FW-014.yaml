@@ -1,0 +1,25 @@
+id: "FW-014"
+title: "Orchestrator-Subagent Handoff Mechanism"
+status: BACKLOG
+created: "2026-01-15T15:05:00Z"
+updated: "2026-01-15T15:05:00Z"
+type: CAPABILITY
+priority: HIGH
+parent: "FW-011"
+description: |
+  Design and implement mechanism for orchestrator to hand off process
+  definitions to subagents for execution.
+
+  Considerations:
+  - How process definition travels (inline vs file reference)
+  - Context passing (what else subagent needs)
+  - Task tool integration
+  - Subagent type selection
+
+objective: "Orchestrator can spawn subagent with process definition"
+rationale: "Enables orchestrator-composed, subagent-executed pattern"
+blocked_by: ["FW-013"]
+blocks: ["FW-016"]
+notes: |
+  Created 15 January 2026.
+

@@ -1,0 +1,8 @@
+id: OBS-20260116-135422
+timestamp: "2026-01-16T13:54:22Z"
+type: STATE
+observer: "human:pidster"
+subject: "Stop hook test direction"
+value: "User selected option C: Create test to inspect what ARGUMENTS contains when Stop fires"
+context: "Investigating stop hook illogical behavior"
+tags: ["hooks", "testing", "diagnostic"]

@@ -1,0 +1,8 @@
+id: OBS-20260113-105404
+timestamp: "2026-01-13T10:54:04Z"
+type: EVENT
+observer: "ai:claude"
+subject: "Gap prioritisation decision"
+value: "User prioritised Gap 2 (Skill enforcement); interested in combined loop approach"
+context: "Gap analysis session"
+tags: ["gaps", "prioritisation"]

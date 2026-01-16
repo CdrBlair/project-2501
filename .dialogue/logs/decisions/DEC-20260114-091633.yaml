@@ -1,0 +1,9 @@
+id: DEC-20260114-091633
+timestamp: "2026-01-14T09:16:33Z"
+type: TACTICAL
+actor: "human:pidster"
+subject: "SH-7 Retrofit vs Forward"
+outcome: "Hybrid approach: retrofit documents referenced by THY-001/REF-001; forward-only for remaining documents"
+rationale: "Key conceptual documents need frontmatter for Context Graph integration; avoid unnecessary work on peripheral documents"
+context: "Proceed to Phase 3 with hybrid retrofit scope"
+tags: ["sh-7", "retrofit", "planning"]

@@ -1,0 +1,36 @@
+id: "CD-003"
+title: "Phase 1-2 Transition Mitigation Strategies"
+status: READY
+created: "2026-01-14T19:00:00Z"
+updated: "2026-01-14T19:00:00Z"
+type: DEBT
+priority: HIGH
+description: |
+  Address transition mitigation gap for early phases.
+
+  C-6 (Transitions & Information Loss) quantifies 35-45% loss at Initiation→Planning,
+  40-50% at Planning→Analysis, but doesn't provide phase-specific mitigation strategies.
+
+  Later phases have ADRs (Design→Implementation) mentioned. Early phases need equivalent.
+
+  Tasks:
+  1. Identify what specific tacit knowledge is lost at Initiation→Planning
+  2. Research or develop mitigation practices for early-phase transitions
+  3. Consider: stakeholder continuity, rationale capture, decision logging, context preservation
+  4. Update C-6 with phase-specific mitigation guidance
+  5. Cross-reference with dialogue skills (log-decision, log-observation) as mitigation tools
+
+  Framework's own concepts predict early-phase mitigation has highest value
+  because tacit loss is greatest there.
+objective: "C-6 updated with Phase 1-2 transition mitigation strategies"
+rationale: |
+  Highest-value mitigation opportunities are in early phases where tacit loss
+  is greatest, yet guidance focuses on later phases. This is backwards per
+  framework's own information composition model.
+blocked_by: []
+blocks: []
+notes: |
+  Created 14 January 2026 from Phase 1-2 analysis.
+  May connect to dialogue skills as concrete mitigation implementations.
+
+  # MEDIUM PRIORITY: Grey Areas

@@ -1,0 +1,9 @@
+id: DEC-20260113-150759
+timestamp: "2026-01-13T15:07:59Z"
+type: OPERATIONAL
+actor: "ai:claude"
+subject: "Decision granularity convention"
+outcome: "One decision entry per pattern assignment"
+rationale: "Maximises traceability; enables per-step audit; overhead is minimal"
+context: "Gap 5 resolution"
+tags: ["granularity", "convention"]

@@ -1,0 +1,44 @@
+id: "SH-003"
+title: "Context Graph Schema"
+status: COMPLETED
+created: "2026-01-13T10:00:00Z"
+updated: "2026-01-14T16:00:00Z"
+completed: "2026-01-14T16:00:00Z"
+type: SCHEMA
+phase: 3
+priority: MEDIUM
+description: |
+  Define Context Graph schema for TMS-aligned operations:
+  - Node types (ARTIFACT, ACTOR_HUMAN, ACTOR_AI, SYSTEM)
+  - Edge types (relationships between nodes)
+  - TMS operations (locate, route, retrieve, refresh, discover, invalidate)
+objective: "Context Graph schema defined with TMS operation mappings"
+rationale: "Externalises transactive memory for human-AI coordination"
+blocked_by: ["SH-002"]
+blocks: []
+notes: |
+  Completed 14 January 2026.
+  Created implementation/schema_context-graph.md with:
+
+  Node Types:
+  - ARTIFACT: Documents, decisions, observations, tasks, ADRs
+  - ACTOR_HUMAN: Human participants with expertise and roles
+  - ACTOR_AI: AI actors with capability profiles and reliability metrics
+  - SYSTEM: External systems and services
+
+  Edge Types:
+  - Information relationships: DERIVES_FROM, REFERENCES, SUPERSEDES, REQUIRES, BLOCKS, INFORMS
+  - Actor-Artifact: CREATED, OWNS, CONTRIBUTED, KNOWS, CURATES
+  - Actor-Actor: DELEGATES_TO, ESCALATES_TO, COLLABORATES_WITH, SUPERVISES
+  - System: STORED_IN, INTEGRATES, MIRRORS
+
+  TMS Operations (Wegner-aligned):
+  - locate(query) → Directory lookup
+  - route(new_info) → Allocation routing
+  - retrieve(node_id) → Content retrieval (delegates to SH-002 resolver)
+  - refresh(node_id) → Maintenance/staleness check
+  - discover(actor, domain) → Actor expertise discovery
+  - invalidate(node_id) → Mark as stale with optional cascade
+
+  Storage: Filesystem + YAML (per SH-004 decision), designed for graph DB evolution
+

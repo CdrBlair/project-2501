@@ -1,0 +1,8 @@
+id: OBS-20260116-180825
+timestamp: "2026-01-16T18:08:25Z"
+type: STATE
+observer: "ai:claude"
+subject: "Test observation"
+value: "Testing new per-file logging"
+context: "FW-017 implementation"
+tags: ["testing"]

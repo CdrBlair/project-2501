@@ -1,0 +1,29 @@
+id: "FW-016"
+title: "Process Execution Audit Linkage"
+status: BACKLOG
+created: "2026-01-15T15:05:00Z"
+updated: "2026-01-15T15:05:00Z"
+type: CAPABILITY
+priority: HIGH
+parent: "FW-011"
+description: |
+  Implement audit trail linking execution logs to process definitions.
+
+  Requirements:
+  - Process instance ID generation
+  - Link from execution log entries to process instance
+  - Link from process instance to process definition
+  - Support "what happened and why" queries
+
+  May involve ProcessManifest artefact that captures:
+  - Process definition (inline or reference)
+  - Instance parameters
+  - Execution log entry references
+
+objective: "Full audit trail from execution back to process definition"
+rationale: "Auditability requirement identified in design discussion"
+blocked_by: ["FW-014", "FW-015"]
+blocks: []
+notes: |
+  Created 15 January 2026.
+

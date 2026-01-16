@@ -1,0 +1,8 @@
+id: OBS-20260116-085924
+timestamp: "2026-01-16T08:59:24Z"
+type: STATE
+observer: "ai:claude"
+subject: "CLAUDE_PROJECT_DIR availability"
+value: "Variable available to hooks but not Bash tool; requires SessionStart hook to persist via CLAUDE_ENV_FILE"
+context: "Investigation triggered by script failures when logging decisions"
+tags: ["environment", "hooks", "configuration"]

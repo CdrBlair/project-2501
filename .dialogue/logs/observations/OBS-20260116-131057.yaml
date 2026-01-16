@@ -1,0 +1,8 @@
+id: OBS-20260116-131057
+timestamp: "2026-01-16T13:10:57Z"
+type: STATE
+observer: "ai:claude"
+subject: "SubagentStop vs Stop hook response format inconsistency"
+value: "SubagentStop uses {ok: true/false} format while Stop uses {decision: approve/block} format; documentation indicates both should use decision format"
+context: "Discovered during hook verification"
+tags: ["hooks", "consistency"]

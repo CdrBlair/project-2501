@@ -1,0 +1,40 @@
+id: "SH-011"
+title: "Phase 2 Capability Flow Operationalisation"
+status: BACKLOG
+created: "2026-01-14T19:00:00Z"
+updated: "2026-01-14T18:00:00Z"
+type: CAPABILITY
+phase: 2
+priority: HIGH
+description: |
+  Operationalise Phase 2 capability flows in framework-manual.md and AI configuration.
+
+  REVISED APPROACH: Same principle as SH-008/SH-009.
+
+  Tasks:
+  1. Define Phase 2 processes in framework-manual.md:
+     - PROC-2.1: Resource Planning
+     - PROC-2.2: Risk Assessment
+     - PROC-2.3: Schedule Development
+     - PROC-2.4: Governance Structure
+
+  2. For each process, specify capability instances, functional roles, patterns
+  3. Create/update AI configuration for Phase 2 capability flows
+
+  Key insight from C-3: Planning spans most of project and refines iteratively.
+  Capability flows should show:
+  - Initial Planning (higher uncertainty, more Elicit/Synthesise)
+  - Refinement cycles (as Requirements/Design provide detail)
+  - Pattern shifts as planning becomes more formal over time
+objective: "Phase 2 capability flows operationalised in framework-manual.md and AI config"
+rationale: |
+  Companion to SH-010. Planning is unique in spanning multiple phases;
+  operationalised guidance must show how patterns shift over time.
+blocked_by: ["SH-009", "SH-010"]
+blocks: []
+notes: |
+  Created 14 January 2026 from Phase 1-2 analysis.
+  REVISED 14 January 2026: Changed from "create exemplar" to "operationalise flows".
+  Most complex due to Planning's temporal span.
+
+  # HIGH PRIORITY: Measurement Gap

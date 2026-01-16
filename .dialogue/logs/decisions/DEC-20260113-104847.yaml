@@ -1,0 +1,9 @@
+id: DEC-20260113-104847
+timestamp: "2026-01-13T10:48:47Z"
+type: OPERATIONAL
+actor: "ai:claude"
+subject: "PA-1 pattern selection"
+outcome: "Partnership"
+rationale: "Both actors essential: human holds tacit process knowledge, AI provides structured elicitation"
+context: "Process Architect v2 simulation"
+tags: ["pattern-selection", "PA-1"]

@@ -1,0 +1,42 @@
+id: "FW-005"
+title: "Deployment Artifact Definition"
+status: COMPLETED
+created: "2026-01-14T11:30:00Z"
+updated: "2026-01-14T12:30:00Z"
+completed: "2026-01-14T12:30:00Z"
+type: DESIGN
+priority: HIGH
+description: |
+  Define what constitutes a framework deployment vs framework source.
+objective: "Clear deployment model with configurable artifact locations"
+rationale: "Resolver currently hardcodes paths that won't exist in deployments"
+blocked_by: []
+blocks: []
+notes: |
+  Completed 14 January 2026.
+  Created implementation/schema_deployment-model.md defining:
+
+  Three-Tier Artifact Model:
+  1. Framework Source (NOT deployed): concepts/, papers/, research/
+     - Reference patterns F-N, C-N, I-N, G-N, E-N return NOT_SUPPORTED
+     - Access via web docs or framework repository clone
+
+  2. Deployment Artifacts (distributed): .claude/, .dialogue/, decisions/
+     - Skills, agents, commands, logging infrastructure
+     - Copied/installed to projects using framework
+
+  3. Project Artifacts (created at runtime): decisions/ADR-*, .dialogue/logs/
+     - THY, REF, STR documents in configured location
+     - Decisions, observations, tasks
+
+  Configuration mechanism:
+  - .dialogue/config.yaml defines artifact locations
+  - Defaults: docs/ for THY/REF/STR, decisions/ for ADR
+  - Framework dev override: implementation/ (this project)
+  - Config parsing TODO: needs yq or similar
+
+  Key decisions:
+  - Framework source not bundled (too large, changes independently)
+  - Web documentation recommended for framework source access
+  - Configuration allows projects to use any directory structure
+

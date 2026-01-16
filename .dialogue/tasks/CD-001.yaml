@@ -1,0 +1,40 @@
+id: "CD-001"
+title: "THY-003 Conceptual Debt Items"
+status: IN_PROGRESS
+created: "2026-01-13T18:00:00Z"
+updated: "2026-01-14T17:00:00Z"
+type: DEBT
+priority: MEDIUM
+description: |
+  Address conceptual debt identified in THY-003:
+  - AI capability temporal qualification
+  - Context Engineering provenance
+  - Boundary sharpening (TMS/theory, validation/verification)
+  - Evidence tier gaps
+  - Observability vs measurement distinction
+objective: "THY-003 debt items addressed or explicitly deferred"
+rationale: "Accumulated conceptual debt risks framework coherence"
+blocked_by: []
+blocks: []
+assigned_to: "ai:claude"
+notes: |
+  Progress 14 January 2026:
+
+  THY-003 Conversation-as-TMS conceptual debt RESOLVED:
+  - F-2 extended with "Conversation as the TMS Mechanism" section
+  - F-2 extended with "The Ephemeral Context Problem" section
+  - I-3 extended with "Conversation Builds Both Theory and TMS" section
+  - I-3 extended with "Human-AI TMS Asymmetry" section
+  - THY-003 status changed from PROVISIONAL to ACCEPTED
+
+  Remaining items (from original description) need review:
+  - AI capability temporal qualification
+  - Context Engineering provenance
+  - Boundary sharpening (TMS/theory, validation/verification)
+  - Evidence tier gaps
+  - Observability vs measurement distinction
+
+  Note: Referenced file theory_thy-003-conceptual-debt.md does not exist.
+  Need to create or locate full inventory.
+
+  # Framework tasks

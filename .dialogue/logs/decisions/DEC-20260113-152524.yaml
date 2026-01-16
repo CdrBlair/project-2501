@@ -1,0 +1,40 @@
+id: DEC-20260113-152524
+timestamp: "2026-01-13T15:25:24Z"
+type: OPERATIONAL
+actor: "ai:claude"
+subject: "PA-9 pattern"
+outcome: "AI-Only"
+rationale: "Constraint checking is mechanical; AI validates C1-C4 without human involvement"
+context: "Process Architect v3 simulation"
+tags: ["pattern", "PA-9"]
+
+---
+id: DEC-20260113-152524
+timestamp: "2026-01-13T15:25:24Z"
+type: OPERATIONAL
+actor: "ai:claude"
+subject: "PA-10 pattern"
+outcome: "AI-Only"
+rationale: "Log verification is mechanical count check; AI runs script without human involvement"
+context: "Process Architect v3 simulation"
+tags: ["pattern", "PA-10"]
+---
+id: DEC-20260113-152524
+timestamp: "2026-01-13T15:25:24Z"
+type: OPERATIONAL
+actor: "ai:claude"
+subject: "PA-11 pattern"
+outcome: "Human-Led"
+rationale: "Human reviews specification and decides approval; AI presents and explains"
+context: "Process Architect v3 simulation"
+tags: ["pattern", "PA-11"]
+---
+id: DEC-20260113-152524
+timestamp: "2026-01-13T15:25:24Z"
+type: OPERATIONAL
+actor: "ai:claude"
+subject: "PA-12 pattern"
+outcome: "AI-Only"
+rationale: "File writing is mechanical; AI writes to specified location"
+context: "Process Architect v3 simulation"
+tags: ["pattern", "PA-12"]

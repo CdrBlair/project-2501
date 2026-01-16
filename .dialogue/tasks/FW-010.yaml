@@ -1,0 +1,35 @@
+id: "FW-010"
+title: "Environment Registry Improvements"
+status: READY
+created: "2026-01-15T09:50:00Z"
+updated: "2026-01-15T09:50:00Z"
+type: DOCUMENTATION
+priority: MEDIUM
+description: |
+  Improve registry_claude-code.yaml with:
+
+  1. Environment variables reference:
+     - Document available environment variables (CLAUDE_PLUGIN_ROOT, etc.)
+     - Note which variables are available in which contexts (hooks, skills, scripts)
+     - Skill scripts should use these instead of hardcoded paths
+
+  2. Path-filtering configuration clarity:
+     - Improve description of how rules path-matching works
+     - Clarify relationship between globs patterns and rule activation
+     - Document when to use rules vs skills vs manual guidance
+
+  Gap identified: Skill scripts currently don't use available environment variables,
+  and registry doesn't document them clearly.
+objective: "Registry documents environment variables and clarifies path-filtering config"
+rationale: |
+  Environment variables enable portable, context-aware scripts.
+  Current scripts hardcode paths that may not work in all contexts.
+  OBS-20260115-085039 records the gap.
+blocked_by: []
+blocks: []
+notes: |
+  Created 15 January 2026 from user observation during FW-009 review.
+  See OBS-20260115-085039.
+
+  # === Subagent Architecture tasks ===
+

@@ -1,0 +1,8 @@
+id: OBS-20260116-134927
+timestamp: "2026-01-16T13:49:27Z"
+type: STATE
+observer: "human:pidster"
+subject: "Stop hook logic issue"
+value: "Hook fired but prompt returned false despite observation being logged; checking stop_hook_active instead of detecting logging activity"
+context: "Testing stop hook - hook fired but condition evaluation appears incorrect"
+tags: ["hooks", "testing", "bug"]

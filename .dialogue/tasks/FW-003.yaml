@@ -1,0 +1,33 @@
+id: "FW-003"
+title: "Enhance Decision Logging with DESIGN Type"
+status: COMPLETED
+created: "2026-01-14T14:30:00Z"
+updated: "2026-01-14T15:30:00Z"
+completed: "2026-01-14T15:30:00Z"
+type: CAPABILITY
+priority: MEDIUM
+description: |
+  Extend dialogue-log-decision skill to support DESIGN type decisions:
+  - Add DESIGN as valid type (between TACTICAL and ADR)
+  - DESIGN requires rationale and context fields (not optional)
+  - Update skill documentation with type selection guidance
+  - Update underlying script to validate DESIGN requirements
+  Framework grounding: DESIGN maps to STR domain, Dynamic-Standing temporal class,
+  elicitable knowledge with rationale capture.
+objective: "Decision logging skill supports OPERATIONAL, TACTICAL, and DESIGN types"
+rationale: "Gap identified: schema simplification decision was more than tactical but less than ADR"
+blocked_by: []
+blocks: ["FW-004"]
+notes: |
+  Completed 14 January 2026.
+  - Added DESIGN and ADR types to log-decision.sh script
+  - DESIGN/ADR require rationale AND context (validated by script)
+  - Added ref parameter for ADR cross-referencing
+  - Updated SKILL.md with type selection flowchart and examples
+  - Tested: DEC-20260114-102417 logged as DESIGN type
+  Decision types mapped to framework concepts:
+  - OPERATIONAL: WRK domain, Ephemeral, documentable knowledge
+  - TACTICAL: WRK domain, Ephemeral-Dynamic, elicitable knowledge
+  - DESIGN: STR domain, Dynamic-Standing, elicitable with rationale
+  - ADR: STR domain, Standing, formal alternatives analysis
+

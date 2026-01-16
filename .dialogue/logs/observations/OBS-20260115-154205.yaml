@@ -1,0 +1,7 @@
+id: OBS-20260115-154205
+timestamp: "2026-01-15T15:42:05Z"
+type: MEASUREMENT
+observer: "human:pidster"
+subject: "Mermaid for process flow in prompts"
+value: "Mermaid diagrams could describe non-linear process flows inline in agent/subagent prompts; text-based format is both human-readable and machine-parseable"
+context: "subagents,process-flow,mermaid"

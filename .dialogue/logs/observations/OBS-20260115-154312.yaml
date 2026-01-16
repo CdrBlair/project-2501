@@ -1,0 +1,7 @@
+id: OBS-20260115-154312
+timestamp: "2026-01-15T15:43:12Z"
+type: STATE
+observer: "ai:claude"
+subject: "Process-capability-flow schema gap analysis"
+value: "Existing schema is design-time documentation; gaps for executable use: machine-readable format, instance vs definition separation, execution semantics, state model, dynamic composition, audit linkage, handoff mechanism"
+context: "subagents,schema,FW-012"

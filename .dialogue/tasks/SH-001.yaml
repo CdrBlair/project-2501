@@ -1,0 +1,29 @@
+id: "SH-001"
+title: "Information Reference Schema"
+status: COMPLETED
+created: "2026-01-13T10:00:00Z"
+updated: "2026-01-14T14:00:00Z"
+completed: "2026-01-14T14:00:00Z"
+type: SCHEMA
+phase: 3
+priority: HIGH
+description: |
+  Create schema for information references used in capability flow specifications.
+  Should define how to reference documents, decisions, observations, and external sources.
+  Must be location-agnostic (per SH-4 decision).
+objective: "REF-002 published with complete reference schema"
+rationale: "Required for capability flow specifications to reference inputs/outputs"
+blocked_by: []
+blocks: ["SH-002"]
+notes: |
+  Completed 14 January 2026.
+  Created schema_information-reference.md (Version 2 - simplified):
+  - Self-describing IDs: pattern determines type (no scheme prefixes needed)
+  - Document patterns: THY-NNN, REF-NNN, STR-NNN, F-N, C-N, O-N, I-N, G-N, E-N
+  - Timestamp patterns: DEC-YYYYMMDD-HHMMSS, OBS-YYYYMMDD-HHMMSS
+  - task patterns: SH-NNN, CD-NNN, FW-NNN
+  - Actor patterns: human:<id>, ai:<id>
+  - Version suffix: @vN, Fragment suffix: #section
+  - Relationship types aligned with document frontmatter schema
+  - Resolution deferred to SH-002 (location-agnostic design)
+

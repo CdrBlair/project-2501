@@ -1,0 +1,65 @@
+id: "SH-008"
+title: "Phase 1 Operational Guidance"
+status: COMPLETED
+created: "2026-01-14T19:00:00Z"
+updated: "2026-01-14T17:45:00Z"
+completed: "2026-01-14T17:45:00Z"
+type: CAPABILITY
+phase: 1
+priority: HIGH
+description: |
+  Operationalise Phase 1 guidance in framework-manual.md and AI configuration.
+
+  REVISED APPROACH: Examples are not useful outputs. Either they're drafts awaiting
+  promotion, or experiments to be analysed and discarded. Real outputs should be:
+  1. Updates to framework-manual.md (operational reference practitioners use)
+  2. Updates to AI configuration (skills, agents, rules that guide behaviour)
+
+  Tasks:
+  1. Extract insights from draft example_phase1-document-type-registry.md
+  2. Update framework-manual.md with Phase 1 operational guidance:
+     - Document types (what to capture, not ceremony)
+     - Straw man pattern (placeholders are valid)
+     - Scaling guidance (minimal vs full Phase 1)
+     - Collaboration patterns (Human-Only, Human-Led)
+     - Functional roles (Facilitator, Scribe high-value per I-3)
+  3. Create/update skills or agents for Phase 1 behaviour
+  4. Archive or delete example file once insights absorbed
+
+  Key insights to preserve:
+  - 75% tacit composition means AI assists but cannot lead
+  - Straw man documents make assumptions explicit and trackable
+  - Process references trace lineage, not mandate ceremony
+  - Capture windows critical for ephemeral documents
+objective: "Phase 1 guidance operationalised in framework-manual.md and AI config"
+rationale: |
+  Examples without consumers are dead documents. The real outputs are:
+  - framework-manual.md updates (where practitioners look)
+  - AI configuration (what actually implements behaviour)
+  Insight from user: "either it is a draft awaiting review, or it is an experiment
+  to be analyzed and accepted/discarded."
+blocked_by: []
+blocks: ["SH-009"]
+notes: |
+  Created 14 January 2026 from Phase 1-2 analysis.
+  REVISED 14 January 2026: Changed from "create exemplar" to "operationalise guidance".
+
+  Completed 14 January 2026:
+  - Analysed capability registry for actor implementation approach
+  - Extracted operational guidance from draft example_phase1-document-type-registry.md
+  - Updated framework-manual.md v1.2 with Phase 1 operational guidance:
+    * Information composition and implications
+    * Collaboration pattern constraints
+    * Functional roles (Facilitator, Scribe high-value)
+    * Scaling guidance (minimal vs full)
+    * Straw man pattern documentation
+    * Capture window criticality
+    * Rationale-first validation checklist
+    * AI configuration guidance
+  - Created .claude/rules/phase1-initiation.md for standing behaviour rules
+  - Extended dialogue-structured-elicit skill with Phase 1-specific elicitation guidance
+  - Archived draft to research/archived/ (DEC-20260114-173830)
+
+  Key insight operationalised: Actors aren't implemented as a separate system—
+  they're emergent from rules, skills, and prompts that activate roles.
+

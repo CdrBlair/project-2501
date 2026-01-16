@@ -1,0 +1,8 @@
+id: OBS-20260116-142702
+timestamp: "2026-01-16T14:27:02Z"
+type: STATE
+observer: "ai:claude"
+subject: "Prompt hook regression confirmed"
+value: "Prompt-based Stop hooks not receiving transcript is a known regression (GitHub issues #11786, #11610). Intended behaviour was for evaluator to have conversation access. Also #12667 confirms 'error' display for intentional blocking is a known UX issue."
+context: "Researching Claude Code GitHub issues"
+tags: ["hooks", "regression", "upstream"]

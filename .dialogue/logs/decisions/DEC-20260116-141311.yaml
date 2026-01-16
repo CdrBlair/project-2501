@@ -1,0 +1,9 @@
+id: DEC-20260116-141311
+timestamp: "2026-01-16T14:13:11Z"
+type: DESIGN
+actor: "human:pidster"
+subject: "Stop hook architecture"
+outcome: "Use command-based stop-loop-guard.sh instead of prompt-based hook"
+rationale: "Diagnostic testing revealed prompt hooks don't receive conversation transcript, only metadata including transcript_path"
+context: "Command-based hooks can read the transcript file if needed; simple loop-guard pattern provides reliable stop behavior without complex evaluation"
+tags: ["hooks", "architecture", "stop-hook"]

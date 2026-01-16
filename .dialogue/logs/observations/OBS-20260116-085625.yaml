@@ -1,0 +1,8 @@
+id: OBS-20260116-085625
+timestamp: "2026-01-16T08:56:25Z"
+type: STATE
+observer: "human:pidster"
+subject: "CLAUDE_PROJECT_DIR env var"
+value: "Not set at session start, causing log-decision script failure"
+context: "Script requires env var but Claude session did not have it configured"
+tags: ["environment", "configuration", "hook"]

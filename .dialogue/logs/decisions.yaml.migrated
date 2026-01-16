@@ -335,7 +335,7 @@ type: TACTICAL
 actor: "ai:claude"
 subject: "DEFER action design approach"
 outcome: "Extend existing work coordination with DEFER action and SUSPENDED state"
-rationale: "Work coordination already has PAUSED state; DEFER is similar but with explicit resume trigger and work item creation"
+rationale: "Work coordination already has PAUSED state; DEFER is similar but with explicit resume trigger and task creation"
 context: "Process async approval gap"
 tags: ["defer", "async", "design"]
 ---
@@ -464,7 +464,7 @@ timestamp: "2026-01-13T16:45:38Z"
 type: OPERATIONAL
 actor: "ai:claude"
 subject: "Escalation triggers with DEFER"
-outcome: "PA-11 includes DEFER action for extended review; creates DEFERRED_CONTINUATION work item with HUMAN_APPROVAL resume trigger"
+outcome: "PA-11 includes DEFER action for extended review; creates DEFERRED_CONTINUATION task with HUMAN_APPROVAL resume trigger"
 rationale: "New in v4: async approval pattern using DEFER instead of blocking on sync timeout"
 context: "Process Architect v4 simulation"
 tags: ["escalation", "defer", "v4"]
@@ -817,3 +817,51 @@ subject: "Add debug logging to stop hook"
 outcome: "Modified stop-loop-guard.sh to write hook input to /tmp/stop-hook-input.json"
 rationale: "Debugging transcript path access issue in prompt hook"
 tags: ["debugging", "hooks"]
+---
+id: DEC-20260116-130601
+timestamp: "2026-01-16T13:06:01Z"
+type: DESIGN
+actor: "human:pidster"
+subject: "Switch Stop hook from command type to prompt type"
+outcome: "Command-based stop hook has limitations; prompt-based hook may provide better integration with Claude's context"
+rationale: "Continue with command-based approach"
+context: "hooks,stop-hook"
+---
+id: DEC-20260116-131432
+timestamp: "2026-01-16T13:14:32Z"
+type: OPERATIONAL
+actor: "human:pidster"
+subject: "SubagentStop hook response format"
+outcome: "Fixed manually after confirming format was correct"
+rationale: "Investigation revealed the response format was already correct"
+context: "Testing new stop hook configuration"
+tags: ["hooks", "fix"]
+---
+id: DEC-20260116-141311
+timestamp: "2026-01-16T14:13:11Z"
+type: DESIGN
+actor: "human:pidster"
+subject: "Stop hook architecture"
+outcome: "Use command-based stop-loop-guard.sh instead of prompt-based hook"
+rationale: "Diagnostic testing revealed prompt hooks don't receive conversation transcript, only metadata including transcript_path"
+context: "Command-based hooks can read the transcript file if needed; simple loop-guard pattern provides reliable stop behavior without complex evaluation"
+tags: ["hooks", "architecture", "stop-hook"]
+---
+id: DEC-20260116-142842
+timestamp: "2026-01-16T14:28:42Z"
+type: TACTICAL
+actor: "human:pidster"
+subject: "Stop hook investigation"
+outcome: "Remove Stop hooks for now, stop investigating"
+rationale: "Upstream regression (#11786) makes prompt-based hooks non-functional; command-based UX is too heavy. Will revisit when regression is fixed."
+context: "hooks,investigation"
+---
+id: DEC-20260116-180240
+timestamp: "2026-01-16T18:02:40Z"
+type: DESIGN
+actor: "human:pidster"
+subject: "Multi-user artifact architecture"
+outcome: "Hybrid approach: session memos per-user (personal state), tasks split into individual files (shared but merge-friendly)"
+rationale: "Session context is inherently personal; tasks are collaborative but single-file YAML creates merge conflicts in distributed VCS workflows"
+context: "Multi-user repo discussion during FW-008 research"
+tags: ["FW-008", "architecture", "multi-user"]

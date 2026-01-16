@@ -1,0 +1,8 @@
+id: OBS-20260113-105526
+timestamp: "2026-01-13T10:55:26Z"
+type: STATE
+observer: "ai:claude"
+subject: "Hook enforcement feasibility"
+value: "Hooks are event-driven, not state-aware; no built-in way to check 'was skill X called'; would require transcript parsing (fragile)"
+context: "Gap 2 analysis"
+tags: ["hooks", "enforcement", "limitation"]

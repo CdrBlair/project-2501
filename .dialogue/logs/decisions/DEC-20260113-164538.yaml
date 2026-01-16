@@ -1,0 +1,9 @@
+id: DEC-20260113-164538
+timestamp: "2026-01-13T16:45:38Z"
+type: OPERATIONAL
+actor: "ai:claude"
+subject: "Escalation triggers with DEFER"
+outcome: "PA-11 includes DEFER action for extended review; creates DEFERRED_CONTINUATION task with HUMAN_APPROVAL resume trigger"
+rationale: "New in v4: async approval pattern using DEFER instead of blocking on sync timeout"
+context: "Process Architect v4 simulation"
+tags: ["escalation", "defer", "v4"]

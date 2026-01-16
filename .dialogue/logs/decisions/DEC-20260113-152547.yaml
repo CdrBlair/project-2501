@@ -1,0 +1,9 @@
+id: DEC-20260113-152547
+timestamp: "2026-01-13T15:25:47Z"
+type: OPERATIONAL
+actor: "ai:claude"
+subject: "Control flow definition"
+outcome: "Retry policy returns to PA-4 on validation failure; max 3 iterations; fix step PA-9a for constraint violations"
+rationale: "PA-4 is the pattern assignment step where most corrections would apply"
+context: "Process Architect v3 simulation"
+tags: ["control-flow", "retry"]
