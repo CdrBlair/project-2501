@@ -34,7 +34,7 @@
           },
           {
             "type": "command",
-            "command": "bash $CLAUDE_PLUGIN_ROOT/hooks/scripts/check-dialogue-init.sh",
+            "command": "bash $CLAUDE_PLUGIN_ROOT/hooks/scripts/session-start.sh",
             "timeout": 10
           }
         ]
@@ -46,32 +46,8 @@
         "hooks": [
           {
             "type": "command",
-            "command": "bash $CLAUDE_PLUGIN_ROOT/hooks/scripts/framework-context.sh",
+            "command": "bash $CLAUDE_PLUGIN_ROOT/hooks/scripts/user-prompt-submit.sh",
             "timeout": 5
-          }
-        ]
-      }
-    ],
-    "Stop": [
-      {
-        "matcher": "*",
-        "hooks": [
-          {
-            "type": "command",
-            "command": "bash $CLAUDE_PLUGIN_ROOT/hooks/scripts/stop-loop-guard.sh",
-            "timeout": 5
-          }
-        ]
-      }
-    ],
-    "SubagentStop": [
-      {
-        "matcher": "*",
-        "hooks": [
-          {
-            "type": "prompt",
-            "prompt": "You are a logging compliance verifier for the AI-Augmented SDLC Framework.\n\nReview the subagent transcript and determine if appropriate decision/observation logging occurred.\n\n## Check For\n\n1. **Significant work indicators:** File edits, code changes, design decisions discussed, implementation work, planning activities.\n\n2. **Logging evidence:** Look for:\n   - Skill invocations: dialogue-log-decision, dialogue-log-observation\n   - Log entry references: DEC-YYYYMMDD-HHMMSS or OBS-YYYYMMDD-HHMMSS patterns\n\n## Decision Rules\n\n- Return {\"ok\": true} if:\n  - No significant work was done (queries, reading, exploring)\n  - Logging was performed for work done\n  - Work doesn't warrant logging (typo fixes, simple reads)\n  - Subagent was research/exploration only\n\n- Return {\"ok\": false, \"reason\": \"...\"} if:\n  - Design decisions made but not logged\n  - Important observations noted but not recorded\n  - Implementation work occurred without any logging\n\n## Be Pragmatic\n\nNot every subagent task needs logging. Focus on decisions with rationale and noteworthy observations. Exploration and research subagents typically don't need logging.",
-            "timeout": 60
           }
         ]
       }

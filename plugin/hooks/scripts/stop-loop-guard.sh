@@ -21,5 +21,7 @@ fi
 # First stop attempt - block and prompt for logging review
 jq -n '{
     "decision": "block",
-    "reason": "Check for decisions and observations that you may have missed in your and the user'\''s last turns. Log any that you find using the appropriate skill."
+    "reason": "Log any decisions and observations that you may have missed in your and the user'\''s last turns, using the appropriate skill.",
+    "suppressOutput": true,
+    "systemMessage": "Performing a sanity check for missed logging."
 }'

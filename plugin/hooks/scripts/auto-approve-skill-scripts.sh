@@ -28,6 +28,14 @@ APPROVED_PATTERNS=(
     "dialogue-resolve-reference/scripts/resolve-reference.sh"
     # ADR creation
     "dialogue-create-adr/scripts/create-adr.sh"
+    # Task management scripts
+    "dialogue-manage-tasks/scripts/task-summary.sh"
+    "dialogue-manage-tasks/scripts/list-tasks.sh"
+    "dialogue-manage-tasks/scripts/count-tasks.sh"
+    "dialogue-manage-tasks/scripts/create-task.sh"
+    "dialogue-manage-tasks/scripts/next-id.sh"
+    # Compliance verification
+    "dialogue-verify-logging-compliance/scripts/verify-logging.sh"
 )
 
 # Check if command matches any approved pattern
