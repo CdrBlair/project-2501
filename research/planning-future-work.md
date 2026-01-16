@@ -119,7 +119,7 @@ ContextNode:
 - `discover(actor, domain)` — Learning
 - `invalidate(node)` — Staleness
 
-### Work Items
+### tasks
 
 | ID | Item | Status | Notes |
 |----|------|--------|-------|
@@ -157,7 +157,7 @@ ContextNode:
 ### Related Documents
 
 - `implementation/framework-manual.md` — Compact AI reference (created 13 January 2026)
-- `concepts/concept_work-coordination.md` — Work item and coordination schemas
+- `concepts/concept_work-coordination.md` — task and coordination schemas
 - `concepts/concept_decision-observation-tracking.md` — Decision/observation schemas
 - `foundation_transactive-memory.md` — TMS theoretical foundation
 
@@ -340,7 +340,7 @@ ContextNode:
 **Resolution** (12 January 2026): Formalised the investigation into a concept document at `concepts/concept_work-coordination.md`.
 
 **Key elements documented**:
-- **Work Item Schema**: Units of work with context packaging, assignment tracking, and state machine
+- **task Schema**: Units of work with context packaging, assignment tracking, and state machine
 - **Coordination paradigms**: Interactive (synchronous) and queue-based (asynchronous) with hybrid patterns
 - **Message and Conversation schemas**: For synchronous human-AI dialogue
 - **Queue patterns**: FIFO, priority, capability-matched routing
@@ -349,7 +349,7 @@ ContextNode:
 
 **Framework connections established**:
 - Integration with Decision/Observation Tracking (work events generate records)
-- Connection to Process and Capability Flow (capability instances become work items)
+- Connection to Process and Capability Flow (capability instances become tasks)
 - Links to Actor Model and AI Actor Differentiation Model
 
 **Moved to**: Completed Items
@@ -659,7 +659,7 @@ ContextNode:
 **Resolution**: Created comprehensive concept document `concepts/concept_work-coordination.md` formalising the investigation findings.
 
 **Key design elements**:
-- **Work Item Schema**: Full schema with context packaging, assignment tracking, state machine
+- **task Schema**: Full schema with context packaging, assignment tracking, state machine
 - **Two coordination paradigms**: Interactive (synchronous) and queue-based (asynchronous)
 - **Hybrid coordination**: Most real work transitions between paradigms
 - **Conversation preservation**: Capturing tacit knowledge from interactive sessions
@@ -675,7 +675,7 @@ ContextNode:
 **Framework integrations**:
 - Work events generate observation records
 - Work completion can generate decision records
-- Capability instances from process specs become work items
+- Capability instances from process specs become tasks
 - Actor profiles connect to AI Actor Differentiation Model
 
 ---

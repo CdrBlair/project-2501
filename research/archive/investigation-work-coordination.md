@@ -2,7 +2,7 @@
 
 **Status**: ✓ Formalised — see `concepts/concept_work-coordination.md`
 **Archived**: 12 January 2026
-**Purpose**: Design mechanisms for coordinating work between actors (human and AI), including work item definition, assignment, messaging, and queue-based distribution
+**Purpose**: Design mechanisms for coordinating work between actors (human and AI), including task definition, assignment, messaging, and queue-based distribution
 **Related**: Item 6 in planning-future-work.md (now completed)
 
 > **Note**: This investigation has been formalised into the concept document. This file is archived for reference. The concept document contains the authoritative schemas and framework integration; this document retains implementation-level detail (queue patterns, messaging protocols, tooling options, architecture diagrams) that may be useful for Phase D executable framework work.
@@ -19,7 +19,7 @@ But not:
 - **How** work is coordinated between actors
 - **How** assignments are made and tracked
 - **How** actors communicate during execution
-- **How** work items flow through the system
+- **How** tasks flow through the system
 
 This investigation addresses the coordination gap—the mechanisms through which work is assigned to actors, tracked, and completed.
 
@@ -29,7 +29,7 @@ This investigation addresses the coordination gap—the mechanisms through which
 |-----------|-------------|
 | **Heterogeneous actors** | Humans and AI have different availability patterns, response times, and interaction modes |
 | **Mixed coordination modes** | Some work requires synchronous dialogue; other work suits asynchronous queuing |
-| **Context preservation** | Work items must carry sufficient context for actors to proceed without extensive re-discovery |
+| **Context preservation** | tasks must carry sufficient context for actors to proceed without extensive re-discovery |
 | **Assignment matching** | Work must be routed to actors with appropriate capabilities and availability |
 | **State visibility** | All actors need visibility into work state to coordinate effectively |
 | **Handoff integrity** | Information must not be lost when work transfers between actors |
@@ -67,11 +67,11 @@ Real-time dialogue between actors with immediate response expectation.
 
 ### 2.2 Queue-Based (Asynchronous) Coordination
 
-Work items posted to queues, claimed by available actors, completed independently.
+tasks posted to queues, claimed by available actors, completed independently.
 
 **Characteristics**:
 - Decoupled producer/consumer
-- Explicit context packaging in work items
+- Explicit context packaging in tasks
 - Actors operate on their own schedules
 - Natural for AI-Led and parallelisable work
 
@@ -82,7 +82,7 @@ Work items posted to queues, claimed by available actors, completed independentl
 - Bug triage awaiting assignment
 
 **Strengths**:
-- Scales to many actors and work items
+- Scales to many actors and tasks
 - Actors work when available
 - Explicit work state tracking
 - Auditable work history
@@ -111,16 +111,16 @@ The framework must support seamless transitions between modes.
 
 ---
 
-## 3. Work Item Schema
+## 3. task Schema
 
-### 3.1 Core Work Item Definition
+### 3.1 Core task Definition
 
-A work item is a unit of work that can be assigned to and completed by an actor.
+A task is a unit of work that can be assigned to and completed by an actor.
 
 ```
 WorkItem {
     id: UUID                           # Unique identifier
-    created_at: ISO8601                # When work item was created
+    created_at: ISO8601                # When task was created
     updated_at: ISO8601                # Last modification time
 
     # Classification
@@ -172,8 +172,8 @@ WorkItem {
     deliverables: DeliverableSpec[]    # Expected outputs
 
     # Dependencies
-    blocked_by: UUID[]                 # Work items that must complete first
-    blocks: UUID[]                     # Work items waiting on this
+    blocked_by: UUID[]                 # tasks that must complete first
+    blocks: UUID[]                     # tasks waiting on this
 
     # Urgency and scheduling
     priority: enum { CRITICAL, HIGH, MEDIUM, LOW }
@@ -182,7 +182,7 @@ WorkItem {
 
     # Escalation source (if work_type = ESCALATION)
     escalation: EscalationContext? {
-        source_work_item: UUID         # Original work item
+        source_work_item: UUID         # Original task
         source_actor: ActorRef         # Who escalated
         trigger: string                # What triggered escalation
         ai_assessment: string?         # AI's analysis before escalation
@@ -328,7 +328,7 @@ Message {
     response_deadline: ISO8601?
 
     # Metadata
-    relates_to_work_item: UUID?        # Associated work item
+    relates_to_work_item: UUID?        # Associated task
     tags: string[]
 }
 
@@ -513,7 +513,7 @@ QueueEntry {
                               ┌──────────────────┐
                          ┌───▶│ Security Review  │───▶ [Security Expert]
 ┌─────────────┐          │    │ Queue            │
-│ Work Item   │──[Route]─┤    └──────────────────┘
+│ task   │──[Route]─┤    └──────────────────┘
 │ Generator   │          │    ┌──────────────────┐
 └─────────────┘          ├───▶│ Code Review      │───▶ [Any Reviewer]
                          │    │ Queue            │
@@ -573,8 +573,8 @@ QueueEntry {
 | Policy | Description | Effect |
 |--------|-------------|--------|
 | **Claim timeout** | Auto-release if not started within X | Returns to queue |
-| **Completion timeout** | Escalate if not completed within X | Creates escalation work item |
-| **Staleness timeout** | Escalate if in queue too long | Creates escalation work item |
+| **Completion timeout** | Escalate if not completed within X | Creates escalation task |
+| **Staleness timeout** | Escalate if in queue too long | Creates escalation task |
 
 ---
 
@@ -593,7 +593,7 @@ ActorProfile {
     availability: Availability? {
         schedule: Schedule?            # Working hours
         current_status: enum { AVAILABLE, BUSY, AWAY, DO_NOT_DISTURB }
-        current_load: integer          # Active work items
+        current_load: integer          # Active tasks
         max_concurrent: integer        # Capacity limit
     }
 
@@ -808,35 +808,35 @@ Standard human-to-human coordination:
 
 ## 8. Integration with Decision/Observation Tracking
 
-### 8.1 Work Items Generate Records
+### 8.1 tasks Generate Records
 
 | Work Event | Record Type | Details |
 |------------|-------------|---------|
-| Work item created | Observation | EVENT: work created |
-| Work item assigned | Observation | EVENT: assignment made |
+| task created | Observation | EVENT: work created |
+| task assigned | Observation | EVENT: assignment made |
 | Work started | Observation | DURATION: started_at recorded |
 | Work completed | Observation | DURATION: ended_at, elapsed |
 | Work produces decision | Decision | Full decision record |
 | Escalation triggered | Observation | EVENT: escalation |
 | Escalation resolved | Decision | Resolution decision |
 
-### 8.2 Decision Context from Work Items
+### 8.2 Decision Context from tasks
 
-Decisions reference work items as context:
+Decisions reference tasks as context:
 
 ```
 Decision {
     ...
     context: {
-        work_item_id: UUID,            # Which work item prompted decision
+        work_item_id: UUID,            # Which task prompted decision
         conversation_id: UUID?,        # If decision emerged from dialogue
     }
 }
 ```
 
-### 8.3 Work Items Reference Decisions
+### 8.3 tasks Reference Decisions
 
-Work items can depend on decisions:
+tasks can depend on decisions:
 
 ```
 WorkItem {
@@ -887,7 +887,7 @@ For initial implementation:
 │                   Coordination Layer                         │
 │  ┌─────────────────────────────────────────────────────┐    │
 │  │              Work Coordination Service               │    │
-│  │  - Work item management                             │    │
+│  │  - task management                             │    │
 │  │  - Queue management                                  │    │
 │  │  - Assignment routing                                │    │
 │  │  - Conversation management                           │    │
@@ -904,7 +904,7 @@ For initial implementation:
 └──────────────────────────────────────────────────────────────┘
 ```
 
-**Rationale**: PostgreSQL handles all storage initially (work items, messages, actor profiles) with potential to extract to specialised stores as scale demands.
+**Rationale**: PostgreSQL handles all storage initially (tasks, messages, actor profiles) with potential to extract to specialised stores as scale demands.
 
 ---
 
@@ -914,21 +914,21 @@ For initial implementation:
 
 | 12207 Process | Coordination Alignment |
 |---------------|------------------------|
-| **Project Planning (6.3.1)** | Work item creation and scheduling |
+| **Project Planning (6.3.1)** | task creation and scheduling |
 | **Project Assessment and Control (6.3.2)** | Work status tracking and metrics |
 | **Decision Management (6.3.3)** | Decision requests and recording |
-| **Information Management (6.3.6)** | Context preservation in work items |
-| **Configuration Management (6.3.5)** | Work item versioning and history |
+| **Information Management (6.3.6)** | Context preservation in tasks |
+| **Configuration Management (6.3.5)** | task versioning and history |
 
 ### 10.2 Framework Concept Integration
 
 | Framework Concept | Coordination Integration |
 |-------------------|--------------------------|
-| **Eight Capabilities** | Work items typed by capability |
+| **Eight Capabilities** | tasks typed by capability |
 | **Actor Model** | Actor profiles and capability matching |
 | **Collaboration Patterns** | Coordination mode selection |
-| **Escalation** | Escalation work items and queues |
-| **Process Specification** | Work items map to capability instances |
+| **Escalation** | Escalation tasks and queues |
+| **Process Specification** | tasks map to capability instances |
 | **Decision/Observation Tracking** | Work events generate records |
 
 ### 10.3 Extensions Beyond Standards
@@ -952,13 +952,13 @@ For initial implementation:
 
 1. **Conversation state limits** — How long can interactive context be maintained before degradation?
 
-2. **Context packaging quality** — How to measure whether work items carry sufficient context for async handoff?
+2. **Context packaging quality** — How to measure whether tasks carry sufficient context for async handoff?
 
 3. **Multi-AI coordination** — How do multiple AI actors coordinate on shared work?
 
 4. **Human attention management** — How to avoid overwhelming humans with notifications and escalations?
 
-5. **Conversation-to-work extraction** — Automated extraction of work items from natural conversation?
+5. **Conversation-to-work extraction** — Automated extraction of tasks from natural conversation?
 
 6. **Cross-team coordination** — How to coordinate when work spans team boundaries?
 
@@ -966,7 +966,7 @@ For initial implementation:
 
 ## 12. Next Steps
 
-1. **Prototype work item service** — Implement core work item CRUD and state machine
+1. **Prototype task service** — Implement core task CRUD and state machine
 2. **Queue implementation** — Build configurable work queues with routing
 3. **Conversation service** — Implement messaging with conversation grouping
 4. **Actor registry** — Build actor profile management and capability matching

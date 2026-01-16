@@ -10,8 +10,8 @@ Actor: human:pidster
 |-----------|--------------|---------|
 | C-8 | DERIVES_FROM | Document type classification (Standing/Dynamic/Ephemeral) |
 | C-1 | DERIVES_FROM | Information taxonomy (formal/tacit/emergent) |
-| FW-003 | BLOCKS | Work item for DESIGN type implementation |
-| FW-004 | BLOCKS | Work item for ADR skill creation |
+| FW-003 | BLOCKS | task for DESIGN type implementation |
+| FW-004 | BLOCKS | task for ADR skill creation |
 | DEC-20260114-101710 | TRACES_TO | Decision that ADR creation must log to decision log |
 | DEC-20260114-102417 | TRACES_TO | First DESIGN type decision logged |
 
