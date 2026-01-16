@@ -28,8 +28,9 @@ Artifact locations are configured in the script. Projects can customise via `.di
 Default locations:
 - THY/REF/STR documents: `implementation/` (framework dev) or `docs/` (typical deployments)
 - ADR documents: `decisions/`
-- Logs: `.dialogue/logs/`
-- Work items: `.dialogue/tasks.yaml`
+- Decisions: `.dialogue/logs/decisions/` (per-file)
+- Observations: `.dialogue/logs/observations/` (per-file)
+- Tasks: `.dialogue/tasks/` (per-file)
 
 ## How to Resolve a Reference
 
@@ -74,16 +75,18 @@ ${CLAUDE_PLUGIN_ROOT}/skills/dialogue-resolve-reference/scripts/resolve-referenc
 
 | Pattern | Type | Location | Example |
 |---------|------|----------|---------|
-| `DEC-YYYYMMDD-HHMMSS` | Decision | `.dialogue/logs/decisions.yaml` | `DEC-20260114-091633` |
-| `OBS-YYYYMMDD-HHMMSS` | Observation | `.dialogue/logs/observations.yaml` | `OBS-20260114-094825` |
+| `DEC-YYYYMMDD-HHMMSS` | Decision | `.dialogue/logs/decisions/{id}.yaml` | `DEC-20260114-091633` |
+| `OBS-YYYYMMDD-HHMMSS` | Observation | `.dialogue/logs/observations/{id}.yaml` | `OBS-20260114-094825` |
 
 ### Tasks (Resolvable)
 
 | Pattern | Type | Location | Example |
 |---------|------|----------|---------|
-| `SH-NNN` | Self-Hosting | `.dialogue/tasks.yaml` | `SH-002` |
-| `CD-NNN` | Conceptual Debt | `.dialogue/tasks.yaml` | `CD-001` |
-| `FW-NNN` | Framework | `.dialogue/tasks.yaml` | `FW-003` |
+| `SH-NNN` | Self-Hosting | `.dialogue/tasks/{id}.yaml` | `SH-002` |
+| `CD-NNN` | Conceptual Debt | `.dialogue/tasks/{id}.yaml` | `CD-001` |
+| `FW-NNN` | Framework | `.dialogue/tasks/{id}.yaml` | `FW-003` |
+| `DOC-NNN` | Documentation | `.dialogue/tasks/{id}.yaml` | `DOC-001` |
+| `VAL-NNN` | Validation | `.dialogue/tasks/{id}.yaml` | `VAL-001` |
 
 ### Actors (Metadata Only)
 

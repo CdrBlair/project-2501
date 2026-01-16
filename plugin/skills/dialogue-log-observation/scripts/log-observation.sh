@@ -7,7 +7,7 @@ set -euo pipefail
 
 # Use Claude's project directory environment variable
 PROJECT_ROOT="${CLAUDE_PROJECT_DIR:?CLAUDE_PROJECT_DIR must be set}"
-LOG_FILE="${PROJECT_ROOT}/.dialogue/logs/observations.yaml"
+LOG_DIR="${PROJECT_ROOT}/.dialogue/logs/observations"
 
 # Validate required arguments
 if [[ $# -lt 4 ]]; then
@@ -39,11 +39,13 @@ TIMESTAMP=$(date -u +"%Y-%m-%dT%H:%M:%SZ")
 ID="OBS-$(date -u +"%Y%m%d-%H%M%S")"
 
 # Ensure log directory exists
-mkdir -p "$(dirname "$LOG_FILE")"
+mkdir -p "$LOG_DIR"
 
-# Build YAML entry
+# Individual file for this observation
+LOG_FILE="${LOG_DIR}/${ID}.yaml"
+
+# Build YAML entry (single file per observation)
 {
-    echo "---"
     echo "id: $ID"
     echo "timestamp: \"$TIMESTAMP\""
     echo "type: $TYPE"
@@ -63,6 +65,6 @@ mkdir -p "$(dirname "$LOG_FILE")"
         done
         printf ']\n'
     fi
-} >> "$LOG_FILE"
+} > "$LOG_FILE"
 
 echo "$ID"

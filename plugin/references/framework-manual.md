@@ -88,7 +88,7 @@ Four action types for escalation triggers:
 
 When DEFER triggers:
 1. Process state serialised
-2. Work item type `DEFERRED_CONTINUATION` created
+2. task type `DEFERRED_CONTINUATION` created
 3. Process enters `SUSPENDED` state
 4. Resume trigger defines when to continue
 
@@ -179,7 +179,7 @@ Step <Parent>a: Fix <Issue>
 
 ## Work Coordination
 
-### Work Item Types
+### task Types
 
 | Type | Description |
 |------|-------------|
@@ -509,7 +509,7 @@ The Context Graph externalises Transactive Memory—making "who knows what" quer
 **Node Types**:
 | Type | Description |
 |------|-------------|
-| `ARTIFACT` | Documents, decisions, observations, work items |
+| `ARTIFACT` | Documents, decisions, observations, tasks |
 | `ACTOR_HUMAN` | Human participants with expertise |
 | `ACTOR_AI` | AI actors with capability profiles |
 | `SYSTEM` | External systems and services |

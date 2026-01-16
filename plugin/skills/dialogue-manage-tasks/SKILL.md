@@ -1,6 +1,6 @@
 ---
 name: dialogue-manage-tasks
-description: Manage persistent tasks in .dialogue/tasks/. Each task is a separate YAML file for merge-friendly multi-user workflows. Triggers on "create task", "new task", "update task", "manage tasks", "active tasks", "task status".
+description: Manage persistent tasks in .dialogue/tasks/. Each task is a separate YAML file for merge-friendly multi-user workflows. Triggers on "create task", "new task", "update task", "manage tasks", "active tasks", "task status", "status", "show status", "what's in progress", "what tasks", "pending tasks", "current tasks".
 ---
 
 # Skill: Manage Tasks
@@ -71,31 +71,31 @@ List tasks with filtering and sorting options.
 
 ```bash
 # List all active tasks (excludes COMPLETED/CANCELLED by default)
-${CLAUDE_PLUGIN_ROOT}/scripts/list-tasks.sh
+${CLAUDE_PLUGIN_ROOT}/skills/dialogue-manage-tasks/scripts/list-tasks.sh
 
 # List in-progress tasks only
-${CLAUDE_PLUGIN_ROOT}/scripts/list-tasks.sh --active
+${CLAUDE_PLUGIN_ROOT}/skills/dialogue-manage-tasks/scripts/list-tasks.sh --active
 
 # List ready tasks only
-${CLAUDE_PLUGIN_ROOT}/scripts/list-tasks.sh --ready
+${CLAUDE_PLUGIN_ROOT}/skills/dialogue-manage-tasks/scripts/list-tasks.sh --ready
 
 # Filter by type
-${CLAUDE_PLUGIN_ROOT}/scripts/list-tasks.sh --type CAPABILITY
+${CLAUDE_PLUGIN_ROOT}/skills/dialogue-manage-tasks/scripts/list-tasks.sh --type CAPABILITY
 
 # Filter by priority
-${CLAUDE_PLUGIN_ROOT}/scripts/list-tasks.sh --priority HIGH
+${CLAUDE_PLUGIN_ROOT}/skills/dialogue-manage-tasks/scripts/list-tasks.sh --priority HIGH
 
 # Filter by prefix
-${CLAUDE_PLUGIN_ROOT}/scripts/list-tasks.sh --prefix FW
+${CLAUDE_PLUGIN_ROOT}/skills/dialogue-manage-tasks/scripts/list-tasks.sh --prefix FW
 
 # Sort by priority
-${CLAUDE_PLUGIN_ROOT}/scripts/list-tasks.sh --sort priority
+${CLAUDE_PLUGIN_ROOT}/skills/dialogue-manage-tasks/scripts/list-tasks.sh --sort priority
 
 # Include completed/cancelled tasks
-${CLAUDE_PLUGIN_ROOT}/scripts/list-tasks.sh --all
+${CLAUDE_PLUGIN_ROOT}/skills/dialogue-manage-tasks/scripts/list-tasks.sh --all
 
 # Output formats: table (default), brief, json
-${CLAUDE_PLUGIN_ROOT}/scripts/list-tasks.sh --format json
+${CLAUDE_PLUGIN_ROOT}/skills/dialogue-manage-tasks/scripts/list-tasks.sh --format json
 ```
 
 ### count-tasks.sh
@@ -104,25 +104,25 @@ Count tasks with optional grouping.
 
 ```bash
 # Total count (active tasks)
-${CLAUDE_PLUGIN_ROOT}/scripts/count-tasks.sh
+${CLAUDE_PLUGIN_ROOT}/skills/dialogue-manage-tasks/scripts/count-tasks.sh
 
 # Count by status
-${CLAUDE_PLUGIN_ROOT}/scripts/count-tasks.sh --by status
+${CLAUDE_PLUGIN_ROOT}/skills/dialogue-manage-tasks/scripts/count-tasks.sh --by status
 
 # Count by type
-${CLAUDE_PLUGIN_ROOT}/scripts/count-tasks.sh --by type
+${CLAUDE_PLUGIN_ROOT}/skills/dialogue-manage-tasks/scripts/count-tasks.sh --by type
 
 # Count by priority
-${CLAUDE_PLUGIN_ROOT}/scripts/count-tasks.sh --by priority
+${CLAUDE_PLUGIN_ROOT}/skills/dialogue-manage-tasks/scripts/count-tasks.sh --by priority
 
 # Count by prefix
-${CLAUDE_PLUGIN_ROOT}/scripts/count-tasks.sh --by prefix
+${CLAUDE_PLUGIN_ROOT}/skills/dialogue-manage-tasks/scripts/count-tasks.sh --by prefix
 
 # Count only READY tasks by type
-${CLAUDE_PLUGIN_ROOT}/scripts/count-tasks.sh --status READY --by type
+${CLAUDE_PLUGIN_ROOT}/skills/dialogue-manage-tasks/scripts/count-tasks.sh --status READY --by type
 
 # JSON output
-${CLAUDE_PLUGIN_ROOT}/scripts/count-tasks.sh --by status --format json
+${CLAUDE_PLUGIN_ROOT}/skills/dialogue-manage-tasks/scripts/count-tasks.sh --by status --format json
 ```
 
 ### create-task.sh
@@ -131,10 +131,10 @@ Create a new task with auto-generated ID.
 
 ```bash
 # Minimal: creates BACKLOG task with MEDIUM priority
-${CLAUDE_PLUGIN_ROOT}/scripts/create-task.sh FW "New feature implementation"
+${CLAUDE_PLUGIN_ROOT}/skills/dialogue-manage-tasks/scripts/create-task.sh FW "New feature implementation"
 
 # With options
-${CLAUDE_PLUGIN_ROOT}/scripts/create-task.sh FW "Implement caching" \
+${CLAUDE_PLUGIN_ROOT}/skills/dialogue-manage-tasks/scripts/create-task.sh FW "Implement caching" \
   --status READY \
   --type CAPABILITY \
   --priority HIGH \
@@ -143,12 +143,12 @@ ${CLAUDE_PLUGIN_ROOT}/scripts/create-task.sh FW "Implement caching" \
   --rationale "Current response times are 500ms+"
 
 # With dependencies
-${CLAUDE_PLUGIN_ROOT}/scripts/create-task.sh FW "Deploy to production" \
+${CLAUDE_PLUGIN_ROOT}/skills/dialogue-manage-tasks/scripts/create-task.sh FW "Deploy to production" \
   --blocked-by "FW-015,FW-016" \
   --status BLOCKED
 
 # Use specific ID
-${CLAUDE_PLUGIN_ROOT}/scripts/create-task.sh FW "Specific task" --id FW-099
+${CLAUDE_PLUGIN_ROOT}/skills/dialogue-manage-tasks/scripts/create-task.sh FW "Specific task" --id FW-099
 ```
 
 **Output**: Prints the created task ID (e.g., `FW-018`)
@@ -159,11 +159,11 @@ Get the next available ID for a prefix.
 
 ```bash
 # Returns next available ID (e.g., FW-018)
-${CLAUDE_PLUGIN_ROOT}/scripts/next-id.sh FW
+${CLAUDE_PLUGIN_ROOT}/skills/dialogue-manage-tasks/scripts/next-id.sh FW
 
 # Works with any valid prefix
-${CLAUDE_PLUGIN_ROOT}/scripts/next-id.sh SH
-${CLAUDE_PLUGIN_ROOT}/scripts/next-id.sh DOC
+${CLAUDE_PLUGIN_ROOT}/skills/dialogue-manage-tasks/scripts/next-id.sh SH
+${CLAUDE_PLUGIN_ROOT}/skills/dialogue-manage-tasks/scripts/next-id.sh DOC
 ```
 
 ### task-summary.sh
@@ -172,10 +172,10 @@ Present a task status summary with counts and highlights.
 
 ```bash
 # Show summary (table format)
-${CLAUDE_PLUGIN_ROOT}/scripts/task-summary.sh
+${CLAUDE_PLUGIN_ROOT}/skills/dialogue-manage-tasks/scripts/task-summary.sh
 
 # JSON output
-${CLAUDE_PLUGIN_ROOT}/scripts/task-summary.sh --format json
+${CLAUDE_PLUGIN_ROOT}/skills/dialogue-manage-tasks/scripts/task-summary.sh --format json
 ```
 
 **Output includes:**

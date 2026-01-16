@@ -13,14 +13,14 @@ List documents, decisions, and other artefacts relevant to this ADR:
 | THY-NNN | DERIVES_FROM | Theoretical grounding for this decision |
 | REF-NNN | REFERENCES | Supporting reference material |
 | DEC-YYYYMMDD-HHMMSS | TRACES_TO | Related logged decision |
-| SH-NNN / FW-NNN | BLOCKS | Work item this decision unblocks |
+| SH-NNN / FW-NNN | BLOCKS | task this decision unblocks |
 | ADR-NNN | SUPERSEDES | Previous ADR this replaces (if applicable) |
 
 **Reference patterns** (from schema_information-reference.md):
 - Documents: `THY-NNN`, `REF-NNN`, `STR-NNN`, `F-N`, `C-N`, `O-N`, `I-N`, `G-N`, `E-N`
 - Decisions: `DEC-YYYYMMDD-HHMMSS`
 - Observations: `OBS-YYYYMMDD-HHMMSS`
-- Work items: `SH-NNN`, `CD-NNN`, `FW-NNN`
+- tasks: `SH-NNN`, `CD-NNN`, `FW-NNN`
 - Actors: `human:<id>`, `ai:<id>`
 - External: URLs
 
@@ -95,5 +95,5 @@ ADRs are:
 Cross-references ensure traceability to:
 - Theoretical foundations (THY documents)
 - Related decisions (DEC entries in decision log)
-- Work items that prompted the decision (SH, FW, CD)
+- tasks that prompted the decision (SH, FW, CD)
 - Previous ADRs (for supersession chains)

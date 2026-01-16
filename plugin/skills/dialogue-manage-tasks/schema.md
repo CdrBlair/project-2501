@@ -7,7 +7,7 @@
 
 ## Purpose
 
-This schema defines the YAML structure for persistent task tracking. Work items tracked in `.dialogue/tasks.yaml` conform to this schema.
+This schema defines the YAML structure for persistent task tracking. tasks tracked in `.dialogue/tasks.yaml` conform to this schema.
 
 This is the **authoritative schema** for deployed frameworks. See [SKILL.md](./SKILL.md) for operational guidance on using this schema.
 
@@ -33,7 +33,7 @@ The Work Coordination concept (O-3) provides a comprehensive schema for queue-ba
 version: string                  # Schema version (e.g., "1.0")
 last_updated: ISO8601            # File last modification timestamp
 
-prefixes:                        # Work item ID prefix definitions
+prefixes:                        # task ID prefix definitions
   - prefix: string               # 2-4 uppercase letters
     name: string                 # Human-readable name
     description: string          # Purpose of this prefix
@@ -65,11 +65,11 @@ created: ISO8601    # Creation timestamp
 
 #### Recommended Fields
 
-Work items SHOULD include these fields where applicable:
+tasks SHOULD include these fields where applicable:
 
 ```yaml
 updated: ISO8601         # Last update timestamp
-type: enum               # Work item classification
+type: enum               # task classification
 phase: integer           # SDLC phase (1-7) if applicable
 priority: enum           # Urgency level
 description: string      # Full description (multiline)
@@ -89,7 +89,7 @@ rationale: string        # Why this work is needed
 
 #### Optional Fields
 
-Work items MAY include these fields:
+tasks MAY include these fields:
 
 ```yaml
 blocked_by: string[]     # IDs of blocking tasks
@@ -148,7 +148,7 @@ notes: string            # Free-form notes, history, context
 
 ### Format
 
-Work item IDs follow pattern `PREFIX-NNN` where:
+task IDs follow pattern `PREFIX-NNN` where:
 - `PREFIX`: 2-4 uppercase letters identifying work stream
 - `NNN`: Zero-padded sequence number (001, 002, etc.)
 

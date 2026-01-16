@@ -7,7 +7,7 @@ set -euo pipefail
 
 # Use Claude's project directory environment variable
 PROJECT_ROOT="${CLAUDE_PROJECT_DIR:?CLAUDE_PROJECT_DIR must be set}"
-LOG_FILE="${PROJECT_ROOT}/.dialogue/logs/decisions.yaml"
+LOG_DIR="${PROJECT_ROOT}/.dialogue/logs/decisions"
 
 # Validate required arguments
 if [[ $# -lt 5 ]]; then
@@ -55,11 +55,13 @@ TIMESTAMP=$(date -u +"%Y-%m-%dT%H:%M:%SZ")
 ID="DEC-$(date -u +"%Y%m%d-%H%M%S")"
 
 # Ensure log directory exists
-mkdir -p "$(dirname "$LOG_FILE")"
+mkdir -p "$LOG_DIR"
 
-# Build YAML entry
+# Individual file for this decision
+LOG_FILE="${LOG_DIR}/${ID}.yaml"
+
+# Build YAML entry (single file per decision)
 {
-    echo "---"
     echo "id: $ID"
     echo "timestamp: \"$TIMESTAMP\""
     echo "type: $TYPE"
@@ -83,6 +85,6 @@ mkdir -p "$(dirname "$LOG_FILE")"
         done
         printf ']\n'
     fi
-} >> "$LOG_FILE"
+} > "$LOG_FILE"
 
 echo "$ID"
