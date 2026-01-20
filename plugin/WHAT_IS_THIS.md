@@ -32,7 +32,7 @@ This creates predictable, auditable decision points rather than opaque AI judgem
 
 ### 3. Strict Human-Only Handoff Pattern
 
-The redefinition (DEC-20260120-174641) distinguishes:
+The handoff pattern distinguishes:
 - **Human-Led**: AI present, recording, but human provides substance
 - **Human-Only**: AI exits dialogue entirely, creates blocking task, process pauses
 
