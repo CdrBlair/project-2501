@@ -98,13 +98,13 @@ steps:
     completion_criteria: "Critical path identified"
     validation: "Total duration calculated; constraint compliance checked"
 
-  # Step 4: Add buffers and contingency (Human-Only)
+  # Step 4: Add buffers and contingency (AI records, human decides)
   - id: "2.4.4"
     name: "Add Contingency"
     capability: Decide
-    pattern: Human-Only
+    pattern: Human-Led
     human_role: "Decide buffer allocation based on risk appetite and experience"
-    ai_role: "Record only - buffer decisions require organisational judgment"
+    ai_role: "Record and structure buffer decisions; do not suggest buffer amounts"
     escalation_triggers:
       - condition: "No buffer for high-risk activities"
         action: ESCALATE
@@ -192,7 +192,7 @@ flow: |
       S1["2.4.1 Sequence Activities<br/>(Analyse, Partnership)"]
       S2["2.4.2 Estimate Durations<br/>(Elicit, Human-Led)"]
       S3["2.4.3 Identify Critical Path<br/>(Analyse, AI-Led)"]
-      S4["2.4.4 Add Contingency<br/>(Decide, Human-Only)"]
+      S4["2.4.4 Add Contingency<br/>(Decide, Human-Led)"]
       S5["2.4.5 Define Milestones<br/>(Synthesise, Human-Led)"]
       S6["2.4.6 Record Deferrals<br/>(Preserve, AI-Led)"]
     end

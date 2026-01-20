@@ -75,13 +75,13 @@ steps:
     completion_criteria: "In-scope and out-of-scope lists exist"
     validation: "Each scope item is clearly categorised"
 
-  # Step 3: Identify constraints (Human-Only for budget/timeline)
+  # Step 3: Identify constraints (AI records, human specifies)
   - id: "2.1.3"
     name: "Identify Constraints"
     capability: Elicit
-    pattern: Human-Only
+    pattern: Human-Led
     human_role: "Specify hard constraints: budget, timeline, technology, regulatory"
-    ai_role: "Record only - constraints require organisational authority to state"
+    ai_role: "Record and structure constraints; do not suggest or assume constraints"
     escalation_triggers:
       - condition: "Constraints conflict with scope"
         action: ESCALATE
@@ -184,7 +184,7 @@ flow: |
     subgraph Steps
       S1["2.1.1 Review Inputs<br/>(Analyse, AI-Led)"]
       S2["2.1.2 Define Boundaries<br/>(Elicit, Human-Led)"]
-      S3["2.1.3 Identify Constraints<br/>(Elicit, Human-Only)"]
+      S3["2.1.3 Identify Constraints<br/>(Elicit, Human-Led)"]
       S4["2.1.4 Create WBS<br/>(Synthesise, Partnership)"]
       S5["2.1.5 Validate Scope<br/>(Validate, Human-Led)"]
       S6["2.1.6 Record Deferrals<br/>(Preserve, AI-Led)"]

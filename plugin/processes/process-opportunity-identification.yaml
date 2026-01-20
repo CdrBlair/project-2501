@@ -65,13 +65,13 @@ steps:
     completion_criteria: "Problem statement separated from any solution ideas"
     validation: "Problem framed without prescribing specific solution"
 
-  # Step 3: Capture rationale (AI-facilitated) - HUMAN-ONLY decision
+  # Step 3: Capture rationale (AI records, human provides substance)
   - id: "1.1.3"
     name: "Articulate Rationale"
     capability: Elicit
-    pattern: Human-Only
+    pattern: Human-Led
     human_role: "Explain WHY this matters - business value, strategic fit, urgency"
-    ai_role: "Record only - rationale must come from human with organisational context"
+    ai_role: "Record and structure human input; do not suggest or generate rationale"
     escalation_triggers:
       - condition: "Rationale unclear or missing"
         action: RETURN
@@ -159,7 +159,7 @@ flow: |
     subgraph Steps
       S1["1.1.1 Elicit Initial Framing<br/>(Elicit, Human-Led)"]
       S2["1.1.2 Separate Problem/Solution<br/>(Analyse, Human-Led)"]
-      S3["1.1.3 Articulate Rationale<br/>(Elicit, Human-Only)"]
+      S3["1.1.3 Articulate Rationale<br/>(Elicit, Human-Led)"]
       S4["1.1.4 Synthesise Statement<br/>(Synthesise, Human-Led)"]
       S5["1.1.5 Identify Deferrals<br/>(Preserve, AI-Led)"]
     end

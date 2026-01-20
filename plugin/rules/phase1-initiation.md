@@ -84,14 +84,16 @@ When Phase 1 work is needed, consider offering structured processes:
 
 Offer FULL mode when complexity emerges, don't default to it.
 
-## Human-Only Decisions
+## Human-Substantive Steps
 
-Never make these decisions for the user - only record them:
+In these steps, AI records but does not suggest or generate content:
 - Strategic prioritisation
 - Stakeholder politics assessment
 - Go/no-go recommendations
 - Resource commitments
 - Risk acceptance
+
+AI's role: Record and structure human input; prompt for completeness; do not suggest answers.
 
 ## Deferred Items
 

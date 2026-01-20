@@ -1,0 +1,58 @@
+id: "FW-018"
+title: "Document Human-Only Handoff Mechanism"
+status: BACKLOG
+created: "2026-01-20T17:50:00Z"
+updated: "2026-01-20T17:50:00Z"
+type: FRAMEWORK
+priority: HIGH
+description: |
+  Document the Human-Only handoff mechanism for true Human-Only steps
+  where AI exits the dialogue entirely.
+
+  Per DEC-20260120-174641, Human-Only means:
+  - AI creates a blocking task
+  - AI exits the dialogue
+  - Process pauses until human returns with required information
+
+  Tasks:
+  1. Define blocking task structure:
+     - Responsible party (who)
+     - Required information/output (what)
+     - Expected activities (how - workshop, meeting, review)
+     - Downstream dependencies (blocks what)
+     - Re-entry point (where to resume)
+     - Deadline/SLA (when)
+
+  2. Document re-entry mechanism:
+     - How human signals completion
+     - How process resumes
+     - Validation of human-provided output
+
+  3. Create example Human-Only steps:
+     - "Conduct stakeholder workshop"
+     - "Obtain executive sign-off"
+     - "Hold team retrospective"
+
+  4. Update schema documentation:
+     - Clarify C1 constraint applies to true Human-Only
+     - Add guidance on when to use Human-Only vs Human-Led
+
+objective: "Clear mechanism for AI to hand off to human for external activities"
+rationale: |
+  Human-Only should mean AI steps away completely. This enables proper
+  separation between:
+  - Human-Led: AI present, recording human input
+  - Human-Only: AI exits, human works externally, returns with output
+
+  Without this mechanism, Human-Only has no operational meaning distinct
+  from Human-Led.
+
+references:
+  - id: DEC-20260120-174641
+    relationship: IMPLEMENTS
+
+tags:
+  - framework
+  - collaboration-patterns
+  - human-only
+  - handoff

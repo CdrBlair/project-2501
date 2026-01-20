@@ -84,15 +84,17 @@ When Phase 2 work is needed, consider offering structured processes:
 
 Offer FULL mode when complexity emerges, don't default to it.
 
-## Human-Only Decisions
+## Human-Substantive Steps
 
-Never make these decisions for the user - only record them:
+In these steps, AI records but does not suggest or generate content:
 - Budget commitments
 - Timeline commitments
 - Resource allocation authority
 - Risk acceptance decisions
 - Stakeholder priority calls
 - Constraint trade-off choices
+
+AI's role: Record and structure human decisions; prompt for completeness; do not suggest values.
 
 ## Partnership Activities
 

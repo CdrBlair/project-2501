@@ -74,13 +74,13 @@ steps:
     completion_criteria: "Resource estimates for each WBS area"
     validation: "Estimates have basis (experience, comparison, or explicit assumption)"
 
-  # Step 3: Check availability (Human-Only)
+  # Step 3: Check availability (AI records, human assesses)
   - id: "2.3.3"
     name: "Check Resource Availability"
     capability: Elicit
-    pattern: Human-Only
+    pattern: Human-Led
     human_role: "Assess actual availability of required resources"
-    ai_role: "Record only - availability requires organisational knowledge"
+    ai_role: "Record and structure availability status; do not assume availability"
     escalation_triggers:
       - condition: "Key resource unavailable"
         action: ESCALATE
@@ -193,7 +193,7 @@ flow: |
     subgraph Steps
       S1["2.3.1 Identify Types<br/>(Analyse, AI-Led)"]
       S2["2.3.2 Estimate Requirements<br/>(Synthesise, Partnership)"]
-      S3["2.3.3 Check Availability<br/>(Elicit, Human-Only)"]
+      S3["2.3.3 Check Availability<br/>(Elicit, Human-Led)"]
       S4["2.3.4 Identify Skill Gaps<br/>(Analyse, Partnership)"]
       S5["2.3.5 Propose Allocation<br/>(Decide, Human-Led)"]
       S6["2.3.6 Record Deferrals<br/>(Preserve, AI-Led)"]

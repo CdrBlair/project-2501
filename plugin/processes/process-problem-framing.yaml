@@ -70,13 +70,13 @@ steps:
     completion_criteria: "Boundaries articulated"
     validation: "At least one in-scope and one out-of-scope item identified"
 
-  # Step 3: Identify root causes (HUMAN-ONLY insight)
+  # Step 3: Identify root causes (AI records, human provides insight)
   - id: "1.3.3"
     name: "Identify Root Causes"
     capability: Analyse
-    pattern: Human-Only
+    pattern: Human-Led
     human_role: "Share your understanding of why this problem exists"
-    ai_role: "Record only - root cause insight requires domain/organisational knowledge"
+    ai_role: "Record and structure human analysis; do not suggest root causes"
     escalation_triggers:
       - condition: "Root causes unclear or contested"
         action: DEFER
@@ -179,7 +179,7 @@ flow: |
     subgraph Steps
       S1["1.3.1 Surface Understanding<br/>(Elicit, Human-Led)"]
       S2["1.3.2 Explore Boundaries<br/>(Analyse, Human-Led)"]
-      S3["1.3.3 Identify Root Causes<br/>(Analyse, Human-Only)"]
+      S3["1.3.3 Identify Root Causes<br/>(Analyse, Human-Led)"]
       S4["1.3.4 Define Success Criteria<br/>(Elicit, Human-Led)"]
       S5["1.3.5 Surface Constraints<br/>(Elicit, Human-Led)"]
       S6["1.3.6 Synthesise Statement<br/>(Synthesise, Human-Led)"]

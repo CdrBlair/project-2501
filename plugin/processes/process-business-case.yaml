@@ -73,13 +73,13 @@ steps:
     completion_criteria: "Rough cost/effort estimate captured"
     validation: "At least order-of-magnitude estimate provided"
 
-  # Step 3: Assess risks (HUMAN-ONLY judgment)
+  # Step 3: Assess risks (AI records, human judges)
   - id: "1.4.3"
     name: "Assess Key Risks"
     capability: Analyse
-    pattern: Human-Only
+    pattern: Human-Led
     human_role: "Identify major risks - what could go wrong?"
-    ai_role: "Record only - risk assessment requires organisational/domain knowledge"
+    ai_role: "Record and structure human assessment; do not suggest risks"
     escalation_triggers:
       - condition: "Critical risk identified with no mitigation"
         action: ESCALATE
@@ -105,13 +105,13 @@ steps:
     completion_criteria: "Alternatives considered"
     validation: "At least 'do nothing' alternative addressed"
 
-  # Step 5: Make recommendation (HUMAN-ONLY decision)
+  # Step 5: Make recommendation (AI records, human decides)
   - id: "1.4.5"
     name: "Form Recommendation"
     capability: Decide
-    pattern: Human-Only
+    pattern: Human-Led
     human_role: "Decide: proceed, defer, or decline - with rationale"
-    ai_role: "Record only - go/no-go decision must be human"
+    ai_role: "Record and structure human decision; do not suggest recommendation"
     escalation_triggers:
       - condition: "Decision unclear or contested"
         action: DEFER
@@ -183,9 +183,9 @@ flow: |
     subgraph Steps
       S1["1.4.1 Articulate Value<br/>(Elicit, Human-Led)"]
       S2["1.4.2 Estimate Costs<br/>(Analyse, Human-Led)"]
-      S3["1.4.3 Assess Risks<br/>(Analyse, Human-Only)"]
+      S3["1.4.3 Assess Risks<br/>(Analyse, Human-Led)"]
       S4["1.4.4 Consider Alternatives<br/>(Analyse, Human-Led)"]
-      S5["1.4.5 Form Recommendation<br/>(Decide, Human-Only)"]
+      S5["1.4.5 Form Recommendation<br/>(Decide, Human-Led)"]
       S6["1.4.6 Synthesise Case<br/>(Synthesise, Human-Led)"]
     end
 

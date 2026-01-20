@@ -71,13 +71,13 @@ steps:
     completion_criteria: "Specific risks listed"
     validation: "Each risk has a clear description"
 
-  # Step 3: Assess likelihood (Human-Only)
+  # Step 3: Assess likelihood (AI records, human assesses)
   - id: "2.2.3"
     name: "Assess Risk Likelihood"
     capability: Analyse
-    pattern: Human-Only
+    pattern: Human-Led
     human_role: "Assign likelihood rating based on experience and context"
-    ai_role: "Record only - likelihood requires tacit knowledge of organisational context"
+    ai_role: "Record and structure ratings; do not suggest likelihood values"
     escalation_triggers:
       - condition: "Unable to assess likelihood"
         action: DEFER
@@ -87,13 +87,13 @@ steps:
     completion_criteria: "Likelihood assessed for each risk"
     validation: "Rating scale used consistently"
 
-  # Step 4: Assess impact (Human-Only)
+  # Step 4: Assess impact (AI records, human assesses)
   - id: "2.2.4"
     name: "Assess Risk Impact"
     capability: Analyse
-    pattern: Human-Only
+    pattern: Human-Led
     human_role: "Assign impact rating based on business consequences"
-    ai_role: "Record only - impact assessment requires organisational value judgments"
+    ai_role: "Record and structure ratings; do not suggest impact values"
     escalation_triggers:
       - condition: "High-impact risk identified"
         action: ESCALATE
@@ -185,8 +185,8 @@ flow: |
     subgraph Steps
       S1["2.2.1 Identify Categories<br/>(Analyse, Partnership)"]
       S2["2.2.2 Identify Risks<br/>(Elicit, Partnership)"]
-      S3["2.2.3 Assess Likelihood<br/>(Analyse, Human-Only)"]
-      S4["2.2.4 Assess Impact<br/>(Analyse, Human-Only)"]
+      S3["2.2.3 Assess Likelihood<br/>(Analyse, Human-Led)"]
+      S4["2.2.4 Assess Impact<br/>(Analyse, Human-Led)"]
       S5["2.2.5 Plan Responses<br/>(Synthesise, Human-Led)"]
       S6["2.2.6 Record Deferrals<br/>(Preserve, AI-Led)"]
     end

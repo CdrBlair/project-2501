@@ -1,0 +1,58 @@
+id: DEC-20260120-174641
+timestamp: "2026-01-20T17:46:41Z"
+type: DESIGN
+actor: human:pid, ai:claude
+status: APPROVED
+
+title: "Clarify Human-Only pattern as strict external handoff"
+
+context: |
+  During Phase 2 validation, schema constraint C1 (Human-Only → ai_role = "None")
+  flagged violations across all Phase 1 and Phase 2 processes. Steps marked Human-Only
+  had ai_role describing recording/structuring functions.
+
+  This revealed a conceptual ambiguity: what does "Human-Only" actually mean?
+
+decision: |
+  Human-Only pattern means AI exits the dialogue entirely and creates a blocking
+  handoff. The process pauses until the human returns with required information.
+
+  Steps where AI remains present to record human input should be Human-Led, not
+  Human-Only. The distinction:
+
+  - Human-Only: AI creates task, exits, waits for human to return with output
+  - Human-Led: AI present, human provides substance, AI records/structures
+
+rationale: |
+  1. "Recording" is exercising the Preserve capability - that's AI involvement
+  2. True Human-Only should mean activities outside the AI dialogue
+  3. Cleaner separation enables proper handoff mechanism design
+  4. Resolves schema constraint C1 violations systematically
+
+implications:
+  - All current "Human-Only" steps in PROC-1.x and PROC-2.x become Human-Led
+  - ai_role updated to describe recording function explicitly
+  - Need to document Human-Only handoff mechanism (task creation, re-entry)
+  - True Human-Only reserved for external activities (workshops, meetings, approvals)
+
+affected_artifacts:
+  - plugin/processes/process-opportunity-identification.yaml
+  - plugin/processes/process-stakeholder-alignment.yaml
+  - plugin/processes/process-problem-framing.yaml
+  - plugin/processes/process-business-case.yaml
+  - plugin/processes/process-scope-definition.yaml
+  - plugin/processes/process-risk-assessment.yaml
+  - plugin/processes/process-resource-planning.yaml
+  - plugin/processes/process-schedule-development.yaml
+  - concepts/concept_collaboration-patterns.md (future update)
+
+references:
+  - id: C1
+    type: SCHEMA_CONSTRAINT
+    description: "Human-Only → ai_role = None"
+
+tags:
+  - collaboration-patterns
+  - human-only
+  - design
+  - schema
