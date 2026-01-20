@@ -1,6 +1,9 @@
-# Simple validation process for testing
-# This is a minimal AI-Only process for verification
+# Phase 6 Process: Simple Validation
+# AI-Only process - fully automated artifact validation
 ---
+references:
+  rules: ../rules/phase6-testing.md
+
 definition:
   id: "PROC-6.1"
   name: "Simple Validation"
@@ -8,9 +11,9 @@ definition:
   version: "1.0.0"
   phase: 6
   information_composition:
-    formal: 60
-    tacit: 30
-    emergent: 10
+    formal: 65
+    tacit: 20
+    emergent: 15
 
 interfaces:
   inputs:

@@ -1,8 +1,8 @@
 id: "SH-015"
 title: "Phase 6 (Testing & Integration) Operationalisation"
-status: BACKLOG
+status: COMPLETED
 created: "2026-01-19T16:00:00Z"
-updated: "2026-01-19T16:00:00Z"
+updated: "2026-01-20T19:15:00Z"
 type: CAPABILITY
 phase: 6
 priority: MEDIUM
@@ -32,6 +32,15 @@ blocked_by: ["SH-014"]
 blocks: ["SH-016"]
 notes: |
   Created 19 January 2026 as placeholder.
-  Placeholder task - details TBD based on earlier phase learnings.
-  PROC-6.1 already exists as process-simple-validation.yaml.
+
+  COMPLETED 20 January 2026:
+  - Updated PROC-6.1 (Simple Validation) with references and corrected info composition
+  - Created PROC-6.2 (Integration Testing)
+  - Created PROC-6.3 (System Testing)
+  - Created PROC-6.4 (Quality Reporting)
+  - Created plugin/rules/phase6-testing.md for AI behaviour
+  - All processes follow QUICK/FULL modes per PRI-001
+  - Highest formal content (65%) - AI-Only for mechanical execution
+  - AI-Led dominant for analysis; Human-Led for release decisions only
+  - Validate capability dominates this phase
 

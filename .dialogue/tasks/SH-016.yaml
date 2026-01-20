@@ -1,8 +1,8 @@
 id: "SH-016"
 title: "Phase 7 (Deployment & Maintenance) Operationalisation"
-status: BACKLOG
+status: COMPLETED
 created: "2026-01-19T16:00:00Z"
-updated: "2026-01-19T16:00:00Z"
+updated: "2026-01-20T19:30:00Z"
 type: CAPABILITY
 phase: 7
 priority: MEDIUM
@@ -32,6 +32,15 @@ blocked_by: ["SH-015"]
 blocks: []
 notes: |
   Created 19 January 2026 as placeholder.
-  Placeholder task - details TBD based on earlier phase learnings.
-  Maintenance is interesting: tacit knowledge accumulates over time.
+
+  COMPLETED 20 January 2026:
+  - Created PROC-7.1 (Deployment Preparation)
+  - Created PROC-7.2 (Release Validation)
+  - Created PROC-7.3 (Incident Response)
+  - Created PROC-7.4 (Maintenance Planning)
+  - Created plugin/rules/phase7-deployment.md for AI behaviour
+  - All processes follow QUICK/FULL modes per PRI-001
+  - Returning to more tacit content (30%) as operational knowledge accumulates
+  - Partnership pattern prominent for incident diagnosis and maintenance
+  - Human-Led reserved for deployment approval and go-live decisions
 
