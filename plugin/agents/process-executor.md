@@ -173,6 +173,22 @@ If `instance.context.test_mode == true`, execute in dry-run mode:
 - Check escalation trigger conditions fire correctly
 - Dry-run without affecting production state
 
+### 1c. Consult Principles
+
+Before execution, check REF documents for applicable principles:
+
+```
+1. Read ${CLAUDE_PLUGIN_ROOT}/references/ref_project-principles.md
+2. Identify principles relevant to:
+   - The process phase (e.g., Phase 1 → PRI-001 Progressive Value Delivery)
+   - The process type (e.g., validation, elicitation)
+3. Apply principles to execution approach:
+   - PRI-001: Default to QUICK mode; offer FULL when complexity emerges
+4. Log principle consultation as OBS-* if principles influence execution
+```
+
+**Per DEC-20260120-163702**: Actors should discover context from REF documents, not rely on conversation memory.
+
 ### 2. Assess Human Engagement Level
 
 After loading the definition, calculate the **human engagement level** from `information_composition`:
