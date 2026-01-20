@@ -1,0 +1,36 @@
+id: "SH-013"
+title: "Phase 4 (Design) Operationalisation"
+status: BACKLOG
+created: "2026-01-19T16:00:00Z"
+updated: "2026-01-19T16:00:00Z"
+type: CAPABILITY
+phase: 4
+priority: MEDIUM
+description: |
+  Operationalise Phase 4 (Design) guidance and capability flows.
+
+  Phase characteristics:
+  - Information composition: 50% formal, 30% tacit, 20% emergent
+  - Key capabilities: Analyse, Synthesise, Transform, Decide
+  - Collaboration patterns: Partnership, AI-Led
+  - Key outputs: Architecture docs, interface specs, data designs
+
+  Tasks:
+  1. Define Phase 4 processes in framework-manual.md:
+     - PROC-4.1: Architecture Design
+     - PROC-4.2: Interface Design
+     - PROC-4.3: Data Design
+     - PROC-4.4: Design Review
+  2. Specify capability instances, roles, patterns, triggers
+  3. Create/update AI configuration for Phase 4 behaviour
+
+objective: "Phase 4 guidance and capability flows operationalised"
+rationale: |
+  Design phase transforms requirements into technical specifications.
+  AI assistance becomes more viable as formal knowledge increases.
+blocked_by: ["SH-012"]
+blocks: ["SH-014"]
+notes: |
+  Created 19 January 2026 as placeholder.
+  Placeholder task - details TBD based on earlier phase learnings.
+

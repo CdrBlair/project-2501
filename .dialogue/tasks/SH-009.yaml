@@ -1,6 +1,7 @@
 id: "SH-009"
 title: "Phase 1 Capability Flow Operationalisation"
-status: READY
+status: COMPLETED
+completed: "2026-01-20T12:00:00Z"
 created: "2026-01-14T19:00:00Z"
 updated: "2026-01-14T17:45:00Z"
 type: CAPABILITY
@@ -36,9 +37,27 @@ rationale: |
   the output should be guidance practitioners use and AI configuration that
   implements the behaviour, not an example document.
 blocked_by: ["SH-008"]
-blocks: ["SH-010"]
+blocks: []
+parent: "SH-017"
 notes: |
   Created 14 January 2026 from Phase 1-2 analysis.
   REVISED 14 January 2026: Changed from "create exemplar" to "operationalise flows".
   FW-007 completed: functional roles now defined in I-3.
+
+  20 January 2026: COMPLETED
+  Created Phase 1 ProcessDefinition files:
+  - PROC-1.1: process-opportunity-identification.yaml
+  - PROC-1.2: process-stakeholder-alignment.yaml
+  - PROC-1.3: process-problem-framing.yaml
+  - PROC-1.4: process-business-case.yaml
+
+  Key design decisions (DEC-20260120-114214):
+  - Progressive Value Delivery principle applied
+  - QUICK/FULL modes for scaling
+  - Human-Only steps clearly marked
+  - Deferred items support for non-blocking progression
+
+  AI configuration updated:
+  - plugin/rules/phase1-initiation.md (Facilitator behaviour rules)
+  - dialogue-structured-elicit skill updated with process suggestions
 

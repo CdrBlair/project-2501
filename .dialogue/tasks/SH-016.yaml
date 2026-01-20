@@ -1,0 +1,37 @@
+id: "SH-016"
+title: "Phase 7 (Deployment & Maintenance) Operationalisation"
+status: BACKLOG
+created: "2026-01-19T16:00:00Z"
+updated: "2026-01-19T16:00:00Z"
+type: CAPABILITY
+phase: 7
+priority: MEDIUM
+description: |
+  Operationalise Phase 7 (Deployment & Maintenance) guidance and capability flows.
+
+  Phase characteristics:
+  - Information composition: 55% formal, 30% tacit, 15% emergent
+  - Key capabilities: Transform, Validate, Preserve, Decide
+  - Collaboration patterns: AI-Led, Partnership (for decisions)
+  - Key outputs: Deployment packages, runbooks, incident responses
+
+  Tasks:
+  1. Define Phase 7 processes in framework-manual.md:
+     - PROC-7.1: Deployment Preparation
+     - PROC-7.2: Release Validation
+     - PROC-7.3: Incident Response
+     - PROC-7.4: Maintenance Planning
+  2. Specify capability instances, roles, patterns, triggers
+  3. Create/update AI configuration for Phase 7 behaviour
+
+objective: "Phase 7 guidance and capability flows operationalised"
+rationale: |
+  Deployment requires careful coordination of automated and manual steps.
+  Maintenance involves ongoing theory-building about system behaviour.
+blocked_by: ["SH-015"]
+blocks: []
+notes: |
+  Created 19 January 2026 as placeholder.
+  Placeholder task - details TBD based on earlier phase learnings.
+  Maintenance is interesting: tacit knowledge accumulates over time.
+

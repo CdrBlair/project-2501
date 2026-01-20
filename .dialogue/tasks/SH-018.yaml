@@ -1,0 +1,48 @@
+id: "SH-018"
+title: "Phase 2 (Planning) Operationalisation"
+status: BACKLOG
+created: "2026-01-19T16:10:00Z"
+updated: "2026-01-19T16:10:00Z"
+type: CAPABILITY
+phase: 2
+priority: HIGH
+description: |
+  Operationalise Phase 2 (Planning) guidance and capability flows.
+
+  Phase characteristics:
+  - Information composition: 35% formal, 55% tacit, 10% emergent
+  - Key capabilities: Analyse, Synthesise, Decide, Preserve
+  - Collaboration patterns: Human-Led, Partnership
+  - Key outputs: Project plan, risk register, resource allocation, governance
+
+  Tasks:
+  1. Define Phase 2 processes in framework-manual.md:
+     - PROC-2.1: Scope Definition
+     - PROC-2.2: Risk Assessment
+     - PROC-2.3: Resource Planning
+     - PROC-2.4: Schedule Development
+  2. Specify capability instances, roles, patterns, triggers
+  3. Create/update AI configuration for Phase 2 behaviour
+
+  Key insight: Planning spans most of project lifecycle and refines iteratively.
+  Collaboration patterns shift as planning becomes more formal over time.
+
+objective: "Phase 2 guidance and capability flows operationalised"
+rationale: |
+  Planning bridges Initiation's tacit-heavy work to Analysis's balanced work.
+  Unique phase where patterns evolve within the phase itself.
+blocked_by: ["SH-017"]
+blocks: ["SH-012"]
+children: ["SH-010", "SH-011"]
+notes: |
+  Created 19 January 2026 - consolidated from SH-010 and SH-011.
+
+  PARTIAL COMPLETION (~0%):
+  - SH-010 (Operational Guidance): BACKLOG
+  - SH-011 (Capability Flow): BACKLOG
+
+  Remaining work:
+  - Define PROC-2.x processes with capability instances
+  - Document pattern evolution within phase
+  - Create AI configuration (skills, hooks, agent behaviour)
+

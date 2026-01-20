@@ -25,8 +25,9 @@ objective: "Phase 2 guidance operationalised in framework-manual.md and AI confi
 rationale: |
   Completes Phase 1-2 operational guidance.
   Planning is interesting because patterns shift over time within the phase.
-blocked_by: ["SH-008"]
+blocked_by: []
 blocks: ["SH-011"]
+parent: "SH-018"
 notes: |
   Created 14 January 2026 from Phase 1-2 analysis.
   REVISED 14 January 2026: Changed from "create exemplar" to "operationalise guidance".

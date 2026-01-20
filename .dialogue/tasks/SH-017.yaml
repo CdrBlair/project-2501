@@ -1,0 +1,55 @@
+id: "SH-017"
+title: "Phase 1 (Initiation) Operationalisation"
+status: COMPLETED
+completed: "2026-01-20T12:00:00Z"
+created: "2026-01-19T16:10:00Z"
+updated: "2026-01-19T16:10:00Z"
+type: CAPABILITY
+phase: 1
+priority: HIGH
+description: |
+  Operationalise Phase 1 (Initiation) guidance and capability flows.
+
+  Phase characteristics:
+  - Information composition: 20% formal, 50% tacit, 30% emergent
+  - Key capabilities: Elicit, Synthesise, Decide
+  - Collaboration patterns: Human-Only, Human-Led
+  - Key outputs: Project charter, stakeholder map, problem statement
+
+  Tasks:
+  1. Define Phase 1 processes in framework-manual.md:
+     - PROC-1.1: Opportunity Identification
+     - PROC-1.2: Stakeholder Alignment
+     - PROC-1.3: Problem Framing
+     - PROC-1.4: Business Case Development
+  2. Specify capability instances, roles, patterns, triggers
+  3. Create/update AI configuration for Phase 1 behaviour
+
+  Key insight: Phase 1 is heavily tacit/emergent. AI role is primarily
+  Facilitator/Scribe (elicitation support), not autonomous execution.
+
+objective: "Phase 1 guidance and capability flows operationalised"
+rationale: |
+  Initiation establishes project foundation through tacit knowledge elicitation.
+  AI assists but cannot lead in this phase.
+blocked_by: []
+blocks: ["SH-018"]
+children: ["SH-008", "SH-009"]
+notes: |
+  Created 19 January 2026 - consolidated from SH-008 and SH-009.
+
+  20 January 2026: COMPLETED
+  - SH-008 (Operational Guidance): COMPLETED (14 Jan)
+  - SH-009 (Capability Flow): COMPLETED (20 Jan)
+
+  Deliverables:
+  - PROC-1.1: process-opportunity-identification.yaml
+  - PROC-1.2: process-stakeholder-alignment.yaml
+  - PROC-1.3: process-problem-framing.yaml
+  - PROC-1.4: process-business-case.yaml
+  - plugin/rules/phase1-initiation.md
+
+  Key principle established (DEC-20260120-114214):
+  Progressive Value Delivery - prioritise quick meaningful output over
+  strict phase completion. QUICK/FULL modes, deferred items, learn-by-doing.
+

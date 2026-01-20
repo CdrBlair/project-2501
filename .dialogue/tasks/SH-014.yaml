@@ -1,0 +1,37 @@
+id: "SH-014"
+title: "Phase 5 (Implementation) Operationalisation"
+status: BACKLOG
+created: "2026-01-19T16:00:00Z"
+updated: "2026-01-19T16:00:00Z"
+type: CAPABILITY
+phase: 5
+priority: MEDIUM
+description: |
+  Operationalise Phase 5 (Implementation) guidance and capability flows.
+
+  Phase characteristics:
+  - Information composition: 60% formal, 25% tacit, 15% emergent
+  - Key capabilities: Transform, Generate, Validate, Preserve
+  - Collaboration patterns: AI-Led, AI-Only (with human review)
+  - Key outputs: Source code, unit tests, technical documentation
+
+  Tasks:
+  1. Define Phase 5 processes in framework-manual.md:
+     - PROC-5.1: Code Generation
+     - PROC-5.2: Unit Testing
+     - PROC-5.3: Code Review
+     - PROC-5.4: Technical Documentation
+  2. Specify capability instances, roles, patterns, triggers
+  3. Create/update AI configuration for Phase 5 behaviour
+
+objective: "Phase 5 guidance and capability flows operationalised"
+rationale: |
+  Implementation is where AI can contribute most directly.
+  High formal knowledge enables AI-Led/AI-Only patterns.
+blocked_by: ["SH-013"]
+blocks: ["SH-015"]
+notes: |
+  Created 19 January 2026 as placeholder.
+  Placeholder task - details TBD based on earlier phase learnings.
+  This phase aligns well with current AI coding capabilities.
+

@@ -1,0 +1,36 @@
+id: "SH-012"
+title: "Phase 3 (Analysis) Operationalisation"
+status: BACKLOG
+created: "2026-01-19T16:00:00Z"
+updated: "2026-01-19T16:00:00Z"
+type: CAPABILITY
+phase: 3
+priority: MEDIUM
+description: |
+  Operationalise Phase 3 (Analysis) guidance and capability flows.
+
+  Phase characteristics:
+  - Information composition: 40% formal, 35% tacit, 25% emergent
+  - Key capabilities: Elicit, Analyse, Synthesise, Validate
+  - Collaboration patterns: Human-Led, Partnership
+  - Key outputs: Requirements specs, use cases, data models
+
+  Tasks:
+  1. Define Phase 3 processes in framework-manual.md:
+     - PROC-3.1: Requirements Elicitation
+     - PROC-3.2: Requirements Analysis
+     - PROC-3.3: Requirements Validation
+     - PROC-3.4: Requirements Documentation
+  2. Specify capability instances, roles, patterns, triggers
+  3. Create/update AI configuration for Phase 3 behaviour
+
+objective: "Phase 3 guidance and capability flows operationalised"
+rationale: |
+  Analysis phase bridges tacit-heavy planning to design.
+  Requirements quality directly impacts downstream phases.
+blocked_by: ["SH-018"]
+blocks: ["SH-013"]
+notes: |
+  Created 19 January 2026 as placeholder.
+  Placeholder task - details TBD based on Phase 1-2 learnings.
+

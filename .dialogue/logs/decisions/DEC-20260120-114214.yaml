@@ -1,0 +1,9 @@
+id: DEC-20260120-114214
+timestamp: "2026-01-20T11:42:14Z"
+type: DESIGN
+actor: "human:pid"
+subject: "Progressive Value Delivery Principle"
+outcome: "Framework prioritises quick meaningful output over strict phase completion: (1) Allow phase advancement with incomplete items marked as deferred; (2) Progressive disclosure of functionality; (3) Learn-by-doing guidance through phases"
+rationale: "Aligns with tacit knowledge principles - understanding through practice. Prevents framework becoming bureaucratic gatekeeper. Supports straw man pattern."
+context: "Applies to process definitions, user onboarding, and phase progression logic"
+tags: ["process-execution", "user-experience", "onboarding"]

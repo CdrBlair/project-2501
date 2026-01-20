@@ -40,6 +40,7 @@ rationale: |
   to be analyzed and accepted/discarded."
 blocked_by: []
 blocks: ["SH-009"]
+parent: "SH-017"
 notes: |
   Created 14 January 2026 from Phase 1-2 analysis.
   REVISED 14 January 2026: Changed from "create exemplar" to "operationalise guidance".

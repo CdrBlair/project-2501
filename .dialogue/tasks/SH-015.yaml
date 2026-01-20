@@ -1,0 +1,37 @@
+id: "SH-015"
+title: "Phase 6 (Testing & Integration) Operationalisation"
+status: BACKLOG
+created: "2026-01-19T16:00:00Z"
+updated: "2026-01-19T16:00:00Z"
+type: CAPABILITY
+phase: 6
+priority: MEDIUM
+description: |
+  Operationalise Phase 6 (Testing & Integration) guidance and capability flows.
+
+  Phase characteristics:
+  - Information composition: 65% formal, 20% tacit, 15% emergent
+  - Key capabilities: Validate, Analyse, Preserve
+  - Collaboration patterns: AI-Led, AI-Only
+  - Key outputs: Test results, integration reports, quality metrics
+
+  Tasks:
+  1. Define Phase 6 processes in framework-manual.md:
+     - PROC-6.1: Simple Validation (exists as sample)
+     - PROC-6.2: Integration Testing
+     - PROC-6.3: System Testing
+     - PROC-6.4: Quality Reporting
+  2. Specify capability instances, roles, patterns, triggers
+  3. Create/update AI configuration for Phase 6 behaviour
+
+objective: "Phase 6 guidance and capability flows operationalised"
+rationale: |
+  Testing is highly automatable with clear pass/fail criteria.
+  process-simple-validation.yaml provides starting template.
+blocked_by: ["SH-014"]
+blocks: ["SH-016"]
+notes: |
+  Created 19 January 2026 as placeholder.
+  Placeholder task - details TBD based on earlier phase learnings.
+  PROC-6.1 already exists as process-simple-validation.yaml.
+

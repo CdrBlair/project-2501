@@ -30,8 +30,9 @@ objective: "Phase 2 capability flows operationalised in framework-manual.md and 
 rationale: |
   Companion to SH-010. Planning is unique in spanning multiple phases;
   operationalised guidance must show how patterns shift over time.
-blocked_by: ["SH-009", "SH-010"]
+blocked_by: ["SH-010"]
 blocks: []
+parent: "SH-018"
 notes: |
   Created 14 January 2026 from Phase 1-2 analysis.
   REVISED 14 January 2026: Changed from "create exemplar" to "operationalise flows".
