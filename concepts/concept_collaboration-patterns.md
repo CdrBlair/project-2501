@@ -8,7 +8,7 @@ The Five Collaboration Patterns describe how human and AI actors work together t
 
 | Pattern | Description | When Appropriate | Human Role | AI Role |
 |---------|-------------|------------------|------------|---------|
-| **Human-Only** | Humans provide capability; AI not involved | Activities requiring social interaction, value judgement, theory building, or accountability; or where formalised criteria do not exist | Complete responsibility for providing capability | None—AI cannot contribute effectively |
+| **Human-Only** | Humans provide capability; AI exits entirely | Activities requiring external execution: workshops, meetings, formal approvals, sensitive conversations; or where AI presence would inhibit | Complete responsibility; executes externally | None—AI creates blocking handoff and exits dialogue |
 | **Human-Led** | Human provides core capability with AI analytical/informational support | Activities dominated by tacit knowledge but benefiting from AI data processing | Drives activity, makes judgements, interprets results | Provides information, analysis, suggestions for human consideration |
 | **Partnership** | Both actors contribute substantively; neither dominates | Activities with mixed knowledge types where both actors provide complementary capabilities | Provides tacit understanding, contextual interpretation, final judgement | Provides pattern recognition, consistency checking, formal transformations |
 | **AI-Led** | AI executes capability with human oversight and exception handling | Activities dominated by formal knowledge with clear success criteria | Reviews outputs, handles escalations, makes final approval, provides feedback for criteria refinement | Executes capability, applies rules consistently, generates outputs |
@@ -51,7 +51,7 @@ Effective escalation requires:
 
 | Pattern | Escalation Characteristic |
 |---------|---------------------------|
-| **Human-Only** | No escalation mechanism—human is already the primary actor |
+| **Human-Only** | No escalation—AI has exited; handoff mechanism governs return |
 | **Human-Led** | AI support may flag concerns or anomalies for human attention |
 | **Partnership** | Bidirectional—AI escalates uncertainty to human; human may delegate bounded subtasks back to AI |
 | **AI-Led** | Defined escalation triggers with structured handoff; human handles exceptions and edge cases |
@@ -79,6 +79,45 @@ Poor escalation design undermines collaboration effectiveness:
 - **Context-poor escalation**: Human receives insufficient information to decide efficiently, negating the benefit of AI processing
 
 Escalation design should be treated as a first-class concern when establishing AI-Led and Partnership patterns.
+
+## Human-Only Handoff Mechanism
+
+Human-Only is distinct from Human-Led in a critical way: AI exits the dialogue entirely rather than remaining present to support.
+
+### Distinguishing Human-Only from Human-Led
+
+| Aspect | Human-Only | Human-Led |
+|--------|------------|-----------|
+| AI presence | Exits dialogue | Remains present |
+| Activity location | External (meetings, workshops) | Within dialogue |
+| AI contribution | None during activity | Records, structures, supports |
+| Process state | Pauses until human returns | Continues |
+| Duration | Hours to days | Minutes |
+
+**Decision rule**: If the activity happens in a meeting room or requires face-to-face interaction, use Human-Only. If the activity happens within the AI dialogue session, use Human-Led.
+
+### Handoff Mechanism (per DEC-20260120-174641)
+
+When a process step requires Human-Only execution:
+
+1. **AI announces handoff**: Explains what's needed and why AI is stepping away
+2. **AI creates blocking task**: Documents responsible party, required output, acceptance criteria, and re-entry point
+3. **AI exits**: Process pauses; AI does not proceed with subsequent steps
+4. **Human executes externally**: Workshop, meeting, approval process occurs outside dialogue
+5. **Human signals completion**: Updates task with output and returns to dialogue
+6. **AI validates and resumes**: Checks output meets criteria, continues at re-entry step
+
+This mechanism ensures that "Human-Only" truly means no AI involvement, rather than AI passively observing or recording.
+
+### When to Use Human-Only
+
+- Stakeholder workshops requiring group dynamics
+- Executive approvals requiring formal accountability
+- Team retrospectives requiring psychological safety
+- Sensitive conversations where AI presence would inhibit candour
+- Activities requiring physical presence or social interaction
+
+See [Human-Only Handoff Mechanism](../plugin/references/human-only-handoff.md) for operational details and examples.
 
 ## Key Patterns in the Mapping
 

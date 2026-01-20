@@ -1,8 +1,8 @@
 id: "FW-018"
 title: "Document Human-Only Handoff Mechanism"
-status: BACKLOG
+status: COMPLETED
 created: "2026-01-20T17:50:00Z"
-updated: "2026-01-20T17:50:00Z"
+updated: "2026-01-20T20:00:00Z"
 type: FRAMEWORK
 priority: HIGH
 description: |
@@ -56,3 +56,26 @@ tags:
   - collaboration-patterns
   - human-only
   - handoff
+
+notes: |
+  COMPLETED 20 January 2026:
+
+  1. Created plugin/references/human-only-handoff.md:
+     - Full blocking task YAML structure
+     - AI behaviour at Human-Only steps
+     - Re-entry mechanism (human signals, AI validates, process resumes)
+     - Three detailed examples: stakeholder workshop, executive sign-off, team retrospective
+     - Schema constraint C1 clarification
+     - Decision guide: Human-Only vs Human-Led
+     - Process executor integration notes
+
+  2. Updated implementation/schema_process-definition.md:
+     - Clarified Pattern table with Human-Only distinction
+     - Added note about DEC-20260120-174641
+     - Cross-referenced handoff mechanism document
+
+  3. Updated concepts/concept_collaboration-patterns.md:
+     - Updated Human-Only row in patterns table
+     - Added "Human-Only Handoff Mechanism" section
+     - Documented the distinguishing factors and decision rule
+     - Cross-referenced operational details

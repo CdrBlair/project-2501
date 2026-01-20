@@ -138,11 +138,17 @@ fix_step:
 
 | Value | Human Role | AI Role |
 |-------|------------|---------|
-| `Human-Only` | All activities | None |
-| `Human-Led` | Drives, decides | Supports, prepares |
+| `Human-Only` | All activities (external) | None—AI exits dialogue |
+| `Human-Led` | Drives, decides | Supports, prepares, records |
 | `Partnership` | Unique judgement | Unique capability |
 | `AI-Led` | Reviews, validates | Drives execution |
 | `AI-Only` | None | All activities |
+
+**Human-Only vs Human-Led** (per DEC-20260120-174641):
+- **Human-Only**: AI creates a blocking handoff task and exits. Process pauses until human returns with output. Use for external activities (workshops, meetings, sign-offs).
+- **Human-Led**: AI remains present to record and structure human input. Process continues within dialogue. Use when human drives but AI can assist.
+
+See [Human-Only Handoff Mechanism](../plugin/references/human-only-handoff.md) for operational details.
 
 ### Escalation Action
 
