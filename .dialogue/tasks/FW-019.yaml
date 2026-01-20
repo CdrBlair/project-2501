@@ -1,0 +1,42 @@
+id: "FW-019"
+title: "Rename plugin directory to claude-plugin-evo"
+status: BACKLOG
+created: "2026-01-20T20:15:00Z"
+updated: "2026-01-20T20:15:00Z"
+type: REFACTOR
+priority: MEDIUM
+description: |
+  Rename the 'plugin' directory to 'claude-plugin-evo' and update all
+  references throughout the codebase.
+
+  Tasks:
+  1. Rename plugin/ to claude-plugin-evo/
+  2. Update all internal references:
+     - Process definition references to rules files
+     - Schema documentation paths
+     - CLAUDE.md references
+     - Framework manual references
+     - Cross-references in concept documents
+  3. Update any relative paths in YAML files
+  4. Verify no broken references remain
+  5. Update WHAT_IS_THIS.md if needed
+
+  Files likely affected:
+  - All plugin/processes/*.yaml (references section)
+  - implementation/schema_process-definition.md
+  - implementation/framework-manual-source.md
+  - .claude/CLAUDE.md
+  - concepts/*.md (any plugin/ references)
+
+objective: "Plugin directory renamed with all references updated"
+rationale: |
+  The name 'claude-plugin-evo' better reflects the purpose and evolution
+  of this component as a Claude Code plugin implementation.
+
+blocked_by: []
+blocks: []
+
+tags:
+  - refactor
+  - directory-structure
+  - plugin
