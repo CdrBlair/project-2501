@@ -1,0 +1,51 @@
+id: "FW-021"
+title: "Verify plugin directory is standalone"
+status: BACKLOG
+created: "2026-01-20T20:45:00Z"
+updated: "2026-01-20T20:45:00Z"
+type: VALIDATION
+priority: MEDIUM
+description: |
+  Verify that the plugin directory is completely standalone and has no
+  external references required during execution.
+
+  Permitted:
+  - Link URLs to online documentation
+  - References to Claude Code built-in environment variables
+
+  Not permitted:
+  - References to files outside plugin/ that are needed at runtime
+  - Dependencies on concepts/, implementation/, research/, papers/
+  - Paths that assume the full project-2501 repository structure
+
+  Tasks:
+  1. Scan all files in plugin/ for file path references
+  2. Identify any references to directories outside plugin/
+  3. For each external reference, determine if it's:
+     - A documentation/explanatory reference (OK)
+     - A runtime dependency (NOT OK - must be resolved)
+  4. Check scripts for hardcoded paths outside plugin/
+  5. Verify config templates use only relative paths or env vars
+  6. Document findings and fix any issues found
+
+  Search patterns:
+  - "../" references in markdown and scripts
+  - Absolute paths
+  - References to concepts/, implementation/, research/, papers/
+  - File reads/includes in shell scripts
+
+objective: "Plugin directory can be deployed independently without the framework source"
+rationale: |
+  The plugin is the deployable artifact (Tier 2 per schema_deployment-model.md).
+  It must work when copied to other projects without access to framework
+  source directories (Tier 1). Runtime dependencies on external files would
+  break standalone deployment.
+
+blocked_by: []
+blocks:
+  - FW-019  # Should verify standalone before renaming
+
+tags:
+  - validation
+  - deployment
+  - plugin
