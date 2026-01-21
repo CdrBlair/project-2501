@@ -1,0 +1,15 @@
+id: THY-003
+node_type: ARTIFACT
+metadata:
+  artifact_type: DOCUMENT
+  document_type: THY
+  temporal_class: Standing
+  content_type: text/markdown
+  title: Conversation as Transactive Memory
+  summary: Theory that AI conversation serves as externalised transactive memory system
+  location_hint: implementation/theory_conversation-as-tms.md
+  status: ACCEPTED
+  author: human:pidster
+created: "2026-01-14T00:00:00Z"
+updated: "2026-01-14T00:00:00Z"
+status: ACTIVE

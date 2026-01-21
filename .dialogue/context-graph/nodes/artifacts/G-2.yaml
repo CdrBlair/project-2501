@@ -1,0 +1,15 @@
+id: G-2
+node_type: ARTIFACT
+metadata:
+  artifact_type: DOCUMENT
+  document_type: GUIDANCE
+  temporal_class: Standing
+  content_type: text/markdown
+  title: "Practical Implementation Guide: Complete Information Architecture for Software Development"
+  summary: ""
+  location_hint: concepts/guidance_implementation.md
+  status: CURRENT
+  author: human:pidster
+created: "2026-01-13T00:00:00Z"
+updated: "2026-01-21T00:00:00Z"
+status: ACTIVE

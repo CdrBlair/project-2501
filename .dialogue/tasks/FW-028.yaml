@@ -1,16 +1,37 @@
 id: "FW-028"
 title: "Problem Domain Traceability Model"
-status: BACKLOG
+status: IN_PROGRESS
 created: "2026-01-21T13:33:37Z"
-updated: "2026-01-21T13:33:37Z"
+updated: "2026-01-21T14:15:00Z"
 type: CAPABILITY
 priority: HIGH
 description: |
-  Design and implement a graph/network model for tracing problem domain elements (theories, requirements, decisions, implementations, tests) and their relationships. Enables queries like 'Is this theory validated?' and 'What supports this decision?'. Storage in .dialogue/project/ as files initially, with potential for other storage backends later.
+  Design and implement a graph/network model for tracing problem domain elements (theories, requirements, decisions, implementations, tests) and their relationships. Enables queries like 'Is this theory validated?' and 'What supports this decision?'. Storage in .dialogue/context-graph/ as files initially (directory+instance pattern), with potential for other storage backends later. Extends existing context graph schema with traceability edges.
 objective: "Graph-based traceability model enabling queries across theories, requirements, implementations, and validations"
 rationale: |
   Assessment infrastructure (FW-023) needs an underlying model to make assessments meaningful. Traceability enables answering whether theories are proved, requirements met, and identifying gaps. Spawned from FW-023 discussion.
 blocked_by: []
-blocks: []
+blocks:
+  - FW-023  # Assessment infrastructure depends on traceability model
+  - FW-031  # Negative edges depend on base traceability
 notes: |
   Created 21 January 2026.
+
+  Progress 21 January 2026:
+  - Updated schema_context-graph.md with:
+    - Traceability edges (VALIDATES, ASSUMES, SATISFIES, SPECIFIES, TESTS, COVERS, DEPENDS_ON)
+    - New artifact types (ASSUMPTION, REQUIREMENT, TEST, IMPLEMENTATION)
+    - Directory+instance storage pattern (DEC-20260121-133941)
+    - Traceability queries and consistency rules
+  - Bootstrapped context graph for self-hosting:
+    - Created .dialogue/context-graph/ directory structure
+    - 31 artifact nodes (THY-*, REF-*, STR-*, F-*, C-*, O-*, I-*, G-*, E-*)
+    - 2 actor nodes (human:pidster, ai:claude)
+    - 10 edges (authorship and concept relationships)
+    - Bootstrap scripts in scripts/ subdirectory
+  - Created FW-031 for deferred negative edges (CONTRADICTS, RISKS)
+
+  Remaining work:
+  - Bootstrap decision/observation/task nodes (scripted, lower priority)
+  - More edges between concepts (can be added incrementally)
+  - Query implementation (TMS operations)

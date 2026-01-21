@@ -1,0 +1,9 @@
+id: DEC-20260121-172146
+timestamp: "2026-01-21T17:21:46Z"
+type: DESIGN
+actor: "human:pidster"
+subject: "FW-023 Integration depth"
+outcome: "Daily check-ins: visibility; Phase transitions: inform; Feature completion: proactive inform. Likely progression path: inform → soft gate (design should accommodate)"
+rationale: "Different assessment types warrant different integration depths; soft gates may be appropriate later"
+context: "FW-023 open question 3"
+tags: ["FW-023", "integration", "assessment"]

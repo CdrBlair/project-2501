@@ -1,8 +1,8 @@
 id: "FW-023"
 title: "Assessment Collection & Action Infrastructure"
-status: READY
+status: IN_PROGRESS
 created: "2026-01-20T22:45:00Z"
-updated: "2026-01-20T22:45:00Z"
+updated: "2026-01-21T17:25:00Z"
 type: CAPABILITY
 priority: HIGH
 description: |
@@ -91,7 +91,8 @@ rationale: |
   C-6 and C-7 now contain operationalised guidance but no operational machinery
   to use it. Without collection/action infrastructure, the guidance remains
   theoretical. Self-hosting validates the approach before generalising.
-blocked_by: []
+blocked_by:
+  - FW-028  # Traceability model provides foundation for assessments
 blocks: []
 notes: |
   Created 20 January 2026 from CD-002/CD-003 completion discussion.
@@ -101,9 +102,35 @@ notes: |
 
   Decision: Start with self-hosting (framework project) as validation step.
   Decision: Integration depth should be "inform" not "block" initially.
-  Open: Friction tolerance and progressive revelation need discussion.
-  Open: Trend analysis priority needs discussion.
+
+  ---
+  Progress 21 January 2026: Open questions resolved.
+
+  Q1 Friction tolerance (RESOLVED - reframed as two orthogonal concerns):
+  - Daily check-ins: Stop hook + appropriateness eval, C-7 indicators, very low friction
+  - Phase transitions: Human-initiated, checklist → debt register, higher friction acceptable
+  - Key insight: These are orthogonal, not a spectrum (OBS-20260121-132029)
+
+  Q2 Trend analysis (RESOLVED):
+  - Daily check-ins: log only, review out of band
+  - Feature completion: reports helpful
+  - Implementation: start point-in-time, add trends later (DEC-20260121-171254)
+
+  Q3 Integration depth (RESOLVED):
+  - Daily check-ins: visibility
+  - Phase transitions: inform
+  - Feature completion: proactive inform
+  - Future path: inform → soft gate (DEC-20260121-172146)
+
+  Spawned tasks:
+  - FW-028: Problem Domain Traceability Model (foundational capability for assessments)
+  - FW-031: Negative traceability edges (CONTRADICTS, RISKS)
+
+  Option selected: B (Assessment Skills) with path to C, building on FW-028 traceability.
 
   Related decisions:
   - DEC-20260120-214540 (C-6 mitigation strategies)
   - DEC-20260120-215053 (C-7 measurement operationalisation)
+  - DEC-20260121-133351 (FW-023/FW-028 scope split)
+  - DEC-20260121-171254 (Trend analysis approach)
+  - DEC-20260121-172146 (Integration depth)

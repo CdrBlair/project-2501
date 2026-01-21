@@ -1,0 +1,16 @@
+id: "FW-032"
+title: "Revisit soft gates after assessment testing"
+status: BACKLOG
+created: "2026-01-21T17:23:53Z"
+updated: "2026-01-21T17:23:53Z"
+type: CAPABILITY
+priority: MEDIUM
+description: |
+  After FW-023 assessment infrastructure is implemented and tested, revisit soft gate integration for phase transitions. Soft gates capture user decision to proceed at risk, enabling conscious information debt tracking per C-8 principles.
+objective: "Determine which transitions need soft gates to capture proceed-at-risk decisions"
+rationale: |
+  Soft gates are the mechanism for making information debt conscious and tracked. Further analysis needed after experimentation with assessment infrastructure.
+blocked_by: ["FW-023"]
+blocks: []
+notes: |
+  Created 21 January 2026.

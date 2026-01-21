@@ -1,0 +1,8 @@
+id: f2-informs-c4
+source: F-2
+target: C-4
+edge_type: INFORMS
+metadata:
+  notes: Transactive Memory Systems foundation informs Actor Model design
+created: "2026-01-21T00:00:00Z"
+confidence: 0.95

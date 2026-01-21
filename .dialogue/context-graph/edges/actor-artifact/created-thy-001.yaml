@@ -1,0 +1,9 @@
+id: created-thy-001
+source: "human:pidster"
+target: THY-001
+edge_type: CREATED
+metadata:
+  timestamp: "2026-01-13T00:00:00Z"
+  collaboration_pattern: Human-Led
+created: "2026-01-13T00:00:00Z"
+confidence: 1.0

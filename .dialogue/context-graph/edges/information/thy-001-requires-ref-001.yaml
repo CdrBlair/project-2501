@@ -1,0 +1,8 @@
+id: thy-001-requires-ref-001
+source: THY-001
+target: REF-001
+edge_type: REQUIRES
+metadata:
+  notes: THY-001 requires REF-001 as concept catalogue
+created: "2026-01-14T00:00:00Z"
+confidence: 1.0

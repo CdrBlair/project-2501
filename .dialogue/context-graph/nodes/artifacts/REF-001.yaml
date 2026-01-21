@@ -1,0 +1,15 @@
+id: REF-001
+node_type: ARTIFACT
+metadata:
+  artifact_type: DOCUMENT
+  document_type: REF
+  temporal_class: Standing
+  content_type: text/markdown
+  title: Framework Concepts Reference
+  summary: Catalogue of all framework concepts (F-1 through F-5, C-1 through C-8)
+  location_hint: implementation/ref_framework-concepts.md
+  status: CURRENT
+  author: ai:claude
+created: "2026-01-14T00:00:00Z"
+updated: "2026-01-14T00:00:00Z"
+status: ACTIVE

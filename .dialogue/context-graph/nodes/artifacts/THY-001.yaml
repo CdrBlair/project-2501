@@ -1,0 +1,15 @@
+id: THY-001
+node_type: ARTIFACT
+metadata:
+  artifact_type: DOCUMENT
+  document_type: THY
+  temporal_class: Standing
+  content_type: text/markdown
+  title: AI-Augmented SDLC Framework Theory
+  summary: Integrated understanding of framework concepts enabling coherent modification
+  location_hint: implementation/theory_framework.md
+  status: DRAFT
+  author: human:pidster
+created: "2026-01-13T00:00:00Z"
+updated: "2026-01-14T00:00:00Z"
+status: ACTIVE

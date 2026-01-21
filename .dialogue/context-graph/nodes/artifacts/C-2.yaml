@@ -1,0 +1,15 @@
+id: C-2
+node_type: ARTIFACT
+metadata:
+  artifact_type: DOCUMENT
+  document_type: CONCEPT
+  temporal_class: Standing
+  content_type: text/markdown
+  title: "Key Reference Concept 3: Eight-Capability Taxonomy"
+  summary: ""
+  location_hint: concepts/concept_capability-model.md
+  status: CURRENT
+  author: human:pidster
+created: "2026-01-13T00:00:00Z"
+updated: "2026-01-21T00:00:00Z"
+status: ACTIVE

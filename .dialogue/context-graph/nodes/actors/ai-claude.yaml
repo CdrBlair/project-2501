@@ -1,0 +1,22 @@
+id: "ai:claude"
+node_type: ACTOR_AI
+metadata:
+  name: Claude
+  model_id: claude-opus-4-5-20251101
+  capability_profile:
+    training_profile: GENERAL
+    tool_access:
+      - FILE_OPS
+      - EXECUTION
+      - INTEGRATIONS
+    reasoning_profile: BALANCED
+  context_window_size: 200000
+  reliability_metrics:
+    overall: 0.92
+    by_capability:
+      Generate: 0.95
+      Analyse: 0.90
+      Decide: 0.85
+created: "2026-01-13T00:00:00Z"
+updated: "2026-01-21T00:00:00Z"
+status: ACTIVE

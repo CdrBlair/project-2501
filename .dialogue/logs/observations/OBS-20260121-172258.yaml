@@ -1,0 +1,8 @@
+id: OBS-20260121-172258
+timestamp: "2026-01-21T17:22:58Z"
+type: STATE
+observer: "human:pidster"
+subject: "Soft gate purpose"
+value: "Soft gates needed at some transitions specifically to record user decision to proceed at risk. Not just friction - enables conscious information debt tracking per C-8 principles."
+context: "FW-023 integration depth refinement"
+tags: ["FW-023", "soft-gate", "information-debt"]

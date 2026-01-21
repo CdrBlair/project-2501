@@ -1,0 +1,8 @@
+id: f1-informs-c1
+source: F-1
+target: C-1
+edge_type: INFORMS
+metadata:
+  notes: Theory-Building principle informs Information Taxonomy design
+created: "2026-01-21T00:00:00Z"
+confidence: 0.95

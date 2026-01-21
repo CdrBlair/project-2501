@@ -1,0 +1,15 @@
+id: E-1
+node_type: ARTIFACT
+metadata:
+  artifact_type: DOCUMENT
+  document_type: EXAMPLE
+  temporal_class: Standing
+  content_type: text/markdown
+  title: "Example 3.1: Document Type Registry (Phase 3 — Analysis/Requirements)"
+  summary: ""
+  location_hint: concepts/example_document-type-registry.md
+  status: CURRENT
+  author: human:pidster
+created: "2026-01-13T00:00:00Z"
+updated: "2026-01-21T00:00:00Z"
+status: ACTIVE

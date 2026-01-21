@@ -1,0 +1,15 @@
+id: STR-001
+node_type: ARTIFACT
+metadata:
+  artifact_type: DOCUMENT
+  document_type: STR
+  temporal_class: Standing
+  content_type: text/markdown
+  title: Phase 1 Initiation - AI-Augmented SDLC Framework
+  summary: Strategy document for Phase 1 (Initiation) of SDLC projects
+  location_hint: implementation/str_phase1-initiation.md
+  status: DRAFT
+  author: human:pidster
+created: "2026-01-14T00:00:00Z"
+updated: "2026-01-14T00:00:00Z"
+status: ACTIVE

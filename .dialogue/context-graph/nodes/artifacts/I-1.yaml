@@ -1,0 +1,15 @@
+id: I-1
+node_type: ARTIFACT
+metadata:
+  artifact_type: DOCUMENT
+  document_type: INTEGRATION
+  temporal_class: Standing
+  content_type: text/markdown
+  title: "Framework Integration Architecture: Understanding the Knowledge Base"
+  summary: ""
+  location_hint: concepts/integration_framework-architecture.md
+  status: CURRENT
+  author: human:pidster
+created: "2026-01-13T00:00:00Z"
+updated: "2026-01-21T00:00:00Z"
+status: ACTIVE

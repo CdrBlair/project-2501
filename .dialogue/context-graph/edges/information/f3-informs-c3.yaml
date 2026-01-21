@@ -1,0 +1,8 @@
+id: f3-informs-c3
+source: F-3
+target: C-3
+edge_type: INFORMS
+metadata:
+  notes: STS Theory foundation informs Seven-Phase SDLC design
+created: "2026-01-21T00:00:00Z"
+confidence: 0.95

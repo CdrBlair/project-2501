@@ -1,0 +1,20 @@
+id: "human:pidster"
+node_type: ACTOR_HUMAN
+metadata:
+  name: pidster
+  roles:
+    - DEVELOPER
+    - ARCHITECT
+    - DOMAIN_EXPERT
+  expertise_domains:
+    - domain: framework-design
+      confidence: HIGH
+    - domain: tms-theory
+      confidence: HIGH
+    - domain: sdlc-methodology
+      confidence: HIGH
+  availability: AVAILABLE
+  contact_method: "github:pidster"
+created: "2026-01-13T00:00:00Z"
+updated: "2026-01-21T00:00:00Z"
+status: ACTIVE

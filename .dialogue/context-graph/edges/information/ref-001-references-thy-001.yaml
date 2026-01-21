@@ -1,0 +1,8 @@
+id: ref-001-references-thy-001
+source: REF-001
+target: THY-001
+edge_type: REFERENCES
+metadata:
+  notes: Concept catalogue references the integrating theory
+created: "2026-01-14T00:00:00Z"
+confidence: 1.0

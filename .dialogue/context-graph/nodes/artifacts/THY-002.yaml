@@ -1,0 +1,15 @@
+id: THY-002
+node_type: ARTIFACT
+metadata:
+  artifact_type: DOCUMENT
+  document_type: THY
+  temporal_class: Standing
+  content_type: text/markdown
+  title: Framework Resilience
+  summary: Theory of framework resilience and adaptation patterns
+  location_hint: implementation/theory_framework-resilience.md
+  status: DRAFT
+  author: ai:claude
+created: "2026-01-14T00:00:00Z"
+updated: "2026-01-14T00:00:00Z"
+status: ACTIVE
