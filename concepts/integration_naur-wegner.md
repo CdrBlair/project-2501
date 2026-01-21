@@ -2,7 +2,7 @@
 
 ## Executive Summary
 
-This analysis examines the theoretical relationship between Peter Naur's "Programming as Theory Building" (1985) and Daniel Wegner's "Transactive Memory Systems" (1986), assessing whether their integration yields novel insights for understanding knowledge architecture in software development.
+This analysis examines the theoretical relationship between [Peter Naur's "Programming as Theory Building" (1985)](../papers/naur-1985-programming-companion.md) and [Daniel Wegner's "Transactive Memory Systems" (1986)](../papers/wegner-1986-transactive-memory-companion.md), assessing whether their integration yields novel insights for understanding knowledge architecture in software development.
 
 The central finding is that these frameworks are **complementary rather than contradictory**, operating at different levels of analysis. Naur addresses the *content* of programming knowledge—what must be understood to intelligently modify software. Wegner addresses the *distribution* and *coordination* of knowledge—how groups manage expertise beyond any individual's capacity. The apparent tension dissolves upon recognising that transactive memory systems require individual expertise to function; TMS coordinates access to knowledge but cannot substitute for it. Naur's "theory" represents the individual expertise that TMS presupposes.
 
