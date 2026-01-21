@@ -228,3 +228,11 @@ Each task is a separate file, enabling:
 - Independent changes to different tasks
 - Clean git merges when users work on different tasks
 - Conflict isolation to single-task scope
+
+## Sharing
+
+**Always commit and push immediately after creating or updating a task.** This ensures team visibility and prevents conflicts from concurrent work on the same task.
+
+```bash
+git add .dialogue/tasks/<ID>.yaml && git commit -m "<ID>: <brief description>" && git push
+```
