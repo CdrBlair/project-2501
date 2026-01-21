@@ -1,0 +1,23 @@
+id: "FW-030"
+title: "Explore task-level event mechanism"
+status: READY
+created: "2026-01-21T13:49:04Z"
+updated: "2026-01-21T13:49:04Z"
+type: CAPABILITY
+priority: MEDIUM
+description: |
+  Determine whether a TaskEnd event should be platform-level (Claude Code) or framework-level (Dialogue Framework). Explore what defines task boundaries and implementation options.
+objective: "Clarify architectural layer for task completion events"
+rationale: |
+  Current hooks operate at tool or session level; no hook for logical work unit completion
+blocked_by: []
+blocks:
+  - FW-029
+notes: |
+  Created 21 January 2026.
+
+  Key questions to explore:
+  - What defines a "task" boundary? (TodoWrite, .dialogue/tasks status, explicit declaration)
+  - Platform vs framework: should Claude Code provide TaskEnd, or can framework simulate via PostToolUse?
+  - If framework-level: hook on task status change to COMPLETED/CANCELLED
+  - If platform-level: would need to propose to Claude Code team

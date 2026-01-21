@@ -1,0 +1,25 @@
+id: "FW-029"
+title: "Design log synchronisation mechanism"
+status: BLOCKED
+created: "2026-01-21T13:45:52Z"
+updated: "2026-01-21T13:49:30Z"
+type: CAPABILITY
+priority: MEDIUM
+description: |
+  Draft design for auto-committing decision/observation logs and reminding users to pull
+objective: "Ensure logs are visible to team promptly, supporting transactive memory"
+rationale: |
+  Currently logs remain local/untracked, defeating collaborative benefits
+blocked_by:
+  - FW-030
+blocks: []
+notes: |
+  Created 21 January 2026.
+
+  Design scope:
+  - Hook options: PostToolUse on log-decision/log-observation skills
+  - Commit granularity: individual vs batched commits
+  - User notification: remind to pull at session start
+  - Merge conflict mitigation: YAML files with unique timestamps
+  - Consider SessionStart hook for pull reminder
+  - Consider Stop hook for commit reminder

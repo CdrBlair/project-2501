@@ -1,0 +1,16 @@
+id: "FW-028"
+title: "Problem Domain Traceability Model"
+status: BACKLOG
+created: "2026-01-21T13:33:37Z"
+updated: "2026-01-21T13:33:37Z"
+type: CAPABILITY
+priority: HIGH
+description: |
+  Design and implement a graph/network model for tracing problem domain elements (theories, requirements, decisions, implementations, tests) and their relationships. Enables queries like 'Is this theory validated?' and 'What supports this decision?'. Storage in .dialogue/project/ as files initially, with potential for other storage backends later.
+objective: "Graph-based traceability model enabling queries across theories, requirements, implementations, and validations"
+rationale: |
+  Assessment infrastructure (FW-023) needs an underlying model to make assessments meaningful. Traceability enables answering whether theories are proved, requirements met, and identifying gaps. Spawned from FW-023 discussion.
+blocked_by: []
+blocks: []
+notes: |
+  Created 21 January 2026.

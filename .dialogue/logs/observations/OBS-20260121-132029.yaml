@@ -1,0 +1,8 @@
+id: OBS-20260121-132029
+timestamp: "2026-01-21T13:20:29Z"
+type: STATE
+observer: "human:pidster"
+subject: "Information loss framing"
+value: "Need to distinguish: (1) transition loss - information existed but lost in handoff, (2) proceeding-at-risk - information never gathered, (3) judgment under uncertainty - deliberate proceed with known gaps. Question whether 35-55% research accounts for these distinctions."
+context: "FW-023 phase transition discussion"
+tags: ["FW-023", "information-loss", "research-question"]

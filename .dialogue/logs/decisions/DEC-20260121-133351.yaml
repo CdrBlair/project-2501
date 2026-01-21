@@ -1,0 +1,9 @@
+id: DEC-20260121-133351
+timestamp: "2026-01-21T13:33:51Z"
+type: DESIGN
+actor: "human:pidster"
+subject: "FW-023/FW-028 scope split"
+outcome: "Spawn FW-028 as foundational traceability model; FW-023 focuses on assessment layer assuming model exists"
+rationale: "Assessment infrastructure needs underlying model to be meaningful; separation allows parallel development"
+context: "FW-023 discussion identified need for graph-like traceability structure"
+tags: ["FW-023", "FW-028", "architecture"]

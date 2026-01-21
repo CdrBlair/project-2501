@@ -1,0 +1,9 @@
+id: DEC-20260121-133941
+timestamp: "2026-01-21T13:39:41Z"
+type: DESIGN
+actor: "human:pidster"
+subject: "Context graph storage pattern"
+outcome: "Change from files-per-type (artifacts.yaml) to directory+instance-file pattern (artifacts/{id}.yaml)"
+rationale: "Reduces collisions in multi-user workflows; consistent with logs and tasks patterns"
+context: "Reviewing schema_context-graph.md during FW-028 planning"
+tags: ["FW-028", "schema", "storage"]

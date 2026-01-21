@@ -1,0 +1,8 @@
+id: OBS-20260121-134552
+timestamp: "2026-01-21T13:45:52Z"
+type: STATE
+observer: "human:pidster"
+subject: "Log synchronisation"
+value: "Decision and observation logs remain local/untracked, defeating transactive memory benefits. Immediate commit/push would ensure team visibility."
+context: "Reviewing git status showed 5 untracked log files"
+tags: ["framework", "collaboration", "transactive-memory"]

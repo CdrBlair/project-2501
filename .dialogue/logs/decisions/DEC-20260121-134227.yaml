@@ -1,0 +1,9 @@
+id: DEC-20260121-134227
+timestamp: "2026-01-21T13:42:27Z"
+type: DESIGN
+actor: "human:pidster"
+subject: "Traceability model approach"
+outcome: "Extend context graph schema with traceability edges rather than separate model"
+rationale: "Single unified graph simpler than layered models; edges already support relationships; avoids coordination between separate schemas"
+context: "FW-028 planning discussion"
+tags: ["FW-028", "traceability", "schema"]

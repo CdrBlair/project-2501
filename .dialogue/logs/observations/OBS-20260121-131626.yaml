@@ -1,0 +1,8 @@
+id: OBS-20260121-131626
+timestamp: "2026-01-21T13:16:26Z"
+type: STATE
+observer: "human:pidster"
+subject: "Problem framing"
+value: "Daily check-ins and phase transition assessments are orthogonal concerns, not a friction spectrum. Different purposes, frequencies, and design requirements."
+context: "FW-023 discussion"
+tags: ["FW-023", "assessment", "reframe"]

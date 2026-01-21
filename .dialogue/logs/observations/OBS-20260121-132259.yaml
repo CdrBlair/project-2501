@@ -1,0 +1,8 @@
+id: OBS-20260121-132259
+timestamp: "2026-01-21T13:22:59Z"
+type: STATE
+observer: "ai:claude"
+subject: "Research finding"
+value: "C-8 (concept_transitions-info-loss.md) already distinguishes transition loss from proceeding-at-risk. 35-55% is baseline for normal transitions; information debt amplifies losses. Framework prescribes conscious, tracked, bounded, visible debt management."
+context: "FW-023 phase transition discussion"
+tags: ["FW-023", "information-loss", "resolved"]
