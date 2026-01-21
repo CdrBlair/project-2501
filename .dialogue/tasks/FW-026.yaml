@@ -1,0 +1,55 @@
+id: "FW-026"
+title: "Link claude-plugin-rev to dialogue-framework-revolution.md"
+status: BACKLOG
+created: "2026-01-20T23:15:00Z"
+updated: "2026-01-20T23:15:00Z"
+type: DOCUMENTATION
+priority: LOW
+description: |
+  Create explicit linkage between the claude-plugin-rev plugin and the
+  dialogue-framework-revolution.md document.
+
+  ## Relationship Model
+
+  Unidirectional flow: concepts → docs → build → plugin
+
+  The plugin references 'Revolution' as a documentation concept only.
+  The revolution document points toward the plugin as a build output.
+  The plugin does not back-reference the revolution document.
+
+  ## Files
+
+  - Plugin: claude-plugin-rev/ (currently empty scaffold)
+  - Revolution document: dialogue-framework-revolution.md (project root)
+
+  ## Current State
+
+  - claude-plugin-rev/ exists but contains only empty README.md
+  - dialogue-framework-revolution.md exists (pending completion per FW-022)
+
+  ## Tasks
+
+  1. Complete dialogue-framework-revolution.md (depends on FW-022)
+  2. Build out claude-plugin-rev/ structure
+  3. Add forward reference from revolution doc to plugin (as build output)
+  4. Ensure plugin references 'Revolution' concept in appropriate documentation
+  5. Verify unidirectional relationship is clear and navigable
+
+objective: "Clear, unidirectional relationship: revolution doc → plugin"
+rationale: |
+  The plugin is a build output of the framework development process.
+  The revolution document captures the development trajectory and should
+  point forward to its outputs. The plugin references concepts but doesn't
+  back-reference source documents.
+blocked_by:
+  - "FW-022"
+blocks: []
+notes: |
+  Created 20 January 2026.
+
+  Mirrors FW-025 (evolution doc → claude-plugin-evo) but for the revolution
+  variant. Lower priority as both the doc and plugin are pending work.
+
+  Related:
+  - FW-022: Complete dialogue-framework-revolution.md
+  - FW-025: Link claude-plugin-evo to dialogue-framework-evolution.md

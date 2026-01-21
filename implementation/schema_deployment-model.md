@@ -13,8 +13,8 @@
 This schema defines what constitutes a framework deployment versus framework source, establishing the boundary between what is distributed to projects and what remains in the framework repository.
 
 **Related documents**:
-- [Information Reference Schema](./schema_information-reference.md) — Reference ID patterns
-- [Resolver Interface](./schema_resolver-interface.md) — Content retrieval
+- [Information Reference Schema](../claude-plugin-evo/references/schema_information-reference.md) — Reference ID patterns
+- [Resolver Interface](../claude-plugin-evo/references/schema_resolver-interface.md) — Content retrieval
 - [ADR-002](../decisions/ADR-002-hybrid-approach-for-existing-artifact-treatment.md) — Artifact treatment approach
 
 ---

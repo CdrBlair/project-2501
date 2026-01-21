@@ -1,0 +1,109 @@
+id: "FW-023"
+title: "Assessment Collection & Action Infrastructure"
+status: READY
+created: "2026-01-20T22:45:00Z"
+updated: "2026-01-20T22:45:00Z"
+type: CAPABILITY
+priority: HIGH
+description: |
+  Design and implement operational infrastructure for collecting, preserving,
+  referencing, and acting on the assessments defined in C-6 and C-7.
+
+  ## Context
+
+  CD-002 and CD-003 added operationalised guidance to C-6 (transition mitigations)
+  and C-7 (early-phase measurement). However, the operational machinery for
+  actually collecting, preserving, referencing, and acting on this information
+  has gaps.
+
+  ## Current State
+
+  | Function | What We Have | Gaps |
+  |----------|--------------|------|
+  | Collect | log-decision, log-observation | No structured assessment collection |
+  | Preserve | Decision/observation logs; document types | No assessment artifacts; no trends |
+  | Reference | Document IDs; resolve-reference | No structured retrieval for assessments |
+  | Act | Task management; decision logging | No phase gate workflows; no escalation |
+
+  ## What C-6/C-7 Now Prescribe (but can't operationally support)
+
+  - Stakeholder alignment surveys (5 dimensions, 1-5 scale)
+  - Problem framing checklists (6 elements)
+  - TTKM-adapted assessments (5 constructs)
+  - Good/bad day indicators (daily check-ins)
+  - Review outcomes tracking
+  - Phase transition readiness determination
+  - Threshold-based escalation
+
+  ## Options Identified
+
+  ### Option A: Minimal — Document-Based
+  Use existing document types with conventions. Manual structure, grep-based reference.
+  - Pros: No new tooling
+  - Cons: High friction; inconsistent; no computed scores
+
+  ### Option B: Moderate — Assessment Skills
+  Create new skills for structured assessment:
+  - assess-stakeholder-alignment
+  - assess-problem-framing
+  - check-phase-readiness
+  - Pros: Structured; consistent; reduced friction
+  - Cons: New skills to build; still manual triggering
+
+  ### Option C: Full — Assessment Framework
+  Build comprehensive infrastructure with assessment document type, registry,
+  trend analysis, cross-project learning.
+  - Pros: Complete operational support
+  - Cons: Significant effort; may be over-engineering
+
+  ## Open Questions (require further discussion)
+
+  1. **Friction tolerance**: How much manual effort is acceptable?
+     - Daily check-ins require low friction
+     - Phase gate reviews can tolerate more
+     - Consider progressive revelation of features
+
+  2. **Trend analysis priority**: Do we need trends over time, or is
+     point-in-time assessment sufficient for now?
+     - Progressive revelation may apply here too
+
+  3. **Integration depth**: Should assessments block, inform, or just provide visibility?
+     - Current thinking: "inform decisions" (soft recommendations)
+     - Hard gates may be appropriate later
+
+  ## Approach
+
+  Self-hosting first: implement for the framework project itself as validation,
+  then generalise for projects adopting the framework.
+
+  ## Tasks
+
+  1. Resolve open questions through structured discussion
+  2. Select option (likely B with path to C)
+  3. Design assessment document type or logging conventions
+  4. Implement priority assessment skills
+  5. Define phase gate workflow (even if manual initially)
+  6. Test on framework project (self-hosting)
+  7. Document patterns for general use
+
+objective: "Operational infrastructure enabling collection, preservation, reference, and action on C-6/C-7 assessments"
+rationale: |
+  C-6 and C-7 now contain operationalised guidance but no operational machinery
+  to use it. Without collection/action infrastructure, the guidance remains
+  theoretical. Self-hosting validates the approach before generalising.
+blocked_by: []
+blocks: []
+notes: |
+  Created 20 January 2026 from CD-002/CD-003 completion discussion.
+
+  Key insight: The framework now prescribes what to measure and how to mitigate,
+  but lacks the plumbing to actually do it. This is the next layer of work.
+
+  Decision: Start with self-hosting (framework project) as validation step.
+  Decision: Integration depth should be "inform" not "block" initially.
+  Open: Friction tolerance and progressive revelation need discussion.
+  Open: Trend analysis priority needs discussion.
+
+  Related decisions:
+  - DEC-20260120-214540 (C-6 mitigation strategies)
+  - DEC-20260120-215053 (C-7 measurement operationalisation)

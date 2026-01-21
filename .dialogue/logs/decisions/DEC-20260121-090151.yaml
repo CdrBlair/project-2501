@@ -1,0 +1,9 @@
+id: DEC-20260121-090151
+timestamp: "2026-01-21T09:01:51Z"
+type: DESIGN
+actor: "human:pidster"
+subject: "Schema location disposition"
+outcome: "Migrated 3 schemas to plugin (document-frontmatter, information-reference, resolver-interface); removed 6 from implementation/ (3 duplicates + 3 migrated); kept 4 in implementation/ as framework development artifacts (context-graph, deployment-model, environment-capability-registry, tasks)"
+rationale: "Plugin should be standalone and portable; schemas needed for plugin operation belong in plugin; framework development schemas stay in implementation/"
+context: "FW-024 task; aligns with unidirectional flow model (concepts→docs→build→plugin)"
+tags: ["schema", "plugin", "migration"]

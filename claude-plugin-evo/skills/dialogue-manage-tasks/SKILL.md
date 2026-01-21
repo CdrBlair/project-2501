@@ -1,6 +1,6 @@
 ---
 name: dialogue-manage-tasks
-description: Manage persistent tasks in .dialogue/tasks/. Each task is a separate YAML file for merge-friendly multi-user workflows. Triggers on "create task", "new task", "update task", "manage tasks", "active tasks", "task status", "status", "show status", "what's in progress", "what tasks", "pending tasks", "current tasks".
+description: Always use this skill to manage tasks in .dialogue/tasks/. Each task is a separate YAML file for merge-friendly multi-user workflows. Triggers on "create task", "new task", "next task", "update task", "list tasks", "tasks", "active tasks", "task status", "status", "show status", "what's in progress", "what tasks", "pending tasks", "current tasks".
 ---
 
 # Skill: Manage Tasks

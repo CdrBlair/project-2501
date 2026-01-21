@@ -74,6 +74,77 @@ This compounding pattern explains the "legacy system" phenomenon where code exec
 
 **For recognising that some loss is inevitable**: Even with perfect practices, some information loss is inevitable because tacit and emergent knowledge cannot be fully externalised. Effective strategies reduce loss rather than eliminate it. Acknowledging inevitable loss enables realistic expectations and appropriate contingency planning.
 
+## Phase-Specific Mitigation Strategies
+
+Different transitions lose different knowledge types and require different mitigation strategies. The framework's document type classification (see [Document Type Classification](./concept_document-type-classification.md)) provides the foundation for targeted mitigation.
+
+### Early Phases: Initiation→Planning and Planning→Analysis
+
+Early-phase transitions exhibit the highest tacit knowledge loss (35-50%) because these phases are tacit-heavy (70-75% tacit content). Generic documentation fails here because most knowledge resists formalisation. Effective mitigations target specific knowledge types:
+
+| Lost Knowledge | Mitigation Strategy | Document Domain | Implementation Example |
+|----------------|---------------------|-----------------|------------------------|
+| **Strategic rationale** | Rationale-first artefacts that capture "why" before "what" | STR (Strategy) | Product Requirements Documents (PRDs) with explicit purpose and value justification |
+| **Alternatives considered** | Negative knowledge preservation—recording what was rejected and why | HST (Historical) | Alternatives Considered Register; `log-decision` with context field |
+| **Stakeholder politics** | Stakeholder context capture—documenting positions, interests, and relationships | WRK (Working) | Stakeholder Position Maps; `log-observation` (STATE) for stakeholder positions |
+| **Opportunity framing** | Problem understanding documentation—how the problem is conceptualised | THY (Theory) | Problem Understanding Document; Mental Model Sketches |
+| **Project constraints** | Explicit assumptions logging—what's being assumed, not just decided | STR (Strategy) | Assumptions & Constraints section in PRDs; `log-observation` (STATE) |
+| **Risk rationale** | Risk decision capture—why risks were accepted or mitigated | STR (Strategy) | Risk Decision Log; `log-decision` (TACTICAL) |
+| **Decision history** | Continuous decision logging—lightweight audit trail during initiation/planning | — | `log-decision` chronological audit trail |
+| **Organisational context** | Context preservation artefacts—how things work here | WRK (Working) | Interview Notes; Workshop Output; `log-observation` (EVENT) |
+
+**Key insight**: PRDs serve for early phases what ADRs serve for Design→Implementation—a structured format for capturing rationale alongside requirements. Well-crafted PRDs address "why this product", "why these features", and "why this approach" rather than just specifying what to build.
+
+**Stakeholder continuity**: The most effective early-phase mitigation is avoiding handoffs entirely. When the same people participate in Initiation and Planning, tacit knowledge transfers naturally through shared experience. Where handoffs are unavoidable, WRK documents (interview notes, workshop outputs) should CONTRIBUTE_TO the receiving phase's STR documents.
+
+**Theory scaffolding**: Early phases build theory (in Naur's sense) about the problem domain. THY documents cannot transfer theory but can scaffold its reconstruction. Problem Understanding Documents that explicitly acknowledge incompleteness provide more value than comprehensive specifications that create false confidence.
+
+### Middle Phases: Analysis→Design and Design→Implementation
+
+Middle-phase transitions (30-55% loss) benefit from established practices:
+
+| Lost Knowledge | Mitigation Strategy | Document Domain | Implementation Example |
+|----------------|---------------------|-----------------|------------------------|
+| **Business context** | Traceability from requirements to design decisions | SPC → DES | Requirements Traceability Matrix |
+| **Design rationale** | Architecture Decision Records capturing alternatives and trade-offs | STR (Strategy) | ADRs with context, decision, and consequences |
+| **Trade-off reasoning** | Design documentation that explains "why" not just "how" | DES (Design) | Architecture Description with rationale sections |
+| **Quality attribute priorities** | Explicit quality attribute scenarios | SPC (Specification) | Quality Attribute Workshop outputs |
+
+ADRs work at Design→Implementation because they capture rationale at the point of decision. The discipline of recording "what was the context", "what was decided", and "what are the consequences" preserves knowledge that would otherwise exist only in architects' minds.
+
+### Late Phases: Implementation→Testing, Testing→Operations, Operations→Maintenance
+
+Late-phase transitions (35-55% loss) require operational knowledge capture:
+
+| Lost Knowledge | Mitigation Strategy | Document Domain | Implementation Example |
+|----------------|---------------------|-----------------|------------------------|
+| **Implementation decisions** | Code-level documentation capturing non-obvious choices | IMP (Implementation) | Inline comments for "why"; commit messages with rationale |
+| **Known edge cases** | Test documentation that explains coverage rationale | VAL (Validation) | Test plans with risk-based coverage justification |
+| **Environmental sensitivities** | Operational runbooks capturing environmental dependencies | OPS (Operational) | Runbooks; deployment guides with troubleshooting context |
+| **Troubleshooting knowledge** | Incident learning capture | OPS (Operational) | Post-mortems; knowledge bases; `log-observation` (EVENT) |
+
+DevOps practices reduce Testing→Operations loss by eliminating the handoff through team integration. Where separate teams exist, structured knowledge transfer (runbooks, operational guides) partially compensates.
+
+### Mitigation Effectiveness
+
+Mitigation strategies reduce but do not eliminate transition losses. Estimated effectiveness varies by knowledge type:
+
+| Knowledge Type | Unmitigated Loss | With Targeted Mitigation | Mitigation Approach |
+|----------------|------------------|--------------------------|---------------------|
+| **Formal** | 20-40% | 5-15% | Documentation, traceability, automation |
+| **Tacit** | 60-80% | 30-50% | Continuity, rationale capture, theory scaffolding |
+| **Emergent** | 70-90% | 50-70% | Team continuity, relationship preservation |
+
+**Methodological note**: These effectiveness estimates are reasoned from knowledge type characteristics rather than systematically measured. Organisations should track their own transition losses and mitigation effectiveness.
+
+### Implementation Guidance
+
+1. **Match mitigation to loss type**: Don't use formal documentation strategies for tacit knowledge loss—they won't work
+2. **Prioritise early phases**: The framework's own composition model shows early phases have the highest tacit content; mitigation value is greatest there
+3. **Use continuous capture**: Lightweight logging (`log-decision`, `log-observation`) throughout phases captures knowledge that batch documentation at transitions misses
+4. **Acknowledge incompleteness**: THY documents and rationale capture should explicitly note what remains uncaptured rather than creating false confidence
+5. **Prefer continuity over documentation**: Team continuity transfers tacit knowledge more effectively than any documentation strategy
+
 ## Integration with Other Concepts
 
 - [**Information Composition Taxonomy**](./concept_information-taxonomy.md): Tacit and emergent knowledge (Concept 1) are disproportionately lost at transitions; formal knowledge survives better. This explains why different transitions have different loss patterns.
@@ -85,6 +156,7 @@ This compounding pattern explains the "legacy system" phenomenon where code exec
 - [**Phase-Specific Information Composition**](./integration_phase-specific-composition.md): Transitions from tacit-heavy phases (Initiation, Planning) lose more than transitions from formal-heavy phases (Implementation, Testing), correlating with Concept 6's composition estimates.
 - [**Five Collaboration Patterns**](./concept_collaboration-patterns.md): Human-Only and Human-Led patterns preserve tacit knowledge better through direct engagement. AI-Only patterns risk higher context loss. Pattern selection affects transition losses.
 - [**Phase-Aware Measurement**](./concept_phase-aware-measurement.md): Measuring transition effectiveness requires different approaches than measuring within-phase effectiveness. Transition metrics focus on knowledge transfer quality, not activity completion.
+- [**Document Type Classification**](./concept_document-type-classification.md): Document domains (STR, THY, HST, WRK, OPS) provide the foundation for targeted mitigation strategies. Different knowledge types require different document types for effective preservation.
 
 ## Evidence Base
 
@@ -98,8 +170,10 @@ DevOps research shows that reducing Development→Operations handoffs improves r
 
 - ✓ **Phenomenon existence**: Well-validated that information loss occurs at transitions and compounds across lifecycle
 - ✓ **Tacit knowledge vulnerability**: Strong evidence that tacit knowledge is disproportionately lost compared to formal
+- ✓ **Middle/late phase mitigations**: ADRs, runbooks, and DevOps practices have established evidence base
 - ⚠ **Specific loss percentages**: Estimates based on reasoning about knowledge types rather than systematic measurement across organisations
-- ⚠ **Mitigation effectiveness**: Common strategies (ADRs, pair programming, team continuity) show benefits but quantification of loss reduction needs systematic study
+- ⚠ **Mitigation effectiveness**: Common strategies show benefits but quantification of loss reduction needs systematic study
+- ⚠ **Early-phase mitigation strategies**: PRDs, theory scaffolding, and continuous decision logging are reasoned from framework principles and PRD best practices; effectiveness requires empirical validation
 - ⚠ **AI impact on transitions**: Whether AI tools reduce or increase transition losses requires empirical validation—automation might reduce formal loss but risk tacit loss
 - ⚠ **Optimal mitigation mix**: Which combinations of strategies work best for which transitions needs comparative validation
 - ⚠ **Information debt concept**: Analogous to technical debt; conceptually coherent but requires empirical validation of how "proceeding at risk" affects loss rates

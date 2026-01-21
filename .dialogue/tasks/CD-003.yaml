@@ -1,8 +1,9 @@
 id: "CD-003"
 title: "Phase 1-2 Transition Mitigation Strategies"
-status: READY
+status: COMPLETED
 created: "2026-01-14T19:00:00Z"
-updated: "2026-01-14T19:00:00Z"
+updated: "2026-01-20T21:50:00Z"
+completed: "2026-01-20T21:50:00Z"
 type: DEBT
 priority: HIGH
 description: |
@@ -33,4 +34,12 @@ notes: |
   Created 14 January 2026 from Phase 1-2 analysis.
   May connect to dialogue skills as concrete mitigation implementations.
 
-  # MEDIUM PRIORITY: Grey Areas
+  Completed 20 January 2026:
+  - Added "Phase-Specific Mitigation Strategies" section to C-6
+  - Covered early, middle, and late phases with structured tables
+  - Mapped lost knowledge types to document domains (STR, THY, HST, WRK, OPS)
+  - Referenced PRDs as early-phase equivalent to ADRs
+  - Integrated dialogue skills (log-decision, log-observation) as implementation examples
+  - Added mitigation effectiveness estimates by knowledge type
+  - Updated validation status to note early-phase strategies need empirical validation
+  - Decision logged as DEC-20260120-214540

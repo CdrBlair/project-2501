@@ -13,8 +13,8 @@
 This schema defines the Context Graph—an operational implementation of Transactive Memory System (TMS) concepts for human-AI collaboration. The graph externalises "who knows what" as a queryable structure.
 
 **Related documents**:
-- [Information Reference Schema](./schema_information-reference.md) — Node identifiers
-- [Resolver Interface](./schema_resolver-interface.md) — Node content retrieval
+- [Information Reference Schema](../claude-plugin-evo/references/schema_information-reference.md) — Node identifiers
+- [Resolver Interface](../claude-plugin-evo/references/schema_resolver-interface.md) — Node content retrieval
 - [Transactive Memory Foundation](../concepts/foundation_transactive-memory.md) — Theoretical basis
 - [Actor Model](../concepts/concept_actor-model.md) — Actor node types
 
@@ -56,7 +56,7 @@ Nodes include actors, not just artifacts. A human expert and a document are both
 
 ```yaml
 ContextNode:
-  id: string              # Reference ID (per schema_information-reference.md)
+  id: string              # Reference ID (per Information Reference Schema)
   node_type: NodeType     # ARTIFACT | ACTOR_HUMAN | ACTOR_AI | SYSTEM
   metadata: NodeMetadata  # Type-specific metadata
   created: timestamp

@@ -1,0 +1,9 @@
+id: DEC-20260120-214540
+timestamp: "2026-01-20T21:45:40Z"
+type: DESIGN
+actor: "human:pidster"
+subject: "C-6 Phase-Specific Mitigation Strategies"
+outcome: "Added comprehensive phase-specific mitigation section to C-6 covering early, middle, and late phases with explicit document domain mappings and implementation examples"
+rationale: "Early phases had no equivalent mitigation guidance to ADRs for middle phases; PRDs identified as analogous rationale-capture mechanism; dialogue skills referenced as implementation tools"
+context: "Addresses CD-003 conceptual debt; integrates PRD best practices with framework document domains (STR, THY, HST, WRK)"
+tags: ["framework", "mitigation", "transitions", "PRD"]

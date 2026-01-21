@@ -1,0 +1,79 @@
+id: "CD-015"
+title: "Revisit Phases 1-3 after C-6/C-7 updates"
+status: READY
+created: "2026-01-20T23:05:00Z"
+updated: "2026-01-20T23:05:00Z"
+type: DEBT
+priority: MEDIUM
+description: |
+  Analyse Phase 1-3 documents for consistency with updated C-6 and C-7.
+
+  ## Context
+
+  C-6 (Transitions & Information Loss) and C-7 (Phase-Aware Measurement) were
+  significantly updated on 20 January 2026:
+
+  **C-6 additions:**
+  - Phase-Specific Mitigation Strategies section
+  - Early-phase mitigations mapped to document domains (STR, THY, HST, WRK)
+  - PRDs identified as early-phase equivalent to ADRs
+  - Mitigation effectiveness estimates by knowledge type
+  - Implementation guidance (5 principles)
+
+  **C-7 additions:**
+  - Early-Phase Measurement Operationalisation section
+  - Stakeholder Alignment Assessment (5-dimension survey)
+  - Shared Understanding Indicators (TTKM adaptation)
+  - Problem Framing Adequacy Checklist (6 elements)
+  - Leading Experience Indicators (Meyer/Obi adaptation)
+  - Practical Assessment Approaches
+
+  ## Phase Documents to Review
+
+  - claude-plugin-evo/rules/phase1-initiation.md
+  - claude-plugin-evo/rules/phase2-planning.md
+  - claude-plugin-evo/rules/phase3-analysis.md
+
+  ## Analysis Required
+
+  For each phase document:
+  1. Does it reference appropriate C-6 mitigation strategies?
+  2. Does it reference appropriate C-7 measurement approaches?
+  3. Are there contradictions or inconsistencies with updated concepts?
+  4. Are there opportunities to strengthen phase guidance with new content?
+  5. Do the phase documents need explicit links to new sections?
+
+  ## Specific Checks
+
+  **Phase 1 (Initiation):**
+  - Should reference PRDs as rationale-capture mechanism
+  - Should reference stakeholder alignment assessment
+  - Should reference problem framing checklist
+
+  **Phase 2 (Planning):**
+  - Should reference decision logging for decision history preservation
+  - Should reference assumptions logging
+  - Should reference Initiation→Planning mitigation strategies
+
+  **Phase 3 (Analysis):**
+  - Should reference Planning→Analysis mitigation strategies
+  - Should reference shared understanding indicators
+  - Should reference requirements consistency testing
+
+objective: "Phase 1-3 documents aligned with updated C-6/C-7 content"
+rationale: |
+  Concept documents were updated but downstream phase guidance may now be
+  inconsistent or miss opportunities to reference new operational content.
+  Framework coherence requires phase documents to reflect concept updates.
+blocked_by: []
+blocks: []
+notes: |
+  Created 20 January 2026 following C-6/C-7 updates (CD-002, CD-003).
+
+  This is conceptual debt introduced by updating concepts without updating
+  all downstream documents that depend on them.
+
+  Related:
+  - CD-002: C-7 measurement operationalisation
+  - CD-003: C-6 mitigation strategies
+  - DEC-20260120-214540, DEC-20260120-215053

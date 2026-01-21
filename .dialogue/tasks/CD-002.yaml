@@ -1,8 +1,9 @@
 id: "CD-002"
 title: "Phase 1-2 Measurement Operationalisation"
-status: READY
+status: COMPLETED
 created: "2026-01-14T19:00:00Z"
-updated: "2026-01-14T19:00:00Z"
+updated: "2026-01-20T22:30:00Z"
+completed: "2026-01-20T22:30:00Z"
 type: DEBT
 priority: HIGH
 description: |
@@ -31,4 +32,15 @@ notes: |
   May result in "gap remains open" if no valid instruments exist,
   but that should be explicit rather than implicit.
 
-  # HIGH PRIORITY: Transition Mitigation Gap
+  Completed 20 January 2026:
+  - Added "Early-Phase Measurement Operationalisation" section to C-7
+  - Stakeholder Alignment Assessment: 5-dimension survey with assessment protocol
+  - Shared Understanding Indicators: concept mapping, requirements consistency, TTKM adaptation
+  - Problem Framing Adequacy Checklist: 6 core elements with scoring guidance
+  - Leading Experience Indicators: adapted from Meyer/Obi good/bad day research
+  - Practical Assessment Approaches: review-based, checkpoint integration
+  - Integrated Ryan & O'Connor TTKM (r=.35, α=.71), Gartner stakeholder alignment research
+  - Referenced dialogue skills (log-decision, log-observation) for audit trails
+  - Updated Evidence Base with TTKM validation details and Gartner statistics
+  - Updated Validation Status with new validated and unvalidated items
+  - Decision logged as DEC-20260120-215053

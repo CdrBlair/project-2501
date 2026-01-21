@@ -1,0 +1,91 @@
+id: "FW-024"
+title: "Review implementation/ schemas for plugin migration"
+status: COMPLETED
+created: "2026-01-20T23:00:00Z"
+updated: "2026-01-21T09:05:00Z"
+completed: "2026-01-21T09:05:00Z"
+type: SCHEMA
+priority: MEDIUM
+description: |
+  Review remaining schemas in implementation/ and determine whether they should
+  move into claude-plugin-evo.
+
+  ## Current State
+
+  **Schemas in implementation/ (10 files):**
+  - schema_environment-capability-registry.md
+  - schema_document-frontmatter.md
+  - schema_information-reference.md
+  - schema_context-graph.md
+  - schema_execution-log.md
+  - schema_resolver-interface.md
+  - schema_deployment-model.md
+  - schema_process-definition.md
+  - schema_process-instance.md
+  - schema_tasks.md
+
+  **Schemas already in claude-plugin-evo/references/ (3 files):**
+  - schema_execution-log.md
+  - schema_process-instance.md
+  - schema_process-definition.md
+
+  **Also in plugin:**
+  - skills/dialogue-manage-tasks/schema.md (task schema)
+
+  ## Questions to Resolve
+
+  1. Are the plugin copies canonical, making implementation/ copies stale?
+  2. Which remaining schemas are needed for plugin operation?
+  3. Which schemas are framework development artifacts (stay in implementation/)?
+  4. Should implementation/ retain source versions with cross-references?
+
+  ## Candidate Schemas for Migration
+
+  Likely candidates (needed for plugin operation):
+  - schema_document-frontmatter.md (if plugin creates documents)
+  - schema_information-reference.md (if plugin resolves references)
+
+  Likely to stay (framework development artifacts):
+  - schema_environment-capability-registry.md
+  - schema_deployment-model.md
+  - schema_context-graph.md (unless plugin uses context graphs)
+  - schema_resolver-interface.md
+
+  Unclear:
+  - schema_tasks.md (relationship to dialogue-manage-tasks/schema.md?)
+
+objective: "Clear decision on each schema: migrate to plugin, keep in implementation/, or deprecate"
+rationale: |
+  Plugin should be standalone and portable. Schemas needed for plugin operation
+  should live in the plugin. Framework development schemas should stay in
+  implementation/. Duplicates create maintenance burden and confusion.
+blocked_by: []
+blocks: []
+notes: |
+  Created 20 January 2026.
+
+  Related to FW-019 (plugin rename) and FW-021 (verify plugin standalone).
+  Some schemas may have already been migrated; need to check for duplicates.
+
+  Completed 21 January 2026:
+
+  Final disposition:
+  - **Migrated to plugin** (3): document-frontmatter, information-reference, resolver-interface
+  - **Kept in implementation/** (4): context-graph, deployment-model, environment-capability-registry, tasks
+  - **Removed from implementation/** (6): 3 duplicates + 3 migrated
+
+  Plugin now contains 6 schemas in references/:
+  - schema_document-frontmatter.md
+  - schema_execution-log.md
+  - schema_information-reference.md
+  - schema_process-definition.md
+  - schema_process-instance.md
+  - schema_resolver-interface.md
+
+  implementation/ retains 4 schemas (framework development artifacts):
+  - schema_context-graph.md (future capability)
+  - schema_deployment-model.md (meta-documentation)
+  - schema_environment-capability-registry.md (tool comparison)
+  - schema_tasks.md (historical, marked INACTIVE)
+
+  Decision logged as DEC-20260121-090151

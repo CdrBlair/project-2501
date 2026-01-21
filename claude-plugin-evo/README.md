@@ -32,7 +32,7 @@ User-invoked commands for explicit actions.
 |---------|---------|
 | `/init-dialogue` | Initialise framework for a project (creates `.dialogue/` directory) |
 | `/create-theory` | Create THY document (integrated understanding, the "why") |
-| `/create-reference` | Create REF document (catalogues, glossaries, explainers) |
+| `/create-reference` | Create REF document (catalogues, glossaries, explainers, pattern library, principle list) |
 | `/create-strategy` | Create STR document (decisions, rationale, business cases) |
 | `/create-note` | Create NOT document (ephemeral notes, workshop outputs) |
 | `/help` | Get help with the framework, list commands, explain concepts |

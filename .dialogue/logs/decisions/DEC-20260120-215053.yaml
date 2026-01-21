@@ -1,0 +1,9 @@
+id: DEC-20260120-215053
+timestamp: "2026-01-20T21:50:53Z"
+type: DESIGN
+actor: "human:pidster"
+subject: "C-7 Early-Phase Measurement Operationalisation"
+outcome: "Added comprehensive operationalisation section covering stakeholder alignment assessment, shared understanding indicators, problem framing checklist, and leading experience indicators"
+rationale: "C-7 listed metrics but provided no operationalisation; Ryan & O'Connor TTKM provides validated foundation; Gartner stakeholder alignment research provides industry practice; Meyer/Obi developer experience research provides adaptable indicators"
+context: "Addresses CD-002 conceptual debt; integrates TTKM, Gartner alignment research, and Meyer/Obi experience indicators into practical assessment approaches"
+tags: ["framework", "measurement", "early-phases", "TTKM"]

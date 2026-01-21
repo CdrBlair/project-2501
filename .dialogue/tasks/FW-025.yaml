@@ -1,0 +1,44 @@
+id: "FW-025"
+title: "Link claude-plugin-evo to dialogue-framework-evolution.md"
+status: READY
+created: "2026-01-20T23:10:00Z"
+updated: "2026-01-20T23:10:00Z"
+type: DOCUMENTATION
+priority: MEDIUM
+description: |
+  Create explicit linkage between the claude-plugin-evo plugin and the
+  dialogue-framework-evolution.md document.
+
+  ## Relationship Model
+
+  Unidirectional flow: concepts → docs → build → plugin
+
+  The plugin references 'Evolution' as a documentation concept only.
+  The evolution document points toward the plugin as a build output.
+  The plugin does not back-reference the evolution document.
+
+  ## Files
+
+  - Plugin: claude-plugin-evo/
+  - Evolution document: dialogue-framework-evolution.md (project root)
+
+  ## Tasks
+
+  1. Review dialogue-framework-evolution.md content and purpose
+  2. Add forward reference from evolution doc to plugin (as build output)
+  3. Ensure plugin references 'Evolution' concept in appropriate documentation
+  4. Verify unidirectional relationship is clear and navigable
+
+objective: "Clear, unidirectional relationship: evolution doc → plugin"
+rationale: |
+  The plugin is a build output of the framework development process.
+  The evolution document captures the development trajectory and should
+  point forward to its outputs. The plugin references concepts but doesn't
+  back-reference source documents.
+blocked_by: []
+blocks: []
+notes: |
+  Created 20 January 2026.
+
+  May relate to FW-022 (Complete dialogue-framework-revolution.md) if that's
+  a related document.

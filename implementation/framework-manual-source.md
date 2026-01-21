@@ -514,8 +514,8 @@ The framework's information architecture consists of three interconnected schema
 
 | Schema | Purpose | Location |
 |--------|---------|----------|
-| [Information Reference](./schema_information-reference.md) | ID formats for all referenceable content | SH-001 |
-| [Resolver Interface](./schema_resolver-interface.md) | Abstract retrieval contract | SH-002 |
+| [Information Reference](../claude-plugin-evo/references/schema_information-reference.md) | ID formats for all referenceable content | SH-001 |
+| [Resolver Interface](../claude-plugin-evo/references/schema_resolver-interface.md) | Abstract retrieval contract | SH-002 |
 | [Context Graph](./schema_context-graph.md) | TMS-aligned knowledge graph | SH-003 |
 
 ### Context Graph Overview

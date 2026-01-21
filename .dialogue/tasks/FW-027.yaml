@@ -1,0 +1,68 @@
+id: "FW-027"
+title: "Framework Analytics, Debug Mode & Instrumentation"
+status: BACKLOG
+created: "2026-01-20T23:20:00Z"
+updated: "2026-01-20T23:20:00Z"
+type: CAPABILITY
+priority: MEDIUM
+description: |
+  Design and implement analytics, debug mode, and instrumentation for the
+  framework to support observability, troubleshooting, and continuous improvement.
+
+  ## Scope
+
+  ### Metrics
+  - Execution metrics (skill invocations, durations, outcomes)
+  - Decision/observation logging rates
+  - Task throughput and cycle times
+  - Assessment scores over time (links to FW-023)
+  - Phase transition events
+
+  ### Execution Logs
+  - Structured logging of framework operations
+  - Audit trail for compliance and debugging
+  - schema_execution-log.md already exists as foundation
+  - Integration with dialogue log structure
+
+  ### Debug Mode
+  - Verbose output for troubleshooting
+  - Step-through or trace capability for complex flows
+  - Visibility into framework decision points
+  - Enable/disable via configuration
+
+  ### Instrumentation
+  - Hook points for metrics collection
+  - Event emission for external monitoring
+  - Performance profiling hooks
+  - Extension points for custom instrumentation
+
+  ## Design Questions
+
+  1. What granularity of metrics is useful vs noisy?
+  2. How to balance debug verbosity with usability?
+  3. Where should metrics/logs be stored? (.dialogue/metrics/?)
+  4. How to surface analytics without overwhelming?
+  5. Integration with existing logging (decisions, observations)?
+
+  ## Related Schemas
+
+  - implementation/schema_execution-log.md
+  - claude-plugin-evo/references/schema_execution-log.md
+
+objective: "Observable, debuggable framework with actionable analytics"
+rationale: |
+  Framework self-hosting requires visibility into operations. Debug mode
+  supports troubleshooting. Analytics enable continuous improvement and
+  validation of framework effectiveness. Instrumentation enables future
+  extensions.
+blocked_by: []
+blocks: []
+notes: |
+  Created 20 January 2026.
+
+  Related:
+  - FW-023: Assessment Collection & Action Infrastructure (overlapping concerns)
+  - C-7: Phase-Aware Measurement (metrics concepts)
+  - schema_execution-log.md (existing foundation)
+
+  Progressive revelation may apply: start minimal, add depth as needed.

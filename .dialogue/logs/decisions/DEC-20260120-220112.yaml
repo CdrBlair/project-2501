@@ -1,0 +1,9 @@
+id: DEC-20260120-220112
+timestamp: "2026-01-20T22:01:12Z"
+type: TACTICAL
+actor: "human:pidster"
+subject: "Assessment infrastructure approach"
+outcome: "Created FW-023 to design collection/action infrastructure; self-hosting first as validation; inform not block for integration depth"
+rationale: "C-6/C-7 now contain guidance but lack operational machinery; progressive revelation and friction tolerance need further discussion"
+context: "Follows CD-002/CD-003 completion; defers detailed design to focused task"
+tags: ["framework", "infrastructure", "assessment"]
