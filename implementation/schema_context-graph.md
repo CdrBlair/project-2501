@@ -10,7 +10,7 @@
 
 ## Purpose
 
-This schema defines the Context Graph—an operational implementation of Transactive Memory System (TMS) concepts for human-AI collaboration. The graph externalises "who knows what" as a queryable structure.
+This schema defines the Context Graph—an operational implementation of Transactive Memory System (TMS) concepts for human-AI collaboration, extended with traceability relationships for tracking validation chains. The graph externalises "who knows what" and "what proves/satisfies what" as a queryable structure.
 
 **Related documents**:
 - [Information Reference Schema](../claude-plugin-evo/references/schema_information-reference.md) — Node identifiers
@@ -75,7 +75,7 @@ ArtifactNode:
   id: "THY-001"
   node_type: ARTIFACT
   metadata:
-    artifact_type: DOCUMENT | DECISION | OBSERVATION | WORK_ITEM | ADR
+    artifact_type: DOCUMENT | DECISION | OBSERVATION | WORK_ITEM | ADR | ASSUMPTION | REQUIREMENT | TEST | IMPLEMENTATION
     temporal_class: Standing | Dynamic | Ephemeral
     content_type: "text/markdown"
     title: "Framework Theory"
@@ -189,6 +189,24 @@ Relationships between artifacts.
 | `BLOCKS` | Must complete before | `SH-002 BLOCKS SH-003` |
 | `INFORMS` | Provides context for | `OBS-... INFORMS DEC-...` |
 
+#### Traceability Relationships
+
+Relationships for tracking validation, satisfaction, and dependency chains.
+
+| Edge Type | Semantics | Direction | Example |
+|-----------|-----------|-----------|---------|
+| `VALIDATES` | Evidence supports theory/assumption | Evidence → Target | `OBS-... VALIDATES THY-001` |
+| `ASSUMES` | Depends on unverified assumption | Any → ASM | `DEC-... ASSUMES ASM-001` |
+| `SATISFIES` | Implementation meets requirement | Impl → Req | `src/auth.ts SATISFIES REQ-001` |
+| `SPECIFIES` | Requirement derives from need | Req → Need | `REQ-001 SPECIFIES NEED-001` |
+| `TESTS` | Test verifies implementation | Test → Impl | `auth.spec.ts TESTS src/auth.ts` |
+| `COVERS` | Test covers requirement | Test → Req | `auth.spec.ts COVERS REQ-001` |
+| `DEPENDS_ON` | Hard dependency | Any → Any | `REQ-002 DEPENDS_ON REQ-001` |
+
+**Future extensions** (see FW-031):
+- `CONTRADICTS` — Evidence challenges theory/assumption
+- `RISKS` — Introduces risk to target
+
 #### Actor-Artifact Relationships
 
 Relationships between actors and artifacts.
@@ -244,6 +262,25 @@ DelegatesToEdgeMetadata:
   scope: ["code-generation", "documentation"]
   constraints: ["requires-approval", "max-autonomy:AI-Led"]
   since: "2026-01-01"
+
+# For VALIDATES edges
+ValidatesEdgeMetadata:
+  evidence_type: OBSERVATION | DECISION | TEST_RESULT
+  strength: STRONG | MODERATE | WEAK
+  notes: "Observation confirms predicted behaviour"
+
+# For ASSUMES edges
+AssumesEdgeMetadata:
+  criticality: HIGH | MEDIUM | LOW  # Impact if assumption proves false
+  validation_status: UNVALIDATED | VALIDATING | VALIDATED | INVALIDATED
+  accepted_by: "human:pidster"
+  accepted_date: "2026-01-21"
+
+# For SATISFIES edges
+SatisfiesEdgeMetadata:
+  coverage: FULL | PARTIAL  # If partial, notes explain gaps
+  notes: "Core functionality implemented; edge cases deferred"
+  verified_by: "human:pidster"
 ```
 
 ---
@@ -389,28 +426,80 @@ RETURN a, count(related) as relevance
 ORDER BY relevance DESC
 ```
 
+### Traceability Queries
+
+#### "Is this theory validated?"
+
+```
+MATCH (t:ARTIFACT {id: "THY-001"})<-[:VALIDATES]-(evidence)
+RETURN evidence, count(evidence) as validation_count
+```
+
+#### "What assumptions does this decision depend on?"
+
+```
+MATCH (d:ARTIFACT {id: "DEC-..."})-[:ASSUMES]->(a:ARTIFACT)
+WHERE a.metadata.artifact_type = "ASSUMPTION"
+RETURN a, a.status
+```
+
+#### "Is this requirement satisfied and tested?"
+
+```
+MATCH (r:ARTIFACT {id: "REQ-001"})
+OPTIONAL MATCH (impl)-[:SATISFIES]->(r)
+OPTIONAL MATCH (test)-[:COVERS]->(r)
+RETURN r, collect(impl) as implementations, collect(test) as tests
+```
+
+#### "What has unvalidated assumptions?"
+
+```
+MATCH (n)-[:ASSUMES]->(a:ARTIFACT)
+WHERE a.metadata.artifact_type = "ASSUMPTION"
+  AND NOT exists((evidence)-[:VALIDATES]->(a))
+RETURN n, a
+```
+
 ---
 
 ## Storage Considerations
 
 ### Current Implementation: Filesystem + YAML
 
-Per SH-4 decision, initial implementation uses filesystem storage:
+Per SH-4 decision and DEC-20260121-133941, initial implementation uses filesystem storage with directory + instance file pattern (one file per node/edge) to reduce merge collisions in multi-user workflows:
 
 ```
 .dialogue/
 ├── context-graph/
 │   ├── nodes/
-│   │   ├── artifacts.yaml    # ARTIFACT nodes
-│   │   ├── actors.yaml       # ACTOR_* nodes
-│   │   └── systems.yaml      # SYSTEM nodes
+│   │   ├── artifacts/
+│   │   │   ├── THY-001.yaml
+│   │   │   ├── REQ-001.yaml
+│   │   │   ├── ASM-001.yaml
+│   │   │   └── ...
+│   │   ├── actors/
+│   │   │   ├── human-pidster.yaml
+│   │   │   ├── ai-claude.yaml
+│   │   │   └── ...
+│   │   └── systems/
+│   │       ├── github.yaml
+│   │       └── ...
 │   ├── edges/
-│   │   ├── information.yaml  # Artifact relationships
-│   │   ├── actor-artifact.yaml
-│   │   ├── actor-actor.yaml
-│   │   └── system.yaml
-│   └── index.yaml            # Quick lookup index
+│   │   ├── information/
+│   │   │   └── {edge-id}.yaml
+│   │   ├── traceability/
+│   │   │   └── {edge-id}.yaml
+│   │   ├── actor-artifact/
+│   │   │   └── {edge-id}.yaml
+│   │   ├── actor-actor/
+│   │   │   └── {edge-id}.yaml
+│   │   └── system/
+│   │       └── {edge-id}.yaml
+│   └── index.yaml            # Optional: quick lookup cache
 ```
+
+**Note**: The graph indexes content that lives elsewhere (decisions in `.dialogue/logs/decisions/`, tasks in `.dialogue/tasks/`, documents in `implementation/` or `concepts/`). Node files contain metadata and `location_hint`; actual content remains in its canonical location.
 
 ### Future Evolution: Graph Database
 
@@ -467,6 +556,11 @@ Edge metadata captures collaboration patterns used in creation. This enables que
 2. BLOCKS/REQUIRES edges create directed acyclic graph (no cycles)
 3. OWNS edge requires ACTOR_* source and ARTIFACT target
 4. ESCALATES_TO requires ACTOR_AI source and ACTOR_HUMAN target
+5. VALIDATES edge requires target with artifact_type DOCUMENT, ASSUMPTION, or similar theory-bearing type
+6. ASSUMES edge requires target with artifact_type ASSUMPTION
+7. SATISFIES edge requires target with artifact_type REQUIREMENT
+8. TESTS edge requires source with artifact_type TEST and target with artifact_type IMPLEMENTATION
+9. COVERS edge requires source with artifact_type TEST and target with artifact_type REQUIREMENT
 
 ---
 
@@ -475,11 +569,13 @@ Edge metadata captures collaboration patterns used in creation. This enables que
 - ✓ **Node types**: Aligned with actor model and artifact taxonomy
 - ✓ **Edge types**: Cover TMS relationships and information dependencies
 - ✓ **TMS operations**: Map to Wegner's directory, allocation, retrieval
-- ✓ **Storage design**: Filesystem-first, graph-ready
+- ✓ **Storage design**: Filesystem-first with instance-per-file pattern, graph-ready
+- ✓ **Traceability edges**: VALIDATES, ASSUMES, SATISFIES, SPECIFIES, TESTS, COVERS, DEPENDS_ON
 - ⚠ **Query language**: Cypher-style examples; actual implementation pending
 - ⚠ **Index structure**: Schema defined; optimisation pending
 - ⚠ **Cascade logic**: Invalidation cascades need implementation
+- ⚠ **Negative edges**: CONTRADICTS, RISKS deferred to FW-031
 
 ---
 
-*The Context Graph externalises transactive memory—making "who knows what" queryable. Nodes are knowledge sources; edges are relationships. TMS operations enable directory lookup, allocation routing, and retrieval coordination.*
+*The Context Graph externalises transactive memory and traceability—making "who knows what" and "what proves/satisfies what" queryable. Nodes are knowledge sources; edges are relationships. TMS operations enable directory lookup, allocation routing, and retrieval coordination. Traceability edges enable validation chain queries across theories, requirements, implementations, and tests.*

@@ -1,0 +1,16 @@
+id: "FW-031"
+title: "Add negative traceability edges (CONTRADICTS, RISKS)"
+status: BACKLOG
+created: "2026-01-21T13:58:38Z"
+updated: "2026-01-21T13:58:38Z"
+type: CAPABILITY
+priority: LOW
+description: |
+  Add CONTRADICTS and RISKS edge types to context graph traceability model. Deferred from initial FW-028 implementation to reduce complexity.
+objective: "Support contradiction detection and risk tracking in traceability graph"
+rationale: |
+  Negative edges valuable but not essential for initial implementation. Spawned from FW-028 design discussion.
+blocked_by: ["FW-028"]
+blocks: []
+notes: |
+  Created 21 January 2026.
