@@ -1,0 +1,9 @@
+id: DEC-20260122-091600
+timestamp: "2026-01-22T09:16:00Z"
+type: DESIGN
+actor: "human:pidster"
+subject: "Context graph remains index layer"
+outcome: "Context graph indexes content in canonical locations; logs stay in .dialogue/logs/, not moved to .dialogue/context-graph/"
+rationale: "Graph design separates 'what exists' from 'where it lives'; avoids scope creep to documents/tasks; reduces refactoring; maintains original schema intention"
+context: "FW-028 architectural discussion"
+tags: ["FW-028", "context-graph", "architecture"]

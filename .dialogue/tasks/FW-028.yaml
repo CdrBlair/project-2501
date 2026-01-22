@@ -1,8 +1,9 @@
 id: "FW-028"
 title: "Problem Domain Traceability Model"
-status: IN_PROGRESS
+status: COMPLETED
 created: "2026-01-21T13:33:37Z"
-updated: "2026-01-22T09:15:00Z"
+updated: "2026-01-22T09:20:00Z"
+completed: "2026-01-22T09:20:00Z"
 type: CAPABILITY
 priority: HIGH
 description: |
@@ -56,7 +57,14 @@ notes: |
   - route(): DEFERRED — conventions handle allocation
   - refresh(): DEFERRED — would need source-specific logic
 
-  Remaining work:
+  Remaining work (deferred/incremental):
   - Add traceability edges between concepts (2 sample edges exist; more can be added incrementally)
   - Bootstrap task nodes (lower priority — tasks are queryable via resolve-reference)
   - Consider: Should task management skill also create graph nodes?
+
+  Completed 22 January 2026:
+  - Core traceability model operational
+  - TMS query scripts: locate, discover, trace, invalidate
+  - Logging skills auto-create graph nodes
+  - Historical logs bootstrapped (203 nodes, 184 edges)
+  - Decision: Context graph remains index layer (DEC-20260122-091600)

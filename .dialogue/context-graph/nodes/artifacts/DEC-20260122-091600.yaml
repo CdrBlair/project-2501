@@ -1,0 +1,14 @@
+id: DEC-20260122-091600
+node_type: ARTIFACT
+metadata:
+  artifact_type: DECISION
+  decision_type: DESIGN
+  temporal_class: Ephemeral
+  content_type: text/yaml
+  title: "Context graph remains index layer"
+  summary: "Context graph indexes content in canonical locations; logs stay in .dialogue/logs/, not moved to .dialogue/context-graph/"
+  location_hint: ".dialogue/logs/decisions/DEC-20260122-091600.yaml"
+  author: "human:pidster"
+created: "2026-01-22T09:16:00Z"
+updated: "2026-01-22T09:16:00Z"
+status: ACTIVE
