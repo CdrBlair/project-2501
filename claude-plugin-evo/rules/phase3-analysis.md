@@ -130,8 +130,76 @@ Phase 3 outputs should be:
 - **Consistent**: No internal contradictions
 - **Appropriately formal**: Match documentation to project needs
 
+## Information Preservation
+
+### Requirements Rationale
+
+Every requirement should trace to a stakeholder need with rationale. Use `log-decision` for requirement prioritisation and trade-off decisions:
+
+```
+"Recording the decision to prioritise [requirement] because [stakeholder rationale]."
+```
+
+### Shared Understanding Indicators
+
+Phase 3 involves substantial tacit knowledge transfer. Monitor shared understanding using TTKM-adapted indicators:
+
+| Construct | Check |
+|-----------|-------|
+| Task knowledge | Does the team know what they're supposed to do? |
+| Expertise location | Do team members know who knows what? |
+| Task-expertise fit | Are the right people working on the right things? |
+| Implicit coordination | Can the team work together without constant explicit coordination? |
+| Collective understanding | Is there shared "theory" about how the system should work? |
+
+Rate each 1-5. Scores < 3 indicate knowledge gaps requiring intervention before proceeding.
+
+### Mitigation from Planning
+
+Phase 3 receives structured plans from Phase 2. Mitigate transition loss by:
+- Checking requirements against scope boundaries
+- Asking "does this align with the project plan constraints?"
+- Preserving traceability to Phase 1 rationale through Phase 2
+
+## Assessment and Transition
+
+### Requirements Quality Assessment
+
+Before transitioning to Phase 4, verify requirements quality:
+
+| Indicator | Check |
+|-----------|-------|
+| Completeness | Are all in-scope capabilities specified? |
+| Consistency | Are there contradictions between requirements? |
+| Testability | Does each requirement have acceptance criteria? |
+| Traceability | Can requirements trace to stakeholder needs? |
+| Stakeholder validation | Have stakeholders confirmed the requirements? |
+
+### Requirements Consistency Testing
+
+AI can assist with consistency checking:
+```
+"Let me check these requirements for potential conflicts or overlaps."
+"Requirement A and requirement B seem to assume different things about [X]. Can we clarify?"
+```
+
+### Phase Transition Readiness
+
+Use `/assess-phase` to verify readiness before moving to Phase 4 (Design/Architecture):
+- Documentation readiness: Requirements specifications complete?
+- Knowledge transfer readiness: Rationale documented, traceable?
+- Stakeholder readiness: Requirements validated and approved?
+- Technical readiness: No unresolved feasibility questions?
+
+Balanced phase (50% tacit) means DEFER remediation needs both dialogue and artifact work.
+
 ## Transition Guidance
 
 Phase 3 bridges planning to design:
 - **From Phase 2**: Scope defines what's in/out; requirements specify the "in"
 - **To Phase 4**: Requirements become design inputs; traceability continues
+
+## Concept References
+
+- [C-6: Information Loss at Transitions](../../concepts/concept_transitions-info-loss.md) — Transition mitigation strategies
+- [C-7: Phase-Aware Measurement](../../concepts/concept_phase-aware-measurement.md) — Shared understanding indicators, requirements quality

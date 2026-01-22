@@ -112,3 +112,57 @@ Phase 1 outputs should be:
 - **Assumption-explicit**: Straw man items marked as such
 - **Action-oriented**: Clear next steps, not just analysis
 - **Appropriately sized**: Match formality to project scale
+
+## Assessment and Transition
+
+### Problem Framing Assessment
+
+Before moving to Phase 2, verify problem framing adequacy using `dialogue-assess-framing`:
+
+| Element | Check |
+|---------|-------|
+| Problem clearly stated | Can articulate the problem in one sentence? |
+| Scope bounded | Know what's in and out of scope? |
+| Success criteria defined | Know what "done" looks like? |
+| Constraints identified | Know what limits the solution? |
+| Assumptions explicit | Documented what we're taking as given? |
+| Stakeholders identified | Know who cares and why? |
+
+Use `/assess-framing` to capture this assessment formally.
+
+### Stakeholder Alignment Assessment
+
+For projects with multiple stakeholders, assess alignment across five dimensions:
+
+1. **Goal alignment**: Do stakeholders agree on what success looks like?
+2. **Priority alignment**: Do they agree on what matters most?
+3. **Constraint agreement**: Do they agree on boundaries and limitations?
+4. **Expectation clarity**: Are mutual expectations explicit?
+5. **Communication satisfaction**: Are stakeholders satisfied with information flow?
+
+Rate each 1-5. Scores < 3 indicate risk requiring resolution before proceeding.
+
+### Rationale Capture
+
+**PRDs (Product Requirements Documents)** serve for early phases what ADRs serve for Design—structured rationale capture:
+- Why this opportunity/problem?
+- Why these priorities?
+- Why this approach over alternatives?
+
+Use `log-decision` to maintain continuous decision history with rationale.
+Use `log-observation` to capture stakeholder positions and context.
+
+### Phase Transition Readiness
+
+Before transitioning to Phase 2 (Planning), use `/assess-phase` to verify readiness:
+- Documentation readiness: Business case, stakeholder map complete?
+- Knowledge transfer readiness: Rationale documented, decisions logged?
+- Stakeholder readiness: Alignment verified?
+- Technical readiness: No blocking dependencies?
+
+High-tacit phase (75%) means DEFER remediation requires dialogue, not artifacts.
+
+## Concept References
+
+- [C-6: Information Loss at Transitions](../../concepts/concept_transitions-info-loss.md) — Early-phase mitigation strategies
+- [C-7: Phase-Aware Measurement](../../concepts/concept_phase-aware-measurement.md) — Stakeholder alignment, problem framing checklists

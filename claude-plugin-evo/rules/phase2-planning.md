@@ -134,3 +134,66 @@ Note: Within Phase 2, collaboration patterns evolve:
 - Late planning (schedule calculation): More AI-Led
 
 Adjust your engagement level accordingly.
+
+## Information Preservation
+
+### Decision Logging
+
+Phase 2 produces many decisions that shape downstream work. Use `log-decision` continuously:
+
+```
+"Let me record this decision about [scope/resource/priority] with the rationale you've provided."
+```
+
+Decision types common in Phase 2:
+- **OPERATIONAL**: Day-to-day planning choices
+- **TACTICAL**: Resource allocation, timeline trade-offs
+- **DESIGN**: Early architectural constraints
+
+### Assumptions Logging
+
+Assumptions are planning risks. Use `log-observation` (STATE) to capture:
+- Resource availability assumptions
+- Timeline assumptions
+- Dependency assumptions
+- Stakeholder commitment assumptions
+
+```
+"I'm noting the assumption that [X]. If this changes, we'll need to revisit the plan."
+```
+
+### Mitigation from Initiation
+
+Phase 2 receives high-tacit knowledge from Phase 1. Mitigate loss by:
+- Referencing Phase 1 PRDs and decision logs
+- Asking "what was the rationale?" when Phase 1 context seems missing
+- Preserving the "why" alongside the "how"
+
+## Assessment and Transition
+
+### Planning Quality Indicators
+
+Before transitioning to Phase 3, assess planning quality:
+
+| Indicator | Check |
+|-----------|-------|
+| Scope clarity | Is scope bounded with clear in/out criteria? |
+| Risk awareness | Are key risks identified with mitigation strategies? |
+| Resource realism | Are allocations based on actual availability? |
+| Assumption visibility | Are planning assumptions explicit and logged? |
+| Stakeholder sign-off | Have stakeholders approved the plan? |
+
+### Phase Transition Readiness
+
+Use `/assess-phase` to verify readiness before moving to Phase 3 (Analysis/Requirements):
+- Documentation readiness: Project plan, risk register complete?
+- Knowledge transfer readiness: Decisions and assumptions logged?
+- Stakeholder readiness: Plan approved?
+- Technical readiness: Dependencies resolved or managed?
+
+Medium-tacit phase (55%) means DEFER remediation needs balanced dialogue and artifact review.
+
+## Concept References
+
+- [C-6: Information Loss at Transitions](../../concepts/concept_transitions-info-loss.md) — Decision logging, assumptions capture
+- [C-7: Phase-Aware Measurement](../../concepts/concept_phase-aware-measurement.md) — Planning quality indicators

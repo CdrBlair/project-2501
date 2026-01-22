@@ -1,8 +1,9 @@
 id: "CD-015"
 title: "Revisit Phases 1-3 after C-6/C-7 updates"
-status: READY
+status: COMPLETED
 created: "2026-01-20T23:05:00Z"
-updated: "2026-01-20T23:05:00Z"
+updated: "2026-01-22T16:15:00Z"
+completed: "2026-01-22T16:15:00Z"
 type: DEBT
 priority: MEDIUM
 description: |
@@ -77,3 +78,36 @@ notes: |
   - CD-002: C-7 measurement operationalisation
   - CD-003: C-6 mitigation strategies
   - DEC-20260120-214540, DEC-20260120-215053
+
+  ---
+  Completed 22 January 2026.
+
+  Updated phase1-initiation.md:
+  - Added Problem Framing Assessment section (6-element checklist)
+  - Added Stakeholder Alignment Assessment (5 dimensions)
+  - Added Rationale Capture section (PRDs, log-decision, log-observation)
+  - Added Phase Transition Readiness (/assess-phase reference)
+  - Added C-6/C-7 concept references
+
+  Updated phase2-planning.md:
+  - Added Decision Logging section with decision types
+  - Added Assumptions Logging section
+  - Added Mitigation from Initiation section
+  - Added Planning Quality Indicators table
+  - Added Phase Transition Readiness section
+  - Added C-6/C-7 concept references
+
+  Updated phase3-analysis.md:
+  - Added Requirements Rationale section
+  - Added Shared Understanding Indicators (TTKM-adapted, 5 constructs)
+  - Added Mitigation from Planning section
+  - Added Requirements Quality Assessment table
+  - Added Requirements Consistency Testing section
+  - Added Phase Transition Readiness section
+  - Added C-6/C-7 concept references
+
+  All phase documents now reference:
+  - Appropriate C-6 mitigation strategies
+  - Appropriate C-7 measurement approaches
+  - FW-023 assessment skills (/assess-framing, /assess-phase)
+  - Decision and observation logging
