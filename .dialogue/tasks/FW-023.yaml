@@ -2,7 +2,7 @@ id: "FW-023"
 title: "Assessment Collection & Action Infrastructure"
 status: IN_PROGRESS
 created: "2026-01-20T22:45:00Z"
-updated: "2026-01-21T17:25:00Z"
+updated: "2026-01-22T13:27:00Z"
 type: CAPABILITY
 priority: HIGH
 description: |
@@ -134,3 +134,22 @@ notes: |
   - DEC-20260121-133351 (FW-023/FW-028 scope split)
   - DEC-20260121-171254 (Trend analysis approach)
   - DEC-20260121-172146 (Integration depth)
+  - DEC-20260122-132732 (Defer alignment/TTKM to FW-041)
+
+  ---
+  Progress 22 January 2026: Phase 1 complete.
+
+  Implemented:
+  - Assessment log directory and schema (all 5 types defined)
+  - dialogue-daily-check skill with Stop hook reminder
+  - Context graph updates (ASSESSMENT type, ASSESSES edge)
+  - Commit: 7cc9c36
+
+  Scope adjustment: Deferred dialogue-assess-alignment and dialogue-assess-ttkm
+  to FW-041. These are health monitoring assessments (visibility), not execution
+  gates. FW-023 remains focused on:
+  - dialogue-daily-check (done)
+  - dialogue-assess-framing (Phase 2)
+  - dialogue-assess-phase (Phase 3)
+
+  Spawned: FW-041 (Health Monitoring Assessments)

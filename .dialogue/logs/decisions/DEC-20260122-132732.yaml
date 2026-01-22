@@ -1,0 +1,9 @@
+id: DEC-20260122-132732
+timestamp: "2026-01-22T13:27:32Z"
+type: TACTICAL
+actor: "human:pidster"
+subject: "FW-023 scope reduction"
+outcome: "Defer alignment and TTKM assessments to FW-041"
+rationale: "Health monitoring assessments are valuable but not execution-critical; keeping FW-023 focused on daily check, problem framing, and phase readiness"
+context: "During FW-023 Phase 1 completion review"
+tags: ["scope", "assessment"]

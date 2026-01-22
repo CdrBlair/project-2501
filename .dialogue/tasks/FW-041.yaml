@@ -1,0 +1,55 @@
+id: "FW-041"
+title: "Health Monitoring Assessments (Alignment, TTKM)"
+status: BACKLOG
+created: "2026-01-22T13:00:00Z"
+updated: "2026-01-22T13:00:00Z"
+type: CAPABILITY
+priority: LOW
+description: |
+  Implement health monitoring assessment skills for stakeholder alignment and
+  team tacit knowledge. These provide visibility into project health but do not
+  gate framework execution.
+
+  ## Skills to Implement
+
+  ### dialogue-assess-alignment
+  Stakeholder alignment assessment (5 dimensions, 1-5 scale):
+  - goal_clarity: "We agree on what success looks like"
+  - priority_alignment: "We agree on what matters most"
+  - risk_awareness: "We share understanding of risks"
+  - communication_quality: "Information flows effectively"
+  - decision_authority: "We agree on who decides what"
+
+  ### dialogue-assess-ttkm
+  Team Tacit Knowledge Measure constructs (Ryan & O'Connor, 2013):
+  - shared_understanding: "Team members understand each other's work"
+  - knowledge_location: "We know who knows what"
+  - knowledge_access: "We can easily get knowledge from each other"
+  - knowledge_integration: "We effectively combine our knowledge"
+  - knowledge_creation: "We create new knowledge together"
+
+  ## Design Notes
+
+  - Schema already defined in FW-023's assessment schema document
+  - Follow same patterns as dialogue-daily-check
+  - Suggested frequency: alignment monthly or at phase transitions; TTKM quarterly
+  - These are diagnostic tools, not execution gates
+
+  ## Framework Grounding
+
+  - Stakeholder alignment: TMS theory, STS joint optimisation
+  - TTKM: Ryan & O'Connor (C-5), Wegner's transactive memory
+
+objective: "Visibility into stakeholder alignment and team knowledge health"
+rationale: |
+  Split from FW-023 to separate execution-critical assessments (daily check,
+  problem framing, phase readiness) from health monitoring assessments. These
+  are valuable for diagnosing project issues but don't block framework operation.
+blocked_by:
+  - FW-023  # Assessment infrastructure must exist first
+blocks: []
+notes: |
+  Created 22 January 2026, split from FW-023 Phase 2.
+
+  Decision: DEC-20260122-130000 - Defer alignment and TTKM assessments as they
+  are health monitoring (visibility) rather than execution gates.

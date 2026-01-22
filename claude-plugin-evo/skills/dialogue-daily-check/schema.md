@@ -119,7 +119,18 @@ ProblemFramingResponses:
 
   confidence: 1-5               # Overall confidence in framing
   gaps_identified: string | null # Any gaps noted
+
+  # Recommendation (computed from checklist + confidence)
+  recommendation: "PROCEED" | "PROCEED_WITH_CAUTION" | "ADDRESS_GAPS" | "RETURN_TO_DEFINITION"
 ```
+
+**Recommendation logic**: Both confirmed count AND confidence must meet thresholds:
+- 6/6 confirmed AND confidence >= 4 -> PROCEED
+- 5+/6 confirmed AND confidence >= 3 -> PROCEED_WITH_CAUTION
+- 4+/6 confirmed AND confidence >= 2 -> ADDRESS_GAPS
+- Otherwise -> RETURN_TO_DEFINITION
+
+**Note**: PROBLEM_FRAMING uses more specific recommendations than PHASE_READINESS because problem definition issues require different remediation guidance than phase transition gaps.
 
 ### TTKM
 
@@ -170,6 +181,45 @@ PhaseReadinessResponses:
   approved_by: ActorReference | null    # Human who approved (if applicable)
   approval_timestamp: ISO8601 | null
 ```
+
+---
+
+## Recommendation Enums
+
+Different assessment types use different recommendation enums based on their purpose:
+
+### Phase-Agnostic Assessments
+
+**PROBLEM_FRAMING** uses specific remediation guidance:
+
+| Value | Meaning | Action |
+|-------|---------|--------|
+| `PROCEED` | Well-framed | Proceed to implementation |
+| `PROCEED_WITH_CAUTION` | Mostly framed | Document gaps, proceed carefully |
+| `ADDRESS_GAPS` | Gaps present | Address gaps before major work |
+| `RETURN_TO_DEFINITION` | Poorly framed | Return to problem definition |
+
+### Phase Transition Assessments
+
+**PHASE_READINESS** uses gate-oriented recommendations:
+
+| Value | Meaning | Action |
+|-------|---------|--------|
+| `PROCEED` | Ready to transition | Human approves, proceed |
+| `PROCEED_WITH_CAUTION` | Minor gaps | Review gaps, may proceed with mitigations |
+| `DEFER` | Not ready | Address blockers before transitioning |
+
+### Design Rationale
+
+Problem framing uses more specific recommendations because:
+1. It occurs earlier in the lifecycle where course correction is cheaper
+2. "ADDRESS_GAPS" and "RETURN_TO_DEFINITION" provide clearer guidance than "DEFER"
+3. The checklist nature supports granular remediation advice
+
+Phase readiness uses gate-oriented recommendations because:
+1. It's a go/no-go decision point
+2. The composite nature aggregates multiple signals
+3. Human approval is the final arbiter
 
 ---
 
