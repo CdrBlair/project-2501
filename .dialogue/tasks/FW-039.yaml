@@ -1,0 +1,16 @@
+id: "FW-039"
+title: "Design framework bootstrap for non-Claude environments"
+status: BACKLOG
+created: "2026-01-22T12:23:46Z"
+updated: "2026-01-22T12:23:46Z"
+type: CAPABILITY
+priority: MEDIUM
+description: |
+  Explore how to bootstrap Dialogue Framework in environments other than Claude Code (e.g., API, other AI tools). Consider portable config, environment detection, graceful degradation.
+objective: "Framework usable beyond Claude Code"
+rationale: |
+  Framework concepts are tool-agnostic; implementation should support multiple environments
+blocked_by: []
+blocks: []
+notes: |
+  Created 22 January 2026.

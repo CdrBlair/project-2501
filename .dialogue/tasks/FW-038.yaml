@@ -1,0 +1,16 @@
+id: "FW-038"
+title: "Define minimal CLAUDE.md bootstrap spec"
+status: READY
+created: "2026-01-22T12:23:46Z"
+updated: "2026-01-22T12:23:46Z"
+type: CAPABILITY
+priority: HIGH
+description: |
+  Determine what belongs in CLAUDE.md (always loaded) vs plugin (when present). Draft minimal bootstrap: project identity, framework signal, plugin pointer, collaboration mode, escalation triggers, key conventions.
+objective: "Clean separation between essential bootstrap and operational detail"
+rationale: |
+  Current CLAUDE.md has significant content that may duplicate plugin; need clear layering
+blocked_by: []
+blocks: []
+notes: |
+  Created 22 January 2026.
