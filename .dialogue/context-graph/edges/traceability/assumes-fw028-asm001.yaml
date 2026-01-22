@@ -1,0 +1,12 @@
+id: assumes-fw028-asm001
+source: FW-028
+target: ASM-001
+edge_type: ASSUMES
+metadata:
+  criticality: MEDIUM
+  validation_status: UNVALIDATED
+  accepted_by: "human:pidster"
+  accepted_date: "2026-01-22"
+  notes: "FW-028 implementation assumes shell scripts are adequate for initial queries"
+created: "2026-01-22T10:45:00Z"
+confidence: 0.8

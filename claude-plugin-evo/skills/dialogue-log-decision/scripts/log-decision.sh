@@ -2,12 +2,16 @@
 # log-decision.sh — Append a decision entry to the decision log
 # Part of the Dialogue Framework
 # Usage: log-decision.sh <type> <actor> <subject> <outcome> <rationale> [context] [tags] [ref]
+#
+# Also creates a context graph node and CREATED edge for TMS integration (FW-028).
 
 set -euo pipefail
 
 # Use Claude's project directory environment variable
 PROJECT_ROOT="${CLAUDE_PROJECT_DIR:?CLAUDE_PROJECT_DIR must be set}"
 LOG_DIR="${PROJECT_ROOT}/.dialogue/logs/decisions"
+GRAPH_NODES_DIR="${PROJECT_ROOT}/.dialogue/context-graph/nodes/artifacts"
+GRAPH_EDGES_DIR="${PROJECT_ROOT}/.dialogue/context-graph/edges/actor-artifact"
 
 # Validate required arguments
 if [[ $# -lt 5 ]]; then
@@ -86,5 +90,46 @@ LOG_FILE="${LOG_DIR}/${ID}.yaml"
         printf ']\n'
     fi
 } > "$LOG_FILE"
+
+# Create context graph node (FW-028 TMS integration)
+if [[ -d "${PROJECT_ROOT}/.dialogue/context-graph" ]]; then
+    mkdir -p "$GRAPH_NODES_DIR" "$GRAPH_EDGES_DIR"
+
+    # Create artifact node for this decision
+    NODE_FILE="${GRAPH_NODES_DIR}/${ID}.yaml"
+    {
+        echo "id: $ID"
+        echo "node_type: ARTIFACT"
+        echo "metadata:"
+        echo "  artifact_type: DECISION"
+        echo "  decision_type: $TYPE"
+        echo "  temporal_class: Ephemeral"
+        echo "  content_type: text/yaml"
+        echo "  title: \"$SUBJECT\""
+        echo "  summary: \"$OUTCOME\""
+        echo "  location_hint: \".dialogue/logs/decisions/${ID}.yaml\""
+        echo "  author: \"$ACTOR\""
+        echo "created: \"$TIMESTAMP\""
+        echo "updated: \"$TIMESTAMP\""
+        echo "status: ACTIVE"
+    } > "$NODE_FILE"
+
+    # Create CREATED edge from actor to decision
+    # Sanitise actor ID for filename (replace : with -)
+    ACTOR_SANITISED="${ACTOR//:/-}"
+    EDGE_ID="created-${ACTOR_SANITISED}-${ID}"
+    EDGE_FILE="${GRAPH_EDGES_DIR}/${EDGE_ID}.yaml"
+    {
+        echo "id: $EDGE_ID"
+        echo "source: \"$ACTOR\""
+        echo "target: $ID"
+        echo "edge_type: CREATED"
+        echo "metadata:"
+        echo "  timestamp: \"$TIMESTAMP\""
+        echo "  decision_type: $TYPE"
+        echo "created: \"$TIMESTAMP\""
+        echo "confidence: 1.0"
+    } > "$EDGE_FILE"
+fi
 
 echo "$ID"

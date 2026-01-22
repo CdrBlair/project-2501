@@ -1,0 +1,14 @@
+id: DEC-20260113-152538
+node_type: ARTIFACT
+metadata:
+  artifact_type: DECISION
+  decision_type: OPERATIONAL
+  temporal_class: Ephemeral
+  content_type: text/yaml
+  title: "Escalation trigger definitions"
+  summary: "Defined triggers for all 12 steps with RETURN actions for PA-9 and PA-10 validation failures"
+  location_hint: ".dialogue/logs/decisions/DEC-20260113-152538.yaml"
+  author: "ai:claude"
+created: "2026-01-13T15:25:38Z"
+updated: "2026-01-13T15:25:38Z"
+status: ACTIVE

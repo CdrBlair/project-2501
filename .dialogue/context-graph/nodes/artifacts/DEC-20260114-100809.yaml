@@ -1,0 +1,14 @@
+id: DEC-20260114-100809
+node_type: ARTIFACT
+metadata:
+  artifact_type: DECISION
+  decision_type: TACTICAL
+  temporal_class: Ephemeral
+  content_type: text/yaml
+  title: "Information reference schema approach"
+  summary: "Simplified from URI format to self-describing IDs - patterns determine type without scheme prefixes"
+  location_hint: ".dialogue/logs/decisions/DEC-20260114-100809.yaml"
+  author: "human:pidster"
+created: "2026-01-14T10:08:09Z"
+updated: "2026-01-14T10:08:09Z"
+status: ACTIVE

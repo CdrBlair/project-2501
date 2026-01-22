@@ -1,0 +1,14 @@
+id: OBS-20260122-085857
+node_type: ARTIFACT
+metadata:
+  artifact_type: OBSERVATION
+  observation_type: STATE
+  temporal_class: Ephemeral
+  content_type: text/yaml
+  title: "Graph integration test"
+  summary: "Logging scripts now create context graph nodes and CREATED edges automatically"
+  location_hint: ".dialogue/logs/observations/OBS-20260122-085857.yaml"
+  observer: "ai:claude"
+created: "2026-01-22T08:58:57Z"
+updated: "2026-01-22T08:58:57Z"
+status: ACTIVE

@@ -1,0 +1,14 @@
+id: OBS-20260115-154312
+node_type: ARTIFACT
+metadata:
+  artifact_type: OBSERVATION
+  observation_type: STATE
+  temporal_class: Ephemeral
+  content_type: text/yaml
+  title: "Process-capability-flow schema gap analysis"
+  summary: "Existing schema is design-time documentation; gaps for executable use: machine-readable format, instance vs definition separation, execution semantics, state model, dynamic composition, audit linka..."
+  location_hint: ".dialogue/logs/observations/OBS-20260115-154312.yaml"
+  observer: "ai:claude"
+created: "2026-01-15T15:43:12Z"
+updated: "2026-01-15T15:43:12Z"
+status: ACTIVE

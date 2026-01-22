@@ -1,0 +1,8 @@
+id: derives-ref001-thy001
+source: REF-001
+target: THY-001
+edge_type: DERIVES_FROM
+metadata:
+  notes: "REF-001 (Framework Concepts Reference) was synthesised from THY-001 (Framework Theory)"
+created: "2026-01-22T10:45:00Z"
+confidence: 1.0

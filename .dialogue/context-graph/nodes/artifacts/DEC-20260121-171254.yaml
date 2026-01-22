@@ -1,0 +1,14 @@
+id: DEC-20260121-171254
+node_type: ARTIFACT
+metadata:
+  artifact_type: DECISION
+  decision_type: DESIGN
+  temporal_class: Ephemeral
+  content_type: text/yaml
+  title: "FW-023 Trend analysis approach"
+  summary: "Start with point-in-time logging; no trend alerting for daily check-ins; completion state reports helpful for features; add trend analysis later based on actual data"
+  location_hint: ".dialogue/logs/decisions/DEC-20260121-171254.yaml"
+  author: "human:pidster"
+created: "2026-01-21T17:12:54Z"
+updated: "2026-01-21T17:12:54Z"
+status: ACTIVE

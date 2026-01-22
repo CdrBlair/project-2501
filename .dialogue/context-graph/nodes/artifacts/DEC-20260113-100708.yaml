@@ -1,0 +1,14 @@
+id: DEC-20260113-100708
+node_type: ARTIFACT
+metadata:
+  artifact_type: DECISION
+  decision_type: TACTICAL
+  temporal_class: Ephemeral
+  content_type: text/yaml
+  title: "Script location architecture"
+  summary: "Keep shared logging scripts in .dialogue/, skills reference them"
+  location_hint: ".dialogue/logs/decisions/DEC-20260113-100708.yaml"
+  author: "ai:claude"
+created: "2026-01-13T10:07:08Z"
+updated: "2026-01-13T10:07:08Z"
+status: ACTIVE

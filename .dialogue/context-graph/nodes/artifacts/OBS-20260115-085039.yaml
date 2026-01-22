@@ -1,0 +1,14 @@
+id: OBS-20260115-085039
+node_type: ARTIFACT
+metadata:
+  artifact_type: OBSERVATION
+  observation_type: STATE
+  temporal_class: Ephemeral
+  content_type: text/yaml
+  title: "Environment variable documentation gap"
+  summary: "Skill scripts not using available Claude Code environment variables; registry lacks environment variable reference"
+  location_hint: ".dialogue/logs/observations/OBS-20260115-085039.yaml"
+  observer: "human:pidster"
+created: "2026-01-15T08:50:39Z"
+updated: "2026-01-15T08:50:39Z"
+status: ACTIVE

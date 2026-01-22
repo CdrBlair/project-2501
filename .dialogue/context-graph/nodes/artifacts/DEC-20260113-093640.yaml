@@ -1,0 +1,14 @@
+id: DEC-20260113-093640
+node_type: ARTIFACT
+metadata:
+  artifact_type: DECISION
+  decision_type: OPERATIONAL
+  temporal_class: Ephemeral
+  content_type: text/yaml
+  title: "Environment Capability Registry schema design"
+  summary: "Created YAML-based schema with 6 sections mapping to framework concepts"
+  location_hint: ".dialogue/logs/decisions/DEC-20260113-093640.yaml"
+  author: "ai:claude"
+created: "2026-01-13T09:36:40Z"
+updated: "2026-01-13T09:36:40Z"
+status: ACTIVE

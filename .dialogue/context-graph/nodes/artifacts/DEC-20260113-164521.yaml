@@ -1,0 +1,14 @@
+id: DEC-20260113-164521
+node_type: ARTIFACT
+metadata:
+  artifact_type: DECISION
+  decision_type: OPERATIONAL
+  temporal_class: Ephemeral
+  content_type: text/yaml
+  title: "PA-8 pattern"
+  summary: "AI-Only"
+  location_hint: ".dialogue/logs/decisions/DEC-20260113-164521.yaml"
+  author: "ai:claude"
+created: "2026-01-13T16:45:21Z"
+updated: "2026-01-13T16:45:21Z"
+status: ACTIVE

@@ -1,0 +1,14 @@
+id: DEC-20260113-145933
+node_type: ARTIFACT
+metadata:
+  artifact_type: DECISION
+  decision_type: TACTICAL
+  temporal_class: Ephemeral
+  content_type: text/yaml
+  title: "Loop semantics design"
+  summary: "Three-level approach: process retry policy, step return action, fix step pattern"
+  location_hint: ".dialogue/logs/decisions/DEC-20260113-145933.yaml"
+  author: "ai:claude"
+created: "2026-01-13T14:59:33Z"
+updated: "2026-01-13T14:59:33Z"
+status: ACTIVE

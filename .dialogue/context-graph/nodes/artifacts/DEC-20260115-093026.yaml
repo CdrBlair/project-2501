@@ -1,0 +1,14 @@
+id: DEC-20260115-093026
+node_type: ARTIFACT
+metadata:
+  artifact_type: DECISION
+  decision_type: DESIGN
+  temporal_class: Ephemeral
+  content_type: text/yaml
+  title: "C-3 retrograde navigation extension"
+  summary: "Extended C-3 with retrograde navigation section: phases as character not location, navigation vs tracing, tooling implications"
+  location_hint: ".dialogue/logs/decisions/DEC-20260115-093026.yaml"
+  author: "ai:claude"
+created: "2026-01-15T09:30:26Z"
+updated: "2026-01-15T09:30:26Z"
+status: ACTIVE

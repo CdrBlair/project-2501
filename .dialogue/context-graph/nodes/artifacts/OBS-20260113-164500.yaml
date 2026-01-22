@@ -1,0 +1,14 @@
+id: OBS-20260113-164500
+node_type: ARTIFACT
+metadata:
+  artifact_type: OBSERVATION
+  observation_type: EVENT
+  temporal_class: Ephemeral
+  content_type: text/yaml
+  title: "Process context elicited"
+  summary: "Phase: 2 (Planning); Purpose: Design and validate capability flows; Inputs: Process requirements, framework concepts; Outputs: Specifications and recommendations"
+  location_hint: ".dialogue/logs/observations/OBS-20260113-164500.yaml"
+  observer: "ai:claude"
+created: "2026-01-13T16:45:00Z"
+updated: "2026-01-13T16:45:00Z"
+status: ACTIVE

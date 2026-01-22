@@ -1,0 +1,14 @@
+id: DEC-20260121-135837
+node_type: ARTIFACT
+metadata:
+  artifact_type: DECISION
+  decision_type: DESIGN
+  temporal_class: Ephemeral
+  content_type: text/yaml
+  title: "Traceability edge types v1"
+  summary: "Add ASM artifact type; node-per-file for implementations; defer negative edges (CONTRADICTS, RISKS) to later; defer PARTIALLY_SATISFIES pending quantifiability question"
+  location_hint: ".dialogue/logs/decisions/DEC-20260121-135837.yaml"
+  author: "human:pidster"
+created: "2026-01-21T13:58:37Z"
+updated: "2026-01-21T13:58:37Z"
+status: ACTIVE

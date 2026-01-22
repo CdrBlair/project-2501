@@ -1,0 +1,14 @@
+id: OBS-20260121-132029
+node_type: ARTIFACT
+metadata:
+  artifact_type: OBSERVATION
+  observation_type: STATE
+  temporal_class: Ephemeral
+  content_type: text/yaml
+  title: "Information loss framing"
+  summary: "Need to distinguish: (1) transition loss - information existed but lost in handoff, (2) proceeding-at-risk - information never gathered, (3) judgment under uncertainty - deliberate proceed with kno..."
+  location_hint: ".dialogue/logs/observations/OBS-20260121-132029.yaml"
+  observer: "human:pidster"
+created: "2026-01-21T13:20:29Z"
+updated: "2026-01-21T13:20:29Z"
+status: ACTIVE

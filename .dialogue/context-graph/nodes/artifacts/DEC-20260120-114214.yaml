@@ -1,0 +1,14 @@
+id: DEC-20260120-114214
+node_type: ARTIFACT
+metadata:
+  artifact_type: DECISION
+  decision_type: DESIGN
+  temporal_class: Ephemeral
+  content_type: text/yaml
+  title: "Progressive Value Delivery Principle"
+  summary: "Framework prioritises quick meaningful output over strict phase completion: (1) Allow phase advancement with incomplete items marked as deferred; (2) Progressive disclosure of functionality; (3) Learn-by-doing guidance through phases"
+  location_hint: ".dialogue/logs/decisions/DEC-20260120-114214.yaml"
+  author: "human:pid"
+created: "2026-01-20T11:42:14Z"
+updated: "2026-01-20T11:42:14Z"
+status: ACTIVE

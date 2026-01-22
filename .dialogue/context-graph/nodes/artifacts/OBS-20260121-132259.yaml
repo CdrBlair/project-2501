@@ -1,0 +1,14 @@
+id: OBS-20260121-132259
+node_type: ARTIFACT
+metadata:
+  artifact_type: OBSERVATION
+  observation_type: STATE
+  temporal_class: Ephemeral
+  content_type: text/yaml
+  title: "Research finding"
+  summary: "C-8 (concept_transitions-info-loss.md) already distinguishes transition loss from proceeding-at-risk. 35-55% is baseline for normal transitions; information debt amplifies losses. Framework prescri..."
+  location_hint: ".dialogue/logs/observations/OBS-20260121-132259.yaml"
+  observer: "ai:claude"
+created: "2026-01-21T13:22:59Z"
+updated: "2026-01-21T13:22:59Z"
+status: ACTIVE

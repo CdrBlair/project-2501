@@ -1,0 +1,14 @@
+id: OBS-20260113-164551
+node_type: ARTIFACT
+metadata:
+  artifact_type: OBSERVATION
+  observation_type: STATE
+  temporal_class: Ephemeral
+  content_type: text/yaml
+  title: "Schema validation result"
+  summary: "All 12 steps pass constraints C1-C4; DEFER action properly configured for PA-11"
+  location_hint: ".dialogue/logs/observations/OBS-20260113-164551.yaml"
+  observer: "ai:claude"
+created: "2026-01-13T16:45:51Z"
+updated: "2026-01-13T16:45:51Z"
+status: ACTIVE

@@ -1,0 +1,14 @@
+id: DEC-20260116-130601
+node_type: ARTIFACT
+metadata:
+  artifact_type: DECISION
+  decision_type: DESIGN
+  temporal_class: Ephemeral
+  content_type: text/yaml
+  title: "Switch Stop hook from command type to prompt type"
+  summary: "Command-based stop hook has limitations; prompt-based hook may provide better integration with Claude's context"
+  location_hint: ".dialogue/logs/decisions/DEC-20260116-130601.yaml"
+  author: "human:pidster"
+created: "2026-01-16T13:06:01Z"
+updated: "2026-01-16T13:06:01Z"
+status: ACTIVE

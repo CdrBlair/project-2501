@@ -1,0 +1,14 @@
+id: OBS-20260116-120035
+node_type: ARTIFACT
+metadata:
+  artifact_type: OBSERVATION
+  observation_type: STATE
+  temporal_class: Ephemeral
+  content_type: text/yaml
+  title: "Observation ID collision"
+  summary: "Two observations logged in same second received identical IDs (OBS-20260116-115950). Timestamp-based ID generation lacks sub-second granularity."
+  location_hint: ".dialogue/logs/observations/OBS-20260116-120035.yaml"
+  observer: "ai:claude"
+created: "2026-01-16T12:00:35Z"
+updated: "2026-01-16T12:00:35Z"
+status: ACTIVE

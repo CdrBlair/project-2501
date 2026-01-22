@@ -1,0 +1,8 @@
+id: informs-dec20260121-fw028
+source: DEC-20260121-133351
+target: FW-028
+edge_type: INFORMS
+metadata:
+  notes: "Decision to spawn FW-028 from FW-023 scope split"
+created: "2026-01-22T10:45:00Z"
+confidence: 1.0

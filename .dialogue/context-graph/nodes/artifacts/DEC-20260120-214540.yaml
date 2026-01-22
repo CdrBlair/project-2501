@@ -1,0 +1,14 @@
+id: DEC-20260120-214540
+node_type: ARTIFACT
+metadata:
+  artifact_type: DECISION
+  decision_type: DESIGN
+  temporal_class: Ephemeral
+  content_type: text/yaml
+  title: "C-6 Phase-Specific Mitigation Strategies"
+  summary: "Added comprehensive phase-specific mitigation section to C-6 covering early, middle, and late phases with explicit document domain mappings and implementation examples"
+  location_hint: ".dialogue/logs/decisions/DEC-20260120-214540.yaml"
+  author: "human:pidster"
+created: "2026-01-20T21:45:40Z"
+updated: "2026-01-20T21:45:40Z"
+status: ACTIVE

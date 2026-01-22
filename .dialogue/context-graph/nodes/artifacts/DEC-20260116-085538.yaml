@@ -1,0 +1,14 @@
+id: DEC-20260116-085538
+node_type: ARTIFACT
+metadata:
+  artifact_type: DECISION
+  decision_type: OPERATIONAL
+  temporal_class: Ephemeral
+  content_type: text/yaml
+  title: "Range interpretation"
+  summary: "Interpreted 0-9 as inclusive (0 through 9)"
+  location_hint: ".dialogue/logs/decisions/DEC-20260116-085538.yaml"
+  author: "ai:claude"
+created: "2026-01-16T08:55:38Z"
+updated: "2026-01-16T08:55:38Z"
+status: ACTIVE

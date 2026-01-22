@@ -1,0 +1,14 @@
+id: DEC-20260116-090808
+node_type: ARTIFACT
+metadata:
+  artifact_type: DECISION
+  decision_type: OPERATIONAL
+  temporal_class: Ephemeral
+  content_type: text/yaml
+  title: "Caffeine intake"
+  summary: "Make another coffee"
+  location_hint: ".dialogue/logs/decisions/DEC-20260116-090808.yaml"
+  author: "human:pidster"
+created: "2026-01-16T09:08:08Z"
+updated: "2026-01-16T09:08:08Z"
+status: ACTIVE

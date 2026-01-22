@@ -1,0 +1,14 @@
+id: OBS-20260113-164621
+node_type: ARTIFACT
+metadata:
+  artifact_type: OBSERVATION
+  observation_type: EVENT
+  temporal_class: Ephemeral
+  content_type: text/yaml
+  title: "DEFER action triggered"
+  summary: "User requested extended review; process suspending with DEFERRED_CONTINUATION task; resume trigger: HUMAN_APPROVAL"
+  location_hint: ".dialogue/logs/observations/OBS-20260113-164621.yaml"
+  observer: "ai:claude"
+created: "2026-01-13T16:46:21Z"
+updated: "2026-01-13T16:46:21Z"
+status: ACTIVE

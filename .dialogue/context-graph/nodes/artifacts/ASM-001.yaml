@@ -1,0 +1,14 @@
+id: ASM-001
+node_type: ARTIFACT
+metadata:
+  artifact_type: ASSUMPTION
+  temporal_class: Dynamic
+  content_type: text/yaml
+  title: "Shell scripts sufficient for initial TMS operations"
+  summary: "Assumption that bash/shell scripts are sufficient for initial context graph queries, with migration to graph DB later"
+  location_hint: ".dialogue/context-graph/nodes/artifacts/ASM-001.yaml"
+  status: DRAFT
+  author: human:pidster
+created: "2026-01-22T10:45:00Z"
+updated: "2026-01-22T10:45:00Z"
+status: ACTIVE

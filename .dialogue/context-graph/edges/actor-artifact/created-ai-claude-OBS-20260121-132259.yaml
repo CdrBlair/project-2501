@@ -1,0 +1,9 @@
+id: created-ai-claude-OBS-20260121-132259
+source: "ai:claude"
+target: OBS-20260121-132259
+edge_type: CREATED
+metadata:
+  timestamp: "2026-01-21T13:22:59Z"
+  observation_type: STATE
+created: "2026-01-21T13:22:59Z"
+confidence: 1.0

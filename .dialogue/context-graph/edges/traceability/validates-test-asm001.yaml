@@ -1,0 +1,10 @@
+id: validates-test-asm001
+source: OBS-20260122-TEST
+target: ASM-001
+edge_type: VALIDATES
+metadata:
+  evidence_type: OBSERVATION
+  strength: MODERATE
+  notes: "Test validation - shell scripts successfully implemented for locate, discover, trace, invalidate operations"
+created: "2026-01-22T10:50:00Z"
+confidence: 0.9

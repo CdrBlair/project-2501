@@ -1,0 +1,14 @@
+id: DEC-20260113-095042
+node_type: ARTIFACT
+metadata:
+  artifact_type: DECISION
+  decision_type: OPERATIONAL
+  temporal_class: Ephemeral
+  content_type: text/yaml
+  title: "Framework generation model"
+  summary: "Established implementation/ for generation inputs, tool directories for outputs"
+  location_hint: ".dialogue/logs/decisions/DEC-20260113-095042.yaml"
+  author: "human:pidster"
+created: "2026-01-13T09:50:42Z"
+updated: "2026-01-13T09:50:42Z"
+status: ACTIVE

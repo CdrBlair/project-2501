@@ -1,0 +1,14 @@
+id: DEC-20260120-215053
+node_type: ARTIFACT
+metadata:
+  artifact_type: DECISION
+  decision_type: DESIGN
+  temporal_class: Ephemeral
+  content_type: text/yaml
+  title: "C-7 Early-Phase Measurement Operationalisation"
+  summary: "Added comprehensive operationalisation section covering stakeholder alignment assessment, shared understanding indicators, problem framing checklist, and leading experience indicators"
+  location_hint: ".dialogue/logs/decisions/DEC-20260120-215053.yaml"
+  author: "human:pidster"
+created: "2026-01-20T21:50:53Z"
+updated: "2026-01-20T21:50:53Z"
+status: ACTIVE

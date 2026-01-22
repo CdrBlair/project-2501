@@ -1,0 +1,14 @@
+id: DEC-20260115-084309
+node_type: ARTIFACT
+metadata:
+  artifact_type: DECISION
+  decision_type: TACTICAL
+  temporal_class: Ephemeral
+  content_type: text/yaml
+  title: "Hooks orchestration assessment"
+  summary: "Hooks insufficient for orchestration; layered approach required"
+  location_hint: ".dialogue/logs/decisions/DEC-20260115-084309.yaml"
+  author: "ai:claude"
+created: "2026-01-15T08:43:09Z"
+updated: "2026-01-15T08:43:09Z"
+status: ACTIVE

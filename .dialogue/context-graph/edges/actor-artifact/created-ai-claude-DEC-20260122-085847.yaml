@@ -1,0 +1,9 @@
+id: created-ai-claude-DEC-20260122-085847
+source: "ai:claude"
+target: DEC-20260122-085847
+edge_type: CREATED
+metadata:
+  timestamp: "2026-01-22T08:58:47Z"
+  decision_type: DESIGN
+created: "2026-01-22T08:58:47Z"
+confidence: 1.0

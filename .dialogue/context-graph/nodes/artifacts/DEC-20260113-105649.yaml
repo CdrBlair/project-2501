@@ -1,0 +1,14 @@
+id: DEC-20260113-105649
+node_type: ARTIFACT
+metadata:
+  artifact_type: DECISION
+  decision_type: OPERATIONAL
+  temporal_class: Ephemeral
+  content_type: text/yaml
+  title: "Skill naming correction"
+  summary: "dialogue-verify-logging-compliance (not build-only-)"
+  location_hint: ".dialogue/logs/decisions/DEC-20260113-105649.yaml"
+  author: "ai:claude"
+created: "2026-01-13T10:56:49Z"
+updated: "2026-01-13T10:56:49Z"
+status: ACTIVE

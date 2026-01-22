@@ -1,0 +1,14 @@
+id: DEC-20260121-133941
+node_type: ARTIFACT
+metadata:
+  artifact_type: DECISION
+  decision_type: DESIGN
+  temporal_class: Ephemeral
+  content_type: text/yaml
+  title: "Context graph storage pattern"
+  summary: "Change from files-per-type (artifacts.yaml) to directory+instance-file pattern (artifacts/{id}.yaml)"
+  location_hint: ".dialogue/logs/decisions/DEC-20260121-133941.yaml"
+  author: "human:pidster"
+created: "2026-01-21T13:39:41Z"
+updated: "2026-01-21T13:39:41Z"
+status: ACTIVE

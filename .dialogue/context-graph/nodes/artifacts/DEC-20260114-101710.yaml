@@ -1,0 +1,14 @@
+id: DEC-20260114-101710
+node_type: ARTIFACT
+metadata:
+  artifact_type: DECISION
+  decision_type: TACTICAL
+  temporal_class: Ephemeral
+  content_type: text/yaml
+  title: "ADR cross-referencing in decision log"
+  summary: "ADR creation must also create a decision log entry with type=ADR and ref pointing to the ADR file"
+  location_hint: ".dialogue/logs/decisions/DEC-20260114-101710.yaml"
+  author: "human:pidster"
+created: "2026-01-14T10:17:10Z"
+updated: "2026-01-14T10:17:10Z"
+status: ACTIVE

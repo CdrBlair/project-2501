@@ -1,0 +1,14 @@
+id: DEC-20260114-091633
+node_type: ARTIFACT
+metadata:
+  artifact_type: DECISION
+  decision_type: TACTICAL
+  temporal_class: Ephemeral
+  content_type: text/yaml
+  title: "SH-7 Retrofit vs Forward"
+  summary: "Hybrid approach: retrofit documents referenced by THY-001/REF-001; forward-only for remaining documents"
+  location_hint: ".dialogue/logs/decisions/DEC-20260114-091633.yaml"
+  author: "human:pidster"
+created: "2026-01-14T09:16:33Z"
+updated: "2026-01-14T09:16:33Z"
+status: ACTIVE

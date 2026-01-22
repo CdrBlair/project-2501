@@ -1,0 +1,14 @@
+id: OBS-20260116-141508
+node_type: ARTIFACT
+metadata:
+  artifact_type: OBSERVATION
+  observation_type: STATE
+  temporal_class: Ephemeral
+  content_type: text/yaml
+  title: "stop_hook_active interpretation"
+  summary: "stop_hook_active may indicate another Stop hook has fired in current evaluation cycle, not repeated attempts of same hook. Would explain why always false with single hook."
+  location_hint: ".dialogue/logs/observations/OBS-20260116-141508.yaml"
+  observer: "human:pidster"
+created: "2026-01-16T14:15:08Z"
+updated: "2026-01-16T14:15:08Z"
+status: ACTIVE

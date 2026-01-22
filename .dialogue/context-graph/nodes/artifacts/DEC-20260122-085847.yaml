@@ -1,0 +1,14 @@
+id: DEC-20260122-085847
+node_type: ARTIFACT
+metadata:
+  artifact_type: DECISION
+  decision_type: DESIGN
+  temporal_class: Ephemeral
+  content_type: text/yaml
+  title: "Test graph integration"
+  summary: "Verified logging creates graph nodes"
+  location_hint: ".dialogue/logs/decisions/DEC-20260122-085847.yaml"
+  author: "ai:claude"
+created: "2026-01-22T08:58:47Z"
+updated: "2026-01-22T08:58:47Z"
+status: ACTIVE

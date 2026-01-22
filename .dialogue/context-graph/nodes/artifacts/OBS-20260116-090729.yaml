@@ -1,0 +1,14 @@
+id: OBS-20260116-090729
+node_type: ARTIFACT
+metadata:
+  artifact_type: OBSERVATION
+  observation_type: STATE
+  temporal_class: Ephemeral
+  content_type: text/yaml
+  title: "Day of week"
+  summary: "It is Friday"
+  location_hint: ".dialogue/logs/observations/OBS-20260116-090729.yaml"
+  observer: "human:pidster"
+created: "2026-01-16T09:07:29Z"
+updated: "2026-01-16T09:07:29Z"
+status: ACTIVE

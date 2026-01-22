@@ -1,0 +1,14 @@
+id: OBS-20260113-102214
+node_type: ARTIFACT
+metadata:
+  artifact_type: OBSERVATION
+  observation_type: EVENT
+  temporal_class: Ephemeral
+  content_type: text/yaml
+  title: "Script path fix"
+  summary: "Updated scripts to use git root for log file location"
+  location_hint: ".dialogue/logs/observations/OBS-20260113-102214.yaml"
+  observer: "ai:claude"
+created: "2026-01-13T10:22:14Z"
+updated: "2026-01-13T10:22:14Z"
+status: ACTIVE

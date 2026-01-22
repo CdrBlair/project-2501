@@ -1,0 +1,14 @@
+id: DEC-20260113-150302
+node_type: ARTIFACT
+metadata:
+  artifact_type: DECISION
+  decision_type: OPERATIONAL
+  temporal_class: Ephemeral
+  content_type: text/yaml
+  title: "Artifact persistence approach"
+  summary: "Ask human at PA-9 approval step"
+  location_hint: ".dialogue/logs/decisions/DEC-20260113-150302.yaml"
+  author: "ai:claude"
+created: "2026-01-13T15:03:02Z"
+updated: "2026-01-13T15:03:02Z"
+status: ACTIVE

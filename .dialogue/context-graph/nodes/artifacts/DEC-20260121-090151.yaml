@@ -1,0 +1,14 @@
+id: DEC-20260121-090151
+node_type: ARTIFACT
+metadata:
+  artifact_type: DECISION
+  decision_type: DESIGN
+  temporal_class: Ephemeral
+  content_type: text/yaml
+  title: "Schema location disposition"
+  summary: "Migrated 3 schemas to plugin (document-frontmatter, information-reference, resolver-interface); removed 6 from implementation/ (3 duplicates + 3 migrated); kept 4 in implementation/ as framework de..."
+  location_hint: ".dialogue/logs/decisions/DEC-20260121-090151.yaml"
+  author: "human:pidster"
+created: "2026-01-21T09:01:51Z"
+updated: "2026-01-21T09:01:51Z"
+status: ACTIVE

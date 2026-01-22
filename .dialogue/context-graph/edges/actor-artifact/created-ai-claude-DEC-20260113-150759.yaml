@@ -1,0 +1,9 @@
+id: created-ai-claude-DEC-20260113-150759
+source: "ai:claude"
+target: DEC-20260113-150759
+edge_type: CREATED
+metadata:
+  timestamp: "2026-01-13T15:07:59Z"
+  decision_type: OPERATIONAL
+created: "2026-01-13T15:07:59Z"
+confidence: 1.0

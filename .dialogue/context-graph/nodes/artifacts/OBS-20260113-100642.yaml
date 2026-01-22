@@ -1,0 +1,14 @@
+id: OBS-20260113-100642
+node_type: ARTIFACT
+metadata:
+  artifact_type: OBSERVATION
+  observation_type: EVENT
+  temporal_class: Ephemeral
+  content_type: text/yaml
+  title: "Plugin-dev usage gap"
+  summary: "Skills created without using plugin-dev validation were incorrectly structured"
+  location_hint: ".dialogue/logs/observations/OBS-20260113-100642.yaml"
+  observer: "human:pidster"
+created: "2026-01-13T10:06:42Z"
+updated: "2026-01-13T10:06:42Z"
+status: ACTIVE

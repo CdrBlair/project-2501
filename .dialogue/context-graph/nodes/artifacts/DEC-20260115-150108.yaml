@@ -1,0 +1,14 @@
+id: DEC-20260115-150108
+node_type: ARTIFACT
+metadata:
+  artifact_type: DECISION
+  decision_type: TACTICAL
+  temporal_class: Ephemeral
+  content_type: text/yaml
+  title: "Subagent autonomy sequence"
+  summary: "Build orchestrator-composed processes first; extend to self-planning subagents later"
+  location_hint: ".dialogue/logs/decisions/DEC-20260115-150108.yaml"
+  author: "human:pidster"
+created: "2026-01-15T15:01:08Z"
+updated: "2026-01-15T15:01:08Z"
+status: ACTIVE

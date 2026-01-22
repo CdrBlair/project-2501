@@ -1,0 +1,14 @@
+id: DEC-20260120-163702
+node_type: ARTIFACT
+metadata:
+  artifact_type: DECISION
+  decision_type: DESIGN
+  temporal_class: Ephemeral
+  content_type: text/yaml
+  title: "Principles operationalization via REF documents and Context Graph"
+  summary: "Principles are REF documents (not CLAUDE.md); actors consult REF via Context Graph locate() as part of task execution; CLAUDE.md remains lightweight pointer to framework"
+  location_hint: ".dialogue/logs/decisions/DEC-20260120-163702.yaml"
+  author: "human:pid"
+created: "2026-01-20T16:37:02Z"
+updated: "2026-01-20T16:37:02Z"
+status: ACTIVE

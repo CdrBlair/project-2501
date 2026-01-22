@@ -1,0 +1,14 @@
+id: DEC-20260116-131432
+node_type: ARTIFACT
+metadata:
+  artifact_type: DECISION
+  decision_type: OPERATIONAL
+  temporal_class: Ephemeral
+  content_type: text/yaml
+  title: "SubagentStop hook response format"
+  summary: "Fixed manually after confirming format was correct"
+  location_hint: ".dialogue/logs/decisions/DEC-20260116-131432.yaml"
+  author: "human:pidster"
+created: "2026-01-16T13:14:32Z"
+updated: "2026-01-16T13:14:32Z"
+status: ACTIVE

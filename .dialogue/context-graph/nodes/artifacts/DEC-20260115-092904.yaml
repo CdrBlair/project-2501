@@ -1,0 +1,14 @@
+id: DEC-20260115-092904
+node_type: ARTIFACT
+metadata:
+  artifact_type: DECISION
+  decision_type: TACTICAL
+  temporal_class: Ephemeral
+  content_type: text/yaml
+  title: "Pause FW-008 to extend C-3 with retrograde navigation"
+  summary: "Extend C-3 (Seven-Phase SDLC) with retrograde step concept before continuing orchestrator research"
+  location_hint: ".dialogue/logs/decisions/DEC-20260115-092904.yaml"
+  author: "human:pidster"
+created: "2026-01-15T09:29:04Z"
+updated: "2026-01-15T09:29:04Z"
+status: ACTIVE

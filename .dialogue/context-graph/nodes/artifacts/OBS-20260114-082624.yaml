@@ -1,0 +1,14 @@
+id: OBS-20260114-082624
+node_type: ARTIFACT
+metadata:
+  artifact_type: OBSERVATION
+  observation_type: EVENT
+  temporal_class: Ephemeral
+  content_type: text/yaml
+  title: "Framework bidirectional relationship"
+  summary: "Creating THY documents reveals gaps in conceptual foundation, creating pressure to retrofit concepts - this indicates the THY mechanism is working as designed"
+  location_hint: ".dialogue/logs/observations/OBS-20260114-082624.yaml"
+  observer: "human:pidster"
+created: "2026-01-14T08:26:24Z"
+updated: "2026-01-14T08:26:24Z"
+status: ACTIVE

@@ -1,0 +1,14 @@
+id: DEC-20260113-152517
+node_type: ARTIFACT
+metadata:
+  artifact_type: DECISION
+  decision_type: OPERATIONAL
+  temporal_class: Ephemeral
+  content_type: text/yaml
+  title: "PA-5 pattern"
+  summary: "AI-Led"
+  location_hint: ".dialogue/logs/decisions/DEC-20260113-152517.yaml"
+  author: "ai:claude"
+created: "2026-01-13T15:25:17Z"
+updated: "2026-01-13T15:25:17Z"
+status: ACTIVE

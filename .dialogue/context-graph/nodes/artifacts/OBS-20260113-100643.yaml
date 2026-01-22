@@ -1,0 +1,14 @@
+id: OBS-20260113-100643
+node_type: ARTIFACT
+metadata:
+  artifact_type: OBSERVATION
+  observation_type: EVENT
+  temporal_class: Ephemeral
+  content_type: text/yaml
+  title: "Script location issue"
+  summary: "Skills use scripts from .dialogue/ but should have scripts in skill directory tree"
+  location_hint: ".dialogue/logs/observations/OBS-20260113-100643.yaml"
+  observer: "human:pidster"
+created: "2026-01-13T10:06:43Z"
+updated: "2026-01-13T10:06:43Z"
+status: ACTIVE

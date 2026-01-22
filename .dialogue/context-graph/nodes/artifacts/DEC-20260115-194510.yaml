@@ -1,0 +1,14 @@
+id: DEC-20260115-194510
+node_type: ARTIFACT
+metadata:
+  artifact_type: DECISION
+  decision_type: DESIGN
+  temporal_class: Ephemeral
+  content_type: text/yaml
+  title: "Plugin self-containment architecture"
+  summary: "Plugin must be independently deployable with all operational content embedded; host project produces the plugin as a build artifact"
+  location_hint: ".dialogue/logs/decisions/DEC-20260115-194510.yaml"
+  author: "human:pidster"
+created: "2026-01-15T19:45:10Z"
+updated: "2026-01-15T19:45:10Z"
+status: ACTIVE

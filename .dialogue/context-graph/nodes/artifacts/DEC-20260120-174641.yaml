@@ -1,0 +1,14 @@
+id: DEC-20260120-174641
+node_type: ARTIFACT
+metadata:
+  artifact_type: DECISION
+  decision_type: DESIGN
+  temporal_class: Ephemeral
+  content_type: text/yaml
+  title: "Clarify Human-Only pattern as strict external handoff"
+  summary: "Human-Only pattern means AI exits the dialogue entirely and creates a blocking"
+  location_hint: ".dialogue/logs/decisions/DEC-20260120-174641.yaml"
+  author: "human:pid"
+created: "2026-01-20T17:46:41Z"
+updated: "2026-01-20T17:46:41Z"
+status: ACTIVE

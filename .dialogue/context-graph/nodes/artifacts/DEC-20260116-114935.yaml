@@ -1,0 +1,14 @@
+id: DEC-20260116-114935
+node_type: ARTIFACT
+metadata:
+  artifact_type: DECISION
+  decision_type: DESIGN
+  temporal_class: Ephemeral
+  content_type: text/yaml
+  title: "Stop hook compliance checking approach"
+  summary: "Always use prompt evaluation with loop guard; defer fast-path optimisation"
+  location_hint: ".dialogue/logs/decisions/DEC-20260116-114935.yaml"
+  author: "human:pidster"
+created: "2026-01-16T11:49:35Z"
+updated: "2026-01-16T11:49:35Z"
+status: ACTIVE

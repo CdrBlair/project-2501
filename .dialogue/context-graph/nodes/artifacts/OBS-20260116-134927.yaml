@@ -1,0 +1,14 @@
+id: OBS-20260116-134927
+node_type: ARTIFACT
+metadata:
+  artifact_type: OBSERVATION
+  observation_type: STATE
+  temporal_class: Ephemeral
+  content_type: text/yaml
+  title: "Stop hook logic issue"
+  summary: "Hook fired but prompt returned false despite observation being logged; checking stop_hook_active instead of detecting logging activity"
+  location_hint: ".dialogue/logs/observations/OBS-20260116-134927.yaml"
+  observer: "human:pidster"
+created: "2026-01-16T13:49:27Z"
+updated: "2026-01-16T13:49:27Z"
+status: ACTIVE

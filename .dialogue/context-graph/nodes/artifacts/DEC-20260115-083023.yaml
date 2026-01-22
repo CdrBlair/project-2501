@@ -1,0 +1,14 @@
+id: DEC-20260115-083023
+node_type: ARTIFACT
+metadata:
+  artifact_type: DECISION
+  decision_type: TACTICAL
+  temporal_class: Ephemeral
+  content_type: text/yaml
+  title: "Phase 1 guidance placement"
+  summary: "Removed rules file; guidance stays in framework-manual.md and skills"
+  location_hint: ".dialogue/logs/decisions/DEC-20260115-083023.yaml"
+  author: "ai:claude"
+created: "2026-01-15T08:30:23Z"
+updated: "2026-01-15T08:30:23Z"
+status: ACTIVE

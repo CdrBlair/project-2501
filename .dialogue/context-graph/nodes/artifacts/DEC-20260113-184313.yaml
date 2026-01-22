@@ -1,0 +1,14 @@
+id: DEC-20260113-184313
+node_type: ARTIFACT
+metadata:
+  artifact_type: DECISION
+  decision_type: TACTICAL
+  temporal_class: Ephemeral
+  content_type: text/yaml
+  title: "THY content domain"
+  summary: "Add THY (Theory) as first-class artifact type in document classification"
+  location_hint: ".dialogue/logs/decisions/DEC-20260113-184313.yaml"
+  author: "human:pidster"
+created: "2026-01-13T18:43:13Z"
+updated: "2026-01-13T18:43:13Z"
+status: ACTIVE

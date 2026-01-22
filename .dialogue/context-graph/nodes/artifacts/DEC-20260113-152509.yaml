@@ -1,0 +1,14 @@
+id: DEC-20260113-152509
+node_type: ARTIFACT
+metadata:
+  artifact_type: DECISION
+  decision_type: OPERATIONAL
+  temporal_class: Ephemeral
+  content_type: text/yaml
+  title: "PA-1 pattern"
+  summary: "Partnership"
+  location_hint: ".dialogue/logs/decisions/DEC-20260113-152509.yaml"
+  author: "ai:claude"
+created: "2026-01-13T15:25:09Z"
+updated: "2026-01-13T15:25:09Z"
+status: ACTIVE

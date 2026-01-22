@@ -1,0 +1,14 @@
+id: DEC-20260120-220112
+node_type: ARTIFACT
+metadata:
+  artifact_type: DECISION
+  decision_type: TACTICAL
+  temporal_class: Ephemeral
+  content_type: text/yaml
+  title: "Assessment infrastructure approach"
+  summary: "Created FW-023 to design collection/action infrastructure; self-hosting first as validation; inform not block for integration depth"
+  location_hint: ".dialogue/logs/decisions/DEC-20260120-220112.yaml"
+  author: "human:pidster"
+created: "2026-01-20T22:01:12Z"
+updated: "2026-01-20T22:01:12Z"
+status: ACTIVE

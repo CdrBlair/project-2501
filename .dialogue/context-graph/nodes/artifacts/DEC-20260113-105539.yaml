@@ -1,0 +1,14 @@
+id: DEC-20260113-105539
+node_type: ARTIFACT
+metadata:
+  artifact_type: DECISION
+  decision_type: TACTICAL
+  temporal_class: Ephemeral
+  content_type: text/yaml
+  title: "Enforcement approach selection"
+  summary: "Combine B (checklist step) + E (log-based verification)"
+  location_hint: ".dialogue/logs/decisions/DEC-20260113-105539.yaml"
+  author: "ai:claude"
+created: "2026-01-13T10:55:39Z"
+updated: "2026-01-13T10:55:39Z"
+status: ACTIVE

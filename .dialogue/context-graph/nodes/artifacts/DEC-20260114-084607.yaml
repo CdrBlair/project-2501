@@ -1,0 +1,14 @@
+id: DEC-20260114-084607
+node_type: ARTIFACT
+metadata:
+  artifact_type: DECISION
+  decision_type: OPERATIONAL
+  temporal_class: Ephemeral
+  content_type: text/yaml
+  title: "Phase 1 document form"
+  summary: "Option B: Consolidated Phase 1 artifact with structured frontmatter"
+  location_hint: ".dialogue/logs/decisions/DEC-20260114-084607.yaml"
+  author: "human:pidster"
+created: "2026-01-14T08:46:07Z"
+updated: "2026-01-14T08:46:07Z"
+status: ACTIVE

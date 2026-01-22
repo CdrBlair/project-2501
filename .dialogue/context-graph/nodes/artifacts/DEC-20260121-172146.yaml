@@ -1,0 +1,14 @@
+id: DEC-20260121-172146
+node_type: ARTIFACT
+metadata:
+  artifact_type: DECISION
+  decision_type: DESIGN
+  temporal_class: Ephemeral
+  content_type: text/yaml
+  title: "FW-023 Integration depth"
+  summary: "Daily check-ins: visibility; Phase transitions: inform; Feature completion: proactive inform. Likely progression path: inform → soft gate (design should accommodate)"
+  location_hint: ".dialogue/logs/decisions/DEC-20260121-172146.yaml"
+  author: "human:pidster"
+created: "2026-01-21T17:21:46Z"
+updated: "2026-01-21T17:21:46Z"
+status: ACTIVE

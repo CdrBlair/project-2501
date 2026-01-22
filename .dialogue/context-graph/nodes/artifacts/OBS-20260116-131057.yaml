@@ -1,0 +1,14 @@
+id: OBS-20260116-131057
+node_type: ARTIFACT
+metadata:
+  artifact_type: OBSERVATION
+  observation_type: STATE
+  temporal_class: Ephemeral
+  content_type: text/yaml
+  title: "SubagentStop vs Stop hook response format inconsistency"
+  summary: "SubagentStop uses {ok: true/false} format while Stop uses {decision: approve/block} format; documentation indicates both should use decision format"
+  location_hint: ".dialogue/logs/observations/OBS-20260116-131057.yaml"
+  observer: "ai:claude"
+created: "2026-01-16T13:10:57Z"
+updated: "2026-01-16T13:10:57Z"
+status: ACTIVE

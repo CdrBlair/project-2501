@@ -1,0 +1,14 @@
+id: OBS-20260116-181452
+node_type: ARTIFACT
+metadata:
+  artifact_type: OBSERVATION
+  observation_type: STATE
+  temporal_class: Ephemeral
+  content_type: text/yaml
+  title: "Migration complete"
+  summary: "Successfully migrated to per-file structure"
+  location_hint: ".dialogue/logs/observations/OBS-20260116-181452.yaml"
+  observer: "ai:claude"
+created: "2026-01-16T18:14:52Z"
+updated: "2026-01-16T18:14:52Z"
+status: ACTIVE

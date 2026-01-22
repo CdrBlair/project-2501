@@ -1,0 +1,14 @@
+id: OBS-20260116-134712
+node_type: ARTIFACT
+metadata:
+  artifact_type: OBSERVATION
+  observation_type: STATE
+  temporal_class: Ephemeral
+  content_type: text/yaml
+  title: "Stop hook UX feedback"
+  summary: "No visible indicator shown when stop hook blocked stopping"
+  location_hint: ".dialogue/logs/observations/OBS-20260116-134712.yaml"
+  observer: "human:pidster"
+created: "2026-01-16T13:47:12Z"
+updated: "2026-01-16T13:47:12Z"
+status: ACTIVE

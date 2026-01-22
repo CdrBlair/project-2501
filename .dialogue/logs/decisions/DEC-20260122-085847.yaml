@@ -1,0 +1,9 @@
+id: DEC-20260122-085847
+timestamp: "2026-01-22T08:58:47Z"
+type: DESIGN
+actor: "ai:claude"
+subject: "Test graph integration"
+outcome: "Verified logging creates graph nodes"
+rationale: "Testing FW-028 integration"
+context: "FW-028 testing"
+tags: ["FW-028", "test"]

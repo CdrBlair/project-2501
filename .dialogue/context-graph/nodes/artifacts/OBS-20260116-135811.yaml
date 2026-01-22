@@ -1,0 +1,14 @@
+id: OBS-20260116-135811
+node_type: ARTIFACT
+metadata:
+  artifact_type: OBSERVATION
+  observation_type: MEASUREMENT
+  temporal_class: Ephemeral
+  content_type: text/yaml
+  title: "Stop hook context contents"
+  summary: "Hook receives: session_id, transcript_path, cwd, permission_mode, hook_event_name, stop_hook_active. Does NOT receive: conversation transcript or logging history"
+  location_hint: ".dialogue/logs/observations/OBS-20260116-135811.yaml"
+  observer: "ai:claude"
+created: "2026-01-16T13:58:11Z"
+updated: "2026-01-16T13:58:11Z"
+status: ACTIVE

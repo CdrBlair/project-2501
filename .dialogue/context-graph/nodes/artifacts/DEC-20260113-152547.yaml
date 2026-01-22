@@ -1,0 +1,14 @@
+id: DEC-20260113-152547
+node_type: ARTIFACT
+metadata:
+  artifact_type: DECISION
+  decision_type: OPERATIONAL
+  temporal_class: Ephemeral
+  content_type: text/yaml
+  title: "Control flow definition"
+  summary: "Retry policy returns to PA-4 on validation failure; max 3 iterations; fix step PA-9a for constraint violations"
+  location_hint: ".dialogue/logs/decisions/DEC-20260113-152547.yaml"
+  author: "ai:claude"
+created: "2026-01-13T15:25:47Z"
+updated: "2026-01-13T15:25:47Z"
+status: ACTIVE

@@ -1,0 +1,14 @@
+id: DEC-20260116-180240
+node_type: ARTIFACT
+metadata:
+  artifact_type: DECISION
+  decision_type: DESIGN
+  temporal_class: Ephemeral
+  content_type: text/yaml
+  title: "Multi-user artifact architecture"
+  summary: "Hybrid approach: session memos per-user (personal state), tasks split into individual files (shared but merge-friendly)"
+  location_hint: ".dialogue/logs/decisions/DEC-20260116-180240.yaml"
+  author: "human:pidster"
+created: "2026-01-16T18:02:40Z"
+updated: "2026-01-16T18:02:40Z"
+status: ACTIVE

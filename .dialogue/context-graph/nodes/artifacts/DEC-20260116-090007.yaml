@@ -1,0 +1,14 @@
+id: DEC-20260116-090007
+node_type: ARTIFACT
+metadata:
+  artifact_type: DECISION
+  decision_type: DESIGN
+  temporal_class: Ephemeral
+  content_type: text/yaml
+  title: "CLAUDE_PROJECT_DIR persistence"
+  summary: "Added SessionStart hook to persist CLAUDE_PROJECT_DIR to CLAUDE_ENV_FILE"
+  location_hint: ".dialogue/logs/decisions/DEC-20260116-090007.yaml"
+  author: "ai:claude"
+created: "2026-01-16T09:00:07Z"
+updated: "2026-01-16T09:00:07Z"
+status: ACTIVE

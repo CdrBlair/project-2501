@@ -2,7 +2,7 @@ id: "FW-028"
 title: "Problem Domain Traceability Model"
 status: IN_PROGRESS
 created: "2026-01-21T13:33:37Z"
-updated: "2026-01-21T14:15:00Z"
+updated: "2026-01-22T09:15:00Z"
 type: CAPABILITY
 priority: HIGH
 description: |
@@ -31,7 +31,32 @@ notes: |
     - Bootstrap scripts in scripts/ subdirectory
   - Created FW-031 for deferred negative edges (CONTRADICTS, RISKS)
 
+  Progress 22 January 2026:
+  - Implemented TMS query scripts:
+    - graph-locate.sh: directory lookup (find nodes by keyword/type/status)
+    - graph-discover.sh: actor knowledge (CREATED, CONTRIBUTED, OWNS, KNOWS edges)
+    - graph-trace.sh: traceability queries (validated, assumptions, satisfies, tests, unvalidated, orphans, deps)
+    - graph-invalidate.sh: staleness marking with optional cascade
+  - retrieve() already implemented via resolve-reference.sh (pre-existing)
+  - Tested pipeline end-to-end with sample traceability edges (ASSUMES, VALIDATES)
+  - Updated logging skills (log-decision.sh, log-observation.sh) to create graph nodes
+    and CREATED edges automatically — keeps graph in sync going forward
+  - Bootstrapped existing logs as graph nodes:
+    - Created bootstrap-logs.sh script
+    - 95 new nodes + 95 new edges created from historical logs
+    - Graph now has 203 nodes, 184 edges
+    - discover human:pidster → 70 artifacts
+    - discover ai:claude → 99 artifacts
+
+  TMS operations status:
+  - locate(): DONE (graph-locate.sh)
+  - retrieve(): DONE (resolve-reference.sh)
+  - discover(): DONE (graph-discover.sh)
+  - invalidate(): DONE (graph-invalidate.sh)
+  - route(): DEFERRED — conventions handle allocation
+  - refresh(): DEFERRED — would need source-specific logic
+
   Remaining work:
-  - Bootstrap decision/observation/task nodes (scripted, lower priority)
-  - More edges between concepts (can be added incrementally)
-  - Query implementation (TMS operations)
+  - Add traceability edges between concepts (2 sample edges exist; more can be added incrementally)
+  - Bootstrap task nodes (lower priority — tasks are queryable via resolve-reference)
+  - Consider: Should task management skill also create graph nodes?

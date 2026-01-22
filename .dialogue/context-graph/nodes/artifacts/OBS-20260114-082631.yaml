@@ -1,0 +1,14 @@
+id: OBS-20260114-082631
+node_type: ARTIFACT
+metadata:
+  artifact_type: OBSERVATION
+  observation_type: EVENT
+  temporal_class: Ephemeral
+  content_type: text/yaml
+  title: "THY-003 created as PROVISIONAL"
+  summary: "Created theory_conversation-as-tms.md with explicit conceptual debt acknowledgement - insight first, formalisation to follow"
+  location_hint: ".dialogue/logs/observations/OBS-20260114-082631.yaml"
+  observer: "ai:claude"
+created: "2026-01-14T08:26:31Z"
+updated: "2026-01-14T08:26:31Z"
+status: ACTIVE

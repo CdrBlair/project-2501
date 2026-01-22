@@ -1,0 +1,14 @@
+id: OBS-20260115-154205
+node_type: ARTIFACT
+metadata:
+  artifact_type: OBSERVATION
+  observation_type: MEASUREMENT
+  temporal_class: Ephemeral
+  content_type: text/yaml
+  title: "Mermaid for process flow in prompts"
+  summary: "Mermaid diagrams could describe non-linear process flows inline in agent/subagent prompts; text-based format is both human-readable and machine-parseable"
+  location_hint: ".dialogue/logs/observations/OBS-20260115-154205.yaml"
+  observer: "human:pidster"
+created: "2026-01-15T15:42:05Z"
+updated: "2026-01-15T15:42:05Z"
+status: ACTIVE

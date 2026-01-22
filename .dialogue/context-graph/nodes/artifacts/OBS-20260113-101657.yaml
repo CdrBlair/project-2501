@@ -1,0 +1,14 @@
+id: OBS-20260113-101657
+node_type: ARTIFACT
+metadata:
+  artifact_type: OBSERVATION
+  observation_type: EVENT
+  temporal_class: Ephemeral
+  content_type: text/yaml
+  title: "Meta configuration challenge"
+  summary: "AI not consistently using framework components correctly - skills created wrong, scripts in wrong location, deep-linking instead of abstraction"
+  location_hint: ".dialogue/logs/observations/OBS-20260113-101657.yaml"
+  observer: "human:pidster"
+created: "2026-01-13T10:16:57Z"
+updated: "2026-01-13T10:16:57Z"
+status: ACTIVE

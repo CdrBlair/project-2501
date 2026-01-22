@@ -1,0 +1,14 @@
+id: DEC-20260116-121813
+node_type: ARTIFACT
+metadata:
+  artifact_type: DECISION
+  decision_type: OPERATIONAL
+  temporal_class: Ephemeral
+  content_type: text/yaml
+  title: "Add debug logging to stop hook"
+  summary: "Modified stop-loop-guard.sh to write hook input to /tmp/stop-hook-input.json"
+  location_hint: ".dialogue/logs/decisions/DEC-20260116-121813.yaml"
+  author: "ai:claude"
+created: "2026-01-16T12:18:13Z"
+updated: "2026-01-16T12:18:13Z"
+status: ACTIVE

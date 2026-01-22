@@ -1,0 +1,9 @@
+id: created-human-pidster-OBS-20260121-134552
+source: "human:pidster"
+target: OBS-20260121-134552
+edge_type: CREATED
+metadata:
+  timestamp: "2026-01-21T13:45:52Z"
+  observation_type: STATE
+created: "2026-01-21T13:45:52Z"
+confidence: 1.0

@@ -1,0 +1,14 @@
+id: DEC-20260113-094359
+node_type: ARTIFACT
+metadata:
+  artifact_type: DECISION
+  decision_type: OPERATIONAL
+  temporal_class: Ephemeral
+  content_type: text/yaml
+  title: "Implementation directory structure"
+  summary: "Created implementation/ for executable artifacts separate from research/"
+  location_hint: ".dialogue/logs/decisions/DEC-20260113-094359.yaml"
+  author: "human:pidster"
+created: "2026-01-13T09:43:59Z"
+updated: "2026-01-13T09:43:59Z"
+status: ACTIVE

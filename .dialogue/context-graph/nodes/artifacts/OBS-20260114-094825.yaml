@@ -1,0 +1,14 @@
+id: OBS-20260114-094825
+node_type: ARTIFACT
+metadata:
+  artifact_type: OBSERVATION
+  observation_type: STATE
+  temporal_class: Ephemeral
+  content_type: text/yaml
+  title: "task tracking system"
+  summary: "Implemented two-tier work tracking: TodoWrite for session-level ephemeral tracking, .dialogue/work-items.yaml for cross-session persistence"
+  location_hint: ".dialogue/logs/observations/OBS-20260114-094825.yaml"
+  observer: "ai:claude"
+created: "2026-01-14T09:48:25Z"
+updated: "2026-01-14T09:48:25Z"
+status: ACTIVE

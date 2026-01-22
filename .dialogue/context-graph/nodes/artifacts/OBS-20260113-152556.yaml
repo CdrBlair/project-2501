@@ -1,0 +1,14 @@
+id: OBS-20260113-152556
+node_type: ARTIFACT
+metadata:
+  artifact_type: OBSERVATION
+  observation_type: STATE
+  temporal_class: Ephemeral
+  content_type: text/yaml
+  title: "Schema validation result"
+  summary: "All 12 steps pass constraints C1-C4; no violations detected"
+  location_hint: ".dialogue/logs/observations/OBS-20260113-152556.yaml"
+  observer: "ai:claude"
+created: "2026-01-13T15:25:56Z"
+updated: "2026-01-13T15:25:56Z"
+status: ACTIVE

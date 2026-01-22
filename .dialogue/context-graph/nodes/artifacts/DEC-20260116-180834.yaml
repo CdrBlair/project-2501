@@ -1,0 +1,14 @@
+id: DEC-20260116-180834
+node_type: ARTIFACT
+metadata:
+  artifact_type: DECISION
+  decision_type: OPERATIONAL
+  temporal_class: Ephemeral
+  content_type: text/yaml
+  title: "Test decision"
+  summary: "Testing new per-file logging"
+  location_hint: ".dialogue/logs/decisions/DEC-20260116-180834.yaml"
+  author: "ai:claude"
+created: "2026-01-16T18:08:34Z"
+updated: "2026-01-16T18:08:34Z"
+status: ACTIVE

@@ -1,0 +1,14 @@
+id: DEC-20260116-142842
+node_type: ARTIFACT
+metadata:
+  artifact_type: DECISION
+  decision_type: TACTICAL
+  temporal_class: Ephemeral
+  content_type: text/yaml
+  title: "Stop hook investigation"
+  summary: "Remove Stop hooks for now, stop investigating"
+  location_hint: ".dialogue/logs/decisions/DEC-20260116-142842.yaml"
+  author: "human:pidster"
+created: "2026-01-16T14:28:42Z"
+updated: "2026-01-16T14:28:42Z"
+status: ACTIVE

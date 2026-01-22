@@ -1,0 +1,14 @@
+id: OBS-20260113-105404
+node_type: ARTIFACT
+metadata:
+  artifact_type: OBSERVATION
+  observation_type: EVENT
+  temporal_class: Ephemeral
+  content_type: text/yaml
+  title: "Gap prioritisation decision"
+  summary: "User prioritised Gap 2 (Skill enforcement); interested in combined loop approach"
+  location_hint: ".dialogue/logs/observations/OBS-20260113-105404.yaml"
+  observer: "ai:claude"
+created: "2026-01-13T10:54:04Z"
+updated: "2026-01-13T10:54:04Z"
+status: ACTIVE

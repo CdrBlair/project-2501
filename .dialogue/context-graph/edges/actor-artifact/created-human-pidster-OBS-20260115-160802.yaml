@@ -1,0 +1,9 @@
+id: created-human-pidster-OBS-20260115-160802
+source: "human:pidster"
+target: OBS-20260115-160802
+edge_type: CREATED
+metadata:
+  timestamp: "2026-01-15T16:08:02Z"
+  observation_type: EVENT
+created: "2026-01-15T16:08:02Z"
+confidence: 1.0

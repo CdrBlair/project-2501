@@ -1,0 +1,14 @@
+id: DEC-20260116-115950
+node_type: ARTIFACT
+metadata:
+  artifact_type: DECISION
+  decision_type: OPERATIONAL
+  temporal_class: Ephemeral
+  content_type: text/yaml
+  title: "Logging boundary for simple tasks"
+  summary: "Did not log decisions for simple arithmetic task"
+  location_hint: ".dialogue/logs/decisions/DEC-20260116-115950.yaml"
+  author: "ai:claude"
+created: "2026-01-16T11:59:50Z"
+updated: "2026-01-16T11:59:50Z"
+status: ACTIVE

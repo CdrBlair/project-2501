@@ -1,0 +1,14 @@
+id: OBS-20260115-091213
+node_type: ARTIFACT
+metadata:
+  artifact_type: OBSERVATION
+  observation_type: STATE
+  temporal_class: Ephemeral
+  content_type: text/yaml
+  title: "Bidirectional phase movement"
+  summary: "Framework should support moving through phases bidirectionally as new information emerges; linear feature vectors cause change-handling debates that we want to avoid; SessionStart must be phase-ind..."
+  location_hint: ".dialogue/logs/observations/OBS-20260115-091213.yaml"
+  observer: "human:pidster"
+created: "2026-01-15T09:12:13Z"
+updated: "2026-01-15T09:12:13Z"
+status: ACTIVE

@@ -1,0 +1,14 @@
+id: DEC-20260113-104909
+node_type: ARTIFACT
+metadata:
+  artifact_type: DECISION
+  decision_type: OPERATIONAL
+  temporal_class: Ephemeral
+  content_type: text/yaml
+  title: "PA-5 through PA-10 pattern selections"
+  summary: "PA-5:AI-Led, PA-6:AI-Led, PA-7:AI-Only, PA-8:AI-Only, PA-9:Human-Led, PA-10:AI-Only"
+  location_hint: ".dialogue/logs/decisions/DEC-20260113-104909.yaml"
+  author: "ai:claude"
+created: "2026-01-13T10:49:09Z"
+updated: "2026-01-13T10:49:09Z"
+status: ACTIVE

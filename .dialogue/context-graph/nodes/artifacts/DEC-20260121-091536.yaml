@@ -1,0 +1,14 @@
+id: DEC-20260121-091536
+node_type: ARTIFACT
+metadata:
+  artifact_type: DECISION
+  decision_type: DESIGN
+  temporal_class: Ephemeral
+  content_type: text/yaml
+  title: "Evolution-plugin bidirectional linking"
+  summary: "Added Implementation section to evolution doc pointing to plugin; updated plugin README to reference Evolution as conceptual basis; established unidirectional flow pattern"
+  location_hint: ".dialogue/logs/decisions/DEC-20260121-091536.yaml"
+  author: "human:pidster"
+created: "2026-01-21T09:15:36Z"
+updated: "2026-01-21T09:15:36Z"
+status: ACTIVE

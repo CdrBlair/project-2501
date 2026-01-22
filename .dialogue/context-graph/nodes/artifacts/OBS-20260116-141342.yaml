@@ -1,0 +1,14 @@
+id: OBS-20260116-141342
+node_type: ARTIFACT
+metadata:
+  artifact_type: OBSERVATION
+  observation_type: STATE
+  temporal_class: Ephemeral
+  content_type: text/yaml
+  title: "Stop hook loop-guard not working"
+  summary: "Second stop attempt still blocked - stop_hook_active flag not being set to true between attempts. Loop-guard mechanism not functioning as designed."
+  location_hint: ".dialogue/logs/observations/OBS-20260116-141342.yaml"
+  observer: "ai:claude"
+created: "2026-01-16T14:13:42Z"
+updated: "2026-01-16T14:13:42Z"
+status: ACTIVE

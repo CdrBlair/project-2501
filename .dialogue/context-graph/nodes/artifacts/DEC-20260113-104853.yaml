@@ -1,0 +1,14 @@
+id: DEC-20260113-104853
+node_type: ARTIFACT
+metadata:
+  artifact_type: DECISION
+  decision_type: OPERATIONAL
+  temporal_class: Ephemeral
+  content_type: text/yaml
+  title: "PA-2 pattern selection"
+  summary: "AI-Only"
+  location_hint: ".dialogue/logs/decisions/DEC-20260113-104853.yaml"
+  author: "ai:claude"
+created: "2026-01-13T10:48:53Z"
+updated: "2026-01-13T10:48:53Z"
+status: ACTIVE

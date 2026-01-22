@@ -1,0 +1,14 @@
+id: DEC-20260116-141311
+node_type: ARTIFACT
+metadata:
+  artifact_type: DECISION
+  decision_type: DESIGN
+  temporal_class: Ephemeral
+  content_type: text/yaml
+  title: "Stop hook architecture"
+  summary: "Use command-based stop-loop-guard.sh instead of prompt-based hook"
+  location_hint: ".dialogue/logs/decisions/DEC-20260116-141311.yaml"
+  author: "human:pidster"
+created: "2026-01-16T14:13:11Z"
+updated: "2026-01-16T14:13:11Z"
+status: ACTIVE

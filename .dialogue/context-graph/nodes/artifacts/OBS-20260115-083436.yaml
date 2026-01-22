@@ -1,0 +1,14 @@
+id: OBS-20260115-083436
+node_type: ARTIFACT
+metadata:
+  artifact_type: OBSERVATION
+  observation_type: EVENT
+  temporal_class: Ephemeral
+  content_type: text/yaml
+  title: "Orchestrator architecture direction"
+  summary: "User proposes SDLC project orchestrator actor that handles all human input, delegating to specialised phase/activity agents"
+  location_hint: ".dialogue/logs/observations/OBS-20260115-083436.yaml"
+  observer: "human:pidster"
+created: "2026-01-15T08:34:36Z"
+updated: "2026-01-15T08:34:36Z"
+status: ACTIVE

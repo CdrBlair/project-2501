@@ -1,0 +1,14 @@
+id: DEC-20260121-133351
+node_type: ARTIFACT
+metadata:
+  artifact_type: DECISION
+  decision_type: DESIGN
+  temporal_class: Ephemeral
+  content_type: text/yaml
+  title: "FW-023/FW-028 scope split"
+  summary: "Spawn FW-028 as foundational traceability model; FW-023 focuses on assessment layer assuming model exists"
+  location_hint: ".dialogue/logs/decisions/DEC-20260121-133351.yaml"
+  author: "human:pidster"
+created: "2026-01-21T13:33:51Z"
+updated: "2026-01-21T13:33:51Z"
+status: ACTIVE

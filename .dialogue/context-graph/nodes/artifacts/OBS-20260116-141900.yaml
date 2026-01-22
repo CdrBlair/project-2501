@@ -1,0 +1,14 @@
+id: OBS-20260116-141900
+node_type: ARTIFACT
+metadata:
+  artifact_type: OBSERVATION
+  observation_type: MEASUREMENT
+  temporal_class: Ephemeral
+  content_type: text/yaml
+  title: "stop_hook_active behavior"
+  summary: "stop_hook_active becomes true only when model responds without tool calls after a block. Tool calls keep it false, allowing continued blocking. This is intentional loop-guard design."
+  location_hint: ".dialogue/logs/observations/OBS-20260116-141900.yaml"
+  observer: "ai:claude"
+created: "2026-01-16T14:19:00Z"
+updated: "2026-01-16T14:19:00Z"
+status: ACTIVE

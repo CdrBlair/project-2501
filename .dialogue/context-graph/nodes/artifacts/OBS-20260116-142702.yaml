@@ -1,0 +1,14 @@
+id: OBS-20260116-142702
+node_type: ARTIFACT
+metadata:
+  artifact_type: OBSERVATION
+  observation_type: STATE
+  temporal_class: Ephemeral
+  content_type: text/yaml
+  title: "Prompt hook regression confirmed"
+  summary: "Prompt-based Stop hooks not receiving transcript is a known regression (GitHub issues #11786, #11610). Intended behaviour was for evaluator to have conversation access. Also #12667 confirms 'error'..."
+  location_hint: ".dialogue/logs/observations/OBS-20260116-142702.yaml"
+  observer: "ai:claude"
+created: "2026-01-16T14:27:02Z"
+updated: "2026-01-16T14:27:02Z"
+status: ACTIVE

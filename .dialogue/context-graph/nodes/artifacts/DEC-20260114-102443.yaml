@@ -1,0 +1,14 @@
+id: DEC-20260114-102443
+node_type: ARTIFACT
+metadata:
+  artifact_type: DECISION
+  decision_type: ADR
+  temporal_class: Ephemeral
+  content_type: text/yaml
+  title: "Decision type hierarchy for framework logging"
+  summary: "Created ADR-001"
+  location_hint: ".dialogue/logs/decisions/DEC-20260114-102443.yaml"
+  author: "human:pidster"
+created: "2026-01-14T10:24:43Z"
+updated: "2026-01-14T10:24:43Z"
+status: ACTIVE

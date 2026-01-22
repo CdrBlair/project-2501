@@ -1,0 +1,14 @@
+id: OBS-20260114-165512
+node_type: ARTIFACT
+metadata:
+  artifact_type: OBSERVATION
+  observation_type: STATE
+  temporal_class: Ephemeral
+  content_type: text/yaml
+  title: "Actor-concept integration gap identified"
+  summary: "C-4 defines actor types and characteristics but not functional roles; I-3 establishes conversation-as-TMS but doesn't specify role-TMS mappings; gap exists at operationalisation level"
+  location_hint: ".dialogue/logs/observations/OBS-20260114-165512.yaml"
+  observer: "ai:claude"
+created: "2026-01-14T16:55:12Z"
+updated: "2026-01-14T16:55:12Z"
+status: ACTIVE

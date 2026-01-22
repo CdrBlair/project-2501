@@ -1,0 +1,14 @@
+id: DEC-20260114-074545
+node_type: ARTIFACT
+metadata:
+  artifact_type: DECISION
+  decision_type: TACTICAL
+  temporal_class: Ephemeral
+  content_type: text/yaml
+  title: "Document structure format"
+  summary: "YAML frontmatter + Markdown body for REF, THY and similar documents"
+  location_hint: ".dialogue/logs/decisions/DEC-20260114-074545.yaml"
+  author: "human:pidster"
+created: "2026-01-14T07:45:45Z"
+updated: "2026-01-14T07:45:45Z"
+status: ACTIVE

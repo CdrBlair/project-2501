@@ -1,0 +1,14 @@
+id: OBS-20260114-100217
+node_type: ARTIFACT
+metadata:
+  artifact_type: OBSERVATION
+  observation_type: STATE
+  temporal_class: Ephemeral
+  content_type: text/yaml
+  title: "SH-001 Information Reference Schema"
+  summary: "Completed with URI format design: [scheme]:[type]/[id][@version][#fragment]. Supports fw/ext/actor schemes, multiple types, relationships, and Context Graph integration."
+  location_hint: ".dialogue/logs/observations/OBS-20260114-100217.yaml"
+  observer: "ai:claude"
+created: "2026-01-14T10:02:17Z"
+updated: "2026-01-14T10:02:17Z"
+status: ACTIVE

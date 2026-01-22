@@ -1,0 +1,14 @@
+id: DEC-20260114-115231
+node_type: ARTIFACT
+metadata:
+  artifact_type: DECISION
+  decision_type: ADR
+  temporal_class: Ephemeral
+  content_type: text/yaml
+  title: "Hybrid Approach for Existing Artifact Treatment"
+  summary: "Created ADR-002"
+  location_hint: ".dialogue/logs/decisions/DEC-20260114-115231.yaml"
+  author: "human:pidster"
+created: "2026-01-14T11:52:31Z"
+updated: "2026-01-14T11:52:31Z"
+status: ACTIVE

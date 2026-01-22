@@ -1,0 +1,14 @@
+id: DEC-20260113-150759
+node_type: ARTIFACT
+metadata:
+  artifact_type: DECISION
+  decision_type: OPERATIONAL
+  temporal_class: Ephemeral
+  content_type: text/yaml
+  title: "Decision granularity convention"
+  summary: "One decision entry per pattern assignment"
+  location_hint: ".dialogue/logs/decisions/DEC-20260113-150759.yaml"
+  author: "ai:claude"
+created: "2026-01-13T15:07:59Z"
+updated: "2026-01-13T15:07:59Z"
+status: ACTIVE

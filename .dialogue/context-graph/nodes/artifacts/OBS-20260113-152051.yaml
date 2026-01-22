@@ -1,0 +1,14 @@
+id: OBS-20260113-152051
+node_type: ARTIFACT
+metadata:
+  artifact_type: OBSERVATION
+  observation_type: STATE
+  temporal_class: Ephemeral
+  content_type: text/yaml
+  title: "Gap 5 resolution complete"
+  summary: "Added Granularity Guidelines section to dialogue-log-decision skill with correct/incorrect examples and acceptable batching criteria"
+  location_hint: ".dialogue/logs/observations/OBS-20260113-152051.yaml"
+  observer: "ai:claude"
+created: "2026-01-13T15:20:51Z"
+updated: "2026-01-13T15:20:51Z"
+status: ACTIVE

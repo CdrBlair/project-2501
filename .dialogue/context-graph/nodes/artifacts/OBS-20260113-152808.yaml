@@ -1,0 +1,14 @@
+id: OBS-20260113-152808
+node_type: ARTIFACT
+metadata:
+  artifact_type: OBSERVATION
+  observation_type: EVENT
+  temporal_class: Ephemeral
+  content_type: text/yaml
+  title: "Human review deferred"
+  summary: "User needs more time to review; noted that some decisions are non-timeout-able; output not saved"
+  location_hint: ".dialogue/logs/observations/OBS-20260113-152808.yaml"
+  observer: "ai:claude"
+created: "2026-01-13T15:28:08Z"
+updated: "2026-01-13T15:28:08Z"
+status: ACTIVE

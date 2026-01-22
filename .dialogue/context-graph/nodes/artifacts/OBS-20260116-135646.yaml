@@ -1,0 +1,14 @@
+id: OBS-20260116-135646
+node_type: ARTIFACT
+metadata:
+  artifact_type: OBSERVATION
+  observation_type: STATE
+  temporal_class: Ephemeral
+  content_type: text/yaml
+  title: "Stop hook diagnostic output"
+  summary: "No visible output from diagnostic Stop hook after restart - unclear if hook fired or where output went"
+  location_hint: ".dialogue/logs/observations/OBS-20260116-135646.yaml"
+  observer: "human:pidster"
+created: "2026-01-16T13:56:46Z"
+updated: "2026-01-16T13:56:46Z"
+status: ACTIVE

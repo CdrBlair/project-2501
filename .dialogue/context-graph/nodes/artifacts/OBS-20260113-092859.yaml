@@ -1,0 +1,14 @@
+id: OBS-20260113-092859
+node_type: ARTIFACT
+metadata:
+  artifact_type: OBSERVATION
+  observation_type: EVENT
+  temporal_class: Ephemeral
+  content_type: text/yaml
+  title: "Scripts created"
+  summary: "log-decision.sh and log-observation.sh implemented"
+  location_hint: ".dialogue/logs/observations/OBS-20260113-092859.yaml"
+  observer: "ai:claude"
+created: "2026-01-13T09:28:59Z"
+updated: "2026-01-13T09:28:59Z"
+status: ACTIVE

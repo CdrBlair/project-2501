@@ -1,0 +1,8 @@
+id: informs-obs20260114-ref001
+source: OBS-20260114-074008
+target: REF-001
+edge_type: INFORMS
+metadata:
+  notes: "Observation records the creation and structuring of REF-001"
+created: "2026-01-22T10:45:00Z"
+confidence: 1.0

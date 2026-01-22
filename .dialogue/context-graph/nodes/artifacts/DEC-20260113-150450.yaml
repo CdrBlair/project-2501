@@ -1,0 +1,14 @@
+id: DEC-20260113-150450
+node_type: ARTIFACT
+metadata:
+  artifact_type: DECISION
+  decision_type: OPERATIONAL
+  temporal_class: Ephemeral
+  content_type: text/yaml
+  title: "Elicitation coverage approach"
+  summary: "Minimum question set with 4 mandatory areas"
+  location_hint: ".dialogue/logs/decisions/DEC-20260113-150450.yaml"
+  author: "ai:claude"
+created: "2026-01-13T15:04:50Z"
+updated: "2026-01-13T15:04:50Z"
+status: ACTIVE

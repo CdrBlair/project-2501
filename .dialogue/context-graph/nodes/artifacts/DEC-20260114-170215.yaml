@@ -1,0 +1,14 @@
+id: DEC-20260114-170215
+node_type: ARTIFACT
+metadata:
+  artifact_type: DECISION
+  decision_type: DESIGN
+  temporal_class: Ephemeral
+  content_type: text/yaml
+  title: "Actor-concept integration approach"
+  summary: "Extended I-3 (Naur-Wegner Integration) rather than creating new integration document"
+  location_hint: ".dialogue/logs/decisions/DEC-20260114-170215.yaml"
+  author: "ai:claude"
+created: "2026-01-14T17:02:15Z"
+updated: "2026-01-14T17:02:15Z"
+status: ACTIVE

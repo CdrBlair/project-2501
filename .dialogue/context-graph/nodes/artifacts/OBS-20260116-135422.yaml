@@ -1,0 +1,14 @@
+id: OBS-20260116-135422
+node_type: ARTIFACT
+metadata:
+  artifact_type: OBSERVATION
+  observation_type: STATE
+  temporal_class: Ephemeral
+  content_type: text/yaml
+  title: "Stop hook test direction"
+  summary: "User selected option C: Create test to inspect what ARGUMENTS contains when Stop fires"
+  location_hint: ".dialogue/logs/observations/OBS-20260116-135422.yaml"
+  observer: "human:pidster"
+created: "2026-01-16T13:54:22Z"
+updated: "2026-01-16T13:54:22Z"
+status: ACTIVE

@@ -1,0 +1,14 @@
+id: DEC-20260115-200149
+node_type: ARTIFACT
+metadata:
+  artifact_type: DECISION
+  decision_type: DESIGN
+  temporal_class: Ephemeral
+  content_type: text/yaml
+  title: "Rename Working documents to Note documents"
+  summary: "Changed document type from WRK (Working) to NOT (Note); renamed /create-working to /create-note"
+  location_hint: ".dialogue/logs/decisions/DEC-20260115-200149.yaml"
+  author: "human:pidster"
+created: "2026-01-15T20:01:49Z"
+updated: "2026-01-15T20:01:49Z"
+status: ACTIVE

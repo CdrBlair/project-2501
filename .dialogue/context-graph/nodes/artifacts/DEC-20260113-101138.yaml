@@ -1,0 +1,14 @@
+id: DEC-20260113-101138
+node_type: ARTIFACT
+metadata:
+  artifact_type: DECISION
+  decision_type: OPERATIONAL
+  temporal_class: Ephemeral
+  content_type: text/yaml
+  title: "Item 1 completion"
+  summary: "Marked Executable Framework Manifestation complete - initial manifestation achieved"
+  location_hint: ".dialogue/logs/decisions/DEC-20260113-101138.yaml"
+  author: "ai:claude"
+created: "2026-01-13T10:11:38Z"
+updated: "2026-01-13T10:11:38Z"
+status: ACTIVE

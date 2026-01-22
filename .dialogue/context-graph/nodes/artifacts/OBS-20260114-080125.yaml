@@ -1,0 +1,14 @@
+id: OBS-20260114-080125
+node_type: ARTIFACT
+metadata:
+  artifact_type: OBSERVATION
+  observation_type: EVENT
+  temporal_class: Ephemeral
+  content_type: text/yaml
+  title: "THY-002 creation"
+  summary: "Created theory_framework-resilience.md addressing how framework responds to change through evolution rather than invalidation"
+  location_hint: ".dialogue/logs/observations/OBS-20260114-080125.yaml"
+  observer: "ai:claude"
+created: "2026-01-14T08:01:25Z"
+updated: "2026-01-14T08:01:25Z"
+status: ACTIVE

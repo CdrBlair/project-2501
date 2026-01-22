@@ -1,0 +1,9 @@
+id: created-ai-claude-OBS-20260113-093806
+source: "ai:claude"
+target: OBS-20260113-093806
+edge_type: CREATED
+metadata:
+  timestamp: "2026-01-13T09:38:06Z"
+  observation_type: EVENT
+created: "2026-01-13T09:38:06Z"
+confidence: 1.0

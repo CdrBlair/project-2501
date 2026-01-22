@@ -1,0 +1,14 @@
+id: OBS-20260116-133455
+node_type: ARTIFACT
+metadata:
+  artifact_type: OBSERVATION
+  observation_type: STATE
+  temporal_class: Ephemeral
+  content_type: text/yaml
+  title: "Stop hook behaviour difference hypothesis"
+  summary: "Prompt hooks wrap reason in 'Prompt hook condition was not met: X' while command hooks pass reason directly. Both inject as meta user messages via same mechanism (iq0 function). Hypothesis: wrapper..."
+  location_hint: ".dialogue/logs/observations/OBS-20260116-133455.yaml"
+  observer: "ai:claude"
+created: "2026-01-16T13:34:55Z"
+updated: "2026-01-16T13:34:55Z"
+status: ACTIVE

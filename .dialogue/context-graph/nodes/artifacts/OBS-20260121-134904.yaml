@@ -1,0 +1,14 @@
+id: OBS-20260121-134904
+node_type: ARTIFACT
+metadata:
+  artifact_type: OBSERVATION
+  observation_type: STATE
+  temporal_class: Ephemeral
+  content_type: text/yaml
+  title: "Hook event gap"
+  summary: "No event exists between tool-level (PostToolUse) and session-level (SessionEnd) for logical work unit completion. TaskEnd or similar could enable commit-on-complete, notifications, and validation a..."
+  location_hint: ".dialogue/logs/observations/OBS-20260121-134904.yaml"
+  observer: "human:pidster"
+created: "2026-01-21T13:49:04Z"
+updated: "2026-01-21T13:49:04Z"
+status: ACTIVE

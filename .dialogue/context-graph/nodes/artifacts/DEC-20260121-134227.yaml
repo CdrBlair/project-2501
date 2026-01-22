@@ -1,0 +1,14 @@
+id: DEC-20260121-134227
+node_type: ARTIFACT
+metadata:
+  artifact_type: DECISION
+  decision_type: DESIGN
+  temporal_class: Ephemeral
+  content_type: text/yaml
+  title: "Traceability model approach"
+  summary: "Extend context graph schema with traceability edges rather than separate model"
+  location_hint: ".dialogue/logs/decisions/DEC-20260121-134227.yaml"
+  author: "human:pidster"
+created: "2026-01-21T13:42:27Z"
+updated: "2026-01-21T13:42:27Z"
+status: ACTIVE
