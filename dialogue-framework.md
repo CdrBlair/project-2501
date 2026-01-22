@@ -326,10 +326,10 @@ The Seven-Phase SDLC provides the structural foundation; these meta-processes gu
 
 | Document | Type | Purpose |
 |----------|------|---------|
-| `dialogue-framework.md` | Overview | This document—framework introduction and structure |
-| `dialogue-framework-evolution.md` | Process | Incremental AI adoption meta-process |
-| `dialogue-framework-revolution.md` | Process | Transformational redesign meta-process |
-| `integration_framework-architecture.md` | Integration | Detailed analysis of source integration |
+| [`dialogue-framework.md`](dialogue-framework.md) | Overview | This document—framework introduction and structure |
+| [`dialogue-framework-evolution.md`](dialogue-framework-evolution.md) | Process | Incremental AI adoption meta-process |
+| [`dialogue-framework-revolution.md`](./dialogue-framework-revolution.md) | Process | Transformational redesign meta-process |
+| [`integration_framework-architecture.md`](./concepts/integration_framework-architecture.md) | Integration | Detailed analysis of source integration |
 | `concept_*.md` | Concept | Individual concept specifications |
 | `foundation_*.md` | Foundation | Theoretical foundations |
 | `guidance_*.md` | Guidance | Application guidance |
