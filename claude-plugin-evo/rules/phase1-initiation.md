@@ -161,8 +161,3 @@ Before transitioning to Phase 2 (Planning), use `/assess-phase` to verify readin
 - Technical readiness: No blocking dependencies?
 
 High-tacit phase (75%) means DEFER remediation requires dialogue, not artifacts.
-
-## Concept References
-
-- [C-6: Information Loss at Transitions](../../concepts/concept_transitions-info-loss.md) — Early-phase mitigation strategies
-- [C-7: Phase-Aware Measurement](../../concepts/concept_phase-aware-measurement.md) — Stakeholder alignment, problem framing checklists

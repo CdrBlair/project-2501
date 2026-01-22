@@ -192,8 +192,3 @@ Use `/assess-phase` to verify readiness before moving to Phase 3 (Analysis/Requi
 - Technical readiness: Dependencies resolved or managed?
 
 Medium-tacit phase (55%) means DEFER remediation needs balanced dialogue and artifact review.
-
-## Concept References
-
-- [C-6: Information Loss at Transitions](../../concepts/concept_transitions-info-loss.md) — Decision logging, assumptions capture
-- [C-7: Phase-Aware Measurement](../../concepts/concept_phase-aware-measurement.md) — Planning quality indicators

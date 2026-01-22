@@ -199,7 +199,3 @@ Phase 3 bridges planning to design:
 - **From Phase 2**: Scope defines what's in/out; requirements specify the "in"
 - **To Phase 4**: Requirements become design inputs; traceability continues
 
-## Concept References
-
-- [C-6: Information Loss at Transitions](../../concepts/concept_transitions-info-loss.md) — Transition mitigation strategies
-- [C-7: Phase-Aware Measurement](../../concepts/concept_phase-aware-measurement.md) — Shared understanding indicators, requirements quality
