@@ -26,6 +26,56 @@ tmux must be installed. Check with:
 which tmux && tmux -V
 ```
 
+## If tmux Is Not Found
+
+If `which tmux` returns nothing, alert the user that tmux is not installed and suggest installation based on the operating system.
+
+### Detect Operating System
+
+```bash
+case "$(uname -s)" in
+    Darwin)  echo "macOS" ;;
+    Linux)
+        if [ -f /etc/os-release ]; then
+            . /etc/os-release
+            echo "Linux ($ID)"
+        else
+            echo "Linux"
+        fi
+        ;;
+    *)       echo "Unknown OS: $(uname -s)" ;;
+esac
+```
+
+### Installation Commands by OS
+
+| OS | Package Manager | Installation Command |
+|----|-----------------|---------------------|
+| **macOS** | Homebrew | `brew install tmux` |
+| **macOS** | MacPorts | `sudo port install tmux` |
+| **Ubuntu/Debian** | apt | `sudo apt update && sudo apt install tmux` |
+| **Fedora** | dnf | `sudo dnf install tmux` |
+| **CentOS/RHEL** | yum | `sudo yum install tmux` |
+| **Arch Linux** | pacman | `sudo pacman -S tmux` |
+| **Alpine** | apk | `sudo apk add tmux` |
+| **openSUSE** | zypper | `sudo zypper install tmux` |
+
+### User Notification Template
+
+When tmux is not found, inform the user:
+
+```
+tmux is not installed on this system.
+
+To install tmux on [detected OS]:
+  [appropriate installation command]
+
+After installation, you can verify with:
+  tmux -V
+```
+
+**Do not attempt to install software automatically.** Always present the installation command to the user and let them decide whether to proceed.
+
 ## Session Management Commands
 
 ### List Sessions
