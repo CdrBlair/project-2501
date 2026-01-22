@@ -13,7 +13,7 @@ Process definitions describe *what could happen* in a structured, repeatable way
 ## Schema
 
 Process definitions follow the schema defined in:
-- [implementation/schema_process-definition.md](../../implementation/schema_process-definition.md)
+- [Schema: Process Definition](../references/schema_process-definition.md)
 
 ## File Naming Convention
 

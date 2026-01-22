@@ -15,7 +15,7 @@ This schema defines the abstract interface for resolving information references 
 **Related documents**:
 - [Information Reference Schema](./schema_information-reference.md) — Defines ID formats
 - [Document Frontmatter Schema](./schema_document-frontmatter.md) — Document metadata
-- [Transactive Memory Foundation](../concepts/foundation_transactive-memory.md) — TMS retrieval operations
+- [Framework Manual](./framework-manual.md) — Transactive memory concepts
 
 ---
 

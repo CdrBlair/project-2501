@@ -15,8 +15,7 @@ This schema defines the YAML structure for **ProcessDefinitions** — reusable t
 **Related documents**:
 - [Process Instance Schema](./schema_process-instance.md) — Runtime execution intent
 - [Execution Log Schema](./schema_execution-log.md) — Execution audit trail
-- [Capability Model](../concepts/concept_capability-model.md) — Eight capabilities reference
-- [Collaboration Patterns](../concepts/concept_collaboration-patterns.md) — Five patterns reference
+- [Framework Manual](./framework-manual.md) — Eight capabilities, five collaboration patterns
 - [Framework Manual](./framework-manual.md) — Process specification reference
 
 ---

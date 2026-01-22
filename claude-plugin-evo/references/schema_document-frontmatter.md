@@ -13,7 +13,7 @@
 This schema defines the YAML frontmatter structure for framework documents. All documents using the Document Type Classification Framework should include frontmatter conforming to this schema.
 
 **Related documents**:
-- [Document Type Classification](../concepts/concept_document-type-classification.md) — Semantic definitions of types, scopes, temporal classes
+- [Framework Manual](./framework-manual.md) — Document types, scopes, temporal classes
 - [REF-001](./ref_framework-concepts.md) — Example REF document
 - [THY-001](./theory_framework.md) — Example THY document
 

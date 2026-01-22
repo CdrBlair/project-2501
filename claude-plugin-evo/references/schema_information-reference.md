@@ -14,7 +14,7 @@ This schema defines how to reference information across the framework. Reference
 
 **Related documents**:
 - [Document Frontmatter Schema](./schema_document-frontmatter.md) — Uses references in frontmatter
-- [Process Capability Flow](../concepts/concept_process-capability-flow.md) — References inputs/outputs
+- [Framework Manual](./framework-manual.md) — Process capability flow model
 
 ---
 
