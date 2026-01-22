@@ -1,0 +1,16 @@
+id: "DOC-001"
+title: "Explain key framework concepts"
+status: BACKLOG
+created: "2026-01-22T12:10:20Z"
+updated: "2026-01-22T12:10:20Z"
+type: DOCUMENT
+priority: MEDIUM
+description: |
+  Create documentation/guidance explaining: SDLC phases, 8 capabilities, collaboration patterns, and other key framework elements. Target audience: new users or AI assistants being onboarded to the framework.
+objective: "Clear, accessible explanation of core framework concepts for onboarding"
+rationale: |
+  Framework concepts are currently spread across multiple documents; a consolidated explanation aids adoption
+blocked_by: []
+blocks: []
+notes: |
+  Created 22 January 2026.

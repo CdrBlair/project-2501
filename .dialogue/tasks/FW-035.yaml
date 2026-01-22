@@ -1,0 +1,16 @@
+id: "FW-035"
+title: "Define baseline project knowledge document formats"
+status: BACKLOG
+created: "2026-01-22T12:13:53Z"
+updated: "2026-01-22T12:13:53Z"
+type: SCHEMA
+priority: MEDIUM
+description: |
+  Define concrete formats for foundational project knowledge documents. Consider structure like .dialogue/project/{vision|objectives|principles|constraints}.md. Determine how these documents link to the context graph and how they are populated (bootstrap vs manual).
+objective: "Standardised location and format for core project knowledge that AI can reliably reference"
+rationale: |
+  Foundational project knowledge (vision, objectives, principles) should have a known location and structure rather than being scattered or implicit
+blocked_by: []
+blocks: []
+notes: |
+  Created 22 January 2026.

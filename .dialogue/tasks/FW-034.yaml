@@ -1,0 +1,16 @@
+id: "FW-034"
+title: "Bootstrap context graph from existing project"
+status: BACKLOG
+created: "2026-01-22T12:11:53Z"
+updated: "2026-01-22T12:11:53Z"
+type: CAPABILITY
+priority: MEDIUM
+description: |
+  Implement capability to bootstrap the framework in an existing project by extracting information from: project artefacts, linked resources, and user knowledge. Build up the context graph incrementally, validating discoveries with the user along the way.
+objective: "AI can onboard to an existing project by systematically extracting and validating context"
+rationale: |
+  Projects adopting the framework mid-flight need a way to populate the context graph from existing knowledge rather than starting empty
+blocked_by: []
+blocks: []
+notes: |
+  Created 22 January 2026.

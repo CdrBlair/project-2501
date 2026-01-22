@@ -1,0 +1,16 @@
+id: "FW-037"
+title: "Framework status reporting dashboard"
+status: BACKLOG
+created: "2026-01-22T12:16:28Z"
+updated: "2026-01-22T12:16:28Z"
+type: CAPABILITY
+priority: MEDIUM
+description: |
+  Implement comprehensive framework status reporting that includes: project state (context graph health, recent activity), task information (counts by status, in-progress work, blockers), and active agent/subagent statistics and status (what's running, resource usage, progress).
+objective: "Single view of framework operational status for situational awareness"
+rationale: |
+  Users and AI need visibility into overall framework state, especially when multiple agents or long-running processes are active
+blocked_by: []
+blocks: []
+notes: |
+  Created 22 January 2026.

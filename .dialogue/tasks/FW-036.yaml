@@ -1,0 +1,16 @@
+id: "FW-036"
+title: "Background agents for framework operations"
+status: BACKLOG
+created: "2026-01-22T12:15:04Z"
+updated: "2026-01-22T12:15:04Z"
+type: CAPABILITY
+priority: MEDIUM
+description: |
+  Design and implement background agents that perform ongoing framework operations: monitoring (e.g., context graph consistency, log compliance), validation (e.g., schema conformance, reference integrity), and other autonomous tasks. Consider how these agents report findings and escalate issues.
+objective: "Autonomous agents that maintain framework health and surface issues without explicit user invocation"
+rationale: |
+  Proactive monitoring catches problems early and reduces cognitive load on users to remember validation steps
+blocked_by: []
+blocks: []
+notes: |
+  Created 22 January 2026.
