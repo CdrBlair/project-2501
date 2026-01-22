@@ -1,0 +1,9 @@
+id: assesses-ASSESS-20260122-125347-FW-023
+source: ASSESS-20260122-125347
+target: "FW-023"
+edge_type: ASSESSES
+metadata:
+  assessment_type: DAILY_CHECK
+  session_quality: 4
+created: "2026-01-22T12:53:47Z"
+confidence: 1.0

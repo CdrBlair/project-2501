@@ -1,0 +1,14 @@
+id: ASSESS-20260122-125347
+node_type: ARTIFACT
+metadata:
+  artifact_type: ASSESSMENT
+  assessment_type: DAILY_CHECK
+  temporal_class: Ephemeral
+  content_type: text/yaml
+  title: "Daily Check - 2026-01-22"
+  summary: "Session quality: 4/5, good: 4, bad: 0"
+  location_hint: ".dialogue/logs/assessments/ASSESS-20260122-125347.yaml"
+  assessor: "human:pidster"
+created: "2026-01-22T12:53:47Z"
+updated: "2026-01-22T12:53:47Z"
+status: ACTIVE

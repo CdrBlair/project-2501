@@ -1,0 +1,14 @@
+id: DEC-20260122-132732
+node_type: ARTIFACT
+metadata:
+  artifact_type: DECISION
+  decision_type: TACTICAL
+  temporal_class: Ephemeral
+  content_type: text/yaml
+  title: "FW-023 scope reduction"
+  summary: "Defer alignment and TTKM assessments to FW-041"
+  location_hint: ".dialogue/logs/decisions/DEC-20260122-132732.yaml"
+  author: "human:pidster"
+created: "2026-01-22T13:27:32Z"
+updated: "2026-01-22T13:27:32Z"
+status: ACTIVE

@@ -1,0 +1,15 @@
+id: ASSESS-20260122-134818
+node_type: ARTIFACT
+metadata:
+  artifact_type: ASSESSMENT
+  assessment_type: PROBLEM_FRAMING
+  temporal_class: Dynamic
+  content_type: text/yaml
+  title: "Problem Framing Assessment - 2026-01-22"
+  summary: "Framing: 6/6, confidence: 5/5, PROCEED"
+  location_hint: ".dialogue/logs/assessments/ASSESS-20260122-134818.yaml"
+  assessor: "human:pidster"
+  phase: 1
+created: "2026-01-22T13:48:18Z"
+updated: "2026-01-22T13:48:18Z"
+status: ACTIVE

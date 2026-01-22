@@ -1,0 +1,9 @@
+id: created-ai-claude-ASSESS-20260122-135126
+source: "ai:claude"
+target: ASSESS-20260122-135126
+edge_type: CREATED
+metadata:
+  timestamp: "2026-01-22T13:51:26Z"
+  assessment_type: PROBLEM_FRAMING
+created: "2026-01-22T13:51:26Z"
+confidence: 1.0

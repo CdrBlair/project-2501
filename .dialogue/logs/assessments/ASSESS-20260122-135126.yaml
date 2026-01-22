@@ -1,0 +1,20 @@
+id: ASSESS-20260122-135126
+timestamp: "2026-01-22T13:51:26Z"
+assessment_type: PROBLEM_FRAMING
+assessor: "ai:claude"
+context: "Testing edge case: 0/6 with confidence 3"
+responses:
+  # Problem framing checklist
+  problem_stated: false
+  scope_bounded: false
+  success_criteria: false
+  constraints_identified: false
+  assumptions_explicit: false
+  stakeholders_identified: false
+  # Overall
+  confidence: 3
+summary:
+  confirmed_count: 0
+  total_elements: 6
+  missing_items: "problem_stated, scope_bounded, success_criteria, constraints_identified, assumptions_explicit, stakeholders_identified"
+  recommendation: RETURN_TO_DEFINITION

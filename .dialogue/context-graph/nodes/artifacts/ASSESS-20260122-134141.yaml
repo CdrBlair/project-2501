@@ -1,0 +1,17 @@
+id: ASSESS-20260122-134141
+node_type: ARTIFACT
+metadata:
+  artifact_type: ASSESSMENT
+  assessment_type: PHASE_READINESS
+  temporal_class: Standing
+  content_type: text/yaml
+  title: "Phase Readiness - Problem Definition -> Requirements"
+  summary: "Phase 1->2: PROCEED, avg: 4.2/5"
+  location_hint: ".dialogue/logs/assessments/ASSESS-20260122-134141.yaml"
+  assessor: "human:pidster"
+  current_phase: 1
+  target_phase: 2
+  recommendation: PROCEED
+created: "2026-01-22T13:41:41Z"
+updated: "2026-01-22T13:41:41Z"
+status: ACTIVE

@@ -1,0 +1,14 @@
+id: ASSESS-20260122-135126
+node_type: ARTIFACT
+metadata:
+  artifact_type: ASSESSMENT
+  assessment_type: PROBLEM_FRAMING
+  temporal_class: Dynamic
+  content_type: text/yaml
+  title: "Problem Framing Assessment - 2026-01-22"
+  summary: "Framing: 0/6, confidence: 3/5, RETURN_TO_DEFINITION"
+  location_hint: ".dialogue/logs/assessments/ASSESS-20260122-135126.yaml"
+  assessor: "ai:claude"
+created: "2026-01-22T13:51:26Z"
+updated: "2026-01-22T13:51:26Z"
+status: ACTIVE
