@@ -1,0 +1,23 @@
+id: "FW-033"
+title: "Create tmux session management skill"
+status: COMPLETED
+completed: "2026-01-22T08:35:00Z"
+created: "2026-01-22T08:32:46Z"
+updated: "2026-01-22T08:32:46Z"
+type: CAPABILITY
+priority: MEDIUM
+description: |
+  Create a skill for tmux session management: create, list, attach, detach sessions
+objective: "Enable Claude to manage tmux sessions effectively"
+rationale: |
+  User requested tmux skill for session management
+blocked_by: []
+blocks: []
+notes: |
+  Created 22 January 2026.
+
+  Completed 22 January 2026:
+  - Created tmux skill with session management focus
+  - Covers: list, create, attach, detach, kill sessions
+  - Tested all operations successfully
+  - Background processes may be added later (TBC)
