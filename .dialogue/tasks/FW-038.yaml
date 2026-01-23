@@ -2,7 +2,7 @@ id: "FW-038"
 title: "Define minimal CLAUDE.md bootstrap spec"
 status: READY
 created: "2026-01-22T12:23:46Z"
-updated: "2026-01-22T12:23:46Z"
+updated: "2026-01-23T18:25:00Z"
 type: CAPABILITY
 priority: HIGH
 description: |
@@ -10,7 +10,19 @@ description: |
 objective: "Clean separation between essential bootstrap and operational detail"
 rationale: |
   Current CLAUDE.md has significant content that may duplicate plugin; need clear layering
-blocked_by: []
+blocked_by:
+  - "FW-008"
 blocks: []
 notes: |
   Created 22 January 2026.
+
+  23 January 2026: Added dependency on FW-008 (SDLC Project Orchestrator Research).
+
+  23 January 2026: FW-008 completed. Key decisions informing this task:
+  - DEC-20260123-181128: Two modes (Evolution/Revolution), each with own plugin
+  - DEC-20260123-181348: Revolution "turbo charges" Evolution (same goals)
+  - DEC-20260123-182358: Lightweight inline orchestrator agent in plugin
+    → CLAUDE.md should be minimal bootstrap only
+    → Orchestration logic lives in plugin, not CLAUDE.md
+
+  Now READY to proceed.

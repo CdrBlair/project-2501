@@ -1,0 +1,8 @@
+id: OBS-20260123-180140
+timestamp: "2026-01-23T18:01:40Z"
+type: EVENT
+observer: "human:pidster"
+subject: "Evolution mode Dialogue scope"
+value: "Conservative subagent model (single primary + bounded subagents when justified) is sufficient for Evolution mode Dialogue."
+context: "FW-008 research"
+tags: ["research", "scope", "modes"]

@@ -1,0 +1,14 @@
+id: OBS-20260123-154434
+node_type: ARTIFACT
+metadata:
+  artifact_type: OBSERVATION
+  observation_type: EVENT
+  temporal_class: Ephemeral
+  content_type: text/yaml
+  title: "Organisational coordination levels"
+  summary: "Three levels in typical SDLC/SWE org: Individuals, Squads, Squad Groups. Relevant to orchestration design."
+  location_hint: ".dialogue/logs/observations/OBS-20260123-154434.yaml"
+  observer: "human:pidster"
+created: "2026-01-23T15:44:34Z"
+updated: "2026-01-23T15:44:34Z"
+status: ACTIVE

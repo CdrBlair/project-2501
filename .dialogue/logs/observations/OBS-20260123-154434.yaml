@@ -1,0 +1,8 @@
+id: OBS-20260123-154434
+timestamp: "2026-01-23T15:44:34Z"
+type: EVENT
+observer: "human:pidster"
+subject: "Organisational coordination levels"
+value: "Three levels in typical SDLC/SWE org: Individuals, Squads, Squad Groups. Relevant to orchestration design."
+context: "FW-008 research"
+tags: ["research", "organisation", "coordination"]

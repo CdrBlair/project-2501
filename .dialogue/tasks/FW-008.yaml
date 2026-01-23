@@ -1,8 +1,9 @@
 id: "FW-008"
 title: "SDLC Project Orchestrator Research"
-status: READY
+status: COMPLETED
+completed: "2026-01-23T18:25:00Z"
 created: "2026-01-15T08:35:00Z"
-updated: "2026-01-15T08:38:00Z"
+updated: "2026-01-23T10:00:00Z"
 type: RESEARCH
 priority: HIGH
 description: |
@@ -40,7 +41,8 @@ rationale: |
   This is distinct from how actors operate within phases (which may still
   emerge from configuration per SH-008 insight).
 blocked_by: []
-blocks: []
+blocks:
+  - "FW-038"
 notes: |
   Created 15 January 2026 from user observation OBS-20260115-083436.
   Scope narrowed per DEC-20260115-083726: focus on UI/orchestration layer only.
@@ -130,4 +132,64 @@ notes: |
 
   Updated open question 2: Prompt vs command hooks is now ANSWERED for current state
   (command hooks for actionable responses), but prompt hooks have future potential.
+
+  === Session 23 January 2026 ===
+  Resuming research. FW-038 now depends on this task.
+
+  External framework research (OBS-20260123-131322):
+  - Multiclaude: Filesystem-based coordination, "Brownian Ratchet" philosophy
+  - Claude Squad / DMux: Hub-and-spoke with human orchestrator
+  - ccswarm: WebSocket/ACP real-time coordination
+  - Gas Town (Yegge): Operational hierarchy (Mayor/Polecats/Refinery)
+
+  Key lessons learned:
+  1. External memory is non-negotiable (all frameworks externalise state)
+  2. Operational roles ≠ SDLC personas (Gas Town insight)
+  3. Speed without guardrails causes harm ($100/hr burn, 0/4 acceptable PRs)
+  4. Git worktrees provide necessary isolation (consensus pattern)
+  5. tmux provides observability (consensus pattern)
+  6. Coordination cost is non-trivial (Brooks's Law applies)
+
+  Organisational levels considered (OBS-20260123-154434):
+  - Individual, Squad, Squad Group
+  - TMS operates effectively at Squad level
+  - Primary + subagents = Squad equivalent
+
+  Key insight: Adding subagents adds coordination overhead (OBS-20260123-154508)
+  - Default should be single agent, no coordination overhead
+  - Subagents only when: bounded, independent, coordination cost justified
+
+  === Two Dialogue Modes (DEC-20260123-181128, DEC-20260123-181348) ===
+
+  **Evolution mode** (claude-plugin-evo):
+  - Human-Led throughout
+  - Conservative subagent usage (bounded, when justified)
+  - Shared TMS via .dialogue/
+  - Human reviews and merges
+
+  **Revolution mode** (second plugin, future):
+  - Same goals: theory-building, correctness
+  - Strategy: front-load identification of what's necessary
+  - Upfront clarity enables greater autonomy later
+  - "Turbo charges" Evolution, not a different goal
+
+  Infrastructure confirmed for Evolution:
+  - tmux + worktrees (tmux skill exists; add worktree support)
+  - Subagents read .dialogue/ from worktree checkout
+  - Coordination via task files + human review
+  - NOT needed: Mayor/Refinery roles, autonomous merge, health monitoring
+
+  === Orchestrator Decision (DEC-20260123-182358) ===
+
+  Use lightweight inline orchestrator agent within plugin for Evolution mode:
+  - Orchestrator handles "how to proceed" (AI-Led, formal routing rules)
+  - Human handles "what to achieve" (Human-Led, project direction)
+  - Context management and instruction specialisation centralised in agent
+  - CLAUDE.md remains minimal (bootstrap only, per FW-038 objective)
+
+  Rationale: Different capabilities within same activity can use different
+  collaboration patterns. Human-Led project direction + AI-Led process
+  facilitation is valid and appropriate.
+
+  FW-008 research complete. FW-038 can proceed.
 

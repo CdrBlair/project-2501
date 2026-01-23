@@ -1,0 +1,14 @@
+id: OBS-20260123-180140
+node_type: ARTIFACT
+metadata:
+  artifact_type: OBSERVATION
+  observation_type: EVENT
+  temporal_class: Ephemeral
+  content_type: text/yaml
+  title: "Evolution mode Dialogue scope"
+  summary: "Conservative subagent model (single primary + bounded subagents when justified) is sufficient for Evolution mode Dialogue."
+  location_hint: ".dialogue/logs/observations/OBS-20260123-180140.yaml"
+  observer: "human:pidster"
+created: "2026-01-23T18:01:40Z"
+updated: "2026-01-23T18:01:40Z"
+status: ACTIVE

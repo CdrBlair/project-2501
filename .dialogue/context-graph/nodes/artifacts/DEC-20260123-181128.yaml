@@ -1,0 +1,14 @@
+id: DEC-20260123-181128
+node_type: ARTIFACT
+metadata:
+  artifact_type: DECISION
+  decision_type: TACTICAL
+  temporal_class: Ephemeral
+  content_type: text/yaml
+  title: "Two Dialogue modes: Evolution and Revolution"
+  summary: "Evolution mode (conservative, Human-Led, bounded subagents) and Revolution mode (parallelisation, autonomous agents, shifted boundaries). Each mode gets its own plugin."
+  location_hint: ".dialogue/logs/decisions/DEC-20260123-181128.yaml"
+  author: "human:pidster"
+created: "2026-01-23T18:11:28Z"
+updated: "2026-01-23T18:11:28Z"
+status: ACTIVE

@@ -1,0 +1,9 @@
+id: DEC-20260123-182358
+timestamp: "2026-01-23T18:23:58Z"
+type: DESIGN
+actor: "human:pidster"
+subject: "Phase orchestration approach for Evolution mode"
+outcome: "Use lightweight inline orchestrator agent within plugin for phase routing and context management. Orchestrator handles 'how to proceed' (AI-Led, formal rules); human handles 'what to achieve' (Human-Led, project direction)."
+rationale: "Orchestration is rule-based and benefits from centralised context management. Different capabilities within same activity can use different collaboration patterns. Clean separation between process facilitation and project intent."
+context: "FW-008 research concluded; informs FW-038 minimal CLAUDE.md spec"
+tags: ["architecture", "orchestration", "evolution-mode"]

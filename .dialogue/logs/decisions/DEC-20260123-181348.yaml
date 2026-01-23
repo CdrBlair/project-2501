@@ -1,0 +1,9 @@
+id: DEC-20260123-181348
+timestamp: "2026-01-23T18:13:48Z"
+type: TACTICAL
+actor: "human:pidster"
+subject: "Revolution mode strategy clarification"
+outcome: "Revolution mode still optimises for theory-building and correctness. Strategy: more upfront identification of what is necessary to proceed and succeed, enabling greater autonomy later. Revolution 'turbo charges' Evolution, same goals with more throughput."
+rationale: "Front-loading clarity enables autonomous execution without sacrificing correctness."
+context: "Clarification to DEC-20260123-181128"
+tags: ["architecture", "modes", "clarification"]

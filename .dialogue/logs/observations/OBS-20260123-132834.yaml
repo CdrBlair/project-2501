@@ -1,0 +1,8 @@
+id: OBS-20260123-132834
+timestamp: "2026-01-23T13:28:34Z"
+type: EVENT
+observer: "human:pidster"
+subject: "Research framing clarification"
+value: "Analysing external frameworks for lessons learned only. Design follows our conceptual guidelines. Will not copy directly; may implement similar patterns where obviously correct."
+context: "FW-008 research direction"
+tags: ["research", "design", "principles"]

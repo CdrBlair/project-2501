@@ -1,0 +1,9 @@
+id: created-human-pidster-DEC-20260123-182358
+source: "human:pidster"
+target: DEC-20260123-182358
+edge_type: CREATED
+metadata:
+  timestamp: "2026-01-23T18:23:58Z"
+  decision_type: DESIGN
+created: "2026-01-23T18:23:58Z"
+confidence: 1.0

@@ -1,0 +1,8 @@
+id: OBS-20260123-154508
+timestamp: "2026-01-23T15:45:08Z"
+type: EVENT
+observer: "human:pidster"
+subject: "Subagent coordination cost"
+value: "Adding subagents adds coordination overhead. Not free."
+context: "FW-008 research"
+tags: ["research", "coordination", "trade-offs"]

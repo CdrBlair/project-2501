@@ -1,0 +1,14 @@
+id: DEC-20260123-182358
+node_type: ARTIFACT
+metadata:
+  artifact_type: DECISION
+  decision_type: DESIGN
+  temporal_class: Ephemeral
+  content_type: text/yaml
+  title: "Phase orchestration approach for Evolution mode"
+  summary: "Use lightweight inline orchestrator agent within plugin for phase routing and context management. Orchestrator handles 'how to proceed' (AI-Led, formal rules); human handles 'what to achieve' (Human-Led, project direction)."
+  location_hint: ".dialogue/logs/decisions/DEC-20260123-182358.yaml"
+  author: "human:pidster"
+created: "2026-01-23T18:23:58Z"
+updated: "2026-01-23T18:23:58Z"
+status: ACTIVE

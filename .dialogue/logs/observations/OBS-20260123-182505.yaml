@@ -1,0 +1,8 @@
+id: OBS-20260123-182505
+timestamp: "2026-01-23T18:25:05Z"
+type: EVENT
+observer: "human:pidster"
+subject: "Orchestrator agent expertise rationale"
+value: "Inline orchestrator agent is better placed to facilitate/orchestrate because it can be an expert on the framework itself - more so than a typical user."
+context: "Supporting rationale for DEC-20260123-182358"
+tags: ["architecture", "orchestration", "rationale"]

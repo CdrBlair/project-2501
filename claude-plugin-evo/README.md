@@ -24,6 +24,21 @@ claude --plugin-dir ./claude-plugin-evo
 
 Copy the `claude-plugin-evo/` directory to your Claude Code plugins location or install from marketplace (when published).
 
+## Quick Start
+
+Ask Claude to explain Dialogue.
+
+```
+What is Dialogue?
+```
+
+Or
+
+```
+How do I get started?
+```
+
+
 ## Commands
 
 User-invoked commands for explicit actions.

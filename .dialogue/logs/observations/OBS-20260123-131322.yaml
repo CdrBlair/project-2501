@@ -1,0 +1,8 @@
+id: OBS-20260123-131322
+timestamp: "2026-01-23T13:13:22Z"
+type: EVENT
+observer: "human:pidster"
+subject: "FW-008 research direction"
+value: "Need options analysis with testing. Inter-agent communication in scope. Convention: tmux + git worktrees for subagent separation. tmux skill already exists."
+context: "FW-008 SDLC Project Orchestrator Research"
+tags: ["research", "orchestration", "inter-agent"]
