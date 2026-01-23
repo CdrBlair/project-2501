@@ -6,11 +6,21 @@ The Dialogue Framework, an AI-Augmented Software Development Lifecycle (SDLC) fr
 
 This project develops a comprehensive framework for integrating AI capabilities into software development while preserving the tacit knowledge and theory-building that determine project success. The framework synthesises 70+ years of research spanning socio-technical systems theory (1951), cognitive theory (1985), and contemporary developer experience research (2024-2025).
 
+To learn more about the Dialogue Framework, start here:
+ 1. [Dialogue Framework Explained](dialogue-framework-explained.md)
+ 2. [Dialogue Framework Background](dialogue-framework.md)
+ 3. [Dialogue Framework Implementation - Evolution Model](dialogue-framework-evolution.md)
+ 4. [Dialogue Framework Implementation - Revolution Model (TBD)](dialogue-framework-revolution.md)
+
 ## Directory Structure
 
 - **[concepts/](./concepts/README.md)** — Core framework documents (concepts, foundations, integrations, guidance, examples)
 - **[papers/](./papers/README.md)** — Academic source PDFs and companion analyses
 - **[research/](./research/README.md)** — Integration analyses and exploratory research
+- **[implementation/](./implementation/README.md)** — Framework generation artifacts (schemas, registries, theory docs)
+- **[decisions/](./decisions/)** — Architecture Decision Records (ADRs)
+- **[claude-plugin-evo/](./claude-plugin-evo/)** — Claude Code plugin implementation (skills, hooks, commands)
+- **[.dialogue/](./.dialogue/README.md)** — Runtime artifacts (decision logs, observation logs, tasks)
 
 ## Key Framework Components
 
