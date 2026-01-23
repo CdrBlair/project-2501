@@ -1,4 +1,4 @@
-# Dialogue Framework
+# Dialogue Framework (Evolution Model)
 
 An AI-augmented software development lifecycle framework that leverages dialogue, decisions, and observations to enhance project outcomes.
 
