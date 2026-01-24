@@ -14,3 +14,6 @@ blocked_by: []
 blocks: []
 notes: |
   Created 22 January 2026.
+
+  Clarification: This is specifically for existing, established non-Dialogue
+  projects adopting the framework. Related to FW-043 (user registration).

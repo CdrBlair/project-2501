@@ -1,0 +1,16 @@
+id: "FW-043"
+title: "Framework init: register user on first use"
+status: READY
+created: "2026-01-24T09:32:32Z"
+updated: "2026-01-24T09:32:32Z"
+type: CAPABILITY
+priority: MEDIUM
+description: |
+  During framework initialisation or first use, detect current user and add to project configuration if not already present. Supports multi-user tracking (FW-040) and enables user-specific session memos.
+objective: "Users are automatically registered with the framework on first interaction"
+rationale: |
+  Current init doesn't capture user identity; needed for multi-user awareness and personalisation
+blocked_by: []
+blocks: []
+notes: |
+  Created 24 January 2026.
