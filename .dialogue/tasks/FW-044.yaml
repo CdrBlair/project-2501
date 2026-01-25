@@ -1,0 +1,16 @@
+id: "FW-044"
+title: "Research MCP as alternative packaging approach"
+status: BACKLOG
+created: "2026-01-24T10:49:59Z"
+updated: "2026-01-24T10:49:59Z"
+type: RESEARCH
+priority: MEDIUM
+description: |
+  Investigate using Model Context Protocol (MCP) as an alternative packaging approach for delivering the Dialogue Framework. This would be parallel to the existing claude-plugin-{evo|rev} packaging, potentially offering different deployment and integration options.
+objective: "Determine feasibility, benefits, and trade-offs of MCP-based framework delivery"
+rationale: |
+  MCP provides a standardised protocol for tool integration that may offer advantages for framework distribution and adoption
+blocked_by: []
+blocks: []
+notes: |
+  Created 24 January 2026.
