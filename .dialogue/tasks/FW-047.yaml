@@ -1,0 +1,16 @@
+id: "FW-047"
+title: "Research hook performance and framework capability adoption"
+status: READY
+created: "2026-01-26T10:38:32Z"
+updated: "2026-01-26T10:38:32Z"
+type: RESEARCH
+priority: MEDIUM
+description: |
+  Investigate current state and analyse potential performance improvements for SessionStart and UserPromptSubmit hooks. Focus on increasing the imperative to use framework capabilities - making them more compelling, discoverable, and naturally integrated into the workflow.
+objective: "Identify concrete improvements to hook performance and framework adoption patterns"
+rationale: |
+  Hooks are the primary touchpoint for framework integration. Optimising their performance and improving how they surface capabilities will drive adoption and improve user experience.
+blocked_by: []
+blocks: []
+notes: |
+  Created 26 January 2026.
