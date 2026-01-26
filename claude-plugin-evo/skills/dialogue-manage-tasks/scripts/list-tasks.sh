@@ -100,6 +100,20 @@ extract_field() {
     grep "^${field}:" "$file" 2>/dev/null | sed "s/^${field}:[[:space:]]*//" | tr -d '"' || echo ""
 }
 
+# Helper: Extract YAML array field as comma-separated string
+extract_array_field() {
+    local file="$1"
+    local field="$2"
+    local line
+    line=$(grep "^${field}:" "$file" 2>/dev/null || echo "")
+    if [[ -z "$line" ]]; then
+        echo ""
+        return
+    fi
+    # Handle inline array format: [item1, item2]
+    echo "$line" | sed "s/^${field}:[[:space:]]*//" | tr -d '[]"' | sed 's/, */,/g' | sed 's/^,//;s/,$//'
+}
+
 # Helper: Priority to number for sorting
 priority_to_num() {
     case "$1" in
@@ -137,6 +151,8 @@ for file in "$TASKS_DIR"/*.yaml; do
     title=$(extract_field "$file" "title")
     created=$(extract_field "$file" "created")
     updated=$(extract_field "$file" "updated")
+    blocked_by=$(extract_array_field "$file" "blocked_by")
+    blocks=$(extract_array_field "$file" "blocks")
 
     # Apply filters
     if [[ -n "$FILTER_STATUS" && "$status" != "$FILTER_STATUS" ]]; then
@@ -175,8 +191,8 @@ for file in "$TASKS_DIR"/*.yaml; do
         *)        sort_key="$id" ;;
     esac
 
-    # Store as tab-separated record: sort_key, id, status, type, priority, title, created, updated
-    TASKS+=("${sort_key}	${id}	${status}	${type:-}	${priority:-MEDIUM}	${title}	${created}	${updated:-}")
+    # Store as tab-separated record: sort_key, id, status, type, priority, title, created, updated, blocked_by, blocks
+    TASKS+=("${sort_key}	${id}	${status}	${type:-}	${priority:-MEDIUM}	${title}	${created}	${updated:-}	${blocked_by:-}	${blocks:-}")
 done
 
 # Sort tasks
@@ -210,12 +226,22 @@ case "$OUTPUT_FORMAT" in
         first=true
         for task in "${SORTED[@]:-}"; do
             [[ -z "$task" ]] && continue
-            IFS=$'\t' read -r _ id status type priority title created updated <<< "$task"
+            IFS=$'\t' read -r _ id status type priority title created updated blocked_by blocks <<< "$task"
 
             if [[ "$first" == "true" ]]; then
                 first=false
             else
                 echo ","
+            fi
+
+            # Convert comma-separated to JSON array
+            blocked_by_json="[]"
+            if [[ -n "$blocked_by" ]]; then
+                blocked_by_json=$(echo "$blocked_by" | sed 's/,/","/g' | sed 's/^/["/;s/$/"]/')
+            fi
+            blocks_json="[]"
+            if [[ -n "$blocks" ]]; then
+                blocks_json=$(echo "$blocks" | sed 's/,/","/g' | sed 's/^/["/;s/$/"]/')
             fi
 
             cat <<EOF
@@ -226,7 +252,9 @@ case "$OUTPUT_FORMAT" in
     "priority": "${priority:-MEDIUM}",
     "title": "$title",
     "created": "$created",
-    "updated": "${updated:-null}"
+    "updated": "${updated:-null}",
+    "blocked_by": ${blocked_by_json},
+    "blocks": ${blocks_json}
   }
 EOF
         done

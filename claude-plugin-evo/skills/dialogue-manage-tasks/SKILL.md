@@ -96,6 +96,21 @@ ${CLAUDE_PLUGIN_ROOT}/skills/dialogue-manage-tasks/scripts/list-tasks.sh --all
 
 # Output formats: table (default), brief, json
 ${CLAUDE_PLUGIN_ROOT}/skills/dialogue-manage-tasks/scripts/list-tasks.sh --format json
+
+# JSON output includes: id, status, type, priority, title, created, updated, blocked_by, blocks
+# Use with jq for advanced queries:
+
+# List by priority with dependencies
+${CLAUDE_PLUGIN_ROOT}/skills/dialogue-manage-tasks/scripts/list-tasks.sh --format json --sort priority | jq -r '
+  ["ID", "PRIORITY", "STATUS", "BLOCKED_BY", "BLOCKS"],
+  (.[] | [.id, .priority, .status, (.blocked_by | join(",")), (.blocks | join(","))]) | @tsv
+' | column -t
+
+# Find blocked tasks
+${CLAUDE_PLUGIN_ROOT}/skills/dialogue-manage-tasks/scripts/list-tasks.sh --format json | jq '.[] | select(.blocked_by | length > 0)'
+
+# Find tasks blocking others
+${CLAUDE_PLUGIN_ROOT}/skills/dialogue-manage-tasks/scripts/list-tasks.sh --format json | jq '.[] | select(.blocks | length > 0)'
 ```
 
 ### count-tasks.sh
