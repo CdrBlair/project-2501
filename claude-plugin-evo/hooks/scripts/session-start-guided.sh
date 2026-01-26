@@ -42,9 +42,22 @@ if [[ -f "$CONFIG_FILE" ]]; then
     fi
 fi
 
+# Detect team mode (FW-040)
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+TEAM_MODE="solo"
+if [[ -x "${SCRIPT_DIR}/detect-team-mode.sh" ]]; then
+    TEAM_MODE=$("${SCRIPT_DIR}/detect-team-mode.sh" 2>/dev/null || echo "solo")
+fi
+export DIALOGUE_TEAM_MODE="$TEAM_MODE"
+
 # Check for user preference in session-memo (overrides project config)
 USERNAME="${USER:-$(whoami)}"
-SESSION_MEMO="${DIALOGUE_DIR}/session-memo-${USERNAME}.yaml"
+# Session memo naming: solo mode uses single file, team mode uses per-user files (FW-040)
+if [[ "$TEAM_MODE" == "team" ]]; then
+    SESSION_MEMO="${DIALOGUE_DIR}/session-memo-${USERNAME}.yaml"
+else
+    SESSION_MEMO="${DIALOGUE_DIR}/session-memo.yaml"
+fi
 if [[ -f "$SESSION_MEMO" ]]; then
     user_pref=$(grep -m1 "^interaction_mode_preference:" "$SESSION_MEMO" 2>/dev/null | awk '{print $2}' | tr -d '"' || echo "")
     if [[ -n "$user_pref" ]]; then
@@ -53,25 +66,42 @@ if [[ -f "$SESSION_MEMO" ]]; then
 fi
 
 # Register user if not already registered (FW-043)
-USERS_DIR="${DIALOGUE_DIR}/users"
-USER_FILE="${USERS_DIR}/${USERNAME}.yaml"
-if [[ ! -f "$USER_FILE" ]]; then
-    # Create users directory if needed
-    mkdir -p "$USERS_DIR"
-    # Register user with first-seen timestamp
-    cat > "$USER_FILE" << EOF
+# Only in team mode - solo mode skips user registration overhead (FW-040)
+if [[ "$TEAM_MODE" == "team" ]]; then
+    USERS_DIR="${DIALOGUE_DIR}/users"
+    USER_FILE="${USERS_DIR}/${USERNAME}.yaml"
+    if [[ ! -f "$USER_FILE" ]]; then
+        # Create users directory if needed
+        mkdir -p "$USERS_DIR"
+        # Register user with first-seen timestamp
+        cat > "$USER_FILE" << EOF
 # Dialogue Framework user registration
 username: "${USERNAME}"
 registered: "$(date -u +%Y-%m-%dT%H:%M:%SZ)"
 last_seen: "$(date -u +%Y-%m-%dT%H:%M:%SZ)"
 EOF
-    echo "[dialogue-hook] Registered new user: ${USERNAME}" >&2
-else
-    # Update last_seen timestamp (non-blocking, ignore errors)
-    if command -v sed &>/dev/null; then
-        sed -i.bak "s/^last_seen:.*/last_seen: \"$(date -u +%Y-%m-%dT%H:%M:%SZ)\"/" "$USER_FILE" 2>/dev/null || true
-        rm -f "${USER_FILE}.bak" 2>/dev/null || true
+        echo "[dialogue-hook] Registered new user: ${USERNAME}" >&2
+    else
+        # Update last_seen timestamp (non-blocking, ignore errors)
+        if command -v sed &>/dev/null; then
+            sed -i.bak "s/^last_seen:.*/last_seen: \"$(date -u +%Y-%m-%dT%H:%M:%SZ)\"/" "$USER_FILE" 2>/dev/null || true
+            rm -f "${USER_FILE}.bak" 2>/dev/null || true
+        fi
     fi
+fi
+
+# Git sync check for team mode (FW-040)
+GIT_SYNC_WARNING=""
+if [[ "$TEAM_MODE" == "team" ]] && [[ -x "${SCRIPT_DIR}/check-git-sync.sh" ]]; then
+    SYNC_STATUS=$("${SCRIPT_DIR}/check-git-sync.sh" --quiet 2>/dev/null || echo "synced")
+    case "$SYNC_STATUS" in
+        behind)
+            GIT_SYNC_WARNING="${RED}Warning:${RESET} Local branch is behind remote. Consider pulling latest changes."
+            ;;
+        diverged)
+            GIT_SYNC_WARNING="${RED}Warning:${RESET} Local and remote have diverged. Merge or rebase recommended."
+            ;;
+    esac
 fi
 
 # Count tasks
@@ -111,6 +141,10 @@ case "$INTERACTION_MODE" in
     "human-led")
         # Minimal: status only
         system_msg="${BOLD_GREEN}Dialogue active.${RESET} ${task_status}"
+        # Add git sync warning in team mode
+        if [[ -n "$GIT_SYNC_WARNING" ]]; then
+            system_msg+=$'\n'"$GIT_SYNC_WARNING"
+        fi
         ;;
 
     "ai-led")
@@ -130,6 +164,14 @@ EOF
         if [[ $ready -gt 0 ]] && [[ -n "$ready_list" ]]; then
             INSTRUCTIONS+=$'\n\n'"${BOLD}Suggestion:${RESET} Consider starting with ${BOLD_CYAN}${ready_list% }${RESET}"
         fi
+        # Add git sync warning in team mode
+        if [[ -n "$GIT_SYNC_WARNING" ]]; then
+            INSTRUCTIONS+=$'\n\n'"$GIT_SYNC_WARNING"
+        fi
+        # Add team collaboration hint in team mode
+        if [[ "$TEAM_MODE" == "team" ]]; then
+            INSTRUCTIONS+=$'\n'"${BOLD}Team mode:${RESET} Remember to commit and push changes for team visibility."
+        fi
         system_msg="${INSTRUCTIONS}"
         ;;
 
@@ -147,6 +189,14 @@ OPERATING INSTRUCTIONS:
 ${task_status}
 EOF
         system_msg="${INSTRUCTIONS}"$'\n'"Type ${BOLD}/help skills${RESET} to see available capabilities."
+        # Add git sync warning in team mode
+        if [[ -n "$GIT_SYNC_WARNING" ]]; then
+            system_msg+=$'\n\n'"$GIT_SYNC_WARNING"
+        fi
+        # Add team collaboration hint in team mode
+        if [[ "$TEAM_MODE" == "team" ]]; then
+            system_msg+=$'\n'"${BOLD}Team mode:${RESET} Commit and push changes for team visibility."
+        fi
         ;;
 esac
 

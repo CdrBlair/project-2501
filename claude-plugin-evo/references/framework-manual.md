@@ -544,6 +544,68 @@ The Context Graph externalises Transactive Memory—making "who knows what" quer
 
 ---
 
+## Team Modes
+
+The framework adapts behaviour based on team context (FW-040). This right-sizes overhead for solo developers while providing full collaboration features for teams.
+
+### Configuration
+
+In `.dialogue/config.yaml`:
+
+```yaml
+# Options: auto | solo | team
+team_mode: auto
+```
+
+| Mode | Detection | Use Case |
+|------|-----------|----------|
+| **auto** | 2+ users active within 30 days → team | Default; self-adjusting |
+| **solo** | Forced | Solo developer; minimal overhead |
+| **team** | Forced | Team project; full collaboration |
+
+### Feature Differences
+
+| Feature | Solo Mode | Team Mode |
+|---------|-----------|-----------|
+| Git sync reminders | Disabled | After task/decision changes |
+| Pull check on session start | Skip | Warn if behind remote |
+| User registration files | Skip | Create `.dialogue/users/{user}.yaml` |
+| Session memo naming | `.dialogue/session-memo.yaml` | `.dialogue/session-memo-{user}.yaml` |
+| Session start verbosity | Minimal collaboration hints | Full collaboration guidance |
+
+### Unaffected Features
+
+These work identically in both modes:
+- Decision and observation logging
+- Task management
+- Per-file artifact structure
+- Context graph operations
+
+### Detection Logic
+
+Auto-detection counts users in `.dialogue/users/` with `last_seen` timestamps within 30 days. If 2+ users are active, team mode activates.
+
+**Detection script**: `claude-plugin-evo/hooks/scripts/detect-team-mode.sh`
+
+### Git Sync Status
+
+In team mode, session start checks git sync status:
+
+| Status | Meaning | Action |
+|--------|---------|--------|
+| synced | Local matches remote | No warning |
+| ahead | Local has unpushed commits | No warning (push when ready) |
+| behind | Remote has new commits | Warning: pull recommended |
+| diverged | Both have new commits | Warning: merge/rebase needed |
+
+**Sync check script**: `claude-plugin-evo/hooks/scripts/check-git-sync.sh`
+
+### Migration
+
+Existing projects without `team_mode` in config default to `auto`. No action required.
+
+---
+
 ## Dialogue Protocol
 
 Apply this loop to substantive work:

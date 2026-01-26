@@ -1,8 +1,9 @@
 id: "FW-040"
 title: "Design solo vs multi-user feature gating"
-status: READY
+status: COMPLETED
 created: "2026-01-22T12:52:29Z"
-updated: "2026-01-22T12:52:29Z"
+updated: "2026-01-26T10:45:00Z"
+completed: "2026-01-26T10:45:00Z"
 type: CAPABILITY
 priority: MEDIUM
 description: |
@@ -14,3 +15,17 @@ blocked_by: []
 blocks: []
 notes: |
   Created 22 January 2026.
+
+  Progress 26 January 2026:
+  - Starting implementation of solo vs multi-user feature gating
+  - Plan approved: hybrid auto-detection with explicit override
+
+  Completed 26 January 2026:
+  - Phase 1: Created detect-team-mode.sh (mode detection)
+  - Phase 1: Modified session-start-guided.sh (mode integration, user registration gating)
+  - Phase 1: Updated config.yaml schema in init-dialogue.md and actual config
+  - Phase 2: Created check-git-sync.sh (git sync status)
+  - Phase 2: Added sync reminders to create-task.sh, log-decision.sh, log-observation.sh
+  - Phase 3: Added Team Modes section to framework-manual.md
+  - Verification: Both new scripts tested and working
+  - Current project auto-detects as "solo" mode (1 active user)

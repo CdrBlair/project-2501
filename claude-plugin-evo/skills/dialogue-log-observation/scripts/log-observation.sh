@@ -113,3 +113,12 @@ if [[ -d "${PROJECT_ROOT}/.dialogue/context-graph" ]]; then
 fi
 
 echo "$ID"
+
+# Team mode sync reminder (FW-040)
+SCRIPT_DIR_PARENT="$(cd "$(dirname "${BASH_SOURCE[0]}")"/../../../hooks/scripts && pwd 2>/dev/null || echo "")"
+if [[ -x "${SCRIPT_DIR_PARENT}/detect-team-mode.sh" ]]; then
+    TEAM_MODE=$("${SCRIPT_DIR_PARENT}/detect-team-mode.sh" 2>/dev/null || echo "solo")
+    if [[ "$TEAM_MODE" == "team" ]]; then
+        echo "[team] Remember to commit and push for team visibility." >&2
+    fi
+fi

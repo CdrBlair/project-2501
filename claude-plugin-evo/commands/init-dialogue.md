@@ -43,6 +43,13 @@ Set up the Dialogue Framework for first use in this project.
    # - ai-led: Verbose, proactive; recommends actions and explains features
    interaction_mode: partnership
 
+   # Team mode controls collaboration features (FW-040)
+   # Options: auto | solo | team
+   # - auto: Detect from active user count (2+ users within 30 days = team)
+   # - solo: Simplified mode - no user registration, single session memo, no sync reminders
+   # - team: Full features - user tracking, per-user memos, git sync checks and reminders
+   team_mode: auto
+
    # Project document locations (adjust paths to match your project)
    artifacts:
      adr:
