@@ -1,8 +1,8 @@
 id: "FW-032"
 title: "Revisit soft gates after assessment testing"
-status: BACKLOG
+status: READY
 created: "2026-01-21T17:23:53Z"
-updated: "2026-01-21T17:23:53Z"
+updated: "2026-01-26T11:00:00Z"
 type: CAPABILITY
 priority: MEDIUM
 description: |
@@ -10,7 +10,9 @@ description: |
 objective: "Determine which transitions need soft gates to capture proceed-at-risk decisions"
 rationale: |
   Soft gates are the mechanism for making information debt conscious and tracked. Further analysis needed after experimentation with assessment infrastructure.
-blocked_by: ["FW-023"]
+blocked_by: []
 blocks: []
 notes: |
   Created 21 January 2026.
+
+  26 January 2026: Unblocked - FW-023 completed. Moved to READY.

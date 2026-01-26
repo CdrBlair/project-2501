@@ -1,8 +1,8 @@
 id: "FW-031"
 title: "Add negative traceability edges (CONTRADICTS, RISKS)"
-status: BACKLOG
+status: READY
 created: "2026-01-21T13:58:38Z"
-updated: "2026-01-21T13:58:38Z"
+updated: "2026-01-26T11:00:00Z"
 type: CAPABILITY
 priority: LOW
 description: |
@@ -10,7 +10,9 @@ description: |
 objective: "Support contradiction detection and risk tracking in traceability graph"
 rationale: |
   Negative edges valuable but not essential for initial implementation. Spawned from FW-028 design discussion.
-blocked_by: ["FW-028"]
+blocked_by: []
 blocks: []
 notes: |
   Created 21 January 2026.
+
+  26 January 2026: Unblocked - FW-028 completed. Moved to READY.
