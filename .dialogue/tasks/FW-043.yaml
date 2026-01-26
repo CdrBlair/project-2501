@@ -1,8 +1,9 @@
 id: "FW-043"
 title: "Framework init: register user on first use"
-status: READY
+status: COMPLETED
 created: "2026-01-24T09:32:32Z"
-updated: "2026-01-24T09:32:32Z"
+updated: "2026-01-26T11:00:00Z"
+completed: "2026-01-26T11:00:00Z"
 type: CAPABILITY
 priority: MEDIUM
 description: |
@@ -14,3 +15,11 @@ blocked_by: []
 blocks: []
 notes: |
   Created 24 January 2026.
+
+  Completed 26 January 2026:
+  - Added .dialogue/users/ directory to init-dialogue command
+  - Added user registration to session-start-guided.sh hook
+  - User file schema: username, registered (first seen), last_seen (updated each session)
+  - Storage: .dialogue/users/{username}.yaml (per-user files for merge-friendly workflows)
+  - Trigger: SessionStart hook auto-registers on first session
+  - Supports FW-040 multi-user tracking requirements

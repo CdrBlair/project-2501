@@ -52,6 +52,28 @@ if [[ -f "$SESSION_MEMO" ]]; then
     fi
 fi
 
+# Register user if not already registered (FW-043)
+USERS_DIR="${DIALOGUE_DIR}/users"
+USER_FILE="${USERS_DIR}/${USERNAME}.yaml"
+if [[ ! -f "$USER_FILE" ]]; then
+    # Create users directory if needed
+    mkdir -p "$USERS_DIR"
+    # Register user with first-seen timestamp
+    cat > "$USER_FILE" << EOF
+# Dialogue Framework user registration
+username: "${USERNAME}"
+registered: "$(date -u +%Y-%m-%dT%H:%M:%SZ)"
+last_seen: "$(date -u +%Y-%m-%dT%H:%M:%SZ)"
+EOF
+    echo "[dialogue-hook] Registered new user: ${USERNAME}" >&2
+else
+    # Update last_seen timestamp (non-blocking, ignore errors)
+    if command -v sed &>/dev/null; then
+        sed -i.bak "s/^last_seen:.*/last_seen: \"$(date -u +%Y-%m-%dT%H:%M:%SZ)\"/" "$USER_FILE" 2>/dev/null || true
+        rm -f "${USER_FILE}.bak" 2>/dev/null || true
+    fi
+fi
+
 # Count tasks
 in_progress=0
 ready=0

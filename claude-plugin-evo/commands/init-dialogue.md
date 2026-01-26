@@ -25,7 +25,8 @@ Set up the Dialogue Framework for first use in this project.
    ├── logs/
    │   ├── decisions/
    │   └── observations/
-   └── tasks/
+   ├── tasks/
+   └── users/
    ```
 
 3. **Create config.yaml**
@@ -64,6 +65,7 @@ Set up the Dialogue Framework for first use in this project.
    - `.dialogue/logs/decisions/.gitkeep`
    - `.dialogue/logs/observations/.gitkeep`
    - `.dialogue/tasks/.gitkeep`
+   - `.dialogue/users/.gitkeep`
 
 5. **Confirm completion**
 
