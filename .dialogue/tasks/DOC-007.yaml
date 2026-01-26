@@ -1,0 +1,13 @@
+id: "DOC-007"
+title: "Review phase2-planning.md rule - determine if frontmatter needed or relocate"
+status: BACKLOG
+created: "2026-01-26T11:18:59Z"
+updated: "2026-01-26T11:18:59Z"
+type: DOCUMENT
+priority: MEDIUM
+description: |
+  Review claude-plugin-evo/rules/phase2-planning.md. Determine: 1) Should it have paths frontmatter? 2) Should it move to references/? 3) Is it redundant with framework-manual.md?
+blocked_by: []
+blocks: []
+notes: |
+  Created 26 January 2026.

@@ -1,0 +1,13 @@
+id: "DOC-011"
+title: "Review phase6-testing.md rule - determine if frontmatter needed or relocate"
+status: BACKLOG
+created: "2026-01-26T11:19:00Z"
+updated: "2026-01-26T11:19:00Z"
+type: DOCUMENT
+priority: MEDIUM
+description: |
+  Review claude-plugin-evo/rules/phase6-testing.md. Determine: 1) Should it have paths frontmatter? 2) Should it move to references/? 3) Is it redundant with framework-manual.md?
+blocked_by: []
+blocks: []
+notes: |
+  Created 26 January 2026.

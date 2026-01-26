@@ -1,0 +1,36 @@
+id: "FW-048"
+title: "Review and fix rules frontmatter for optimal context usage"
+status: COMPLETED
+created: "2026-01-26T11:16:02Z"
+updated: "2026-01-26T11:35:00Z"
+completed: "2026-01-26T11:35:00Z"
+type: DOCUMENT
+priority: MEDIUM
+description: |
+  Review all files in claude-plugin-evo/rules/ and verify they have correct frontmatter with paths. Rules without frontmatter need user guidance. Rules with frontmatter should match one path only to minimise context consumption.
+blocked_by: []
+blocks: []
+notes: |
+  Created 26 January 2026.
+
+  Completed 26 January 2026:
+
+  Reviewed 9 rule files in claude-plugin-evo/rules/:
+
+  1. Split dialogue-path-operations.md (6 paths) into 4 single-path files:
+     - dialogue-tasks-operations.md (.dialogue/tasks/**/*)
+     - dialogue-decisions-operations.md (.dialogue/logs/decisions/**/*)
+     - dialogue-observations-operations.md (.dialogue/logs/observations/**/*)
+     - dialogue-users-operations.md (.dialogue/users/**/*)
+
+  2. Created 8 review tasks for rules without frontmatter:
+     - DOC-006: phase1-initiation.md
+     - DOC-007: phase2-planning.md
+     - DOC-008: phase3-analysis.md
+     - DOC-009: phase4-design.md
+     - DOC-010: phase5-implementation.md
+     - DOC-011: phase6-testing.md
+     - DOC-012: phase7-deployment.md
+     - DOC-013: actor-context-awareness.md
+
+  Result: All rules now either have single-path frontmatter or are queued for review.

@@ -1,8 +1,9 @@
 id: "FW-047"
 title: "Research hook performance and framework capability adoption"
-status: READY
+status: COMPLETED
 created: "2026-01-26T10:38:32Z"
-updated: "2026-01-26T10:38:32Z"
+updated: "2026-01-26T11:30:00Z"
+completed: "2026-01-26T11:30:00Z"
 type: RESEARCH
 priority: MEDIUM
 description: |
@@ -14,3 +15,30 @@ blocked_by: []
 blocks: []
 notes: |
   Created 26 January 2026.
+
+  Completed 26 January 2026:
+
+  Research findings - "performance" means behavioural adoption, not execution speed:
+
+  1. Problem identified: AI bypasses skills with raw tools (Edit, Bash) on .dialogue/ paths
+  2. Root cause: UserPromptSubmit hook missing patterns for task operations without IDs
+  3. Root cause: Directive language was suggestive ("consider") not imperative ("MUST")
+
+  Implemented improvements:
+
+  A. New rule: dialogue-path-operations.md
+     - Path-based rule with frontmatter: paths: [".dialogue/**/*"]
+     - Mandates skill use for all .dialogue/ operations
+     - Documents path-to-skill mapping
+     - Provides self-check before using raw tools
+
+  B. Enhanced UserPromptSubmit hook:
+     - Added patterns: "list tasks", "show tasks", "create task"
+     - Added task update detection: "start on", "update", "complete", "mark as"
+     - Stronger language: "MUST use" instead of "consider"
+     - Explicit prohibition: "Do NOT edit task files directly"
+
+  Test results - all patterns now trigger correctly:
+  - "list tasks" → TASK OPERATION instruction
+  - "start on FW-047" → TASK UPDATE instruction
+  - "update FW-043" → TASK UPDATE instruction

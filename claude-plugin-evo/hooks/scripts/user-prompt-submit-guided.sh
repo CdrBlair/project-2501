@@ -28,10 +28,22 @@ if echo "$PROMPT_LOWER" | grep -qE "(i noticed|i observed|here'?s an observation
     INSTRUCTIONS+="OBSERVATION DETECTED: After responding, use the dialogue-log-observation skill to record this finding. "
 fi
 
-# Task references → directive instruction
-if echo "$PROMPT" | grep -qiE "\b(SH|FW|CD)-[0-9]{3}\b"; then
-    TASK_ID=$(echo "$PROMPT" | grep -oiE "\b(SH|FW|CD)-[0-9]{3}\b" | head -1)
-    INSTRUCTIONS+="TASK REFERENCE: Resolve ${TASK_ID} using dialogue-manage-tasks skill to understand context. "
+# Task operations without ID → directive instruction for skill use
+if echo "$PROMPT_LOWER" | grep -qE "(list|show|display)\s*(open\s*)?(tasks?|work\s*items?)"; then
+    INSTRUCTIONS+="TASK OPERATION: MUST use dialogue-manage-tasks skill to list tasks. Do NOT run scripts directly via Bash. "
+elif echo "$PROMPT_LOWER" | grep -qE "(create|add|new)\s*(a\s*)?(task|work\s*item)"; then
+    INSTRUCTIONS+="TASK OPERATION: MUST use dialogue-manage-tasks skill to create task. Do NOT write task files directly. "
+fi
+
+# Task references with ID → directive instruction
+if echo "$PROMPT" | grep -qiE "\b(SH|FW|CD|DOC|VAL)-[0-9]{3}\b"; then
+    TASK_ID=$(echo "$PROMPT" | grep -oiE "\b(SH|FW|CD|DOC|VAL)-[0-9]{3}\b" | head -1)
+    # Check for update/status change verbs
+    if echo "$PROMPT_LOWER" | grep -qE "(start|begin|work)\s*(on|with)?|update|complete|finish|done|mark\s*(as)?"; then
+        INSTRUCTIONS+="TASK UPDATE: MUST use dialogue-manage-tasks skill to update ${TASK_ID} status. Do NOT edit task files directly. "
+    else
+        INSTRUCTIONS+="TASK REFERENCE: Use dialogue-manage-tasks skill to resolve ${TASK_ID} context. "
+    fi
 fi
 
 # Reference resolution → directive instruction
