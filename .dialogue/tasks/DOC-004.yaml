@@ -1,0 +1,16 @@
+id: "DOC-004"
+title: "Improve help and instructions for better user experience"
+status: READY
+created: "2026-01-26T07:36:16Z"
+updated: "2026-01-26T07:36:16Z"
+type: DOCUMENT
+priority: HIGH
+description: |
+  The current help and instructions are too literal and concept-focused. While grounding in framework concepts is partially correct, the documentation fails to guide users through how to use the framework effectively in practice.
+objective: "Create a great user experience where new users understand what Dialogue offers within minutes, can find the right skill/command easily, and documentation answers 'how do I...' questions"
+rationale: |
+  User experience is critical for adoption. Current documentation explains 'what' but not 'how', making the framework feel like studying a manual rather than an intuitive tool.
+blocked_by: []
+blocks: []
+notes: |
+  Created 26 January 2026.
