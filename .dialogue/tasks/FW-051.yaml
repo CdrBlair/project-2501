@@ -1,0 +1,60 @@
+id: FW-051
+title: Fix create-task.sh EOF syntax error on line 262
+status: COMPLETED
+completed: 2026-02-03T12:05:00Z
+type: BUG
+priority: HIGH
+created: 2026-02-03T12:00:00Z
+updated: 2026-02-03T12:00:00Z
+
+description: |
+  The create-task.sh script fails with an EOF error when used in other repositories:
+
+  ```
+  .//claude-plugin-evo/skills/dialogue-manage-tasks/scripts/create-task.sh: line 262:
+  unexpected EOF while looking for matching `)'
+  ```
+
+  Root cause: Missing closing quote in nested command substitution on line 262.
+
+  Current (broken):
+  ```bash
+  SCRIPT_DIR_PARENT="$(cd "$(dirname "${BASH_SOURCE[0]})"/../../../hooks/scripts" && pwd 2>/dev/null || echo "")"
+  ```
+
+  Should be:
+  ```bash
+  SCRIPT_DIR_PARENT="$(cd "$(dirname "${BASH_SOURCE[0]}")"/../../../hooks/scripts" && pwd 2>/dev/null || echo "")"
+  ```
+
+  The `${BASH_SOURCE[0]}` is missing a closing `"` before the `)`.
+
+objective: |
+  Fix the syntax error so create-task.sh works correctly in all deployment contexts.
+
+rationale: |
+  This blocks task creation in deployed projects using the Dialogue Framework plugin.
+
+notes: |
+  Created 03 February 2026.
+  Reported when using framework in another repository.
+
+  Initial fix 03 February 2026:
+  Fixed quote nesting in SCRIPT_DIR_PARENT assignment.
+
+  Revised fix 03 February 2026 (per PR review feedback):
+  Replaced fragile path navigation with CLAUDE_PLUGIN_ROOT env var.
+  See DEC-20260203-175725 for decision rationale.
+
+  Fixed in three scripts:
+  - create-task.sh (line 261-269)
+  - log-decision.sh (line 137-145)
+  - log-observation.sh (line 117-125)
+
+  New pattern uses CLAUDE_PLUGIN_ROOT:
+    if [[ -n "${CLAUDE_PLUGIN_ROOT:-}" ]]; then
+        DETECT_SCRIPT="${CLAUDE_PLUGIN_ROOT}/hooks/scripts/detect-team-mode.sh"
+        ...
+    fi
+
+  Benefits: Simpler, no path navigation, consistent with hooks.json.

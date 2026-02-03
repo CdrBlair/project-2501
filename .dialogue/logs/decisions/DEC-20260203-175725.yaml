@@ -1,0 +1,9 @@
+id: DEC-20260203-175725
+timestamp: "2026-02-03T17:57:25Z"
+type: DESIGN
+actor: "human:pidster"
+subject: "Team mode detection path resolution"
+outcome: "Use CLAUDE_PLUGIN_ROOT env var instead of BASH_SOURCE path navigation"
+rationale: "Simpler, avoids quoting issues, consistent with hooks.json and create-adr.sh patterns"
+context: "PR review feedback on FW-051; original fix worked but path navigation is fragile"
+tags: ["FW-051", "refactor", "shell"]

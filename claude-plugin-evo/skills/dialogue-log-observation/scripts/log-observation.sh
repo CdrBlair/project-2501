@@ -115,10 +115,12 @@ fi
 echo "$ID"
 
 # Team mode sync reminder (FW-040)
-SCRIPT_DIR_PARENT="$(cd "$(dirname "${BASH_SOURCE[0]}")"/../../../hooks/scripts && pwd 2>/dev/null || echo "")"
-if [[ -x "${SCRIPT_DIR_PARENT}/detect-team-mode.sh" ]]; then
-    TEAM_MODE=$("${SCRIPT_DIR_PARENT}/detect-team-mode.sh" 2>/dev/null || echo "solo")
-    if [[ "$TEAM_MODE" == "team" ]]; then
-        echo "[team] Remember to commit and push for team visibility." >&2
+if [[ -n "${CLAUDE_PLUGIN_ROOT:-}" ]]; then
+    DETECT_SCRIPT="${CLAUDE_PLUGIN_ROOT}/hooks/scripts/detect-team-mode.sh"
+    if [[ -x "$DETECT_SCRIPT" ]]; then
+        TEAM_MODE=$("$DETECT_SCRIPT" 2>/dev/null || echo "solo")
+        if [[ "$TEAM_MODE" == "team" ]]; then
+            echo "[team] Remember to commit and push for team visibility." >&2
+        fi
     fi
 fi

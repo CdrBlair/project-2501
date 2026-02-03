@@ -1,0 +1,14 @@
+id: DEC-20260203-175725
+node_type: ARTIFACT
+metadata:
+  artifact_type: DECISION
+  decision_type: DESIGN
+  temporal_class: Ephemeral
+  content_type: text/yaml
+  title: "Team mode detection path resolution"
+  summary: "Use CLAUDE_PLUGIN_ROOT env var instead of BASH_SOURCE path navigation"
+  location_hint: ".dialogue/logs/decisions/DEC-20260203-175725.yaml"
+  author: "human:pidster"
+created: "2026-02-03T17:57:25Z"
+updated: "2026-02-03T17:57:25Z"
+status: ACTIVE
