@@ -42,6 +42,15 @@ if [[ -f "$CONFIG_FILE" ]]; then
     fi
 fi
 
+# Read raw team mode config for registration decision (FW-050)
+TEAM_MODE_CONFIG="auto"
+if [[ -f "${DIALOGUE_DIR}/config.yaml" ]]; then
+    config_mode=$(grep -m1 "^team_mode:" "${DIALOGUE_DIR}/config.yaml" 2>/dev/null | awk '{print $2}' | tr -d '"' | tr -d "'" || echo "")
+    if [[ -n "$config_mode" ]]; then
+        TEAM_MODE_CONFIG="$config_mode"
+    fi
+fi
+
 # Detect team mode (FW-040)
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 TEAM_MODE="solo"
@@ -65,9 +74,9 @@ if [[ -f "$SESSION_MEMO" ]]; then
     fi
 fi
 
-# Register user if not already registered (FW-043)
-# Only in team mode - solo mode skips user registration overhead (FW-040)
-if [[ "$TEAM_MODE" == "team" ]]; then
+# Register user if not already registered (FW-043, FW-050)
+# Register in auto or team mode; solo mode explicitly opts out of user tracking
+if [[ "$TEAM_MODE_CONFIG" != "solo" ]]; then
     USERS_DIR="${DIALOGUE_DIR}/users"
     USER_FILE="${USERS_DIR}/${USERNAME}.yaml"
     if [[ ! -f "$USER_FILE" ]]; then

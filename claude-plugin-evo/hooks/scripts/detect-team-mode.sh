@@ -74,6 +74,13 @@ done
 
 # 2+ active users = team mode
 if [[ $ACTIVE_USERS -ge 2 ]]; then
+    # Promote auto to team permanently (FW-050, DEC-20260203-190913)
+    # Once multiple team members have worked, that history is permanent
+    if [[ -f "$CONFIG_FILE" ]] && grep -q "^team_mode: auto" "$CONFIG_FILE" 2>/dev/null; then
+        sed -i.bak "s/^team_mode: auto/team_mode: team/" "$CONFIG_FILE" 2>/dev/null || true
+        rm -f "${CONFIG_FILE}.bak" 2>/dev/null || true
+        echo "[dialogue] Auto mode promoted to team mode (2+ active users)" >&2
+    fi
     echo "team"
 else
     echo "solo"

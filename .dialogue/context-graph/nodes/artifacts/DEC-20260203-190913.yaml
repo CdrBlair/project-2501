@@ -1,0 +1,14 @@
+id: DEC-20260203-190913
+node_type: ARTIFACT
+metadata:
+  artifact_type: DECISION
+  decision_type: DESIGN
+  temporal_class: Ephemeral
+  content_type: text/yaml
+  title: "Auto mode promotes to team permanently"
+  summary: "When auto mode detects 2+ users, write team_mode: team to config"
+  location_hint: ".dialogue/logs/decisions/DEC-20260203-190913.yaml"
+  author: "human:amv"
+created: "2026-02-03T19:09:13Z"
+updated: "2026-02-03T19:09:13Z"
+status: ACTIVE
