@@ -1,10 +1,11 @@
 id: FW-049
 title: Fix shell script errors identified in code review
-status: READY
+status: COMPLETED
 type: BUG
 priority: HIGH
 created: 2026-02-03T10:30:00Z
-updated: 2026-02-03T10:30:00Z
+updated: 2026-02-03T10:45:00Z
+completed: 2026-02-03T10:45:00Z
 
 description: |
   Code review of all 37 shell scripts identified 3 issues across 2 scripts.
@@ -17,33 +18,40 @@ objective: |
 sub_items:
   - id: FW-049.1
     title: "Fix unquoted variables in session-start.sh"
-    status: PENDING
+    status: SKIPPED
     description: |
       File: claude-plugin-evo/hooks/scripts/session-start.sh
       Lines: 48, 52
       Issue: Variables $id and $title used without proper escaping in string
       concatenation. Could fail on titles with spaces or special characters.
       Severity: High
+      Resolution: SKIPPED - File is marked as superseded (lines 6-7 state
+      "ALWAYS USE THE GUIDED VARIANT NO MORE MODIFICATIONS SHOULD BE MADE HERE")
 
   - id: FW-049.2
     title: "Fix fragile heredoc error handling in session-start-guided.sh"
-    status: PENDING
+    status: DONE
     description: |
       File: claude-plugin-evo/hooks/scripts/session-start-guided.sh
       Lines: 152, 180
       Issue: Using `read -r -d '' ... || true` suppresses real errors.
       The pattern is fragile with set -euo pipefail.
       Severity: Medium
+      Resolution: Changed to $(cat << EOF ... EOF) pattern which properly
+      propagates errors without needing || true suppression.
 
   - id: FW-049.3
     title: "Fix JSON injection vulnerability in task-summary.sh"
-    status: PENDING
+    status: DONE
     description: |
       File: claude-plugin-evo/skills/dialogue-manage-tasks/scripts/task-summary.sh
       Line: 162
       Issue: Variables $id, $title, $priority embedded directly in JSON without
       escaping. Task titles containing quotes would produce invalid JSON.
       Severity: Medium
+      Resolution: Added json_escape_string() helper function that escapes
+      backslashes, quotes, tabs, newlines, and carriage returns. Applied to
+      all JSON string building in the json output section.
 
 rationale: |
   Script robustness is essential for reliable framework operation.
@@ -54,3 +62,10 @@ notes: |
   - Identified via comprehensive script analysis
   - 37 scripts examined, 3 issues found in 2 scripts
   - Most scripts demonstrate excellent practices
+
+  Completed 3 February 2026:
+  - FW-049.1: Skipped - session-start.sh is superseded by guided variant
+  - FW-049.2: Fixed heredoc pattern in session-start-guided.sh (lines 152, 180)
+  - FW-049.3: Added json_escape_string() helper to task-summary.sh
+  - All scripts pass syntax check (bash -n)
+  - task-summary.sh JSON output validated with jq

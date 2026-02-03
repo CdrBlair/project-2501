@@ -47,6 +47,18 @@ extract_field() {
     grep "^${field}:" "$file" 2>/dev/null | sed "s/^${field}:[[:space:]]*//" | tr -d '"' || echo ""
 }
 
+# Helper: Escape a string for JSON embedding (returns unquoted escaped string)
+json_escape_string() {
+    local str="$1"
+    # Escape backslashes, quotes, and control characters
+    str="${str//\\/\\\\}"      # Backslash
+    str="${str//\"/\\\"}"      # Double quote
+    str="${str//$'\t'/\\t}"    # Tab
+    str="${str//$'\n'/\\n}"    # Newline
+    str="${str//$'\r'/\\r}"    # Carriage return
+    printf '%s' "$str"
+}
+
 # Collect data
 declare -a IN_PROGRESS_TASKS=()
 declare -a HIGH_PRIORITY_READY=()
@@ -159,7 +171,10 @@ case "$OUTPUT_FORMAT" in
             else
                 in_progress_json+=","
             fi
-            in_progress_json+="{\"id\":\"$id\",\"title\":\"$title\",\"priority\":\"$priority\"}"
+            escaped_id=$(json_escape_string "$id")
+            escaped_title=$(json_escape_string "$title")
+            escaped_priority=$(json_escape_string "$priority")
+            in_progress_json+="{\"id\":\"${escaped_id}\",\"title\":\"${escaped_title}\",\"priority\":\"${escaped_priority}\"}"
         done
         in_progress_json+="]"
 
@@ -173,7 +188,10 @@ case "$OUTPUT_FORMAT" in
             else
                 high_priority_json+=","
             fi
-            high_priority_json+="{\"id\":\"$id\",\"title\":\"$title\",\"priority\":\"$priority\"}"
+            escaped_id=$(json_escape_string "$id")
+            escaped_title=$(json_escape_string "$title")
+            escaped_priority=$(json_escape_string "$priority")
+            high_priority_json+="{\"id\":\"${escaped_id}\",\"title\":\"${escaped_title}\",\"priority\":\"${escaped_priority}\"}"
         done
         high_priority_json+="]"
 
@@ -187,7 +205,9 @@ case "$OUTPUT_FORMAT" in
             else
                 blocked_json+=","
             fi
-            blocked_json+="{\"id\":\"$id\",\"title\":\"$title\"}"
+            escaped_id=$(json_escape_string "$id")
+            escaped_title=$(json_escape_string "$title")
+            blocked_json+="{\"id\":\"${escaped_id}\",\"title\":\"${escaped_title}\"}"
         done
         blocked_json+="]"
 

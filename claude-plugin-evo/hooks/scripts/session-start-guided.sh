@@ -149,7 +149,7 @@ case "$INTERACTION_MODE" in
 
     "ai-led")
         # Verbose: status + instructions + recommendations
-        read -r -d '' INSTRUCTIONS << EOF || true
+        INSTRUCTIONS=$(cat << EOF
 ${BOLD_GREEN}Dialogue Framework is active.${RESET}
 
 OPERATING INSTRUCTIONS:
@@ -160,6 +160,7 @@ OPERATING INSTRUCTIONS:
 
 ${task_status}
 EOF
+)
         # Add recommendation if there are ready tasks
         if [[ $ready -gt 0 ]] && [[ -n "$ready_list" ]]; then
             INSTRUCTIONS+=$'\n\n'"${BOLD}Suggestion:${RESET} Consider starting with ${BOLD_CYAN}${ready_list% }${RESET}"
@@ -177,7 +178,7 @@ EOF
 
     *)
         # partnership (default): status + hint
-        read -r -d '' INSTRUCTIONS << EOF || true
+        INSTRUCTIONS=$(cat << EOF
 ${BOLD_GREEN}Dialogue Framework is active.${RESET}
 
 OPERATING INSTRUCTIONS:
@@ -188,6 +189,7 @@ OPERATING INSTRUCTIONS:
 
 ${task_status}
 EOF
+)
         system_msg="${INSTRUCTIONS}"$'\n'"Type ${BOLD}/help skills${RESET} to see available capabilities."
         # Add git sync warning in team mode
         if [[ -n "$GIT_SYNC_WARNING" ]]; then
